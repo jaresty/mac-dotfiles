@@ -1,0 +1,6 @@
+cask "dash"
+cask "iterm2"
+brew "neovim"
+brew "qcachegrind"
+cask "krita"
+cask "qutebrowser"
