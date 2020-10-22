@@ -10,5 +10,4 @@ pushd $(mktemp -d)
   # clean-up a bit
   cd ..
   rm -rf fonts
-  brew tap saulpw/vd
 popd
