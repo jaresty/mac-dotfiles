@@ -134,7 +134,7 @@ export TERM=xterm-256color-italic
 
 # if [ $(( $RANDOM % 2 )) -eq 0 ]; then quotes-cli q; else curl -H "Accept: text/plain" https://icanhazdadjoke.com/; echo; fi
 
-VALUE=$(( $RANDOM % 4 ))
+VALUE=$(( $RANDOM % 5 ))
 case $VALUE in
 
     0)
@@ -144,7 +144,10 @@ case $VALUE in
         curl -s 'https://api.truthordarebot.xyz/api/wyr?rating=PG' | jq -r .question; echo
         ;;
     3)
-        curl -s https://www.cincinato.org/koans/randomkoan_en.php | w3m -dump -T text/html
+        curl -s https://www.cincinato.org/koans/randomkoan_en.php | w3m -dump -T text/html | sed '/\[Another random.*$/d;/ZenKoansDatabase/d;/English/,$d'
+        ;;
+    4)
+        curl -s https://www.conversationstarters.com/generator.php | w3m -dump -T text/html | sed '/\[header\]/,/Random Questions/d;/Generate Another/,$d'
         ;;
     *)
         curl -H "Accept: text/plain" https://icanhazdadjoke.com/; echo
