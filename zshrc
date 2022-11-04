@@ -138,19 +138,19 @@ VALUE=$(( $RANDOM % 5 ))
 case $VALUE in
 
     0)
-        curl -s https://zenquotes.io/api/random | jq -r '.[].h' | w3m -dump -T 'text/html'
+        fortune | cowsay
         ;;
     1)
-        curl -s 'https://api.truthordarebot.xyz/api/wyr?rating=PG' | jq -r .question; echo
+        curl -s 'https://api.truthordarebot.xyz/api/wyr?rating=PG' | jq -r .question | cowsay; echo
         ;;
     3)
         curl -s https://www.cincinato.org/koans/randomkoan_en.php | w3m -dump -T text/html | sed '/\[Another random.*$/d;/ZenKoansDatabase/d;/English/,$d'
         ;;
     4)
-        curl -s https://www.conversationstarters.com/generator.php | w3m -dump -T text/html | sed '/\[header\]/,/Random Questions/d;/Generate Another/,$d'
+        curl -s https://www.conversationstarters.com/generator.php | w3m -dump -T text/html | sed '/\[header\]/,/Random Questions/d;/Generate Another/,$d' | cowsay
         ;;
     *)
-        curl -H "Accept: text/plain" https://icanhazdadjoke.com/; echo
+        curl -s -H "Accept: text/plain" https://icanhazdadjoke.com/ | lolcat; echo
         ;;
 esac
 
