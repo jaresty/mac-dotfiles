@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+set -eux
+
+defaults export com.googlecode.iterm2 preferences/com.googlecode.iterm2.plist
