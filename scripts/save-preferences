@@ -2,4 +2,10 @@
 
 set -eux
 
-defaults export com.googlecode.iterm2 preferences/com.googlecode.iterm2.plist
+domains=$(defaults domains | sed 's/,//g')
+
+# Loop through the list of domains
+for domain in $domains; do
+  # Export the preferences for the current domain to a file
+  defaults export "$domain" /Users/jaresty/Library/Mobile\ Documents/com~apple~CloudDocs/Preferences/"$domain.plist"
+done
