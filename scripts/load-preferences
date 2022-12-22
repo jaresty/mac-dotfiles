@@ -3,7 +3,7 @@
 set -eux
 
 # Set the directory containing the preference files
-pref_dir="/Users/jaresty/Library/Mobile\ Documents/com~apple~CloudDocs/Preferences"
+pref_dir="$HOME/Library/Mobile\ Documents/com~apple~CloudDocs/Preferences"
 
 # Get a list of preference files in the directory
 pref_files=$(ls "$pref_dir")
