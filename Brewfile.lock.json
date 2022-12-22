@@ -216,6 +216,12 @@
         "options": {
           "full_name": "font-victor-mono-nerd-font"
         }
+      },
+      "arc": {
+        "version": "0.81.2,36600",
+        "options": {
+          "full_name": "arc"
+        }
       }
     },
     "brew": {
@@ -2085,7 +2091,7 @@
       "ventura": {
         "HOMEBREW_VERSION": "3.6.16",
         "HOMEBREW_PREFIX": "/opt/homebrew",
-        "Homebrew/homebrew-core": "0b3eebfb0cf606bfa42e4f1a01a367794d1718b5",
+        "Homebrew/homebrew-core": "f68fda0d61fe9364bbfcf7d7bfc3d300d4b8a25d",
         "CLT": "14.2.0.0.1.1668646533",
         "Xcode": "14.1",
         "macOS": "13.1"
