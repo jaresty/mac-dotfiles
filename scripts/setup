@@ -2,3 +2,8 @@
 set -eux
 
 ln -sf ~/mac-dotfiles/spacemacs ../.spacemacs
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+brew bundle
+git clone https://github.com/luan/nvim ~/.config/nvim
+git clone https://github.com/luan/tmuxfiles.git ~/tmuxfiles
+~/tmuxfiles/install
