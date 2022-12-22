@@ -2,8 +2,10 @@
 set -eux
 
 ln -sf ~/mac-dotfiles/spacemacs ../.spacemacs
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-brew bundle
+ln -sf ~/mac-dotfiles/zshrc ../.zshrc
+#/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+#eval "$(/opt/homebrew/bin/brew shellenv)"
+#brew bundle
 tic -x terminal-italics/tmux-256color.terminfo
 tic -x terminal-italics/xterm-256color-italic.terminfo
 git clone https://github.com/luan/nvim ~/.config/nvim
