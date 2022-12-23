@@ -26,6 +26,13 @@ brew-bundle:
 ../.rvm:
 	\curl -sSL https://get.rvm.io | bash
 
+../.emacs.d:
+	git clone https://github.com/syl20bnr/spacemacs ../.emacs.d
+
+../.docker/cli-plugins:
+	mkdir -p ~/.docker/cli-plugins
+	ln -sfn $(brew --prefix)/opt/docker-compose/bin/docker-compose ~/.docker/cli-plugins/docker-compose
+
 .PHONY: setup
-setup: install-terminfo ../.zshrc ../.spacemacs ../tmuxfiles ../.config/nvim /opt/homebrew/bin/brew brew-bundle ../.rvm
+setup: install-terminfo ../.zshrc ../.spacemacs ../tmuxfiles ../.config/nvim /opt/homebrew/bin/brew brew-bundle ../.rvm ../.emacs.d ../.docker/cli-plugins
 
