@@ -228,6 +228,18 @@
         "options": {
           "full_name": "discord"
         }
+      },
+      "code": {
+        "version": null,
+        "options": {
+          "full_name": "code"
+        }
+      },
+      "visual-studio-code": {
+        "version": "1.74.2",
+        "options": {
+          "full_name": "visual-studio-code"
+        }
       }
     },
     "brew": {
@@ -2229,7 +2241,7 @@
       "ventura": {
         "HOMEBREW_VERSION": "3.6.16",
         "HOMEBREW_PREFIX": "/opt/homebrew",
-        "Homebrew/homebrew-core": "63cf5578c3f3cc4e5c92c28f2d23e41754f61f5f",
+        "Homebrew/homebrew-core": "19a813e3c3965282ec5bee42639ece0c45b8d3b9",
         "CLT": "14.2.0.0.1.1668646533",
         "Xcode": "14.1",
         "macOS": "13.1"
