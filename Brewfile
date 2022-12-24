@@ -1,4 +1,6 @@
 tap 'homebrew/cask-fonts'
+tap "homebrew/cask-drivers"
+cask "wacom-tablet"
 cask "dash"
 cask "atom"
 cask "iterm2"
