@@ -118,7 +118,6 @@ git config --global alias.dci "duet-commit"
 git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
 git config --global alias.lola "log --graph --decorate --pretty=oneline --abbrev-commit --all"
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export LIBRARY_PATH=$LIBRARY_PATH:$(brew --prefix zstd)/lib/
 . $(brew --prefix)/etc/profile.d/z.sh
 
@@ -162,3 +161,5 @@ export PATH="$PATH:$HOME/.rvm/bin"
 # Fig post block. Keep at the bottom of this file.
 [[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"
 source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

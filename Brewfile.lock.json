@@ -252,6 +252,12 @@
         "options": {
           "full_name": "tuple"
         }
+      },
+      "warp": {
+        "version": "0.2022.12.13.08.04.stable_01",
+        "options": {
+          "full_name": "warp"
+        }
       }
     },
     "brew": {
@@ -2230,6 +2236,8 @@
             }
           }
         }
+      },
+      "warp": {
       }
     },
     "tap": {
@@ -2262,7 +2270,7 @@
       "ventura": {
         "HOMEBREW_VERSION": "3.6.17",
         "HOMEBREW_PREFIX": "/opt/homebrew",
-        "Homebrew/homebrew-core": "ff05df4a0003d46db237cac712eed1d417e6a16d",
+        "Homebrew/homebrew-core": "8b1caef3df42683427dc294f46bad514e2e8816c",
         "CLT": "14.2.0.0.1.1668646533",
         "Xcode": "14.1",
         "macOS": "13.1"
