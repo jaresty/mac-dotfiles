@@ -1,5 +1,3 @@
-# Fig pre block. Keep at the top of this file.
-[[ -f "$HOME/.fig/shell/zshrc.pre.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.pre.zsh"
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -105,7 +103,6 @@ eval "$(starship init zsh)"
 
 eval "$(direnv hook zsh)"
 
-source $HOME/.rvm/scripts/rvm
 eval $(thefuck --alias)
 export EDITOR=nvim
 alias gst="git status"
@@ -155,11 +152,10 @@ case $VALUE in
 esac
 
 
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$PATH:$HOME/.rvm/bin"
-
-# Fig post block. Keep at the bottom of this file.
-[[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"
+FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
 source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+. /opt/homebrew/opt/asdf/libexec/asdf.sh
+export LDFLAGS="-L/opt/homebrew/opt/capstone/lib"
+export CPPFLAGS="-I/opt/homebrew/opt/capstone/include"
