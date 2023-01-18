@@ -39,8 +39,10 @@ This function should only modify configuration layer settings."
      html
      dap
      (docker :variables docker-dockerfile-backend 'lsp)
-     typescript
-     (javascript :variables javascript-import-tool 'import-js javascript-fmt-tool 'web-beautify)
+     (typescript :variables
+                 typescript-fmt-on-save t
+                 typescript-fmt-tool 'typescript-formatter)
+     (javascript :variables javascript-import-tool 'import-js javascript-fmt-tool 'web-beautify javascript-fmt-on-save t)
      (svelte :variables svelte-backend 'lsp)
      (terraform :variables terraform-backend 'lsp)
      sql
