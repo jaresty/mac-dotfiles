@@ -38,7 +38,7 @@ This function should only modify configuration layer settings."
      (yaml :variables yaml-enable-lsp t)
      html
      dap
-     (docker :variables docker-dockerfile-backend 'lsp)
+     docker
      (typescript :variables
                  typescript-fmt-on-save t
                  typescript-fmt-tool 'typescript-formatter)
