@@ -272,7 +272,7 @@ It should only modify the values of Spacemacs settings."
    ;; Default font or prioritized list of fonts. The `:size' can be specified as
    ;; a non-negative integer (pixel size), or a floating-point (point size).
    ;; Point size is recommended, because it's device independent. (default 10.0)
-   dotspacemacs-default-font '("VictorMono Nerd Font"
+   dotspacemacs-default-font '("Luansevka Nerd Font Mono"
                                :size 10.0
                                :weight normal
                                :width normal)
@@ -602,5 +602,5 @@ This function is called at the very end of Spacemacs initialization."
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(highlight-parentheses-highlight ((nil (:weight ultra-bold))) t)
- '(hl-line ((t (:inherit highlight :extend t :slant oblique :family "VictorMono Nerd Font")))))
+ '(hl-line ((t (:inherit highlight :extend t :slant oblique :family "Luansevka Nerd Font Mono")))))
 )
