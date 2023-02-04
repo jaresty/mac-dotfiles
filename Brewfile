@@ -1,5 +1,7 @@
 tap 'homebrew/cask-fonts'
 tap "homebrew/cask-drivers"
+tap "k1LoW/tap"
+brew "tbls"
 cask "wacom-tablet"
 cask "dash"
 cask "atom"
@@ -84,4 +86,5 @@ cask "tuple"
 brew "zsh-autosuggestions"
 cask "warp"
 cask "coscreen"
+cask "qlmarkdown"
 brew "dive"
