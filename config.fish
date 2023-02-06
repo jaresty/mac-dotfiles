@@ -6,7 +6,7 @@ if status is-interactive
 
   eval "$(direnv hook fish)"
 
-  export EDITOR=nvim
+  export EDITOR=lvim
   alias gst="git status"
   alias dc="docker-compose"
   alias g="git"
