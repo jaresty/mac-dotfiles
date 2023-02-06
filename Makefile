@@ -1,6 +1,3 @@
-../.config/nvim:
-	git clone https://github.com/luan/nvim ~/.config/nvim
-
 ../tmuxfiles:
 	git clone https://github.com/luan/tmuxfiles.git ~/tmuxfiles
 	~/tmuxfiles/install
@@ -23,9 +20,13 @@ install-terminfo:
 	tic -x terminal-italics/xterm-256color-italic.terminfo
 
 .PHONY: install-fisher
+install-fisher:
 	curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
 	fisher install jorgebucaran/fisher
 	fisher install patrickf1/fzf.fish
+
+../.config/lvim:
+	LV_BRANCH='master' bash <(curl -s https://raw.githubusercontent.com/lunarvim/lunarvim/fc6873809934917b470bff1b072171879899a36b/utils/installer/install.sh)
 
 .PHONY: brew-bundle
 brew-bundle:
@@ -41,7 +42,7 @@ brew-bundle:
 	mkdir -p ~/.docker/cli-plugins
 	ln -sfn $$(brew --prefix)/opt/docker-compose/bin/docker-compose ~/.docker/cli-plugins/docker-compose
 
-../.config/lvim/config.lua:
+../.config/lvim/config.lua: ../.config/lvim
 	ln -sf ~/mac-dotfiles/lvim/config.lua ../.config/lvim/config.lua
 
 .PHONY: setup
