@@ -46,5 +46,8 @@ brew-bundle:
 ../.config/lvim/config.lua: ../.config/lvim
 	ln -sf ~/mac-dotfiles/lvim/config.lua ../.config/lvim/config.lua
 
+../.tmux.conf.local:
+	ln -sf ~/mac-dotfiles/tmux.conf.local ../.tmux.conf.local
+
 .PHONY: setup
-setup: install-terminfo ../.zshrc ../.spacemacs ../tmuxfiles ../.config/nvim /opt/homebrew/bin/brew brew-bundle ../.rvm ../.emacs.d ../.docker/cli-plugins ../.config/fish/config.fish install-fisher ../.config/lvim/config.lua
+setup: install-terminfo ../.zshrc ../.spacemacs ../tmuxfiles ../.config/nvim /opt/homebrew/bin/brew brew-bundle ../.rvm ../.emacs.d ../.docker/cli-plugins ../.config/fish/config.fish install-fisher ../.config/lvim/config.lua ../.tmux.conf.local
