@@ -41,5 +41,8 @@ brew-bundle:
 	mkdir -p ~/.docker/cli-plugins
 	ln -sfn $$(brew --prefix)/opt/docker-compose/bin/docker-compose ~/.docker/cli-plugins/docker-compose
 
+../.config/lvim/config.lua:
+	ln -sf ~/mac-dotfiles/lvim/config.lua ../.config/lvim/config.lua
+
 .PHONY: setup
-setup: install-terminfo ../.zshrc ../.spacemacs ../tmuxfiles ../.config/nvim /opt/homebrew/bin/brew brew-bundle ../.rvm ../.emacs.d ../.docker/cli-plugins ../.config/fish/config.fish install-fisher
+setup: install-terminfo ../.zshrc ../.spacemacs ../tmuxfiles ../.config/nvim /opt/homebrew/bin/brew brew-bundle ../.rvm ../.emacs.d ../.docker/cli-plugins ../.config/fish/config.fish install-fisher ../.config/lvim/config.lua
