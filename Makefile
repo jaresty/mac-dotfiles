@@ -14,6 +14,9 @@
 ../.spacemacs:
 	ln -sf ~/mac-dotfiles/spacemacs ../.spacemacs
 
+../.config/fish/config.fish:
+	ln -sf ~/mac-dotfiles/config.fish ../.config/fish/config.fish
+
 .PHONY: install-terminfo
 install-terminfo:
 	tic -x terminal-italics/tmux-256color.terminfo
@@ -34,5 +37,5 @@ brew-bundle:
 	ln -sfn $$(brew --prefix)/opt/docker-compose/bin/docker-compose ~/.docker/cli-plugins/docker-compose
 
 .PHONY: setup
-setup: install-terminfo ../.zshrc ../.spacemacs ../tmuxfiles ../.config/nvim /opt/homebrew/bin/brew brew-bundle ../.rvm ../.emacs.d ../.docker/cli-plugins
+setup: install-terminfo ../.zshrc ../.spacemacs ../tmuxfiles ../.config/nvim /opt/homebrew/bin/brew brew-bundle ../.rvm ../.emacs.d ../.docker/cli-plugins ../.config/fish/config.fish
 

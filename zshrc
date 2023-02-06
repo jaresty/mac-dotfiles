@@ -126,6 +126,7 @@ export PATH="$PATH:$HOME/go/bin"
 
 autoload -Uz compinit
 compinit
+autoload bashcompinit && bashcompinit
 source <(kubectl completion zsh)
 export TERM=xterm-256color-italic
 
@@ -154,6 +155,7 @@ esac
 
 FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
 source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+complete -C 'aws_completer' aws
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 . /opt/homebrew/opt/asdf/libexec/asdf.sh

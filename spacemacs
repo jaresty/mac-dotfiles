@@ -574,6 +574,7 @@ dump."
 
 (defun dotspacemacs/user-config ()
   (setq yaml-indent-offset 2)
+  (dap-register-debug-provider "ruby" '((dap-ruby-debug-program . "localhost:12345")))
   "Configuration for user code:
 This function is called at the very end of Spacemacs startup, after layer
 configuration.
