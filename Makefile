@@ -49,12 +49,5 @@ brew-bundle:
 ../.tmux.conf.local:
 	ln -sf ~/mac-dotfiles/tmux.conf.local ../.tmux.conf.local
 
-.PHONY: start-emacs-daemon
-start-emacs-daemon:
-	launchctl load -w gnu.emacs.daemon.plist || true
-
-stop-emacs-daemon:
-	launchctl unload -w gnu.emacs.daemon.plist || true
-
 .PHONY: setup
-setup: install-terminfo ../.zshrc ../.spacemacs ../tmuxfiles ../.config/nvim /opt/homebrew/bin/brew brew-bundle ../.rvm ../.emacs.d ../.docker/cli-plugins ../.config/fish/config.fish install-fisher ../.config/lvim/config.lua ../.tmux.conf.local start-emacs-daemon
+setup: install-terminfo ../.zshrc ../.spacemacs ../tmuxfiles ../.config/nvim /opt/homebrew/bin/brew brew-bundle ../.rvm ../.emacs.d ../.docker/cli-plugins ../.config/fish/config.fish install-fisher ../.config/lvim/config.lua ../.tmux.conf.local
