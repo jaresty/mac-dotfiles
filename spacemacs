@@ -39,6 +39,7 @@ This function should only modify configuration layer settings."
      html
      dap
      docker
+     emacs-lisp
      (typescript :variables
                  typescript-fmt-on-save t
                  typescript-linter 'prettier
@@ -376,7 +377,7 @@ It should only modify the values of Spacemacs settings."
    ;; If non-nil the frame is maximized when Emacs starts up.
    ;; Takes effect only if `dotspacemacs-fullscreen-at-startup' is nil.
    ;; (default nil) (Emacs 24.4+ only)
-   dotspacemacs-maximized-at-startup nil
+   dotspacemacs-maximized-at-startup t
 
    ;; If non-nil the frame is undecorated when Emacs starts up. Combine this
    ;; variable with `dotspacemacs-maximized-at-startup' in OSX to obtain
@@ -392,6 +393,11 @@ It should only modify the values of Spacemacs settings."
    ;; the transparency level of a frame when it's inactive or deselected.
    ;; Transparency can be toggled through `toggle-transparency'. (default 90)
    dotspacemacs-inactive-transparency 90
+
+   ;; A value from the range (0..100), in increasing opacity, which describes the
+   ;; transparency level of a frame background when it's active or selected. Transparency
+   ;; can be toggled through `toggle-background-transparency'. (default 90)
+   dotspacemacs-background-transparency 90
 
    ;; If non-nil show the titles of transient states. (default t)
    dotspacemacs-show-transient-state-title t
@@ -575,6 +581,7 @@ dump."
 (defun dotspacemacs/user-config ()
   (setq yaml-indent-offset 2)
   (dap-register-debug-provider "ruby" '((dap-ruby-debug-program . "localhost:12345")))
+  (global-company-mode t)
   "Configuration for user code:
 This function is called at the very end of Spacemacs startup, after layer
 configuration.
@@ -596,7 +603,7 @@ This function is called at the very end of Spacemacs initialization."
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   '(prettier-rc format-all language-id inheritenv bundler chruby enh-ruby-mode minitest rake rbenv robe inf-ruby rspec-mode rubocop rubocopfmt ruby-hash-syntax ruby-refactor ruby-test-mode ruby-tools rvm seeing-is-believing company-terraform terraform-mode hcl-mode tern company-shell fish-mode flycheck-bashate insert-shebang shfmt reformatter gnuplot alert log4e gntp docker tablist aio docker-tramp dockerfile-mode nginx-mode clues-theme company-web web-completion-data counsel-css helm-css-scss impatient-mode htmlize pug-mode sass-mode haml-mode scss-mode slim-mode tagedit add-node-modules-path emmet-mode import-js grizzl typescript-mode web-mode browse-at-remote forge ghub closql emacsql-sqlite emacsql treepy git-gutter-fringe fringe-helper git-gutter git-link git-messenger git-modes git-timemachine gitignore-templates helm-git-grep helm-ls-git mwim smeargle treemacs-magit magit magit-section git-commit with-editor transient unfill ac-ispell auto-complete auto-yasnippet flycheck-pos-tip pos-tip fuzzy helm-c-yasnippet helm-company helm-lsp lsp-origami origami yasnippet-snippets sql-indent sqlup-mode company-php ac-php-core xcscope company-phpactor counsel-gtags counsel swiper ivy dap-mode lsp-docker lsp-treemacs bui yaml lsp-mode drupal-mode geben ggtags helm-gtags php-auto-yasnippets yasnippet php-extras php-mode phpactor composer php-runtime phpcbf phpunit company-emoji company emoji-cheat-sheet-plus gh-md mmm-mode valign vmd-mode ws-butler writeroom-mode winum which-key volatile-highlights vim-powerline vi-tilde-fringe uuidgen use-package undo-tree treemacs-persp treemacs-icons-dired treemacs-evil term-cursor symon symbol-overlay string-inflection string-edit spacemacs-whitespace-cleanup spacemacs-purpose-popwin spaceline-all-the-icons space-doc restart-emacs request rainbow-delimiters quickrun popwin pcre2el password-generator paradox overseer open-junk-file nameless multi-line macrostep lorem-ipsum link-hint inspector info+ indent-guide hybrid-mode hungry-delete holy-mode hl-todo highlight-parentheses highlight-numbers highlight-indentation hide-comnt help-fns+ helm-xref helm-themes helm-swoop helm-purpose helm-mode-manager helm-make helm-flx helm-descbinds helm-ag google-translate golden-ratio font-lock+ flycheck-package flycheck-elsa flx-ido fancy-battery eyebrowse expand-region evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-textobj-line evil-surround evil-nerd-commenter evil-mc evil-matchit evil-lisp-state evil-lion evil-indent-plus evil-iedit-state evil-goggles evil-exchange evil-evilified-state evil-escape evil-ediff evil-easymotion evil-collection evil-cleverparens evil-args evil-anzu eval-sexp-fu emr elisp-slime-nav elisp-def editorconfig dumb-jump drag-stuff dotenv-mode dired-quick-sort diminish devdocs define-word column-enforce-mode clean-aindent-mode centered-cursor-mode auto-highlight-symbol auto-compile aggressive-indent ace-link ace-jump-helm-line lsp-ui)))
+   '(clang-format list-utils package-lint prettier-rc format-all language-id inheritenv bundler chruby enh-ruby-mode minitest rake rbenv robe inf-ruby rspec-mode rubocop rubocopfmt ruby-hash-syntax ruby-refactor ruby-test-mode ruby-tools rvm seeing-is-believing company-terraform terraform-mode hcl-mode tern company-shell fish-mode flycheck-bashate insert-shebang shfmt reformatter gnuplot alert log4e gntp docker tablist aio docker-tramp dockerfile-mode nginx-mode clues-theme company-web web-completion-data counsel-css helm-css-scss impatient-mode htmlize pug-mode sass-mode haml-mode scss-mode slim-mode tagedit add-node-modules-path emmet-mode import-js grizzl typescript-mode web-mode browse-at-remote forge ghub closql emacsql-sqlite emacsql treepy git-gutter-fringe fringe-helper git-gutter git-link git-messenger git-modes git-timemachine gitignore-templates helm-git-grep helm-ls-git mwim smeargle treemacs-magit magit magit-section git-commit with-editor transient unfill ac-ispell auto-complete auto-yasnippet flycheck-pos-tip pos-tip fuzzy helm-c-yasnippet helm-company helm-lsp lsp-origami origami yasnippet-snippets sql-indent sqlup-mode company-php ac-php-core xcscope company-phpactor counsel-gtags counsel swiper ivy dap-mode lsp-docker lsp-treemacs bui yaml lsp-mode drupal-mode geben ggtags helm-gtags php-auto-yasnippets yasnippet php-extras php-mode phpactor composer php-runtime phpcbf phpunit company-emoji company emoji-cheat-sheet-plus gh-md mmm-mode valign vmd-mode ws-butler writeroom-mode winum which-key volatile-highlights vim-powerline vi-tilde-fringe uuidgen use-package undo-tree treemacs-persp treemacs-icons-dired treemacs-evil term-cursor symon symbol-overlay string-inflection string-edit spacemacs-whitespace-cleanup spacemacs-purpose-popwin spaceline-all-the-icons space-doc restart-emacs request rainbow-delimiters quickrun popwin pcre2el password-generator paradox overseer open-junk-file nameless multi-line macrostep lorem-ipsum link-hint inspector info+ indent-guide hybrid-mode hungry-delete holy-mode hl-todo highlight-parentheses highlight-numbers highlight-indentation hide-comnt help-fns+ helm-xref helm-themes helm-swoop helm-purpose helm-mode-manager helm-make helm-flx helm-descbinds helm-ag google-translate golden-ratio font-lock+ flycheck-package flycheck-elsa flx-ido fancy-battery eyebrowse expand-region evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-textobj-line evil-surround evil-nerd-commenter evil-mc evil-matchit evil-lisp-state evil-lion evil-indent-plus evil-iedit-state evil-goggles evil-exchange evil-evilified-state evil-escape evil-ediff evil-easymotion evil-collection evil-cleverparens evil-args evil-anzu eval-sexp-fu emr elisp-slime-nav elisp-def editorconfig dumb-jump drag-stuff dotenv-mode dired-quick-sort diminish devdocs define-word column-enforce-mode clean-aindent-mode centered-cursor-mode auto-highlight-symbol auto-compile aggressive-indent ace-link ace-jump-helm-line lsp-ui)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
