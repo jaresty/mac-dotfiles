@@ -19,7 +19,7 @@ if status is-interactive
 
   export LIBRARY_PATH=$LIBRARY_PATH:$(brew --prefix zstd)/lib/
 
-  export PATH="$HOME/.tfenv/bin:$(brew --prefix)/bin:$HOME/.local/bin:$PATH"
+  export PATH="$HOME/.tfenv/bin:$(brew --prefix)/bin:$HOME/.local/bin:$HOME/mac-dotfiles/bin:$PATH"
 
   alias bashrepl=": | fzf --multi --preview='bash -c {q}' --preview-window=up:70"
   export KUBE_CONFIG_PATH=~/.kube/config
