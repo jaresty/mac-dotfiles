@@ -42,6 +42,7 @@ This function should only modify configuration layer settings."
      docker
      imenu-list
      emacs-lisp
+     prettier
      (typescript :variables
                  typescript-backend 'lsp
                  typescript-fmt-on-save t
@@ -65,7 +66,6 @@ This function should only modify configuration layer settings."
      better-defaults
      git
      (html :variables web-fmt-tool 'web-beautify)
-     prettier
      web-beautify
      helm
      (lsp :variables lsp-lens-enable t lsp-use-lsp-ui t lsp-ui-doc-enable t)
