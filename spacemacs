@@ -45,9 +45,7 @@ This function should only modify configuration layer settings."
      prettier
      (typescript :variables
                  typescript-backend 'lsp
-                 typescript-fmt-on-save t
-                 typescript-linter 'prettier
-                 typescript-fmt-tool 'prettier)
+                 typescript-fmt-on-save t)
      (javascript :variables
                  javascript-backend 'lsp
                  javascript-import-tool 'import-js
