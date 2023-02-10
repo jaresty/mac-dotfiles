@@ -1,3 +1,4 @@
+tap 'railwaycat/emacsmacport'
 tap 'homebrew/cask-fonts'
 tap "homebrew/cask-drivers"
 tap "k1LoW/tap"
@@ -68,7 +69,6 @@ cask "discord"
 brew "docker-compose"
 brew "d2"
 cask "visual-studio-code"
-cask "emacs"
 brew "z"
 brew "tfenv"
 brew "kubectx"
@@ -89,3 +89,4 @@ cask "coscreen"
 brew "grip"
 brew "dive"
 brew "fish"
+cask "emacs-mac"
