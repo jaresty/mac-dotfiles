@@ -585,6 +585,8 @@ dump."
 (defun dotspacemacs/user-config ()
   (setq yaml-indent-offset 2)
   (global-company-mode t)
+  (when (string= system-type "darwin")
+    (setq dired-use-ls-dired nil))
   "Configuration for user code:
 This function is called at the very end of Spacemacs startup, after layer
 configuration.
