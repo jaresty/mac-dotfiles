@@ -67,7 +67,11 @@ This function should only modify configuration layer settings."
      (html :variables web-fmt-tool 'web-beautify)
      web-beautify
      helm
-     (lsp :variables lsp-lens-enable t lsp-use-lsp-ui t lsp-ui-doc-enable t)
+     (lsp :variables
+          lsp-lens-enable t
+          lsp-use-lsp-ui t
+          lsp-ui-doc-enable t
+          lsp-solargraph-use-bundler t)
      (shell-scripts :variables shell-scripts-backend 'lsp)
      multiple-cursors
      syntax-checking
