@@ -11,6 +11,9 @@
 ../.spacemacs:
 	ln -sf ~/mac-dotfiles/spacemacs ../.spacemacs
 
+../.doom.d/:
+	ln -sf ~/mac-dotfiles/doom.d ../.doom.d
+
 ../.config/fish/config.fish:
 	ln -sf ~/mac-dotfiles/config.fish ../.config/fish/config.fish
 
@@ -37,7 +40,12 @@ brew-bundle:
 	\curl -sSL https://get.rvm.io | bash
 
 ../.emacs.d:
-	git clone https://github.com/syl20bnr/spacemacs ../.emacs.d
+	git clone https://github.com/doomemacs/doomemacs.git ../.emacs.d
+
+.PHONY: doom-setup
+doom-setup:
+	../.emacs.d/bin/doom sync
+	../.emacs.d/bin/doom up
 
 ../.docker/cli-plugins:
 	mkdir -p ~/.docker/cli-plugins
@@ -50,4 +58,4 @@ brew-bundle:
 	ln -sf ~/mac-dotfiles/tmux.conf.local ../.tmux.conf.local
 
 .PHONY: setup
-setup: install-terminfo ../.zshrc ../.spacemacs ../tmuxfiles ../.config/nvim /opt/homebrew/bin/brew brew-bundle ../.rvm ../.emacs.d ../.docker/cli-plugins ../.config/fish/config.fish install-fisher ../.config/lvim/config.lua ../.tmux.conf.local
+setup: install-terminfo ../.zshrc ../.spacemacs ../tmuxfiles ../.config/nvim /opt/homebrew/bin/brew brew-bundle ../.rvm ../.emacs.d ../.docker/cli-plugins ../.config/fish/config.fish install-fisher ../.config/lvim/config.lua ../.tmux.conf.local ./.doom.d

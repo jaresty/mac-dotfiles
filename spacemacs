@@ -589,7 +589,8 @@ dump."
   (setq yaml-indent-offset 2)
   (global-company-mode t)
   (when (string= system-type "darwin")
-    (setq dired-use-ls-dired nil))
+    (require 'ls-lisp)
+    (setq ls-lisp-use-insert-directory-program nil))
   (setq mouse-autoselect-window t)
   "Configuration for user code:
 This function is called at the very end of Spacemacs startup, after layer
