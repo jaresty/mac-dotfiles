@@ -42,6 +42,9 @@
 ;; change `org-directory'. It must be set before org loads!
 (setq org-directory "~/org/")
 (setq typescript-indent-level 2)
+(setq mouse-autoselect-window t)
+(setq lsp-ui-doc-show-with-cursor t)
+(setq lsp-ui-doc-show-with-mouse t)
 
 ;; Whenever you reconfigure a package, make sure to wrap your config in an
 ;; `after!' block, otherwise Doom's defaults may override your settings. E.g.
