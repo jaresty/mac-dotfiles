@@ -46,6 +46,8 @@ brew-bundle:
 doom-setup:
 	../.emacs.d/bin/doom sync
 	../.emacs.d/bin/doom up
+	npm i -g typescript-language-server
+	npm i -g typescript
 
 ../.docker/cli-plugins:
 	mkdir -p ~/.docker/cli-plugins
