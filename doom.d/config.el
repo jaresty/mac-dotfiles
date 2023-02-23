@@ -37,14 +37,26 @@
 ;; This determines the style of line numbers in effect. If set to `nil', line
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
 (setq display-line-numbers-type t)
+(setq mouse-autoselect-window t)
 
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
-(setq org-directory "~/org/")
-(setq typescript-indent-level 2)
-(setq mouse-autoselect-window t)
-(setq lsp-ui-doc-show-with-cursor t)
-(setq lsp-ui-doc-show-with-mouse t)
+
+(after! org
+  (setq org-directory "~/org/")
+  )
+
+(after! typescript-mode
+  (setq typescript-indent-level 2)
+  )
+(after! lsp-ui
+  (setq lsp-ui-doc-show-with-cursor t)
+  (setq lsp-ui-doc-show-with-mouse t)
+  )
+
+(after! lsp-javascript
+  (setq lsp-clients-typescript-log-verbosity "terse")
+  )
 
 ;; Whenever you reconfigure a package, make sure to wrap your config in an
 ;; `after!' block, otherwise Doom's defaults may override your settings. E.g.
