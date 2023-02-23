@@ -46,17 +46,33 @@
   (setq org-directory "~/org/")
   )
 
+(after! evil-vars
+  (setq evil-shift-width 2)
+  )
+
+(setq tab-width 2)
+(after! indent
+  (setq standard-indent 2)
+  )
 (after! typescript-mode
   (setq typescript-indent-level 2)
+  (setq-hook! 'typescript-mode-hook +format-with 'prettier)
   )
 (after! lsp-ui
   (setq lsp-ui-doc-show-with-cursor t)
   (setq lsp-ui-doc-show-with-mouse t)
   )
+(after! lsp-mode
+  (advice-add 'json-parse-string :around
+              (lambda (orig string &rest rest)
+                (apply orig (s-replace "\\u0000" "" string)
+                       rest)))
+  (advice-add 'json-parse-buffer :around
+              (lambda (orig &rest rest)
+                (while (re-search-forward "\\u0000" nil t)
+                  (replace-match ""))
+                (apply orig rest))))
 
-(after! lsp-javascript
-  (setq lsp-clients-typescript-log-verbosity "terse")
-  )
 
 ;; Whenever you reconfigure a package, make sure to wrap your config in an
 ;; `after!' block, otherwise Doom's defaults may override your settings. E.g.
