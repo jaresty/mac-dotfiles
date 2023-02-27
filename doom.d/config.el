@@ -59,7 +59,6 @@
   (setq-hook! 'typescript-mode-hook +format-with 'prettier)
   )
 (after! lsp-ui
-  (setq lsp-ui-doc-show-with-cursor t)
   (setq lsp-ui-doc-show-with-mouse t)
   )
 (after! lsp-mode
