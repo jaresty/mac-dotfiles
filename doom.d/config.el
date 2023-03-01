@@ -62,7 +62,9 @@
 (after! lsp-ui
   (setq lsp-ui-doc-show-with-cursor t)
   (setq lsp-ui-doc-show-with-mouse t)
-  (setq lsp-ui-doc-position 'top)
+  (setq lsp-ui-doc-header t)
+  (setq lsp-ui-sideline-show-hover t)
+  ;; (setq lsp-ui-doc-position 'top)
   )
 (after! lsp-mode
   (advice-add 'json-parse-string :around
