@@ -57,13 +57,15 @@
 (after! typescript-mode
   (setq typescript-indent-level 2)
   (setq-hook! 'typescript-mode-hook +format-with 'prettier)
+  (add-hook! typescript-tsx-mode 'jest-minor-mode)
+  (add-hook! typescript-mode 'jest-minor-mode)
   )
 
 (after! lsp-ui
-  (setq lsp-ui-doc-show-with-cursor t)
   (setq lsp-ui-doc-show-with-mouse t)
   (setq lsp-ui-doc-header t)
   (setq lsp-ui-sideline-show-hover t)
+  ;; (setq lsp-ui-doc-show-with-cursor t)
   ;; (setq lsp-ui-doc-position 'top)
   )
 (after! lsp-mode
