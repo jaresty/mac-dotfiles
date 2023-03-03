@@ -60,6 +60,18 @@
   (add-hook! typescript-tsx-mode 'jest-minor-mode)
   (add-hook! typescript-mode 'jest-minor-mode)
   )
+;; (after! dap-mode
+;;   (dap-register-debug-template
+;;  "Jest debug"
+;;  (list :type "node"
+;;        :request "launch"
+;;        :name "Jest debug"
+;;        :protocol "inspector"
+;;        :program (concat (projectile-project-root) "/node_modules/jest/bin/jest.js")
+;;        :args '()
+;;        :cwd (projectile-project-root)
+;;        :console "integratedTerminal"))
+;;   )
 
 (after! lsp-ui
   (setq lsp-ui-doc-show-with-mouse t)
