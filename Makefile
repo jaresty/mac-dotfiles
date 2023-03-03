@@ -36,6 +36,9 @@ install-fisher:
 brew-bundle:
 	brew bundle
 
+/opt/homebrew/opt/emacs-mac/Emacs.app: brew-bundle
+	ln -s /opt/homebrew/opt/emacs-mac/Emacs.app /Applications
+
 ../.rvm:
 	\curl -sSL https://get.rvm.io | bash
 
@@ -43,7 +46,7 @@ brew-bundle:
 	git clone https://github.com/doomemacs/doomemacs.git ../.config/emacs
 
 .PHONY: doom-setup
-doom-setup:
+doom-setup: /opt/homebrew/opt/emacs-mac/Emacs.app
 	../.config/emacs/bin/doom sync
 	../.config/emacs/bin/doom up
 	npm i -g typescript-language-server
@@ -60,4 +63,4 @@ doom-setup:
 	ln -sf ~/mac-dotfiles/tmux.conf.local ../.tmux.conf.local
 
 .PHONY: setup
-setup: install-terminfo ../.zshrc ../.spacemacs ../tmuxfiles ../.config/nvim /opt/homebrew/bin/brew brew-bundle ../.rvm ../.config/emacs ../.docker/cli-plugins ../.config/fish/config.fish install-fisher ../.config/lvim/config.lua ../.tmux.conf.local ./.doom.d
+setup: install-terminfo ../.zshrc ../.spacemacs ../tmuxfiles ../.config/nvim /opt/homebrew/bin/brew brew-bundle ../.rvm ../.config/emacs ../.docker/cli-plugins ../.config/fish/config.fish install-fisher ../.config/lvim/config.lua ../.tmux.conf.local ./.doom.d /opt/homebrew/opt/emacs-mac/Emacs.app

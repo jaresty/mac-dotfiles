@@ -89,7 +89,7 @@ cask 'coscreen'
 brew 'grip'
 brew 'dive'
 brew 'fish'
-cask 'emacs-mac'
+brew 'emacs-mac', args: ["with-mac-metal", "with-native-comp", "with-no-title-bars", "with-modern-icon", "with-glib", "with-imagemagick", "with-librsvg"]
 cask 'zeplin'
 brew 'php'
 brew 'shellcheck'
