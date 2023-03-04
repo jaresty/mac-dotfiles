@@ -11,7 +11,7 @@
 ../.spacemacs:
 	ln -sf ~/mac-dotfiles/spacemacs ../.spacemacs
 
-../.doom.d/:
+../.doom.d:
 	ln -sf ~/mac-dotfiles/doom.d ../.doom.d
 
 ../.config/fish/config.fish:
@@ -24,13 +24,14 @@ install-terminfo:
 
 .PHONY: install-fisher
 install-fisher:
-	curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
-	fisher install jorgebucaran/fisher
-	fisher install patrickf1/fzf.fish
-	fisher install jethrokuan/z
+	fish -c "curl -sL https://git.io/fisher | source - && fisher install jorgebucaran/fisher"
+	fish -c "fisher install jorgebucaran/fisher"
+	fish -c "fisher install patrickf1/fzf.fish"
+	fish -c "fisher install jethrokuan/z"
 
 ../.config/lvim:
-	LV_BRANCH='master' bash <(curl -s https://raw.githubusercontent.com/lunarvim/lunarvim/fc6873809934917b470bff1b072171879899a36b/utils/installer/install.sh)
+	export LV_BRANCH=master
+	curl -s https://raw.githubusercontent.com/lunarvim/lunarvim/fc6873809934917b470bff1b072171879899a36b/utils/installer/install.sh | bash
 
 .PHONY: brew-bundle
 brew-bundle:
@@ -63,4 +64,4 @@ doom-setup: /opt/homebrew/opt/emacs-mac/Emacs.app
 	ln -sf ~/mac-dotfiles/tmux.conf.local ../.tmux.conf.local
 
 .PHONY: setup
-setup: install-terminfo ../.zshrc ../.spacemacs ../tmuxfiles ../.config/nvim /opt/homebrew/bin/brew brew-bundle ../.rvm ../.config/emacs.d ../.docker/cli-plugins ../.config/fish/config.fish install-fisher ../.config/lvim/config.lua ../.tmux.conf.local ./.doom.d /opt/homebrew/opt/emacs-mac/Emacs.app
+setup: install-terminfo ../.zshrc ../.spacemacs ../tmuxfiles /opt/homebrew/bin/brew brew-bundle ../.rvm ../.config/emacs.d ../.docker/cli-plugins ../.config/fish/config.fish install-fisher ../.config/lvim/config.lua ../.tmux.conf.local ../.doom.d /opt/homebrew/opt/emacs-mac/Emacs.app
