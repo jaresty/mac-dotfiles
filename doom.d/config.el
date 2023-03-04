@@ -90,6 +90,7 @@
                 (while (re-search-forward "\\u0000" nil t)
                   (replace-match ""))
                 (apply orig rest))))
+(add-to-list 'auto-mode-alist '("\\.d2\\'" . d2-mode))
 
 
 ;; Whenever you reconfigure a package, make sure to wrap your config in an
