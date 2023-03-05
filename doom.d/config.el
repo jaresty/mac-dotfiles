@@ -61,6 +61,10 @@
   (add-hook! typescript-mode 'jest-minor-mode)
   )
 
+(after! sql
+  (setq sql-mysql-login-params '(user password server database port))
+  )
+
 (after! dap-mode
   (dap-register-debug-template "Node: Attach"
     (list :type "node"
