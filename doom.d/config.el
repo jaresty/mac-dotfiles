@@ -63,11 +63,6 @@
 (after! evil-vars
   (setq evil-shift-width 2)
   )
-(use-package! ox-jira
-  :after org)
-(after! ox-jira
-  (add-to-list 'org-export-backends 'jira)
-  )
 (use-package! ox-slack
   :after org)
 (after! ox-slack
