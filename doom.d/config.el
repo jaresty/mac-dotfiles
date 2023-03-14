@@ -57,6 +57,9 @@
                            ("~/gtd/someday.org" :level . 1)
                            ("~/gtd/tickler.org" :maxlevel . 2)))
   (setq org-todo-keywords '((sequence "TODO(t)" "WAITING(w)" "|" "DONE(d)" "CANCELLED(c)")))
+  (org-babel-do-load-languages
+   'org-babel-load-languages
+   '((d2 . t)))
   )
 
 (setq fancy-splash-image (concat doom-private-dir "splash.png"))
