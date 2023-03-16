@@ -115,6 +115,9 @@
                 (apply orig rest))))
 (add-to-list 'auto-mode-alist '("\\.d2\\'" . d2-mode))
 
+(after! flycheck
+  (setq next-error-find-buffer-function 'next-error-buffer-unnavigated-current)
+  )
 
 ;; Whenever you reconfigure a package, make sure to wrap your config in an
 ;; `after!' block, otherwise Doom's defaults may override your settings. E.g.
