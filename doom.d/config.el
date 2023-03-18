@@ -66,6 +66,10 @@
 (after! evil-vars
   (setq evil-shift-width 2)
   )
+(after! evil
+  (evil-define-key 'normal 'global (kbd "M-.") '+lookup/definition)
+  (evil-define-key 'insert company-mode-map (kbd "M-/") 'complete-symbol)
+  )
 (use-package! ox-slack
   :after org)
 (after! ox-slack
