@@ -68,7 +68,7 @@
   )
 (after! evil
   (evil-define-key 'normal 'global (kbd "M-.") '+lookup/definition)
-  (evil-define-key 'insert company-mode-map (kbd "M-/") 'complete-symbol)
+  (evil-define-key '(insert normal) 'global (kbd "M-/") 'complete-symbol)
   )
 (use-package! ox-slack
   :after org)
