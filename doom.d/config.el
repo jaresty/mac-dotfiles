@@ -66,6 +66,9 @@
 (after! evil-vars
   (setq evil-shift-width 2)
   )
+
+(global-subword-mode)
+
 (after! evil
   (evil-define-key 'normal 'global (kbd "M-.") '+lookup/definition)
   (evil-define-key '(insert normal) 'global (kbd "M-/") 'complete-symbol)
