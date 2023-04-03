@@ -60,9 +60,12 @@ doom-setup: /opt/homebrew/opt/emacs-mac/Emacs.app ../.config/emacs luansevka
 ../.tmux.conf.local:
 	ln -sf ~/mac-dotfiles/tmux.conf.local ../.tmux.conf.local
 
+/etc/paths.d/20-homebrew:
+	sudo bash -c 'echo "/opt/homebrew/bin:/opt/homebrew/sbin" > /etc/paths.d/20-homebrew'
+
 .PHONY: luansevka
 luansevka:
 	curl -L https://github.com/luan/luansevka/raw/main/fonts/nerd-font/luansevka-slab/Luansevka%20Slab%20Nerd%20Font%20Complete%20Mono.ttf -o ~/Library/Fonts/Luansevka\ Slab\ Nerd\ Font\ Complete\ Mono.ttf
 
 .PHONY: setup
-setup: install-terminfo ../.zshrc ../tmuxfiles /opt/homebrew/bin/brew brew-bundle ../.rvm ../.config/emacs ../.docker/cli-plugins ../.config/fish/config.fish install-fisher ../.config/lvim/config.lua ../.tmux.conf.local ../.doom.d /opt/homebrew/opt/emacs-mac/Emacs.app luansevka
+setup: install-terminfo ../.zshrc ../tmuxfiles /opt/homebrew/bin/brew brew-bundle ../.rvm ../.config/emacs ../.docker/cli-plugins ../.config/fish/config.fish install-fisher ../.config/lvim/config.lua ../.tmux.conf.local ../.doom.d /opt/homebrew/opt/emacs-mac/Emacs.app luansevka /etc/paths.d/20-homebrew
