@@ -49,6 +49,8 @@ doom-setup: /opt/homebrew/opt/emacs-mac/Emacs.app ../.config/emacs luansevka
 	../.config/emacs/bin/doom up
 	npm i -g typescript-language-server
 	npm i -g typescript
+	npm install -g @georgesg/arc-cli
+	npm install -g @graphprotocol/graph-cli
 
 ../.docker/cli-plugins:
 	mkdir -p ~/.docker/cli-plugins

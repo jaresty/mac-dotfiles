@@ -59,6 +59,7 @@ if status is-interactive
 	    set -gx fish_complete_path $fish_complete_path (brew --prefix)/share/fish/vendor_completions.d
 	end
 
+  fish_add_path /opt/homebrew/opt/openjdk/bin
 	. /opt/homebrew/opt/asdf/libexec/asdf.fish
 	export LDFLAGS="-L/opt/homebrew/opt/capstone/lib"
 	export CPPFLAGS="-I/opt/homebrew/opt/capstone/include"

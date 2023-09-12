@@ -1,0 +1,3 @@
+#!/bin/bash
+
+arc-cli new-little-arc "http://$1"

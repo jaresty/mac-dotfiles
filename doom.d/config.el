@@ -39,8 +39,11 @@
 (setq display-line-numbers-type t)
 (setq mouse-autoselect-window t)
 (after! vterm
-  (setq vterm-shell "/opt/homebrew/bin/fish")
+  (setq vterm-shell "/bin/bash")
   )
+
+(setq browse-url-browser-function 'browse-url-generic browse-url-generic-program "arc-cli" browse-url-generic-args '("new-little-arc"))
+
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
 
