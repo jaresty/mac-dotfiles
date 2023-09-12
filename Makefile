@@ -35,7 +35,7 @@ brew-bundle:
 	brew bundle
 
 /opt/homebrew/opt/emacs-mac/Emacs.app: brew-bundle
-	ln -sf /opt/homebrew/opt/emacs-mac/Emacs.app /Applications
+	sudo ln -sf /opt/homebrew/opt/emacs-mac/Emacs.app /Applications
 
 ../.rvm:
 	\curl -sSL https://get.rvm.io | bash
@@ -45,8 +45,9 @@ brew-bundle:
 
 .PHONY: doom-setup
 doom-setup: /opt/homebrew/opt/emacs-mac/Emacs.app ../.config/emacs luansevka
-	../.config/emacs/bin/doom sync
-	../.config/emacs/bin/doom up
+	bash -ic "SHELL='/bin/bash' ../.config/emacs/bin/doom sync"
+	bash -ic "SHELL='/bin/bash' ../.config/emacs/bin/doom up"
+
 	npm i -g typescript-language-server
 	npm i -g typescript
 	npm install -g @georgesg/arc-cli
