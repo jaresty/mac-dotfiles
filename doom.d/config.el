@@ -81,6 +81,10 @@
   (add-to-list 'org-export-backends 'slack)
   )
 
+
+(use-package code-compass
+  :load-path "~/.emacs.d/lisp")
+
 (setq tab-width 2)
 (after! indent
   (setq standard-indent 2)
