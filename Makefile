@@ -53,6 +53,10 @@ doom-setup: /opt/homebrew/opt/emacs-mac/Emacs.app ../.config/emacs luansevka
 	npm install -g @georgesg/arc-cli
 	npm install -g @graphprotocol/graph-cli
 
+.PHONY: install-go-binaries
+install-go-binaries:
+	go install github.com/maaslalani/confetty@latest
+
 ../.docker/cli-plugins:
 	mkdir -p ~/.docker/cli-plugins
 	ln -sfn $$(brew --prefix)/opt/docker-compose/bin/docker-compose ~/.docker/cli-plugins/docker-compose
@@ -75,4 +79,4 @@ luansevka:
 
 .PHONY: setup
 
-setup: install-terminfo ../.zshrc ../tmuxfiles /opt/homebrew/bin/brew brew-bundle ../.rvm ../.config/emacs ../.docker/cli-plugins ../.config/fish/config.fish install-fisher ../.config/lvim/config.lua ../.tmux.conf.local ../.doom.d /opt/homebrew/opt/emacs-mac/Emacs.app luansevka /etc/paths.d/20-homebrew ~/.docker/cli-plugins/docker-buildx
+setup: install-terminfo ../.zshrc ../tmuxfiles /opt/homebrew/bin/brew brew-bundle ../.rvm ../.config/emacs ../.docker/cli-plugins ../.config/fish/config.fish install-fisher ../.config/lvim/config.lua ../.tmux.conf.local ../.doom.d /opt/homebrew/opt/emacs-mac/Emacs.app luansevka /etc/paths.d/20-homebrew ~/.docker/cli-plugins/docker-buildx install-go-binaries

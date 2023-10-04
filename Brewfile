@@ -89,7 +89,7 @@ cask 'coscreen'
 brew 'grip'
 brew 'dive'
 brew 'fish'
-brew 'emacs-mac',
+brew 'emacs-mac@28',
      args: %w[with-mac-metal with-native-comp with-no-title-bars with-modern-icon with-glib with-imagemagick
               with-librsvg]
 cask 'zeplin'
@@ -108,3 +108,4 @@ brew 'terraform-ls'
 brew 'git-extras'
 brew 'cloc'
 brew 'java'
+brew 'countdown'
