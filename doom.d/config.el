@@ -39,7 +39,7 @@
 (setq display-line-numbers-type t)
 (setq mouse-autoselect-window t)
 (after! vterm
-  (setq vterm-shell "/bin/bash")
+  (setq vterm-shell "/opt/homebrew/bin/fish")
   )
 
 (setq browse-url-browser-function 'browse-url-generic browse-url-generic-program "arc-cli" browse-url-generic-args '("new-little-arc"))
