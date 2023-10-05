@@ -39,8 +39,8 @@ install-fisher:
 brew-bundle:
 	brew bundle
 
-/opt/homebrew/opt/emacs-mac/Emacs.app: brew-bundle
-	sudo ln -sf /opt/homebrew/opt/emacs-mac/Emacs.app /Applications
+/opt/homebrew/opt/emacs-mac@28/Emacs.app: brew-bundle
+	sudo ln -sf /opt/homebrew/opt/emacs-mac@28/Emacs.app /Applications
 
 ../.rvm:
 	\curl -sSL https://get.rvm.io | bash
@@ -84,4 +84,4 @@ luansevka:
 
 .PHONY: setup
 
-setup: install-terminfo ../.zshrc ../tmuxfiles /opt/homebrew/bin/brew brew-bundle ../.rvm ../.config/emacs ../.docker/cli-plugins ../.config/fish/config.fish install-fisher ../.config/lvim/config.lua ../.tmux.conf.local ../.doom.d /opt/homebrew/opt/emacs-mac/Emacs.app luansevka /etc/paths.d/20-homebrew ~/.docker/cli-plugins/docker-buildx install-go-binaries install-tmux
+setup: install-terminfo ../.zshrc ../tmuxfiles /opt/homebrew/bin/brew brew-bundle ../.rvm ../.config/emacs ../.docker/cli-plugins ../.config/fish/config.fish install-fisher ../.config/lvim/config.lua ../.tmux.conf.local ../.doom.d /opt/homebrew/opt/emacs-mac@28/Emacs.app luansevka /etc/paths.d/20-homebrew ~/.docker/cli-plugins/docker-buildx install-go-binaries install-tmux
