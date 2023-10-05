@@ -1,9 +1,13 @@
 ../tmuxfiles:
 	git clone https://github.com/luan/tmuxfiles.git ~/tmuxfiles
-	~/tmuxfiles/install
 
 /opt/homebrew/bin/brew:
-	/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+	./scripts/install-homebrew
+
+.PHONY: install-tmux
+install-tmux:
+	~/tmuxfiles/install
+
 
 ../.zshrc:
 	ln -sf ~/mac-dotfiles/zshrc ../.zshrc
@@ -12,6 +16,7 @@
 	ln -sf ~/mac-dotfiles/doom.d ../.doom.d
 
 ../.config/fish/config.fish:
+	mkdir -p ../.config/fish/
 	ln -sf ~/mac-dotfiles/config.fish ../.config/fish/config.fish
 
 .PHONY: install-terminfo
@@ -79,4 +84,4 @@ luansevka:
 
 .PHONY: setup
 
-setup: install-terminfo ../.zshrc ../tmuxfiles /opt/homebrew/bin/brew brew-bundle ../.rvm ../.config/emacs ../.docker/cli-plugins ../.config/fish/config.fish install-fisher ../.config/lvim/config.lua ../.tmux.conf.local ../.doom.d /opt/homebrew/opt/emacs-mac/Emacs.app luansevka /etc/paths.d/20-homebrew ~/.docker/cli-plugins/docker-buildx install-go-binaries
+setup: install-terminfo ../.zshrc ../tmuxfiles /opt/homebrew/bin/brew brew-bundle ../.rvm ../.config/emacs ../.docker/cli-plugins ../.config/fish/config.fish install-fisher ../.config/lvim/config.lua ../.tmux.conf.local ../.doom.d /opt/homebrew/opt/emacs-mac/Emacs.app luansevka /etc/paths.d/20-homebrew ~/.docker/cli-plugins/docker-buildx install-go-binaries install-tmux

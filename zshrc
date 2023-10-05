@@ -161,3 +161,6 @@ complete -C 'aws_completer' aws
 . /opt/homebrew/opt/asdf/libexec/asdf.sh
 export LDFLAGS="-L/opt/homebrew/opt/capstone/lib"
 export CPPFLAGS="-I/opt/homebrew/opt/capstone/include"
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
