@@ -22,7 +22,7 @@
 ;; accept. For example:
 ;;
 (setq doom-font (font-spec :family "Luansevka Nerd Font Mono" :size 16 :weight 'normal))
-     ;; doom-variable-pitch-font (font-spec :family "Luansevka Nerd Font Mono" :size 16))
+;; doom-variable-pitch-font (font-spec :family "Luansevka Nerd Font Mono" :size 16))
 ;;
 ;; If you or Emacs can't find your font, use 'M-x describe-font' to look them
 ;; up, `M-x eval-region' to execute elisp code, and 'M-x doom/reload-font' to
@@ -66,14 +66,13 @@
                                  (file+headline "~/gtd/tickler.org" "Tickler")
                                  "* %i%? \n %U")))
   (setq org-refile-targets '(("~/gtd/gtd.org" :maxlevel . 3)
-                           ("~/gtd/someday.org" :level . 1)
-                           ("~/gtd/tickler.org" :maxlevel . 2)))
+                             ("~/gtd/someday.org" :level . 1)
+                             ("~/gtd/tickler.org" :maxlevel . 2)))
   (setq org-todo-keywords '((sequence "TODO(t)" "WAITING(w)" "|" "DONE(d)" "CANCELLED(c)")))
   (org-babel-do-load-languages
    'org-babel-load-languages
    '((d2 . t)))
   )
-
 (setq fancy-splash-image (concat doom-private-dir "splash.png"))
 (after! evil-vars
   (setq evil-shift-width 2)
@@ -112,12 +111,12 @@
 
 (after! dap-mode
   (dap-register-debug-template "Node: Attach"
-    (list :type "node"
-          :cwd nil
-          :request "attach"
-          :program nil
-          :port 9229
-          :name "Node::Run")))
+                               (list :type "node"
+                                     :cwd nil
+                                     :request "attach"
+                                     :program nil
+                                     :port 9229
+                                     :name "Node::Run")))
 
 (after! lsp-ui
   (setq lsp-ui-doc-show-with-mouse t)
@@ -137,6 +136,7 @@
                   (replace-match ""))
                 (apply orig rest))))
 (add-to-list 'auto-mode-alist '("\\.d2\\'" . d2-mode))
+(add-to-list 'auto-mode-alist '("\\.prisma\\'" . prisma-mode))
 
 (after! flycheck
   (setq next-error-find-buffer-function 'next-error-buffer-unnavigated-current)
