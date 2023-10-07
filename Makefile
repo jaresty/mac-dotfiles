@@ -49,7 +49,7 @@ brew-bundle:
 	git clone https://github.com/doomemacs/doomemacs.git ../.config/emacs
 
 .PHONY: doom-setup
-doom-setup: /opt/homebrew/opt/emacs-mac/Emacs.app ../.config/emacs luansevka
+doom-setup: /opt/homebrew/opt/emacs-mac@28/Emacs.app ../.config/emacs luansevka
 	bash -ic "SHELL='/bin/bash' ../.config/emacs/bin/doom sync"
 	bash -ic "SHELL='/bin/bash' ../.config/emacs/bin/doom up"
 
