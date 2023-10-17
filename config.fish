@@ -55,6 +55,10 @@ if status is-interactive
         curl -s https://raw.githubusercontent.com/f/awesome-chatgpt-prompts/main/prompts.csv | tail +2 | ruby -rcsv -e 'CSV.parse(STDIN.read) {|row| puts row.join("\t")}' | fzf --with-nth 1 --delimiter "\t" --preview 'echo {2} | fold -s -w $(tput cols)'
     end
 
+    function fish_user_key_bindings
+        bind \cs pet-select
+    end
+
     set FPATH "$(brew --prefix)/share/zsh/site-functions:{$FPATH}"
     if test -d (brew --prefix)"/share/fish/completions"
         set -gx fish_complete_path $fish_complete_path (brew --prefix)/share/fish/completions
