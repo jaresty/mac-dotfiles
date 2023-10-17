@@ -298,7 +298,7 @@
     },
     "brew": {
       "neovim": {
-        "version": "0.9.4",
+        "version": "HEAD-aa62579",
         "bottle": {
           "rebuild": 0,
           "root_url": "https://ghcr.io/v2/homebrew/core",
