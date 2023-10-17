@@ -67,7 +67,7 @@ if status is-interactive
     if test -d (brew --prefix)"/share/fish/vendor_completions.d"
         set -gx fish_complete_path $fish_complete_path (brew --prefix)/share/fish/vendor_completions.d
     end
-
+    fzf_configure_bindings --directory=\ct --git_log=\cg --processes=\cq
     fish_add_path /opt/homebrew/opt/openjdk/bin
     . /opt/homebrew/opt/asdf/libexec/asdf.fish
     export LDFLAGS="-L/opt/homebrew/opt/capstone/lib"
