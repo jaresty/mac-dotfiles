@@ -146,7 +146,7 @@
         }
       },
       "loom": {
-        "version": "0.178.2",
+        "version": "0.179.4",
         "options": {
           "full_name": "loom"
         }
