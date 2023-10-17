@@ -62,7 +62,7 @@ if status is-interactive
     # Usage: ai fetch ip address
     # Requires OPENAI_API_KEY to be set
     function ai
-        set text "System is (uname -o), version (uname -r). Write a bash command to $argv. Return only the bash command, no other text. Do not describe what it is. I want to copy/paste exactly what you return and run it directly in a terminal."
+        set text "System is $(uname -o), version $(uname -r). Write a bash command to $argv. Return only the bash command, no other text. Do not describe what it is. I want to copy/paste exactly what you return and run it directly in a terminal."
         set response (curl -s -X POST -H "Content-Type: application/json" -H "Authorization: Bearer $OPENAI_API_KEY" -d '{"prompt": "'"$text"'", "max_tokens": 300, "model": "gpt-3.5-turbo-instruct"}' https://api.openai.com/v1/completions)
         set completion (echo "$response" | tr -d '\n' | jq -r '.choices[0].text')
         echo -z "$completion"
