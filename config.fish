@@ -52,7 +52,7 @@ if status is-interactive
   "
 
     function ap
-        curl -s https://raw.githubusercontent.com/f/awesome-chatgpt-prompts/main/prompts.csv | tail +2 | ruby -rcsv -e 'CSV.parse(STDIN.read) {|row| puts row.join("\t")}' | fzf --with-nth 1 --delimiter "\t" --preview 'echo {2} | fold -s -w $(tput cols)'
+        curl -s https://raw.githubusercontent.com/f/awesome-chatgpt-prompts/main/prompts.csv | tail +2 | ruby -rcsv -e 'CSV.parse(STDIN.read) {|row| puts row.join("\t")}' | fzf -q "$argv" --with-nth 1 --delimiter "\t" --preview 'echo {2} | fold -s -w $(tput cols)' | cut -d"	" -f2
     end
 
     function fish_user_key_bindings
