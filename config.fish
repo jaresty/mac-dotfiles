@@ -72,4 +72,7 @@ if status is-interactive
     . /opt/homebrew/opt/asdf/libexec/asdf.fish
     export LDFLAGS="-L/opt/homebrew/opt/capstone/lib"
     export CPPFLAGS="-I/opt/homebrew/opt/capstone/include"
+    alias u="cd .."
+    alias uu="cd ../.."
+    alias uu="cd ../../.."
 end
