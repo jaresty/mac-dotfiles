@@ -114,3 +114,4 @@ cask 'slack'
 brew 'mods'
 brew 'pet'
 brew 'ranger'
+brew 'smug' # https://github.com/ivaaaan/smug
