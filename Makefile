@@ -19,6 +19,10 @@ install-tmux:
 	mkdir -p ../.config/fish/
 	ln -sf ~/mac-dotfiles/config.fish ../.config/fish/config.fish
 
+../.config/fish/abbr.fish:
+	mkdir -p ../.config/fish/
+	ln -sf ~/mac-dotfiles/abbr.fish ../.config/fish/abbr.fish
+
 .PHONY: install-terminfo
 install-terminfo:
 	tic -x terminal-italics/tmux-256color.terminfo
@@ -86,7 +90,7 @@ luansevka:
 
 .PHONY: setup
 
-setup: install-terminfo ../.zshrc ../tmuxfiles /opt/homebrew/bin/brew brew-bundle ../.rvm ../.config/emacs ../.docker/cli-plugins ../.config/fish/config.fish install-fisher ../.config/lvim/config.lua ../.tmux.conf.local ../.doom.d /opt/homebrew/opt/emacs-mac@28/Emacs.app luansevka /etc/paths.d/20-homebrew ~/.docker/cli-plugins/docker-buildx install-go-binaries install-tmux
+setup: install-terminfo ../.zshrc ../tmuxfiles /opt/homebrew/bin/brew brew-bundle ../.rvm ../.config/emacs ../.docker/cli-plugins ../.config/fish/config.fish install-fisher ../.config/lvim/config.lua ../.tmux.conf.local ../.doom.d /opt/homebrew/opt/emacs-mac@28/Emacs.app luansevka /etc/paths.d/20-homebrew ~/.docker/cli-plugins/docker-buildx install-go-binaries install-tmux ../.config/fish/abbr.fish
 
 .PHONY: pull
 pull:
