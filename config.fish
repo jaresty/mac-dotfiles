@@ -11,6 +11,7 @@ if status is-interactive
     export CPPFLAGS="-I/opt/homebrew/opt/capstone/include"
 
     fish_add_path /opt/homebrew/opt/openjdk/bin
+    fish_vi_key_bindings
 
     # Aliases
     git config --global alias.ci commit
