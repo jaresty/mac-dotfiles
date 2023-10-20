@@ -11,7 +11,6 @@ if status is-interactive
     export CPPFLAGS="-I/opt/homebrew/opt/capstone/include"
 
     fish_add_path /opt/homebrew/opt/openjdk/bin
-    fish_vi_key_bindings
 
     # Aliases
     git config --global alias.ci commit
@@ -77,7 +76,8 @@ if status is-interactive
     end
 
     function fish_user_key_bindings
-        bind \cs pet-select
+        fish_vi_key_bindings
+        bind -M insert \cs pet-select
     end
 
     # Usage: ai fetch ip address
