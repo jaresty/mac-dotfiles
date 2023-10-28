@@ -46,7 +46,7 @@ brew-bundle:
 	brew bundle
 
 /opt/homebrew/opt/emacs-mac@28/Emacs.app: brew-bundle
-	sudo ln -sf /opt/homebrew/opt/emacs-mac@28/Emacs.app /Applications
+	sudo ln -sf /opt/homebrew/opt/emacs-mac/Emacs.app /Applications
 
 ../.rvm:
 	\curl -sSL https://get.rvm.io | bash
