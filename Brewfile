@@ -1,4 +1,3 @@
-tap 'railwaycat/emacsmacport'
 tap 'homebrew/cask-fonts'
 tap 'knqyf263/pet'
 tap 'k1LoW/tap'
@@ -87,10 +86,9 @@ cask 'tuple'
 brew 'zsh-autosuggestions'
 cask 'warp'
 cask 'coscreen'
-brew 'grip'
 brew 'dive'
 brew 'fish'
-brew 'emacs-mac@28',
+brew 'emacs-mac',
      args: %w[with-mac-metal with-native-comp with-no-title-bars with-modern-icon with-glib with-imagemagick
               with-librsvg]
 cask 'zeplin'
@@ -115,3 +113,4 @@ brew 'mods'
 brew 'pet'
 brew 'ranger'
 brew 'smug' # https://github.com/ivaaaan/smug
+brew 'viddy'
