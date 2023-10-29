@@ -2783,7 +2783,6 @@
         "options": {
           "args": [
             "with-mac-metal",
-            "with-native-comp",
             "with-no-title-bars",
             "with-modern-icon",
             "with-glib",

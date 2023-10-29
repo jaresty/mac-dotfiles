@@ -1,3 +1,4 @@
+tap 'railwaycat/emacsmacport'
 tap 'homebrew/cask-fonts'
 tap 'knqyf263/pet'
 tap 'k1LoW/tap'
@@ -89,7 +90,7 @@ cask 'coscreen'
 brew 'dive'
 brew 'fish'
 brew 'emacs-mac',
-     args: %w[with-mac-metal with-native-comp with-no-title-bars with-modern-icon with-glib with-imagemagick
+     args: %w[with-mac-metal with-no-title-bars with-modern-icon with-glib with-imagemagick
               with-librsvg]
 cask 'zeplin'
 brew 'php'
