@@ -72,14 +72,11 @@ brew 'lolcat'
 brew 'fortune'
 brew 'cowsay'
 cask 'tuple'
-cask 'warp'
-cask 'coscreen'
 brew 'dive'
 brew 'fish'
 brew 'emacs-mac',
      args: %w[with-mac-metal with-no-title-bars with-modern-icon with-glib with-imagemagick
               with-librsvg]
-cask 'zeplin'
 brew 'php'
 brew 'shellcheck'
 brew 'shfmt'
