@@ -60,6 +60,10 @@
 (map! :leader
       :desc "Launch gpsend"
       "gps" #'gptel-send)
+(map! :leader
+      :desc "Select Recent Search"
+      "\"" #'vertico-repeat-select)
+
 (after! org
   (setq org-directory "~/org/")
   (setq org-agenda-files '("~/gtd/inbox.org"
