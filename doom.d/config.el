@@ -61,6 +61,9 @@
       :desc "Launch gpsend"
       "gps" #'gptel-send)
 (map! :leader
+      :desc "Magit Trace Definition"
+      "gi" #'magit-log-trace-definition)
+(map! :leader
       :desc "Select Recent Search"
       "\"" #'vertico-repeat-select)
 
