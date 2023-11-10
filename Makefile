@@ -54,6 +54,10 @@ brew-bundle:
 ../.config/emacs:
 	git clone https://github.com/doomemacs/doomemacs.git ../.config/emacs
 
+../monaspace:
+	git clone https://github.com/githubnext/monaspace.git ../monaspace
+	(cd ../monaspace; bash ./util/install_macos.sh)
+
 .PHONY: doom-setup
 doom-setup: /opt/homebrew/opt/emacs-mac@28/Emacs.app ../.config/emacs luansevka
 	bash -ic "SHELL='/bin/bash' ../.config/emacs/bin/doom sync"
@@ -90,7 +94,7 @@ luansevka:
 
 .PHONY: setup
 
-setup: install-terminfo ../.zshrc ../tmuxfiles /opt/homebrew/bin/brew brew-bundle ../.rvm ../.config/emacs ../.docker/cli-plugins ../.config/fish/config.fish install-fisher ../.config/lvim/config.lua ../.tmux.conf.local ../.doom.d /opt/homebrew/opt/emacs-mac@28/Emacs.app luansevka /etc/paths.d/20-homebrew ~/.docker/cli-plugins/docker-buildx install-go-binaries install-tmux ../.config/fish/abbr.fish
+setup: install-terminfo ../.zshrc ../tmuxfiles /opt/homebrew/bin/brew brew-bundle ../.rvm ../.config/emacs ../.docker/cli-plugins ../.config/fish/config.fish install-fisher ../.config/lvim/config.lua ../.tmux.conf.local ../.doom.d /opt/homebrew/opt/emacs-mac@28/Emacs.app luansevka /etc/paths.d/20-homebrew ~/.docker/cli-plugins/docker-buildx install-go-binaries install-tmux ../.config/fish/abbr.fish ../monaspace
 
 .PHONY: pull
 pull:
