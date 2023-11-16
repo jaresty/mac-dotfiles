@@ -101,3 +101,4 @@ brew 'smug' # https://github.com/ivaaaan/smug
 brew 'viddy'
 brew 'bash'
 brew 'reflex'
+brew 'fx'
