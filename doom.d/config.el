@@ -91,6 +91,11 @@
   (setq evil-shift-width 2)
   )
 
+(use-package! gptel
+  :config
+  (setq gptel-default-mode 'org-mode)
+  )
+
 (global-subword-mode)
 
 (after! evil
