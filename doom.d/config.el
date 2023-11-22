@@ -96,8 +96,8 @@
 
 (use-package! gptel
   :config
-  (setq gptel-default-mode 'org-mode)
-  )
+  (setq-default gptel-default-mode 'org-mode
+                gptel-model "gpt-4"))
 
 (global-subword-mode)
 
