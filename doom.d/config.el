@@ -179,6 +179,8 @@
                 (apply orig rest))))
 (add-to-list 'auto-mode-alist '("\\.d2\\'" . d2-mode))
 (add-to-list 'auto-mode-alist '("\\.prisma\\'" . prisma-mode))
+(add-to-list 'auto-mode-alist '("\\.inc\\'" . web-mode))
+(add-to-list 'lsp-language-id-configuration '(web-mode . "php"))
 
 (after! flycheck
   (setq next-error-find-buffer-function 'next-error-buffer-unnavigated-current)
