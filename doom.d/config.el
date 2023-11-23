@@ -124,6 +124,7 @@
 (after! evil
   (evil-define-key 'normal 'global (kbd "M-.") '+lookup/definition)
   (evil-define-key '(insert normal) 'global (kbd "M-/") 'complete-symbol)
+  (evil-define-key 'normal 'global (kbd "g s i") 'avy-goto-symbol-1)
   )
 (use-package! ox-slack
   :after org)
