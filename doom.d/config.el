@@ -104,20 +104,18 @@
   :config
   (setq-default gptel-default-mode 'org-mode
                 gptel-model "gpt-4"))
-(use-package! chatgpt-shell)
-(after! chatgpt-shell
+(use-package! chatgpt-shell
+  :config
   (setq chatgpt-shell-openai-key
         (lambda ()
-          (auth-source-pick-first-password :host "api.openai.com")))
-  (setq chatgpt-shell-model-version 4)
-  )
-(use-package! dall-e-shell)
-(after! dall-e-shell
+          (auth-source-pick-first-password :host "api.openai.com"))
+        chatgpt-shell-model-version 4))
+
+(use-package! dall-e-shell
+  :config
   (setq dall-e-shell-openai-key
         (lambda ()
-          (auth-source-pick-first-password :host "api.openai.com")))
-  )
-
+          (auth-source-pick-first-password :host "api.openai.com"))))
 (global-subword-mode)
 
 (after! evil
