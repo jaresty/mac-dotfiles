@@ -17,6 +17,8 @@
 (package! evil-string-inflection)
 (package! code-compass)
 (package! gptel)
+(package! chatgpt-shell)
+(package! dall-e-shell)
 (package! copilot
   :recipe (:host github :repo "zerolfx/copilot.el" :files ("*.el" "dist")))
 (package! prisma-mode :recipe (:host github :repo "pimeys/emacs-prisma-mode" :branch "main"))
