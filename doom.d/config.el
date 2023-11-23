@@ -75,6 +75,9 @@
 (map! :leader
       :desc "Select Recent Search"
       "\"" #'vertico-repeat-select)
+(map! :leader
+      :desc "Kill buffer and window"
+      "wD" #'kill-buffer-and-window)
 
 (after! org
   (setq org-directory "~/org/")
