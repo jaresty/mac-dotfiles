@@ -64,6 +64,12 @@
       :desc "Launch gpsend"
       "gps" #'gptel-send)
 (map! :leader
+      :desc "Launch chatgpt"
+      "gpc" #'chatgpt-shell)
+(map! :leader
+      :desc "Launch dall-e"
+      "gpd" #'dall-e-shell)
+(map! :leader
       :desc "Magit Trace Definition"
       "gi" #'magit-log-trace-definition)
 (map! :leader
