@@ -57,28 +57,16 @@
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
 
-(map! :leader
-      :desc "Launch gptel"
-      "L" #'gptel)
-(map! :leader
-      :desc "Launch gpsend"
-      "ll" #'gptel-send)
-(map! :leader
-      :desc "Launch chatgpt"
-      "lc" #'chatgpt-shell)
-(map! :leader
-      :desc "Launch dall-e"
-      "ld" #'dall-e-shell)
-(map! :leader
-      :desc "Magit Trace Definition"
-      "gi" #'magit-log-trace-definition)
-(map! :leader
-      :desc "Select Recent Search"
-      "\"" #'vertico-repeat-select)
-(map! :leader
-      :desc "Kill buffer and window"
-      "wD" #'kill-buffer-and-window)
-
+(map!
+ :leader
+ (:prefix ("l" . "LLM")
+  :desc "dall-e" "d" #'dall-e-shell
+  :desc "chatgpt" "c" #'chatgpt-shell
+  :desc "gpsend" "l" #'gptel-send)
+ :desc "gptel" "L" #'gptel
+ :desc "Magit Trace Definition" "gi" #'magit-log-trace-definition
+ :desc "Select Recent Search" "\"" #'vertico-repeat-select
+ :desc "Kill buffer and window" "wD" #'kill-buffer-and-window)
 (after! org
   (setq org-directory "~/org/")
   (setq org-agenda-files '("~/gtd/inbox.org"
