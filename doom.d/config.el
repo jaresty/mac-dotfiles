@@ -40,7 +40,7 @@
 ;; This determines the style of line numbers in effect. If set to `nil', line
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
 (setq display-line-numbers-type t)
-(setq mouse-autoselect-window t)
+(setq mouse-autoselect-window nil)
 (after! vterm
   (setq vterm-shell "/opt/homebrew/bin/fish")
   )
@@ -168,8 +168,7 @@
 (add-to-list 'auto-mode-alist '("\\.d2\\'" . d2-mode))
 (add-to-list 'auto-mode-alist '("\\.prisma\\'" . prisma-mode))
 (add-to-list 'auto-mode-alist '("\\.inc\\'" . web-mode))
-(add-to-list 'lsp-language-id-configuration '(web-mode . "php"))
-
+(add-to-list 'lsp-language-id-configuration '("\\.inc$" . "php"))
 (after! flycheck
   (setq next-error-find-buffer-function 'next-error-buffer-unnavigated-current)
   )
