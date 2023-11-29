@@ -168,6 +168,9 @@
                 (apply orig rest))))
 (add-to-list 'auto-mode-alist '("\\.d2\\'" . d2-mode))
 (add-to-list 'auto-mode-alist '("\\.prisma\\'" . prisma-mode))
+(after! emmet-mode
+  (setq emmet-indent-after-insert nil)
+  )
 (after! flycheck
   (setq next-error-find-buffer-function 'next-error-buffer-unnavigated-current)
   )
