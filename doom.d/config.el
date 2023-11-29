@@ -156,6 +156,7 @@
   ;; (setq lsp-ui-doc-position 'top)
   )
 (after! lsp-mode
+  (add-to-list 'lsp-language-id-configuration '("\\.inc$" . "php"))
   (advice-add 'json-parse-string :around
               (lambda (orig string &rest rest)
                 (apply orig (s-replace "\\u0000" "" string)
@@ -167,8 +168,6 @@
                 (apply orig rest))))
 (add-to-list 'auto-mode-alist '("\\.d2\\'" . d2-mode))
 (add-to-list 'auto-mode-alist '("\\.prisma\\'" . prisma-mode))
-(add-to-list 'auto-mode-alist '("\\.inc\\'" . web-mode))
-(add-to-list 'lsp-language-id-configuration '("\\.inc$" . "php"))
 (after! flycheck
   (setq next-error-find-buffer-function 'next-error-buffer-unnavigated-current)
   )
