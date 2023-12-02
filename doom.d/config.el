@@ -82,7 +82,8 @@
                                  "* %i%? \n %U")))
   (setq org-refile-targets '(("~/gtd/gtd.org" :maxlevel . 3)
                              ("~/gtd/someday.org" :level . 1)
-                             ("~/gtd/tickler.org" :maxlevel . 2)))
+                             ("~/gtd/tickler.org" :maxlevel . 2)
+                             ("~/org/roam" :maxlevel . 2)))
   (setq org-todo-keywords '((sequence "TODO(t)" "WAITING(w)" "|" "DONE(d)" "CANCELLED(c)")))
   (org-babel-do-load-languages
    'org-babel-load-languages
