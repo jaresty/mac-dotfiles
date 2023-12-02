@@ -62,6 +62,7 @@
  (:prefix ("l" . "LLM")
   :desc "dall-e" "d" #'dall-e-shell
   :desc "chatgpt" "c" #'chatgpt-shell
+  :desc "chatgpt" "s" #'chatgpt-shell-send-region
   :desc "gpsend" "l" #'gptel-send)
  :desc "gptel" "L" #'gptel
  :desc "Magit Trace Definition" "gi" #'magit-log-trace-definition
@@ -71,7 +72,8 @@
   (setq org-directory "~/org/")
   (setq org-agenda-files '("~/gtd/inbox.org"
                            "~/gtd/gtd.org"
-                           "~/gtd/tickler.org"))
+                           "~/gtd/tickler.org"
+                           "~/org/roam/daily/"))
   (setq org-capture-templates '(("t" "Todo [inbox]" entry
                                  (file+headline "~/gtd/inbox.org" "Tasks")
                                  "* TODO %i%?")
@@ -149,7 +151,6 @@
                                      :name "Node::Run")))
 
 (after! lsp-ui
-  (setq lsp-ui-doc-show-with-mouse t)
   (setq lsp-ui-doc-header t)
   (setq lsp-ui-sideline-show-hover t)
   ;; (setq lsp-ui-doc-show-with-cursor t)
