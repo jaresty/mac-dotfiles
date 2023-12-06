@@ -2,10 +2,19 @@
 
 set -eux
 
+# Usage: save-preferences <output directory>
+# save-preferences /Users/jaresty/Library/Mobile\ Documents/com~apple~CloudDocs/Preferences/
+
+# Get the output directory from the first script argument
+output_dir=$1
+
+# Ensure the output directory ends with a slash
+output_dir=${output_dir%/}/
+
 domains=$(defaults domains | sed 's/,//g')
 
 # Loop through the list of domains
 for domain in $domains; do
   # Export the preferences for the current domain to a file
-  defaults export "$domain" /Users/jaresty/Library/Mobile\ Documents/com~apple~CloudDocs/Preferences/"$domain.plist"
+  defaults export "$domain" "$output_dir""$domain.plist"
 done

@@ -2,17 +2,25 @@
 
 set -eux
 
+# Usage: load-preferences <output directory>
+# load-preferences /Users/jaresty/Library/Mobile\ Documents/com~apple~CloudDocs/Preferences/
+
+# Get the output directory from the first script argument
+input_dir=$1
+
+# Ensure the input directory ends with a slash
+input_dir=${input_dir%/}/
 # Set the directory containing the preference files
-pref_dir="$HOME/Library/Mobile\ Documents/com~apple~CloudDocs/Preferences"
+input_dir="$HOME/Library/Mobile\ Documents/com~apple~CloudDocs/Preferences"
 
 # Get a list of preference files in the directory
-pref_files=$(ls "$pref_dir")
+pref_files=$(ls "$input_dir")
 
 # Loop through the list of preference files
 for pref_file in $pref_files; do
   # Extract the domain name from the preference file name
-  domain=$(echo "$pref_file" | sed 's/\.plist$//')
+  domain="${pref_file%.plist}"
 
   # Import the preferences for the current domain from the file
-  defaults import "$domain" "$pref_dir/$pref_file"
+  defaults import "$domain" "$input_dir/$pref_file"
 done
