@@ -92,6 +92,10 @@ install-go-binaries:
 	mkdir -p ~/.talon/user/
 	gh repo clone talonhub/community ~/.talon/user/community || true
 
+~/.talon/user/rango-talon: brew-bundle
+	mkdir -p ~/.talon/user/
+	gh repo clone david-tejada/rango-talon ~/.talon/user/rango-talon || true
+
 .PHONY: luansevka
 luansevka:
 	curl -L https://github.com/luan/luansevka/raw/main/fonts/nerd-font/luansevka-slab/Luansevka%20Slab%20Nerd%20Font%20Complete%20Mono.ttf -o ~/Library/Fonts/Luansevka\ Slab\ Nerd\ Font\ Complete\ Mono.ttf
