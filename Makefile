@@ -37,7 +37,7 @@ install-fisher:
 	fish -c "fisher install PatrickF1/fzf.fish"
 	fish -c "fisher install otms61/fish-pet"
 
-../.config/lvim:
+../config/lvim:
 	export LV_BRANCH=master
 	curl -s https://raw.githubusercontent.com/lunarvim/lunarvim/fc6873809934917b470bff1b072171879899a36b/utils/installer/install.sh | bash
 
@@ -88,12 +88,16 @@ install-go-binaries:
 ~/.docker/cli-plugins/docker-buildx:
 	ln -sfn $(which docker-buildx) ~/.docker/cli-plugins
 
-~/.talon/user/community: brew-bundle
+~/.talon/user:
 	mkdir -p ~/.talon/user/
+
+~/.talon/user/local-config.talon: ~/.talon/user
+	ln -sf ~/mac-dotfiles/local-config.talon ~/.talon/user/local-config.talon
+
+~/.talon/user/community: brew-bundle ~/.talon/user
 	gh repo clone talonhub/community ~/.talon/user/community || true
 
-~/.talon/user/rango-talon: brew-bundle
-	mkdir -p ~/.talon/user/
+~/.talon/user/rango-talon: brew-bundle ~/.talon/user
 	gh repo clone david-tejada/rango-talon ~/.talon/user/rango-talon || true
 
 .PHONY: luansevka
@@ -102,7 +106,7 @@ luansevka:
 
 .PHONY: setup
 
-setup: install-terminfo ../.zshrc ../tmuxfiles /opt/homebrew/bin/brew brew-bundle ../.rvm ../.config/emacs ../.docker/cli-plugins ../.config/fish/config.fish install-fisher ../.config/lvim/config.lua ../.tmux.conf.local ../.doom.d /opt/homebrew/opt/emacs-mac/Emacs.app luansevka /etc/paths.d/20-homebrew ~/.docker/cli-plugins/docker-buildx install-go-binaries install-tmux ../.config/fish/abbr.fish ../monaspace ~/.talon/user/community
+setup: install-terminfo ../.zshrc ../tmuxfiles /opt/homebrew/bin/brew brew-bundle ../.rvm ../.config/emacs ../.docker/cli-plugins ../.config/fish/config.fish install-fisher ../.config/lvim/config.lua ../.tmux.conf.local ../.doom.d eeee/homebrew/opt/emacs-mac/Emacs.app luansevka /etc/paths.d/20-homebrew ~/.docker/cli-plugins/docker-buildx install-go-binaries install-tmux ../.config/fish/abbr.fish ../monaspace ~/.talon/user/local-config.talon ~/.talon/user/rango-talon ~/.talon/user/community
 
 .PHONY: pull
 pull:
