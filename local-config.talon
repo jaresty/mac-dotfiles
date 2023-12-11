@@ -1,2 +1,5 @@
-key(ctrl-alt-cmd-shift-t:down): speech.enable()
-key(ctrl-alt-cmd-shift-t:up): speech.disable()
+key(f1:down): speech.enable()
+key(f1:up): speech.disable()
+
+settings():
+    user.emacs_meta = "alt"
