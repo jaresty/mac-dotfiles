@@ -14,6 +14,9 @@
 ../.config/lvim/config.lua: ../.config/lvim
 	ln -sf ~/mac-dotfiles/lvim/config.lua ../.config/lvim/config.lua
 
+../.talon/user/community/settings:
+	ln -sf ~/mac-dotfiles/talon-settings ../.talon/user/community/settings
+
 ../.docker/cli-plugins:
 	mkdir -p ~/.docker/cli-plugins
 	ln -sfn $$(brew --prefix)/opt/docker-compose/bin/docker-compose ~/.docker/cli-plugins/docker-compose
