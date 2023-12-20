@@ -102,4 +102,4 @@ update: pull setup
 ~/.talon/user/rango-talon: brew-bundle ~/.talon/user
 	gh repo clone david-tejada/rango-talon ~/.talon/user/rango-talon || true
 
-setup: install-terminfo ../.zshrc ../tmuxfiles /opt/homebrew/bin/brew brew-bundle ../.rvm ../.config/emacs ../.docker/cli-plugins ../.config/fish/config.fish install-fisher ../.config/lvim/config.lua ../.tmux.conf.local ../.doom.d /opt/homebrew/opt/emacs-mac/Emacs.app luansevka /etc/paths.d/20-homebrew ~/.docker/cli-plugins/docker-buildx install-go-binaries install-tmux ../.config/fish/abbr.fish ../monaspace ~/.talon/user/local-config.talon ~/.talon/user/rango-talon ~/.talon/user/community
+setup: install-terminfo ../.zshrc ../tmuxfiles /opt/homebrew/bin/brew brew-bundle ../.rvm ../.config/emacs ../.docker/cli-plugins ../.config/fish/config.fish install-fisher ../.config/lvim/config.lua ../.tmux.conf.local ../.doom.d /opt/homebrew/opt/emacs-mac/Emacs.app luansevka /etc/paths.d/20-homebrew ~/.docker/cli-plugins/docker-buildx install-go-binaries install-tmux ../.config/fish/abbr.fish ../monaspace ~/.talon/user/rango-talon ~/.talon/user/community
