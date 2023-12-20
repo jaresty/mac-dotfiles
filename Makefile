@@ -99,9 +99,6 @@ update: pull setup
 ~/.talon/user/community: brew-bundle ~/.talon/user
 	gh repo clone talonhub/community ~/.talon/user/community || true
 
-~/.talon/user/local-config.talon: ~/.talon/user
-	ln -sf ~/mac-dotfiles/local-config.talon ~/.talon/user/local-config.talon
-
 ~/.talon/user/rango-talon: brew-bundle ~/.talon/user
 	gh repo clone david-tejada/rango-talon ~/.talon/user/rango-talon || true
 
