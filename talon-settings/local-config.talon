@@ -1,5 +1,7 @@
 key(f1:down): speech.enable()
 key(f1:up): speech.disable()
+tag(): user.require_numb_prefix
 
 settings():
     user.emacs_meta = "alt"
+    user.tmux_prefix_key = 'ctrl-space'
