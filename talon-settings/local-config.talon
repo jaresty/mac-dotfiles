@@ -5,3 +5,5 @@ tag(): user.require_numb_prefix
 settings():
     user.emacs_meta = "alt"
     user.tmux_prefix_key = 'ctrl-space'
+
+input switch: key("cmd-shift-ctrl-alt-v")
