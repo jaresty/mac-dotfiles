@@ -10,8 +10,6 @@ input_dir=$1
 
 # Ensure the input directory ends with a slash
 input_dir=${input_dir%/}/
-# Set the directory containing the preference files
-input_dir="$HOME/Library/Mobile\ Documents/com~apple~CloudDocs/Preferences"
 
 # Get a list of preference files in the directory
 pref_files=$(ls "$input_dir")
