@@ -105,4 +105,7 @@ update: pull setup
 ~/.talon/user/talon-ai-tools: brew-bundle ~/.talon/user
 	gh repo clone C-Loftus/talon-ai-tools ~/.talon/user/talon-ai-tools || (cd ~/.talon/user/talon-ai-tools && git pull)
 
-setup: install-terminfo ../.zshrc ../tmuxfiles /opt/homebrew/bin/brew brew-bundle ../.rvm ../.config/emacs ../.docker/cli-plugins ../.config/fish/config.fish install-fisher ../.config/lvim/config.lua ../.tmux.conf.local ../.doom.d /opt/homebrew/opt/emacs-mac/Emacs.app luansevka /etc/paths.d/20-homebrew ~/.docker/cli-plugins/docker-buildx install-go-binaries install-tmux ../.config/fish/abbr.fish ../monaspace ~/.talon/user/rango-talon ~/.talon/user/talon-ai-tools ~/.talon/user/community ../.talon/user/community/settings
+~/.talon/user/cursorless-talon: brew-bundle ~/.talon/user
+	gh repo clone cursorless-dev/cursorless-talon ~/.talon/user/cursorless-talon || (cd ~/.talon/user/cursorless-talon && git pull)
+
+setup: install-terminfo ../.zshrc ../tmuxfiles /opt/homebrew/bin/brew brew-bundle ../.rvm ../.config/emacs ../.docker/cli-plugins ../.config/fish/config.fish install-fisher ../.config/lvim/config.lua ../.tmux.conf.local ../.doom.d /opt/homebrew/opt/emacs-mac/Emacs.app luansevka /etc/paths.d/20-homebrew ~/.docker/cli-plugins/docker-buildx install-go-binaries install-tmux ../.config/fish/abbr.fish ../monaspace ~/.talon/user/rango-talon ~/.talon/user/talon-ai-tools ~/.talon/user/community ../.talon/user/community/settings ~/.talon/user/cursorless-talon
