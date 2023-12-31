@@ -7,7 +7,3 @@ settings():
     user.tmux_prefix_key = 'ctrl-space'
 
 input switch: key("cmd-shift-ctrl-alt-v")
-git copy <user.cursorless_target>:
-    user.cursorless_ide_command("extension.copyGitHubLinkToClipboard", cursorless_target)
-git open <user.cursorless_target>:
-    user.cursorless_ide_command("extension.openInGitHub", cursorless_target)
