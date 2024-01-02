@@ -1,0 +1,20 @@
+{
+  "doubleBox": {
+    "definitions": [
+      {
+        "scope": {
+          "langIds": [
+            "markdown"
+          ]
+        },
+        "body": [
+          "[[$destination]]"
+        ]
+      }
+    ],
+    "description": "Insert a link to a note",
+    "variables": {
+      "destination": {}
+    }
+  }
+}
