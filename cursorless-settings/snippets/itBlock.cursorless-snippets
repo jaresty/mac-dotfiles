@@ -14,6 +14,14 @@
 				]
 			}
 		],
-		"description": "A single test"
+		"description": "A single test",
+		"variables": {
+			"body": {
+				"wrapperScopeType": "statement" 
+			}
+		},
+		"insertionScopeTypes": [
+			"statement"
+		]
 	}
 }

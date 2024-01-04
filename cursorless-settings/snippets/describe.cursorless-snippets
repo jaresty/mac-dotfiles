@@ -14,7 +14,12 @@
 		],
 		"description": "",
 		"variables": {
-			"description": {}
-		}
+			"body": {
+				"wrapperScopeType": "statement" 
+			}
+		},
+		"insertionScopeTypes": [
+			"statement"
+		]
 	}
 }

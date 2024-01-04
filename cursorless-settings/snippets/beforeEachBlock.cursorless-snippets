@@ -14,6 +14,14 @@
 				]
 			}
 		],
-		"description": "Before each block"
+		"description": "Before each block",
+		"variables": {
+			"body": {
+				"wrapperScopeType": "statement" 
+			}
+		},
+		"insertionScopeTypes": [
+			"statement"
+		]
 	}
 }
