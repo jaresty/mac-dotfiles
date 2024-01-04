@@ -1,0 +1,19 @@
+{
+	"itBlock": {
+		"definitions": [
+			{
+				"scope": {
+					"langIds": [
+						"typescript"
+					]
+				},
+				"body": [
+					"it('$description', () => {",
+					"\t$body",
+					"});"
+				]
+			}
+		],
+		"description": "A single test"
+	}
+}

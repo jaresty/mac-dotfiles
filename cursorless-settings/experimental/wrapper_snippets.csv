@@ -6,3 +6,6 @@ if else, ifElseStatement.consequence
 link, link.text
 try, tryCatchStatement.body
 double box, doubleBox.destination
+describe, describeBlock.body
+spec, itBlock.body
+before each, beforeEachBlock.body

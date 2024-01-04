@@ -1,0 +1,19 @@
+{
+	"beforeEachBlock": {
+		"definitions": [
+			{
+				"scope": {
+					"langIds": [
+						"typescript"
+					]
+				},
+				"body": [
+					"beforeEach(() => {",
+					"\t$body",
+					"});"
+				]
+			}
+		],
+		"description": "Before each block"
+	}
+}

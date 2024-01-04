@@ -1,0 +1,20 @@
+{
+	"describeBlock": {
+		"definitions": [
+			{
+				"scope": {
+					"langIds": [
+						"typescript"
+					]
+				},
+				"body": [
+					"describe('$description', () => {\n\t$body\n});"
+				]
+			}
+		],
+		"description": "",
+		"variables": {
+			"description": {}
+		}
+	}
+}
