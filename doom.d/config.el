@@ -97,7 +97,12 @@
 (use-package! gptel
   :config
   (setq-default gptel-default-mode 'org-mode
-                gptel-model "gpt-4"))
+                gptel-model "gpt-4"
+                gptel-api-key
+                (replace-regexp-in-string "\n$" ""
+                                          (with-temp-buffer
+                                            (insert-file-contents "~/.openapi-key")
+                                            (buffer-string)))))
 (use-package! chatgpt-shell
   :config
   (setq chatgpt-shell-openai-key
