@@ -43,7 +43,7 @@ tug: edit.left()
 # go right: push, right
 push: edit.right()
 # delete word left: scratcher
-scratcher: edit.delete_word()
+scratcher: key("alt-backspace")
 # delete word right: swallow
 swallow: key("alt-delete")
 # {: lacer, lackey
