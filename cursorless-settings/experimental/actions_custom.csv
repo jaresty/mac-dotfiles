@@ -1,6 +1,8 @@
 Spoken form, VSCode command
 undo, undo
 redo, redo
+peek, editor.action.peekDefinition
+hierarchy, editor.showCallHierarchy
 
 # Git
 git add, git.stageSelectedRanges
