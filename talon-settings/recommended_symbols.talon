@@ -68,3 +68,5 @@ swallow: key("alt-delete")
 disk: edit.save()
 # control: troll, king
 # shift: ship
+north: key("up")
+south: key("down")
