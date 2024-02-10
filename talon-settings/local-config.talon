@@ -1,6 +1,5 @@
 key(f1:down): speech.enable()
 key(f1:up): speech.disable()
-tag(): user.require_numb_prefix
 tag(): user.gpt_beta
 
 settings():
