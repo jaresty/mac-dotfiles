@@ -103,7 +103,6 @@ eval "$(starship init zsh)"
 
 eval "$(direnv hook zsh)"
 
-eval $(thefuck --alias)
 export EDITOR=nvim
 alias gst="git status"
 alias dc="docker-compose"
