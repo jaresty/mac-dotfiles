@@ -15,7 +15,7 @@ github open,extension.openInGitHub
 
 # Emmet / HTML
 rename tag, editor.emmet.action.updateTag
-split tag | join tag, editor.emmet.action.splitJoinTagb
+split tag | join tag, editor.emmet.action.splitJoinTag
 increment, editor.emmet.action.incrementNumberByOne
 small increment, editor.emmet.action.incrementNumberByOneTenth
 big increment, editor.emmet.action.incrementNumberByTen
