@@ -164,7 +164,7 @@
   )
 (after! lsp-mode
   (add-to-list 'lsp-language-id-configuration '("\\.inc$" . "php"))
-  (add-to-list 'lsp-language-id-configuration '(".*\\.tsx$" . "html")
+  (add-to-list 'lsp-language-id-configuration '(".*\\.tsx$" . "html"))
                (advice-add 'json-parse-string :around
                            (lambda (orig string &rest rest)
                              (apply orig (s-replace "\\u0000" "" string)
