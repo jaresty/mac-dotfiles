@@ -3,6 +3,7 @@ undo, undo
 redo, redo
 peek, editor.action.peekDefinition
 hierarchy, editor.showCallHierarchy
+fuzzy, fuzzySearch.activeTextEditorWithCurrentSelection
 
 # Git
 git add, git.stageSelectedRanges
