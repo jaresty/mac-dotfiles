@@ -23,3 +23,6 @@ big increment, editor.emmet.action.incrementNumberByTen
 decrement, editor.emmet.action.decrementNumberByOne
 small decrement, editor.emmet.action.decrementNumberByOneTenth
 big decrement, editor.emmet.action.decrementNumberByTen
+
+# VSCode
+test, testing.runAtCursor
