@@ -9,3 +9,5 @@ fuzzy [<user.text>]:
   user.vscode("fuzzySearch.activeTextEditor")
   sleep(50ms)
   insert(text or "")
+emmet expand:
+  user.vscode("editor.emmet.action.expandAbbreviation")
