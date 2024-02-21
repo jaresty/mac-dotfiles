@@ -26,3 +26,4 @@ emmet big decrement, editor.emmet.action.decrementNumberByTen
 
 # VSCode
 test, testing.runAtCursor
+debug, editor.debug.action.toggleBreakpoint
