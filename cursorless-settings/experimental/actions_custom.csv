@@ -17,12 +17,12 @@ github open,extension.openInGitHub
 emmet rename, editor.emmet.action.updateTag
 emmet split join, editor.emmet.action.splitJoinTag
 emmet wrap, editor.emmet.action.wrapWithAbbreviation
-increment, editor.emmet.action.incrementNumberByOne
-small increment, editor.emmet.action.incrementNumberByOneTenth
-big increment, editor.emmet.action.incrementNumberByTen
-decrement, editor.emmet.action.decrementNumberByOne
-small decrement, editor.emmet.action.decrementNumberByOneTenth
-big decrement, editor.emmet.action.decrementNumberByTen
+emmet increment, editor.emmet.action.incrementNumberByOne
+emmet small increment, editor.emmet.action.incrementNumberByOneTenth
+emmet big increment, editor.emmet.action.incrementNumberByTen
+emmet decrement, editor.emmet.action.decrementNumberByOne
+emmet small decrement, editor.emmet.action.decrementNumberByOneTenth
+emmet big decrement, editor.emmet.action.decrementNumberByTen
 
 # VSCode
 test, testing.runAtCursor
