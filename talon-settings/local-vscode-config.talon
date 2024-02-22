@@ -11,3 +11,7 @@ fuzzy [<user.text>]:
   insert(text or "")
 emmet expand:
   user.vscode("editor.emmet.action.expandAbbreviation")
+ref next:
+  key("f4")
+ref last:
+  key("shift-f4")
