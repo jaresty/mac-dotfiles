@@ -15,3 +15,5 @@ ref next:
   key("f4")
 ref last:
   key("shift-f4")
+git log:
+  user.vscode("gitlens.showGraph")
