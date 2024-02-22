@@ -70,3 +70,4 @@ disk: edit.save()
 # shift: ship
 north: key("up")
 south: key("down")
+scrape: key("escape")
