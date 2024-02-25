@@ -23,3 +23,8 @@ input switch: key("cmd-shift-ctrl-alt-v")
   key("alt-tab")
   sleep(50ms)
   insert(text or "")
+
+^raycast [<user.text>]:
+  key("cmd-space")
+  sleep(50ms)
+  insert(text or "")
