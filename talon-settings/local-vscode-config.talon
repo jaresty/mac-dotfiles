@@ -17,3 +17,7 @@ ref last:
   key("shift-f4")
 git log:
   user.vscode("gitlens.showGraph")
+dendron lookup [<user.text>]:
+  user.vscode("dendron.lookupNote")
+  sleep(50ms)
+  user.insert_formatted(text, "DOT_SEPARATED")
