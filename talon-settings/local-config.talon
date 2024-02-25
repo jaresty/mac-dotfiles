@@ -9,7 +9,17 @@ settings():
 input switch: key("cmd-shift-ctrl-alt-v")
 
 # homerow
-^chase [<user.text>]:
+^chase mouse [<user.text>]:
   key("cmd-shift-ctrl-alt-s")
+  sleep(50ms)
+  insert(text or "")
+
+^chase menu [<user.text>]:
+  key("cmd-shift-ctrl-alt-m")
+  sleep(50ms)
+  insert(text or "")
+
+^chase window [<user.text>]:
+  key("alt-tab")
   sleep(50ms)
   insert(text or "")
