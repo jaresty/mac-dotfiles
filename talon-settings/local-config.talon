@@ -8,3 +8,8 @@ settings():
 
 input switch: key("cmd-shift-ctrl-alt-v")
 
+# homerow
+^chase [<user.text>]:
+  key("cmd-shift-ctrl-alt-s")
+  sleep(50ms)
+  insert(text or "")
