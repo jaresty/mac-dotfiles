@@ -1,5 +1,6 @@
 key(f1:down):               speech.enable()
 key(f1:up):                 speech.disable()
+drowse: speech.disable()
 tag(): user.gpt_beta
 tag(): user.prefixed_numbers
 settings():
