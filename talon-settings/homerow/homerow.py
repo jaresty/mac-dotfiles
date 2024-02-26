@@ -28,6 +28,10 @@ class UserActions:
         actions.key("enter")
         ctx.tags = []
 
+    def homerow_cancel():
+        actions.key("escape")
+        ctx.tags = []
+
 
 @mod.action_class
 class Actions:
@@ -45,3 +49,6 @@ class Actions:
 
     def homerow_info():
         """Get info on an element"""
+
+    def homerow_cancel():
+        """Cancel the homerow search"""

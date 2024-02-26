@@ -4,3 +4,4 @@ tag: user.homerow_search
 ^duke:                      user.homerow_duke()
 ^righty:                    user.homerow_righty()
 ^info:                      user.homerow_info()
+^cancel:                    user.homerow_cancel()
