@@ -1,10 +1,6 @@
-# homerow
-^chase mouse [<user.text>]:
-	key("cmd-shift-ctrl-alt-s")
-	sleep(50ms)
-	insert(text or "")
-
-^homerow touch:             key("enter")
-^homerow duke:              key("enter")
-^homerow righty:            key("shift-enter")
-^homerow info:              key("?")
+tag: user.homerow_search
+-
+^touch:                     user.homerow_click()
+^duke:                      user.homerow_duke()
+^righty:                    user.homerow_righty()
+^info:                      user.homerow_info()

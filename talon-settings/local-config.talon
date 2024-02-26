@@ -6,6 +6,12 @@ settings():
   user.emacs_meta = "alt"
   user.tmux_prefix_key = 'ctrl-space'
 
+# homerow
+^chase mouse [<user.text>]:
+  user.homerow_search()
+  sleep(50ms)
+  insert(text or "")
+
 ^chase menu [<user.text>]:
   key("cmd-?")
   sleep(50ms)
