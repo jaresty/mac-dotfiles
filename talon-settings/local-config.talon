@@ -1,6 +1,10 @@
-key(f1:down):               speech.enable()
-key(f1:up):                 speech.disable()
-drowse: speech.disable()
+key(f20:down):
+  app.notify("Talon is listening")
+  speech.enable()
+key(f20:up):
+  speech.disable()
+  app.notify("Talon is sleeping")
+drowse:                     speech.disable()
 tag(): user.gpt_beta
 tag(): user.prefixed_numbers
 settings():
@@ -8,17 +12,17 @@ settings():
   user.tmux_prefix_key = 'ctrl-space'
 
 # homerow
-^chase mouse [<user.text>]:
+^mouser [<user.text>]:
   user.homerow_search()
   sleep(50ms)
   insert(text or "")
 
-^chase menu [<user.text>]:
-  key("cmd-?")
+^minuet [<user.text>]:
+  key("ctrl-alt-cmd-shift-m")
   sleep(50ms)
   insert(text or "")
 
-^chase window [<user.text>]:
+^windows [<user.text>]:
   key("alt-tab")
   sleep(50ms)
   insert(text or "")
