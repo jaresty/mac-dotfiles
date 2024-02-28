@@ -17,7 +17,7 @@ settings():
   sleep(50ms)
   insert(text or "")
 
-^minuet [<user.text>]:
+please [<user.text>]:
   key("ctrl-alt-cmd-shift-m")
   sleep(50ms)
   insert(text or "")
