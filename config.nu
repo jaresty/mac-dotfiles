@@ -846,3 +846,13 @@ carapace _carapace nushell | save --force ~/.cache/carapace/init.nu
 
 #~/.config/nushell/config.nu
 source ~/.cache/carapace/init.nu
+
+alias gst = git status
+alias dc = docker-compose
+alias g = git
+alias gco = git checkout
+alias gpfl = git push --force-with-lease
+alias gdc = git duet-commit
+alias u = cd ..
+alias uu = cd ../..
+alias uuu = cd ../../..
