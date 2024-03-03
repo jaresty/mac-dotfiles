@@ -124,3 +124,5 @@ $env.PATH = (
   prepend "~/mac-dotfiles/bin" |
   prepend "~/go/bin"
 )
+
+source-env ~/.openapi-key.nu
