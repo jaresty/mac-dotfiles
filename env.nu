@@ -125,4 +125,6 @@ $env.PATH = (
   prepend "~/go/bin"
 )
 
+$env.EDITOR = 'lvim'
 source-env ~/.openapi-key.nu
+zoxide init nushell | save -f ~/.zoxide.nu

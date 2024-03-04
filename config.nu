@@ -856,3 +856,5 @@ alias gdc = git duet-commit
 alias u = cd ..
 alias uu = cd ../..
 alias uuu = cd ../../..
+
+source ~/.zoxide.nu
