@@ -126,5 +126,7 @@ $env.PATH = (
 )
 
 $env.EDITOR = 'lvim'
+$env.GIT_DUET_CO_AUTHORED_BY = 1
+$env.GIT_DUET_ROTATE_AUTHOR = 1
 source-env ~/.openapi-key.nu
 zoxide init nushell | save -f ~/.zoxide.nu

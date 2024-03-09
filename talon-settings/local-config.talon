@@ -17,11 +17,6 @@ settings():
   sleep(50ms)
   insert(text or "")
 
-please [<user.text>]:
-  key("ctrl-alt-cmd-shift-m")
-  sleep(50ms)
-  insert(text or "")
-
 ^windows [<user.text>]:
   key("alt-tab")
   sleep(50ms)
