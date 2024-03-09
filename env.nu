@@ -117,7 +117,7 @@ $env.NU_PLUGIN_DIRS = [
 # $env.PATH = ($env.PATH | split row (char esep) | prepend '/some/path')
 $env.PATH = (
   $env.PATH | split row (char esep) |
-  prepend '/opt/homebrew/bin' |
+  prepend "/opt/homebrew/bin" |
   prepend "~/.tfenv/bin" |
   prepend "/opt/homebrew/bin" |
   prepend "~/.local/bin" |
