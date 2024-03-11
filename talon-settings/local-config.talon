@@ -13,6 +13,8 @@ settings():
 
 ain:                        core.repeat_command(1)
 
+grab O C R:                 key("cmd-ctrl-shift-alt-o")
+
 # homerow
 ^mouser [<user.text>]:
   user.homerow_search()
