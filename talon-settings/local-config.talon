@@ -11,6 +11,8 @@ settings():
   user.emacs_meta = "alt"
   user.tmux_prefix_key = 'ctrl-space'
 
+ain:                        core.repeat_command(1)
+
 # homerow
 ^mouser [<user.text>]:
   user.homerow_search()
