@@ -90,7 +90,7 @@ update: pull setup
 /opt/homebrew/bin/brew:
 	./scripts/install-homebrew
 
-/opt/homebrew/opt/emacs-mac/Emacs.app: brew-bundle
+/Applications/Emacs.app: brew-bundle
 	sudo ln -sf /opt/homebrew/opt/emacs-mac/Emacs.app /Applications
 
 ~/.docker/cli-plugins/docker-buildx:
