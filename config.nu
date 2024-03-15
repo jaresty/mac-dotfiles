@@ -859,4 +859,3 @@ alias uuu = cd ../../..
 
 source ~/.zoxide.nu
 source "/Users/tkma6d4/mac-dotfiles/mise.nu"
-source "/Users/tkma6d4/mac-dotfiles/mise.nu"
