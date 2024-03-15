@@ -11,7 +11,7 @@ settings():
   user.emacs_meta = "alt"
   user.tmux_prefix_key = 'ctrl-space'
 
-ain:                        core.repeat_command(1)
+gain:                       core.repeat_command(1)
 
 grab O C R:                 key("cmd-ctrl-shift-alt-o")
 
