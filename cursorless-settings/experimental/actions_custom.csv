@@ -13,6 +13,7 @@ git accept, merge-conflict.accept.selection
 github copy,extension.copyGitHubLinkToClipboard
 github open,extension.openInGitHub
 gitlab open,gl.openActiveFile
+gitlab copy,gl.copyLinkToActiveFile
 
 # Emmet / HTML
 emmet rename, editor.emmet.action.updateTag
