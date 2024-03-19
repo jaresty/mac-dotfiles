@@ -11,6 +11,9 @@ settings():
   user.emacs_meta = "alt"
   user.tmux_prefix_key = 'ctrl-space'
 
+#  user.model_endpoint = "http://localhost:11434/api/chat"
+#  user.openai_model = 'codellama'
+
 gain:                       core.repeat_command(1)
 
 grab O C R:                 key("cmd-ctrl-shift-alt-o")

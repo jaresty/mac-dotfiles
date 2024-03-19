@@ -21,3 +21,20 @@ dendron lookup [<user.text>]:
   user.vscode("dendron.lookupNote")
   sleep(50ms)
   user.insert_formatted(text, "DOT_SEPARATED")
+
+llama new:
+  user.vscode("continue.newSession")
+llama file select:
+  user.vscode("continue.selectFilesAsContext")
+llama history:
+  user.vscode("continue.viewHistory")
+llama accept:
+  user.vscode("continue.acceptDiff")
+llama reject:
+  user.vscode("continue.rejectDiff")
+llama toggle fullscreen:
+  user.vscode("continue.toggleFullScreen")
+llama next: user.vscode("editor.action.inlineSuggest.showNext")
+llama (previous | last): user.vscode("editor.action.inlineSuggest.showPrevious")
+bar llama:
+  user.vscode("continue.continueGUIView.focus")
