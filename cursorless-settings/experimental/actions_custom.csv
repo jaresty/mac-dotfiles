@@ -33,5 +33,5 @@ debug break, editor.debug.action.toggleBreakpoint
 debug hover, editor.debug.action.showDebugHover
 
 # Continue
-llama add, continue.focusContinueInput
-llama quick edit, continue.quickEdit
+C D add, continue.focusContinueInput
+C D quick edit, continue.quickEdit
