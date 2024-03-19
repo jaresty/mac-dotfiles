@@ -36,5 +36,6 @@ C D toggle fullscreen:
   user.vscode("continue.toggleFullScreen")
 C D next: user.vscode("editor.action.inlineSuggest.showNext")
 C D (previous | last): user.vscode("editor.action.inlineSuggest.showPrevious")
+C D debug terminal: user.vscode("continue.debugTerminal")
 bar C D:
   user.vscode("continue.continueGUIView.focus")
