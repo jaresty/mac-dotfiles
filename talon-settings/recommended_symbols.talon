@@ -37,13 +37,14 @@ stack:                      ':'
 # ^: tangle, dagger
 # (: curve, lub, lepper
 # ): recurve, rub, repper
-# () (user.insert_between): round
-# [] (user.insert_between): square
-# {} (user.insert_between): curly
-# <> (user.insert_between): diamond
-# "" (user.insert_between): quad
-# '' (user.insert_between): twin
-# `` (user.insert_between): ski
+round:                      user.insert_between("(", ")")
+square:                     user.insert_between("[", "]")
+curly:                      user.insert_between("{", "}")
+diamond:                    user.insert_between("<", ">")
+quad:                       user.insert_between('"', '"')
+twin:                       user.insert_between("'", "'")
+ski:                        user.insert_between("`", '`')
+
 # open command prompt: please
 # talon sleep: drowse, quiet
 # save: okay, disk
