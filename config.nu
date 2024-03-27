@@ -859,3 +859,14 @@ alias uuu = cd ../../..
 
 source ~/.zoxide.nu
 source "/Users/tkma6d4/mac-dotfiles/mise.nu"
+$env.config = {
+  hooks: {
+    pre_prompt: [{ ||
+      if (which direnv | is-empty) {
+        return
+      }
+
+      direnv export json | from json | default {} | load-env
+    }]
+  }
+}
