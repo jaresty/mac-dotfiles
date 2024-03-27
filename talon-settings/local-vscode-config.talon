@@ -44,3 +44,7 @@ bar tin you:
 
 bless:                      user.vscode("cursorUndo")
 recurse:                    user.vscode("cursorRedo")
+
+view [<user.text>]:
+  user.vscode("workbench.action.openView")
+  insert(user.text or "")
