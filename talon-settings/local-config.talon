@@ -18,6 +18,11 @@ gain:                       core.repeat_command(1)
 
 grab O C R:                 key("cmd-ctrl-shift-alt-o")
 
+emoji [<user.text>]:
+  key(ctrl-space)
+  sleep(50ms)
+  insert(text or "")
+
 # homerow
 ^mouser [<user.text>]:
   user.homerow_search()
