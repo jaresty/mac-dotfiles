@@ -48,3 +48,5 @@ recurse:                    user.vscode("cursorRedo")
 view [<user.text>]:
   user.vscode("workbench.action.openView")
   insert(user.text or "")
+
+flash <user.cursorless_target>: user.cursorless_get_text(cursorless_target)
