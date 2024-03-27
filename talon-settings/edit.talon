@@ -9,7 +9,9 @@ fly:                        edit.up()
 fall:                       edit.down()
 
 #deleting
-punch:                      edit.delete_word()
+punch:
+	edit.extend_word_right()
+	edit.delete()
 puncher:                    user.delete_line_end()
 punchy:                     user.delete_right()
 chomp:
