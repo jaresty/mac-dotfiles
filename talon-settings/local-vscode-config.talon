@@ -1,10 +1,10 @@
 app: vscode
 -
 diff <user.cursorless_target> to <user.cursorless_target>:
-    user.cursorless_ide_command("extension.partialDiff.markSection1", cursorless_target_1)
-    user.cursorless_ide_command("extension.partialDiff.markSection2AndTakeDiff", cursorless_target_2)
+  user.cursorless_ide_command("extension.partialDiff.markSection1", cursorless_target_1)
+  user.cursorless_ide_command("extension.partialDiff.markSection2AndTakeDiff", cursorless_target_2)
 
-explore: user.vscode("breadcrumbs.focusAndSelect")
+explore:                    user.vscode("breadcrumbs.focusAndSelect")
 fuzzy [<user.text>]:
   user.vscode("fuzzySearch.activeTextEditor")
   sleep(50ms)
@@ -34,8 +34,11 @@ C D reject:
   user.vscode("continue.rejectDiff")
 C D toggle fullscreen:
   user.vscode("continue.toggleFullScreen")
-C D next: user.vscode("editor.action.inlineSuggest.showNext")
-C D (previous | last): user.vscode("editor.action.inlineSuggest.showPrevious")
-C D debug terminal: user.vscode("continue.debugTerminal")
+C D next:                   user.vscode("editor.action.inlineSuggest.showNext")
+C D (previous | last):      user.vscode("editor.action.inlineSuggest.showPrevious")
+C D debug terminal:         user.vscode("continue.debugTerminal")
 bar C D:
   user.vscode("continue.continueGUIView.focus")
+
+bless:                      user.vscode("cursorUndo")
+recurse:                    user.vscode("cursorRedo")

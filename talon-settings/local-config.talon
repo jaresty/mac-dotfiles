@@ -38,3 +38,7 @@ emoji [<user.text>]:
   key("cmd-space")
   sleep(50ms)
   insert(text or "")
+
+# undo that: nope, nix, junk, blast
+nope:                       edit.undo()
+pone:                       edit.redo()

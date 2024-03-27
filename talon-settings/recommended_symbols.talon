@@ -1,51 +1,33 @@
 # enter: okay, shock, slap, clap, send
-clap: key("enter")
+clap:                       key("enter")
 # tab: swing
-swing: key("tab")
+swing:                      key("tab")
 # backslash: whack, stroke, backstroke
 # slash: stroke
 # page up: upper, punk, dusk
-upper: key("pageup")
+upper:                      key("pageup")
 # page down: downer, scroll, dawn
-downer: key("pagedown")
+downer:                     key("pagedown")
 # space: blank, void, ace, ta, pad
-void: ' '
+void:                       ' '
 # ~: wave
-wave: '~'
+wave:                       '~'
 # @: dizzy, swirl
-dizzy: '@'
+dizzy:                      '@'
 # ": inch, double
-inch: '"'
+inch:                       '"'
 # ': foot, tick, single
-foot: "'"
+foot:                       "'"
 # ?: quark, quest
-quest: '?'
+quest:                      '?'
 # _: blank, score
-blank: '_'
+blank:                      '_'
 # ,: drip
-drip: ','
+drip:                       ','
 # ;: dripper, semi, sasha
-dripper: ';'
+dripper:                    ';'
 # :: stack
-stack: ':'
-# undo that: nope, nix, junk, blast
-nope: edit.undo()
-# backward delete: wipe, scratch
-scratch: key("backspace")
-# forward delete: wiper, wash, deli, flick, delright, drill, punch, scrub
-drill: key("delete")
-# go word left: drain, before
-drain: edit.word_left()
-# go word right: step, after
-step: edit.word_right()
-# go left: tug, left
-tug: edit.left()
-# go right: push, right
-push: edit.right()
-# delete word left: scratcher
-scratcher: key("alt-backspace")
-# delete word right: swallow
-swallow: key("alt-delete")
+stack:                      ':'
 # {: lacer, lackey
 # }: racer, rebrace, racky
 # [: lacker, locker
@@ -65,9 +47,7 @@ swallow: key("alt-delete")
 # open command prompt: please
 # talon sleep: drowse, quiet
 # save: okay, disk
-disk: edit.save()
+disk:                       edit.save()
 # control: troll, king
 # shift: ship
-north: key("up")
-south: key("down")
-scrape: key("escape")
+scrape:                     key("escape")
