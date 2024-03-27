@@ -22,22 +22,24 @@ dendron lookup [<user.text>]:
   sleep(50ms)
   user.insert_formatted(text, "DOT_SEPARATED")
 
-C D new:
+tin you new:
   user.vscode("continue.newSession")
-C D file select:
+tin you file select:
   user.vscode("continue.selectFilesAsContext")
-C D history:
+tin you history:
   user.vscode("continue.viewHistory")
-C D accept:
+tin you accept:
   user.vscode("continue.acceptDiff")
-C D reject:
+tin you reject:
   user.vscode("continue.rejectDiff")
-C D toggle fullscreen:
+tin you toggle fullscreen:
   user.vscode("continue.toggleFullScreen")
-C D next:                   user.vscode("editor.action.inlineSuggest.showNext")
-C D (previous | last):      user.vscode("editor.action.inlineSuggest.showPrevious")
-C D debug terminal:         user.vscode("continue.debugTerminal")
-bar C D:
+tin you cancel:             user.vscode("editor.action.inlineSuggest.hide")
+tin you jest:               user.vscode("editor.action.inlineSuggest.trigger")
+tin you next:               user.vscode("editor.action.inlineSuggest.showNext")
+tin you (previous | last):  user.vscode("editor.action.inlineSuggest.showPrevious")
+tin you debug terminal:     user.vscode("continue.debugTerminal")
+bar tin you:
   user.vscode("continue.continueGUIView.focus")
 
 bless:                      user.vscode("cursorUndo")
