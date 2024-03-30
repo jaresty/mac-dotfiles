@@ -2,9 +2,11 @@
 step:                       edit.word_right()
 stepper:                    edit.line_end()
 steppy:                     edit.right()
+steppest:                   edit.file_end()
 slink:                      edit.word_left()
 slinker:                    edit.line_start()
 slinky:                     edit.left()
+slinkest:                   edit.file_start()
 fly:                        edit.up()
 fall:                       edit.down()
 
@@ -14,18 +16,26 @@ punch:
 	edit.delete()
 puncher:                    user.delete_line_end()
 punchy:                     user.delete_right()
+punchest:
+	edit.extend_file_end()
+	edit.delete()
 chomp:
 	edit.extend_word_left()
 	edit.delete()
 chomper:                    user.delete_line_start()
 chompy:                     edit.delete()
+chompest:
+	edit.extend_file_start()
+	edit.delete()
 
 #selecting
 snatch:                     edit.extend_word_right()
 snatcher:                   edit.extend_line_end()
 snatchy:                    edit.extend_right()
+snatchest:                  edit.extend_file_end()
 sweep:                      edit.extend_line_down()
 chance:                     edit.extend_word_left()
 chancer:                    edit.extend_line_start()
 chancy:                     edit.extend_left()
+chancest:                   edit.extend_file_start()
 dust:                       edit.extend_line_up()
