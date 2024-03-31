@@ -19,12 +19,12 @@ punchy:                     user.delete_right()
 punchest:
 	edit.extend_file_end()
 	edit.delete()
-chomp:
+kick:
 	edit.extend_word_left()
 	edit.delete()
-chomper:                    user.delete_line_start()
-chompy:                     edit.delete()
-chompest:
+kicker:                     user.delete_line_start()
+kicky:                      edit.delete()
+kickest:
 	edit.extend_file_start()
 	edit.delete()
 

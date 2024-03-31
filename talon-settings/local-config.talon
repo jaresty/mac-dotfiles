@@ -41,4 +41,3 @@ emoji [<user.text>]:
 
 # undo that: nope, nix, junk, blast
 nope:                       edit.undo()
-pone:                       edit.redo()
