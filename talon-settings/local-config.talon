@@ -41,3 +41,5 @@ emoji [<user.text>]:
 
 # undo that: nope, nix, junk, blast
 nope:                       edit.undo()
+
+insert team:                "Schwa\nAbe\nKowis\nMichael\nNico\n"
