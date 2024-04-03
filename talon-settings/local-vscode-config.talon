@@ -30,3 +30,6 @@ view [<user.text>]:
   insert(user.text or "")
 
 flash <user.cursorless_target>: user.cursorless_get_text(cursorless_target)
+
+wax:                        user.vscode("editor.action.smartSelect.expand")
+wane:                       user.vscode("editor.action.smartSelect.shrink")
