@@ -21,3 +21,13 @@ wane:                       key("alt-down")
 
 drag down:                  key('shift-cmd-down')
 drag up:                    key('shift-cmd-up')
+
+quick fix [<user.text>]:
+	key("alt-enter")
+	sleep(200ms)
+	insert(user.text or "")
+
+rename [<user.text>]:
+	key("shift-f6")
+	sleep(200ms)
+	insert(user.text or "")
