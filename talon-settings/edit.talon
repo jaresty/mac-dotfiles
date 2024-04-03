@@ -12,7 +12,7 @@ fall:                       edit.down()
 
 #deleting
 punch:                      key("alt-delete")
-puncher:                    key("cmd-delete")
+puncher:                    key("ctrl-k")
 punchy:                     key("delete")
 punchest:
 	edit.extend_file_end()
