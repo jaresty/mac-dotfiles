@@ -15,3 +15,9 @@ symbol hunt all [<user.text>]:
 	key("cmd-alt-o")
 	sleep(200ms)
 	insert(user.text or "")
+
+wax:                        key("alt-up")
+wane:                       key("alt-down")
+
+drag down:                  key('shift-cmd-down')
+drag up:                    key('shift-cmd-up')
