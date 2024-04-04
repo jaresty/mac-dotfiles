@@ -19,7 +19,7 @@ gain:                       core.repeat_command(1)
 grab O C R:                 key("cmd-ctrl-shift-alt-o")
 
 emoji [<user.text>]:
-  key(ctrl-space)
+  key(cmd-ctrl-shift-alt-space)
   sleep(50ms)
   insert(text or "")
 

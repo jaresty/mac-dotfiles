@@ -47,3 +47,5 @@ refactor [<user.text>]:
 	key("ctrl-t")
 	sleep(400ms)
 	insert(user.text or "")
+
+complete:                   key("ctrl-space")
