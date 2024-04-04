@@ -4,6 +4,7 @@ redo, redo
 peek, editor.action.peekDefinition
 hierarchy, editor.showCallHierarchy
 fuzzy, fuzzySearch.activeTextEditorWithCurrentSelection
+refactor, editor.action.refactor
 
 # Git
 git add, git.stageSelectedRanges

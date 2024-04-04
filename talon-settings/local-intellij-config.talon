@@ -3,17 +3,17 @@ app: jetbrains
 -
 please [<user.text>]:
 	key("cmd-shift-a")
-	sleep(200ms)
+	sleep(400ms)
 	insert(user.text or "")
 
 file hunt [<user.text>]:
 	key("cmd-shift-o")
-	sleep(200ms)
+	sleep(400ms)
 	insert(user.text or "")
 
 symbol hunt all [<user.text>]:
 	key("cmd-alt-o")
-	sleep(200ms)
+	sleep(400ms)
 	insert(user.text or "")
 
 wax:                        key("alt-up")
@@ -24,10 +24,15 @@ drag up:                    key('shift-cmd-up')
 
 quick fix [<user.text>]:
 	key("alt-enter")
-	sleep(200ms)
+	sleep(400ms)
 	insert(user.text or "")
 
 rename [<user.text>]:
 	key("shift-f6")
-	sleep(200ms)
+	sleep(400ms)
+	insert(user.text or "")
+
+refactor [<user.text>]:
+	key("ctrl-t")
+	sleep(400ms)
 	insert(user.text or "")
