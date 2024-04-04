@@ -21,6 +21,10 @@ wane:                       key("alt-down")
 
 drag down:                  key('shift-cmd-down')
 drag up:                    key('shift-cmd-up')
+steppest:                   key('cmd-alt-]')
+slinkest:                   key('cmd-alt-[')
+snatchest:                  key('cmd-alt-shift-]')
+chancest:                   key('cmd-alt-shift-[')
 
 quick fix [<user.text>]:
 	key("alt-enter")
