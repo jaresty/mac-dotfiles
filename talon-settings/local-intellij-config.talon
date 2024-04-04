@@ -25,6 +25,8 @@ steppest:                   key('cmd-alt-]')
 slinkest:                   key('cmd-alt-[')
 snatchest:                  key('cmd-alt-shift-]')
 chancest:                   key('cmd-alt-shift-[')
+punchest:                   key('cmd-alt-shift-] delete cmd-alt-l')
+kickest:                    key('cmd-alt-shift-[ delete cmd-alt-l')
 
 explore [<user.text>]:
 	key('cmd-f12')
