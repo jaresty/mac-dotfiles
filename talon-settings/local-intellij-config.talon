@@ -26,6 +26,11 @@ slinkest:                   key('cmd-alt-[')
 snatchest:                  key('cmd-alt-shift-]')
 chancest:                   key('cmd-alt-shift-[')
 
+explore [<user.text>]:
+	key('cmd-f12')
+	sleep(400ms)
+	insert(user.text or "")
+
 quick fix [<user.text>]:
 	key("alt-enter")
 	sleep(400ms)
