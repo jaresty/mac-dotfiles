@@ -7,6 +7,7 @@ key(f20:up):
 drowse:                     speech.disable()
 tag(): user.gpt_beta
 tag(): user.prefixed_numbers
+tag(): user.unix_utilities
 settings():
   user.emacs_meta = "alt"
   user.tmux_prefix_key = 'ctrl-space'
