@@ -1,17 +1,17 @@
 # Requires https://plugins.jetbrains.com/plugin/10504-voice-code-idea
 app: jetbrains
 -
-please [<user.text>]:
+please [<user.text>] [over]:
 	key("cmd-shift-a")
 	sleep(400ms)
 	insert(user.text or "")
 
-file hunt [<user.text>]:
+file hunt [<user.text>] [over]:
 	key("cmd-shift-o")
 	sleep(400ms)
 	insert(user.text or "")
 
-symbol hunt all [<user.text>]:
+symbol hunt all [<user.text>] [over]:
 	key("cmd-alt-o")
 	sleep(400ms)
 	insert(user.text or "")
@@ -28,22 +28,22 @@ chancest:                   key('cmd-alt-shift-[')
 punchest:                   key('cmd-alt-shift-] delete cmd-alt-l')
 kickest:                    key('cmd-alt-shift-[ delete cmd-alt-l')
 
-explore [<user.text>]:
+symbol hunt [<user.text>] [over]:
 	key('cmd-f12')
 	sleep(400ms)
 	insert(user.text or "")
 
-quick fix [<user.text>]:
+quick fix [<user.text>] [over]:
 	key("alt-enter")
 	sleep(400ms)
 	insert(user.text or "")
 
-rename [<user.text>]:
+rename [<user.text>] [over]:
 	key("shift-f6")
 	sleep(400ms)
 	insert(user.text or "")
 
-refactor [<user.text>]:
+refactor [<user.text>] [over]:
 	key("ctrl-t")
 	sleep(400ms)
 	insert(user.text or "")

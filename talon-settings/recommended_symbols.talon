@@ -41,8 +41,8 @@ round:                      user.insert_between("(", ")")
 round that:
 	text = edit.selected_text()
 	user.paste("({text})")
-square:                     user.insert_between("[", "]")
-square that:
+box:                        user.insert_between("[", "]")
+box that:
 	text = edit.selected_text()
 	user.paste("[{text}]")
 curly:                      user.insert_between("{", "}")

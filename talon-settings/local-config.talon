@@ -23,6 +23,8 @@ emoji [<user.text>]:
   sleep(50ms)
   insert(text or "")
 
+wait:                       sleep(400ms)
+
 # homerow
 ^mouser [<user.text>]:
   user.homerow_search()
