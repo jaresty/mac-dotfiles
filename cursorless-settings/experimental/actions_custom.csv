@@ -5,6 +5,7 @@ peek, editor.action.peekDefinition
 hierarchy, editor.showCallHierarchy
 fuzzy, fuzzySearch.activeTextEditorWithCurrentSelection
 refactor, editor.action.refactor
+sieve, workbench.action.experimental.quickTextSearch
 
 # Git
 git add, git.stageSelectedRanges
