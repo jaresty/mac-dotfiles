@@ -29,6 +29,23 @@ view [<user.text>]:
   user.vscode("workbench.action.openView")
   insert(user.text or "")
 
+task [<user.text>]:
+  user.vscode("workbench.action.quickOpen")
+  insert("task ")
+  insert(user.text or "")
+
+mob start:
+  user.vscode("workbench.action.quickOpen")
+  insert("task mob start\n")
+
+mob next:
+  user.vscode("workbench.action.quickOpen")
+  insert("task mob next\n")
+
+mob done:
+  user.vscode("workbench.action.quickOpen")
+  insert("task mob done\n")
+
 flash <user.cursorless_target>: user.cursorless_get_text(cursorless_target)
 
 wax:                        user.vscode("editor.action.smartSelect.expand")
