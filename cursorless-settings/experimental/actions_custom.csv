@@ -6,6 +6,7 @@ hierarchy, editor.showCallHierarchy
 fuzzy, fuzzySearch.activeTextEditorWithCurrentSelection
 refactor, editor.action.refactor
 sieve, workbench.action.experimental.quickTextSearch
+codelens, codelens.showLensesInCurrentLine
 
 # Git
 git add, git.stageSelectedRanges
