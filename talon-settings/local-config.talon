@@ -45,4 +45,4 @@ wait:                       sleep(400ms)
 # undo that: nope, nix, junk, blast
 nope:                       edit.undo()
 
-insert team:                "Schwa\nAbe\nKowis\nMichael\nNico\n"
+toggle mike:                key("cmd-ctrl-shift-alt-a")
