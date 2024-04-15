@@ -25,10 +25,6 @@ dendron lookup [<user.text>]:
 bless:                      user.vscode("cursorUndo")
 recurse:                    user.vscode("cursorRedo")
 
-view [<user.text>]:
-  user.vscode("workbench.action.openView")
-  insert(user.text or "")
-
 task [<user.text>]:
   user.vscode("workbench.action.quickOpen")
   insert("task ")
