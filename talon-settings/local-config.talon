@@ -11,6 +11,7 @@ tag(): user.unix_utilities
 settings():
   user.emacs_meta = "alt"
   user.tmux_prefix_key = 'ctrl-space'
+  user.model_shell_default = 'nushell'
 
 #  user.model_endpoint = "http://localhost:11434/api/chat"
 #  user.openai_model = 'codellama'
