@@ -1,5 +1,5 @@
 ^multi [<user.text>]:
-  key("cmd-shift-m")
+  key("ctrl-alt-cmd-shift-u")
   sleep(50ms)
   insert(text or "")
 
