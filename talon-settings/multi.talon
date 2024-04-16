@@ -14,8 +14,5 @@
 ^multi toggle audio:
   key("ctrl-alt-cmd-shift-a")
 
-^multi toggle audio:
-  key("ctrl-alt-cmd-shift-a")
-
 ^multi toggle video:
   key("ctrl-alt-cmd-shift-c")
