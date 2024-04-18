@@ -1,7 +1,7 @@
-key(f12:down):
+key(f10:down):
   app.notify("Talon is listening")
   speech.enable()
-key(f12:up):
+key(f10:up):
   speech.disable()
   app.notify("Talon is sleeping")
 drowse:                     speech.disable()
