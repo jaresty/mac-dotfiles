@@ -6,5 +6,4 @@ list:  user.customPrompt
 
 # Example
 
-## Allows you to say "model translate korean" to trigger the translation prompt
-translate korean: translate the following text into korean
+add questions: I want you to help me think about this question from various perspectives. Please take various perspectives and ask followup questions. For each perspective please tell me what the perspective is. Please annotate the entire conversation so it is clear that this is a dialogue between you and me since I intend to paste this into slack and I want others to know that this was a generated response. Please respond only with the perspectives and the questions that they generated.
