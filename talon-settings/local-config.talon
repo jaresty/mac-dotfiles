@@ -46,4 +46,4 @@ wait:                       sleep(400ms)
 # undo that: nope, nix, junk, blast
 nope:                       edit.undo()
 
-toggle mike:                key("cmd-ctrl-shift-alt-a")
+toggle mike:                key("f11")
