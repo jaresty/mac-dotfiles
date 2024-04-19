@@ -1,1 +1,2 @@
-select last paste:          user.select_last_paste()
+select paste:               user.select_paste()
+paste select:               user.paste_select()
