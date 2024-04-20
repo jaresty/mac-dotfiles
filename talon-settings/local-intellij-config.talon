@@ -1,6 +1,9 @@
 # Requires https://plugins.jetbrains.com/plugin/10504-voice-code-idea
 app: jetbrains
 -
+settings():
+	key_wait = 1.5
+
 please [<user.text>] [over]:
 	key("cmd-shift-a")
 	sleep(400ms)
