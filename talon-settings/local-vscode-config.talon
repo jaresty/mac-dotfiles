@@ -22,6 +22,7 @@ dendron lookup [<user.text>]:
   sleep(50ms)
   user.insert_formatted(text, "DOT_SEPARATED")
 
+complete:                   user.vscode("editor.action.triggerSuggest")
 bless:                      user.vscode("cursorUndo")
 recurse:                    user.vscode("cursorRedo")
 
