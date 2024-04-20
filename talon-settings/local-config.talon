@@ -34,7 +34,7 @@ wait:                       sleep(400ms)
   insert(text or "")
 
 ^windows [<user.text>]:
-  key("alt-tab")
+  key(cmd-ctrl-shift-alt-tab)
   sleep(50ms)
   insert(text or "")
 
