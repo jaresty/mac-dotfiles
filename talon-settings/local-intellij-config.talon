@@ -19,7 +19,14 @@ symbol hunt all [<user.text>] [over]:
 explore:                    key("cmd-f12")
 split next:                 key("alt-tab")
 split previous:             key("alt-shift-tab")
-
+clone funk:
+	key('cmd-alt-shift-[')
+	key("alt-up")
+	key("alt-up")
+	key(cmd-d)
+take inside:
+	key('cmd-alt-[')
+	key('cmd-alt-shift-]')
 wax:                        key("alt-up")
 wane:                       key("alt-down")
 
