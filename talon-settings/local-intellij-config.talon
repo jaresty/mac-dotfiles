@@ -16,6 +16,10 @@ symbol hunt all [<user.text>] [over]:
 	sleep(400ms)
 	insert(user.text or "")
 
+explore:                    key("cmd-f12")
+split next:                 key("alt-tab")
+split previous:             key("alt-shift-tab")
+
 wax:                        key("alt-up")
 wane:                       key("alt-down")
 
