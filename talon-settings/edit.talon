@@ -40,6 +40,7 @@ boom:
 boomer:                     edit.delete_line()
 boomest:
 	edit.select_all()
+	edit.delete()
 
 #selecting forward
 snatchy:                    key("shift-right")
