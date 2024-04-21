@@ -75,7 +75,7 @@ refactor [<user.text>] [over]:
 
 complete:                   key("ctrl-space")
 
-spawn [<user.text>] [over]:
+teleport [<user.text>] [over]:
 	key(cmd-shift-e)
 	sleep(400ms)
 	insert(user.text or "")
