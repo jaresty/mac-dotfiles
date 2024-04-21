@@ -23,13 +23,15 @@ kicky:                      key("backspace")
 kickest:
 	edit.extend_file_start()
 	edit.delete()
+boomy:
+	key(delete)
+	key(backspace)
 boom:
 	key(alt-delete)
 	key(alt-backspace)
 boomer:                     edit.delete_line()
 boomest:
 	edit.select_all()
-	edit.delete()
 
 #selecting
 snatch:                     key("alt-shift-right")
