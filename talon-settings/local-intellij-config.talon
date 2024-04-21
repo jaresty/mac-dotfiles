@@ -16,18 +16,25 @@ file hunt [<user.text>] [over]:
 
 symbol hunt all [<user.text>] [over]:
 	key("cmd-alt-o")
-	sleep(400ms)
+	sleep()
 	insert(user.text or "")
 
-explore:                    key("cmd-f12")
-split next:                 key("alt-tab")
-split previous:             key("alt-shift-tab")
+explore [<user.text>] [over]:
+	key("cmd-f12")
+	sleep(400ms)
+	insert(user.text or "")
+splitter:                   key("alt-tab")
 clone funk:
 	key('cmd-alt-shift-[')
 	key("alt-up")
 	key("alt-up")
 	key(cmd-d)
-take inside:
+take funk:
+	key('cmd-alt-[')
+	key('cmd-alt-shift-]')
+	key("alt-up")
+	key("alt-up")
+gathest:
 	key('cmd-alt-[')
 	key('cmd-alt-shift-]')
 wax:                        key("alt-up")
@@ -41,6 +48,10 @@ snatchest:                  key('cmd-alt-shift-]')
 chancest:                   key('cmd-alt-shift-[')
 punchest:                   key('cmd-alt-shift-] delete cmd-alt-l')
 kickest:                    key('cmd-alt-shift-[ delete cmd-alt-l')
+boomest:
+	key('cmd-alt-[')
+	key('cmd-alt-shift-]')
+	edit.delete()
 
 symbol hunt [<user.text>] [over]:
 	key('cmd-f12')

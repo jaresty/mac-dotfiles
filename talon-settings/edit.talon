@@ -23,6 +23,13 @@ kicky:                      key("backspace")
 kickest:
 	edit.extend_file_start()
 	edit.delete()
+boom:
+	key(alt-delete)
+	key(alt-backspace)
+boomer:                     edit.delete_line()
+boomest:
+	edit.select_all()
+	edit.delete()
 
 #selecting
 snatch:                     key("alt-shift-right")
@@ -35,3 +42,5 @@ chancer:                    key("cmd-shift-left")
 chancy:                     key("shift-left")
 chancest:                   edit.extend_file_start()
 dust:                       key("shift-up")
+gather:                     edit.select_line()
+gathest:                    edit.select_all()

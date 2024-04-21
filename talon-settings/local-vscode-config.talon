@@ -26,6 +26,8 @@ complete:                   user.vscode("editor.action.triggerSuggest")
 bless:                      user.vscode("cursorUndo")
 recurse:                    user.vscode("cursorRedo")
 
+splitter:                   user.vscode("workbench.action.focusNextGroup")
+
 task [<user.text>]:
   user.vscode("workbench.action.quickOpen")
   insert("task ")
