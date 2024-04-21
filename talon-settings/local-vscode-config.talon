@@ -49,3 +49,7 @@ flash <user.cursorless_target>: user.cursorless_get_text(cursorless_target)
 
 wax:                        user.vscode("editor.action.smartSelect.expand")
 wane:                       user.vscode("editor.action.smartSelect.shrink")
+
+rescue:                     user.vscode("editor.action.marker.nextInFiles")
+rescue last:                user.vscode("editor.action.marker.prevInFiles")
+repair:                     user.vscode("problems.action.showQuickFixes")

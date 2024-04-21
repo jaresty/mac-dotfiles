@@ -79,3 +79,7 @@ teleport [<user.text>] [over]:
 	key(cmd-shift-e)
 	sleep(400ms)
 	insert(user.text or "")
+
+rescue:                     key(f2)
+rescue last:                key(shift-f2)
+repair:                     key(alt-enter)
