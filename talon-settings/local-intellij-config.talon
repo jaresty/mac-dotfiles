@@ -16,7 +16,7 @@ file hunt [<user.text>] [over]:
 
 symbol hunt all [<user.text>] [over]:
 	key("cmd-alt-o")
-	sleep()
+	sleep(400ms)
 	insert(user.text or "")
 
 explore [<user.text>] [over]:
@@ -74,3 +74,8 @@ refactor [<user.text>] [over]:
 	insert(user.text or "")
 
 complete:                   key("ctrl-space")
+
+spawn [<user.text>] [over]:
+	key(cmd-shift-e)
+	sleep(400ms)
+	insert(user.text or "")
