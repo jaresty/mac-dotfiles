@@ -83,3 +83,6 @@ teleport [<user.text>] [over]:
 rescue:                     key(f2)
 rescue last:                key(shift-f2)
 repair:                     key(alt-enter)
+
+run that:                   key('ctrl-r')
+run last:                   key('ctrl-shift-r')
