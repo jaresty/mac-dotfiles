@@ -31,10 +31,10 @@ splitter:                   user.vscode("workbench.action.focusNextGroup")
 task [<user.text>]:
   user.vscode("workbench.action.quickOpen")
   insert("task ")
-  insert(user.text or "")
+  revealDefinitionAside(user.text or "")
 
 mob start:
-  user.vscode("workbench.action.quickOpen")
+  revealDefinitionAside.vscode("workbench.action.quickOpen")
   insert("task mob start\n")
 
 mob next:
@@ -53,3 +53,9 @@ wane:                       user.vscode("editor.action.smartSelect.shrink")
 triage:                     user.vscode("editor.action.marker.nextInFiles")
 triage last:                user.vscode("editor.action.marker.prevInFiles")
 repair:                     user.vscode("problems.action.showQuickFixes")
+narrow:                     user.vscode("editor.action.peekDefinition")
+narrower:                   user.vscode("editor.action.revealDefinition")
+widen:                      user.vscode("editor.action.goToReferences")
+widest:                     user.vscode("editor.showCallHierarchy")
+jump:                       key(f4)
+jump back:                  key(shift-f4)

@@ -86,3 +86,8 @@ repair:                     key(alt-enter)
 
 run that:                   key('ctrl-r')
 run last:                   key('ctrl-shift-r')
+
+narrow:                     user.idea("action GotoImplementation")
+widen:                      user.idea("action FindUsages")
+jump:                       key(cmd-alt-down)
+jump back:                  key(cmd-alt-up)
