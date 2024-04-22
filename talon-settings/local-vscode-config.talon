@@ -48,12 +48,10 @@ wane:                       user.vscode("editor.action.smartSelect.shrink")
 
 triage:
   user.vscode("editor.action.marker.nextInFiles")
-  sleep(50ms)
-  user.vscode("problems.action.showQuickFixes")
+  user.vscode("editor.action.quickFix")
 triage last:
   user.vscode("editor.action.marker.prevInFiles")
-  sleep(50ms)
-  user.vscode("problems.action.showQuickFixes")
+  user.vscode("editor.action.quickFix")
 narrow:                     user.vscode("editor.action.peekDefinition")
 narrower:                   user.vscode("editor.action.revealDefinition")
 widen:                      user.vscode("editor.action.goToReferences")
