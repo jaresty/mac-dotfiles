@@ -80,9 +80,12 @@ teleport [<user.text>] [over]:
 	sleep(400ms)
 	insert(user.text or "")
 
-triage:                     key(f2)
-triage last:                key(shift-f2)
-repair:                     key(alt-enter)
+triage:
+	key(f2)
+	key(alt-enter)
+triage last:
+	key(shift-f2)
+	key(alt-enter)
 
 run that:                   key('ctrl-r')
 run last:                   key('ctrl-shift-r')
