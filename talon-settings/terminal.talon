@@ -5,3 +5,5 @@ mob next:                   "mob next\n"
 mob done:                   "mob done\n"
 
 git as:                     "git as "
+
+n p m:                      "npm "
