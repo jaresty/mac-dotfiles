@@ -93,3 +93,11 @@ run last:                   key('ctrl-shift-r')
 reference:                  user.idea("action FindUsages")
 jump:                       key(cmd-alt-down)
 jump back:                  key(cmd-alt-up)
+
+narrow:
+	key(cmd-shift--)
+	key(cmd-=)
+	key(cmd-alt-=)
+
+widen:
+	key(cmd-shift-+)
