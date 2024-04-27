@@ -52,10 +52,7 @@ triage:
 triage last:
   user.vscode("editor.action.marker.prevInFiles")
   user.vscode("editor.action.quickFix")
-narrow:                     user.vscode("editor.action.peekDefinition")
-narrower:                   user.vscode("editor.action.revealDefinition")
-widen:                      user.vscode("editor.action.goToReferences")
-widest:                     user.vscode("editor.showCallHierarchy")
+widen:                      user.vscode("editor.unfoldAll")
 jump:                       key(f4)
 jump back:                  key(shift-f4)
 

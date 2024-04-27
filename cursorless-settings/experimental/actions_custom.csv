@@ -7,6 +7,7 @@ fuzzy, fuzzySearch.activeTextEditorWithCurrentSelection
 refactor, editor.action.refactor
 sieve, workbench.action.experimental.quickTextSearch
 codelens, codelens.showLensesInCurrentLinenarrow
+narrow, editor.foldAllExcept
 
 # Git
 git add, git.stageSelectedRanges
