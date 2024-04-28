@@ -10,7 +10,7 @@ fuzzy [<user.text>]:
   sleep(50ms)
   insert(text or "")
 met ex:
-  user.vscode("editor.emmet.action.expandAbbreviation")
+  key(tab)
 git log:
   user.vscode("gitlens.showGraph")
 dendron lookup [<user.text>]:
@@ -57,6 +57,7 @@ jump:                       key(f4)
 jump back:                  key(shift-f4)
 
 pop deaf:                   user.vscode("editor.action.peekDefinition")
+pop jest:                   user.vscode("toggleSuggestionDetails")
 pop type:                   user.vscode("editor.action.peekTypeDefinition")
 pop type hierarchy:         user.vscode("editor.showTypeHierarchy")
 pop params:                 user.vscode("editor.action.triggerParameterHints")
