@@ -24,7 +24,7 @@ recurse:                    user.vscode("cursorRedo")
 
 splitter:                   user.vscode("workbench.action.focusNextGroup")
 
-task [<user.text>]:
+task run [<user.text>]:
   user.vscode("workbench.action.quickOpen")
   insert("task ")
   revealDefinitionAside(user.text or "")

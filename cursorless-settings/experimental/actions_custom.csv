@@ -31,7 +31,7 @@ emmet small decrement, editor.emmet.action.decrementNumberByOneTenth
 emmet big decrement, editor.emmet.action.decrementNumberByTen
 
 # VSCode
-test, testing.runAtCursor
+test run, testing.runAtCursor
 test debug, testing.debugAtCursor
 debug break, editor.debug.action.toggleBreakpoint
 debug hover, editor.debug.action.showDebugHover
