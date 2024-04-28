@@ -103,3 +103,39 @@ widen:
 	key(cmd-shift-+)
 
 pop params:                 user.idea("action ParameterInfo")
+
+rename last <user.text> [over]:
+	user.idea("find prev {text}")
+	sleep(100ms)
+	key("shift-f6")
+rename next <user.text> [over]:
+	user.idea("find next {text}")
+	sleep(100ms)
+	key("shift-f6")
+
+refactor last <user.text> [over]:
+	user.idea("find prev {text}")
+	sleep(100ms)
+	key("alt-enter")
+refactor next <user.text> [over]:
+	user.idea("find next {text}")
+	sleep(100ms)
+	key("ctrl-t")
+
+quick fix last <user.text> [over]:
+	user.idea("find prev {text}")
+	sleep(100ms)
+	key("alt-enter")
+quick fix next <user.text> [over]:
+	user.idea("find next {text}")
+	sleep(100ms)
+	key("alt-enter")
+
+complete last <user.text> [over]:
+	user.idea("find prev {text}")
+	sleep(100ms)
+	key("ctrl-space")
+complete next <user.text> [over]:
+	user.idea("find next {text}")
+	sleep(100ms)
+	key("ctrl-space")
