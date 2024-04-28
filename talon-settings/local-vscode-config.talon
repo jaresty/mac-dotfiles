@@ -9,7 +9,7 @@ fuzzy [<user.text>]:
   user.vscode("fuzzySearch.activeTextEditor")
   sleep(50ms)
   insert(text or "")
-emmet expand:
+met ex:
   user.vscode("editor.emmet.action.expandAbbreviation")
 git log:
   user.vscode("gitlens.showGraph")

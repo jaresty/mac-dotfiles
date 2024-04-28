@@ -20,15 +20,16 @@ gitlab open,gl.openActiveFile
 gitlab copy,gl.copyLinkToActiveFile
 
 # Emmet / HTML
-emmet rename, editor.emmet.action.updateTag
-emmet split join, editor.emmet.action.splitJoinTag
-emmet wrap, editor.emmet.action.wrapWithAbbreviation
-emmet increment, editor.emmet.action.incrementNumberByOne
-emmet small increment, editor.emmet.action.incrementNumberByOneTenth
-emmet big increment, editor.emmet.action.incrementNumberByTen
-emmet decrement, editor.emmet.action.decrementNumberByOne
-emmet small decrement, editor.emmet.action.decrementNumberByOneTenth
-emmet big decrement, editor.emmet.action.decrementNumberByTen
+met rename, editor.emmet.action.updateTag
+met switch, editor.emmet.action.splitJoinTag
+met wrap, editor.emmet.action.wrapWithAbbreviation
+met ink, editor.emmet.action.incrementNumberByOne
+met small ink, editor.emmet.action.incrementNumberByOneTenth
+met big ink, editor.emmet.action.incrementNumberByTen
+met deck, editor.emmet.action.decrementNumberByOne
+met small deck, editor.emmet.action.decrementNumberByOneTenth
+met big deck, editor.emmet.action.decrementNumberByTen
+met rem, editor.emmet.action.removeTag
 
 # VSCode
 test run, testing.runAtCursor
