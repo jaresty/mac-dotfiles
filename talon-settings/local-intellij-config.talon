@@ -101,3 +101,5 @@ narrow:
 
 widen:
 	key(cmd-shift-+)
+
+pop params:                 user.idea("action ParameterInfo")
