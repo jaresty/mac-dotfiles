@@ -60,3 +60,6 @@ pop deaf:                   user.vscode("editor.action.peekDefinition")
 pop type:                   user.vscode("editor.action.peekTypeDefinition")
 pop type hierarchy:         user.vscode("editor.showTypeHierarchy")
 pop params:                 user.vscode("editor.action.triggerParameterHints")
+
+testing start:              user.vscode("testing.startContinuousRun")
+testing stop:               user.vscode("testing.stopContinuousRun")
