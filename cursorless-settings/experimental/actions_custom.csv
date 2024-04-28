@@ -20,7 +20,7 @@ gitlab open,gl.openActiveFile
 gitlab copy,gl.copyLinkToActiveFile
 
 # Emmet / HTML
-met rename, editor.emmet.action.updateTag
+met up, editor.emmet.action.updateTag
 met switch, editor.emmet.action.splitJoinTag
 met wrap, editor.emmet.action.wrapWithAbbreviation
 met ink, editor.emmet.action.incrementNumberByOne
