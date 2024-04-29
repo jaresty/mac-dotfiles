@@ -110,5 +110,5 @@ rename last <user.text> [over]: user.idea("find prev {text}, action RenameElemen
 complete next <user.text> [over]: user.idea("find next {text},action CodeCompletion")
 complete last <user.text> [over]: user.idea("find prev {text},action CodeCompletion")
 
-intention next <user.text> [over]: user.idea("find next {text},action ShowIntentionActions")
-intention last <user.text> [over]: user.idea("find prev {text},action ShowIntentionActions")
+quick fix next <user.text> [over]: user.idea("find next {text},action ShowIntentionActions")
+quick fix last <user.text> [over]: user.idea("find prev {text},action ShowIntentionActions")
