@@ -9,3 +9,4 @@ double box, doubleBox.destination
 describe, describeBlock.body
 spec, itBlock.body
 before each, beforeEachBlock.body
+frag, reactFragment.fragmentBody

@@ -1,0 +1,24 @@
+{
+  "reactFragment": {
+    "definitions": [
+      {
+        "scope": {
+          "langIds": [
+            "typescriptreact",
+            "javascriptreact"
+          ]
+        },
+        "body": [
+          "<>$fragmentBody</>"
+        ]
+      }
+    ],
+    "description": "The react fragment",
+    "variables": {
+      "fragmentBody": {}
+    },
+    "insertionScopeTypes": [
+      "statement"
+    ]
+  }
+}

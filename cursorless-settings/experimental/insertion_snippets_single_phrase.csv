@@ -4,3 +4,4 @@ link, link.text
 describe, describeBlock.description
 spec, itBlock.description
 before each, beforeEachBlock.body
+frag, reactFragment.fragmentBody
