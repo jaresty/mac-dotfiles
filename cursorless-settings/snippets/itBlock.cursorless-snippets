@@ -1,28 +1,30 @@
 {
-	"itBlock": {
-		"definitions": [
-			{
-				"scope": {
-					"langIds": [
-						"typescript",
-            "javascript"
-					]
-				},
-				"body": [
-					"it('$description', () => {",
-					"\t$body",
-					"});"
-				]
-			}
-		],
-		"description": "A single test",
-		"variables": {
-			"body": {
-				"wrapperScopeType": "statement" 
-			}
-		},
-		"insertionScopeTypes": [
-			"statement"
-		]
-	}
+  "itBlock": {
+    "definitions": [
+      {
+        "scope": {
+          "langIds": [
+            "typescript",
+            "javascript",
+            "typescriptreact",
+            "javascriptreact"
+          ]
+        },
+        "body": [
+          "it('$description', () => {",
+          "\t$body",
+          "});"
+        ]
+      }
+    ],
+    "description": "A single test",
+    "variables": {
+      "body": {
+        "wrapperScopeType": "statement"
+      }
+    },
+    "insertionScopeTypes": [
+      "statement"
+    ]
+  }
 }

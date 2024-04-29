@@ -1,28 +1,30 @@
 {
-	"beforeEachBlock": {
-		"definitions": [
-			{
-				"scope": {
-					"langIds": [
-						"typescript",
-            "javascript"
-					]
-				},
-				"body": [
-					"beforeEach(() => {",
-					"\t$body",
-					"});"
-				]
-			}
-		],
-		"description": "Before each block",
-		"variables": {
-			"body": {
-				"wrapperScopeType": "statement" 
-			}
-		},
-		"insertionScopeTypes": [
-			"statement"
-		]
-	}
+  "beforeEachBlock": {
+    "definitions": [
+      {
+        "scope": {
+          "langIds": [
+            "typescript",
+            "javascript",
+            "typescriptreact",
+            "javascriptreact"
+          ]
+        },
+        "body": [
+          "beforeEach(() => {",
+          "\t$body",
+          "});"
+        ]
+      }
+    ],
+    "description": "Before each block",
+    "variables": {
+      "body": {
+        "wrapperScopeType": "statement"
+      }
+    },
+    "insertionScopeTypes": [
+      "statement"
+    ]
+  }
 }

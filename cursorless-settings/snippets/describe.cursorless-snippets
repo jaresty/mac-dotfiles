@@ -1,26 +1,28 @@
 {
-	"describeBlock": {
-		"definitions": [
-			{
-				"scope": {
-					"langIds": [
-						"typescript",
-            "javascript"
-					]
-				},
-				"body": [
-					"describe('$description', () => {\n\t$body\n});"
-				]
-			}
-		],
-		"description": "",
-		"variables": {
-			"body": {
-				"wrapperScopeType": "statement" 
-			}
-		},
-		"insertionScopeTypes": [
-			"statement"
-		]
-	}
+  "describeBlock": {
+    "definitions": [
+      {
+        "scope": {
+          "langIds": [
+            "typescript",
+            "typescriptreact",
+            "javascript",
+            "javascriptreact"
+          ]
+        },
+        "body": [
+          "describe('$description', () => {\n\t$body\n});"
+        ]
+      }
+    ],
+    "description": "",
+    "variables": {
+      "body": {
+        "wrapperScopeType": "statement"
+      }
+    },
+    "insertionScopeTypes": [
+      "statement"
+    ]
+  }
 }
