@@ -1,4 +1,4 @@
 select paste:               user.select_paste()
 paste select:               user.paste_select()
 
-go middle:                  user.go_middle()
+go mid:                     user.go_mid()

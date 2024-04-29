@@ -24,7 +24,7 @@ class Actions:
     def paste_select():
         """Paste and select"""
 
-    def go_middle():
+    def go_mid():
         """Go to the middle of the line"""
         actions.edit.select_line()
         half_line_length = int(len(actions.edit.selected_text()) / 2)
