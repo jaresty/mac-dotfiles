@@ -58,22 +58,22 @@ symbol hunt [<user.text>] [over]:
 	sleep(400ms)
 	insert(user.text or "")
 
-quick fix [<user.text>] [over]:
+intention this [<user.text>] [over]:
 	key("alt-enter")
 	sleep(400ms)
 	insert(user.text or "")
 
-rename [<user.text>] [over]:
+rename this [<user.text>] [over]:
 	key("shift-f6")
 	sleep(400ms)
 	insert(user.text or "")
 
-refactor [<user.text>] [over]:
+refactor this [<user.text>] [over]:
 	key("ctrl-t")
 	sleep(400ms)
 	insert(user.text or "")
 
-complete:                   key("ctrl-space")
+complete this:              user.idea("action CodeCompletion")
 
 teleport [<user.text>] [over]:
 	key(cmd-shift-e)
@@ -104,38 +104,11 @@ widen:
 
 pop params:                 user.idea("action ParameterInfo")
 
-rename last <user.text> [over]:
-	user.idea("find prev {text}")
-	sleep(100ms)
-	key("shift-f6")
-rename next <user.text> [over]:
-	user.idea("find next {text}")
-	sleep(100ms)
-	key("shift-f6")
+rename next <user.text> [over]: user.idea("find next {text}, action RenameElement")
+rename last <user.text> [over]: user.idea("find prev {text}, action RenameElement")
 
-refactor last <user.text> [over]:
-	user.idea("find prev {text}")
-	sleep(100ms)
-	key("alt-enter")
-refactor next <user.text> [over]:
-	user.idea("find next {text}")
-	sleep(100ms)
-	key("ctrl-t")
+complete next <user.text> [over]: user.idea("find next {text},action CodeCompletion")
+complete last <user.text> [over]: user.idea("find prev {text},action CodeCompletion")
 
-quick fix last <user.text> [over]:
-	user.idea("find prev {text}")
-	sleep(100ms)
-	key("alt-enter")
-quick fix next <user.text> [over]:
-	user.idea("find next {text}")
-	sleep(100ms)
-	key("alt-enter")
-
-complete last <user.text> [over]:
-	user.idea("find prev {text}")
-	sleep(100ms)
-	key("ctrl-space")
-complete next <user.text> [over]:
-	user.idea("find next {text}")
-	sleep(100ms)
-	key("ctrl-space")
+intention next <user.text> [over]: user.idea("find next {text},action ShowIntentionActions")
+intention last <user.text> [over]: user.idea("find prev {text},action ShowIntentionActions")
