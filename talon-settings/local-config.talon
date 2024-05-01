@@ -47,3 +47,5 @@ wait:                       sleep(400ms)
 nope:                       edit.undo()
 
 toggle mike:                key("f11")
+
+{user.formatters} (abbreviate | abreviate | brief) {user.abbreviation}: user.insert_formatted(abbreviation, formatters)
