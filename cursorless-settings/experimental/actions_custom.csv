@@ -5,7 +5,7 @@ peek, editor.action.peekDefinition
 hierarchy, editor.showCallHierarchy
 fuzzy, fuzzySearch.activeTextEditorWithCurrentSelection
 refactor, editor.action.refactor
-sieve, workbench.action.experimental.quickTextSearch
+sieve, workbench.action.quickTextSearch
 codelens, codelens.showLensesInCurrentLinenarrow
 narrow, editor.foldAllExcept
 
