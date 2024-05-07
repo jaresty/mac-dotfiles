@@ -73,6 +73,8 @@ ski that:
 	text = edit.selected_text()
 	user.paste("`{text}`")
 
+tween <user.symbol_key>:    user.insert_between("{symbol_key}", "{symbol_key}")
+
 # open command prompt: please
 # talon sleep: drowse, quiet
 # save: okay, disk
