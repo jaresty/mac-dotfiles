@@ -9,6 +9,6 @@ escaped twin, escapedSingleQuotes
 pair, any
 quad, doubleQuotes
 round, parentheses
-skis, backtickQuotes
+ski, backtickQuotes
 twin, singleQuotes
 void, whitespace

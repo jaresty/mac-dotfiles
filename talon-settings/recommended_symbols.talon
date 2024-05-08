@@ -67,9 +67,9 @@ empty twin:                 "''"
 twin that:
 	text = edit.selected_text()
 	user.paste("'{text}'")
-skis:                       user.insert_between("`", '`')
-empty skis:                 "``"
-skis that:
+ski:                        user.insert_between("`", '`')
+empty ski:                  "``"
+ski that:
 	text = edit.selected_text()
 	user.paste("`{text}`")
 
