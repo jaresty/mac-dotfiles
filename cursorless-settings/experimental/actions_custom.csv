@@ -23,12 +23,6 @@ gitlab copy,gl.copyLinkToActiveFile
 met up, editor.emmet.action.updateTag
 met switch, editor.emmet.action.splitJoinTag
 met wrap, editor.emmet.action.wrapWithAbbreviation
-met ink, editor.emmet.action.incrementNumberByOne
-met small ink, editor.emmet.action.incrementNumberByOneTenth
-met big ink, editor.emmet.action.incrementNumberByTen
-met deck, editor.emmet.action.decrementNumberByOne
-met small deck, editor.emmet.action.decrementNumberByOneTenth
-met big deck, editor.emmet.action.decrementNumberByTen
 met rem, editor.emmet.action.removeTag
 
 # VSCode
