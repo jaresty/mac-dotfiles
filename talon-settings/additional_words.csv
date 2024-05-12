@@ -1,4 +1,4 @@
-Word(s),Spoken Form (If Different)
+sWord(s),Spoken Form (If Different)
 nmap,N map
 under-documented,under documented
 nmap
@@ -13,7 +13,17 @@ Aresty
 Schwa
 jaresty
 dendron
-Kohl's,coles
-npm, n p m
+npm,n p m
 git,git
 URL,u r l
+WIP,wip
+CSV,c s v
+TDD,t d d
+BDD,b d d
+PR,p r
+# Kohl's
+Kohl's,coles
+KDS,k d s
+PMP,p m p
+PDP,p d p
+PICS,picks
