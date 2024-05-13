@@ -58,7 +58,7 @@ symbol hunt [<user.text>] [over]:
 	sleep(400ms)
 	insert(user.text or "")
 
-intention this [<user.text>] [over]:
+quick fix this [<user.text>] [over]:
 	key("alt-enter")
 	sleep(400ms)
 	insert(user.text or "")
