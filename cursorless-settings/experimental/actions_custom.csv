@@ -8,7 +8,7 @@ refactor, editor.action.refactor
 sieve, workbench.action.quickTextSearch
 codelens, codelens.showLensesInCurrentLine
 narrow, editor.foldAllExcept
-codetour add,codetour.addTourStep
+codetour add,codetour.addSelectionStep
 
 # Git
 git add, git.stageSelectedRanges
