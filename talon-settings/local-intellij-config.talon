@@ -14,6 +14,37 @@ file hunt [<user.text>] [over]:
 	sleep(400ms)
 	insert(user.text or "")
 
+# File Commands
+dock [<user.text>] [{user.file_extension}] [over]:
+	key("cmd-shift-o")
+	sleep(400ms)
+	insert(text or "")
+	insert(file_extension or "")
+	sleep(300ms)
+dock pop <user.text> [{user.file_extension}] [over]:
+	user.idea("action RecentFiles")
+	sleep(400ms)
+	insert(text or "")
+	insert(file_extension or "")
+	sleep(300ms)
+	key(enter)
+	sleep(150ms)
+dock split <user.text> [{user.file_extension}] [over]:
+	key("cmd-shift-o")
+	sleep(400ms)
+	insert(text or "")
+	insert(file_extension or "")
+	sleep(300ms)
+	key(shift-enter)
+dock pop:
+	key(ctrl-tab)
+pop alter:
+	user.idea("action GotoTest")
+	key(enter)
+split alter:
+	user.idea("action GotoTest")
+	key(shift-enter)
+
 symbol hunt all [<user.text>] [over]:
 	key("cmd-alt-o")
 	sleep(400ms)
