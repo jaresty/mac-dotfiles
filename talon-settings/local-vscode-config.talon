@@ -58,6 +58,16 @@ triage:
 triage last:
   user.vscode("editor.action.marker.prevInFiles")
   user.vscode("editor.action.quickFix")
+
+go next (error | air):      user.vscode("editor.action.marker.nextInFiles")
+go last (error | air):      user.vscode("editor.action.marker.prevInFiles")
+fix next (error | air):
+  user.vscode("editor.action.marker.nextInFiles")
+  user.vscode("editor.action.quickFix")
+fix last (error | air):
+  user.vscode("editor.action.marker.prevInFiles")
+  user.vscode("editor.action.quickFix")
+
 widen:                      user.vscode("editor.unfoldAll")
 jump:                       key(f4)
 jump back:                  key(shift-f4)
