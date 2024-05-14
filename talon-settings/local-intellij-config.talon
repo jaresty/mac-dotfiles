@@ -112,3 +112,6 @@ complete last <user.text> [over]: user.idea("find prev {text},action CodeComplet
 
 quick fix next <user.text> [over]: user.idea("find next {text},action ShowIntentionActions")
 quick fix last <user.text> [over]: user.idea("find prev {text},action ShowIntentionActions")
+
+change next:                key(ctrl-shift-alt-down)
+change last:                key(ctrl-shift-alt-up)
