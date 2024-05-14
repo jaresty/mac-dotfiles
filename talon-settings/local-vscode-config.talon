@@ -4,6 +4,9 @@ diff <user.cursorless_target> to <user.cursorless_target>:
   user.cursorless_ide_command("extension.partialDiff.markSection1", cursorless_target_1)
   user.cursorless_ide_command("extension.partialDiff.markSection2AndTakeDiff", cursorless_target_2)
 
+change next:                user.vscode("editor.action.dirtydiff.next")
+change last:                user.vscode("editor.action.dirtydiff.last")
+
 complete <user.cursorless_target>:
   user.cursorless_command("setSelectionAfter", cursorless_target)
   user.vscode("editor.action.triggerSuggest")

@@ -11,6 +11,7 @@ narrow, editor.foldAllExcept
 codetour add,codetour.addSelectionStep
 
 # Git
+pop git,editor.action.dirtydiff.next
 git add, git.stageSelectedRanges
 git reset, git.unstageSelectedRanges
 git revert, git.revertSelectedRanges
