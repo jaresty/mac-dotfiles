@@ -8,18 +8,18 @@ refactor, editor.action.refactor
 sieve, workbench.action.quickTextSearch
 codelens, codelens.showLensesInCurrentLine
 narrow, editor.foldAllExcept
-codetour add,codetour.addSelectionStep
+codetour add, codetour.addSelectionStep
 
 # Git
-pop git,editor.action.dirtydiff.next
+pop git, editor.action.dirtydiff.next
 git add, git.stageSelectedRanges
 git reset, git.unstageSelectedRanges
 git revert, git.revertSelectedRanges
 git accept, merge-conflict.accept.selection
-github copy,extension.copyGitHubLinkToClipboard
-github open,extension.openInGitHub
-gitlab open,gl.openActiveFile
-gitlab copy,gl.copyLinkToActiveFile
+github copy, extension.copyGitHubLinkToClipboard
+github open, extension.openInGitHub
+gitlab open, gl.openActiveFile
+gitlab copy, gl.copyLinkToActiveFile
 
 # Emmet / HTML
 met up, editor.emmet.action.updateTag
