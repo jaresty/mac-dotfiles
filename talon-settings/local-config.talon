@@ -43,6 +43,20 @@ wait:                       sleep(400ms)
   sleep(50ms)
   insert(text or "")
 
+^conventional commit:
+  key("cmd-space")
+  sleep(50ms)
+  insert("insert conventional commit")
+  sleep(50ms)
+  key(enter)
+
+^conventional comment:
+  key("cmd-space")
+  sleep(50ms)
+  insert("insert conventional comment")
+  sleep(50ms)
+  key(enter)
+
 # undo that: nope, nix, junk, blast
 nope:                       edit.undo()
 

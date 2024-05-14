@@ -35,6 +35,7 @@ stack:                      ':'
 # <: langle, chomp
 # >: rangle, rechomp
 # ^: tangle, dagger
+tangle:                     '^'
 # (: curve, lub, lepper
 # ): recurve, rub, repper
 round:                      user.insert_between("(", ")")
