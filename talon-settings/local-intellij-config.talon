@@ -152,3 +152,31 @@ follow last <user.text> [over]: user.idea("find prev {text},action GotoDeclarati
 
 reference next <user.text> [over]: user.idea("find next {text},action FindUsages")
 reference last <user.text> [over]: user.idea("find prev {text},action FindUsages")
+
+split right:
+	key("cmd-shift-a")
+	sleep(100ms)
+	insert("split right")
+	sleep(100ms)
+	key(enter)
+
+split left:
+	key("cmd-shift-a")
+	sleep(100ms)
+	insert("split left")
+	sleep(100ms)
+	key(enter)
+
+split down:
+	key("cmd-shift-a")
+	sleep(100ms)
+	insert("split down")
+	sleep(100ms)
+	key(enter)
+
+split up:
+	key("cmd-shift-a")
+	sleep(100ms)
+	insert("split up")
+	sleep(100ms)
+	key(enter)
