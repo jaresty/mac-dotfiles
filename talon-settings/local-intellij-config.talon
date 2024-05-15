@@ -146,3 +146,9 @@ quick fix last <user.text> [over]: user.idea("find prev {text},action ShowIntent
 
 change next:                key(ctrl-shift-alt-down)
 change last:                key(ctrl-shift-alt-up)
+
+follow next <user.text> [over]: user.idea("find next {text},action GotoDeclaration")
+follow last <user.text> [over]: user.idea("find prev {text},action GotoDeclaration")
+
+reference next <user.text> [over]: user.idea("find next {text},action FindUsages")
+reference last <user.text> [over]: user.idea("find prev {text},action FindUsages")
