@@ -123,7 +123,7 @@ run last:                   key('ctrl-shift-r')
 
 reference:                  user.idea("action FindUsages")
 jump:                       key(cmd-alt-down)
-jump back:                  key(cmd-alt-up)
+jump last:                  key(cmd-alt-up)
 
 narrow:
 	key(cmd-shift--)

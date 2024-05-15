@@ -70,7 +70,7 @@ fix last (error | air):
 
 widen:                      user.vscode("editor.unfoldAll")
 jump:                       key(f4)
-jump back:                  key(shift-f4)
+jump last:                  key(shift-f4)
 
 pop deaf:                   user.vscode("editor.action.peekDefinition")
 pop jest:                   user.vscode("toggleSuggestionDetails")
