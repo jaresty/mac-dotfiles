@@ -135,23 +135,31 @@ widen:
 
 pop params:                 user.idea("action ParameterInfo")
 
+rename <number> <user.text> [over]: user.idea("goto {number} 0,find next {text}, action RenameElement")
 rename next <user.text> [over]: user.idea("find next {text}, action RenameElement")
 rename last <user.text> [over]: user.idea("find prev {text}, action RenameElement")
 
+complete <number> <user.text> [over]: user.idea("goto {number} 0,find next {text},action CodeCompletion")
 complete next <user.text> [over]: user.idea("find next {text},action CodeCompletion")
 complete last <user.text> [over]: user.idea("find prev {text},action CodeCompletion")
 
+quick fix <number> <user.text> [over]: user.idea("goto {number} 0,find next {text},action ShowIntentionActions")
 quick fix next <user.text> [over]: user.idea("find next {text},action ShowIntentionActions")
 quick fix last <user.text> [over]: user.idea("find prev {text},action ShowIntentionActions")
 
 change next:                key(ctrl-shift-alt-down)
 change last:                key(ctrl-shift-alt-up)
 
+follow <number> <user.text> [over]: user.idea("goto {number} 0,find next {text},action GotoDeclaration")
 follow next <user.text> [over]: user.idea("find next {text},action GotoDeclaration")
 follow last <user.text> [over]: user.idea("find prev {text},action GotoDeclaration")
 
+reference <number> <user.text> [over]: user.idea("goto {number} 0,find next {text},action FindUsages")
 reference next <user.text> [over]: user.idea("find next {text},action FindUsages")
 reference last <user.text> [over]: user.idea("find prev {text},action FindUsages")
+
+refactor <number> <user.text> [over]:
+	user.idea("goto {number} 0,find next {text}, action Refactorings.QuickListPopupAction")
 
 split right:
 	key("cmd-shift-a")
