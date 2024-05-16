@@ -22,6 +22,10 @@ TDD,t d d
 BDD,b d d
 PR,p r
 API,a p i
+DTO,d t o
+JSON,jason
+ID,i d
+
 # Kohl's
 Kohl's,coles
 KDS,k d s
@@ -29,3 +33,4 @@ PMP,p m p
 PDP,p d p
 PICS,picks
 OIC,o i c
+SKU,skew
