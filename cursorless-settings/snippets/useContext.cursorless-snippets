@@ -1,0 +1,25 @@
+{
+  "useContext": {
+    "definitions": [
+      {
+        "scope": {
+          "langIds": [
+            "typescriptreact",
+            "javascriptreact"
+          ]
+        },
+        "body": [
+          "const { $context } = useContext($contextType)"
+        ]
+      }
+    ],
+    "description": "",
+    "variables": {
+      "context": {},
+      "contextType": {}
+    },
+    "insertionScopeTypes": [
+      "statement"
+    ]
+  }
+}

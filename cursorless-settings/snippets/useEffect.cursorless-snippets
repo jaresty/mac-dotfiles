@@ -1,0 +1,29 @@
+{
+  "useEffect": {
+    "definitions": [
+      {
+        "scope": {
+          "langIds": [
+            "typescriptreact",
+            "javascriptreact"
+          ]
+        },
+        "body": [
+          "useEffect(() => {",
+          "\t$body",
+          "}, [$dependencies])"
+        ]
+      }
+    ],
+    "description": "",
+    "variables": {
+      "body": {
+        "wrapperScopeType": "statement"
+      },
+      "dependencies": {}
+    },
+    "insertionScopeTypes": [
+      "statement"
+    ]
+  }
+}

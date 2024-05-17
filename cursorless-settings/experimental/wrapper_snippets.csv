@@ -10,3 +10,5 @@ describe, describeBlock.body
 spec, itBlock.body
 before each, beforeEachBlock.body
 fragment, reactFragment.fragmentBody
+use effect, useEffect.body
+use callback, useCallback.body

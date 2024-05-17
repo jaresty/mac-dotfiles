@@ -1,0 +1,29 @@
+{
+  "useCallback": {
+    "definitions": [
+      {
+        "scope": {
+          "langIds": [
+            "typescriptreact",
+            "javascriptreact"
+          ]
+        },
+        "body": [
+          "useCallback(() => {",
+          "\t$body",
+          "}, [$dependencies])"
+        ]
+      }
+    ],
+    "description": "",
+    "variables": {
+      "body": {
+        "wrapperScopeType": "statement"
+      },
+      "dependencies": {}
+    },
+    "insertionScopeTypes": [
+      "statement"
+    ]
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "useState": {
+    "definitions": [
+      {
+        "scope": {
+          "langIds": [
+            "typescriptreact",
+            "javascriptreact"
+          ]
+        },
+        "body": [
+          "const { t } = useTranslation('$domain')"
+        ]
+      }
+    ],
+    "description": "",
+    "variables": {
+      "domain": {}
+    },
+    "insertionScopeTypes": [
+      "statement"
+    ]
+  }
+}

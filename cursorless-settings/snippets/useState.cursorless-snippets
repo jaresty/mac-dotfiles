@@ -1,0 +1,27 @@
+{
+  "useState": {
+    "definitions": [
+      {
+        "scope": {
+          "langIds": [
+            "typescriptreact",
+            "javascriptreact"
+          ]
+        },
+        "body": [
+          "const [$getter, $setter] = useState<$type>($initialState)"
+        ]
+      }
+    ],
+    "description": "",
+    "variables": {
+      "getter": {},
+      "setter": {},
+      "type": {},
+      "initialState": {}
+    },
+    "insertionScopeTypes": [
+      "statement"
+    ]
+  }
+}
