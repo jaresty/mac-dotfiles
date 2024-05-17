@@ -161,30 +161,37 @@ reference last <user.text> [over]: user.idea("find prev {text},action FindUsages
 refactor <number> <user.text> [over]:
 	user.idea("goto {number} 0,find next {text}, action Refactorings.QuickListPopupAction")
 
+split window:
+	key("cmd-shift-a")
+	sleep(100ms)
+	insert("split right")
+	sleep(200ms)
+	key(enter)
+
 split right:
 	key("cmd-shift-a")
 	sleep(100ms)
 	insert("split right")
-	sleep(100ms)
+	sleep(200ms)
 	key(enter)
 
 split left:
 	key("cmd-shift-a")
 	sleep(100ms)
 	insert("split left")
-	sleep(100ms)
+	sleep(200ms)
 	key(enter)
 
 split down:
 	key("cmd-shift-a")
 	sleep(100ms)
 	insert("split down")
-	sleep(100ms)
+	sleep(200ms)
 	key(enter)
 
 split up:
 	key("cmd-shift-a")
 	sleep(100ms)
 	insert("split up")
-	sleep(100ms)
+	sleep(200ms)
 	key(enter)
