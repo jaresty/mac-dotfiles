@@ -1,0 +1,25 @@
+{
+  "useRef": {
+    "definitions": [
+      {
+        "scope": {
+          "langIds": [
+            "typescriptreact",
+            "javascriptreact"
+          ]
+        },
+        "body": [
+          "const $referenceName = useRef($initialValue)"
+        ]
+      }
+    ],
+    "description": "",
+    "variables": {
+      "initialValue": {},
+      "referenceName": {}
+    },
+    "insertionScopeTypes": [
+      "statement"
+    ]
+  }
+}
