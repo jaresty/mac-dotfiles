@@ -1,0 +1,28 @@
+{
+  "useCustomHook": {
+    "definitions": [
+      {
+        "scope": {
+          "langIds": [
+            "typescriptreact",
+            "javascriptreact"
+          ]
+        },
+        "body": [
+          "const {$returnValues} = $hookName($arguments)"
+        ]
+      }
+    ],
+    "description": "",
+    "variables": {
+      "returnValues": {},
+      "hookName": {
+        "formatter": "camelCase"
+      },
+      "arguments": {}
+    },
+    "insertionScopeTypes": [
+      "statement"
+    ]
+  }
+}
