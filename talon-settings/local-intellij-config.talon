@@ -161,6 +161,9 @@ reference last <user.text> [over]: user.idea("find prev {text},action FindUsages
 refactor <number> <user.text> [over]:
 	user.idea("goto {number} 0,find next {text}, action Refactorings.QuickListPopupAction")
 
+select <number> <user.text> [over]: user.idea("goto {number} 0,find next {text}")
+go <number> <user.text> [over]: user.idea("goto {number} 0,find next {text}, action EditorRight")
+
 split window:
 	key("cmd-shift-a")
 	sleep(100ms)
