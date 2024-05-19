@@ -19,7 +19,8 @@
     "variables": {
       "body": {
         "wrapperScopeType": "statement"
-      }
+      },
+      "description": {}
     },
     "insertionScopeTypes": [
       "statement"

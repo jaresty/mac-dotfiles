@@ -9,17 +9,17 @@
           ]
         },
         "body": [
-          "const {$returnValues} = $hookName($arguments)"
+          "const $3 = use$1($2)$0"
         ]
       }
     ],
     "description": "",
     "variables": {
-      "returnValues": {},
-      "hookName": {
+      "3": {},
+      "1": {
         "formatter": "camelCase"
       },
-      "arguments": {}
+      "2": {}
     },
     "insertionScopeTypes": [
       "statement"

@@ -11,6 +11,9 @@ complete:                   user.vscode("editor.action.triggerSuggest")
 perfect:
   user.vscode("editor.action.triggerSuggest")
   key(enter)
+first fix <user.cursorless_target>:
+  user.cursorless_ide_command('editor.action.quickFix', cursorless_target)
+  key(enter)
 
 explore:                    user.vscode("breadcrumbs.focusAndSelect")
 fuzzy [<user.text>]:
