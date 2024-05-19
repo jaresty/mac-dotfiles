@@ -133,7 +133,7 @@ narrow:
 widen:
 	key(cmd-shift-+)
 
-pop params:                 user.idea("action ParameterInfo")
+pop param:                  user.idea("action ParameterInfo")
 
 rename <number> <user.text> [over]: user.idea("goto {number} 0,find next {text}, action RenameElement")
 rename next <user.text> [over]: user.idea("find next {text}, action RenameElement")

@@ -7,9 +7,10 @@ diff <user.cursorless_target> to <user.cursorless_target>:
 change next:                user.vscode("editor.action.dirtydiff.next")
 change last:                user.vscode("editor.action.dirtydiff.last")
 
-complete <user.cursorless_target>:
-  user.cursorless_command("setSelectionAfter", cursorless_target)
+complete:                   user.vscode("editor.action.triggerSuggest")
+perfect:
   user.vscode("editor.action.triggerSuggest")
+  key(enter)
 
 explore:                    user.vscode("breadcrumbs.focusAndSelect")
 fuzzy [<user.text>]:
@@ -76,7 +77,7 @@ pop deaf:                   user.vscode("editor.action.peekDefinition")
 pop jest:                   user.vscode("toggleSuggestionDetails")
 pop type:                   user.vscode("editor.action.peekTypeDefinition")
 pop type hierarchy:         user.vscode("editor.showTypeHierarchy")
-pop params:                 user.vscode("editor.action.triggerParameterHints")
+pop param:                  user.vscode("editor.action.triggerParameterHints")
 
 testing start:              user.vscode("testing.startContinuousRun")
 testing stop:               user.vscode("testing.stopContinuousRun")
