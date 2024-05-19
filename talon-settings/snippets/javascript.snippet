@@ -38,3 +38,41 @@ it($1, () => {
     $2
 })$0
 ---
+
+name: playwrightBeforeEach
+phrase: play before each
+insertionScope: statement
+
+$1.wrapperPhrase: play before each
+$1.wrapperScope: statement
+-
+test.beforeEach(() => {
+    $1
+})$0
+---
+
+name: playwrightDescribe
+phrase: play describe
+insertionScope: statement
+
+$1.insertionFormatter: SINGLE_QUOTED_STRING
+$2.wrapperPhrase: play describe
+$2.wrapperScope: statement
+-
+test.describe($1, () => {
+    $2
+})$0
+---
+
+name: playwrightSpec
+phrase: play spec
+insertionScope: statement
+
+$1.insertionFormatter: SINGLE_QUOTED_STRING
+$2.wrapperPhrase: play''spec
+$2.wrapperScope: statement
+-
+test($1, async ($2) => {
+    $3
+})$0
+---
