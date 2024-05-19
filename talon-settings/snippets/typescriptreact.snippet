@@ -38,14 +38,14 @@ name: reactUseContext
 phrase: use context
 insertionScope: statement
 -
-const $1 = useContext($2);
+const {$1} = useContext($2);
 ---
 
 name: reactUseRef
 phrase: use ref
 insertionScope: statement
 -
-const $1 = useRef(null);
+const ${1:placeholderReference} = useRef(null);
 ---
 
 name: reactUseTranslation
@@ -61,5 +61,5 @@ insertionScope: statement
 
 $1.insertionFormatter: PUBLIC_CAMEL_CASE
 -
-const $3 = use$1($2)$0
+const {$3} = use$1($2)$0
 ---
