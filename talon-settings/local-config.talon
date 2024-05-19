@@ -8,10 +8,12 @@ drowse:                     speech.disable()
 tag(): user.gpt_beta
 tag(): user.prefixed_numbers
 tag(): user.unix_utilities
+tag(): user.cursorless_use_community_snippets
 settings():
   user.emacs_meta = "alt"
   user.tmux_prefix_key = 'ctrl-space'
   user.model_shell_default = 'nushell'
+  user.snippets_dir = "community/settings/snippets"
 
 #  user.model_endpoint = "http://localhost:11434/api/chat"
 #  user.openai_model = 'codellama'

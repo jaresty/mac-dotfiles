@@ -1,0 +1,65 @@
+language: typescriptreact
+---
+
+name: useCallback
+phrase: use callback
+insertionScope: statement
+-
+useCallback(() => {
+    $2
+}, [$1])$0
+---
+
+name: reactUseEffect
+phrase: use effect
+insertionScope: statement
+-
+useEffect(() => {
+    $2
+}, [$1])$0
+---
+
+name: reactUseReducer
+phrase: use reducer
+insertionScope: statement
+-
+function reducer(state: {$1}, action: {type: '$2'}) {
+  if (action.type === '$2') {
+    return {
+      $3
+    };
+  }
+  throw Error('Unknown action.');
+}
+const [state, dispatch] = useReducer(reducer, {$1})$0
+---
+
+name: reactUseContext
+phrase: use context
+insertionScope: statement
+-
+const $1 = useContext($2);
+---
+
+name: reactUseRef
+phrase: use ref
+insertionScope: statement
+-
+const $1 = useRef(null);
+---
+
+name: reactUseTranslation
+phrase: use translation
+insertionScope: statement
+-
+const { t } = useTranslation($1)$0
+---
+
+name: reactUseCustomHook
+phrase: use hook
+insertionScope: statement
+
+$1.insertionFormatter: PUBLIC_CAMEL_CASE
+-
+const $3 = use$1($2)$0
+---

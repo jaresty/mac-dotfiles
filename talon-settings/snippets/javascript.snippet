@@ -1,0 +1,40 @@
+language: javascript
+---
+
+name: beforeEach
+phrase: before each
+insertionScope: statement
+
+$1.wrapperPhrase: before each
+$1.wrapperScope: statement
+-
+beforeEach(() => {
+    $1
+})$0
+---
+
+name: describe
+phrase: describe
+insertionScope: statement
+
+$1.insertionFormatter: SINGLE_QUOTED_STRING
+$2.wrapperPhrase: describe
+$2.wrapperScope: statement
+-
+describe($1, () => {
+    $2
+})$0
+---
+
+name: spec
+phrase: spec
+insertionScope: statement
+
+$1.insertionFormatter: SINGLE_QUOTED_STRING
+$2.wrapperPhrase: spec
+$2.wrapperScope: statement
+-
+it($1, () => {
+    $2
+})$0
+---
