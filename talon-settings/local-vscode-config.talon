@@ -33,7 +33,7 @@ bless:                      user.vscode("cursorUndo")
 recurse:                    user.vscode("cursorRedo")
 
 splitter:                   user.vscode("workbench.action.focusNextGroup")
-
+bar type tree:              user.vscode("workbench.view.extension.typescript-explorer")
 task run [<user.text>]:
   user.vscode("workbench.action.quickOpen")
   insert("task ")
