@@ -5,8 +5,8 @@ name: useCallback
 phrase: use callback
 insertionScope: statement
 -
-useCallback(() => {
-    $2
+const ${2:callbackName} = useCallback(() => {
+    $3
 }, [$1])$0
 ---
 
