@@ -112,6 +112,11 @@ dock split <user.text> [{user.file_extension}] [over]:
   user.split_next()
 dock pop:
   user.vscode("workbench.action.openPreviousRecentlyUsedEditorInGroup")
+project [<user.text>]:
+  user.vscode("workbench.action.openRecent")
+  sleep(50ms)
+  insert(text or "")
+  sleep(250ms)
 pop alter:                  user.vscode("alternate.alternateFile")
 make alter:                 user.vscode("alternate.createAlternateFile")
 split alter:                user.vscode("alternate.alternateFileInSplit")
