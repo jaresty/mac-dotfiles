@@ -33,5 +33,6 @@ test debug, testing.debugAtCursor
 debug break, editor.debug.action.toggleBreakpoint
 debug hover, editor.debug.action.showDebugHover
 type tree, typescriptExplorer.selection.select
+replace, workbench.action.replaceInFiles
 
 mark, bookmarks.toggle
