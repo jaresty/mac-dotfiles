@@ -76,3 +76,13 @@ test($1, async ($2) => {
     $3
 })$0
 ---
+
+name: reactTestingLibraryWaitFor
+phrase: wait for
+insertionScope: statement
+
+$1.wrapperPhrase: wait for
+$1.wrapperScope: statement
+-
+await waitFor(() => {$1})$2
+---
