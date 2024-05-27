@@ -9,6 +9,7 @@ tag(): user.gpt_beta
 tag(): user.prefixed_numbers
 tag(): user.unix_utilities
 tag(): user.cursorless_use_community_snippets
+tag(): user.cursorless_disable_legacy_destination
 settings():
   user.emacs_meta = "alt"
   user.tmux_prefix_key = 'ctrl-space'
