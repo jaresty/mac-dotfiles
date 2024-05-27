@@ -123,3 +123,6 @@ split alter:                user.vscode("alternate.alternateFileInSplit")
 
 preview j s start:          user.vscode("previewjs.start")
 preview j s stop:           user.vscode("previewjs.stop")
+
+<user.formatters> form <user.cursorless_target>:
+  user.cursorless_reformat(cursorless_target, formatters)
