@@ -8,7 +8,7 @@ first, first
 forward, forward
 grand, ancestor
 head, extendThroughStartOf
-inside, interiorOnly
+core, interiorOnly
 its, inferPreviousMark
 just, toRawSelection
 final, last
