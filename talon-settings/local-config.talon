@@ -66,3 +66,8 @@ nope:                       edit.undo()
 toggle mike:                key("f11")
 
 {user.formatters} (abbreviate | abreviate | brief) {user.abbreviation}: user.insert_formatted(abbreviation, formatters)
+
+snap web development:
+  mimic("snap figma right third")
+  mimic("snap arc center third")
+  mimic("snap code left third")
