@@ -2,7 +2,7 @@
 app: jetbrains
 -
 settings():
-	key_wait = 1.5
+	key_wait = 2
 
 please [<user.text>] [over]:
 	key("cmd-shift-a")
