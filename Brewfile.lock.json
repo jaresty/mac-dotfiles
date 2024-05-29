@@ -4352,45 +4352,45 @@
         "bottle": false
       },
       "mise": {
-        "version": "2024.5.22",
+        "version": "2024.5.23",
         "bottle": {
           "rebuild": 0,
           "root_url": "https://ghcr.io/v2/homebrew/core",
           "files": {
             "arm64_sonoma": {
               "cellar": ":any",
-              "url": "https://ghcr.io/v2/homebrew/core/mise/blobs/sha256:8e99f4bdb9212240b0035cef281cc5ffd11b868c24667960afffdb9c42bfb7b2",
-              "sha256": "8e99f4bdb9212240b0035cef281cc5ffd11b868c24667960afffdb9c42bfb7b2"
+              "url": "https://ghcr.io/v2/homebrew/core/mise/blobs/sha256:59e2956c9547e149e502b885ce2526f6d6e218355898e234601a02813e5b1643",
+              "sha256": "59e2956c9547e149e502b885ce2526f6d6e218355898e234601a02813e5b1643"
             },
             "arm64_ventura": {
               "cellar": ":any",
-              "url": "https://ghcr.io/v2/homebrew/core/mise/blobs/sha256:b565fcdf4e73c0103c24c81c05b123674043a9af20f02a70e2f32d3cf034f792",
-              "sha256": "b565fcdf4e73c0103c24c81c05b123674043a9af20f02a70e2f32d3cf034f792"
+              "url": "https://ghcr.io/v2/homebrew/core/mise/blobs/sha256:2b71565660262618f502ad44b7ccb31d3231e65589864416b5d26bf2fef066e9",
+              "sha256": "2b71565660262618f502ad44b7ccb31d3231e65589864416b5d26bf2fef066e9"
             },
             "arm64_monterey": {
               "cellar": ":any",
-              "url": "https://ghcr.io/v2/homebrew/core/mise/blobs/sha256:86c852c2dd38150d6764a164d7410447428a6dfcf80f7d5e9e72f16e0f83059b",
-              "sha256": "86c852c2dd38150d6764a164d7410447428a6dfcf80f7d5e9e72f16e0f83059b"
+              "url": "https://ghcr.io/v2/homebrew/core/mise/blobs/sha256:70b559d7ba049a5be103c4e8e712cf3af29c1bcf0e260442fed308d854a598b8",
+              "sha256": "70b559d7ba049a5be103c4e8e712cf3af29c1bcf0e260442fed308d854a598b8"
             },
             "sonoma": {
               "cellar": ":any",
-              "url": "https://ghcr.io/v2/homebrew/core/mise/blobs/sha256:055c1cf35288f1dca7f76b925a3f94f7cbaf7842b061d38d84b990e800f34089",
-              "sha256": "055c1cf35288f1dca7f76b925a3f94f7cbaf7842b061d38d84b990e800f34089"
+              "url": "https://ghcr.io/v2/homebrew/core/mise/blobs/sha256:f2af246d5de338bd948b584729ade19b7e779d8e9961b0a4542305bd5b9d7e0d",
+              "sha256": "f2af246d5de338bd948b584729ade19b7e779d8e9961b0a4542305bd5b9d7e0d"
             },
             "ventura": {
               "cellar": ":any",
-              "url": "https://ghcr.io/v2/homebrew/core/mise/blobs/sha256:a2df66d3432399057691955fc4d3708e495518fa6b440d29f0e063aabf1bfef1",
-              "sha256": "a2df66d3432399057691955fc4d3708e495518fa6b440d29f0e063aabf1bfef1"
+              "url": "https://ghcr.io/v2/homebrew/core/mise/blobs/sha256:40bf7e33b4ce4afecf41e0fe0c2d0187e0a6ef100b788a8e563335b7d7fe83d4",
+              "sha256": "40bf7e33b4ce4afecf41e0fe0c2d0187e0a6ef100b788a8e563335b7d7fe83d4"
             },
             "monterey": {
               "cellar": ":any",
-              "url": "https://ghcr.io/v2/homebrew/core/mise/blobs/sha256:aa77be5678580e2e0fdd0f4f5d6d9a2a823743c69b5df141a856e18ab305c069",
-              "sha256": "aa77be5678580e2e0fdd0f4f5d6d9a2a823743c69b5df141a856e18ab305c069"
+              "url": "https://ghcr.io/v2/homebrew/core/mise/blobs/sha256:eb42bf5215066693089e22dcbab6169bf65618e778ec7d7ade8c0a2222694d17",
+              "sha256": "eb42bf5215066693089e22dcbab6169bf65618e778ec7d7ade8c0a2222694d17"
             },
             "x86_64_linux": {
               "cellar": ":any_skip_relocation",
-              "url": "https://ghcr.io/v2/homebrew/core/mise/blobs/sha256:429313d706cb942fbf1d68d8f9d1fdd913188c6843d70a3c5ae570c91a4360a5",
-              "sha256": "429313d706cb942fbf1d68d8f9d1fdd913188c6843d70a3c5ae570c91a4360a5"
+              "url": "https://ghcr.io/v2/homebrew/core/mise/blobs/sha256:b841c2b1fde59f209b7163bbf08df76cccb1c13d92b2dcf402c9201455134176",
+              "sha256": "b841c2b1fde59f209b7163bbf08df76cccb1c13d92b2dcf402c9201455134176"
             }
           }
         }
