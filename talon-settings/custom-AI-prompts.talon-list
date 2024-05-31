@@ -7,4 +7,4 @@ list:  user.customPrompt
 # Example
 
 add questions: I want you to help me think about this question from various perspectives. Please take various perspectives and ask followup questions. For each perspective please tell me what the perspective is. Please annotate the entire conversation so it is clear that this is a dialogue between you and me since I intend to paste this into slack and I want others to know that this was a generated response. Please respond only with the perspectives and the questions that they generated.
-coach: I want you to coach me on this code. Pay close attention to the ways in which it might need to change. For any unit of code it should have only one reason to change. Give me a sense of the ways it might need to change, so that I can improve the design.
+coach: I want you to evaluate this code. Pay close attention to the ways in which it might need to change. For any unit of code it should have only one reason to change. Give me a sense of the ways it might need to change, so that I can improve the design.
