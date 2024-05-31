@@ -71,3 +71,5 @@ snap web development:
   mimic("snap figma right third")
   mimic("snap arc center third")
   mimic("snap code left third")
+
+lister <number>:            "LISTR-{number}"
