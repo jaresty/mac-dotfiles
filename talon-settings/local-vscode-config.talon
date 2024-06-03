@@ -40,7 +40,7 @@ task run [<user.text>]:
   insert(user.text or "")
 
 mob start:
-  user.vscode("workbench.action.quickOpen")ƒ
+  user.vscode("workbench.action.quickOpen")
   insert("task mob start\n")
 
 mob next:
