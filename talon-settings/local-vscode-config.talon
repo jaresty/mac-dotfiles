@@ -37,10 +37,10 @@ bar type tree:              user.vscode("workbench.view.extension.typescript-exp
 task run [<user.text>]:
   user.vscode("workbench.action.quickOpen")
   insert("task ")
-  revealDefinitionAside(user.text or "")
+  insert(user.text or "")
 
 mob start:
-  revealDefinitionAside.vscode("workbench.action.quickOpen")
+  user.vscode("workbench.action.quickOpen")ƒ
   insert("task mob start\n")
 
 mob next:
@@ -52,6 +52,9 @@ mob done:
   insert("task mob done\n")
 
 flash <user.cursorless_target>: user.cursorless_get_text(cursorless_target)
+take wax <user.cursorless_target>:
+  user.cursorless_command("setSelection", cursorless_target)
+  user.vscode("editor.action.smartSelect.expand")
 
 wax:                        user.vscode("editor.action.smartSelect.expand")
 wane:                       user.vscode("editor.action.smartSelect.shrink")
