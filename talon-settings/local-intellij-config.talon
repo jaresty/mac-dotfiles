@@ -153,6 +153,10 @@ change last:                key(ctrl-shift-alt-up)
 follow <number> <user.text> [over]: user.idea("goto {number} 0,find next {text},action GotoDeclaration")
 follow next <user.text> [over]: user.idea("find next {text},action GotoDeclaration")
 follow last <user.text> [over]: user.idea("find prev {text},action GotoDeclaration")
+split follow:
+	user.idea("action SplitVertically,action GotoDeclaration")
+split follow <number> <user.text> [over]: user.idea("action SplitVertically,goto {number} 0,find next {text},action GotoDeclaration")
+split follow next <user.text> [over]: user.idea("action SplitVertically,find next {text},action GotoDeclaration")
 
 reference <number> <user.text> [over]: user.idea("goto {number} 0,find next {text},action FindUsages")
 reference next <user.text> [over]: user.idea("find next {text},action FindUsages")
@@ -165,36 +169,7 @@ select <number> <user.text> [over]: user.idea("goto {number} 0,find next {text}"
 go <number> <user.text> [over]: user.idea("goto {number} 0,find next {text}, action EditorRight")
 
 split window:
-	key("cmd-shift-a")
-	sleep(100ms)
-	insert("split right")
-	sleep(200ms)
-	key(enter)
+	user.idea("action SplitVertically")
 
 split right:
-	key("cmd-shift-a")
-	sleep(100ms)
-	insert("split right")
-	sleep(200ms)
-	key(enter)
-
-split left:
-	key("cmd-shift-a")
-	sleep(100ms)
-	insert("split left")
-	sleep(200ms)
-	key(enter)
-
-split down:
-	key("cmd-shift-a")
-	sleep(100ms)
-	insert("split down")
-	sleep(200ms)
-	key(enter)
-
-split up:
-	key("cmd-shift-a")
-	sleep(100ms)
-	insert("split up")
-	sleep(200ms)
-	key(enter)
+	user.idea("action SplitVertically")
