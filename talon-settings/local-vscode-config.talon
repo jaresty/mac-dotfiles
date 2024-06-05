@@ -52,7 +52,7 @@ mob done:
   insert("task mob done\n")
 
 flash <user.cursorless_target>: user.cursorless_get_text(cursorless_target)
-take wax <user.cursorless_target>:
+wax <user.cursorless_target>:
   user.cursorless_command("setSelection", cursorless_target)
   user.vscode("editor.action.smartSelect.expand")
 
