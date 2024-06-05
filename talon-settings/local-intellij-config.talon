@@ -167,7 +167,15 @@ refactor <number> <user.text> [over]:
 
 select <number> <user.text> [over]: user.idea("goto {number} 0,find next {text}")
 go <number> <user.text> [over]: user.idea("goto {number} 0,find next {text}, action EditorRight")
-
+wax <number> <user.text> [over]:
+	user.idea("goto {number} 0,find next {text}")
+	key("alt-up")
+wax next <user.text> [over]:
+	user.idea("find next {text}")
+	key("alt-up")
+wax last <user.text> [over]:
+	user.idea("find last {text}")
+	key("alt-up")
 split window:
 	user.idea("action SplitVertically")
 
