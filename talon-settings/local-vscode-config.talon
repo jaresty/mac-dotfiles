@@ -129,3 +129,5 @@ preview j s stop:           user.vscode("previewjs.stop")
 
 <user.formatters> form <user.cursorless_target>:
   user.cursorless_reformat(cursorless_target, formatters)
+<user.formatters> paste:
+  user.insert_formatted(clip.text(), formatters)
