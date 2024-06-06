@@ -131,3 +131,8 @@ preview j s stop:           user.vscode("previewjs.stop")
   user.cursorless_reformat(cursorless_target, formatters)
 <user.formatters> paste:
   user.insert_formatted(clip.text(), formatters)
+
+git focus next:             user.vscode("workbench.scm.action.focusNextInput")
+git focus last:             user.vscode("workbench.scm.action.focusPreviousInput")
+git focus next resource:    user.vscode("workbench.scm.action.focusNextResourceGroup")
+git focus last resource:    user.vscode("workbench.scm.action.focusPreviousResourceGroup")
