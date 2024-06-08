@@ -4,15 +4,12 @@ diff <user.cursorless_target> to <user.cursorless_target>:
   user.cursorless_ide_command("extension.partialDiff.markSection1", cursorless_target_1)
   user.cursorless_ide_command("extension.partialDiff.markSection2AndTakeDiff", cursorless_target_2)
 
-change next: user.vscode("editor.action.dirtydiff.next")
-change last: user.vscode("editor.action.dirtydiff.last")
+pop change next: user.vscode("editor.action.dirtydiff.next")
+pop change last: user.vscode("editor.action.dirtydiff.previous")
 
 complete: user.vscode("editor.action.triggerSuggest")
 perfect:
   user.vscode("editor.action.triggerSuggest")
-  key(enter)
-first fix <user.cursorless_target>:
-  user.cursorless_ide_command('editor.action.quickFix', cursorless_target)
   key(enter)
 
 explore: user.vscode("breadcrumbs.focusAndSelect")
@@ -63,15 +60,6 @@ triage:
   user.vscode("editor.action.marker.nextInFiles")
   user.vscode("editor.action.quickFix")
 triage last:
-  user.vscode("editor.action.marker.prevInFiles")
-  user.vscode("editor.action.quickFix")
-
-go next (error | air): user.vscode("editor.action.marker.nextInFiles")
-go last (error | air): user.vscode("editor.action.marker.prevInFiles")
-fix next (error | air):
-  user.vscode("editor.action.marker.nextInFiles")
-  user.vscode("editor.action.quickFix")
-fix last (error | air):
   user.vscode("editor.action.marker.prevInFiles")
   user.vscode("editor.action.quickFix")
 
