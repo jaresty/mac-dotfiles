@@ -6,5 +6,8 @@ tag(): user.kubectl
 tag(): user.readline
 
 mob start [<user.number_string>]: "mob start {number_string}\n"
-mob next:                   "mob next\n"
-mob done:                   "mob done\n"
+mob next: "mob next\n"
+mob done: "mob done\n"
+search [<user.text>] [over]:
+	key(shift-tab)
+	insert(text)
