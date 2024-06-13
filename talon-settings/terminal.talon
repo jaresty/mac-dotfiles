@@ -11,3 +11,6 @@ mob done: "mob done\n"
 complete [<user.text>] [over]:
 	key(shift-tab)
 	insert(text)
+
+# terminal commands
+n p m: "npm "
