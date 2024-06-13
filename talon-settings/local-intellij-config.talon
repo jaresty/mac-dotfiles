@@ -54,7 +54,7 @@ explore [<user.text>] [over]:
 	key("cmd-f12")
 	sleep(400ms)
 	insert(user.text or "")
-splitter:                   key("alt-tab")
+splitter: key("alt-tab")
 clone funk:
 	key('cmd-alt-shift-[')
 	key("alt-up")
@@ -68,17 +68,17 @@ take funk:
 gathest:
 	key('cmd-alt-[')
 	key('cmd-alt-shift-]')
-wax:                        key("alt-up")
-wane:                       key("alt-down")
+wax: key("alt-up")
+wane: key("alt-down")
 
-drag down:                  key('shift-cmd-down')
-drag up:                    key('shift-cmd-up')
-steppest:                   key('cmd-alt-]')
-slinkest:                   key('cmd-alt-[')
-snatchest:                  key('cmd-alt-shift-]')
-chancest:                   key('cmd-alt-shift-[')
-punchest:                   key('cmd-alt-shift-] delete cmd-alt-l')
-kickest:                    key('cmd-alt-shift-[ delete cmd-alt-l')
+drag down: key('shift-cmd-down')
+drag up: key('shift-cmd-up')
+steppest: key('cmd-alt-]')
+slinkest: key('cmd-alt-[')
+snatchest: key('cmd-alt-shift-]')
+chancest: key('cmd-alt-shift-[')
+punchest: key('cmd-alt-shift-] delete cmd-alt-l')
+kickest: key('cmd-alt-shift-[ delete cmd-alt-l')
 boomest:
 	key('cmd-alt-[')
 	key('cmd-alt-shift-]')
@@ -104,7 +104,7 @@ refactor this [<user.text>] [over]:
 	sleep(400ms)
 	insert(user.text or "")
 
-complete this:              user.idea("action CodeCompletion")
+complete this: user.idea("action CodeCompletion")
 
 teleport [<user.text>] [over]:
 	key(cmd-shift-e)
@@ -112,18 +112,18 @@ teleport [<user.text>] [over]:
 	insert(user.text or "")
 
 triage:
-	key(f2)
-	key(alt-enter)
+	user.idea("action GotoNextError")
+	user.idea("action ShowIntentionActions")
 triage last:
-	key(shift-f2)
-	key(alt-enter)
+	user.idea("action GotoPreviousError")
+	user.idea("action ShowIntentionActions")
 
-run that:                   key('ctrl-r')
-run last:                   key('ctrl-shift-r')
+run that: key('ctrl-r')
+run last: key('ctrl-shift-r')
 
-reference:                  user.idea("action FindUsages")
-jump:                       key(cmd-alt-down)
-jump last:                  key(cmd-alt-up)
+reference: user.idea("action FindUsages")
+jump: key(cmd-alt-down)
+jump last: key(cmd-alt-up)
 
 narrow:
 	key(cmd-shift--)
@@ -133,7 +133,7 @@ narrow:
 widen:
 	key(cmd-shift-+)
 
-pop param:                  user.idea("action ParameterInfo")
+pop param: user.idea("action ParameterInfo")
 
 rename <number> <user.text> [over]: user.idea("goto {number} 0,find next {text}, action RenameElement")
 rename next <user.text> [over]: user.idea("find next {text}, action RenameElement")
@@ -147,16 +147,18 @@ quick fix <number> <user.text> [over]: user.idea("goto {number} 0,find next {tex
 quick fix next <user.text> [over]: user.idea("find next {text},action ShowIntentionActions")
 quick fix last <user.text> [over]: user.idea("find prev {text},action ShowIntentionActions")
 
-change next:                key(ctrl-shift-alt-down)
-change last:                key(ctrl-shift-alt-up)
+change next: key(ctrl-shift-alt-down)
+change last: key(ctrl-shift-alt-up)
+problem next: user.idea("action GotoNextError")
+problem last: user.idea("action GotoPreviousError")
 
 follow <number> <user.text> [over]: user.idea("goto {number} 0,find next {text},action GotoDeclaration")
 follow next <user.text> [over]: user.idea("find next {text},action GotoDeclaration")
 follow last <user.text> [over]: user.idea("find prev {text},action GotoDeclaration")
-split follow:
+follow split:
 	user.idea("action SplitVertically,action GotoDeclaration")
-split follow <number> <user.text> [over]: user.idea("action SplitVertically,goto {number} 0,find next {text},action GotoDeclaration")
-split follow next <user.text> [over]: user.idea("action SplitVertically,find next {text},action GotoDeclaration")
+follow split <number> <user.text> [over]: user.idea("action SplitVertically,goto {number} 0,find next {text},action GotoDeclaration")
+follow split next <user.text> [over]: user.idea("action SplitVertically,find next {text},action GotoDeclaration")
 
 reference <number> <user.text> [over]: user.idea("goto {number} 0,find next {text},action FindUsages")
 reference next <user.text> [over]: user.idea("find next {text},action FindUsages")
