@@ -6,7 +6,7 @@ Spoken form, Cursorless identifier
 -three section, sectionLevelThree
 -two section, sectionLevelTwo
 arg, argumentOrParameter
-attribute, attribute
+atter, attribute
 block, paragraph
 branch, branch
 call, functionCall
@@ -19,16 +19,16 @@ class name, className
 command, command
 comment, comment
 condition, condition
-element, xmlElement
+elm, xmlElement
 end tag, xmlEndTag
 environment, environment
 file, document
 funk, namedFunction
 funk name, functionName
 glyph, glyph
-identifier, identifier
+fire, identifier
 if state, ifStatement
-instance, instance
+stance, instance
 item, collectionItem
 key, collectionKey
 lambda, anonymousFunction
