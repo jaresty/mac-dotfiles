@@ -14,3 +14,8 @@ complete [<user.text>] [over]:
 
 # terminal commands
 n p m: "npm "
+
+flag [<user.text>] [over]:
+	insert("--")
+	key(shift-tab)
+	insert(text)
