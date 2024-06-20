@@ -4,7 +4,7 @@ key(f10:down):
 key(f10:up):
   speech.disable()
   app.notify("Talon is sleeping")
-drowse:                     speech.disable()
+drowse: speech.disable()
 tag(): user.gpt_beta
 tag(): user.prefixed_numbers
 tag(): user.unix_utilities
@@ -15,20 +15,21 @@ settings():
   user.tmux_prefix_key = 'ctrl-space'
   user.model_shell_default = 'nushell'
   user.snippets_dir = "community/settings/snippets"
+  user.openai_model = 'gpt-4'
 
 #  user.model_endpoint = "http://localhost:11434/api/chat"
 #  user.openai_model = 'codellama'
 
-gain:                       core.repeat_command(1)
+gain: core.repeat_command(1)
 
-grab O C R:                 key("cmd-ctrl-shift-alt-o")
+grab O C R: key("cmd-ctrl-shift-alt-o")
 
 emoji [<user.text>]:
   key(cmd-ctrl-shift-alt-space)
   sleep(200ms)
   insert(text or "")
 
-wait:                       sleep(400ms)
+wait: sleep(400ms)
 
 # homerow
 ^mouser [<user.text>]:
@@ -61,9 +62,9 @@ wait:                       sleep(400ms)
   key(enter)
 
 # undo that: nope, nix, junk, blast
-nope:                       edit.undo()
+nope: edit.undo()
 
-toggle mike:                key("f11")
+toggle mike: key("f11")
 
 {user.formatters} (abbreviate | abreviate | brief) {user.abbreviation}: user.insert_formatted(abbreviation, formatters)
 
@@ -72,4 +73,4 @@ snap web development:
   mimic("snap arc center third")
   mimic("snap code left third")
 
-lister <number>:            "LISTR-{number}"
+lister <number>: "LISTR-{number}"
