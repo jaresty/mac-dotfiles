@@ -28,7 +28,7 @@ funk name, functionName
 glyph, glyph
 fire, identifier
 if state, ifStatement
-stance, instance
+click, instance
 item, collectionItem
 key, collectionKey
 lambda, anonymousFunction
