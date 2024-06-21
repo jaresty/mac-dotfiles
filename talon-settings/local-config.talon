@@ -15,7 +15,7 @@ settings():
   user.tmux_prefix_key = 'ctrl-space'
   user.model_shell_default = 'nushell'
   user.snippets_dir = "community/settings/snippets"
-  user.openai_model = 'gpt-4'
+  user.openai_model = 'gpt-4o'
 
 #  user.model_endpoint = "http://localhost:11434/api/chat"
 #  user.openai_model = 'codellama'
