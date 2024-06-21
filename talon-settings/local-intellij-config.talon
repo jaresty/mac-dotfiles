@@ -82,6 +82,7 @@ kickest: key('cmd-alt-shift-[ delete cmd-alt-l')
 boomest:
 	key('cmd-alt-[')
 	key('cmd-alt-shift-]')
+	sleep(60ms)
 	edit.delete()
 
 symbol hunt [<user.text>] [over]:
