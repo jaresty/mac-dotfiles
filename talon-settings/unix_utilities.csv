@@ -1,4 +1,5 @@
 command,spoken
+aider
 awk,ark
 base64 -d,base sixty four decode
 base64,base sixty four
@@ -55,6 +56,7 @@ tr,translate
 true
 uniq -c,unique count
 uniq,unique
+walk
 wc -c,word count characters
 wc -l,word count lines
 wc,word count
