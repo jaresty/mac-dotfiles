@@ -48,7 +48,7 @@ mob done:
   user.vscode("workbench.action.quickOpen")
   insert("task mob done\n")
 
-flash <user.cursorless_target>: user.cursorless_get_text(cursorless_target)
+flash <user.cursorless_target>: user.cursorless_get_text_list(cursorless_target)
 wax <user.cursorless_target>:
   user.cursorless_command("setSelection", cursorless_target)
   user.vscode("editor.action.smartSelect.expand")
