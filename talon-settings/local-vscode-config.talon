@@ -128,3 +128,6 @@ journal [<user.text>]:
   user.vscode("journal.day")
   sleep(50ms)
   insert(text or "")
+
+big undo:
+  user.run_rpc_command("big-undo.undo")
