@@ -74,3 +74,9 @@ snap web development:
   mimic("snap code left third")
 
 lister <number>: "LISTR-{number}"
+
+model <user.modelPrompt> [{user.modelSource}] [{user.modelDestination}] selected$:
+  text = user.gpt_get_source_text(modelSource or "")
+  result = user.gpt_apply_prompt(modelPrompt, text)
+  user.gpt_insert_response(result, modelDestination or "")
+  user.gpt_select_last()
