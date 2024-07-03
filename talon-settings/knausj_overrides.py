@@ -21,6 +21,16 @@ addl_punctuation = {
     "lacer": "{",
     "racer": "}",
     "langle": "<",
+    "stack": ":",
+    "wave": "~",
+    "quest": "?",
+    "foot": "'",
+    "inch": '"',
+    "drip": ",",
+    "dripper": ";",
+    "dizzy": "@",
+    "tangle": "^",
+    "blank": "_",
 }
 ctx.lists["user.addl_punctuation"] = addl_punctuation
 
