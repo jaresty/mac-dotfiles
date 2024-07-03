@@ -35,7 +35,7 @@ addl_punctuation = {
 ctx.lists["user.addl_punctuation"] = addl_punctuation
 
 
-@mod.capture(rule="{user.addl_punctuation}")
+@mod.capture(rule="{user.symbol_key} | {user.addl_punctuation}")
 def symbol_key(m) -> str:
     "One symbol key"
     theirs = getattr(m, "symbol_key", None)
