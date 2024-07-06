@@ -11,8 +11,10 @@ ctx.matches = """
 language: en
 """
 
-# Symbols and punctuation
-mod.list("symbol_key_overrides", "punctuation overrides (typing and cmd mode)")
+mod.list("symbol_key_overrides", "overrides for symbol keys")
+mod.list("modifier_key_overrides", "overrides for modifier keys")
+mod.list("special_key_overrides", "overrides for special keys")
+mod.list("function_key_overrides", "overrides for function keys")
 
 
 @mod.capture(rule="{user.symbol_key_overrides}")
@@ -21,19 +23,11 @@ def symbol_key(m) -> str:
     return str(m)
 
 
-# Modifier Keys
-
-mod.list("addl_modifier_key", "Additional modifier keys")
-if app.platform == "mac":
-    ctx.lists["user.addl_modifier_key"] = {"rose": "cmd", "troll": "ctrl"}
-
-
-@mod.capture(rule="({user.modifier_key} | {user.addl_modifier_key})+")
+@mod.capture(rule="{user.modifier_key_overrides}+")
 def modifiers(m) -> str:
-    "One or more modifier keys"
-    mods = [
-        *getattr(m, "addl_modifier_key_list", []),
-        *getattr(m, "modifier_key_list", []),
-    ]
-    print("MODS", mods)
+    "A single key with optional modifiers"
+    try:
+        mods = m.modifier_key_overrides_list
+    except AttributeError:
+        mods = []
     return "-".join(mods)
