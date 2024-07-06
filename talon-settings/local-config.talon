@@ -4,7 +4,6 @@ key(f10:down):
 key(f10:up):
   speech.disable()
   app.notify("Talon is sleeping")
-drowse: speech.disable()
 tag(): user.gpt_beta
 tag(): user.prefixed_numbers
 tag(): user.unix_utilities
