@@ -1,7 +1,8 @@
 # Copy this file into your user directory and add your own custom prompts
 # Any prompts in this list are automatically added into the <user.modelPrompt> capture
 
-list:  user.symbol_key_overrides
+list:  user.symbol_key
+language: en
 -
 
 # Example

@@ -1,4 +1,4 @@
-.PHONY: brew-bundle doom-setup install-fisher install-go-binaries install-terminfo install-tmux luansevka pull setup update ~/.talon/user/community ~/.talon/user/talon-ai-tools ~/.talon/user/talon-community-overrides ~/.talon/user/rango-talon ~/.talon/user/talon-axkit ~/.talon/user/talon-filetree-commands
+.PHONY: brew-bundle doom-setup install-fisher install-go-binaries install-terminfo install-tmux luansevka pull setup update ~/.talon/user/community ~/.talon/user/talon-ai-tools ~/.talon/user/rango-talon ~/.talon/user/talon-axkit ~/.talon/user/talon-filetree-commands
 
 ../.config/emacs:
 	git clone https://github.com/doomemacs/doomemacs.git ../.config/emacs
@@ -102,9 +102,6 @@ update: pull setup
 ~/.talon/user/community: ~/.talon/user
 	gh repo clone talonhub/community ~/.talon/user/community || (cd ~/.talon/user/community && git pull)
 
-~/.talon/user/talon-community-overrides:  ~/.talon/user
-	gh repo clone talonhub/talon-community-overrides ~/.talon/user/talon-community-overrides || (cd ~/.talon/user/talon-community-overrides && git pull)
-
 ~/.talon/user/rango-talon: ~/.talon/user
 	gh repo clone david-tejada/rango-talon ~/.talon/user/rango-talon || (cd ~/.talon/user/rango-talon && git pull)
 
@@ -127,4 +124,4 @@ update: pull setup
 ../Library/Application\ Support/nushell/config.nu:
 	ln -sf ~/mac-dotfiles/config.nu "../Library/Application Support/nushell/config.nu"
 
-setup: install-terminfo ../.zshrc ../tmuxfiles /opt/homebrew/bin/brew brew-bundle ../.rvm ../.config/emacs ../.docker/cli-plugins ../.config/fish/config.fish install-fisher ../.config/lvim/config.lua ../.tmux.conf.local ../.doom.d /opt/homebrew/opt/emacs-mac/Emacs.app luansevka /etc/paths.d/20-homebrew ~/.docker/cli-plugins/docker-buildx install-go-binaries install-tmux ../.config/fish/abbr.fish ../monaspace ~/.talon/user/rango-talon ~/.talon/user/talon-ai-tools ~/.talon/user/community ~/.talon/user/talon-community-overrides ../.talon/user/community/settings ~/.talon/user/cursorless-talon ../.talon/user/cursorless-settings ~/.talon/user/talon-filetree-commands ../Library/Application\ Support/nushell/config.nu ../Library/Application\ Support/nushell/env.nu
+setup: install-terminfo ../.zshrc ../tmuxfiles /opt/homebrew/bin/brew brew-bundle ../.rvm ../.config/emacs ../.docker/cli-plugins ../.config/fish/config.fish install-fisher ../.config/lvim/config.lua ../.tmux.conf.local ../.doom.d /opt/homebrew/opt/emacs-mac/Emacs.app luansevka /etc/paths.d/20-homebrew ~/.docker/cli-plugins/docker-buildx install-go-binaries install-tmux ../.config/fish/abbr.fish ../monaspace ~/.talon/user/rango-talon ~/.talon/user/talon-ai-tools ~/.talon/user/community ../.talon/user/community/settings ~/.talon/user/cursorless-talon ../.talon/user/cursorless-settings ~/.talon/user/talon-filetree-commands ../Library/Application\ Support/nushell/config.nu ../Library/Application\ Support/nushell/env.nu
