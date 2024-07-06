@@ -1,0 +1,12 @@
+list:  user.special_key
+language: en
+-
+
+# Example
+
+clap: enter
+scrape: escape
+void: ' '
+swing: tab
+upper: pageup
+downer: pagedown
