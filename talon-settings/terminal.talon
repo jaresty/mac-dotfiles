@@ -19,3 +19,5 @@ flag [<user.text>] [over]:
 	insert("--")
 	key(shift-tab)
 	insert(text)
+
+yes: key(y enter)
