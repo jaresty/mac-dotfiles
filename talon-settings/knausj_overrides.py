@@ -14,7 +14,6 @@ language: en
 mod.list("symbol_key_overrides", "overrides for symbol keys")
 mod.list("modifier_key_overrides", "overrides for modifier keys")
 mod.list("special_key_overrides", "overrides for special keys")
-mod.list("function_key_overrides", "overrides for function keys")
 
 
 @mod.capture(rule="{user.symbol_key_overrides}")
@@ -31,3 +30,9 @@ def modifiers(m) -> str:
     except AttributeError:
         mods = []
     return "-".join(mods)
+
+
+@mod.capture(rule="{self.special_key_overrides}")
+def special_key(m) -> str:
+    "One special key"
+    return m.special_key_overrides

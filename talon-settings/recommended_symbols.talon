@@ -1,15 +1,5 @@
 # enter: okay, shock, slap, clap, send
-clap: key("enter")
-# tab: swing
-swing: key("tab")
-# backslash: whack, stroke, backstroke
-# slash: stroke
-# page up: upper, punk, dusk
-upper: key("pageup")
-# page down: downer, scroll, dawn
-downer: key("pagedown")
-# space: blank, void, ace, ta, pad
-void: ' '
+
 # ~: wave
 # wave:                       '~'
 # # @: dizzy, swirl
@@ -82,4 +72,3 @@ tween <user.symbol_key>: user.insert_between("{symbol_key}", "{symbol_key}")
 disk: edit.save()
 # control: troll, king
 # shift: ship
-scrape: key("escape")
