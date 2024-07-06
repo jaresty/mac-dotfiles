@@ -12,35 +12,12 @@ language: en
 """
 
 # Symbols and punctuation
-mod.list("addl_punctuation", "Additional punctuation (typing and cmd mode)")
-addl_punctuation = {
-    "leper": "(",
-    "reper": ")",
-    "lacker": "[",
-    "racker": "]",
-    "lacer": "{",
-    "racer": "}",
-    "langle": "<",
-    "stack": ":",
-    "wave": "~",
-    "quest": "?",
-    "foot": "'",
-    "inch": '"',
-    "drip": ",",
-    "dripper": ";",
-    "dizzy": "@",
-    "tangle": "^",
-    "blank": "_",
-}
-ctx.lists["user.addl_punctuation"] = addl_punctuation
+mod.list("symbol_key_overrides", "punctuation overrides (typing and cmd mode)")
 
 
-@mod.capture(rule="{user.symbol_key} | {user.addl_punctuation}")
+@mod.capture(rule="{user.symbol_key_overrides}")
 def symbol_key(m) -> str:
     "One symbol key"
-    theirs = getattr(m, "symbol_key", None)
-    if theirs and theirs == "£":
-        return "#"
     return str(m)
 
 
