@@ -14,8 +14,8 @@ langle: <
 stack: :
 wave: ~
 quest: ?
-foot: '
-inch: "
+foot: "'"
+inch: '"'
 drip: ,
 dripper: ;
 dizzy: @
