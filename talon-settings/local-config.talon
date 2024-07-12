@@ -19,7 +19,8 @@ settings():
 #  user.model_endpoint = "http://localhost:11434/api/chat"
 #  user.openai_model = 'codellama'
 
-gain: core.repeat_command(1)
+gain [<number_small> times]:
+  core.repeat_partial_phrase(number_small or 1)
 
 grab O C R: key("cmd-ctrl-shift-alt-o")
 
