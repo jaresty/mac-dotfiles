@@ -9,7 +9,6 @@ sieve, workbench.action.quickTextSearch
 codelens, codelens.showLensesInCurrentLine
 narrow, editor.foldAllExcept
 codetour add, codetour.addSelectionStep
-follow split,editor.action.revealDefinitionAside
 
 # Git
 pop git, editor.action.dirtydiff.next
