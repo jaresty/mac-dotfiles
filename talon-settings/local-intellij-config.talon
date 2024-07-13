@@ -15,13 +15,13 @@ file hunt [<user.text>] [over]:
 	insert(user.text or "")
 
 # File Commands
-dock [<user.text>] [{user.file_extension}] [over]:
+docs [<user.text>] [{user.file_extension}] [over]:
 	key("cmd-shift-o")
 	sleep(400ms)
 	insert(text or "")
 	insert(file_extension or "")
 	sleep(300ms)
-dock pop <user.text> [{user.file_extension}] [over]:
+docs pop <user.text> [{user.file_extension}] [over]:
 	user.idea("action RecentFiles")
 	sleep(400ms)
 	insert(text or "")
@@ -29,14 +29,14 @@ dock pop <user.text> [{user.file_extension}] [over]:
 	sleep(300ms)
 	key(enter)
 	sleep(150ms)
-dock split <user.text> [{user.file_extension}] [over]:
+docs split <user.text> [{user.file_extension}] [over]:
 	key("cmd-shift-o")
 	sleep(400ms)
 	insert(text or "")
 	insert(file_extension or "")
 	sleep(300ms)
 	key(shift-enter)
-dock pop:
+docs pop:
 	key(ctrl-tab)
 pop alter:
 	user.idea("action GotoTest")

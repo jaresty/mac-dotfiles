@@ -77,13 +77,13 @@ testing start: user.vscode("testing.startContinuousRun")
 testing stop: user.vscode("testing.stopContinuousRun")
 
 # File Commands
-dock [<user.text>] [{user.file_extension}] [over]:
+docs [<user.text>] [{user.file_extension}] [over]:
   user.vscode("workbench.action.quickOpen")
   sleep(400ms)
   insert(text or "")
   insert(file_extension or "")
   sleep(300ms)
-dock pop <user.text> [{user.file_extension}] [over]:
+docs pop <user.text> [{user.file_extension}] [over]:
   user.vscode("workbench.action.quickOpen")
   sleep(400ms)
   insert(text or "")
@@ -91,7 +91,7 @@ dock pop <user.text> [{user.file_extension}] [over]:
   sleep(300ms)
   key(enter)
   sleep(150ms)
-dock split <user.text> [{user.file_extension}] [over]:
+docs split <user.text> [{user.file_extension}] [over]:
   user.vscode("workbench.action.quickOpen")
   sleep(400ms)
   insert(text or "")
@@ -101,7 +101,7 @@ dock split <user.text> [{user.file_extension}] [over]:
   sleep(150ms)
   key(escape)
   user.split_next()
-dock pop:
+docs pop:
   user.vscode("workbench.action.openPreviousRecentlyUsedEditorInGroup")
 project [<user.text>]:
   user.vscode("workbench.action.openRecent")
