@@ -78,3 +78,5 @@ copy append that: clip.set_text("{clip.text()}\n{edit.selected_text()}")
 cut append that:
   clip.set_text("{clip.text()}\n{edit.selected_text()}")
   key(delete)
+^copy phrase <phrase>$: clip.set_text(phrase)
+^copy append phrase <phrase>$: clip.set_text("{clip.text()}\n{phrase}")
