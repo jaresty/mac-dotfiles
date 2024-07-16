@@ -74,3 +74,7 @@ snap web development:
   mimic("snap code left third")
 
 lister <number>: "LISTR-{number}"
+copy append that: clip.set_text("{clip.text()}\n{edit.selected_text()}")
+cut append that:
+  clip.set_text("{clip.text()}\n{edit.selected_text()}")
+  key(delete)
