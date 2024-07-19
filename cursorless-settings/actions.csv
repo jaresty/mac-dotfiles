@@ -11,7 +11,7 @@ chuck, remove
 clone, insertCopyAfter
 clone up, insertCopyBefore
 comment, toggleLineComment
-copy, copyToClipboard
+yank, copyToClipboard
 crown, scrollToTop
 dedent, outdentLine
 define, revealDefinition
