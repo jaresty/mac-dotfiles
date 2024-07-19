@@ -111,6 +111,7 @@ project [<user.text>]:
 pop alter: user.vscode("alternate.alternateFile")
 make alter: user.vscode("alternate.createAlternateFile")
 split alter: user.vscode("alternate.alternateFileInSplit")
+compare clip: user.vscode("workbench.files.action.compareWithClipboard")
 
 preview j s start: user.vscode("previewjs.start")
 preview j s stop: user.vscode("previewjs.stop")
