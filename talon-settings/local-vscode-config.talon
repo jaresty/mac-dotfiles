@@ -21,10 +21,6 @@ met ex:
   key(tab)
 git log:
   user.vscode("gitlens.showGraph")
-dendron lookup [<user.text>]:
-  user.vscode("dendron.lookupNote")
-  sleep(50ms)
-  user.insert_formatted(text, "DOT_SEPARATED")
 
 bless: user.vscode("cursorUndo")
 recurse: user.vscode("cursorRedo")
