@@ -1,4 +1,20 @@
 Word(s),Spoken Form (If Different)
+# Kohl's
+Kohls,coles
+KDS,k d s
+PMP,p m p
+PDP,p d p
+PICS,picks
+OIC,o i c
+SKU,skew
+SKUs,skews
+CNC,c n c
+MFE,m f e
+TVS,t v s
+OLM,o l m
+KADO,kado
+
+# Additional words
 nmap,N map
 under-documented,under documented
 nmap
@@ -38,18 +54,5 @@ UUID,u u i d
 UUIDs,u u i des
 ChatGPT,chat g p t
 vitest,v itest
-
-# Kohl's
-Kohls,coles
-KDS,k d s
-PMP,p m p
-PDP,p d p
-PICS,picks
-OIC,o i c
-SKU,skew
-SKUs,skews
-CNC,c n c
-MFE,m f e
-TVS,t v s
-OLM,o l m
-KADO,kado
+bot
+diff
