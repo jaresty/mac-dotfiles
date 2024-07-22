@@ -15,6 +15,7 @@ settings():
   user.model_shell_default = 'nushell'
   user.snippets_dir = "community/settings/snippets"
   user.openai_model = 'gpt-4o'
+  user.subtitles_show = true
 
 #  user.model_endpoint = "http://localhost:11434/api/chat"
 #  user.openai_model = 'codellama'
