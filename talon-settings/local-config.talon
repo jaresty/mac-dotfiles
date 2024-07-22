@@ -16,6 +16,7 @@ settings():
   user.snippets_dir = "community/settings/snippets"
   user.openai_model = 'gpt-4o'
   user.subtitles_show = true
+  user.paste_to_insert_threshold = 10
 
 #  user.model_endpoint = "http://localhost:11434/api/chat"
 #  user.openai_model = 'codellama'
