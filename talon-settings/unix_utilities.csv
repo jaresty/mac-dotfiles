@@ -28,6 +28,7 @@ less
 ln -s,link soft
 ln,link
 md5sum,M D five sum
+mise install,mise install
 mkdir,make dear
 paste
 printf,print format
