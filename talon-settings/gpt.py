@@ -30,7 +30,7 @@ class UserActions:
         The following describes a number of commands that are available to the user in this context. 
         I want you to format this text so that it is easy to scan using only ascii characters.
         Please feel free to group it, order it and make use of the horizontal and vertical space so that it is easy to find what you are looking for.
-        Order it so that the most interesting commands are at the top.
+        Order it so that the most contextually relevant (paying attention to what application I am working in) commands are at the top.
         """
         return actions.user.gpt_apply_prompt(prompt, command_list)
 
