@@ -86,3 +86,13 @@ $1.wrapperScope: statement
 -
 await waitFor(() => {$1})$2
 ---
+
+name: viMock
+phrase: mock
+insertionScope: statement
+
+$1.wrapperPhrase: mock
+$1.wrapperScope: statement
+-
+vi.fn($1)$0
+---
