@@ -85,3 +85,7 @@ model {user.search_engine} [{user.modelSource}]:
   text = user.gpt_get_source_text(modelSource or "")
   result = user.gpt_search_engine(search_engine, text)
   user.search_with_search_engine(search_engine, result)
+
+model help active:
+  text = user.gpt_display_help()
+  user.gpt_insert_response(text, "browser")

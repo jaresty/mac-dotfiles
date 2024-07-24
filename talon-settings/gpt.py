@@ -1,4 +1,4 @@
-from talon import Context, Module, actions
+from talon import Context, Module, actions, registry
 
 mod = Module()
 
@@ -18,6 +18,21 @@ class UserActions:
         I will take care of putting it into a search.
         """
         return actions.user.gpt_apply_prompt(prompt, text_to_process)
+
+    def gpt_display_help():
+        """Use ChatGPT to display help about the current available commands"""
+        command_list = ""
+        for ctx in registry.active_contexts():
+            items = ctx.commands.items()
+            for _, command in items:
+                command_list += str(command)
+        prompt = """
+        The following describes a number of commands that are available to the user in this context. 
+        I want you to format this text so that it is easy to scan using only ascii characters.
+        Please feel free to group it, order it and make use of the horizontal and vertical space so that it is easy to find what you are looking for.
+        Order it so that the most interesting commands are at the top.
+        """
+        return actions.user.gpt_apply_prompt(prompt, command_list)
 
 
 @ctx.action_class("user")
