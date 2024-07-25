@@ -21,3 +21,4 @@ flag [<user.text>] [over]:
 	insert(text)
 
 yes: key(y enter)
+git autocommit: 'git commit -m "$(git diff --staged | mods "summarize this as a conventional commit with real emoji")"'
