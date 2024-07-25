@@ -21,7 +21,7 @@ find
 grep -Hirn,grab here
 grep,grab
 head
-htop,harp top
+htop,H top
 id -u,I D user
 id,I D
 less
