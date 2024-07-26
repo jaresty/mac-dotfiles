@@ -90,5 +90,6 @@ model help active:
   text = user.gpt_display_help()
   user.gpt_insert_response(text, "browser")
 
-model push: user.gpt_push_context()
+model push: user.gpt_push_context(edit.selected_text())
+model push clip: user.gpt_push_context(clip.text())
 model empty: user.gpt_reset_context()

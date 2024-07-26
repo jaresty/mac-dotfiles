@@ -26,10 +26,10 @@ class UserActions:
         global stored_context
         stored_context = []
 
-    def gpt_push_context():
+    def gpt_push_context(context: str):
         """Add the selected text to the stored context"""
         global stored_context
-        stored_context += [actions.edit.selected_text()]
+        stored_context += [context]
 
     def gpt_display_help():
         """Use ChatGPT to display help about the current available commands"""
