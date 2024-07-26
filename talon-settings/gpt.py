@@ -27,7 +27,7 @@ class UserActions:
         stored_context = []
 
     def gpt_push_context():
-        """Add the selected text to the historic context"""
+        """Add the selected text to the stored context"""
         global stored_context
         stored_context += [actions.edit.selected_text()]
         print(stored_context)
