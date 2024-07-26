@@ -30,7 +30,6 @@ class UserActions:
         """Add the selected text to the stored context"""
         global stored_context
         stored_context += [actions.edit.selected_text()]
-        print(stored_context)
 
     def gpt_display_help():
         """Use ChatGPT to display help about the current available commands"""
@@ -53,6 +52,8 @@ class OverrideUserActions:
     def contextual_user_context():
         """This is an override function that can be used to add additional context to the prompt"""
         global stored_context
+        if len(stored_context) > 0:
+            actions.app.notify("Reusing stored context")
         result = actions.user.talon_get_active_context()
         return [
             f"The following describes the currently focused application:\n\n{result}"
