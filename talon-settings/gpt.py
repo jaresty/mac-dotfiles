@@ -4,6 +4,8 @@ mod = Module()
 
 ctx = Context()
 
+stored_context = []
+
 
 @mod.action_class
 class UserActions:
@@ -18,6 +20,17 @@ class UserActions:
         I will take care of putting it into a search.
         """
         return actions.user.gpt_apply_prompt(prompt, text_to_process)
+
+    def gpt_reset_context():
+        """Reset the stored context"""
+        global stored_context
+        stored_context = []
+
+    def gpt_push_context():
+        """Add the selected text to the historic context"""
+        global stored_context
+        stored_context += [actions.edit.selected_text()]
+        print(stored_context)
 
     def gpt_display_help():
         """Use ChatGPT to display help about the current available commands"""
@@ -39,7 +52,8 @@ class UserActions:
 class OverrideUserActions:
     def contextual_user_context():
         """This is an override function that can be used to add additional context to the prompt"""
+        global stored_context
         result = actions.user.talon_get_active_context()
         return [
             f"The following describes the currently focused application:\n\n{result}"
-        ]
+        ] + stored_context
