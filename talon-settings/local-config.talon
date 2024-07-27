@@ -93,4 +93,4 @@ model help active:
 model context push: user.gpt_push_context(edit.selected_text())
 model context display: user.gpt_display_context()
 model context push clip: user.gpt_push_context(clip.text())
-model context empty: user.gpt_reset_context()
+model context clear: user.gpt_clear_context()

@@ -21,15 +21,17 @@ class UserActions:
         """
         return actions.user.gpt_apply_prompt(prompt, text_to_process)
 
-    def gpt_reset_context():
+    def gpt_clear_context():
         """Reset the stored context"""
         global stored_context
         stored_context = []
+        actions.app.notify("Cleared user context")
 
     def gpt_push_context(context: str):
         """Add the selected text to the stored context"""
         global stored_context
         stored_context += [context]
+        actions.app.notify("Appended user context")
 
     def gpt_display_context():
         """Display the stored context"""
