@@ -139,3 +139,4 @@ model {user.search_engine} scout <user.cursorless_target>:
   user.search_with_search_engine(search_engine, result)
 
 snacks: user.vscode("jumpToNextSnippetPlaceholder")
+snazz: user.vscode("jumpToPrevSnippetPlaceholder")
