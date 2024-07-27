@@ -1,0 +1,21 @@
+list: user.formatters
+language: en
+-
+
+# Example
+
+yell: ALL_CAPS
+whisper: ALL_LOWERCASE
+camel: PRIVATE_CAMEL_CASE
+pointed: DOT_SEPARATED
+dubs: DOUBLE_QUOTED_STRING
+hammer: PUBLIC_CAMEL_CASE
+kebab: DASH_SEPARATED
+padded: SPACE_SURROUNDED_STRING
+slasher: ALL_SLASHES
+conga: SLASH_SEPARATED
+smash: NO_SPACES
+snake: SNAKE_CASE
+string: SINGLE_QUOTED_STRING
+dunder: DOUBLE_UNDERSCORED_STRING
+packed: DOUBLE_COLON_SEPARATED
