@@ -57,3 +57,7 @@ token, token
 type, type
 unit, unit
 value, value
+
+
+# 2024-07-30 11:29:37 - New entries automatically added by cursorless
+short block, boundedParagraph
