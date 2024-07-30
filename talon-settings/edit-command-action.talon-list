@@ -10,4 +10,4 @@ cut: cutToClipboard
 paste: pasteFromClipboard
 paste to: pasteFromClipboard
 
-delete: delete
+clear: delete
