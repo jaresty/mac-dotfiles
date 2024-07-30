@@ -27,10 +27,8 @@ recurse: user.vscode("cursorRedo")
 
 splitter: user.vscode("workbench.action.focusNextGroup")
 bar type tree: user.vscode("workbench.view.extension.typescript-explorer")
-task run [<user.text>]:
-  user.vscode("workbench.action.quickOpen")
-  insert("task ")
-  insert(user.text or "")
+run build: user.vscode("workbench.action.tasks.build")
+run test: user.vscode("workbench.action.tasks.test")
 
 mob start:
   user.vscode("workbench.action.quickOpen")
