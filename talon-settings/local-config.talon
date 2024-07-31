@@ -9,6 +9,7 @@ tag(): user.prefixed_numbers
 tag(): user.unix_utilities
 tag(): user.cursorless_use_community_snippets
 tag(): user.cursorless_disable_legacy_destination
+tag(): user.gamepad
 settings():
   user.emacs_meta = "alt"
   user.tmux_prefix_key = 'ctrl-space'
@@ -17,6 +18,8 @@ settings():
   user.openai_model = 'gpt-4o'
   user.subtitles_show = true
   user.paste_to_insert_threshold = 10
+  user.context_sensitive_dictation = 1
+  user.accessibility_dictation = 1
 
 #  user.model_endpoint = "http://localhost:11434/api/chat"
 #  user.openai_model = 'codellama'
@@ -90,7 +93,7 @@ model help active:
   text = user.gpt_display_help()
   user.gpt_insert_response(text, "browser")
 
-model context push: user.gpt_push_context(edit.selected_text())
-model context display: user.gpt_display_context()
-model context push clip: user.gpt_push_context(clip.text())
-model context clear: user.gpt_clear_context()
+# model context push: user.gpt_push_context(edit.selected_text())
+# model context display: user.gpt_display_context()
+# model context push clip: user.gpt_push_context(clip.text())
+# model context clear: user.gpt_clear_context()
