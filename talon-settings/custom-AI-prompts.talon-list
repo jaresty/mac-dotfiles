@@ -4,36 +4,54 @@ list: user.customPrompt
 -
 
 # Example
+add questions: Help me explore this question from multiple perspectives. For each perspective, ask follow-up questions and indicate what perspective is being taken. Annotate the dialogue to show its a conversation between you and me, as this will be shared on Slack and needs to be clear that its a generated response. Respond with only the perspectives and the questions they generated.
 
-add questions: I want you to help me think about this question from various perspectives. Please take various perspectives and ask followup questions. For each perspective please tell me what the perspective is. Please annotate the entire conversation so it is clear that this is a dialogue between you and me since I intend to paste this into slack and I want others to know that this was a generated response. Please respond only with the perspectives and the questions that they generated.
-coach: I want you to evaluate this code. Pay close attention to the ways in which it might need to change. For any unit of code it should have only one reason to change. Give me a sense of the ways it might need to change, so that I can improve the design.
-split: Act as an editor. The following text consists of multiple topics. Please separate those topics and organize them so the structure is clear. Return just the modified text.
-guard: Act as a software engineer. The following code is checking for error cases. Please change the code so that all the error cases are handled first. Return from the function if possible with a guard clause, or throw an error if that works better. Return just the modified text for insertion directly into code without any adornment.
-shorten: Act as an editor. The following text is too long. Please shorten it while maintaining the same meaning. Return just the modified text.
-add API docs: Act as a software engineer. Please look at the following code and add API documentation. Makes sure to include any documentation for parameters that are used in the code. Return just the modified text.
-flatten: Act as an editor. The following text has various structures in place to organize the text. Restructured the text to be a single chunk of text with no additional structure. Make sure that it is grammatically correct by interpreting the current structure for me. Return just the modified text.
-compare: This text contains similar ideas repeated with subtle differences.  List each comparison once to highlight the differences between the variations. Return the response as a table with columns for each idea and one to explain your reasoning for grouping them abstractly. Limit the width of the table for readability. If any idea is only present once, omit that idea.
-shuffle: The following text is organized in one way. Reorganize this text. Ensure that the new organization still is sensible. The response should be in the same language as the original. If there were no categories you can leave them off. If there are, the order and the categories should be different. You should also change the categories to some different categories - change more than just the name. Every category label should reflect one idea - do not use words like `and` or `or`.
+coach: Evaluate this code with a focus on potential changes. Each unit of code should have only one reason to change. Identify areas for improvement to enhance the design.
 
-describe split: Act as an editor. The following text seems to consists of multiple interrelated topics. Starting from the topics in the text, tell me some different ways to categorize or split this.
+split: Act as an editor. The text below covers multiple topics. Separate and organize these topics clearly. Return just the modified text.
 
-make abstract: Act as an editor. The following text is operating at various layers of abstraction.  Please make the text operate at just one level of abstraction by making any specifics more abstract. If the text is already operating at one layer of abstraction, make the whole more abstract. Please return just the modified text.
+guard: As a software engineer, refactor this code to handle error cases first. Use guard clauses or throw errors where appropriate. Return just the modified text for direct insertion into code.
 
-sort interest: Act as an editor. Please order this text such that the most surprising or interesting part comes first. Preserve the current tone. Return just the modified text.
-sort abstraction: Act as an editor. Reorder the following text in order of abstraction. Start with the most abstract and then decrease abstraction as you continue through the text. Add transitions and labels as necessary to make it flow. The sorted text is going to be used in the same context as the original text so it should read like a substitution. Return just the modified text.
-sort complexity: Act as a software engineer. Please reorder the following code so the most complex parts are first. Return just the modified text.
-sort direct: Act as an editor. Reorder the following text to be more direct. Lead with the main point and then back it up with auxiliary information. Return just the text and nothing else. Return just the modified text.
-sort indirect: Act as an editor. Reorder the following text to be more indirect. Lead with the auxiliary information and finish with the main point. Return just the text and nothing else. Return just the modified text.
+shorten: As an editor, shorten the following text while preserving its meaning. Return just the modified text.
 
-fix duplication: Act as a software engineer. The following code has too much duplication. Please do what you can to reduce duplication without changing the behavior of this code. Return just the new code. Return just the modified text for insertion directly into code.
-list obscure: Act as a reader. I want you to find all of the terms listed in the following text that are not defined here. Return just the list of dependencies.
-list dependencies: Act as a reader. I want you to find all of the dependencies listed in the following text and what they depend on. Consider something to be a dependency if both the dependency and what it depends on are listed in the text. Return just the list of dependencies.
-list flow: Act as a project manager. I want you to find the process flow in the following text. Please return just the flow.
+add API docs: As a software engineer, add API documentation to the following code. Include documentation for all parameters used. Return just the modified text.
 
-generate liberated exercise: Act as facilitator. Design a process to solve this problem with full group participation using liberating structures or similar techniques. This process should be usable for an online meeting such as zoom, and may (as needed) leverage tools that allow group collaboration online. Since this group is not going to be very familiar with this exercise format, please limit the number of activities to no more than three. Return just the process you recommend.
-generate traditional exercise: Act as facilitator. Design a process to solve this problem with full group participation without using any breakouts. Do your best to make this engaging and fun. This process should be usable for an online meeting such as zoom, and may (as needed) leverage tools that allow group collaboration online. Since this group is not going to be very familiar with this exercise format, please limit the number of activities to no more than three. Return just the process you recommend.
+flatten: As an editor, restructure the following text into a single, grammatically correct chunk. Interpret the current structure for clarity. Return just the modified text.
 
-format todo: Act as an organizational expert who knows the GTD (getting things done) framework. The following text contains various action items. I want you to annotate each task with a tag to describe the context (context defines what you need to be able to carry out an action) and a tag describing the relative size of the task. Output the tasks as a markdown todo list. Return just the tasks.
-format heading: Act as an editor. Please make a heading that encapsulates everything in the text below. Return just the heading.
-format gherkin: Act as a product manager. The following text completely describes a desired process but is not written in gherkin. Please reformat this into proper gherkin without adding any additional criteria. You can use Jira markup to format the text with bold and italics as necessary. Return just the modified text.
-format HTML: Act as a frontend web developer. Please format the following as semantic HTML. Return just the formatted HTML.
+compare: This text contains similar ideas with subtle differences. Create a table listing each comparison once to highlight these differences. Omit ideas that appear only once. Return the response as a table for readability.
+
+shuffle: Reorganize the following text while ensuring the new organization remains sensible. Change the categories to reflect single ideas without using conjunctions like "and" or "or." Return the text in the same language.
+
+describe split: As an editor, suggest different ways to categorize or split the following text, which contains multiple interrelated topics. Return just the modified text.
+
+make abstract: As an editor, make the following text operate at one level of abstraction by generalizing any specifics. If already abstract, make it even more abstract. Return just the modified text.
+
+sort interest: As an editor, reorder the text so the most surprising or interesting part comes first. Maintain the current tone. Return just the modified text.
+
+sort abstraction: As an editor, reorder the text from most to least abstract. Add transitions and labels for flow, ensuring it reads like a substitution in the same context. Return just the modified text.
+
+sort complexity: As a software engineer, reorder the following code to place the most complex parts first. Return just the modified text.
+
+sort direct: As an editor, reorder the text to be more direct. Lead with the main point and follow up with auxiliary information. Return just the modified text.
+
+sort indirect: As an editor, reorder the text to be more indirect. Lead with auxiliary information and conclude with the main point. Return just the modified text.
+
+fix duplication: As a software engineer, reduce duplication in the following code without changing its behavior. Return just the new code for direct insertion.
+
+list obscure: As a reader, identify all terms in the following text that are not defined. Return just the list of terms.
+
+list dependencies: As a reader, identify all dependencies in the following text and what they depend on. Consider something a dependency if both it and what it depends on are listed. Return just the list of dependencies.
+
+list flow: As a project manager, identify the process flow in the following text. Return just the flow.
+
+generate liberated exercise: As a facilitator, design a problem-solving process for full group participation using liberating structures or similar techniques. Make it suitable for an online meeting with no more than three activities. Return just the process.
+
+generate traditional exercise: As a facilitator, design a problem-solving process for full group participation without breakouts. Make it engaging and fun, suitable for an online meeting with no more than three activities. Return just the process.
+
+format todo: As an organizational expert familiar with GTD, annotate each task in the following text with context and relative size tags. Output the tasks as a markdown todo list. Return just the tasks.
+
+format heading: As an editor, create a heading that encapsulates the text below. Return just the heading.
+
+format gherkin: As a product manager, reformat the following text into proper gherkin without adding new criteria. Use Jira markup for formatting. Return just the modified text.
+
+format HTML: As a frontend web developer, format the following text as semantic HTML. Return just the formatted HTML.
