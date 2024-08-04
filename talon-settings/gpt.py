@@ -17,7 +17,7 @@ class UserActions:
         Rather than searching for exact strings, I want to find a search that is as close as possible.
         I will take care of putting it into a search.
         """
-        return actions.user.gpt_apply_prompt(prompt, text_to_process)
+        return actions.user.gpt_run_prompt("normal", prompt, text_to_process)
 
     def gpt_display_help():
         """Use ChatGPT to display help about the current available commands"""
