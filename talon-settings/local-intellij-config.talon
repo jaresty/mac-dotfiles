@@ -85,7 +85,7 @@ boomest:
 	sleep(60ms)
 	edit.delete()
 
-symbol hunt [<user.text>] [over]:
+(symbol hunt | jump) [<user.text>] [over]:
 	key('cmd-f12')
 	sleep(400ms)
 	insert(user.text or "")
@@ -123,8 +123,8 @@ run that: key('ctrl-r')
 run last: key('ctrl-shift-r')
 
 reference: user.idea("action FindUsages")
-jump: key(cmd-alt-down)
-jump last: key(cmd-alt-up)
+ref next: key(cmd-alt-down)
+ref last: key(cmd-alt-up)
 
 narrow:
 	key(cmd-shift--)

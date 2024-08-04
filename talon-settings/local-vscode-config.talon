@@ -58,8 +58,13 @@ triage last:
   user.vscode("editor.action.quickFix")
 
 widen: user.vscode("editor.unfoldAll")
-jump: key(f4)
-jump last: key(shift-f4)
+ref next: key(f4)
+ref last: key(shift-f4)
+# Symbol search
+jump [<user.text>]:
+  user.vscode("workbench.action.gotoSymbol")
+  sleep(50ms)
+  insert(text or "")
 
 pop deaf: user.vscode("editor.action.peekDefinition")
 pop jest: user.vscode("toggleSuggestionDetails")
