@@ -4,8 +4,6 @@ list: user.customPrompt
 -
 
 # Example
-add questions: Help me explore this question from multiple perspectives. For each perspective, ask follow-up questions and indicate what perspective is being taken. Annotate the dialogue to show its a conversation between you and me, as this will be shared on Slack and needs to be clear that its a generated response. Respond with only the perspectives and the questions they generated.
-
 coach: Evaluate this code with a focus on potential changes. Each unit of code should have only one reason to change. Identify areas for improvement to enhance the design.
 
 split: Act as an editor. The text below covers multiple topics. Separate and organize these topics clearly. Return just the modified text.
@@ -51,10 +49,6 @@ generate traditional exercise: As a facilitator, design a problem-solving proces
 format todo: As an organizational expert familiar with GTD, annotate each task in the following text with context and relative size tags. Output the tasks as a markdown todo list. Return just the tasks.
 
 format heading: As an editor, create a heading that encapsulates the text below. Return just the heading.
-
-format outline: Create an outline that encapsulates the text below. Keep the number of sections between three and five to optimize for human working memory. Return just the outline.
-
-format prose: As an editor, format the following text as prose. You can have headings and paragraphs. Trying to avoid bullets. Reorder and add transitions as necessary to make the document flow. Return just the text.
 
 format gherkin: As a product manager, reformat the following text into proper gherkin without adding new criteria. Use Jira markup for formatting. Return just the modified text.
 
