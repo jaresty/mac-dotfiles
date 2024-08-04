@@ -1,0 +1,7 @@
+[tool.pyright]
+# Talon classes don't use self so ignore the associated errors
+reportSelfClsParameterName = false
+reportGeneralTypeIssues = false
+# Talon can't be installed in CI so ignore source errors
+reportMissingModuleSource = false
+reportMissingImports = false
