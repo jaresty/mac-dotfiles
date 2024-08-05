@@ -7,7 +7,7 @@ ctx = Context()
 
 @mod.action_class
 class UserActions:
-    def gpt_search_engine(search_engine: str, text_to_process: str) -> str:
+    def gpt_search_engine(search_engine: str, source: str) -> str:
         """Format the source for searching with a search engine and open a search"""
 
         prompt = f"""
@@ -17,7 +17,7 @@ class UserActions:
         Rather than searching for exact strings, I want to find a search that is as close as possible.
         I will take care of putting it into a search.
         """
-        return actions.user.gpt_run_prompt("normal", prompt, text_to_process)
+        return actions.user.gpt_run_prompt("normal", prompt, source)
 
     def gpt_display_help():
         """Use ChatGPT to display help about the current available commands"""
@@ -33,9 +33,7 @@ class UserActions:
         Order it so that the most contextually relevant (paying attention to what application I am working in) commands are at the top.
         """
         text = actions.user.gpt_run_prompt("normal", prompt, command_list)
-        actions.user.gpt_insert_response(
-            {"type": "text", "text": text}, "browser", "normal"
-        )
+        actions.user.gpt_insert_response(text, "browser", "normal")
 
 
 @ctx.action_class("user")

@@ -85,8 +85,7 @@ cut append that:
   key(delete)
 
 model {user.search_engine} [{user.modelSource}]:
-  text = user.gpt_get_source_text(modelSource or "")
-  result = user.gpt_search_engine(search_engine, text)
+  result = user.gpt_search_engine(search_engine, modelSource or "")
   user.search_with_search_engine(search_engine, result)
 
 model help active:
