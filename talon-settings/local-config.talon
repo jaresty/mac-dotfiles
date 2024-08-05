@@ -91,7 +91,6 @@ model {user.search_engine} [{user.modelSource}]:
 
 model help active:
   text = user.gpt_display_help()
-  user.gpt_insert_response(text, "browser")
 
 # model context push: user.gpt_push_context(edit.selected_text())
 # model context display: user.gpt_display_context()

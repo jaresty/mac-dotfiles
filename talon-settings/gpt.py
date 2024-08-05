@@ -32,7 +32,10 @@ class UserActions:
         Please feel free to group it, order it and make use of the horizontal and vertical space so that it is easy to find what you are looking for.
         Order it so that the most contextually relevant (paying attention to what application I am working in) commands are at the top.
         """
-        return actions.user.gpt_apply_prompt(prompt, command_list)
+        text = actions.user.gpt_run_prompt("normal", prompt, command_list)
+        actions.user.gpt_insert_response(
+            {"type": "text", "text": text}, "browser", "normal"
+        )
 
 
 @ctx.action_class("user")
