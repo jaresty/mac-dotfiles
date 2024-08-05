@@ -13,7 +13,8 @@ tag(): user.gamepad
 settings():
   user.emacs_meta = "alt"
   user.tmux_prefix_key = 'ctrl-space'
-  user.model_shell_default = 'nushell'
+  user.model_shell_default = 'fish'
+  user.model_system_prompt = 'You are an assistant helping an office worker to be more productive. Output only the response to the request. Generate markdown formatting only if explicitly requested. When the user requests code generation, provide only the code.'
   user.snippets_dir = "community/settings/snippets"
   user.openai_model = 'gpt-4o'
   user.subtitles_show = true
