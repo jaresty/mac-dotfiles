@@ -23,7 +23,7 @@ tangle: ^
 blank: _
 point: .
 slash: /
-whack: '\\'
+stroke: '\\'
 minus: -
 dash: -
 equals: =
