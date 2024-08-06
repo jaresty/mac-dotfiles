@@ -40,8 +40,6 @@ list obscure: As a reader, identify all terms in the following text that are not
 
 list dependencies: As a reader, identify all dependencies in the following text and what they depend on. Consider something a dependency if both it and what it depends on are listed. Return just the list of dependencies.
 
-list flow: As a project manager, identify the process flow in the following text. Return just the flow.
-
 generate liberated exercise: As a facilitator, design a problem-solving process for full group participation using liberating structures or similar techniques. Make it suitable for an online meeting with no more than three activities. Return just the process.
 
 generate traditional exercise: As a facilitator, design a problem-solving process for full group participation without breakouts. Make it engaging and fun, suitable for an online meeting with no more than three activities. Return just the process.
@@ -53,3 +51,5 @@ format heading: As an editor, create a heading that encapsulates the text below.
 format gherkin: As a product manager, reformat the following text into proper gherkin without adding new criteria. Use Jira markup for formatting. Return just the modified text.
 
 format HTML: As a frontend web developer, format the following text as semantic HTML. Return just the formatted HTML.
+
+format process: As a project manager, identify the process flow in the following text. Return just the flow.
