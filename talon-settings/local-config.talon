@@ -43,10 +43,10 @@ wait: sleep(400ms)
   sleep(50ms)
   insert(text or "")
 
-^windows [<user.text>]:
-  key(cmd-ctrl-shift-alt-tab)
-  sleep(50ms)
-  insert(text or "")
+# ^windows [<user.text>]:
+#   key(cmd-ctrl-shift-alt-tab)
+#   sleep(50ms)
+#   insert(text or "")
 
 ^raycast [<user.text>]:
   key("cmd-space")
@@ -72,8 +72,6 @@ nope: edit.undo()
 
 toggle mike: key("f11")
 
-{user.formatters} (abbreviate | abreviate | brief) {user.abbreviation}: user.insert_formatted(abbreviation, formatters)
-
 snap web development:
   mimic("snap figma right third")
   mimic("snap arc center third")
@@ -91,8 +89,3 @@ model {user.search_engine} [{user.modelSource}]:
 
 model help active:
   text = user.gpt_display_help()
-
-# model context push: user.gpt_push_context(edit.selected_text())
-# model context display: user.gpt_display_context()
-# model context push clip: user.gpt_push_context(clip.text())
-# model context clear: user.gpt_clear_context()
