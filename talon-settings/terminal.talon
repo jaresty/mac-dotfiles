@@ -22,3 +22,5 @@ flag [<user.text>] [over]:
 
 yes: key(y enter)
 git autocommit: 'git commit -m "$(git diff --staged | mods "summarize this as a conventional commit with real emoji")"'
+
+git {user.git_subcommand}: "git {git_subcommand} "
