@@ -14,7 +14,7 @@ settings():
   user.emacs_meta = "alt"
   user.tmux_prefix_key = 'ctrl-space'
   user.model_shell_default = 'fish'
-  #user.model_system_prompt = 'You are an assistant helping an office worker to be more productive. Output only the response to the request. Generate markdown formatting only if explicitly requested. When the user requests code generation, provide only the code.'
+  user.model_system_prompt = 'You aid an office workers productivity. Output only the response. Avoid markdown unless requested. If code is needed, match the application language format without syntax errors. Use comments suitable for the programming language to avoid syntax errors.'
   user.snippets_dir = "community/settings/snippets"
   user.openai_model = 'gpt-4o'
   user.subtitles_show = true
