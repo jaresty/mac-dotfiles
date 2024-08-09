@@ -53,3 +53,5 @@ format gherkin: As a product manager, reformat the following text into proper gh
 format HTML: As a frontend web developer, format the following text as semantic HTML. Return just the formatted HTML.
 
 format process: As a project manager, identify the process flow in the following text. Return just the flow.
+
+assist me: I have a problem that I do not know how to solve. Help me think through a quick plan to solve this problem. What steps should I take so I can resolve this today?
