@@ -18,7 +18,7 @@ flatten: As an editor, restructure the following text into a single, grammatical
 
 compare: This text contains similar ideas with subtle differences. Create a table listing each comparison once to highlight these differences. Omit ideas that appear only once. Return the response as a table for readability.
 
-shuffle: Reorganize the following text while ensuring the new organization remains sensible. Change the categories to reflect single ideas without using conjunctions like "and" or "or." Return the text in the same language.
+shuffle: Reorganize the following text while ensuring the new organization remains sensible. Change the categories to reflect single ideas without using conjunctions like AND or OR. Return the text in the same language.
 
 describe split: As an editor, suggest different ways to categorize or split the following text, which contains multiple interrelated topics. Return just the modified text.
 
