@@ -83,9 +83,9 @@ cut append that:
   clip.set_text("{clip.text()}\n{edit.selected_text()}")
   key(delete)
 
-model {user.search_engine} [{user.modelSource}]:
+{user.model} {user.search_engine} [{user.modelSource}]:
   result = user.gpt_search_engine(search_engine, modelSource or "")
   user.search_with_search_engine(search_engine, result)
 
-model help active:
+{user.model} help active:
   text = user.gpt_display_help()
