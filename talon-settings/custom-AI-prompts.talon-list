@@ -22,7 +22,7 @@ shuffle: Reorganize the following text while ensuring the new organization remai
 
 describe split: As an editor, suggest different ways to categorize or split the following text, which contains multiple interrelated topics. Return just the modified text.
 
-describe style: Act as a prompt engineer. I want you to describe the style of this text so that I can use your response as instructions to reformat some other text to match that style.
+describe style: Act as a prompt engineer. I want you to describe the style of this text so that I can use your response as instructions to reformat some other text to match that style. Include an example for clarity.
 
 match style: I have given you some context to describe a style of writing that I would like to use. Please make this text match that style. Return just the modified text.
 
