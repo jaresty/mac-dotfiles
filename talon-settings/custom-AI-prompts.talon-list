@@ -26,7 +26,7 @@ describe style: Act as a prompt engineer. I want you to describe the style of th
 
 match style: I have given you some context to describe a style of writing that I would like to use. Please make this text match that style. Return just the modified text.
 
-make abstract: As an editor, make the following text operate at one level of abstraction by generalizing any specifics. If already abstract, make it even more abstract. Return just the modified text.
+make abstract: The prompt asks for two tasks: shortening text while preserving its meaning and abstracting any specifics to a higher level of abstraction. The response combines these tasks into a single instruction: condense the text, maintain its essence, and generalize if specific.
 
 sort interest: As an editor, reorder the text so the most surprising or interesting part comes first. Maintain the current tone. Return just the modified text.
 
@@ -59,3 +59,5 @@ format HTML: As a frontend web developer, format the following text as semantic 
 format process: As a project manager, identify the process flow in the following text. Return just the flow.
 
 assist me: I have a problem that I do not know how to solve. Help me think through a quick plan to solve this problem. What steps should I take so I can resolve this today?
+
+explain prompt: Here is a prompt and a response. I want you to explain how the prompt was interpreted to give that response. Return just the explanation.
