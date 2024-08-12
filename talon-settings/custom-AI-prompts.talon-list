@@ -16,7 +16,7 @@ add API docs: As a software engineer, add API documentation to the following cod
 
 flatten: Edit the text below to form a single, cohesive, and grammatically correct paragraph that clearly communicates the main points. Provide the modified version only.
 
-compare: This text contains similar ideas with subtle differences. Create a table listing each comparison once to highlight these differences. Omit ideas that appear only once. Return the response as a table for readability.
+compare: This text contains similar but not identical ideas. Create a table listing each comparison once to highlight these subtle differences. Omit ideas that appear only once. Ensure the table width does not exceed 100 characters, wrapping text to new lines as necessary.
 
 shuffle: Reconstruct the following text to ensure the layout is logical and significantly different from the original. Create new categories, each representing a single idea without using conjunctions like AND or OR. Present the revised text in the same language.
 
