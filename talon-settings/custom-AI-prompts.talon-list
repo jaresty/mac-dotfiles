@@ -6,7 +6,7 @@ list: user.customPrompt
 # Example
 coach: Evaluate this code with a focus on potential changes. Each unit of code should have only one reason to change. Identify areas for improvement to enhance the design.
 
-split: Act as an editor. The text below covers multiple topics. Separate and organize these topics clearly. Return just the modified text.
+split: You are an editor. The text below contains multiple topics. Your job is to separate these topics into sections and arrange them clearly. Provide only the reformatted text.
 
 guard: As a software engineer, refactor this code to handle error cases first. Use guard clauses or throw errors where appropriate. Return just the modified text for direct insertion into code.
 
@@ -14,7 +14,7 @@ shorten: As an editor, shorten the following text while preserving its meaning. 
 
 add API docs: As a software engineer, add API documentation to the following code. Include documentation for all parameters used. Return just the modified text.
 
-flatten: As an editor, restructure the following text into a single, grammatically correct chunk. Interpret the current structure for clarity. Return just the modified text.
+flatten: Edit the following text into one cohesive, grammatically correct unit. Make sure to interpret the current structure for clarity. Provide only the modified version.
 
 compare: This text contains similar ideas with subtle differences. Create a table listing each comparison once to highlight these differences. Omit ideas that appear only once. Return the response as a table for readability.
 
