@@ -38,6 +38,6 @@ class UserActions:
 
 @ctx.action_class("user")
 class OverrideUserActions:
-    def additional_user_context():
+    def gpt_additional_user_context():
         """This is an override function that can be used to add additional context to the prompt"""
         return []
