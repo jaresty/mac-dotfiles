@@ -60,4 +60,8 @@ format process: As a project manager, identify the process flow in the following
 
 assist me: I have a problem that I do not know how to solve. Help me think through a quick plan to solve this problem. What steps should I take so I can resolve this today?
 
-explain prompt: Here is a prompt and a response. I want you to explain how the prompt was interpreted to give that response. Return just the explanation.
+explain prompt: Analyze the provided prompt and response. Explain how the prompt was understood to generate the given response. Provide only the explanation.
+
+vary prompt: As a prompt engineer, craft several alternative versions of this prompt to increase its effectiveness. If there is any ambiguity in the intention, provide responses that explore the different possible meanings.
+
+interpret: Formulate multiple reasonable interpretations of this, considering different perspectives.
