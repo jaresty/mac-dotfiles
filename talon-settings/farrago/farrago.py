@@ -1,18 +1,23 @@
-import logging
 import random
-from talon import Context, Module, actions
+from talon import Context, Module, actions, ui, ctrl
 
 ctx = Context()
 mod = Module()
 
+FARRAGO_BUNDLE_ID = "com.rogueamoeba.farrago"
+
+
+def farrago_app():
+    if apps := ui.apps(bundle=FARRAGO_BUNDLE_ID):
+        return apps[0]
+    return None
+
 
 def play_sound(board_number, sound_keys):
-    actions.user.switcher_focus("Farrago")
-    actions.key(f"cmd-{board_number}")
-    actions.sleep("50ms")
-    chosen_option = random.choice(sound_keys)
-    actions.key(chosen_option)
-    actions.user.switcher_focus_last()
+    if farrago := farrago_app():
+        ctrl.key_press(f"{board_number}", super=True, app=farrago)
+        chosen_option = random.choice(sound_keys)
+        ctrl.key_press(chosen_option, app=farrago)
 
 
 @ctx.action_class("user")
