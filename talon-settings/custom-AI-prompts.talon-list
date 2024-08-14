@@ -26,6 +26,7 @@ guard: As a software engineer, refactor this code to handle error cases first. U
 add API docs: As a software engineer, add API documentation to the following code. Include documentation for all parameters used. Return just the modified text.
 fix duplication: As a software engineer, reduce duplication in the following code without changing its behavior. Return just the new code for direct insertion.
 sort complexity: As a software engineer, reorder the following code to place the most complex parts first. Return just the modified text.
+commit message: Draft a conventional commit message for this change, with a real emoji that effectively conveys the nature of the update.
 
 # Analysis Prompts
 list obscure: As a reader, identify all terms in the following text that are not defined. Return just the list of terms.
