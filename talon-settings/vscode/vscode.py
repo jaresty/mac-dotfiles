@@ -27,7 +27,7 @@ class OverrideUserActions:
             cwd=folder,
             capture_output=True,
             text=True,
-            check=True,
+            check=False,
         )
         project_files = subprocess.run(
             ["git", "ls-files"],
