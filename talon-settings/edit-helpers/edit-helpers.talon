@@ -4,6 +4,6 @@ push:
 	insert(" ")
 	edit.left()
 toss:
-	insert("\n")
+	key(shift-enter)
 	edit.up()
 	edit.line_end()
