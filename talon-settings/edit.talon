@@ -88,3 +88,12 @@ dust: key("shift-up")
 gather: edit.select_line()
 gatherest: edit.select_paragraph()
 gathest: edit.select_all()
+
+# Moving characters after the cursor
+push:
+	insert(" ")
+	edit.left()
+pusher:
+	key(shift-enter)
+	edit.up()
+	edit.line_end()
