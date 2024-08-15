@@ -184,3 +184,8 @@ split window:
 
 split right:
 	user.idea("action SplitVertically")
+
+pusher:
+	key(enter)
+	edit.up()
+	edit.line_end()
