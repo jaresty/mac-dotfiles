@@ -19,7 +19,6 @@ class OverrideUserActions:
         path = Path(current_file).resolve()
         folder = path.parent
         os.chdir(folder)
-        # I want this to set the result the git diff including any new  files as well
         current_git_diff = subprocess.run(
             ["git", "diff"], cwd=folder, capture_output=True, text=True, check=True
         )
@@ -35,10 +34,26 @@ class OverrideUserActions:
             cwd=folder,
             capture_output=True,
             text=True,
-            check=True,
+            check=False,
+        )
+        git_root = subprocess.run(
+            ["git", "rev-parse", "--show-toplevel"],
+            cwd=folder,
+            capture_output=True,
+            text=True,
+            check=False,
+        )
+        working_directory = git_root.stdout.strip()
+        ctags_output = subprocess.run(
+            ["make", "output_tags"],
+            cwd=working_directory,
+            capture_output=True,
+            text=True,
+            check=False,
         )
         return [
             f"The current git diff is:\n\n{current_git_diff.stdout}",
             f"The current staged git diff is:\n\n{staged_git_diff.stdout}",
             f"The output of git ls-files is:\n\n{project_files.stdout}",
+            f"The tags output is this:\n\n{ctags_output.stdout}",
         ]
