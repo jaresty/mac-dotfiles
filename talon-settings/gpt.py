@@ -17,7 +17,7 @@ class UserActions:
         Rather than searching for exact strings, I want to find a search that is as close as possible.
         I will take care of putting it into a search.
         """
-        return actions.user.gpt_run_prompt("normal", prompt, source)
+        return actions.user.gpt_run_prompt(prompt, source)
 
     def gpt_display_help():
         """Use ChatGPT to display help about the current available commands"""
@@ -32,8 +32,8 @@ class UserActions:
         Please feel free to group it, order it and make use of the horizontal and vertical space so that it is easy to find what you are looking for.
         Order it so that the most contextually relevant (paying attention to what application I am working in) commands are at the top.
         """
-        text = actions.user.gpt_run_prompt("normal", prompt, command_list)
-        actions.user.gpt_insert_response(text, "browser", "normal")
+        text = actions.user.gpt_run_prompt(prompt, command_list)
+        actions.user.gpt_insert_response({"type": "text", "text": text}, "browser")
 
 
 @ctx.action_class("user")
