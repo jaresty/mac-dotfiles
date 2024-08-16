@@ -33,6 +33,7 @@ list obscure: As a reader, identify all terms in the following text that are not
 list dependencies: As a reader, identify all dependencies in the following text and what they depend on. Consider something a dependency if both it and what it depends on are listed. Return just the list of dependencies.
 explain prompt: Analyze the provided prompt and response. Explain how the prompt was understood to generate the given response. Provide only the explanation.
 interpret: Formulate multiple reasonable interpretations of this, considering different perspectives.
+explain code: Provide a detailed explanation of this code. Break down the syntax and explain the function of each component. How does the code operate as a whole?
 
 # Generation Prompts
 generate liberated exercise: As a facilitator, design a problem-solving process for full group participation using liberating structures or similar techniques. Make it suitable for an online meeting with no more than three activities. Return just the process.
