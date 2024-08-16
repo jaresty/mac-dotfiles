@@ -106,7 +106,7 @@ update: pull setup
 	gh repo clone david-tejada/rango-talon ~/.talon/user/rango-talon || (cd ~/.talon/user/rango-talon && git pull)
 
 ~/.talon/user/talon-ai-tools: ~/.talon/user
-	gh repo clone C-Loftus/talon-ai-tools ~/.talon/user/talon-ai-tools || (cd ~/.talon/user/talon-ai-tools && git pull)
+	gh repo clone jaresty/talon-ai-tools ~/.talon/user/talon-ai-tools || (cd ~/.talon/user/talon-ai-tools && git pull)
 
 ~/.talon/user/talon-axkit: ~/.talon/user
 	gh repo clone phillco/talon-axkit ~/.talon/user/talon-axkit || (cd ~/.talon/user/talon-axkit && git pull)
