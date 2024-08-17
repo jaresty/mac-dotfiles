@@ -1,0 +1,12 @@
+list: user.phrase_ender
+language: en
+-
+
+over: ""
+stack: :
+quest: ?
+void: ' '
+drip: ,
+dripper: ;
+point: .
+bang: !
