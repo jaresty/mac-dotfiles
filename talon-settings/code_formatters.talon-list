@@ -1,4 +1,4 @@
-list:  user.code_formatter
+list: user.code_formatter
 language: en
 -
 
@@ -7,7 +7,7 @@ language: en
 yell: ALL_CAPS
 whisper: ALL_LOWERCASE
 camel: PRIVATE_CAMEL_CASE
-pointed: DOT_SEPARATED
+dotted: DOT_SEPARATED
 dubs: DOUBLE_QUOTED_STRING
 hammer: PUBLIC_CAMEL_CASE
 kebab: DASH_SEPARATED

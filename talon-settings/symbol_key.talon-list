@@ -21,7 +21,7 @@ dripper: ;
 dizzy: @
 tangle: ^
 blank: _
-point: .
+dot: .
 slash: /
 stroke: '\\'
 minus: -

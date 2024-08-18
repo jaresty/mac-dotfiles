@@ -8,5 +8,5 @@ quest: ?
 void: ' '
 drip: ,
 dripper: ;
-point: .
+dot: .
 bang: !
