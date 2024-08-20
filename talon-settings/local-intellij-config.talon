@@ -65,21 +65,23 @@ take funk:
 	key('cmd-alt-shift-]')
 	key("alt-up")
 	key("alt-up")
-gathest:
+gatherest:
 	key('cmd-alt-[')
 	key('cmd-alt-shift-]')
+gathest:
+	key('cmd-a')
 wax: key("alt-up")
 wane: key("alt-down")
 
 drag down: key('shift-cmd-down')
 drag up: key('shift-cmd-up')
-steppest: key('cmd-alt-]')
-slinkest: key('cmd-alt-[')
-snatchest: key('cmd-alt-shift-]')
-chancest: key('cmd-alt-shift-[')
-punchest: key('cmd-alt-shift-] delete cmd-alt-l')
-kickest: key('cmd-alt-shift-[ delete cmd-alt-l')
-boomest:
+stepperest: key('cmd-alt-]')
+slinkerest: key('cmd-alt-[')
+snatcherest: key('cmd-alt-shift-]')
+chancerest: key('cmd-alt-shift-[')
+puncherest: key('cmd-alt-shift-] delete cmd-alt-l')
+kickerest: key('cmd-alt-shift-[ delete cmd-alt-l')
+boomerest:
 	key('cmd-alt-[')
 	key('cmd-alt-shift-]')
 	sleep(60ms)
