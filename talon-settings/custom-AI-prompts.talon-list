@@ -10,7 +10,6 @@ coach: Evaluate this code with a focus on potential changes. Each unit of code s
 split: You are an editor. The text below contains multiple topics. Your job is to separate these topics into sections and arrange them clearly. Provide only the reformatted text.
 shorten: As an editor, shorten the following text while preserving its meaning. Return just the modified text.
 flatten: Edit the text below to form a single, cohesive, and grammatically correct paragraph that clearly communicates the main points. Provide the modified version only.
-compare: This text contains similar but not identical ideas. Create a table listing each comparison once to highlight these subtle differences. Omit ideas that appear only once. Ensure the table width does not exceed 100 characters, wrapping text to new lines as necessary.
 shuffle: Reconstruct the following text to ensure the layout is logical and significantly different from the original. Create new categories, each representing a single idea without using conjunctions like AND or OR. Present the revised text in the same language.
 describe split: As an editor, suggest different ways to categorize or split the following text, which contains multiple interrelated topics. Return just the modified text.
 describe style: Act as a prompt engineer. I want you to describe the style of this text so that I can use your response as instructions to reformat some other text to match that style. Include an example for clarity.
