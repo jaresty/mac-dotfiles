@@ -21,7 +21,7 @@ class OverrideUserActions:
         folder = path.parent
         os.chdir(folder)
         current_git_diff = subprocess.run(
-            ["git", "diff"], cwd=folder, capture_output=True, text=True, check=True
+            ["git", "diff"], cwd=folder, capture_output=True, text=True, check=False
         )
         staged_git_diff = subprocess.run(
             ["git", "diff", "--staged"],
