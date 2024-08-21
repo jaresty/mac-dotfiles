@@ -8,6 +8,7 @@ mod = Module()
 
 ctx.matches = r"""
 app: vscode
+app: jetbrains
 """
 
 
