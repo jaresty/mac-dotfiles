@@ -53,8 +53,12 @@ class OverrideUserActions:
             check=False,
         )
         return [
-            f"The current git diff is:\n\n{current_git_diff.stdout}",
-            f"The current staged git diff is:\n\n{staged_git_diff.stdout}",
-            f"The output of git ls-files is:\n\n{project_files.stdout}",
-            f"The tags output is this:\n\n{ctags_output.stdout}",
+            "The current git diff is:",
+            current_git_diff.stdout,
+            "The current staged git diff is:",
+            staged_git_diff.stdout,
+            "The output of git ls-files is:",
+            project_files.stdout,
+            "The tags output is this:",
+            ctags_output.stdout,
         ]
