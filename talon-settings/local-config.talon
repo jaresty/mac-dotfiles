@@ -11,6 +11,7 @@ tag(): user.cursorless_use_community_snippets
 tag(): user.cursorless_disable_legacy_destination
 tag(): user.gamepad
 settings():
+  # user.paste_to_insert_threshold = 10
   user.emacs_meta = "alt"
   user.tmux_prefix_key = 'ctrl-space'
   user.model_shell_default = 'fish'
@@ -18,7 +19,6 @@ settings():
   user.snippets_dir = "community/settings/snippets"
   user.openai_model = 'gpt-4o'
   user.subtitles_show = true
-  user.paste_to_insert_threshold = 10
   user.context_sensitive_dictation = 1
   user.accessibility_dictation = 1
 
