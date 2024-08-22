@@ -75,16 +75,29 @@ wane: key("alt-down")
 
 drag down: key('shift-cmd-down')
 drag up: key('shift-cmd-up')
+steppest: edit.file_end()
 stepperest: key('cmd-alt-]')
 slinkerest: key('cmd-alt-[')
+slinkest: edit.file_start()
 snatcherest: key('cmd-alt-shift-]')
+snatchest: edit.extend_file_end()
 chancerest: key('cmd-alt-shift-[')
+chancest: edit.extend_file_start()
 puncherest: key('cmd-alt-shift-] delete cmd-alt-l')
+punchest:
+	edit.extend_file_end()
+	edit.delete()
 kickerest: key('cmd-alt-shift-[ delete cmd-alt-l')
+kickest:
+	edit.extend_file_start()
+	edit.delete()
 boomerest:
 	key('cmd-alt-[')
 	key('cmd-alt-shift-]')
 	sleep(60ms)
+	edit.delete()
+boomest:
+	edit.select_all()
 	edit.delete()
 
 (symbol hunt | jump) [<user.text>] [over]:
