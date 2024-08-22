@@ -19,6 +19,8 @@ sort interest: As an editor, reorder the text so the most surprising or interest
 sort abstraction: As an editor, reorder the text from most to least abstract. Add transitions and labels for flow, ensuring it reads like a substitution in the same context. Return just the modified text.
 sort direct: As an editor, reorder the text to be more direct. Lead with the main point and follow up with auxiliary information. Return just the modified text.
 sort indirect: As an editor, reorder the text to be more indirect. Lead with auxiliary information and conclude with the main point. Return just the modified text.
+emphasize: Place special emphasis on this text to show that it holds greater significance.
+understate: Please rewrite this text to make it clear that it is not the main point. It should be easily distinguishable from the main content.
 
 # Software Engineering Prompts
 guard: As a software engineer, refactor this code to handle error cases first. Use guard clauses or throw errors where appropriate. Return just the modified text for direct insertion into code.
