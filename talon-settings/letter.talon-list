@@ -1,0 +1,30 @@
+list: user.letter
+language: en
+-
+
+air: a
+beak: b
+crow: c
+duck: d
+egg: e
+finch: f
+goose: g
+hawk: h
+ice: i
+jade: j
+kite: k
+lark: l
+moon: m
+nest: n
+owl: o
+pond: p
+quail: q
+wren: r
+swift: s
+tern: t
+thrush: u
+dove: v
+wing: w
+fox: x
+yap: y
+zone: z
