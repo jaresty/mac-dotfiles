@@ -7,44 +7,44 @@ list: user.customPrompt
 coach: Evaluate this code with a focus on potential changes. Each unit of code should have only one reason to change. Identify areas for improvement to enhance the design.
 
 # Editing Prompts
-split: You are an editor. The text below contains multiple topics. Your job is to separate these topics into sections and arrange them clearly. Provide only the reformatted text.
-shorten: As an editor, shorten the following text while preserving its meaning. Return just the modified text.
+split: The text below contains multiple topics. Your job is to separate these topics into sections and arrange them clearly. Provide only the reformatted text.
+shorten: Shorten the following text while preserving its meaning. Return just the modified text.
 flatten: Edit the text below to form a single, cohesive, and grammatically correct paragraph that clearly communicates the main points. Provide the modified version only.
 shuffle: Reconstruct the following text to ensure the layout is logical and significantly different from the original. Create new categories, each representing a single idea without using conjunctions like AND or OR. Present the revised text in the same language.
-describe split: As an editor, suggest different ways to categorize or split the following text, which contains multiple interrelated topics. Return just the modified text.
+describe split: Suggest different ways to categorize or split the following text, which contains multiple interrelated topics. Return just the modified text.
 describe style: Act as a prompt engineer. I want you to describe the style of this text so that I can use your response as instructions to reformat some other text to match that style. Include an example for clarity.
 match style: I have given you some context to describe a style of writing that I would like to use. Please make this text match that style. Return just the modified text.
 make abstract: The prompt asks for two tasks: shortening text while preserving its meaning and abstracting any specifics to a higher level of abstraction. The response combines these tasks into a single instruction: condense the text, maintain its essence, and generalize if specific.
-sort interest: As an editor, reorder the text so the most surprising or interesting part comes first. Maintain the current tone. Return just the modified text.
-sort abstraction: As an editor, reorder the text from most to least abstract. Add transitions and labels for flow, ensuring it reads like a substitution in the same context. Return just the modified text.
-sort direct: As an editor, reorder the text to be more direct. Lead with the main point and follow up with auxiliary information. Return just the modified text.
-sort indirect: As an editor, reorder the text to be more indirect. Lead with auxiliary information and conclude with the main point. Return just the modified text.
+sort interest: Reorder the text so the most surprising or interesting part comes first. Maintain the current tone. Return just the modified text.
+sort abstraction: Reorder the text from most to least abstract. Add transitions and labels for flow, ensuring it reads like a substitution in the same context. Return just the modified text.
+sort direct: Reorder the text to be more direct. Lead with the main point and follow up with auxiliary information. Return just the modified text.
+sort indirect: Reorder the text to be more indirect. Lead with auxiliary information and conclude with the main point. Return just the modified text.
 emphasize: Place special emphasis on this text to show that it holds greater significance.
 understate: Please rewrite this text to make it clear that it is not the main point. It should be easily distinguishable from the main content.
 
 # Software Engineering Prompts
-guard: As a software engineer, refactor this code to handle error cases first. Use guard clauses or throw errors where appropriate. Return just the modified text for direct insertion into code.
-add API docs: As a software engineer, add API documentation to the following code. Include documentation for all parameters used. Return just the modified text.
-fix duplication: As a software engineer, reduce duplication in the following code without changing its behavior. Return just the new code for direct insertion.
-sort complexity: As a software engineer, reorder the following code to place the most complex parts first. Return just the modified text.
+guard: Refactor this code to handle error cases first. Use guard clauses or throw errors where appropriate. Return just the modified text for direct insertion into code.
+add API docs: Add API documentation to the following code. Include documentation for all parameters used. Return just the modified text.
+fix duplication: Reduce duplication in the following code without changing its behavior. Return just the new code for direct insertion.
+sort complexity: Reorder the following code to place the most complex parts first. Return just the modified text.
 commit message: Draft a conventional commit message for this change, with a real emoji that effectively conveys the nature of the update.
 
 # Analysis Prompts
-list obscure: As a reader, identify all terms in the following text that are not defined. Return just the list of terms.
-list dependencies: As a reader, identify all dependencies in the following text and what they depend on. Consider something a dependency if both it and what it depends on are listed. Return just the list of dependencies.
+list obscure: Identify all terms in the following text that are not defined. Return just the list of terms.
+list dependencies: Identify all dependencies in the following text and what they depend on. Consider something a dependency if both it and what it depends on are listed. Return just the list of dependencies.
 explain prompt: Analyze the provided prompt and response. Explain how the prompt was understood to generate the given response. Provide only the explanation.
 interpret: Formulate multiple reasonable interpretations of this, considering different perspectives.
 explain code: Provide a detailed explanation of this code. Break down the syntax and explain the function of each component. How does the code operate as a whole?
 
 # Generation Prompts
-generate liberated exercise: As a facilitator, design a problem-solving process for full group participation using liberating structures or similar techniques. Make it suitable for an online meeting with no more than three activities. Return just the process.
-generate traditional exercise: As a facilitator, design a problem-solving process for full group participation without breakouts. Make it engaging and fun, suitable for an online meeting with no more than three activities. Return just the process.
-vary prompt: As a prompt engineer, craft several alternative versions of this prompt to increase its effectiveness. If there is any ambiguity in the intention, provide responses that explore the different possible meanings.
+generate liberated exercise: Design a problem-solving process for full group participation using liberating structures or similar techniques. Make it suitable for an online meeting with no more than three activities. Return just the process.
+generate traditional exercise: Design a problem-solving process for full group participation without breakouts. Make it engaging and fun, suitable for An online meeting with no more than three activities. Return just the process.
+vary prompt: Craft several alternative versions of this prompt to increase its effectiveness. If there is any ambiguity in the intention, provide responses that explore the different possible meanings.
 assist me: I have a problem that I do not know how to solve. Help me think through a quick plan to solve this problem. What steps should I take so I can resolve this today?
 
 # Formatting Prompts
-format todo: As an organizational expert familiar with GTD, annotate each task in the following text with context and relative size tags. Output the tasks as a markdown todo list. Return just the tasks.
-format heading: As an editor, create a heading that encapsulates the text below. Return just the heading.
-format gherkin: As a product manager, reformat the following text into proper gherkin without adding new criteria. Use Jira markup for formatting. Return just the modified text.
-format HTML: As a frontend web developer, format the following text as semantic HTML. Return just the formatted HTML.
-format process: As a project manager, identify the process flow in the following text. Return just the flow.
+format todo: Annotate each task in the following text with context and relative size tags. Output the tasks as a markdown todo list. Return just the tasks.
+format heading: Create a heading that encapsulates the text below. Return just the heading.
+format gherkin: Reformat the following text into proper gherkin without adding new criteria. Use Jira markup for formatting. Return just the modified text.
+format HTML: Format the following text as semantic HTML. Return just the formatted HTML.
+format process: Identify the process flow in the following text. Return just the flow.
