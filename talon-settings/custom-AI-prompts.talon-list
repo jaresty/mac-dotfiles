@@ -5,6 +5,7 @@ list: user.customPrompt
 
 # Evaluation Prompts
 coach: Evaluate this code with a focus on potential changes. Each unit of code should have only one reason to change. Identify areas for improvement to enhance the design.
+critique: Critique this text. Tell me what is wrong with it.
 
 # Editing Prompts
 split: The text below contains multiple topics. Your job is to separate these topics into sections and arrange them clearly. Provide only the reformatted text.
