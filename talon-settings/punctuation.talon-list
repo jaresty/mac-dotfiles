@@ -1,0 +1,39 @@
+list: user.punctuation
+language: en
+-
+
+# Example
+
+leper: (
+reper: )
+lacker: [
+racker: ]
+lacer: {
+racer: }
+langle: <
+stack: :
+wave: ~
+quest: ?
+foot: "'"
+inch: '"'
+drip: ,
+dripper: ;
+dizzy: @
+tangle: ^
+blank: _
+dot: .
+slash: /
+stroke: '\\'
+minus: -
+dash: -
+equals: =
+plus: +
+grave: `
+bang: !
+rangle: >
+star: *
+hash: #
+percent: %
+amper: &
+pipe: |
+dollar: $
