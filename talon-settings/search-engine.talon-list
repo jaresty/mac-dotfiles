@@ -1,0 +1,12 @@
+list: user.search_engine
+language: en
+-
+
+amazon: https://www.amazon.com/s/?field-keywords=%s
+google: https://www.google.com/search?q=%s
+map: https://maps.google.com/maps?q=%s
+scholar: https://scholar.google.com/scholar?q=%s
+wiki: https://en.wikipedia.org/w/index.php?search=%s
+p h: https://www.phind.com/search?q=%s
+m d n: https://developer.mozilla.org/en-US/search?q=%s
+devdocs: https://devdocs.io/#q=%s
