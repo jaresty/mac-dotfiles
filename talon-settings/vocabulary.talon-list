@@ -1,0 +1,68 @@
+list: user.vocabulary
+language: en
+-
+
+N map: nmap
+under documented: under-documented
+nmap
+admin
+Cisco
+Citrix
+VPN
+DNS
+Minecraft
+
+# Kohl's
+A E M: AEM
+c n c: CNC
+coles: k d s
+KADO: kado
+KDS: Kohls
+m f e: MFE
+o i c: o l m
+OIC: OLM
+p d p: p m p
+PDP: picks
+PICS: PMP
+skew: skews
+SKU: SKUs
+t v s: TVS
+
+# Additional words
+Artium
+Aresty
+Schwa
+jaresty
+n p m: npm
+git: git
+u r l: URL
+wip: WIP
+c s v: CSV
+t d d: TDD
+b d d: BDD
+p r: PR
+m r: MR
+a p i: API
+a pis: APIs
+d t o: DTO
+d t os: DTOs
+jason: JSON
+i d: ID
+ides: IDs
+c s s: CSS
+h t m l: HTML
+h t t p: HTTP
+com: com
+jira: Jira
+u u i d: UUID
+u u i des: UUIDs
+chat g p t: ChatGPT
+v test: vitest
+bot
+diff
+vite
+L L M: LLM
+Q R: QR
+S V G: SVG
+T mux: tmux
+J S X: JSX
