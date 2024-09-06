@@ -24,8 +24,8 @@ OIC: OLM
 p d p: p m p
 PDP: picks
 PICS: PMP
-skew: skews
-SKU: SKUs
+skew: SKU
+skews: SKUs
 t v s: TVS
 
 # Additional words
