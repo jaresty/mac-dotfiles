@@ -15,9 +15,9 @@ perfect:
   user.vscode("editor.action.triggerSuggest")
   key(enter)
 
-explore: user.vscode("breadcrumbs.focusAndSelect")
-fuzzy [<user.text>]:
-  user.vscode("fuzzySearch.activeTextEditor")
+^explore: user.vscode("breadcrumbs.focusAndSelect")
+^teleport [<user.text>]$:
+  user.vscode("workbench.action.quickTextSearch")
   sleep(50ms)
   insert(text or "")
 met ex:

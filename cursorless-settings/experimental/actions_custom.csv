@@ -3,7 +3,6 @@ undo, undo
 redo, redo
 peek, editor.action.peekDefinition
 hierarchy, editor.showCallHierarchy
-fuzzy, fuzzySearch.activeTextEditorWithCurrentSelection
 refactor, editor.action.refactor
 sieve, workbench.action.quickTextSearch
 codelens, codelens.showLensesInCurrentLine
