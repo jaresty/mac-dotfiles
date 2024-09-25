@@ -28,6 +28,9 @@ skew: SKU
 skews: SKUs
 t v s: TVS
 Dynatrace
+kotest
+j unit: JUnit
+j d b c: Jdbc
 
 # Additional words
 Artium
