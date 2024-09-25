@@ -56,6 +56,7 @@ ides: IDs
 c s s: CSS
 h t m l: HTML
 h t t p: HTTP
+h t t p s: HTTPS
 com: com
 jira: Jira
 u u i d: UUID
