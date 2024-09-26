@@ -161,9 +161,10 @@ complete <number> <user.text> [over]: user.idea("goto {number} 0,find next {text
 complete next <user.text> [over]: user.idea("find next {text},action CodeCompletion")
 complete last <user.text> [over]: user.idea("find prev {text},action CodeCompletion")
 
-quick fix <number> <user.text> [over]: user.idea("goto {number} 0,find next {text},action ShowIntentionActions")
-quick fix next <user.text> [over]: user.idea("find next {text},action ShowIntentionActions")
-quick fix last <user.text> [over]: user.idea("find prev {text},action ShowIntentionActions")
+quaff: user.idea("action ShowIntentionActions")
+quaff <number> <user.text> [over]: user.idea("goto {number} 0,find next {text},action ShowIntentionActions")
+quaff next <user.text> [over]: user.idea("find next {text},action ShowIntentionActions")
+quaff last <user.text> [over]: user.idea("find prev {text},action ShowIntentionActions")
 
 change next: key(ctrl-shift-alt-down)
 change last: key(ctrl-shift-alt-up)

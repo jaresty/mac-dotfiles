@@ -35,7 +35,7 @@ post, setSelectionAfter
 pour, editNewLineAfter
 pre, setSelectionBefore
 puff, insertEmptyLinesAround
-quick fix, showQuickFix
+quaff, showQuickFix
 reference, showReferences
 rename, rename
 repack, rewrap
