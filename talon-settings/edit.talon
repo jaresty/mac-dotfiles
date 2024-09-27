@@ -91,7 +91,7 @@ lift:
 place:
 	edit.paste()
 
-stamp:
+trace:
 	edit.copy()
 
 forge:
