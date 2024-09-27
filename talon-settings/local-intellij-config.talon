@@ -124,7 +124,7 @@ refactor this [<user.text>] [over]:
 
 complete this: user.idea("action CodeCompletion")
 
-teleport [<user.text>] [over]:
+^scry [<user.text>] [over]:
 	key(cmd-shift-e)
 	sleep(400ms)
 	insert(user.text or "")

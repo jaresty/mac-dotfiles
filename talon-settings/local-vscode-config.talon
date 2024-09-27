@@ -16,7 +16,7 @@ perfect:
   key(enter)
 
 ^explore: user.vscode("breadcrumbs.focusAndSelect")
-^teleport [<user.text>]$:
+^scry [<user.text>]$:
   user.vscode("workbench.action.quickTextSearch")
   sleep(50ms)
   insert(text or "")
