@@ -84,3 +84,12 @@ pusher:
 	key(shift-enter)
 	edit.up()
 	edit.line_end()
+
+lift:
+	edit.cut()
+
+place:
+	edit.paste()
+
+stamp:
+	edit.copy()
