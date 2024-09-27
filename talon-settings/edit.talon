@@ -93,3 +93,12 @@ place:
 
 stamp:
 	edit.copy()
+
+forge:
+	edit.selection_clone()
+
+flier:
+	edit.line_swap_up()
+
+faller:
+	edit.line_swap_down()
