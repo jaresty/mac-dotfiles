@@ -129,6 +129,11 @@ complete this: user.idea("action CodeCompletion")
 	sleep(400ms)
 	insert(user.text or "")
 
+^lookup [<user.text>] [over]:
+	user.idea("action GotoSymbol")
+	insert(text)
+	key("enter")
+
 triage:
 	user.idea("action GotoNextError")
 	user.idea("action ShowIntentionActions")

@@ -20,6 +20,12 @@ perfect:
   user.vscode("workbench.action.quickTextSearch")
   sleep(50ms)
   insert(text or "")
+
+^lookup [<user.text>]:
+  user.vscode("workbench.action.showAllSymbols")
+  sleep(50ms)
+  insert(text or "")
+
 met ex:
   key(tab)
 git log:
