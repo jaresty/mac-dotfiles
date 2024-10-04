@@ -56,6 +56,7 @@ boomest:
 #selecting forward
 snatchy: key("shift-right")
 snatch: key("alt-shift-right")
+snatchoid: key("alt-shift-right shift-right")
 snatcher: key("cmd-shift-right")
 snatcherest: edit.extend_paragraph_end()
 snatchest: edit.extend_file_end()
@@ -63,6 +64,7 @@ snatchest: edit.extend_file_end()
 #selecting backward
 chancy: key("shift-left")
 chance: key("alt-shift-left")
+chansoid: key("alt-shift-left shift-left")
 chancer: key("cmd-shift-left")
 chancerest: edit.extend_paragraph_start()
 chancest: edit.extend_file_start()
