@@ -42,7 +42,7 @@ curly: user.insert_between("{", "}")
 empty curly: "{}"
 curly that:
 	text = edit.selected_text()
-	user.paste("{{text}}")
+	user.paste("{text}")
 diamond: user.insert_between("<", ">")
 empty diamond: "<>"
 diamond that:
