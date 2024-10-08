@@ -134,6 +134,15 @@ complete this: user.idea("action CodeCompletion")
 	insert(text)
 	key("enter")
 
+track:
+	user.idea("action FindUsagesInFile")
+
+track next:
+	key("ctrl-alt-down")
+
+track last:
+	key("ctrl-alt-up")
+
 triage:
 	user.idea("action GotoNextError")
 	user.idea("action ShowIntentionActions")
