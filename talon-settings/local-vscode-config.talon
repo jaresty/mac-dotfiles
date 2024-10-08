@@ -76,6 +76,12 @@ jump [<user.text>]:
   sleep(50ms)
   insert(text or "")
 
+track <user.cursorless_target>:
+  symbol = user.cursorless_get_text(cursorless_target)
+  user.vscode("workbench.action.gotoSymbol")
+  sleep(50ms)
+  insert(symbol)
+
 pop deaf: user.vscode("editor.action.peekDefinition")
 pop jest: user.vscode("toggleSuggestionDetails")
 pop type: user.vscode("editor.action.peekTypeDefinition")

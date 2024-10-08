@@ -3,7 +3,7 @@ undo, undo
 redo, redo
 disk, workbench.action.files.save
 peek, editor.action.peekDefinition
-track, workbench.action.showAllSymbols
+track all, workbench.action.showAllSymbols
 hierarchy, editor.showCallHierarchy
 refactor, editor.action.refactor
 sieve, workbench.action.quickTextSearch
