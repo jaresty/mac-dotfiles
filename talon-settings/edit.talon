@@ -87,6 +87,11 @@ pusher:
 	edit.up()
 	edit.line_end()
 
+toss <user.keys>:
+	edit.left()
+	key(keys)
+	edit.right()
+
 lift:
 	edit.cut()
 
