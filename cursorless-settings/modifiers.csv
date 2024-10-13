@@ -11,7 +11,7 @@ head, extendThroughStartOf
 core, interiorOnly
 its, inferPreviousMark
 just, toRawSelection
-final, last
+fin, last
 leading, leading
 next, next
 last, previous
