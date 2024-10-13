@@ -3,10 +3,10 @@ language: en
 -
 
 over: ""
-stack: :
+bridge: :
 quest: ?
 void: ' '
-drip: ,
-dripper: ;
+latch: ,
+hinge: ;
 dot: .
 bang: !

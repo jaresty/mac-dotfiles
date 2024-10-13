@@ -11,13 +11,13 @@ racker: ]
 lacer: {
 racer: }
 langle: <
-stack: :
+bridge: :
 wave: ~
 quest: ?
 foot: "'"
 inch: '"'
-drip: ,
-dripper: ;
+latch: ,
+hinge: ;
 dizzy: @
 tangle: ^
 blank: _
