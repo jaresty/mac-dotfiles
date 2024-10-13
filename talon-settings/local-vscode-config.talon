@@ -152,5 +152,10 @@ model {user.search_engine} scout <user.cursorless_target>:
   result = user.gpt_search_engine(search_engine, text)
   user.search_with_search_engine(search_engine, result)
 
+append <user.keys> <user.cursorless_target>:
+  starting_text = user.cursorless_get_text(cursorless_target, true)
+  destination = user.cursorless_create_destination(cursorless_target)
+  user.cursorless_insert(destination, "{starting_text}{keys}")
+
 snacks: user.vscode("jumpToNextSnippetPlaceholder")
 snazz: user.vscode("jumpToPrevSnippetPlaceholder")
