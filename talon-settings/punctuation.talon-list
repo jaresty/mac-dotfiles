@@ -26,7 +26,7 @@ slash: /
 stroke: '\\'
 minus: -
 dash: -
-equals: =
+beam: =
 plus: +
 grave: `
 bang: !
