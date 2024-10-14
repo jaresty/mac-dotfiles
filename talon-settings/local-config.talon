@@ -30,7 +30,7 @@ gain [<number_small> times]:
 
 grab O C R: key("cmd-ctrl-shift-alt-o")
 
-emoji [<user.text>]:
+^emo [<user.text>]$:
   key(cmd-ctrl-shift-alt-space)
   sleep(200ms)
   insert(text or "")
