@@ -14,6 +14,7 @@ complete [<user.text>] [over]:
 
 sigint: key(ctrl-c)
 fuzzif: key(ctrl-t)
+editor: key(alt-e)
 
 # terminal commands
 n p m: "npm "
