@@ -12,6 +12,8 @@ complete [<user.text>] [over]:
 	key(shift-tab)
 	insert(text)
 
+interrupt: key(ctrl-c)
+
 # terminal commands
 n p m: "npm "
 
@@ -21,4 +23,5 @@ flag [<user.text>] [over]:
 	insert(text)
 
 yes: key(y enter)
+no: key(n enter)
 git autocommit: 'git commit -m "$(git diff --staged | mods "summarize this as a conventional commit with real emoji")"'
