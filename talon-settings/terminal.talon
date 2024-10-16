@@ -12,7 +12,7 @@ complete [<user.text>] [over]:
 	key(shift-tab)
 	insert(text)
 
-interrupt: key(ctrl-c)
+sigint: key(ctrl-c)
 
 # terminal commands
 n p m: "npm "
