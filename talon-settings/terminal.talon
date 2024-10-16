@@ -13,6 +13,7 @@ complete [<user.text>] [over]:
 	insert(text)
 
 sigint: key(ctrl-c)
+fuzzif: key(ctrl-t)
 
 # terminal commands
 n p m: "npm "

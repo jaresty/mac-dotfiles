@@ -2,6 +2,7 @@ list: user.unix_utility
 language: en
 -
 
+aider
 ark: awk
 base sixty four decode: base64 -d
 base sixty four: base64
@@ -63,3 +64,4 @@ word count lines: wc -l
 word count: wc
 who
 who am I: whoami
+lunarvim: lvim
