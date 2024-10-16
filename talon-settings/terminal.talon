@@ -13,6 +13,7 @@ complete [<user.text>] [over]:
 	insert(text)
 
 sigint: key(ctrl-c)
+sigend: key(ctrl-d)
 fuzzif: key(ctrl-t)
 editor: key(alt-e)
 
