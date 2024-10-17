@@ -19,6 +19,9 @@ fuzzif [<user.text>] [over]:
 	key(ctrl-t)
 	sleep(60ms)
 	insert(text)
+jump [<user.text>] [over]:
+	insert("z {text}")
+	key(tab)
 
 # terminal commands
 n p m: "npm "
