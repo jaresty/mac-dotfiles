@@ -14,8 +14,11 @@ complete [<user.text>] [over]:
 
 sigint: key(ctrl-c)
 sigend: key(ctrl-d)
-fuzzif: key(ctrl-t)
 editor: key(alt-e)
+fuzzif [<user.text>] [over]:
+	key(ctrl-t)
+	sleep(60ms)
+	insert(text)
 
 # terminal commands
 n p m: "npm "
