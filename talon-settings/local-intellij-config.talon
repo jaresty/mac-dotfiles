@@ -167,14 +167,6 @@ widen:
 
 pop param: user.idea("action ParameterInfo")
 
-rename <number> <user.text> [over]: user.idea("goto {number} 0,find next {text}, action RenameElement")
-rename next <user.text> [over]: user.idea("find next {text}, action RenameElement")
-rename last <user.text> [over]: user.idea("find prev {text}, action RenameElement")
-
-complete <number> <user.text> [over]: user.idea("goto {number} 0,find next {text},action CodeCompletion")
-complete next <user.text> [over]: user.idea("find next {text},action CodeCompletion")
-complete last <user.text> [over]: user.idea("find prev {text},action CodeCompletion")
-
 quaff: user.idea("action ShowIntentionActions")
 quaff <number> <user.text> [over]: user.idea("goto {number} 0,find next {text},action ShowIntentionActions")
 quaff next <user.text> [over]: user.idea("find next {text},action ShowIntentionActions")
@@ -185,23 +177,11 @@ change last: key(ctrl-shift-alt-up)
 problem next: user.idea("action GotoNextError")
 problem last: user.idea("action GotoPreviousError")
 
-follow <number> <user.text> [over]: user.idea("goto {number} 0,find next {text},action GotoDeclaration")
-follow next <user.text> [over]: user.idea("find next {text},action GotoDeclaration")
-follow last <user.text> [over]: user.idea("find prev {text},action GotoDeclaration")
 follow split:
 	user.idea("action SplitVertically,action GotoDeclaration")
 follow split <number> <user.text> [over]: user.idea("action SplitVertically,goto {number} 0,find next {text},action GotoDeclaration")
 follow split next <user.text> [over]: user.idea("action SplitVertically,find next {text},action GotoDeclaration")
 
-reference <number> <user.text> [over]: user.idea("goto {number} 0,find next {text},action FindUsages")
-reference next <user.text> [over]: user.idea("find next {text},action FindUsages")
-reference last <user.text> [over]: user.idea("find prev {text},action FindUsages")
-
-refactor <number> <user.text> [over]:
-	user.idea("goto {number} 0,find next {text}, action Refactorings.QuickListPopupAction")
-
-select <number> <user.text> [over]: user.idea("goto {number} 0,find next {text}")
-go <number> <user.text> [over]: user.idea("goto {number} 0,find next {text}, action EditorRight")
 wax <number> <user.text> [over]:
 	user.idea("goto {number} 0,find next {text}")
 	key("alt-up")
