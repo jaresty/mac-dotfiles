@@ -10,3 +10,6 @@ wiki: https://en.wikipedia.org/w/index.php?search=%s
 p h: https://www.phind.com/search?q=%s
 m d n: https://developer.mozilla.org/en-US/search?q=%s
 devdocs: https://devdocs.io/#q=%s
+
+# kohls
+jira: https://kohls.atlassian.net/issues/?jql=text%20~%20%s%20AND%20project%20%3D%20LISTR
