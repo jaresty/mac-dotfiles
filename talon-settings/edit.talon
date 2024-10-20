@@ -109,3 +109,9 @@ flier:
 
 faller:
 	edit.line_swap_down()
+
+climb:
+	edit.line_insert_up()
+
+dig:
+	edit.line_insert_down()
