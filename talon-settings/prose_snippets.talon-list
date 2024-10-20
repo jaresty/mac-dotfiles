@@ -1,7 +1,7 @@
-list:  user.prose_snippets
+list: user.prose_snippets
 language: en
 -
 
 # Example
 
-clap: "\n"
+dive: "\n"

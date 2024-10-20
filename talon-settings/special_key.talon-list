@@ -1,10 +1,10 @@
-list:  user.special_key
+list: user.special_key
 language: en
 -
 
 # Example
 
-clap: enter
+dive: enter
 scrape: escape
 void: ' '
 swing: tab
