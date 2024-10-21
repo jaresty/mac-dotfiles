@@ -36,20 +36,20 @@ suny: "()"
 sun that:
 	text = edit.selected_text()
 	user.paste("({text})")
-crane: user.insert_between("[", "]")
-craner:
+stack: user.insert_between("[", "]")
+stacker:
 	insert("[]")
 	key(left enter)
-craney: "[]"
-crane that:
+stacky: "[]"
+stack that:
 	text = edit.selected_text()
 	user.paste("[{text}]")
-swan: user.insert_between("{", "}")
-curlier:
+crane: user.insert_between("{", "}")
+craner:
 	insert("{}")
 	key(left enter)
-swany: "{}"
-swan that:
+craney: "{}"
+crane that:
 	text = edit.selected_text()
 	user.paste("{{{text}}}")
 leaf: user.insert_between("<", ">")

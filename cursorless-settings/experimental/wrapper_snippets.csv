@@ -5,7 +5,7 @@ if, ifStatement.consequence
 if else, ifElseStatement.consequence
 link, link.text
 try, tryCatchStatement.body
-double crane, doublecrane.destination
+double stack, doublestack.destination
 describe, describeBlock.body
 spec, itBlock.body
 before each, beforeEachBlock.body
