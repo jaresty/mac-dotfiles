@@ -51,17 +51,12 @@ if status is-interactive
         echo "
 
   "
-        set VALUE $( random 1 5 )
+        set VALUE $( random 0 2 )
         switch $VALUE
             case 0
                 fortune | cowsay
             case 1
-                curl -s 'https://api.truthordarebot.xyz/api/wyr?rating=PG' | jq -r .question | cowsay
-                echo
-            case 3
                 curl -s https://www.cincinato.org/koans/randomkoan_en.php | w3m -dump -T text/html | sed '/\[Another random.*$/d;/ZenKoansDatabase/d;/English/,$d'
-            case 4
-                curl -s https://www.conversationstarters.com/generator.php | w3m -dump -T text/html | sed '/\[header\]/,/Random Questions/d;/Generate Another/,$d' | cowsay
             case '*'
                 curl -s -H "Accept: text/plain" https://icanhazdadjoke.com/ | lolcat
                 echo
