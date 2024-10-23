@@ -89,3 +89,16 @@ cut append that:
 
 {user.model} help active:
   text = user.gpt_display_help()
+
+draft up <number>:
+  edit.select_line()
+  key(shift-up)
+  repeat(number - 1)
+  user.draft_editor_open()
+
+draft down <number>:
+  key(home:2)
+  key(shift-end)
+  key(shift-down)
+  repeat(number - 1)
+  user.draft_editor_open()
