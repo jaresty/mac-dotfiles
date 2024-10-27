@@ -74,7 +74,17 @@ whirr: "rr"
 odd: "dd"
 grass: "ss"
 mere <user.letter>: "e{letter}e"
+mere:
+	user.insert_between("e", "e")
 rise <user.letter>: "i{letter}e"
+rise:
+	user.insert_between("i", "e")
 ruse <user.letter>: "u{letter}e"
-lore <user.letter>: "o{letter}e"
+ruse:
+	user.insert_between("u", "e")
+stone <user.letter>: "o{letter}e"
+stone:
+	user.insert_between("o", "e")
 cape <user.letter>: "a{letter}e"
+cape:
+	user.insert_between("a", "e")
