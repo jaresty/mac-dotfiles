@@ -76,6 +76,7 @@ fuzz: "zz"
 peep: "pp"
 whirr: "rr"
 odd: "dd"
+nibble: "bb"
 jagged: "gg"
 moss: "ss"
 
