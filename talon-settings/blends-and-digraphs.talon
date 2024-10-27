@@ -21,7 +21,7 @@
 # 20. **tr** - *trap* (as birds are sometimes trapped)
 
 # Consonant Digraphs
-chick: "ch"
+chirp: "ch"
 shear: "sh"
 thorn: "th"
 whin: "wh"
