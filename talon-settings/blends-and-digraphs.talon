@@ -76,6 +76,7 @@ fuzz: "zz"
 peep: "pp"
 whirr: "rr"
 odd: "dd"
+jagged: "gg"
 moss: "ss"
 
 # User Insertions
