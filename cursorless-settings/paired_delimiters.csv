@@ -1,8 +1,8 @@
 Spoken form, Cursorless identifier
-stack, squareBrackets
+box, squareBrackets
 crane, curlyBrackets
 leaf, angleBrackets
-escaped stack, escapedSquareBrackets
+escaped box, escapedSquareBrackets
 escaped quad, escapedDoubleQuotes
 escaped sun, escapedParentheses
 escaped twin, escapedSingleQuotes

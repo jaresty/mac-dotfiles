@@ -2,7 +2,6 @@ Spoken form, Cursorless identifier
 if, ifStatement
 if else, ifElseStatement
 try, tryCatchStatement
-double stack, doublestack
 use effect, useEffect
 use state, useState
 use translation, useTranslation

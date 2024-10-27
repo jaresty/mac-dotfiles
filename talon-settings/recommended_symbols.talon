@@ -16,8 +16,8 @@
 # drip:                       ','
 # # ;: dripper, semi, sasha
 # dripper:                    ';'
-# # :: stack
-# stack:                      ':'
+# # :: box
+# box:                      ':'
 # {: lacer, lackey
 # }: racer, rebrace, racky
 # [: lacker, locker
@@ -36,12 +36,12 @@ suny: "()"
 sun that:
 	text = edit.selected_text()
 	user.paste("({text})")
-stack: user.insert_between("[", "]")
-stacker:
+box: user.insert_between("[", "]")
+boxer:
 	insert("[]")
 	key(left enter)
-stacky: "[]"
-stack that:
+boxy: "[]"
+box that:
 	text = edit.selected_text()
 	user.paste("[{text}]")
 crane: user.insert_between("{", "}")
