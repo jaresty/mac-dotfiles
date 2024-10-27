@@ -20,14 +20,22 @@
 # 19. **sw** - *swift* (type of bird)
 # 20. **tr** - *trap* (as birds are sometimes trapped)
 
+# Consonant Digraphs
 chick: "ch"
 shear: "sh"
 thorn: "th"
-phoebe: "ph"
 whin: "wh"
-pheasant: "ph"
 cluck: "ck"
 song: "ng"
+milk: "lk"
+honk: "nk"
+hymn: "mn"
+lynx: "nx"
+wrack: "wr"
+knap: "kn"
+sign: "gn"
+
+# Vowel Digraphs
 haul: "au"
 aim: "ai"
 creek: "ee"
@@ -40,10 +48,6 @@ hoot: "oo"
 hew: "ew"
 caw: "aw"
 oriole: "io"
-milk: "lk"
-honk: "nk"
-hymn: "mn"
-lynx: "nx"
 grouse: "ou"
 fowl: "ow"
 coif: "oi"
@@ -58,33 +62,39 @@ scorn: "or"
 spur: "ur"
 dart: "ar"
 perch: "er"
+
+# Special Cases
+pheasant: "ph"
 flight: "gh"
-wrack: "wr"
 tweet: "tt"
 gull: "ll"
 ruff: "ff"
 limb: "mb"
-knap: "kn"
 pennant: "nn"
-sign: "gn"
 accip: "cc"
 fuzz: "zz"
 peep: "pp"
 whirr: "rr"
 odd: "dd"
 grass: "ss"
+
+# User Insertions
 mere <user.letter>: "e{letter}e"
 mere:
 	user.insert_between("e", "e")
+
 rise <user.letter>: "i{letter}e"
 rise:
 	user.insert_between("i", "e")
+
 ruse <user.letter>: "u{letter}e"
 ruse:
 	user.insert_between("u", "e")
+
 stone <user.letter>: "o{letter}e"
 stone:
 	user.insert_between("o", "e")
+
 cape <user.letter>: "a{letter}e"
 cape:
 	user.insert_between("a", "e")
