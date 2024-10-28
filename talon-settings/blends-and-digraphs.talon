@@ -64,6 +64,7 @@ perch: "er"
 # Special Cases
 pheasant: "ph"
 flight: "gh"
+quack: "qu"
 tweet: "tt"
 gull: "ll"
 ruff: "ff"
