@@ -86,8 +86,8 @@ mere <user.letter>: "e{letter}e"
 mere:
 	user.insert_between("e", "e")
 
-rise <user.letter>: "i{letter}e"
-rise:
+hike <user.letter>: "i{letter}e"
+hike:
 	user.insert_between("i", "e")
 
 ruse <user.letter>: "u{letter}e"
