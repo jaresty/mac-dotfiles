@@ -90,8 +90,8 @@ hike <user.letter>: "i{letter}e"
 hike:
 	user.insert_between("i", "e")
 
-ruse <user.letter>: "u{letter}e"
-ruse:
+fluke <user.letter>: "u{letter}e"
+fluke:
 	user.insert_between("u", "e")
 
 stone <user.letter>: "o{letter}e"
