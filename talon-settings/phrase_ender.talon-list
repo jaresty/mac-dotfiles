@@ -5,7 +5,7 @@ language: en
 over: ""
 bridge: :
 quest: ?
-void: ' '
+sky: ' '
 latch: ,
 hinge: ;
 dot: .
