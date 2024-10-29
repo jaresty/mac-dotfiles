@@ -31,6 +31,7 @@ hymn: "mn"
 wrack: "wr"
 knap: "kn"
 sign: "gn"
+exile: "gz"
 
 # Vowel Digraphs
 haul: "au"
