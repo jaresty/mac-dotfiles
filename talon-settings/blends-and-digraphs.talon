@@ -58,7 +58,7 @@ cue: "ue"
 stir: "ir"
 scorn: "or"
 spur: "ur"
-dart: "ar"
+spar: "ar"
 perch: "er"
 
 # Special Cases
