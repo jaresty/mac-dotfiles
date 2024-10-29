@@ -35,6 +35,7 @@ exile: "gz"
 
 # Vowel Digraphs
 haul: "au"
+guano: "ua"
 aim: "ai"
 creek: "ee"
 teal: "ea"
