@@ -76,12 +76,12 @@ twiny: "''"
 twin that:
 	text = edit.selected_text()
 	user.paste("'{text}'")
-ski: user.insert_between('`', '`')
+skis: user.insert_between('`', '`')
 skier:
 	insert("``")
 	key(left enter)
-squee: "``"
-ski that:
+squeeze: "``"
+skis that:
 	text = edit.selected_text()
 	user.paste("`{text}`")
 
