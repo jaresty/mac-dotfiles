@@ -98,6 +98,10 @@ mere <user.letter>: "e{letter}e"
 mere:
 	user.insert_between("e", "e")
 
+lyre <user.letter>: "y{letter}e"
+lyre:
+	user.insert_between("y", "e")
+
 hike <user.letter>: "i{letter}e"
 hike:
 	user.insert_between("i", "e")
