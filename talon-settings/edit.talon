@@ -60,6 +60,7 @@ snatchoid: key("alt-shift-right shift-right")
 snatcher: key("cmd-shift-right")
 snatcherest: edit.extend_paragraph_end()
 snatchest: edit.extend_file_end()
+snatchify: user.set_select_direction_right()
 
 #selecting backward
 chancy: key("shift-left")
@@ -68,6 +69,7 @@ chansoid: key("alt-shift-left shift-left")
 chancer: key("cmd-shift-left")
 chancerest: edit.extend_paragraph_start()
 chancest: edit.extend_file_start()
+chancify: user.set_select_direction_left()
 
 #selecting up and down
 sweep: key("shift-down")
