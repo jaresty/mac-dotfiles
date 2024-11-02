@@ -29,7 +29,7 @@ squee: "squ"
 
 # Ending blends
 drift: "ft"
-pond: "nd"
+sand: "nd"
 bunt: "nt"
 molt: "lt"
 maple: "mp"
@@ -58,11 +58,11 @@ eagle: "ee"
 teal: "ea"
 pie: "ie"
 soar: "oa"
-doe: "oe"
+toed: "oe"
 hoot: "oo"
 ray: "ay"
 prey: "ey"
-cue: "ue"
+puerto: "ue"
 fruit: "ui"
 
 # Short Vowel Sounds
