@@ -1,7 +1,7 @@
 #are these bird or nature themed?Are the easy to distinguish from one another?Is there any duplication?Let's improve this file
 # Beginning blends
 bluff: "bl"
-bran: "br"
+brood: "br"
 claw: "cl"
 crest: "cr"
 drake: "dr"
