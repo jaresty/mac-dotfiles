@@ -137,3 +137,5 @@ frigate <user.letter>: "i{letter}a"
 ibis <user.letter>: "i{letter}i"
 
 rhino <user.letter>: "i{letter}o"
+
+cara <user.letter>: "a{letter}a"
