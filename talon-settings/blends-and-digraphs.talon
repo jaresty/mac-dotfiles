@@ -1,3 +1,4 @@
+#are these bird or nature themed?Are the easy to distinguish from one another?Is there any duplication?Let's improve this file
 # Beginning blends
 bluff: "bl"
 bran: "br"
@@ -59,6 +60,7 @@ hoot: "oo"
 flew: "ew"
 caw: "aw"
 oriole: "io"
+avian: "ia"
 pouch: "ou"
 fowl: "ow"
 coif: "oi"
