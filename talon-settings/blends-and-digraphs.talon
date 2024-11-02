@@ -94,7 +94,6 @@ spar: "ar"
 perch: "er"
 
 # Special Cases
-# Here are some bird-themed options for replacing "haul," keeping the criteria in mind:
 owl: "au"
 puffin: "ph"
 flight: "gh"
