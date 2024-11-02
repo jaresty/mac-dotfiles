@@ -11,7 +11,7 @@ froth: "fr"
 glide: "gl"
 plover: "pl"
 prowl: "pr"
-scrub: "sc"
+screech: "sc"
 skiff: "sk"
 sleet: "sl"
 smew: "sm"
@@ -47,31 +47,40 @@ knock: "kn"
 glen: "gn"
 gaze: "gz"
 
-# Vowel Digraphs
-haul: "au"
-guano: "ua"
+# Long Vowel Sounds
 aim: "ai"
 creek: "ee"
 teal: "ea"
-aether: "ae"
 pie: "ie"
-skein: "ei"
 soar: "oa"
 doe: "oe"
 hoot: "oo"
-flew: "ew"
-caw: "aw"
-oriole: "io"
-avian: "ia"
+ray: "ay"
+prey: "ey"
+cue: "ue"
+fruit: "ui"
+
+# Short Vowel Sounds
 pouch: "ou"
 fowl: "ow"
 coif: "oi"
 fruit: "ui"
+
+# Special Cases
+flew: "ew"
+caw: "aw"
+
+# Replaced less common words with more familiar ones
+veil: "ei"
+
+# Inconsistent Vowel Digraphs
+guano: "ua"
+aether: "ae"
+oriole: "io"
+avian: "ia"
 pigeon: "eo"
-toy: "oy"
-ray: "ay"
-prey: "ey"
-cue: "ue"
+
+# Consonant Digraphs
 stir: "ir"
 scorn: "or"
 spur: "ur"
@@ -79,6 +88,7 @@ spar: "ar"
 perch: "er"
 
 # Special Cases
+haul: "au"
 pheasant: "ph"
 flight: "gh"
 quack: "qu"
