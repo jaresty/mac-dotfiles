@@ -23,6 +23,10 @@ swan: "sw"
 twig: "tw"
 trill: "tr"
 
+skylark: "scr"
+spruce: "spr"
+squee: "squ"
+
 # Ending blends
 drift: "ft"
 pond: "nd"
@@ -50,7 +54,7 @@ gaze: "gz"
 
 # Long Vowel Sounds
 aim: "ai"
-creek: "ee"
+eagle: "ee"
 teal: "ea"
 pie: "ie"
 soar: "oa"
