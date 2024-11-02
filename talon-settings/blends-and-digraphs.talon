@@ -25,7 +25,7 @@ trill: "tr"
 # Ending blends
 drift: "ft"
 pond: "nd"
-pintail: "nt"
+bunt: "nt"
 molt: "lt"
 maple: "mp"
 honk: "nk"
