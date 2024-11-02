@@ -2,11 +2,12 @@ list: user.letter
 language: en
 -
 
+# This letter list should not be changed or have conflicts
 air: a
 beak: b
 crow: c
 duck: d
-edge: e
+egg: e
 finch: f
 goose: g
 hawk: h
