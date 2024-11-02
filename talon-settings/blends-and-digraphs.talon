@@ -113,7 +113,6 @@ bluebird: "bb"
 budgie: "gg"
 moss: "ss"
 
-# User Insertions
 egret <user.letter>: "e{letter}e"
 
 lyre <user.letter>: "y{letter}e"
@@ -124,4 +123,16 @@ lure <user.letter>: "u{letter}e"
 
 cove <user.letter>: "o{letter}e"
 
-rave <user.letter>: "a{letter}e"
+warb <user.letter>: "a{letter}e"
+
+snail <user.letter>: "a{letter}i"
+
+dela <user.letter>: "e{letter}a"
+
+heron <user.letter>: "e{letter}o"
+
+frigate <user.letter>: "i{letter}a"
+
+ibis <user.letter>: "i{letter}i"
+
+rhino <user.letter>: "i{letter}o"
