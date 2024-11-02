@@ -26,6 +26,7 @@ trill: "tr"
 skylark: "scr"
 spruce: "spr"
 squee: "squ"
+stork: "str"
 
 # Ending blends
 drift: "ft"
