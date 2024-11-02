@@ -34,17 +34,18 @@ stalk: "lk"
 herd: "rd"
 
 # Consonant Digraphs
+
 chirp: "ch"
-shear: "sh"
+swish: "sh"
 thorn: "th"
-whin: "wh"
+whisk: "wh"
 cluck: "ck"
 song: "ng"
 hymn: "mn"
-wrack: "wr"
-knap: "kn"
-sign: "gn"
-exile: "gz"
+wretch: "wr"
+knock: "kn"
+glen: "gn"
+gaze: "gz"
 
 # Vowel Digraphs
 haul: "au"
