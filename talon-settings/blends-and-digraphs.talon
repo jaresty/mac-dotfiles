@@ -1,17 +1,18 @@
-#are these bird or nature themed?Are the easy to distinguish from one another?Is there any duplication?Let's improve this file
-# Beginning blends
+# This is a bespoke language for typing text with your voice the tries to use nouns which our bird themed, limited in number of syllables and easy to distinguish auditorily. Every entry here should be unique, easy to tell apart, and limited in number of syllables.
+
+# Improved Beginning Blends
 bluff: "bl"
 brood: "br"
 claw: "cl"
 crest: "cr"
 drake: "dr"
 flap: "fl"
-frog: "fr"
+froth: "fr"
 glide: "gl"
-plod: "pl"
+plush: "pl"
 prowl: "pr"
 scrub: "sc"
-skua: "sk"
+skiff: "sk"
 sleet: "sl"
 smew: "sm"
 snug: "sn"
@@ -19,7 +20,7 @@ speck: "sp"
 stern: "st"
 swan: "sw"
 twig: "tw"
-trip: "tr"
+trill: "tr"
 
 # Ending blends
 drift: "ft"
@@ -97,25 +98,13 @@ moss: "ss"
 
 # User Insertions
 mere <user.letter>: "e{letter}e"
-mere:
-	user.insert_between("e", "e")
 
 lyre <user.letter>: "y{letter}e"
-lyre:
-	user.insert_between("y", "e")
 
 hike <user.letter>: "i{letter}e"
-hike:
-	user.insert_between("i", "e")
 
 fluke <user.letter>: "u{letter}e"
-fluke:
-	user.insert_between("u", "e")
 
 stone <user.letter>: "o{letter}e"
-stone:
-	user.insert_between("o", "e")
 
 cape <user.letter>: "a{letter}e"
-cape:
-	user.insert_between("a", "e")
