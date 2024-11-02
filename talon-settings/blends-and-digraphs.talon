@@ -37,6 +37,7 @@ honk: "nk"
 gulp: "lp"
 stalk: "lk"
 herd: "rd"
+wild: "ld"
 
 # Consonant Digraphs
 
