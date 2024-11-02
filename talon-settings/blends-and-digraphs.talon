@@ -20,7 +20,7 @@ snug: "sn"
 speck: "sp"
 stern: "st"
 swan: "sw"
-twig: "tw"
+twite: "tw"
 trill: "tr"
 
 skylark: "scr"
