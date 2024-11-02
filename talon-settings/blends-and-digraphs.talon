@@ -88,34 +88,35 @@ spar: "ar"
 perch: "er"
 
 # Special Cases
-haul: "au"
-pheasant: "ph"
+# Here are some bird-themed options for replacing "haul," keeping the criteria in mind:
+owl: "au"
+puffin: "ph"
 flight: "gh"
 quack: "qu"
 tweet: "tt"
 gull: "ll"
-ruff: "ff"
+fluff: "ff"
 limb: "mb"
-pennant: "nn"
-summit: "mm"
-accip: "cc"
+nene: "nn"
+murmur: "mm"
+cockatoo: "cc"
 fuzz: "zz"
 peep: "pp"
 whirr: "rr"
-odd: "dd"
-nibble: "bb"
-jagged: "gg"
+dodo: "dd"
+bluebird: "bb"
+budgie: "gg"
 moss: "ss"
 
 # User Insertions
-mere <user.letter>: "e{letter}e"
+egret <user.letter>: "e{letter}e"
 
 lyre <user.letter>: "y{letter}e"
 
-hike <user.letter>: "i{letter}e"
+piper <user.letter>: "i{letter}e"
 
-fluke <user.letter>: "u{letter}e"
+lure <user.letter>: "u{letter}e"
 
-stone <user.letter>: "o{letter}e"
+cove <user.letter>: "o{letter}e"
 
-cape <user.letter>: "a{letter}e"
+rave <user.letter>: "a{letter}e"
