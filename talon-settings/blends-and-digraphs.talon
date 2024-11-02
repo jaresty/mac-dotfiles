@@ -124,7 +124,7 @@ lure <user.letter>: "u{letter}e"
 
 cove <user.letter>: "o{letter}e"
 
-warb <user.letter>: "a{letter}e"
+warble <user.letter>: "a{letter}e"
 
 snail <user.letter>: "a{letter}i"
 
