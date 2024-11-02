@@ -71,7 +71,6 @@ fruit: "ui"
 pouch: "ou"
 fowl: "ow"
 coif: "oi"
-fruit: "ui"
 
 # Special Cases
 flew: "ew"
@@ -126,7 +125,7 @@ cove <user.letter>: "o{letter}e"
 
 warble <user.letter>: "a{letter}e"
 
-snail <user.letter>: "a{letter}i"
+asio <user.letter>: "a{letter}i"
 
 dela <user.letter>: "e{letter}a"
 
@@ -139,3 +138,5 @@ ibis <user.letter>: "i{letter}i"
 rhino <user.letter>: "i{letter}o"
 
 cara <user.letter>: "a{letter}a"
+
+sora <user.letter>: "o{letter}a"
