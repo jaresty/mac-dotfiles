@@ -1,4 +1,4 @@
-# This is a bespoke language for typing text with your voice the tries to use nouns which our bird themed, limited in number of syllables and easy to distinguish auditorily. Every entry here should be unique, easy to tell apart, and limited in number of syllables.
+# This is a bespoke language for typing text with your voice the tries to use nouns which are supposed to be bird themed, limited in number of syllables and easy to distinguish auditorily. Every entry here should be unique, easy to tell apart, and limited in number of syllables.
 
 # Improved Beginning Blends
 bluff: "bl"
@@ -9,7 +9,7 @@ drake: "dr"
 flap: "fl"
 froth: "fr"
 glide: "gl"
-plush: "pl"
+plover: "pl"
 prowl: "pr"
 scrub: "sc"
 skiff: "sk"
@@ -25,9 +25,9 @@ trill: "tr"
 # Ending blends
 drift: "ft"
 pond: "nd"
-flint: "nt"
+pintail: "nt"
 molt: "lt"
-clump: "mp"
+maple: "mp"
 honk: "nk"
 gulp: "lp"
 stalk: "lk"
