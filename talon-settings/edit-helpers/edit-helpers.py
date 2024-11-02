@@ -28,21 +28,13 @@ class Actions:
     def set_select_direction_right():
         """Make it so the selection is going to the right"""
         selected_text = actions.edit.selected_text()
-        lines = selected_text.split("\n")
         actions.edit.left()
-        for _ in lines[:-1]:
-            actions.edit.extend_down()
-        actions.edit.extend_line_start()
-        for _ in lines[-1]:
+        for _ in selected_text:
             actions.edit.extend_right()
 
     def set_select_direction_left():
         """Make it so the selection is going to the left"""
         selected_text = actions.edit.selected_text()
-        lines = selected_text.split("\n")
         actions.edit.right()
-        for _ in lines[:-1]:
-            actions.edit.extend_up()
-        actions.edit.extend_line_end()
-        for _ in lines[0]:
+        for _ in selected_text:
             actions.edit.extend_left()
