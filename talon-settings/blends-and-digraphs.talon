@@ -1,7 +1,7 @@
 # This is a bespoke language for typing text with your voice the tries to use nouns which are supposed to be bird themed, limited in number of syllables and easy to distinguish auditorily. Every entry here should be unique, easy to tell apart, and limited in number of syllables.
 
 # Improved Beginning Blends
-bluff: "bl"
+bill: "bl"
 brood: "br"
 claw: "cl"
 crest: "cr"
