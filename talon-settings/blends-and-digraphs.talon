@@ -88,7 +88,7 @@ pigeon: "eo"
 
 # Consonant Digraphs
 stir: "ir"
-scorn: "or"
+horn: "or"
 spur: "ur"
 spar: "ar"
 perch: "er"
