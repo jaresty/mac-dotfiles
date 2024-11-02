@@ -140,3 +140,5 @@ rhino <user.letter>: "i{letter}o"
 cara <user.letter>: "a{letter}a"
 
 sora <user.letter>: "o{letter}a"
+
+paro <user.letter>: "a{letter}o"
