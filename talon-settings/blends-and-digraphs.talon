@@ -95,7 +95,7 @@ perch: "er"
 
 # Special Cases
 owl: "au"
-puffin: "ph"
+phoebe: "ph"
 flight: "gh"
 quack: "qu"
 tweet: "tt"
