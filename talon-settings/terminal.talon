@@ -8,9 +8,7 @@ tag(): user.readline
 mob start [<user.number_string>]: "mob start {number_string}\n"
 mob next: "mob next\n"
 mob done: "mob done\n"
-leet [<user.text>] [over]:
-	key(shift-tab)
-	insert(text)
+leets: key(shift-tab)
 
 siginter: key(ctrl-c)
 sigend: key(ctrl-d)
@@ -26,10 +24,7 @@ jump [<user.text>] [over]:
 # terminal commands
 n p m: "npm "
 
-flag [<user.text>] [over]:
-	insert("--")
-	key(shift-tab)
-	insert(text)
+flag: " --"
 
 yes: key(y enter)
 no: key(n enter)
