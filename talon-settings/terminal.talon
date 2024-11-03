@@ -13,11 +13,11 @@ leets: key(shift-tab)
 siginter: key(ctrl-c)
 sigend: key(ctrl-d)
 editor: key(alt-e)
-fuzzif [<user.text>] [over]:
+docs [<user.text>] [over]$:
 	key(ctrl-t)
 	sleep(60ms)
 	insert(text)
-jump [<user.text>] [over]:
+jump [<user.text>] [over]$:
 	insert("z {text}")
 	key(tab)
 
