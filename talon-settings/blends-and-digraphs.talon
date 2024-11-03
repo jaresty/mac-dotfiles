@@ -121,7 +121,7 @@ piper <user.letter>: "i{letter}e"
 
 huey <user.letter>: "u{letter}e"
 
-rave <user.letter>: "a{letter}e"
+raven <user.letter>: "a{letter}e"
 
 cali <user.letter>: "a{letter}i"
 
