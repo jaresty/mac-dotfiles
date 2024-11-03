@@ -123,7 +123,7 @@ huey <user.letter>: "u{letter}e"
 
 raven <user.letter>: "a{letter}e"
 
-cali <user.letter>: "a{letter}i"
+flaming <user.letter>: "a{letter}i"
 
 dela <user.letter>: "e{letter}a"
 
