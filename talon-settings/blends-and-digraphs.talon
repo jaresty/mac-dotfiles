@@ -23,7 +23,7 @@ swan: "sw"
 twite: "tw"
 trill: "tr"
 
-skylark: "scr"
+scrub: "scr"
 spruce: "spr"
 squee: "squ"
 stork: "str"
