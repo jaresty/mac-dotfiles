@@ -56,7 +56,7 @@ gaze: "gz"
 
 # Long Vowel Sounds
 aim: "ai"
-eagle: "ee"
+screech: "ee"
 teal: "ea"
 pie: "ie"
 soar: "oa"
