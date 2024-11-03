@@ -123,7 +123,7 @@ lure <user.letter>: "u{letter}e"
 
 cove <user.letter>: "o{letter}e"
 
-warble <user.letter>: "a{letter}e"
+rave <user.letter>: "a{letter}e"
 
 asio <user.letter>: "a{letter}i"
 
