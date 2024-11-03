@@ -22,7 +22,6 @@ stern: "st"
 swan: "sw"
 twite: "tw"
 trill: "tr"
-
 screech: "scr"
 spruce: "spr"
 squee: "squ"
@@ -39,6 +38,7 @@ gulp: "lp"
 stalk: "lk"
 herd: "rd"
 wild: "ld"
+hatch: "tch"
 
 # Consonant Digraphs
 
