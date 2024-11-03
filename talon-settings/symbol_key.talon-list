@@ -18,7 +18,7 @@ foot: "'"
 inch: '"'
 latch: ,
 hinge: ;
-target: @
+bulls: @
 tangle: ^
 blank: _
 dot: .
