@@ -125,7 +125,7 @@ cove <user.letter>: "o{letter}e"
 
 rave <user.letter>: "a{letter}e"
 
-asio <user.letter>: "a{letter}i"
+cali <user.letter>: "a{letter}i"
 
 dela <user.letter>: "e{letter}a"
 
