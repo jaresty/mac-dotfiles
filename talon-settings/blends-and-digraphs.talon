@@ -119,7 +119,7 @@ lyre <user.letter>: "y{letter}e"
 
 piper <user.letter>: "i{letter}e"
 
-lure <user.letter>: "u{letter}e"
+huey <user.letter>: "u{letter}e"
 
 rave <user.letter>: "a{letter}e"
 
