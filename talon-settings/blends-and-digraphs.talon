@@ -121,8 +121,6 @@ piper <user.letter>: "i{letter}e"
 
 lure <user.letter>: "u{letter}e"
 
-cove <user.letter>: "o{letter}e"
-
 rave <user.letter>: "a{letter}e"
 
 cali <user.letter>: "a{letter}i"
