@@ -1,10 +1,10 @@
-list:  user.modifier_key
+list: user.modifier_key
 language: en
 -
 
 # Example
 
 rose: cmd
-troll: ctrl
+toll: ctrl
 ship: shift
 alt: alt
