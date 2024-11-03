@@ -142,3 +142,5 @@ cara <user.letter>: "a{letter}a"
 sora <user.letter>: "o{letter}a"
 
 aloft <user.letter>: "a{letter}o"
+
+olive <user.letter>: "o{letter}i"
