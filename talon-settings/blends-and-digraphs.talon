@@ -141,4 +141,4 @@ cara <user.letter>: "a{letter}a"
 
 sora <user.letter>: "o{letter}a"
 
-paro <user.letter>: "a{letter}o"
+aloft <user.letter>: "a{letter}o"
