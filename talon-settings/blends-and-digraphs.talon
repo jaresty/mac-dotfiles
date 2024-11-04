@@ -42,6 +42,7 @@ hatch: "tch"
 instinct: "nst"
 trance: "nc"
 dext: "xt"
+insect: "ct"
 
 # Consonant Digraphs
 
