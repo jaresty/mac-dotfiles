@@ -137,6 +137,8 @@ dela <user.letter>: "e{letter}a"
 
 heron <user.letter>: "e{letter}o"
 
+phoenix <user.letter>: "e{letter}i"
+
 frigate <user.letter>: "i{letter}a"
 
 ibis <user.letter>: "i{letter}i"
