@@ -1,7 +1,27 @@
-from talon import Context, Module, actions
+from talon import Context, Module, actions, cron
 
 ctx = Context()
 mod = Module()
+
+key_repeat_job = None
+
+
+def start_pressing_key(interval: str, key: str):
+    global key_repeat_job
+
+    def curry_press_key(key):
+        def press_key():
+            return actions.key(key)
+
+        return press_key
+
+    key_repeat_job = cron.interval(interval, curry_press_key(key))
+
+
+def stop_pressing_key():
+    global key_repeat_job
+    if key_repeat_job:
+        cron.cancel(key_repeat_job)
 
 
 @mod.action_class
@@ -38,3 +58,11 @@ class Actions:
         actions.edit.right()
         for _ in selected_text:
             actions.edit.extend_left()
+
+    def start_moving(direction: str):
+        """Start moving continuously"""
+        start_pressing_key("100ms", direction)
+
+    def stop_moving():
+        """Stop moving continuously"""
+        stop_pressing_key()

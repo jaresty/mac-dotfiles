@@ -14,7 +14,10 @@ slinkest: edit.file_start()
 
 #moving up and down
 fly: edit.up()
+flying: user.start_moving("up")
+hover: user.stop_moving()
 fall: edit.down()
+falling: user.start_moving("down")
 
 #deleting forward
 punchy: key("delete")
