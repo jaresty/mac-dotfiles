@@ -43,6 +43,7 @@ instinct: "nst"
 trance: "nc"
 dext: "xt"
 insect: "ct"
+quetzal: "tz"
 
 # Consonant Digraphs
 
