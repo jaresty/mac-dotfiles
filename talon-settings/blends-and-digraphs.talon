@@ -2,7 +2,7 @@
 
 # Improved Beginning Blends
 bill: "bl"
-brood: "br"
+brant: "br"
 claw: "cl"
 crest: "cr"
 drake: "dr"
