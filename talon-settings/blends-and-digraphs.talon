@@ -39,6 +39,8 @@ stalk: "lk"
 herd: "rd"
 wild: "ld"
 hatch: "tch"
+instinct: "nst"
+trance: "nc"
 
 # Consonant Digraphs
 
