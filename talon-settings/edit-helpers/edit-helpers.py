@@ -6,6 +6,19 @@ mod = Module()
 key_repeat_job = None
 
 
+mod.list(
+    "repeat_speed",
+    "The speed at which we repeat a key",
+)
+REPEAT_SPEED = {"fast": "100ms", "slow": "1s"}
+ctx.lists["user.repeat_speed"] = REPEAT_SPEED.keys()
+
+
+@mod.capture(rule="{user.repeat_speed}")
+def repeat_speed(m) -> str:
+    return REPEAT_SPEED[m.repeat_speed]
+
+
 def start_pressing_key(interval: str, key: str):
     global key_repeat_job
 
@@ -59,9 +72,9 @@ class Actions:
         for _ in selected_text:
             actions.edit.extend_left()
 
-    def start_moving(direction: str):
+    def start_moving(repeat_speed: str, direction: str):
         """Start moving continuously"""
-        start_pressing_key("100ms", direction)
+        start_pressing_key(repeat_speed, direction)
 
     def stop_moving():
         """Stop moving continuously"""
