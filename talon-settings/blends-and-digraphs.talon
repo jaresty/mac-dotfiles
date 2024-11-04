@@ -41,6 +41,7 @@ wild: "ld"
 hatch: "tch"
 instinct: "nst"
 trance: "nc"
+dext: "xt"
 
 # Consonant Digraphs
 
