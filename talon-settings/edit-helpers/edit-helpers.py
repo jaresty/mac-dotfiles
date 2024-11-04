@@ -21,6 +21,7 @@ def repeat_speed(m) -> str:
 
 def start_pressing_key(interval: str, key: str):
     global key_repeat_job
+    stop_pressing_key()
 
     def curry_press_key(key):
         def press_key():
