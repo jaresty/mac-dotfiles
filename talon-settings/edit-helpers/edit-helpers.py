@@ -10,7 +10,7 @@ mod.list(
     "repeat_speed",
     "The speed at which we repeat a key",
 )
-REPEAT_SPEED = {"fast": "100ms", "slow": "1s"}
+REPEAT_SPEED = {"one": "100ms", "two": "200ms", "three": "500ms", "four": "1s"}
 ctx.lists["user.repeat_speed"] = REPEAT_SPEED.keys()
 
 

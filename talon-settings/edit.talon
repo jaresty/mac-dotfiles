@@ -14,10 +14,10 @@ slinkest: edit.file_start()
 
 #moving up and down
 fly: edit.up()
-flying [<user.repeat_speed>]: user.start_moving(repeat_speed or "100ms", "up")
+flying [<user.repeat_speed>]: user.start_moving(repeat_speed or "200ms", "up")
 hover: user.stop_moving()
 fall: edit.down()
-falling [<user.repeat_speed>]: user.start_moving(repeat_speed or "100ms", "down")
+falling [<user.repeat_speed>]: user.start_moving(repeat_speed or "200ms", "down")
 
 #deleting forward
 punchy: key("delete")
