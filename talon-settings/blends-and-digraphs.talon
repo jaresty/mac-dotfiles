@@ -114,7 +114,7 @@ parrot: "rr"
 dodo: "dd"
 bluebird: "bb"
 budgie: "gg"
-moss: "ss"
+tross: "ss"
 
 egret <user.letter>: "e{letter}e"
 
