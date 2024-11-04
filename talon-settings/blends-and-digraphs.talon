@@ -92,6 +92,7 @@ aether: "ae"
 oriole: "io"
 avian: "ia"
 pigeon: "eo"
+euphonia: "eu"
 
 # Consonant Digraphs
 stir: "ir"
