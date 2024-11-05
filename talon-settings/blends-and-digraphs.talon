@@ -124,7 +124,7 @@ tross: "ss"
 veil: "ei"
 
 # Inconsistent Vowel Digraphs
-guano: "ua"
+guan: "ua"
 aether: "ae"
 oriole: "io"
 avian: "ia"
