@@ -60,6 +60,7 @@ prism: "ism"
 plumage: "age"
 rookery: "ry"
 lyre: "ly"
+cedar: "ed"
 
 # Consonant Digraphs
 chirp: "ch"
