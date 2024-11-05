@@ -1,4 +1,4 @@
-# This is a bespoke language for typing text with your voice the tries to use nouns which are supposed to be bird themed, limited in number of syllables and easy to distinguish auditorily. Every entry here should be unique, easy to tell apart, and limited in number of syllables.
+# This is a bespoke language for typing text with your voice that tries to use nouns which are supposed to be bird-themed, limited in number of syllables, and easy to distinguish auditorily. Every entry here should be unique, easy to tell apart, and limited in number of syllables.
 
 # Improved Beginning Blends
 bill: "bl"
@@ -28,7 +28,7 @@ spruce: "spr"
 squee: "squ"
 stork: "str"
 
-# Ending blends
+# Ending Blends
 drift: "ft"
 sand: "nd"
 bunt: "nt"
@@ -73,6 +73,11 @@ water: "wr"
 knock: "kn"
 glen: "gn"
 gaze: "gz"
+stir: "ir"
+storm: "or"
+spur: "ur"
+spar: "ar"
+perch: "er"
 
 # Long Vowel Sounds
 aim: "ai"
@@ -96,26 +101,6 @@ coif: "oi"
 # Special Cases
 flew: "ew"
 caw: "aw"
-
-# Replaced less common words with more familiar ones
-veil: "ei"
-
-# Inconsistent Vowel Digraphs
-guano: "ua"
-aether: "ae"
-oriole: "io"
-avian: "ia"
-pigeon: "eo"
-euphonia: "eu"
-
-# Consonant Digraphs
-stir: "ir"
-storm: "or"
-spur: "ur"
-spar: "ar"
-perch: "er"
-
-# Special Cases
 owl: "au"
 phoebe: "ph"
 flight: "gh"
@@ -135,34 +120,31 @@ bluebird: "bb"
 eggs: "gg"
 tross: "ss"
 
+# Replaced Less Common Words with More Familiar Ones
+veil: "ei"
+
+# Inconsistent Vowel Digraphs
+guano: "ua"
+aether: "ae"
+oriole: "io"
+avian: "ia"
+pigeon: "eo"
+euphonia: "eu"
+
+# Dynamic Patterns
 egret <user.letter>: "e{letter}e"
-
 piper <user.letter>: "i{letter}e"
-
 lure <user.letter>: "u{letter}e"
-
 raven <user.letter>: "a{letter}e"
-
 flaming <user.letter>: "a{letter}i"
-
 dela <user.letter>: "e{letter}a"
-
 heron <user.letter>: "e{letter}o"
-
 phoenix <user.letter>: "e{letter}i"
-
 frigate <user.letter>: "i{letter}a"
-
 ibis <user.letter>: "i{letter}i"
-
 rhino <user.letter>: "i{letter}o"
-
 cara <user.letter>: "a{letter}a"
-
 sora <user.letter>: "o{letter}a"
-
 aloft <user.letter>: "a{letter}o"
-
 olive <user.letter>: "o{letter}i"
-
 plover <user.letter>: "o{letter}e"
