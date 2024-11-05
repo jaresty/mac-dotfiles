@@ -97,7 +97,7 @@ diurnal: "iu"
 # Short Vowel Sounds
 pouch: "ou"
 fowl: "ow"
-coif: "oi"
+coil: "oi"
 
 # Special Cases
 flew: "ew"
