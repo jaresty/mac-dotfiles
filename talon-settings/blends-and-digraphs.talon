@@ -22,6 +22,7 @@ rusty: "st"
 swan: "sw"
 twite: "tw"
 trill: "tr"
+ruse: "rs"
 scrub: "scr"
 spruce: "spr"
 squee: "squ"
@@ -46,9 +47,18 @@ dance: "nc"
 dext: "xt"
 insect: "ct"
 quetzal: "tz"
+chart: "rt"
+migration: "tion"
+rarity: "ity"
+stillness: "ness"
+ornament: "ment"
+kinship: "ship"
+prism: "ism"
+plumage: "age"
+rookery: "ry"
+lyre: "ly"
 
 # Consonant Digraphs
-
 chirp: "ch"
 swish: "sh"
 thorn: "th"
@@ -74,6 +84,7 @@ ray: "ay"
 prey: "ey"
 puerto: "ue"
 fruit: "ui"
+diurnal: "iu"
 
 # Short Vowel Sounds
 pouch: "ou"
@@ -123,8 +134,6 @@ eggs: "gg"
 tross: "ss"
 
 egret <user.letter>: "e{letter}e"
-
-lyre <user.letter>: "y{letter}e"
 
 piper <user.letter>: "i{letter}e"
 
