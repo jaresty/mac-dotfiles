@@ -30,7 +30,7 @@ squee: "squ"
 stork: "str"
 
 # Ending Blends
-drift: "ft"
+tuft: "ft"
 sand: "nd"
 bunt: "nt"
 stilt: "lt"
