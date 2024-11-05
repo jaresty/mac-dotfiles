@@ -35,7 +35,7 @@ post, setSelectionAfter
 pour, editNewLineAfter
 pre, setSelectionBefore
 puff, insertEmptyLinesAround
-quaff, showQuickFix
+quacks, showQuickFix
 reference, showReferences
 rename, rename
 repack, rewrap
@@ -58,4 +58,4 @@ decrement, decrement
 increment, increment
 
 # 2024-07-12 07:25:42 - New entries automatically added by cursorless
-spiff, followLinkAside
+spiffy, followLinkAside

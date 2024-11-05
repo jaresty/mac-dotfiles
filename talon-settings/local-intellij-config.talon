@@ -167,10 +167,10 @@ widen:
 
 pop param: user.idea("action ParameterInfo")
 
-quaff: user.idea("action ShowIntentionActions")
-quaff <number> <user.text> [over]: user.idea("goto {number} 0,find next {text},action ShowIntentionActions")
-quaff next <user.text> [over]: user.idea("find next {text},action ShowIntentionActions")
-quaff last <user.text> [over]: user.idea("find prev {text},action ShowIntentionActions")
+quacks: user.idea("action ShowIntentionActions")
+quacks <number> <user.text> [over]: user.idea("goto {number} 0,find next {text},action ShowIntentionActions")
+quacks next <user.text> [over]: user.idea("find next {text},action ShowIntentionActions")
+quacks last <user.text> [over]: user.idea("find prev {text},action ShowIntentionActions")
 
 change next: key(ctrl-shift-alt-down)
 change last: key(ctrl-shift-alt-up)
