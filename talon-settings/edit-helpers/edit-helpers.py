@@ -51,14 +51,14 @@ def select_down():
 
 
 MOVEMENT_TYPE: dict[str, tuple[callable, str]] = {
-    "flying": (move_up, "500ms"),
-    "falling": (move_down, "500ms"),
-    "stepping": (move_right, "100ms"),
-    "slinking": (move_left, "100ms"),
-    "dusting": (select_up, "200ms"),
-    "sweeping": (select_down, "200ms"),
-    "snatching": (select_right, "100ms"),
-    "chancing": (select_left, "100ms"),
+    "flies": (move_up, "500ms"),
+    "falls": (move_down, "500ms"),
+    "steps": (move_right, "100ms"),
+    "slinks": (move_left, "100ms"),
+    "dusts": (select_up, "200ms"),
+    "sweeps": (select_down, "200ms"),
+    "snatches": (select_right, "100ms"),
+    "chances": (select_left, "100ms"),
 }
 ctx.lists["user.continuous_movement_type"] = MOVEMENT_TYPE.keys()
 
