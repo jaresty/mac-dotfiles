@@ -3,15 +3,74 @@ from talon import Context, Module, actions, cron
 ctx = Context()
 mod = Module()
 
-key_repeat_job = None
+continuous_movement_job = None
 
 
 mod.list(
     "repeat_speed",
     "The speed at which we repeat a key",
 )
+mod.list(
+    "continuous_movement_type",
+    "A continuous movement command",
+)
 REPEAT_SPEED = {"one": "100ms", "two": "200ms", "three": "500ms", "four": "1s"}
 ctx.lists["user.repeat_speed"] = REPEAT_SPEED.keys()
+
+
+def move_right():
+    actions.edit.right()
+
+
+def move_left():
+    actions.edit.left()
+
+
+def move_up():
+    actions.edit.up()
+
+
+def move_down():
+    actions.edit.down()
+
+
+def select_right():
+    actions.edit.extend_right()
+
+
+def select_left():
+    actions.edit.extend_left()
+
+
+def select_up():
+    actions.edit.extend_line_up()
+
+
+def select_down():
+    actions.edit.extend_line_down()
+
+
+MOVEMENT_TYPE: dict[str, tuple[callable, str]] = {
+    "flying": (move_up, "500ms"),
+    "falling": (move_down, "500ms"),
+    "stepping": (move_right, "100ms"),
+    "slinking": (move_left, "100ms"),
+    "dusting": (select_up, "200ms"),
+    "sweeping": (select_down, "200ms"),
+    "snatching": (select_right, "100ms"),
+    "chancing": (select_left, "100ms"),
+}
+ctx.lists["user.continuous_movement_type"] = MOVEMENT_TYPE.keys()
+
+
+@mod.capture(rule="{user.continuous_movement_type} [{user.repeat_speed}]")
+def movement_type(m) -> tuple[callable, str]:
+    if hasattr(m, "repeat_speed"):
+        return (
+            MOVEMENT_TYPE[m.continuous_movement_type][0],
+            REPEAT_SPEED[m.repeat_speed],
+        )
+    return MOVEMENT_TYPE[m.continuous_movement_type]
 
 
 @mod.capture(rule="{user.repeat_speed}")
@@ -19,23 +78,17 @@ def repeat_speed(m) -> str:
     return REPEAT_SPEED[m.repeat_speed]
 
 
-def start_pressing_key(interval: str, key: str):
-    global key_repeat_job
-    stop_pressing_key()
+def start_moving(interval: str, move_action: callable):
+    global continuous_movement_job
+    stop_moving()
 
-    def curry_press_key(key):
-        def press_key():
-            return actions.key(key)
-
-        return press_key
-
-    key_repeat_job = cron.interval(interval, curry_press_key(key))
+    continuous_movement_job = cron.interval(interval, move_action)
 
 
-def stop_pressing_key():
-    global key_repeat_job
-    if key_repeat_job:
-        cron.cancel(key_repeat_job)
+def stop_moving():
+    global continuous_movement_job
+    if continuous_movement_job:
+        cron.cancel(continuous_movement_job)
 
 
 @mod.action_class
@@ -73,10 +126,10 @@ class Actions:
         for _ in selected_text:
             actions.edit.extend_left()
 
-    def start_moving(repeat_speed: str, direction: str):
+    def start_moving(movement_type: tuple[callable, str]):
         """Start moving continuously"""
-        start_pressing_key(repeat_speed, direction)
+        start_moving(movement_type[1], movement_type[0])
 
     def stop_moving():
         """Stop moving continuously"""
-        stop_pressing_key()
+        stop_moving()
