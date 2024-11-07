@@ -18,6 +18,14 @@ fly: edit.up()
 hover: user.stop_moving()
 fall: edit.down()
 
+#diagonal movement
+swoop:
+	edit.up()
+	edit.word_left()
+drift:
+	edit.down()
+	edit.word_right()
+
 #deleting forward
 punchy: key("delete")
 punch: key("alt-delete")

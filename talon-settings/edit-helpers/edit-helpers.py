@@ -34,6 +34,16 @@ def move_down():
     actions.edit.down()
 
 
+def move_down_right():
+    actions.edit.down()
+    actions.edit.right()
+
+
+def move_up_left():
+    actions.edit.up()
+    actions.edit.left()
+
+
 def select_right():
     actions.edit.extend_right()
 
@@ -52,7 +62,9 @@ def select_down():
 
 MOVEMENT_TYPE: dict[str, tuple[callable, str]] = {
     "flies": (move_up, "500ms"),
+    "swoops": (move_up_left, "500ms"),
     "falls": (move_down, "500ms"),
+    "drifts": (move_down_right, "500ms"),
     "steps": (move_right, "100ms"),
     "slinks": (move_left, "100ms"),
     "dusts": (select_up, "200ms"),
@@ -79,7 +91,7 @@ def repeat_speed(m) -> str:
 
 
 def start_moving(interval: str, move_action: callable):
-    global continuous_movement_job
+    global continuous_movement_job, continuous_movement_job, continuous_movement_job
     stop_moving()
 
     continuous_movement_job = cron.interval(interval, move_action)
