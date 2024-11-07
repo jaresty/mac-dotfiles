@@ -7,6 +7,6 @@ bridge: :
 quest: ?
 sky: ' '
 latch: ,
-hinge: ;
+pivot: ;
 dot: .
 bang: !

@@ -17,7 +17,7 @@ quest: ?
 foot: "'"
 inch: '"'
 latch: ,
-hinge: ;
+pivot: ;
 bulls: @
 tangle: ^
 blank: _
