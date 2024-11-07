@@ -60,6 +60,7 @@ leafy: "<>"
 leaf that:
 	text = edit.selected_text()
 	user.paste("<{text}>")
+bud: "</"
 quad: user.insert_between('"', '"')
 quadder:
 	insert('""')
