@@ -1,3 +1,5 @@
+from dataclasses import dataclass
+import math
 from talon import Context, Module, actions, cron
 
 ctx = Context()
@@ -14,7 +16,7 @@ mod.list(
     "continuous_movement_type",
     "A continuous movement command",
 )
-REPEAT_SPEED = {"one": "100ms", "two": "200ms", "three": "500ms", "four": "1s"}
+REPEAT_SPEED = {"hyper": "100ms", "fast": "200ms", "mid": "500ms", "slow": "1s"}
 ctx.lists["user.repeat_speed"] = REPEAT_SPEED.keys()
 
 
@@ -60,6 +62,24 @@ def select_down():
     actions.edit.extend_line_down()
 
 
+def back_off_move():
+    global continuous_movement_job
+    if not continuous_movement_job:
+        return
+    for _ in range(continuous_movement_job.current_step_size):
+        continuous_movement_job.movement_type()  # Ensure movement_type is a callable
+    continuous_movement_job.current_step_size = math.ceil(
+        continuous_movement_job.current_step_size / 2
+    )
+    # def backoff_move() -> None:
+    #     nonlocal number_small
+    #     global repeat_count
+    #     current_step_size = math.ceil(number_small / (2**repeat_count))
+    #     print(f"moving {current_step_size} times")
+    #     for _ in range(number_small):
+    #         movement_type()  # Ensure movement_type is a callable
+
+
 MOVEMENT_TYPE: dict[str, tuple[callable, str]] = {
     "flies": (move_up, "500ms"),
     "swoops": (move_up_left, "500ms"),
@@ -75,14 +95,29 @@ MOVEMENT_TYPE: dict[str, tuple[callable, str]] = {
 ctx.lists["user.continuous_movement_type"] = MOVEMENT_TYPE.keys()
 
 
-@mod.capture(rule="{user.continuous_movement_type} [{user.repeat_speed}]")
-def movement_type(m) -> tuple[callable, str]:
+@dataclass
+class MovementConfig:
+    movement_type: callable
+    repeat_speed: str
+    current_step_size: int
+    current_job: any
+
+
+@mod.capture(
+    rule="{user.continuous_movement_type} [{user.repeat_speed}] [<number_small>]"
+)
+def movement_type(m) -> MovementConfig:
+    movement_type: callable = MOVEMENT_TYPE[m.continuous_movement_type][0]
+    repeat_speed: str = MOVEMENT_TYPE[m.continuous_movement_type][1]
+    number_small = 1
+
     if hasattr(m, "repeat_speed"):
-        return (
-            MOVEMENT_TYPE[m.continuous_movement_type][0],
-            REPEAT_SPEED[m.repeat_speed],
-        )
-    return MOVEMENT_TYPE[m.continuous_movement_type]
+        repeat_speed = REPEAT_SPEED[m.repeat_speed]
+
+    if hasattr(m, "number_small"):
+        number_small = m.number_small
+
+    return MovementConfig(movement_type, repeat_speed, number_small, None)
 
 
 @mod.capture(rule="{user.repeat_speed}")
@@ -90,17 +125,20 @@ def repeat_speed(m) -> str:
     return REPEAT_SPEED[m.repeat_speed]
 
 
-def start_moving(interval: str, move_action: callable):
-    global continuous_movement_job, continuous_movement_job, continuous_movement_job
+def start_moving(movement_config: MovementConfig):
+    global continuous_movement_job
     stop_moving()
+    continuous_movement_job = movement_config
 
-    continuous_movement_job = cron.interval(interval, move_action)
+    continuous_movement_job.current_job = cron.interval(
+        continuous_movement_job.repeat_speed, back_off_move
+    )
 
 
 def stop_moving():
     global continuous_movement_job
-    if continuous_movement_job:
-        cron.cancel(continuous_movement_job)
+    if continuous_movement_job and continuous_movement_job.current_job:
+        cron.cancel(continuous_movement_job.current_job)
 
 
 @mod.action_class
@@ -138,9 +176,9 @@ class Actions:
         for _ in selected_text:
             actions.edit.extend_left()
 
-    def start_moving(movement_type: tuple[callable, str]):
+    def start_moving(movement_config: MovementConfig):
         """Start moving continuously"""
-        start_moving(movement_type[1], movement_type[0])
+        start_moving(movement_config)
 
     def stop_moving():
         """Stop moving continuously"""
