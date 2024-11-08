@@ -16,7 +16,7 @@ slinkest: edit.file_start()
 fly: edit.up()
 <user.movement_type>: user.start_moving(movement_type)
 taper <number_small>: user.set_taper_step(number_small)
-hover: user.stop_moving()
+hovers: user.stop_moving()
 fall: edit.down()
 
 #diagonal movement
