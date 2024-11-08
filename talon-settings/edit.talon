@@ -15,6 +15,7 @@ slinkest: edit.file_start()
 #moving up and down
 fly: edit.up()
 <user.movement_type>: user.start_moving(movement_type)
+taper <number_small>: user.set_taper_step(number_small)
 hover: user.stop_moving()
 fall: edit.down()
 

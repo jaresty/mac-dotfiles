@@ -104,7 +104,7 @@ class MovementConfig:
 
 
 @mod.capture(
-    rule="{user.continuous_movement_type} [{user.repeat_speed}] [<number_small>]"
+    rule="{user.continuous_movement_type} [{user.repeat_speed}] [taper <number_small>]"
 )
 def movement_type(m) -> MovementConfig:
     movement_type: callable = MOVEMENT_TYPE[m.continuous_movement_type][0]
@@ -179,6 +179,13 @@ class Actions:
     def start_moving(movement_config: MovementConfig):
         """Start moving continuously"""
         start_moving(movement_config)
+
+    def set_taper_step(taper_amount: int):
+        """Set the next taper step amount"""
+        global continuous_movement_job
+        if continuous_movement_job is None:
+            return
+        continuous_movement_job.current_step_size = taper_amount
 
     def stop_moving():
         """Stop moving continuously"""
