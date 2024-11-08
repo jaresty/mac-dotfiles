@@ -89,8 +89,8 @@ MOVEMENT_TYPE: dict[str, tuple[callable, str]] = {
     "slinkies": (move_left, "100ms"),
     "dusts": (select_up, "200ms"),
     "sweeps": (select_down, "200ms"),
-    "snatches": (select_right, "100ms"),
-    "chances": (select_left, "100ms"),
+    "snatchies": (select_right, "100ms"),
+    "chancies": (select_left, "100ms"),
 }
 ctx.lists["user.continuous_movement_type"] = MOVEMENT_TYPE.keys()
 
