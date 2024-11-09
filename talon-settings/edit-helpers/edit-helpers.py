@@ -135,7 +135,7 @@ def move_faster():
         continuous_movement_job.repeat_speed = max(
             0, continuous_movement_job.repeat_speed - 1
         )
-        restart_movement_job()
+        start_moving(continuous_movement_job)
 
 
 def move_slower():
@@ -144,16 +144,7 @@ def move_slower():
         continuous_movement_job.repeat_speed = min(
             len(MOVEMENT_SPEEDS) - 1, continuous_movement_job.repeat_speed + 1
         )
-        restart_movement_job()
-
-
-def restart_movement_job():
-    if continuous_movement_job is None:
-        return
-    stop_moving()
-    continuous_movement_job.current_job = cron.interval(
-        MOVEMENT_SPEEDS[continuous_movement_job.repeat_speed], back_off_move
-    )
+        start_moving(continuous_movement_job)
 
 
 def stop_moving():
