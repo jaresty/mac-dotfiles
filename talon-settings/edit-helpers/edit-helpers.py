@@ -7,7 +7,10 @@ mod = Module()
 
 continuous_movement_job = None
 
-
+mod.tag(
+    "continuously_moving",
+    "A tag enabling continuous movement command modification",
+)
 mod.list(
     "repeat_speed",
     "The speed at which we repeat a key",
@@ -124,6 +127,7 @@ def start_moving(movement_config: MovementConfig):
     stop_moving()
     continuous_movement_job = movement_config
 
+    ctx.tags = ["user.continuously_moving"]
     continuous_movement_job.current_job = cron.interval(
         MOVEMENT_SPEEDS[continuous_movement_job.repeat_speed], back_off_move
     )
@@ -150,6 +154,7 @@ def move_slower():
 def stop_moving():
     global continuous_movement_job
     if continuous_movement_job and continuous_movement_job.current_job:
+        ctx.tags = []
         cron.cancel(continuous_movement_job.current_job)
 
 
