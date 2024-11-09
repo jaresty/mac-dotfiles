@@ -16,7 +16,8 @@ mod.list(
     "continuous_movement_type",
     "A continuous movement command",
 )
-REPEAT_SPEED = {"hyper": "100ms", "fast": "200ms", "mid": "500ms", "slow": "1s"}
+MOVEMENT_SPEEDS = ["100ms", "200ms", "500ms", "1s"]
+REPEAT_SPEED = {"hyper": 0, "fast": 1, "mid": 2, "slow": 3}
 ctx.lists["user.repeat_speed"] = REPEAT_SPEED.keys()
 
 
@@ -67,30 +68,23 @@ def back_off_move():
     if not continuous_movement_job:
         return
     for _ in range(continuous_movement_job.current_step_size):
-        continuous_movement_job.movement_type()  # Ensure movement_type is a callable
+        continuous_movement_job.movement_type()
     continuous_movement_job.current_step_size = math.ceil(
         continuous_movement_job.current_step_size / 2
     )
-    # def backoff_move() -> None:
-    #     nonlocal number_small
-    #     global repeat_count
-    #     current_step_size = math.ceil(number_small / (2**repeat_count))
-    #     print(f"moving {current_step_size} times")
-    #     for _ in range(number_small):
-    #         movement_type()  # Ensure movement_type is a callable
 
 
-MOVEMENT_TYPE: dict[str, tuple[callable, str]] = {
-    "flies": (move_up, "500ms"),
-    "swoops": (move_up_left, "500ms"),
-    "falls": (move_down, "500ms"),
-    "drifts": (move_down_right, "500ms"),
-    "steppies": (move_right, "100ms"),
-    "slinkies": (move_left, "100ms"),
-    "dusts": (select_up, "200ms"),
-    "sweeps": (select_down, "200ms"),
-    "snatchies": (select_right, "100ms"),
-    "chancies": (select_left, "100ms"),
+MOVEMENT_TYPE: dict[str, tuple[callable, int]] = {
+    "flies": (move_up, 3),
+    "swoops": (move_up_left, 3),
+    "falls": (move_down, 3),
+    "drifts": (move_down_right, 3),
+    "steppies": (move_right, 0),
+    "slinkies": (move_left, 0),
+    "dusts": (select_up, 1),
+    "sweeps": (select_down, 1),
+    "snatchies": (select_right, 0),
+    "chancies": (select_left, 0),
 }
 ctx.lists["user.continuous_movement_type"] = MOVEMENT_TYPE.keys()
 
@@ -108,11 +102,11 @@ class MovementConfig:
 )
 def movement_type(m) -> MovementConfig:
     movement_type: callable = MOVEMENT_TYPE[m.continuous_movement_type][0]
-    repeat_speed: str = MOVEMENT_TYPE[m.continuous_movement_type][1]
+    repeat_speed: str = MOVEMENT_SPEEDS[MOVEMENT_TYPE[m.continuous_movement_type][1]]
     number_small = 1
 
     if hasattr(m, "repeat_speed"):
-        repeat_speed = REPEAT_SPEED[m.repeat_speed]
+        repeat_speed = MOVEMENT_SPEEDS[REPEAT_SPEED[m.repeat_speed]]
 
     if hasattr(m, "number_small"):
         number_small = m.number_small
@@ -122,7 +116,7 @@ def movement_type(m) -> MovementConfig:
 
 @mod.capture(rule="{user.repeat_speed}")
 def repeat_speed(m) -> str:
-    return REPEAT_SPEED[m.repeat_speed]
+    return MOVEMENT_SPEEDS[REPEAT_SPEED[m.repeat_speed]]
 
 
 def start_moving(movement_config: MovementConfig):
