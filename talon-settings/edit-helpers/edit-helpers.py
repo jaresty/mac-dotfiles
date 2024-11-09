@@ -66,6 +66,14 @@ def select_down():
     actions.edit.extend_line_down()
 
 
+def wax():
+    actions.user.wax()
+
+
+def wane():
+    actions.user.wane()
+
+
 def back_off_move():
     global continuous_movement_job
     if not continuous_movement_job:
@@ -88,6 +96,8 @@ MOVEMENT_TYPE: dict[str, tuple[callable, int]] = {
     "sweeps": (select_down, 1),
     "snatchies": (select_right, 0),
     "chancies": (select_left, 0),
+    "waxes": (wax, 3),
+    "wanes": (wane, 3),
 }
 ctx.lists["user.continuous_movement_type"] = MOVEMENT_TYPE.keys()
 
