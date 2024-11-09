@@ -92,7 +92,7 @@ ctx.lists["user.continuous_movement_type"] = MOVEMENT_TYPE.keys()
 @dataclass
 class MovementConfig:
     movement_type: callable
-    repeat_speed: str
+    repeat_speed: int
     current_step_size: int
     current_job: any
 
@@ -102,11 +102,11 @@ class MovementConfig:
 )
 def movement_type(m) -> MovementConfig:
     movement_type: callable = MOVEMENT_TYPE[m.continuous_movement_type][0]
-    repeat_speed: str = MOVEMENT_SPEEDS[MOVEMENT_TYPE[m.continuous_movement_type][1]]
+    repeat_speed: int = MOVEMENT_TYPE[m.continuous_movement_type][1]
     number_small = 1
 
     if hasattr(m, "repeat_speed"):
-        repeat_speed = MOVEMENT_SPEEDS[REPEAT_SPEED[m.repeat_speed]]
+        repeat_speed = REPEAT_SPEED[m.repeat_speed]
 
     if hasattr(m, "number_small"):
         number_small = m.number_small
@@ -115,8 +115,8 @@ def movement_type(m) -> MovementConfig:
 
 
 @mod.capture(rule="{user.repeat_speed}")
-def repeat_speed(m) -> str:
-    return MOVEMENT_SPEEDS[REPEAT_SPEED[m.repeat_speed]]
+def repeat_speed(m) -> int:
+    return REPEAT_SPEED[m.repeat_speed]
 
 
 def start_moving(movement_config: MovementConfig):
@@ -125,7 +125,34 @@ def start_moving(movement_config: MovementConfig):
     continuous_movement_job = movement_config
 
     continuous_movement_job.current_job = cron.interval(
-        continuous_movement_job.repeat_speed, back_off_move
+        MOVEMENT_SPEEDS[continuous_movement_job.repeat_speed], back_off_move
+    )
+
+
+def move_faster():
+    global continuous_movement_job
+    if continuous_movement_job:
+        continuous_movement_job.repeat_speed = max(
+            0, continuous_movement_job.repeat_speed - 1
+        )
+        restart_movement_job()
+
+
+def move_slower():
+    global continuous_movement_job
+    if continuous_movement_job:
+        continuous_movement_job.repeat_speed = min(
+            len(MOVEMENT_SPEEDS) - 1, continuous_movement_job.repeat_speed + 1
+        )
+        restart_movement_job()
+
+
+def restart_movement_job():
+    if continuous_movement_job is None:
+        return
+    stop_moving()
+    continuous_movement_job.current_job = cron.interval(
+        MOVEMENT_SPEEDS[continuous_movement_job.repeat_speed], back_off_move
     )
 
 
@@ -173,6 +200,14 @@ class Actions:
     def start_moving(movement_config: MovementConfig):
         """Start moving continuously"""
         start_moving(movement_config)
+
+    def move_faster():
+        """Increase your movement speed"""
+        move_faster()
+
+    def move_slower():
+        """Decrease your movement speed"""
+        move_slower()
 
     def set_taper_step(taper_amount: int):
         """Set the next taper step amount"""
