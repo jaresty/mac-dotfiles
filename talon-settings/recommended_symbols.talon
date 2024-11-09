@@ -69,12 +69,12 @@ quady: '""'
 quad that:
 	text = edit.selected_text()
 	user.paste('"{text}"')
-twin: user.insert_between("'", "'")
-twinner:
+sleet: user.insert_between("'", "'")
+sleeter:
 	insert("''")
 	key(left enter)
-twiny: "''"
-twin that:
+sleet: "''"
+sleet that:
 	text = edit.selected_text()
 	user.paste("'{text}'")
 rain: user.insert_between('`', '`')
