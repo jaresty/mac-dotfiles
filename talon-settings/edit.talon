@@ -14,7 +14,7 @@ slinkest: edit.file_start()
 
 #moving up and down
 fly: edit.up()
-<user.movement_type>: user.start_moving(movement_type)
+^<user.movement_type>$: user.start_moving(movement_type)
 fall: edit.down()
 
 #diagonal movement
