@@ -61,12 +61,12 @@ leaf that:
 	text = edit.selected_text()
 	user.paste("<{text}>")
 roost: "</"
-quad: user.insert_between('"', '"')
-quadder:
+hail: user.insert_between('"', '"')
+hailer:
 	insert('""')
 	key(left enter)
-quady: '""'
-quad that:
+haily: '""'
+hail that:
 	text = edit.selected_text()
 	user.paste('"{text}"')
 sleet: user.insert_between("'", "'")

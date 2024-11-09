@@ -7,7 +7,7 @@ escaped quad, escapedDoubleQuotes
 escaped sun, escapedParentheses
 escaped twin, escapedSingleQuotes
 pair, any
-quad, doubleQuotes
+hail, doubleQuotes
 sun, parentheses
 rain, backtickQuotes
 sleet, singleQuotes
