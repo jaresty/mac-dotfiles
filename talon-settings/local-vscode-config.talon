@@ -57,8 +57,8 @@ wax <user.cursorless_target>:
   user.cursorless_command("setSelection", cursorless_target)
   user.vscode("editor.action.smartSelect.expand")
 
-wax: user.vscode("editor.action.smartSelect.expand")
-wane: user.vscode("editor.action.smartSelect.shrink")
+wax: user.wax()
+wane: user.wane()
 
 triage:
   user.vscode("editor.action.marker.nextInFiles")
@@ -71,7 +71,7 @@ widen: user.vscode("editor.unfoldAll")
 ref next: key(f4)
 ref last: key(shift-f4)
 # Symbol search
-jump [<user.text>]:
+jump [<user.text>]:'wrong with this'
   user.vscode("workbench.action.gotoSymbol")
   sleep(50ms)
   insert(text or "")

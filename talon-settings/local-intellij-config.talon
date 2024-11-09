@@ -70,8 +70,8 @@ gatherest:
 	key('cmd-alt-shift-]')
 gathest:
 	key('cmd-a')
-wax: key("alt-up")
-wane: key("alt-down")
+wax: user.wax()
+wane: user.wane()
 
 drag down: key('shift-cmd-down')
 drag up: key('shift-cmd-up')
