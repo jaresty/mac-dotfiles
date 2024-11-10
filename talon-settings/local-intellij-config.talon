@@ -157,13 +157,10 @@ reference: user.idea("action FindUsages")
 ref next: key(cmd-alt-down)
 ref last: key(cmd-alt-up)
 
-narrow:
+fold except:
 	key(cmd-shift--)
 	key(cmd-=)
 	key(cmd-alt-=)
-
-widen:
-	key(cmd-shift-+)
 
 pop param: user.idea("action ParameterInfo")
 

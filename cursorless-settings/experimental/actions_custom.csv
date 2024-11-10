@@ -8,7 +8,7 @@ hierarchy, editor.showCallHierarchy
 refactor, editor.action.refactor
 sieve, workbench.action.quickTextSearch
 codelens, codelens.showLensesInCurrentLine
-narrow, editor.foldAllExcept
+fold except, editor.foldAllExcept
 codetour add, codetour.addSelectionStep
 
 # Git
