@@ -20,24 +20,8 @@ mod.list(
     "A continuous movement command",
 )
 MOVEMENT_SPEEDS = ["100ms", "200ms", "500ms", "1s"]
-REPEAT_SPEED = {"hyper": 0, "fast": 1, "mid": 2, "slow": 3}
+REPEAT_SPEED = {"hyper": 1, "fast": 2, "mid": 3, "slow": 4}
 ctx.lists["user.repeat_speed"] = REPEAT_SPEED.keys()
-
-
-def move_right():
-    actions.edit.right()
-
-
-def move_left():
-    actions.edit.left()
-
-
-def move_up():
-    actions.edit.up()
-
-
-def move_down():
-    actions.edit.down()
 
 
 def move_down_right():
@@ -48,30 +32,6 @@ def move_down_right():
 def move_up_left():
     actions.edit.up()
     actions.edit.left()
-
-
-def select_right():
-    actions.edit.extend_right()
-
-
-def select_left():
-    actions.edit.extend_left()
-
-
-def select_up():
-    actions.edit.extend_line_up()
-
-
-def select_down():
-    actions.edit.extend_line_down()
-
-
-def wax():
-    actions.user.wax()
-
-
-def wane():
-    actions.user.wane()
 
 
 def back_off_move():
@@ -86,18 +46,22 @@ def back_off_move():
 
 
 MOVEMENT_TYPE: dict[str, tuple[callable, int]] = {
-    "flies": (move_up, 3),
-    "swoops": (move_up_left, 3),
-    "falls": (move_down, 3),
-    "drifts": (move_down_right, 3),
-    "steppies": (move_right, 0),
-    "slinkies": (move_left, 0),
-    "dusts": (select_up, 1),
-    "sweeps": (select_down, 1),
-    "snatchies": (select_right, 0),
-    "chancies": (select_left, 0),
-    "waxes": (wax, 3),
-    "wanes": (wane, 3),
+    "fly": (actions.edit.up, 3),
+    "swoop": (move_up_left, 3),
+    "fall": (actions.edit.down, 3),
+    "drift": (move_down_right, 3),
+    "steppy": (actions.edit.right, 0),
+    "slinky": (actions.edit.left, 0),
+    "step": (actions.edit.word_right, 2),
+    "slink": (actions.edit.word_left, 2),
+    "dust": (actions.edit.extend_line_up, 1),
+    "sweep": (actions.edit.extend_line_down, 1),
+    "snatchy": (actions.edit.extend_right, 0),
+    "chancy": (actions.edit.extend_left, 0),
+    "snatch": (actions.edit.extend_word_right, 2),
+    "chance": (actions.edit.extend_word_left, 2),
+    "wax": (actions.user.wax, 3),
+    "wane": (actions.user.wane, 3),
 }
 ctx.lists["user.continuous_movement_type"] = MOVEMENT_TYPE.keys()
 
