@@ -67,7 +67,6 @@ triage last:
   user.vscode("editor.action.marker.prevInFiles")
   user.vscode("editor.action.quickFix")
 
-widen: user.vscode("editor.unfoldAll")
 ref next: key(f4)
 ref last: key(shift-f4)
 # Symbol search

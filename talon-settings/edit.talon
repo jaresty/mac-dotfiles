@@ -15,6 +15,9 @@ slinkest: edit.file_start()
 #moving up and down
 fly: edit.up()
 ^loop <user.movement_type>$: user.start_moving(movement_type)
+narrow: edit.zoom_in()
+widen: edit.zoom_out()
+standard: edit.zoom_reset()
 fall: edit.down()
 
 #diagonal movement

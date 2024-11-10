@@ -62,6 +62,8 @@ MOVEMENT_TYPE: dict[str, tuple[callable, int]] = {
     "chance": (actions.edit.extend_word_left, 2),
     "wax": (actions.user.wax, 3),
     "wane": (actions.user.wane, 3),
+    "narrow": (actions.edit.zoom_in, 3),
+    "widen": (actions.edit.zoom_out, 3),
 }
 ctx.lists["user.continuous_movement_type"] = MOVEMENT_TYPE.keys()
 
