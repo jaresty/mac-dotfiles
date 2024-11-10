@@ -34,8 +34,6 @@ grab O C R: key("cmd-ctrl-shift-alt-o")
   sleep(200ms)
   insert(text or "")
 
-wait: sleep(400ms)
-
 # homerow
 ^mouser [<user.text>]:
   user.homerow_search()
