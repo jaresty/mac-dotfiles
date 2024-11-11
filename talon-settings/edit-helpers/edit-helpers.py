@@ -77,7 +77,7 @@ class MovementConfig:
 
 
 @mod.capture(
-    rule="{user.continuous_movement_type} [{user.repeat_speed}] [taper <number_small>]"
+    rule="[{user.repeat_speed}] [taper <number_small>] {user.continuous_movement_type}"
 )
 def movement_type(m) -> MovementConfig:
     movement_type: callable = MOVEMENT_TYPE[m.continuous_movement_type][0]
