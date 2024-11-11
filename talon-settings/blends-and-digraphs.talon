@@ -60,6 +60,7 @@ prism: "ism"
 plumage: "age"
 rookery: "ry"
 lyre: "ly"
+fluffy: "fy"
 cedar: "ed"
 
 # Consonant Digraphs
