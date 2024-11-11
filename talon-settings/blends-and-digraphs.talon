@@ -66,7 +66,7 @@ cedar: "ed"
 # Consonant Digraphs
 chirp: "ch"
 shrike: "sh"
-thorn: "th"
+towhee: "th"
 whisk: "wh"
 cluck: "ck"
 song: "ng"
