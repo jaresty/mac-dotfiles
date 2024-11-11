@@ -14,7 +14,7 @@ slinkest: edit.file_start()
 
 #moving up and down
 fly: edit.up()
-^loopy <user.movement_type>$: user.start_moving(movement_type)
+^<user.movement_type>$: user.start_moving(movement_type)
 ^cycle <number_small>$: user.cycle_move(number_small)
 narrow: edit.zoom_in()
 widen: edit.zoom_out()
