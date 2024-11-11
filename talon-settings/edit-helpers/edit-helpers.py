@@ -1,3 +1,4 @@
+from math import floor
 from dataclasses import dataclass
 import math
 from talon import Context, Module, actions, cron
@@ -43,6 +44,21 @@ def back_off_move():
     continuous_movement_job.current_step_size = math.ceil(
         continuous_movement_job.current_step_size / 2
     )
+
+
+def cycle_move(cycle_size: int, move_forward: callable, move_backward: callable):
+    n = 0
+
+    def cycle_move_step():
+        nonlocal n
+        direction_flag = floor((n % (cycle_size * 2)) / cycle_size)
+        if direction_flag == 0:
+            move_forward()
+        else:
+            move_backward()
+        n += 1
+
+    return cycle_move_step
 
 
 MOVEMENT_TYPE: dict[str, tuple[callable, int]] = {
@@ -171,6 +187,13 @@ class Actions:
 
     def start_moving(movement_config: MovementConfig):
         """Start moving continuously"""
+        start_moving(movement_config)
+
+    def cycle_move(cycle_size: int):
+        """Cycle moving up and down"""
+        movement_config = MovementConfig(
+            cycle_move(cycle_size, actions.edit.down, actions.edit.up), 3, 1, None
+        )
         start_moving(movement_config)
 
     def move_faster():
