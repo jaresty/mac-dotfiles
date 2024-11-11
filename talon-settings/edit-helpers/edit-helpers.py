@@ -51,12 +51,15 @@ def cycle_move(cycle_size: int, move_forward: callable, move_backward: callable)
 
     def cycle_move_step():
         nonlocal n
-        direction_flag = floor((n % (cycle_size * 2)) / cycle_size)
+        n = n % (cycle_size * 2)
+        direction_flag = floor(n / cycle_size)
         if direction_flag == 0:
             move_forward()
+            n += 1
         else:
-            move_backward()
-        n += 1
+            for _ in range(cycle_size):
+                move_backward()
+            n += cycle_size
 
     return cycle_move_step
 
