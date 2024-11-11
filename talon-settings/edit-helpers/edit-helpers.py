@@ -67,7 +67,7 @@ def cycle_move(cycle_size: int, move_forward: callable, move_backward: callable)
 MOVEMENT_TYPE: dict[str, tuple[callable, int]] = {
     "fly": (actions.edit.up, 3),
     "swoop": (move_up_left, 3),
-    "fall": (actions.edit.down, 3),
+    "dip": (actions.edit.down, 3),
     "drift": (move_down_right, 3),
     "steppy": (actions.edit.right, 0),
     "slinky": (actions.edit.left, 0),

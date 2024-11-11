@@ -19,7 +19,7 @@ fly: edit.up()
 narrow: edit.zoom_in()
 widen: edit.zoom_out()
 standard: edit.zoom_reset()
-fall: edit.down()
+dip: edit.down()
 
 #diagonal movement
 swoop:
@@ -122,7 +122,7 @@ forge:
 flier:
 	edit.line_swap_up()
 
-faller:
+dipper:
 	edit.line_swap_down()
 
 climb:
