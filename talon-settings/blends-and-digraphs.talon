@@ -121,7 +121,7 @@ parrot: "rr"
 dodo: "dd"
 bluebird: "bb"
 eggs: "gg"
-tross: "ss"
+albatross: "ss"
 
 # Replaced Less Common Words with More Familiar Ones
 veil: "ei"
