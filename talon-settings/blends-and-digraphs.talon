@@ -130,7 +130,7 @@ veil: "ei"
 guan: "ua"
 jaeger: "ae"
 oriole: "io"
-avian: "ia"
+striate: "ia"
 pigeon: "eo"
 euphonia: "eu"
 
