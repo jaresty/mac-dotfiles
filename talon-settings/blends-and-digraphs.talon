@@ -61,7 +61,7 @@ prism: "ism"
 sage: "age"
 rookery: "ry"
 lyre: "ly"
-fluffy: "fy"
+fairy: "fy"
 cedar: "ed"
 
 # Consonant Digraphs
