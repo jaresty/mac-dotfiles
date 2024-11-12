@@ -82,7 +82,7 @@ storm: "or"
 spur: "ur"
 spar: "ar"
 roller: "er"
-
+ck.
 # Long Vowel Sounds
 aim: "ai"
 reef: "ee"
@@ -135,7 +135,7 @@ pigeon: "eo"
 euphonia: "eu"
 
 # Dynamic Patterns
-mere <user.letter>: "e{letter}e"
+grebe <user.letter>: "e{letter}e"
 piper <user.letter>: "i{letter}e"
 plumage <user.letter>: "u{letter}a"
 lure <user.letter>: "u{letter}e"
