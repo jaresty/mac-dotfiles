@@ -81,7 +81,7 @@ stir: "ir"
 storm: "or"
 spur: "ur"
 spar: "ar"
-perch: "er"
+roller: "er"
 
 # Long Vowel Sounds
 aim: "ai"
