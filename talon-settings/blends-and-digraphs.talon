@@ -3,7 +3,7 @@
 # Improved Beginning Blends
 bulbul: "bl"
 brant: "br"
-curlew: "cl"
+cardinal: "cl"
 caracara: "cr"
 drake: "dr"
 flicker: "fl"
@@ -99,13 +99,13 @@ fruit: "ui"
 diurnal: "iu"
 
 # Short Vowel Sounds
-pouch: "ou"
+troupial: "ou"
 fowl: "ow"
 coil: "oi"
 
 # Special Cases
-flew: "ew"
-caw: "aw"
+curlew: "ew"
+jackdaw: "aw"
 owl: "au"
 phoebe: "ph"
 goshawk: "gh"
@@ -117,7 +117,7 @@ nene: "nn"
 murmur: "mm"
 cockatoo: "cc"
 buzzard: "zz"
-piper: "pp"
+pipit: "pp"
 parrot: "rr"
 dodo: "dd"
 bluebird: "bb"
@@ -125,7 +125,7 @@ eggs: "gg"
 albatross: "ss"
 
 # Replaced Less Common Words with More Familiar Ones
-veil: "ei"
+eider: "ei"eip
 
 # Inconsistent Vowel Digraphs
 guan: "ua"
