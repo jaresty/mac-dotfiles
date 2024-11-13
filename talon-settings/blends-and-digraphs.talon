@@ -3,7 +3,7 @@
 # Improved Beginning Blends
 bill: "bl"
 brant: "br"
-claw: "cl"
+curlew: "cl"
 crest: "cr"
 drake: "dr"
 flicker: "fl"
@@ -74,7 +74,7 @@ drongo: "ng"
 budgie: "dg"
 myna: "mn"
 water: "wr"
-knock: "kn"
+knot: "kn"
 gannet: "gn"
 gaze: "gz"
 stir: "ir"
@@ -82,7 +82,7 @@ storm: "or"
 spur: "ur"
 spar: "ar"
 roller: "er"
-ck.
+
 # Long Vowel Sounds
 aim: "ai"
 reef: "ee"
