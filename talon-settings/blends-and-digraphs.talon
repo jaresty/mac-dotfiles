@@ -54,7 +54,7 @@ quetzal: "tz"
 martin: "rt"
 tityra: "ty"
 canary: "ry"
-scaly: "ly"
+lory: "ly"
 fairy: "fy"
 becard: "ed"
 
