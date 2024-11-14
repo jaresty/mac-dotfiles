@@ -25,7 +25,7 @@ swallow: "sw"
 twite: "tw"
 tanager: "tr"
 redstart: "rs"
-scrub: "scr"
+sapsucker: "scr"
 osprey: "spr"
 stork: "str"
 
