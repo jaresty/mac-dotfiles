@@ -14,8 +14,8 @@ slinkest: edit.file_start()
 
 #moving up and down
 fly: edit.up()
-^<user.movement_type>$: user.start_moving(movement_type)
-^perch$: user.stop_moving()
+<user.movement_type>: user.start_moving(movement_type)
+perch: user.stop_moving()
 narrow: edit.zoom_in()
 widen: edit.zoom_out()
 standard: edit.zoom_reset()
