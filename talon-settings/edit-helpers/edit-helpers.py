@@ -11,6 +11,7 @@ mod = Module()
 @dataclass
 class MovementConfig:
     movement_type: callable
+    reverse_movement_type: callable
     repeat_speed: int
     current_step_size: int
     current_job: any
@@ -30,8 +31,8 @@ mod.list(
     "continuous_movement_type",
     "A continuous movement command",
 )
-MOVEMENT_SPEEDS = ["18ms", "50ms", "100ms", "200ms", "400ms"]
-REPEAT_SPEED = {"hyper": 1, "fast": 2, "mid": 3, "slow": 4}
+MOVEMENT_SPEEDS = ["18ms", "25ms", "50ms", "100ms", "200ms", "400ms"]
+REPEAT_SPEED = {"hyper": 1, "fast": 2, "mid": 2, "slow": 4, "lethargic": 5}
 ctx.lists["user.repeat_speed"] = REPEAT_SPEED.keys()
 
 
@@ -56,43 +57,25 @@ def back_off_move():
     )
 
 
-def cycle_move(cycle_size: int, move_forward: callable, move_backward: callable):
-    n = 0
-
-    def cycle_move_step():
-        nonlocal n
-        n = n % (cycle_size * 2)
-        direction_flag = floor(n / cycle_size)
-        if direction_flag == 0:
-            move_forward()
-            n += 1
-        else:
-            for _ in range(cycle_size):
-                move_backward()
-            n += cycle_size
-
-    return cycle_move_step
-
-
-MOVEMENT_TYPE: dict[str, tuple[callable, int]] = {
-    "flyward": (actions.edit.up, 3),
-    "swoopward": (move_up_left, 3),
-    "dipward": (actions.edit.down, 3),
-    "driftward": (move_down_right, 3),
-    "steppyward": (actions.edit.right, 1),
-    "slinkyward": (actions.edit.left, 1),
-    "stepward": (actions.edit.word_right, 2),
-    "slinkward": (actions.edit.word_left, 2),
-    "dustward": (actions.edit.extend_line_up, 3),
-    "sweepward": (actions.edit.extend_line_down, 3),
-    "snatchyward": (actions.edit.extend_right, 1),
-    "chancyward": (actions.edit.extend_left, 1),
-    "snatchward": (actions.edit.extend_word_right, 2),
-    "chanceward": (actions.edit.extend_word_left, 2),
-    "waxward": (actions.user.wax, 3),
-    "waneward": (actions.user.wane, 3),
-    "inward": (actions.edit.zoom_in, 4),
-    "outward": (actions.edit.zoom_out, 4),
+MOVEMENT_TYPE: dict[str, tuple[callable, callable, int]] = {
+    "flyward": (actions.edit.up, actions.edit.down, 2),
+    "swoopward": (move_up_left, move_up_left, 2),
+    "dipward": (actions.edit.down, actions.edit.up, 2),
+    "driftward": (move_down_right, move_up_left, 2),
+    "steppyward": (actions.edit.right, actions.edit.left, 1),
+    "slinkyward": (actions.edit.left, actions.edit.right, 1),
+    "stepward": (actions.edit.word_right, actions.edit.word_left, 2),
+    "slinkward": (actions.edit.word_left, actions.edit.word_right, 2),
+    "dustward": (actions.edit.extend_line_up, actions.edit.extend_line_down, 3),
+    "sweepward": (actions.edit.extend_line_down, actions.edit.extend_line_up, 3),
+    "snatchyward": (actions.edit.extend_right, actions.edit.extend_left, 1),
+    "chancyward": (actions.edit.extend_left, actions.edit.extend_right, 1),
+    "snatchward": (actions.edit.extend_word_right, actions.edit.extend_word_left, 2),
+    "chanceward": (actions.edit.extend_word_left, actions.edit.extend_word_right, 2),
+    "waxward": (actions.user.wax, actions.user.wane, 4),
+    "waneward": (actions.user.wane, actions.user.wax, 4),
+    "inward": (actions.edit.zoom_in, actions.edit.zoom_out, 5),
+    "outward": (actions.edit.zoom_out, actions.edit.zoom_in, 5),
 }
 ctx.lists["user.continuous_movement_type"] = MOVEMENT_TYPE.keys()
 
@@ -102,7 +85,8 @@ ctx.lists["user.continuous_movement_type"] = MOVEMENT_TYPE.keys()
 )
 def movement_type(m) -> MovementConfig:
     movement_type: callable = MOVEMENT_TYPE[m.continuous_movement_type][0]
-    repeat_speed: int = MOVEMENT_TYPE[m.continuous_movement_type][1]
+    reverse_movement_type: callable = MOVEMENT_TYPE[m.continuous_movement_type][1]
+    repeat_speed: int = MOVEMENT_TYPE[m.continuous_movement_type][2]
     number_small = 1
 
     if hasattr(m, "repeat_speed"):
@@ -111,7 +95,9 @@ def movement_type(m) -> MovementConfig:
     if hasattr(m, "number_small"):
         number_small = m.number_small
 
-    return MovementConfig(movement_type, repeat_speed, number_small, None)
+    return MovementConfig(
+        movement_type, reverse_movement_type, repeat_speed, number_small, None
+    )
 
 
 @mod.capture(rule="{user.repeat_speed}")
@@ -125,7 +111,6 @@ def continuous_move():
         return
     stop_moving()
 
-    ctx.tags = ["user.continuously_moving"]
     continuous_movement_job.current_job = cron.interval(
         MOVEMENT_SPEEDS[continuous_movement_job.repeat_speed], back_off_move
     )
@@ -147,10 +132,16 @@ def move_slower():
         )
 
 
+def move_backward():
+    global continuous_movement_job
+    if continuous_movement_job is None:
+        return
+    continuous_movement_job.reverse_movement_type()
+
+
 def stop_moving():
     global continuous_movement_job
     if continuous_movement_job and continuous_movement_job.current_job:
-        ctx.tags = []
         cron.cancel(continuous_movement_job.current_job)
 
 
@@ -192,14 +183,8 @@ class Actions:
     def start_moving(movement_config: MovementConfig):
         """Start moving continuously"""
         global continuous_movement_job
+        ctx.tags = ["user.continuously_moving"]
         continuous_movement_job = movement_config
-
-    def cycle_move(cycle_size: int):
-        """Cycle moving up and down"""
-        global continuous_movement_job
-        continuous_movement_job = MovementConfig(
-            cycle_move(cycle_size, actions.edit.down, actions.edit.up), 3, 1, None
-        )
 
     def move_faster():
         """Increase your movement speed"""
@@ -220,6 +205,7 @@ class Actions:
         """Stop moving continuously"""
         global continuous_movement_job
         continuous_movement_job = None
+        ctx.tags = []
 
 
 @ctx.action_class("user")
@@ -229,3 +215,6 @@ class UserActions:
             continuous_move()
         else:
             stop_moving()
+
+    def noise_trigger_pop():
+        move_backward()
