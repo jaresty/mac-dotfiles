@@ -1,12 +1,22 @@
 from math import floor
 from dataclasses import dataclass
 import math
+from typing import Optional
 from talon import Context, Module, actions, cron
 
 ctx = Context()
 mod = Module()
 
-continuous_movement_job = None
+
+@dataclass
+class MovementConfig:
+    movement_type: callable
+    repeat_speed: int
+    current_step_size: int
+    current_job: any
+
+
+continuous_movement_job: Optional[MovementConfig] = None
 
 mod.tag(
     "continuously_moving",
@@ -20,7 +30,7 @@ mod.list(
     "continuous_movement_type",
     "A continuous movement command",
 )
-MOVEMENT_SPEEDS = ["100ms", "200ms", "500ms", "1s", "2s"]
+MOVEMENT_SPEEDS = ["18ms", "50ms", "100ms", "200ms", "400ms"]
 REPEAT_SPEED = {"hyper": 1, "fast": 2, "mid": 3, "slow": 4}
 ctx.lists["user.repeat_speed"] = REPEAT_SPEED.keys()
 
@@ -87,14 +97,6 @@ MOVEMENT_TYPE: dict[str, tuple[callable, int]] = {
 ctx.lists["user.continuous_movement_type"] = MOVEMENT_TYPE.keys()
 
 
-@dataclass
-class MovementConfig:
-    movement_type: callable
-    repeat_speed: int
-    current_step_size: int
-    current_job: any
-
-
 @mod.capture(
     rule="{user.continuous_movement_type} [{user.repeat_speed}] [taper <number_small>]"
 )
@@ -117,10 +119,11 @@ def repeat_speed(m) -> int:
     return REPEAT_SPEED[m.repeat_speed]
 
 
-def start_moving(movement_config: MovementConfig):
+def continuous_move():
     global continuous_movement_job
+    if continuous_movement_job is None:
+        return
     stop_moving()
-    continuous_movement_job = movement_config
 
     ctx.tags = ["user.continuously_moving"]
     continuous_movement_job.current_job = cron.interval(
@@ -134,7 +137,6 @@ def move_faster():
         continuous_movement_job.repeat_speed = max(
             0, continuous_movement_job.repeat_speed - 1
         )
-        start_moving(continuous_movement_job)
 
 
 def move_slower():
@@ -143,7 +145,6 @@ def move_slower():
         continuous_movement_job.repeat_speed = min(
             len(MOVEMENT_SPEEDS) - 1, continuous_movement_job.repeat_speed + 1
         )
-        start_moving(continuous_movement_job)
 
 
 def stop_moving():
@@ -190,14 +191,15 @@ class Actions:
 
     def start_moving(movement_config: MovementConfig):
         """Start moving continuously"""
-        start_moving(movement_config)
+        global continuous_movement_job
+        continuous_movement_job = movement_config
 
     def cycle_move(cycle_size: int):
         """Cycle moving up and down"""
-        movement_config = MovementConfig(
+        global continuous_movement_job
+        continuous_movement_job = MovementConfig(
             cycle_move(cycle_size, actions.edit.down, actions.edit.up), 3, 1, None
         )
-        start_moving(movement_config)
 
     def move_faster():
         """Increase your movement speed"""
@@ -216,4 +218,14 @@ class Actions:
 
     def stop_moving():
         """Stop moving continuously"""
-        stop_moving()
+        global continuous_movement_job
+        continuous_movement_job = None
+
+
+@ctx.action_class("user")
+class UserActions:
+    def noise_trigger_hiss(active: bool):
+        if active:
+            continuous_move()
+        else:
+            stop_moving()
