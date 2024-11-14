@@ -31,7 +31,7 @@ mod.list(
     "continuous_movement_type",
     "A continuous movement command",
 )
-MOVEMENT_SPEEDS = ["18ms", "25ms", "50ms", "100ms", "200ms", "400ms"]
+MOVEMENT_SPEEDS = ["25ms", "50ms", "100ms", "200ms", "400ms", "1s"]
 REPEAT_SPEED = {"hyper": 1, "fast": 2, "mid": 2, "slow": 4, "lethargic": 5}
 ctx.lists["user.repeat_speed"] = REPEAT_SPEED.keys()
 
@@ -64,8 +64,8 @@ MOVEMENT_TYPE: dict[str, tuple[callable, callable, int]] = {
     "driftward": (move_down_right, move_up_left, 2),
     "steppyward": (actions.edit.right, actions.edit.left, 1),
     "slinkyward": (actions.edit.left, actions.edit.right, 1),
-    "stepward": (actions.edit.word_right, actions.edit.word_left, 2),
-    "slinkward": (actions.edit.word_left, actions.edit.word_right, 2),
+    "stepward": (actions.edit.word_right, actions.edit.word_left, 3),
+    "slinkward": (actions.edit.word_left, actions.edit.word_right, 3),
     "dustward": (actions.edit.extend_line_up, actions.edit.extend_line_down, 3),
     "sweepward": (actions.edit.extend_line_down, actions.edit.extend_line_up, 3),
     "snatchyward": (actions.edit.extend_right, actions.edit.extend_left, 1),
