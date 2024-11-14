@@ -206,6 +206,7 @@ class Actions:
     def stop_moving():
         """Stop moving continuously"""
         global continuous_movement_job
+        stop_moving()
         continuous_movement_job = None
         ctx.tags = []
 
