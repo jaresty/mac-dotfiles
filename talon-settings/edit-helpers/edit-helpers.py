@@ -76,6 +76,8 @@ MOVEMENT_TYPE: dict[str, tuple[callable, callable, int]] = {
     "waneward": (actions.user.wane, actions.user.wax, 4),
     "inward": (actions.edit.zoom_in, actions.edit.zoom_out, 5),
     "outward": (actions.edit.zoom_out, actions.edit.zoom_in, 5),
+    "upward": (actions.user.mouse_scroll_up, actions.user.mouse_scroll_down, 4),
+    "downward": (actions.user.mouse_scroll_down, actions.user.mouse_scroll_up, 4),
 }
 ctx.lists["user.continuous_movement_type"] = MOVEMENT_TYPE.keys()
 
