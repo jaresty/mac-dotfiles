@@ -164,10 +164,10 @@ fold except:
 
 pop param: user.idea("action ParameterInfo")
 
-quacks: user.idea("action ShowIntentionActions")
-quacks <number> <user.text> [over]: user.idea("goto {number} 0,find next {text},action ShowIntentionActions")
-quacks next <user.text> [over]: user.idea("find next {text},action ShowIntentionActions")
-quacks last <user.text> [over]: user.idea("find prev {text},action ShowIntentionActions")
+quack: user.idea("action ShowIntentionActions")
+quack <number> <user.text> [over]: user.idea("goto {number} 0,find next {text},action ShowIntentionActions")
+quack next <user.text> [over]: user.idea("find next {text},action ShowIntentionActions")
+quack last <user.text> [over]: user.idea("find prev {text},action ShowIntentionActions")
 
 change next: key(ctrl-shift-alt-down)
 change last: key(ctrl-shift-alt-up)
