@@ -92,7 +92,7 @@ blue jay: "ay"
 honeyeater: "ey"
 querquedula: "ue"
 grassquit: "ui"
-diurnal: "iu"
+gallinule: "iu"
 
 # Short Vowel Sounds
 troupial: "ou"
