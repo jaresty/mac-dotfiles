@@ -118,7 +118,7 @@ buzzard: "zz"
 pipit: "pp"
 parrot: "rr"
 dodo: "dd"
-bluebird: "bb"
+babbler: "bb"
 garganey: "gg"
 albatross: "ss"
 
