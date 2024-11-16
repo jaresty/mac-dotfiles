@@ -93,7 +93,7 @@ phoenix: "oe"
 hoopoe: "oo"
 blue jay: "ay"
 honeyeater: "ey"
-querquedula: "ue"
+bufflehead: "ue"
 grassquit: "ui"
 gallinule: "iu"
 
