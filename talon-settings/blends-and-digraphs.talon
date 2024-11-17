@@ -128,7 +128,7 @@ herons: "ers"
 # Long Vowel Sounds
 ani: "ai"
 creeper: "ee"
-shearwater: "ea"
+teal: "ea"
 todie: "ie"
 roadrunner: "oa"
 phoenix: "oe"
