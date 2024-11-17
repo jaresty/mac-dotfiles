@@ -26,7 +26,7 @@ stilt: "st"
 swallow: "sw"
 twite: "tw"
 tanager: "tr"
-sapsucker: "scr"
+screamer: "scr"
 osprey: "spr"
 stork: "str"
 
