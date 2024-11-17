@@ -1,7 +1,5 @@
 # This is a bespoke language for typing text with your voice that tries to use nouns which are supposed to be bird-themed, limited in number of syllables, and easy to distinguish auditorily. Every entry here should be unique, easy to tell apart, and limited in number of syllables.
 
-# I have given you a list of all of the valid consonant blends that end in s. For every one of these words below, if there is a valid consonant blend where you append s to the existing two letter blend, please add a plural form
-
 # Improved Beginning Blends
 bulbul: "bl"
 brant: "br"
@@ -76,8 +74,8 @@ oxpecker: "xc"
 coot: "ct"
 coots: "cts"
 quetzal: "tz"
-martin: "rt"
-martins: "rts"
+redstart: "rt"
+redstarts: "rts"
 turkey: "ty"
 turkeys: "ties"
 wryneck: "ry"
@@ -105,7 +103,8 @@ grackle: "ckl"
 mango: "ng"
 mangoes: "ngs"
 budgie: "dg"
-manakin: "mn"
+martin: "mn"
+martins: "mns"
 wheatear: "wr"
 knot: "kn"
 gannet: "gn"
