@@ -145,7 +145,9 @@ ovenbird: "oi"
 
 # Special Cases
 curlew: "ew"
+curlews: "ews"
 jackdaw: "aw"
+jackdaws: "aws"
 auklet: "au"
 phoebe: "ph"
 goshawk: "gh"
