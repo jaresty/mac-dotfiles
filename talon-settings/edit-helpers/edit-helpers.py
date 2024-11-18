@@ -7,10 +7,6 @@ from talon import Context, Module, actions, cron
 ctx = Context()
 mod = Module()
 
-ctx.matches = r"""
-mode: command
-"""
-
 
 @dataclass
 class MovementConfig:
@@ -223,7 +219,7 @@ class Actions:
 @ctx.action_class("user")
 class UserActions:
     def noise_trigger_hiss(active: bool):
-        if active:
+        if active and actions.speech.enabled():
             continuous_move()
         else:
             stop_moving()
