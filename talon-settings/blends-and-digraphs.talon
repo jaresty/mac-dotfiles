@@ -97,8 +97,8 @@ brushturkey: "by"
 brushturkeys: "bies"
 
 # Consonant Digraphs
-monarch: "ch"
-monarchs: "ches"
+chicken: "ch"
+chickens: "ches"
 shrike: "shr"
 shama: "sh"
 shamas: "shes"
