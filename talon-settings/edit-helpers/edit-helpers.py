@@ -7,6 +7,8 @@ from talon import Context, Module, actions, cron
 ctx = Context()
 mod = Module()
 
+current_job = None
+
 
 @dataclass
 class MovementConfig:
@@ -14,7 +16,6 @@ class MovementConfig:
     reverse_movement_type: callable
     repeat_speed: int
     current_step_size: int
-    current_job: any
 
 
 continuous_movement_job: Optional[MovementConfig] = None
@@ -103,7 +104,7 @@ def movement_type(m) -> MovementConfig:
         number_small = m.number_small
 
     return MovementConfig(
-        movement_type, reverse_movement_type, repeat_speed, number_small, None
+        movement_type, reverse_movement_type, repeat_speed, number_small
     )
 
 
@@ -113,12 +114,12 @@ def repeat_speed(m) -> int:
 
 
 def continuous_move():
-    global continuous_movement_job
+    global continuous_movement_job, current_job
     if continuous_movement_job is None:
         return
     stop_moving()
 
-    continuous_movement_job.current_job = cron.interval(
+    current_job = cron.interval(
         MOVEMENT_SPEEDS[continuous_movement_job.repeat_speed], back_off_move
     )
 
@@ -147,9 +148,9 @@ def move_backward():
 
 
 def stop_moving():
-    global continuous_movement_job
-    if continuous_movement_job and continuous_movement_job.current_job:
-        cron.cancel(continuous_movement_job.current_job)
+    global current_job
+    if current_job is not None:
+        cron.cancel(current_job)
 
 
 @mod.action_class
