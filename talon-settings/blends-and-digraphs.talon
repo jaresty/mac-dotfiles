@@ -180,7 +180,7 @@ eider: "ei"
 guan: "ua"
 jaeger: "ae"
 iora: "io"
-fieldfare: "ia"
+friarbird: "ia"
 pigeon: "eo"
 euphonia: "eu"
 
