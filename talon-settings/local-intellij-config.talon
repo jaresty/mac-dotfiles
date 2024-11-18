@@ -122,7 +122,7 @@ refactor this [<user.text>] [over]:
 	sleep(400ms)
 	insert(user.text or "")
 
-leets: user.idea("action CodeCompletion")
+pleet: user.idea("action CodeCompletion")
 
 ^scry [<user.text>] [over]:
 	key(cmd-shift-e)
