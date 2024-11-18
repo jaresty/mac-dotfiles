@@ -7,6 +7,10 @@ from talon import Context, Module, actions, cron
 ctx = Context()
 mod = Module()
 
+ctx.matches = r"""
+mode: command
+"""
+
 
 @dataclass
 class MovementConfig:
