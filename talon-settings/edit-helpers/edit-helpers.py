@@ -190,6 +190,7 @@ class Actions:
     def start_moving(movement_config: MovementConfig):
         """Start moving continuously"""
         global continuous_movement_job
+        stop_moving()
         ctx.tags = ["user.continuously_moving"]
         continuous_movement_job = movement_config
 
