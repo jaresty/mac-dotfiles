@@ -80,10 +80,10 @@ MOVEMENT_TYPE: dict[str, tuple[callable, callable, int]] = {
     "downward": (actions.user.mouse_scroll_down, actions.user.mouse_scroll_up, 2),
     "rewind": (actions.edit.undo, actions.edit.redo, 4),
     "replay": (actions.edit.redo, actions.edit.undo, 4),
-    "bounce": (actions.core.repeat_command, actions.edit.undo, 3),
-    "huntward": (actions.edit.find_next, actions.edit.find_previous, 3),
-    "solve": (actions.user.problem_next, actions.user.problem_last, 3),
-    "solve back": (actions.user.problem_last, actions.user.problem_next, 3),
+    "bounce": (actions.core.repeat_command, actions.edit.undo, 4),
+    "huntward": (actions.edit.find_next, actions.edit.find_previous, 4),
+    "solve": (actions.user.problem_next, actions.user.problem_last, 4),
+    "solve back": (actions.user.problem_last, actions.user.problem_next, 4),
 }
 
 ctx.lists["user.continuous_movement_type"] = MOVEMENT_TYPE.keys()
