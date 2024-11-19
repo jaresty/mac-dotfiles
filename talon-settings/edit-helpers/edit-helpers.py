@@ -46,6 +46,14 @@ def move_up_left():
     actions.edit.left()
 
 
+def tab_next():
+    actions.key("tab")
+
+
+def tab_last():
+    actions.key("shift-tab")
+
+
 def back_off_move():
     global continuous_movement_job
     if not continuous_movement_job:
@@ -84,6 +92,8 @@ MOVEMENT_TYPE: dict[str, tuple[callable, callable, int]] = {
     "huntward": (actions.edit.find_next, actions.edit.find_previous, 4),
     "solve": (actions.user.problem_next, actions.user.problem_last, 4),
     "solve back": (actions.user.problem_last, actions.user.problem_next, 4),
+    "swingward": (tab_next, tab_last, 3),
+    "ship swingward": (tab_last, tab_next, 3),
 }
 
 ctx.lists["user.continuous_movement_type"] = MOVEMENT_TYPE.keys()
