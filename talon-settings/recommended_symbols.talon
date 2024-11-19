@@ -73,7 +73,7 @@ sleet: user.insert_between("'", "'")
 sleeter:
 	insert("''")
 	key(left enter)
-sleet: "''"
+sleety: "''"
 sleet that:
 	text = edit.selected_text()
 	user.paste("'{text}'")
