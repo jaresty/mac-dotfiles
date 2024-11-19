@@ -154,6 +154,17 @@ def stop_moving():
         cron.cancel(current_job)
 
 
+def flip_direction():
+    global continuous_movement_job
+    if continuous_movement_job is None:
+        return
+    go_forward = continuous_movement_job.movement_type
+    continuous_movement_job.movement_type = (
+        continuous_movement_job.reverse_movement_type
+    )
+    continuous_movement_job.reverse_movement_type = go_forward
+
+
 @mod.action_class
 class Actions:
     def select_paste():
@@ -203,6 +214,10 @@ class Actions:
     def move_slower():
         """Decrease your movement speed"""
         move_slower()
+
+    def flip_direction():
+        """Start moving in the other direction"""
+        flip_direction()
 
     def set_taper_step(taper_amount: int):
         """Set the next taper step amount"""
