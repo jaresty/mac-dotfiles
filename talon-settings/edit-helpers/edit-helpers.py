@@ -36,16 +36,6 @@ REPEAT_SPEED = {"hyper": 1, "fast": 2, "mid": 2, "slow": 4, "lethargic": 5}
 ctx.lists["user.repeat_speed"] = REPEAT_SPEED.keys()
 
 
-def move_down_right():
-    actions.edit.down()
-    actions.edit.right()
-
-
-def move_up_left():
-    actions.edit.up()
-    actions.edit.left()
-
-
 def tab_next():
     actions.key("tab")
 
@@ -66,22 +56,16 @@ def back_off_move():
 
 
 MOVEMENT_TYPE: dict[str, tuple[callable, callable, int]] = {
-    "flyward": (actions.edit.up, actions.edit.down, 2),
-    "swoopward": (move_up_left, move_up_left, 2),
-    "dipward": (actions.edit.down, actions.edit.up, 2),
-    "driftward": (move_down_right, move_up_left, 2),
-    "steppyward": (actions.edit.right, actions.edit.left, 1),
-    "slinkyward": (actions.edit.left, actions.edit.right, 1),
-    "stepward": (actions.edit.word_right, actions.edit.word_left, 3),
-    "slinkward": (actions.edit.word_left, actions.edit.word_right, 3),
-    "dustward": (actions.edit.extend_line_up, actions.edit.extend_line_down, 3),
-    "sweepward": (actions.edit.extend_line_down, actions.edit.extend_line_up, 3),
-    "snatchyward": (actions.edit.extend_right, actions.edit.extend_left, 1),
-    "chanseyward": (actions.edit.extend_left, actions.edit.extend_right, 1),
-    "snatchward": (actions.edit.extend_word_right, actions.edit.extend_word_left, 2),
-    "chanceward": (actions.edit.extend_word_left, actions.edit.extend_word_right, 2),
-    "waxward": (actions.user.wax, actions.user.wane, 4),
-    "waneward": (actions.user.wane, actions.user.wax, 4),
+    "flying": (actions.edit.up, actions.edit.down, 2),
+    "dipping": (actions.edit.down, actions.edit.up, 2),
+    "stepping": (actions.edit.right, actions.edit.left, 1),
+    "slinking": (actions.edit.left, actions.edit.right, 1),
+    "dusting": (actions.edit.extend_line_up, actions.edit.extend_line_down, 3),
+    "sweeping": (actions.edit.extend_line_down, actions.edit.extend_line_up, 3),
+    "snatching": (actions.edit.extend_right, actions.edit.extend_left, 1),
+    "chancing": (actions.edit.extend_left, actions.edit.extend_right, 1),
+    "waxing": (actions.user.wax, actions.user.wane, 4),
+    "waning": (actions.user.wane, actions.user.wax, 4),
     "inward": (actions.edit.zoom_in, actions.edit.zoom_out, 5),
     "outward": (actions.edit.zoom_out, actions.edit.zoom_in, 5),
     "upward": (actions.user.mouse_scroll_up, actions.user.mouse_scroll_down, 2),
@@ -89,13 +73,13 @@ MOVEMENT_TYPE: dict[str, tuple[callable, callable, int]] = {
     "rewind": (actions.edit.undo, actions.edit.redo, 4),
     "replay": (actions.edit.redo, actions.edit.undo, 4),
     "bounce": (actions.core.repeat_command, actions.edit.undo, 4),
-    "huntward": (actions.edit.find_next, actions.edit.find_previous, 4),
-    "solve": (actions.user.problem_next, actions.user.problem_last, 4),
-    "solve back": (actions.user.problem_last, actions.user.problem_next, 4),
-    "swingward": (tab_next, tab_last, 3),
-    "ship swingward": (tab_last, tab_next, 3),
-    "foldword": (actions.user.fold_more, actions.user.fold_less, 4),
-    "unfoldword": (actions.user.fold_less, actions.user.fold_more, 4),
+    "hunting": (actions.edit.find_next, actions.edit.find_previous, 4),
+    "solving": (actions.user.problem_next, actions.user.problem_last, 4),
+    "solving back": (actions.user.problem_last, actions.user.problem_next, 4),
+    "swinging": (tab_next, tab_last, 3),
+    "ship swinging": (tab_last, tab_next, 3),
+    "folding": (actions.user.fold_more, actions.user.fold_less, 4),
+    "unfolding": (actions.user.fold_less, actions.user.fold_more, 4),
 }
 
 ctx.lists["user.continuous_movement_type"] = MOVEMENT_TYPE.keys()
@@ -153,7 +137,7 @@ def move_slower():
         )
 
 
-def move_backward():
+def move_backing():
     global continuous_movement_job
     if continuous_movement_job is None:
         return
@@ -170,11 +154,11 @@ def flip_direction():
     global continuous_movement_job
     if continuous_movement_job is None:
         return
-    go_forward = continuous_movement_job.movement_type
+    go_foring = continuous_movement_job.movement_type
     continuous_movement_job.movement_type = (
         continuous_movement_job.reverse_movement_type
     )
-    continuous_movement_job.reverse_movement_type = go_forward
+    continuous_movement_job.reverse_movement_type = go_foring
 
 
 @mod.action_class
@@ -255,4 +239,4 @@ class UserActions:
             stop_moving()
 
     def noise_trigger_pop():
-        move_backward()
+        move_backing()
