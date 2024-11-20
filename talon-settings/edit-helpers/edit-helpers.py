@@ -94,6 +94,8 @@ MOVEMENT_TYPE: dict[str, tuple[callable, callable, int]] = {
     "solve back": (actions.user.problem_last, actions.user.problem_next, 4),
     "swingward": (tab_next, tab_last, 3),
     "ship swingward": (tab_last, tab_next, 3),
+    "foldword": (actions.user.fold_more, actions.user.fold_less, 4),
+    "unfoldword": (actions.user.fold_less, actions.user.fold_more, 4),
 }
 
 ctx.lists["user.continuous_movement_type"] = MOVEMENT_TYPE.keys()
