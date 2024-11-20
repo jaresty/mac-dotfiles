@@ -70,7 +70,7 @@ triage last:
 ref next: key(f4)
 ref last: key(shift-f4)
 # Symbol search
-jump [<user.text>]:'wrong with this'
+jump [<user.text>]:
   user.vscode("workbench.action.gotoSymbol")
   sleep(50ms)
   insert(text or "")
