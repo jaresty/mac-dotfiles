@@ -77,7 +77,7 @@ MOVEMENT_TYPE: dict[str, tuple[callable, callable, int]] = {
     "dustward": (actions.edit.extend_line_up, actions.edit.extend_line_down, 3),
     "sweepward": (actions.edit.extend_line_down, actions.edit.extend_line_up, 3),
     "snatchyward": (actions.edit.extend_right, actions.edit.extend_left, 1),
-    "chancyward": (actions.edit.extend_left, actions.edit.extend_right, 1),
+    "chanseyward": (actions.edit.extend_left, actions.edit.extend_right, 1),
     "snatchward": (actions.edit.extend_word_right, actions.edit.extend_word_left, 2),
     "chanceward": (actions.edit.extend_word_left, actions.edit.extend_word_right, 2),
     "waxward": (actions.user.wax, actions.user.wane, 4),
