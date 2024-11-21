@@ -72,7 +72,7 @@ MOVEMENT_TYPE: dict[str, tuple[callable, callable, int]] = {
     "downward": (actions.user.mouse_scroll_down, actions.user.mouse_scroll_up, 2),
     "rewind": (actions.edit.undo, actions.edit.redo, 4),
     "replay": (actions.edit.redo, actions.edit.undo, 4),
-    "bounce": (actions.core.repeat_command, actions.edit.undo, 4),
+    "bouncing": (actions.core.repeat_command, actions.core.repeat_command, 4),
     "hunting": (actions.edit.find_next, actions.edit.find_previous, 4),
     "solving": (actions.user.problem_next, actions.user.problem_last, 4),
     "solving back": (actions.user.problem_last, actions.user.problem_next, 4),
