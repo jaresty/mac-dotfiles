@@ -157,7 +157,7 @@ reference: user.idea("action FindUsages")
 ref next: key(cmd-alt-down)
 ref last: key(cmd-alt-up)
 
-fold except:
+narrow:
 	key(cmd-shift--)
 	key(cmd-=)
 	key(cmd-alt-=)
