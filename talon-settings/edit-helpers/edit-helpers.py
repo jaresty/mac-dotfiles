@@ -241,4 +241,5 @@ class UserActions:
             stop_moving()
 
     def noise_trigger_pop():
-        move_backing()
+        if actions.speech.enabled():
+            move_backing()
