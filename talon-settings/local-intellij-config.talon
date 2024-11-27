@@ -130,10 +130,10 @@ pleet: user.idea("action CodeCompletion")
 	insert(text)
 	key("enter")
 
-refer step:
+chase step:
 	key("ctrl-alt-down")
 
-refer restep:
+chase restep:
 	key("ctrl-alt-up")
 
 triage step:
