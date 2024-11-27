@@ -127,20 +127,6 @@ gather: edit.select_line()
 gatherest: edit.select_paragraph()
 gathest: edit.select_all()
 
-# Moving characters after the cursor
-push:
-	insert(" ")
-	edit.left()
-pusher:
-	key(shift-enter)
-	edit.up()
-	edit.line_end()
-
-toss <user.keys>:
-	edit.left()
-	key(keys)
-	edit.right()
-
 lift:
 	edit.cut()
 lifter:
@@ -202,8 +188,19 @@ fly dodge:
 dip dodge:
 	edit.line_swap_down()
 
-redig:
+push:
+	insert(" ")
+	edit.left()
+pusher:
+	key(shift-enter)
+	edit.up()
+	edit.line_end()
+fly push:
 	edit.line_insert_up()
-
-dig:
+dip push:
 	edit.line_insert_down()
+
+toss <user.keys>:
+	edit.left()
+	key(keys)
+	edit.right()
