@@ -67,6 +67,22 @@ repunchest:
 	edit.extend_file_start()
 	edit.delete()
 
+#deleting up and down
+fly punch:
+	edit.extend_up()
+	edit.delete()
+fly puncher:
+	edit.extend_up()
+	edit.extend_line_start()
+	edit.delete()
+dip punch:
+	edit.extend_down()
+	edit.delete()
+dip puncher:
+	edit.extend_down()
+	edit.extend_line_end()
+	edit.delete()
+
 #deleting forward and backward
 boomy:
 	key(delete)
@@ -81,6 +97,12 @@ boomest:
 	edit.select_all()
 	sleep(60ms)
 	edit.delete()
+fly boomer:
+	edit.up()
+	edit.delete_line()
+dip boomer:
+	edit.down()
+	edit.delete_line()
 
 #selecting forward
 snatchy: key("shift-right")
@@ -121,23 +143,66 @@ toss <user.keys>:
 
 lift:
 	edit.cut()
+lifter:
+	edit.extend_line_end()
+	edit.cut()
+fly lift:
+	edit.extend_up()
+	edit.cut()
+fly lifter:
+	edit.extend_up()
+	edit.extend_line_start()
+	edit.cut()
+dip lift:
+	edit.extend_down()
+	edit.cut()
+dip lifter:
+	edit.extend_down()
+	edit.extend_line_end()
+	edit.cut()
 
 place:
 	edit.paste()
+placer:
+	edit.line_end()
+	edit.paste()
+fly place:
+	edit.line_insert_up()
+	edit.paste()
+dip place:
+	edit.line_insert_down()
+	edit.paste()
 
 trace:
+	edit.copy()
+tracer:
+	edit.extend_line_end()
+	edit.copy()
+fly trace:
+	edit.extend_up()
+	edit.copy()
+fly tracer:
+	edit.extend_up()
+	edit.extend_line_start()
+	edit.copy()
+dip trace:
+	edit.extend_down()
+	edit.copy()
+dip tracer:
+	edit.extend_down()
+	edit.extend_line_end()
 	edit.copy()
 
 forge:
 	edit.selection_clone()
 
-flier:
+fly dodge:
 	edit.line_swap_up()
 
-dipper:
+dip dodge:
 	edit.line_swap_down()
 
-climb:
+redig:
 	edit.line_insert_up()
 
 dig:

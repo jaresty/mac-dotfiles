@@ -35,7 +35,7 @@ git log:
 bless: user.vscode("cursorUndo")
 recurse: user.vscode("cursorRedo")
 
-splitter: user.vscode("workbench.action.focusNextGroup")
+split step: user.vscode("workbench.action.focusNextGroup")
 bar type tree: user.vscode("workbench.view.extension.typescript-explorer")
 run build: user.vscode("workbench.action.tasks.build")
 run test: user.vscode("workbench.action.tasks.test")
