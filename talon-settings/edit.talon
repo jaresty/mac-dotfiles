@@ -122,10 +122,9 @@ resnatcherest: edit.extend_paragraph_start()
 resnatchest: edit.extend_file_start()
 resnatchize: user.set_select_direction_left()
 
-#selecting both directions
-gather: edit.select_line()
-gatherest: edit.select_paragraph()
-gathest: edit.select_all()
+bisnatch: edit.select_line()
+bisnatcher: edit.select_paragraph()
+bisnatchest: edit.select_all()
 
 lift:
 	edit.cut()
