@@ -1,5 +1,6 @@
 tag: user.line_commands
 -
+steppier: user.camel_right()
 resteppier: edit.camel_left()
 
 punchier:
