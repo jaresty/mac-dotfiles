@@ -4,5 +4,5 @@ tag: terminal
 punch: key("alt-d")
 # nope:                       key("ctrl-z")
 # redo that:                  key("ctrl-g")
-kicker: key("ctrl-u")
-boom: key("alt-d alt-backspace")
+repuncher: key("ctrl-u")
+bipunch: key("alt-d alt-backspace")

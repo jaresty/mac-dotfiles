@@ -88,19 +88,19 @@ boomy:
 	key(delete)
 	key(backspace)
 
-boom:
+bipunch:
 	key(alt-delete)
 	key(alt-backspace)
-boomer: edit.delete_line()
-boomerest: edit.delete_paragraph()
-boomest:
+bipuncher: edit.delete_line()
+bipuncherest: edit.delete_paragraph()
+bipunchest:
 	edit.select_all()
 	sleep(60ms)
 	edit.delete()
-fly boomer:
+fly bipuncher:
 	edit.up()
 	edit.delete_line()
-dip boomer:
+dip bipuncher:
 	edit.down()
 	edit.delete_line()
 
