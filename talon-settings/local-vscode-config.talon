@@ -17,12 +17,6 @@ perfect:
   key(enter)
 
 ^explore: user.vscode("breadcrumbs.focusAndSelect")
-refer step:
-  user.vscode("editor.action.referenceSearch.trigger")
-  key("down enter escape")
-refer restep:
-  user.vscode("editor.action.referenceSearch.trigger")
-  key("up enter escape")
 
 ^scry [<user.text>]$:
   user.vscode("workbench.action.quickTextSearch")
@@ -74,8 +68,12 @@ triage restep:
   user.vscode("editor.action.marker.prevInFiles")
   user.vscode("editor.action.quickFix")
 
-ref step: key(f4)
-ref restep: key(shift-f4)
+refer step:
+  key("f12")
+refer restep:
+  key("shift-f12")
+ref next: key(f4)
+ref last: key(shift-f4)
 # Symbol search
 jump [<user.text>]:
   user.vscode("workbench.action.gotoSymbol")
