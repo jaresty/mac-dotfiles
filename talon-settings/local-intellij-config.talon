@@ -162,10 +162,10 @@ quack <number> <user.text> [over]: user.idea("goto {number} 0,find next {text},a
 quack next <user.text> [over]: user.idea("find next {text},action ShowIntentionActions")
 quack last <user.text> [over]: user.idea("find prev {text},action ShowIntentionActions")
 
-change next: key(ctrl-shift-alt-down)
-change last: key(ctrl-shift-alt-up)
-problem next: user.idea("action GotoNextError")
-problem last: user.idea("action GotoPreviousError")
+change step: key(ctrl-shift-alt-down)
+change restep: key(ctrl-shift-alt-up)
+prob step: user.idea("action GotoNextError")
+prob restep: user.idea("action GotoPreviousError")
 
 follow split:
 	user.idea("action SplitVertically,action GotoDeclaration")
