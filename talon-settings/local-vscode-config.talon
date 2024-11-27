@@ -17,10 +17,10 @@ perfect:
   key(enter)
 
 ^explore: user.vscode("breadcrumbs.focusAndSelect")
-track step:
+ref step:
   user.vscode("editor.action.referenceSearch.trigger")
   key("down enter escape")
-track restep:
+ref restep:
   user.vscode("editor.action.referenceSearch.trigger")
   key("up enter escape")
 

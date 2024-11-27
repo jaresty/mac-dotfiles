@@ -130,10 +130,10 @@ pleet: user.idea("action CodeCompletion")
 	insert(text)
 	key("enter")
 
-track step:
+ref step:
 	key("ctrl-alt-down")
 
-track restep:
+ref restep:
 	key("ctrl-alt-up")
 
 triage step:
@@ -147,8 +147,8 @@ run that: key('ctrl-r')
 run last: key('ctrl-shift-r')
 
 reference: user.idea("action FindUsages")
-ref step: key(cmd-alt-down)
-ref restep: key(cmd-alt-up)
+ref next: key(cmd-alt-down)
+ref last: key(cmd-alt-up)
 
 narrow:
 	key(cmd-shift--)
