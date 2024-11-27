@@ -76,29 +76,28 @@ wane: user.wane()
 drag down: key('shift-cmd-down')
 drag up: key('shift-cmd-up')
 steppest: edit.file_end()
-steppier: user.camel_right()
 stepperest: key('cmd-alt-]')
-slinkier: user.camel_left()
-slinkerest: key('cmd-alt-[')
-slinkest: edit.file_start()
+resteppier: user.camel_left()
+restepperest: key('cmd-alt-[')
+resteppest: edit.file_start()
 snatcherest: key('cmd-alt-shift-]')
 snatchest: edit.extend_file_end()
-chancerest: key('cmd-alt-shift-[')
-chancest: edit.extend_file_start()
+resnatcherest: key('cmd-alt-shift-[')
+resnatchest: edit.extend_file_start()
 puncherest: key('cmd-alt-shift-] delete cmd-alt-l')
 punchest:
 	edit.extend_file_end()
 	edit.delete()
-kickerest: key('cmd-alt-shift-[ delete cmd-alt-l')
-kickest:
+repuncherest: key('cmd-alt-shift-[ delete cmd-alt-l')
+repunchest:
 	edit.extend_file_start()
 	edit.delete()
-boomerest:
+bipuncherest:
 	key('cmd-alt-[')
 	key('cmd-alt-shift-]')
 	sleep(60ms)
 	edit.delete()
-boomest:
+bipunchest:
 	edit.select_all()
 	edit.delete()
 
