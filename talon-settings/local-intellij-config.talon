@@ -73,8 +73,6 @@ bisnatchest:
 wax: user.wax()
 wane: user.wane()
 
-drag down: key('shift-cmd-down')
-drag up: key('shift-cmd-up')
 steppest: edit.file_end()
 stepperest: key('cmd-alt-]')
 restepperest: key('cmd-alt-[')
