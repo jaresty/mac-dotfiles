@@ -15,6 +15,6 @@ bipunchier:
 	edit.extend_camel_right()
 	key(delete)
 
-snatchier: user.extend_camel_right()
+snatchy er: user.extend_camel_right()
 
-resnatchier: user.extend_camel_left()
+resnatchy er: user.extend_camel_left()
