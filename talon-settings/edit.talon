@@ -40,7 +40,7 @@ dip snatcher:
 	edit.extend_line_end()
 
 hunt step: edit.find_next()
-hunt restep: edit.find_last()
+hunt restep: edit.find_previous()
 
 prob step: user.problem_next()
 prob restep: user.problem_last()
