@@ -17,6 +17,13 @@ perfect:
   key(enter)
 
 ^explore: user.vscode("breadcrumbs.focusAndSelect")
+track step:
+  user.vscode("editor.action.referenceSearch.trigger")
+  key("down enter escape")
+track restep:
+  user.vscode("editor.action.referenceSearch.trigger")
+  key("up enter escape")
+
 ^scry [<user.text>]$:
   user.vscode("workbench.action.quickTextSearch")
   sleep(50ms)
@@ -60,15 +67,15 @@ wax <user.cursorless_target>:
 wax: user.wax()
 wane: user.wane()
 
-triage:
+triage step:
   user.vscode("editor.action.marker.nextInFiles")
   user.vscode("editor.action.quickFix")
-triage last:
+triage restep:
   user.vscode("editor.action.marker.prevInFiles")
   user.vscode("editor.action.quickFix")
 
-ref next: key(f4)
-ref last: key(shift-f4)
+ref step: key(f4)
+ref restep: key(shift-f4)
 # Symbol search
 jump [<user.text>]:
   user.vscode("workbench.action.gotoSymbol")

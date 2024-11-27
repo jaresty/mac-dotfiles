@@ -132,19 +132,16 @@ pleet: user.idea("action CodeCompletion")
 	insert(text)
 	key("enter")
 
-track:
-	user.idea("action FindUsagesInFile")
-
-track next:
+track step:
 	key("ctrl-alt-down")
 
-track last:
+track restep:
 	key("ctrl-alt-up")
 
-triage:
+triage step:
 	user.idea("action GotoNextError")
 	user.idea("action ShowIntentionActions")
-triage last:
+triage restep:
 	user.idea("action GotoPreviousError")
 	user.idea("action ShowIntentionActions")
 
@@ -152,8 +149,8 @@ run that: key('ctrl-r')
 run last: key('ctrl-shift-r')
 
 reference: user.idea("action FindUsages")
-ref next: key(cmd-alt-down)
-ref last: key(cmd-alt-up)
+ref step: key(cmd-alt-down)
+ref restep: key(cmd-alt-up)
 
 narrow:
 	key(cmd-shift--)
