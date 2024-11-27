@@ -54,7 +54,7 @@ explore [<user.text>] [over]:
 	key("cmd-f12")
 	sleep(400ms)
 	insert(user.text or "")
-splitter: key("alt-tab")
+split step: key("alt-tab")
 clone funk:
 	key('cmd-alt-shift-[')
 	key("alt-up")
@@ -65,10 +65,10 @@ take funk:
 	key('cmd-alt-shift-]')
 	key("alt-up")
 	key("alt-up")
-gatherest:
+bisnatcherest:
 	key('cmd-alt-[')
 	key('cmd-alt-shift-]')
-gathest:
+bisnatchest:
 	key('cmd-a')
 wax: user.wax()
 wane: user.wane()
