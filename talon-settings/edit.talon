@@ -22,6 +22,9 @@ fly stepper:
 	edit.up()
 	edit.line_start()
 fly snatch: edit.extend_line_up()
+fly snatcher:
+	edit.extend_line_up()
+	edit.extend_line_start()
 
 dip step: edit.down()
 dip stepmid:
@@ -32,6 +35,9 @@ dip stepper:
 	edit.line_end()
 dip snatch:
 	edit.extend_down()
+dip snatcher:
+	edit.extend_down()
+	edit.extend_line_end()
 
 hunt step: edit.find_next()
 hunt restep: edit.find_last()
