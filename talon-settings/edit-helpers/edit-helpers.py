@@ -56,14 +56,14 @@ def back_off_move():
 
 
 MOVEMENT_TYPE: dict[str, tuple[callable, callable, int]] = {
-    "flying": (actions.edit.up, actions.edit.down, 2),
-    "dipping": (actions.edit.down, actions.edit.up, 2),
+    "fly stepping": (actions.edit.up, actions.edit.down, 2),
+    "dip stepping": (actions.edit.down, actions.edit.up, 2),
     "stepping": (actions.edit.right, actions.edit.left, 1),
-    "slinking": (actions.edit.left, actions.edit.right, 1),
-    "dusting": (actions.edit.extend_line_up, actions.edit.extend_line_down, 3),
-    "sweeping": (actions.edit.extend_line_down, actions.edit.extend_line_up, 3),
+    "restepping": (actions.edit.left, actions.edit.right, 1),
+    "fly snatching": (actions.edit.extend_line_up, actions.edit.extend_line_down, 3),
+    "dip snatching": (actions.edit.extend_line_down, actions.edit.extend_line_up, 3),
     "snatching": (actions.edit.extend_right, actions.edit.extend_left, 1),
-    "chancing": (actions.edit.extend_left, actions.edit.extend_right, 1),
+    "resnatching": (actions.edit.extend_left, actions.edit.extend_right, 1),
     "waxing": (actions.user.wax, actions.user.wane, 4),
     "waning": (actions.user.wane, actions.user.wax, 4),
     "descending": (actions.edit.zoom_in, actions.edit.zoom_out, 5),
@@ -73,15 +73,15 @@ MOVEMENT_TYPE: dict[str, tuple[callable, callable, int]] = {
     "rewind": (actions.edit.undo, actions.edit.redo, 4),
     "replay": (actions.edit.redo, actions.edit.undo, 4),
     "bouncing": (actions.core.repeat_command, actions.core.repeat_command, 4),
-    "hunting": (actions.edit.find_next, actions.edit.find_previous, 4),
-    "solving": (actions.user.problem_next, actions.user.problem_last, 4),
-    "solving back": (actions.user.problem_last, actions.user.problem_next, 4),
+    "hunt stepping": (actions.edit.find_next, actions.edit.find_previous, 4),
+    "prob stepping": (actions.user.problem_next, actions.user.problem_last, 4),
+    "prob restepping": (actions.user.problem_last, actions.user.problem_next, 4),
     "swinging": (tab_next, tab_last, 3),
     "ship swinging": (tab_last, tab_next, 3),
     "folding": (actions.user.fold_more, actions.user.fold_less, 4),
     "unfolding": (actions.user.fold_less, actions.user.fold_more, 4),
     "backward": (actions.user.go_back, actions.user.go_forward, 4),
-    "forward": (actions.user.go_forward, actions.user.go_back, 4),
+    "forward": (actions.users.go_forward, actions.user.go_back, 4),
 }
 
 ctx.lists["user.continuous_movement_type"] = MOVEMENT_TYPE.keys()

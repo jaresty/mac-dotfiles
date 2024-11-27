@@ -4,30 +4,46 @@ step: edit.word_right()
 stepper: edit.line_end()
 stepperest: edit.paragraph_end()
 steppest: edit.file_end()
+stepmid: user.line_middle()
 
 #movement to the left
-slinky: edit.left()
-slink: edit.word_left()
-slinker: edit.line_start()
-slinkerest: edit.paragraph_start()
-slinkest: edit.file_start()
+resteppy: edit.left()
+restep: edit.word_left()
+restepper: edit.line_start()
+restepperest: edit.paragraph_start()
+resteppest: edit.file_start()
 
 #moving up and down
-fly: edit.up()
+fly step: edit.up()
+fly stepmid:
+	edit.up()
+	user.line_middle()
+fly stepper:
+	edit.up()
+	edit.line_start()
+fly snatch: edit.extend_line_up()
+
+dip step: edit.down()
+dip stepmid:
+	edit.down()
+	user.line_middle()
+dip stepper:
+	edit.down()
+	edit.line_end()
+dip snatch:
+	edit.extend_down()
+
+hunt step: edit.find_next()
+hunt restep: edit.find_last()
+
+prob step: user.problem_next()
+prob restep: user.problem_last()
+
 <user.movement_type>: user.start_moving(movement_type)
 perch: user.stop_moving()
 descend: edit.zoom_in()
 ascend: edit.zoom_out()
 standard: edit.zoom_reset()
-dip: edit.down()
-
-#diagonal movement
-swoop:
-	edit.up()
-	edit.word_left()
-drift:
-	edit.down()
-	edit.word_right()
 
 #deleting forward
 punchy: key("delete")
@@ -41,13 +57,13 @@ punchest:
 	edit.delete()
 
 #deleting backward
-kicky: key("backspace")
-kick: key("alt-backspace")
-kicker: key("cmd-backspace")
-kickerest:
+repunchy: key("backspace")
+repunch: key("alt-backspace")
+repuncher: key("cmd-backspace")
+repuncherest:
 	edit.extend_paragraph_start()
 	key("delete")
-kickest:
+repunchest:
 	edit.extend_file_start()
 	edit.delete()
 
@@ -76,17 +92,13 @@ snatchest: edit.extend_file_end()
 snatchize: user.set_select_direction_right()
 
 #selecting backward
-chancy: key("shift-left")
-chance: key("alt-shift-left")
-chansoid: key("alt-shift-left shift-left")
-chancer: key("cmd-shift-left")
-chancerest: edit.extend_paragraph_start()
-chancest: edit.extend_file_start()
-chancize: user.set_select_direction_left()
-
-#selecting up and down
-sweep: key("shift-down")
-dust: key("shift-up")
+resnatchy: key("shift-left")
+resnatch: key("alt-shift-left")
+resnatchoid: key("alt-shift-left shift-left")
+resnatcher: key("cmd-shift-left")
+resnatcherest: edit.extend_paragraph_start()
+resnatchest: edit.extend_file_start()
+resnatchize: user.set_select_direction_left()
 
 #selecting both directions
 gather: edit.select_line()
