@@ -156,7 +156,10 @@ dip lifter:
 place:
 	edit.paste()
 placer:
-	edit.line_end()
+	edit.extend_line_end()
+	edit.paste()
+replacer:
+	edit.extend_line_start()
 	edit.paste()
 fly place:
 	edit.line_insert_up()
