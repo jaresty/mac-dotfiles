@@ -105,7 +105,7 @@ dip puncher:
 	edit.delete()
 
 #deleting forward and backward
-boomy:
+bipunchy:
 	key(delete)
 	key(backspace)
 
