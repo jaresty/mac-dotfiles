@@ -66,8 +66,8 @@ MOVEMENT_TYPE: dict[str, tuple[callable, callable, int]] = {
     "resnatching": (actions.edit.extend_left, actions.edit.extend_right, 1),
     "waxing": (actions.user.wax, actions.user.wane, 4),
     "waning": (actions.user.wane, actions.user.wax, 4),
-    "descending": (actions.edit.zoom_in, actions.edit.zoom_out, 5),
-    "ascending": (actions.edit.zoom_out, actions.edit.zoom_in, 5),
+    "size stepping": (actions.edit.zoom_in, actions.edit.zoom_out, 5),
+    "size restepping": (actions.edit.zoom_out, actions.edit.zoom_in, 5),
     "upward": (actions.user.mouse_scroll_up, actions.user.mouse_scroll_down, 2),
     "downward": (actions.user.mouse_scroll_down, actions.user.mouse_scroll_up, 2),
     "rewind": (actions.edit.undo, actions.edit.redo, 4),
@@ -78,10 +78,14 @@ MOVEMENT_TYPE: dict[str, tuple[callable, callable, int]] = {
     "prob restepping": (actions.user.problem_last, actions.user.problem_next, 4),
     "swinging": (tab_next, tab_last, 3),
     "ship swinging": (tab_last, tab_next, 3),
-    "folding": (actions.user.fold_more, actions.user.fold_less, 4),
-    "unfolding": (actions.user.fold_less, actions.user.fold_more, 4),
+    "fold stepping": (actions.user.fold_more, actions.user.fold_less, 4),
+    "fold restepping": (actions.user.fold_less, actions.user.fold_more, 4),
     "navi restepping": (actions.user.go_back, actions.user.go_forward, 4),
     "navi stepping": (actions.users.go_forward, actions.user.go_back, 4),
+    "fly panning": (actions.user.mouse_scroll_up, actions.user.mouse_scroll_down, 2),
+    "dip panning": (actions.user.mouse_scroll_down, actions.user.mouse_scroll_up, 2),
+    "panning": (actions.user.mouse_scroll_right, actions.user.mouse_scroll_left, 2),
+    "repanning": (actions.user.mouse_scroll_left, actions.user.mouse_scroll_right, 2),
 }
 
 ctx.lists["user.continuous_movement_type"] = MOVEMENT_TYPE.keys()

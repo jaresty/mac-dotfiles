@@ -62,9 +62,29 @@ prob restep: user.problem_last()
 
 <user.movement_type>: user.start_moving(movement_type)
 perch: user.stop_moving()
-descend: edit.zoom_in()
-ascend: edit.zoom_out()
-standard: edit.zoom_reset()
+size step: edit.zoom_in()
+size restep: edit.zoom_out()
+size reset: edit.zoom_reset()
+
+fold step: user.fold_more()
+fold restep: user.fold_less()
+
+pan: user.mouse_scroll_right()
+repan: user.mouse_scroll_left()
+fly pan: user.mouse_scroll_up()
+dip pan: user.mouse_scroll_down()
+fly panner:
+	user.mouse_scroll_up()
+	user.mouse_scroll_left()
+fly repanner:
+	user.mouse_scroll_up()
+	user.mouse_scroll_right()
+dip panner:
+	user.mouse_scroll_down()
+	user.mouse_scroll_right()
+dip repanner:
+	user.mouse_scroll_down()
+	user.mouse_scroll_left()
 
 #deleting forward
 punchy: key("delete")
