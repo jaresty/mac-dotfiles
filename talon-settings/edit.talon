@@ -51,6 +51,9 @@ dip resnatcher:
 	edit.extend_line_down()
 	edit.extend_line_start()
 
+navi step: user.go_forward()
+navi restep: user.go_back()
+
 hunt step: edit.find_next()
 hunt restep: edit.find_previous()
 
