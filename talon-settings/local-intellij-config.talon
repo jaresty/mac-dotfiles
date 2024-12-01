@@ -130,12 +130,6 @@ pleet: user.idea("action CodeCompletion")
 	insert(text)
 	key("enter")
 
-chase step:
-	key("ctrl-alt-down")
-
-chase restep:
-	key("ctrl-alt-up")
-
 triage step:
 	user.idea("action GotoNextError")
 	user.idea("action ShowIntentionActions")

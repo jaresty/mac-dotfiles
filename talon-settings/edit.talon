@@ -268,3 +268,8 @@ toss <user.keys>:
 	edit.left()
 	key(keys)
 	edit.right()
+
+chase step:
+	user.next_reference()
+chase restep:
+	user.last_reference()

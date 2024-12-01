@@ -68,10 +68,6 @@ triage restep:
   user.vscode("editor.action.marker.prevInFiles")
   user.vscode("editor.action.quickFix")
 
-chase step:
-  key("f12")
-chase restep:
-  key("shift-f12")
 change step: key(alt-f5)
 change restep: key(shift-alt-f5)
 
