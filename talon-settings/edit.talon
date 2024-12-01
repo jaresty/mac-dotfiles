@@ -31,6 +31,10 @@ fly snatcher:
 fly resnatcher:
 	edit.extend_line_up()
 	edit.extend_line_end()
+fly bisnatcher:
+	edit.line_end()
+	edit.extend_up()
+	edit.extend_line_start()
 
 dip step: edit.down()
 dip stepmid:
@@ -50,6 +54,10 @@ dip snatcher:
 dip resnatcher:
 	edit.extend_line_down()
 	edit.extend_line_start()
+dip bisnatcher:
+	edit.line_start()
+	edit.extend_down()
+	edit.extend_line_end()
 
 navi step: user.go_forward()
 navi restep: user.go_back()
