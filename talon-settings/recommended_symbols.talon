@@ -28,7 +28,6 @@
 # tangle: '^'
 # (: curve, lub, lepper
 # ): recurve, rub, repper
-sun: user.insert_between("(", ")")
 suner:
 	insert("()")
 	key(left enter)
@@ -36,7 +35,6 @@ suny: "()"
 sun that:
 	text = edit.selected_text()
 	user.paste("({text})")
-box: user.insert_between("[", "]")
 boxer:
 	insert("[]")
 	key(left enter)
@@ -52,7 +50,6 @@ craney: "{}"
 crane that:
 	text = edit.selected_text()
 	user.paste("{{{text}}}")
-leaf: user.insert_between("<", ">")
 leafer:
 	insert("<>")
 	key(left enter)
@@ -61,7 +58,6 @@ leaf that:
 	text = edit.selected_text()
 	user.paste("<{text}>")
 roost: "</"
-hail: user.insert_between('"', '"')
 hailer:
 	insert('""')
 	key(left enter)
@@ -69,7 +65,6 @@ haily: '""'
 hail that:
 	text = edit.selected_text()
 	user.paste('"{text}"')
-sleet: user.insert_between("'", "'")
 sleeter:
 	insert("''")
 	key(left enter)
@@ -77,7 +72,6 @@ sleety: "''"
 sleet that:
 	text = edit.selected_text()
 	user.paste("'{text}'")
-rain: user.insert_between('`', '`')
 rainer:
 	insert("``")
 	key(left enter)
