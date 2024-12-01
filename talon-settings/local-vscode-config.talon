@@ -11,7 +11,6 @@ pop change next: user.vscode("editor.action.dirtydiff.next")
 pop change last: user.vscode("editor.action.dirtydiff.previous")
 
 disk files: user.vscode("workbench.action.files.saveFiles")
-pleet: user.vscode("editor.action.triggerSuggest")
 perfect:
   user.vscode("editor.action.triggerSuggest")
   key(enter)
