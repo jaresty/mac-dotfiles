@@ -173,6 +173,9 @@ lift:
 lifter:
 	edit.extend_line_end()
 	edit.cut()
+bilifter:
+	edit.select_line()
+	edit.cut()
 fly lift:
 	edit.extend_up()
 	edit.cut()
@@ -196,6 +199,9 @@ placer:
 replacer:
 	edit.extend_line_start()
 	edit.paste()
+biplacer:
+	edit.select_line()
+	edit.paste()
 fly place:
 	edit.line_insert_up()
 	edit.paste()
@@ -207,6 +213,9 @@ trace:
 	edit.copy()
 tracer:
 	edit.extend_line_end()
+	edit.copy()
+bitracer:
+	edit.select_line()
 	edit.copy()
 fly trace:
 	edit.extend_up()
