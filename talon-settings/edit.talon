@@ -116,6 +116,7 @@ fly puncher:
 	edit.extend_up()
 	edit.extend_line_start()
 	edit.delete()
+
 dip punch:
 	edit.extend_down()
 	edit.delete()
@@ -139,9 +140,11 @@ bipunchest:
 	sleep(60ms)
 	edit.delete()
 fly bipuncher:
+	edit.delete_line()
 	edit.up()
 	edit.delete_line()
 dip bipuncher:
+	edit.delete_line()
 	edit.down()
 	edit.delete_line()
 
