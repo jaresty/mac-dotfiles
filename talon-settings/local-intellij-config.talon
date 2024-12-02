@@ -122,6 +122,7 @@ refactor this [<user.text>] [over]:
 	key(cmd-shift-e)
 	sleep(400ms)
 	insert(user.text or "")
+jest: user.idea("action CodeCompletion")
 
 ^lookup [<user.text>] [over]:
 	user.idea("action GotoSymbol")

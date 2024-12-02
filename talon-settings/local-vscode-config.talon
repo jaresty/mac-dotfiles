@@ -14,7 +14,7 @@ disk files: user.vscode("workbench.action.files.saveFiles")
 perfect:
   user.vscode("editor.action.triggerSuggest")
   key(enter)
-
+jest: user.vscode("editor.action.triggerSuggest")
 ^explore: user.vscode("breadcrumbs.focusAndSelect")
 
 ^scry [<user.text>]$:
