@@ -249,6 +249,16 @@ dip tracer:
 forge:
 	edit.selection_clone()
 
+forger:
+	edit.extend_line_end()
+	edit.selection_clone()
+reforger:
+	edit.extend_line_start()
+	edit.selection_clone()
+biforger:
+	edit.select_line()
+	edit.selection_clone()
+
 fly dodge:
 	edit.line_swap_up()
 
