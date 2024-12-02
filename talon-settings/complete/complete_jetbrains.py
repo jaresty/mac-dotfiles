@@ -12,4 +12,7 @@ app: jetbrains
 @ctx.action_class("user")
 class UserActions:
     def complete():
-        actions.user.idea("action CodeCompletion")
+        actions.user.idea("action HippieCompletion")
+
+    def complete_backward():
+        actions.user.idea("action HippieBackwardCompletion")

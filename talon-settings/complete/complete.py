@@ -8,3 +8,6 @@ mod = Module()
 class Actions:
     def complete():
         """Invoke auto completion"""
+
+    def complete_backward():
+        """Choose previous completion"""

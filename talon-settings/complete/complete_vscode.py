@@ -12,4 +12,7 @@ app: vscode
 @ctx.action_class("user")
 class UserActions:
     def complete():
-        actions.user.vscode("editor.action.triggerSuggest")
+        actions.key("tab")
+
+    def complete_backward():
+        actions.key("shift-tab")

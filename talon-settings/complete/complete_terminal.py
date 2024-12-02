@@ -13,3 +13,6 @@ tag: terminal
 class UserActions:
     def complete():
         actions.key("tab")
+
+    def complete_backward():
+        actions.key("shift-tab")

@@ -36,14 +36,6 @@ REPEAT_SPEED = {"hyper": 1, "fast": 2, "mid": 2, "slow": 4, "lethargic": 5}
 ctx.lists["user.repeat_speed"] = REPEAT_SPEED.keys()
 
 
-def tab_next():
-    actions.key("tab")
-
-
-def tab_last():
-    actions.key("shift-tab")
-
-
 def back_off_move():
     global continuous_movement_job
     if not continuous_movement_job:
@@ -76,7 +68,7 @@ MOVEMENT_TYPE: dict[str, tuple[callable, callable, int]] = {
     "hunt stepping": (actions.edit.find_next, actions.edit.find_previous, 4),
     "prob stepping": (actions.user.problem_next, actions.user.problem_last, 4),
     "prob restepping": (actions.user.problem_last, actions.user.problem_next, 4),
-    "pleeting": (actions.user.complete, tab_last, 4),
+    "pleeting": (actions.user.complete, actions.user.complete_backward, 4),
     "fold stepping": (actions.user.fold_more, actions.user.fold_less, 4),
     "fold restepping": (actions.user.fold_less, actions.user.fold_more, 4),
     "navi restepping": (actions.user.go_back, actions.user.go_forward, 4),
