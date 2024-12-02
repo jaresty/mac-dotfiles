@@ -213,6 +213,9 @@ replacer:
 biplacer:
 	edit.select_line()
 	edit.paste()
+biplacest:
+	edit.select_all()
+	edit.paste()
 fly place:
 	edit.line_insert_up()
 	edit.paste()
