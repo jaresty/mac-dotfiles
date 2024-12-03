@@ -284,8 +284,16 @@ bipusher:
 	key(shift-enter)
 	key(shift-enter)
 	edit.up()
-# move the head of the current line to the end of the previous line
+# move the tail of the current line to the end of the previous line
 fly pusher:
+	edit.extend_line_end()
+	text_to_move = edit.selected_text()
+	key(delete)
+	edit.up()
+	edit.line_end()
+	insert(text_to_move)
+# move the head of the current line to the end of the previous line
+fly repusher:
 	key(shift-enter)
 	edit.up()
 	edit.up()
@@ -298,13 +306,23 @@ fly bipusher:
 	edit.up()
 	edit.line_end()
 	key(delete)
-# move the tail of the current line to the head of the next
+# move the tail of the current line to the tail of the next
 dip pusher:
-	key(shift-enter)
-	edit.line_end()
+	edit.extend_line_end()
+	text_to_move = edit.selected_text()
 	key(delete)
-	edit.up()
+	edit.down()
 	edit.line_end()
+	insert(text_to_move)
+# move the head of the current line to the head of the next
+dip repusher:
+	edit.extend_line_start()
+	text_to_move = edit.selected_text()
+	key(delete)
+	edit.down()
+	edit.line_start()
+	insert(text_to_move)
+
 #join this line with the next
 dip bipusher:
 	edit.line_end()
@@ -313,6 +331,10 @@ fly push:
 	edit.line_insert_up()
 dip push:
 	edit.line_insert_down()
+
+tugger:
+	edit.line_end()
+	key(delete)
 
 toss <user.keys>:
 	edit.left()
