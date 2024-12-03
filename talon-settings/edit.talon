@@ -272,6 +272,7 @@ pusher:
 	key(shift-enter)
 	edit.up()
 	edit.line_end()
+# move the head of the current line to the end of the previous line
 fly pusher:
 	key(shift-enter)
 	edit.up()
@@ -280,6 +281,7 @@ fly pusher:
 	key(delete)
 	edit.down()
 	edit.line_start()
+# move the tail of the current line to the head of the next
 dip pusher:
 	key(shift-enter)
 	edit.line_end()
