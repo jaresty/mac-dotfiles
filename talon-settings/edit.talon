@@ -273,8 +273,11 @@ pusher:
 	edit.up()
 	edit.line_end()
 repusher:
-	edit.line_end()
+	edit.extend_line_end()
+	text_to_move = edit.selected_text()
 	key(delete)
+	edit.line_insert_up()
+	insert(text_to_move)
 
 #break this line at the cursor and leave the cursor on a new line between the two halves
 bipusher:
