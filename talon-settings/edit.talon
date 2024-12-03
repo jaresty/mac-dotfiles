@@ -272,6 +272,11 @@ pusher:
 	key(shift-enter)
 	edit.up()
 	edit.line_end()
+#break this line at the cursor and leave the cursor on a new line between the two halves
+bipusher:
+	key(shift-enter)
+	key(shift-enter)
+	edit.up()
 # move the head of the current line to the end of the previous line
 fly pusher:
 	key(shift-enter)
@@ -281,6 +286,11 @@ fly pusher:
 	key(delete)
 	edit.down()
 	edit.line_start()
+#join this line with the previous
+fly bipusher:
+	edit.up()
+	edit.line_end()
+	key(delete)
 # move the tail of the current line to the head of the next
 dip pusher:
 	key(shift-enter)
@@ -288,6 +298,10 @@ dip pusher:
 	key(delete)
 	edit.up()
 	edit.line_end()
+#join this line with the next
+dip bipusher:
+	edit.line_end()
+	key(delete)
 fly push:
 	edit.line_insert_up()
 dip push:
