@@ -194,10 +194,20 @@ fly lifter:
 	edit.extend_up()
 	edit.extend_line_start()
 	edit.cut()
+fly bilifter:
+	edit.line_end()
+	edit.extend_up()
+	edit.extend_line_start()
+	edit.cut()
 dip lift:
 	edit.extend_down()
 	edit.cut()
 dip lifter:
+	edit.extend_down()
+	edit.extend_line_end()
+	edit.cut()
+dip bilifter:
+	edit.line_start()
 	edit.extend_down()
 	edit.extend_line_end()
 	edit.cut()
