@@ -272,6 +272,10 @@ pusher:
 	key(shift-enter)
 	edit.up()
 	edit.line_end()
+repusher:
+	edit.line_end()
+	key(delete)
+
 #break this line at the cursor and leave the cursor on a new line between the two halves
 bipusher:
 	key(shift-enter)
