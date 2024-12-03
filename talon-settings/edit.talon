@@ -272,6 +272,20 @@ pusher:
 	key(shift-enter)
 	edit.up()
 	edit.line_end()
+fly pusher:
+	key(shift-enter)
+	edit.up()
+	edit.up()
+	edit.line_end()
+	key(delete)
+	edit.down()
+	edit.line_start()
+dip pusher:
+	key(shift-enter)
+	edit.line_end()
+	key(delete)
+	edit.up()
+	edit.line_end()
 fly push:
 	edit.line_insert_up()
 dip push:
