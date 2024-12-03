@@ -157,8 +157,6 @@ quack last <user.text> [over]: user.idea("find prev {text},action ShowIntentionA
 
 change step: key(ctrl-shift-alt-down)
 change restep: key(ctrl-shift-alt-up)
-prob step: user.idea("action GotoNextError")
-prob restep: user.idea("action GotoPreviousError")
 
 follow split:
 	user.idea("action SplitVertically,action GotoDeclaration")
