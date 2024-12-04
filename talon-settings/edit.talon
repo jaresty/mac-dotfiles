@@ -248,10 +248,20 @@ fly tracer:
 	edit.extend_up()
 	edit.extend_line_start()
 	edit.copy()
+fly bitracer:
+	edit.line_start()
+	edit.extend_up()
+	edit.extend_line_start()
+	edit.copy()
 dip trace:
 	edit.extend_down()
 	edit.copy()
 dip tracer:
+	edit.extend_down()
+	edit.extend_line_end()
+	edit.copy()
+dip bitracer:
+	edit.line_start()
 	edit.extend_down()
 	edit.extend_line_end()
 	edit.copy()
