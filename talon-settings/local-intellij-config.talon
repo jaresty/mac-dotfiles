@@ -3,6 +3,7 @@ app: jetbrains
 -
 settings():
 	key_wait = 15
+	user.paste_to_insert_threshold = 10
 
 please [<user.text>] [over]:
 	key("cmd-shift-a")
@@ -31,7 +32,7 @@ file split step <user.text> [{user.file_extension}] [over]:
 	insert(file_extension or "")
 	sleep(300ms)
 	key(shift-enter)
-file stepper:
+file restep:
 	key(ctrl-tab)
 alter step:
 	user.idea("action GotoTest")
@@ -40,28 +41,8 @@ alter stepper:
 	user.idea("action GotoTest")
 	key(shift-enter)
 
-^symbol stepper [<user.text>] [over]:
-	user.idea("action GotoSymbol")
-	insert(text)
-	key("enter")
-
-symbol step [<user.text>] [over]:
-	key("cmd-f12")
-	sleep(400ms)
-	insert(user.text or "")
-
 split step: key("alt-tab")
 
-clone funk:
-	key('cmd-alt-shift-[')
-	key("alt-up")
-	key("alt-up")
-	key(cmd-d)
-take funk:
-	key('cmd-alt-[')
-	key('cmd-alt-shift-]')
-	key("alt-up")
-	key("alt-up")
 bisnatcherest:
 	key('cmd-alt-[')
 	key('cmd-alt-shift-]')
@@ -95,8 +76,18 @@ bipunchest:
 	edit.select_all()
 	edit.delete()
 
-^scry [<user.text>] [over]:
+^text peek [<user.text>] [over]:
 	key(cmd-shift-e)
+	sleep(400ms)
+	insert(user.text or "")
+
+^symbol peeker [<user.text>] [over]:
+	user.idea("action GotoSymbol")
+	insert(text)
+	key("enter")
+
+symbol peek [<user.text>] [over]:
+	key("cmd-f12")
 	sleep(400ms)
 	insert(user.text or "")
 

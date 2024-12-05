@@ -7,20 +7,9 @@ diff <user.cursorless_target> with <user.cursorless_target>:
   user.cursorless_ide_command("extension.partialDiff.markSection1", cursorless_target_1)
   user.cursorless_ide_command("extension.partialDiff.markSection2AndTakeDiff", cursorless_target_2)
 
-pop change next: user.vscode("editor.action.dirtydiff.next")
-pop change last: user.vscode("editor.action.dirtydiff.previous")
-
 disk files: user.vscode("workbench.action.files.saveFiles")
-perfect:
-  user.vscode("editor.action.triggerSuggest")
-  key(enter)
 jest: user.vscode("editor.action.triggerSuggest")
-^explore: user.vscode("breadcrumbs.focusAndSelect")
-
-^scry [<user.text>]$:
-  user.vscode("workbench.action.quickTextSearch")
-  sleep(50ms)
-  insert(text or "")
+^crumb step: user.vscode("breadcrumbs.focusAndSelect")
 
 met ex:
   key(tab)
@@ -67,33 +56,35 @@ change restep: key(shift-alt-f5)
 
 ref next: key(f4)
 ref last: key(shift-f4)
+
 # Symbol search
-symbol step [<user.text>]:
+symbol peek [<user.text>]:
   user.vscode("workbench.action.gotoSymbol")
   sleep(50ms)
   insert(text or "")
-^symbol stepper [<user.text>]:
+^symbol peeker [<user.text>]:
   user.vscode("workbench.action.showAllSymbols")
   sleep(50ms)
   insert(text or "")
+^text peek [<user.text>]$:
+  user.vscode("workbench.action.quickTextSearch")
+  sleep(50ms)
+  insert(text or "")
 
-pop deaf: user.vscode("editor.action.peekDefinition")
-pop jest: user.vscode("toggleSuggestionDetails")
-pop type: user.vscode("editor.action.peekTypeDefinition")
-pop type hierarchy: user.vscode("editor.showTypeHierarchy")
-pop param: user.vscode("editor.action.triggerParameterHints")
-
-testing start: user.vscode("testing.startContinuousRun")
-testing stop: user.vscode("testing.stopContinuousRun")
+deaf peek: user.vscode("editor.action.peekDefinition")
+jest peek: user.vscode("toggleSuggestionDetails")
+type peek: user.vscode("editor.action.peekTypeDefinition")
+type hierarchy peek: user.vscode("editor.showTypeHierarchy")
+param peek: user.vscode("editor.action.triggerParameterHints")
 
 # File Commands
-file step [<user.text>] [{user.file_extension}] [over]:
+file peek [<user.text>] [{user.file_extension}] [over]:
   user.vscode("workbench.action.quickOpen")
   sleep(400ms)
   insert(text or "")
   insert(file_extension or "")
   sleep(300ms)
-file stepper <user.text> [{user.file_extension}] [over]:
+file peeker <user.text> [{user.file_extension}] [over]:
   user.vscode("workbench.action.quickOpen")
   sleep(400ms)
   insert(text or "")
@@ -101,40 +92,38 @@ file stepper <user.text> [{user.file_extension}] [over]:
   sleep(300ms)
   key(enter)
   sleep(150ms)
-file split step <user.text> [{user.file_extension}] [over]:
-  user.vscode("workbench.action.quickOpen")
-  sleep(400ms)
-  insert(text or "")
-  insert(file_extension or "")
-  sleep(300ms)
-  key(cmd-right)
-  sleep(150ms)
-  key(escape)
-  user.split_next()
-file stepper:
-  user.vscode("workbench.action.openPreviousRecentlyUsedEditorInGroup")
-recent step [<user.text>]:
+file peekest [<user.text>]:
   user.vscode("workbench.action.openRecent")
   sleep(50ms)
   insert(text or "")
   sleep(250ms)
+
+change peek: user.vscode("editor.action.dirtydiff.next")
+change repeek: user.vscode("editor.action.dirtydiff.previous")
+
+file step:
+  user.vscode("workbench.action.openPreviousRecentlyUsedEditorInGroup")
+
 alter step: user.vscode("alternate.alternateFile")
-alter make: user.vscode("alternate.createAlternateFile")
-alter stepper: user.vscode("alternate.alternateFileInSplit")
+alter stepper: user.vscode("alternate.createAlternateFile")
+alter restep: user.vscode("alternate.alternateFileInSplit")
 
-compare clip: user.vscode("extension.partialDiff.diffSelectionWithClipboard")
-
-<user.formatters> form <user.cursorless_target>:
-  user.cursorless_reformat(cursorless_target, formatters)
+snip step: user.vscode("jumpToNextSnippetPlaceholder")
+snip restep: user.vscode("jumpToPrevSnippetPlaceholder")
 
 git step: user.vscode("workbench.scm.action.focusNextInput")
 git restep: user.vscode("workbench.scm.action.focusPreviousInput")
 git resource step: user.vscode("workbench.scm.action.focusNextResourceGroup")
 git resource restep: user.vscode("workbench.scm.action.focusPreviousResourceGroup")
 
+testing start: user.vscode("testing.startContinuousRun")
+testing stop: user.vscode("testing.stopContinuousRun")
+
+compare clip: user.vscode("extension.partialDiff.diffSelectionWithClipboard")
+
+<user.formatters> form <user.cursorless_target>:
+  user.cursorless_reformat(cursorless_target, formatters)
+
 {user.search_engine} scout <user.cursorless_target>:
   text = user.cursorless_get_text(cursorless_target)
   user.search_with_search_engine(search_engine, text)
-
-snip step: user.vscode("jumpToNextSnippetPlaceholder")
-snip restep: user.vscode("jumpToPrevSnippetPlaceholder")
