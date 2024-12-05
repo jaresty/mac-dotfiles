@@ -84,14 +84,6 @@ file peek [<user.text>] [{user.file_extension}] [over]:
   insert(text or "")
   insert(file_extension or "")
   sleep(300ms)
-file peeker <user.text> [{user.file_extension}] [over]:
-  user.vscode("workbench.action.quickOpen")
-  sleep(400ms)
-  insert(text or "")
-  insert(file_extension or "")
-  sleep(300ms)
-  key(enter)
-  sleep(150ms)
 file peekest [<user.text>]:
   user.vscode("workbench.action.openRecent")
   sleep(50ms)
