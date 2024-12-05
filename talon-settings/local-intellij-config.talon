@@ -9,19 +9,14 @@ please [<user.text>] [over]:
 	sleep(400ms)
 	insert(user.text or "")
 
-file hunt [<user.text>] [over]:
-	key("cmd-shift-o")
-	sleep(400ms)
-	insert(user.text or "")
-
 # File Commands
-docs [<user.text>] [{user.file_extension}] [over]:
+file step [<user.text>] [{user.file_extension}] [over]:
 	key("cmd-shift-o")
 	sleep(400ms)
 	insert(text or "")
 	insert(file_extension or "")
 	sleep(300ms)
-docs pop <user.text> [{user.file_extension}] [over]:
+file stepper <user.text> [{user.file_extension}] [over]:
 	user.idea("action RecentFiles")
 	sleep(400ms)
 	insert(text or "")
@@ -29,32 +24,34 @@ docs pop <user.text> [{user.file_extension}] [over]:
 	sleep(300ms)
 	key(enter)
 	sleep(150ms)
-docs split <user.text> [{user.file_extension}] [over]:
+file split step <user.text> [{user.file_extension}] [over]:
 	key("cmd-shift-o")
 	sleep(400ms)
 	insert(text or "")
 	insert(file_extension or "")
 	sleep(300ms)
 	key(shift-enter)
-docs pop:
+file stepper:
 	key(ctrl-tab)
-pop alter:
+alter step:
 	user.idea("action GotoTest")
 	key(enter)
-split alter:
+alter stepper:
 	user.idea("action GotoTest")
 	key(shift-enter)
 
-symbol hunt all [<user.text>] [over]:
-	key("cmd-alt-o")
-	sleep(400ms)
-	insert(user.text or "")
+^symbol stepper [<user.text>] [over]:
+	user.idea("action GotoSymbol")
+	insert(text)
+	key("enter")
 
-explore [<user.text>] [over]:
+symbol step [<user.text>] [over]:
 	key("cmd-f12")
 	sleep(400ms)
 	insert(user.text or "")
+
 split step: key("alt-tab")
+
 clone funk:
 	key('cmd-alt-shift-[')
 	key("alt-up")
@@ -73,7 +70,7 @@ bisnatchest:
 wax: user.wax()
 wane: user.wane()
 
-steppest: edit.file_end()
+steppest: edit.()
 stepperest: key('cmd-alt-]')
 restepperest: key('cmd-alt-[')
 resteppest: edit.file_start()
@@ -98,41 +95,17 @@ bipunchest:
 	edit.select_all()
 	edit.delete()
 
-(symbol hunt | jump) [<user.text>] [over]:
-	key('cmd-f12')
-	sleep(400ms)
-	insert(user.text or "")
-
-quick fix this [<user.text>] [over]:
-	key("alt-enter")
-	sleep(400ms)
-	insert(user.text or "")
-
-rename this [<user.text>] [over]:
-	key("shift-f6")
-	sleep(400ms)
-	insert(user.text or "")
-
-refactor this [<user.text>] [over]:
-	key("ctrl-t")
-	sleep(400ms)
-	insert(user.text or "")
-
 ^scry [<user.text>] [over]:
 	key(cmd-shift-e)
 	sleep(400ms)
 	insert(user.text or "")
+
 jest: user.idea("action CodeCompletion")
 
-^lookup [<user.text>] [over]:
-	user.idea("action GotoSymbol")
-	insert(text)
-	key("enter")
-
-triage step:
+quack step:
 	user.idea("action GotoNextError")
 	user.idea("action ShowIntentionActions")
-triage restep:
+quack restep:
 	user.idea("action GotoPreviousError")
 	user.idea("action ShowIntentionActions")
 
@@ -158,10 +131,10 @@ quack last <user.text> [over]: user.idea("find prev {text},action ShowIntentionA
 change step: key(ctrl-shift-alt-down)
 change restep: key(ctrl-shift-alt-up)
 
-follow split:
+spiffy:
 	user.idea("action SplitVertically,action GotoDeclaration")
-follow split <number> <user.text> [over]: user.idea("action SplitVertically,goto {number} 0,find next {text},action GotoDeclaration")
-follow split next <user.text> [over]: user.idea("action SplitVertically,find next {text},action GotoDeclaration")
+spiffy <number> <user.text> [over]: user.idea("action SplitVertically,goto {number} 0,find next {text},action GotoDeclaration")
+spiffy next <user.text> [over]: user.idea("action SplitVertically,find next {text},action GotoDeclaration")
 
 wax <number> <user.text> [over]:
 	user.idea("goto {number} 0,find next {text}")
@@ -172,10 +145,7 @@ wax next <user.text> [over]:
 wax last <user.text> [over]:
 	user.idea("find last {text}")
 	key("alt-up")
-split window:
-	user.idea("action SplitVertically")
-
-split right:
+spindow:
 	user.idea("action SplitVertically")
 
 pusher:

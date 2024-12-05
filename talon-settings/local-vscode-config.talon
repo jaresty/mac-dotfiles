@@ -22,11 +22,6 @@ jest: user.vscode("editor.action.triggerSuggest")
   sleep(50ms)
   insert(text or "")
 
-^lookup [<user.text>]:
-  user.vscode("workbench.action.showAllSymbols")
-  sleep(50ms)
-  insert(text or "")
-
 met ex:
   key(tab)
 git log:
@@ -60,10 +55,10 @@ wax <user.cursorless_target>:
 wax: user.wax()
 wane: user.wane()
 
-triage step:
+quack step:
   user.vscode("editor.action.marker.nextInFiles")
   user.vscode("editor.action.quickFix")
-triage restep:
+quack restep:
   user.vscode("editor.action.marker.prevInFiles")
   user.vscode("editor.action.quickFix")
 
@@ -73,16 +68,14 @@ change restep: key(shift-alt-f5)
 ref next: key(f4)
 ref last: key(shift-f4)
 # Symbol search
-jump [<user.text>]:
+symbol step [<user.text>]:
   user.vscode("workbench.action.gotoSymbol")
   sleep(50ms)
   insert(text or "")
-
-track <user.cursorless_target>:
-  symbol = user.cursorless_get_text(cursorless_target)
-  user.vscode("workbench.action.gotoSymbol")
+^symbol stepper [<user.text>]:
+  user.vscode("workbench.action.showAllSymbols")
   sleep(50ms)
-  insert(symbol)
+  insert(text or "")
 
 pop deaf: user.vscode("editor.action.peekDefinition")
 pop jest: user.vscode("toggleSuggestionDetails")
@@ -94,13 +87,13 @@ testing start: user.vscode("testing.startContinuousRun")
 testing stop: user.vscode("testing.stopContinuousRun")
 
 # File Commands
-docs [<user.text>] [{user.file_extension}] [over]:
+file step [<user.text>] [{user.file_extension}] [over]:
   user.vscode("workbench.action.quickOpen")
   sleep(400ms)
   insert(text or "")
   insert(file_extension or "")
   sleep(300ms)
-docs pop <user.text> [{user.file_extension}] [over]:
+file stepper <user.text> [{user.file_extension}] [over]:
   user.vscode("workbench.action.quickOpen")
   sleep(400ms)
   insert(text or "")
@@ -108,7 +101,7 @@ docs pop <user.text> [{user.file_extension}] [over]:
   sleep(300ms)
   key(enter)
   sleep(150ms)
-docs split <user.text> [{user.file_extension}] [over]:
+file split step <user.text> [{user.file_extension}] [over]:
   user.vscode("workbench.action.quickOpen")
   sleep(400ms)
   insert(text or "")
@@ -118,46 +111,30 @@ docs split <user.text> [{user.file_extension}] [over]:
   sleep(150ms)
   key(escape)
   user.split_next()
-docs pop:
+file stepper:
   user.vscode("workbench.action.openPreviousRecentlyUsedEditorInGroup")
-project [<user.text>]:
+recent step [<user.text>]:
   user.vscode("workbench.action.openRecent")
   sleep(50ms)
   insert(text or "")
   sleep(250ms)
-pop alter: user.vscode("alternate.alternateFile")
-make alter: user.vscode("alternate.createAlternateFile")
-split alter: user.vscode("alternate.alternateFileInSplit")
-compare clip: user.vscode("extension.partialDiff.diffSelectionWithClipboard")
+alter step: user.vscode("alternate.alternateFile")
+alter make: user.vscode("alternate.createAlternateFile")
+alter stepper: user.vscode("alternate.alternateFileInSplit")
 
-preview j s start: user.vscode("previewjs.start")
-preview j s stop: user.vscode("previewjs.stop")
+compare clip: user.vscode("extension.partialDiff.diffSelectionWithClipboard")
 
 <user.formatters> form <user.cursorless_target>:
   user.cursorless_reformat(cursorless_target, formatters)
 
-git focus next: user.vscode("workbench.scm.action.focusNextInput")
-git focus last: user.vscode("workbench.scm.action.focusPreviousInput")
-git focus next resource: user.vscode("workbench.scm.action.focusNextResourceGroup")
-git focus last resource: user.vscode("workbench.scm.action.focusPreviousResourceGroup")
-journal [<user.text>]:
-  user.vscode("journal.day")
-  sleep(50ms)
-  insert(text or "")
+git step: user.vscode("workbench.scm.action.focusNextInput")
+git restep: user.vscode("workbench.scm.action.focusPreviousInput")
+git resource step: user.vscode("workbench.scm.action.focusNextResourceGroup")
+git resource restep: user.vscode("workbench.scm.action.focusPreviousResourceGroup")
 
 {user.search_engine} scout <user.cursorless_target>:
   text = user.cursorless_get_text(cursorless_target)
   user.search_with_search_engine(search_engine, text)
 
-model {user.search_engine} scout <user.cursorless_target>:
-  text = user.cursorless_get_text(cursorless_target)
-  result = user.gpt_search_engine(search_engine, text)
-  user.search_with_search_engine(search_engine, result)
-
-append <user.keys> <user.cursorless_target>:
-  starting_text = user.cursorless_get_text(cursorless_target, true)
-  destination = user.cursorless_create_destination(cursorless_target)
-  user.cursorless_insert(destination, "{starting_text}{keys}")
-
-snacks: user.vscode("jumpToNextSnippetPlaceholder")
-snazz: user.vscode("jumpToPrevSnippetPlaceholder")
+snip step: user.vscode("jumpToNextSnippetPlaceholder")
+snip restep: user.vscode("jumpToPrevSnippetPlaceholder")
