@@ -136,7 +136,7 @@ wax next <user.text> [over]:
 wax last <user.text> [over]:
 	user.idea("find last {text}")
 	key("alt-up")
-spindow:
+split forge:
 	user.idea("action SplitVertically")
 
 pusher:
