@@ -9,7 +9,7 @@ diff <user.cursorless_target> with <user.cursorless_target>:
 
 disk files: user.vscode("workbench.action.files.saveFiles")
 jest: user.vscode("editor.action.triggerSuggest")
-^crumb step: user.vscode("breadcrumbs.focusAndSelect")
+crumb step: user.vscode("breadcrumbs.focusAndSelect")
 
 met ex:
   key(tab)
@@ -103,6 +103,8 @@ change repeek: user.vscode("editor.action.dirtydiff.previous")
 
 file step:
   user.vscode("workbench.action.openPreviousRecentlyUsedEditorInGroup")
+file forge:
+  user.vscode("fileutils.duplicateFile")
 
 alter step: user.vscode("alternate.alternateFile")
 alter stepper: user.vscode("alternate.createAlternateFile")

@@ -41,6 +41,10 @@ alter stepper:
 	user.idea("action GotoTest")
 	key(shift-enter)
 
+crumb step: key("cmd-up")
+file forge: 
+	key("cmd-up f5")
+
 split step: key("alt-tab")
 
 bisnatcherest:
