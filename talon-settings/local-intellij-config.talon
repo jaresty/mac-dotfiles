@@ -44,6 +44,8 @@ alter stepper:
 crumb step: key("cmd-up")
 file forge: 
 	key("cmd-up f5")
+file punch:
+  key("cmd-up delete")
 
 split step: key("alt-tab")
 

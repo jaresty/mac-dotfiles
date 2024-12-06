@@ -97,6 +97,9 @@ file step:
   user.vscode("workbench.action.openPreviousRecentlyUsedEditorInGroup")
 file forge:
   user.vscode("fileutils.duplicateFile")
+file punch:
+  user.vscode("fileutils.removeFile")
+  sleep(150ms)
 
 alter step: user.vscode("alternate.alternateFile")
 alter stepper: user.vscode("alternate.createAlternateFile")
