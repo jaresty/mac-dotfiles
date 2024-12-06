@@ -181,6 +181,12 @@ bisnatchest: edit.select_all()
 
 lift:
 	edit.cut()
+onlift:
+	edit.extend_word_right()
+	edit.cut()
+relift:
+	edit.extend_word_left()
+	edit.cut()
 onlifter:
 	edit.extend_line_end()
 	edit.cut()
@@ -214,6 +220,12 @@ dip bilifter:
 
 place:
 	edit.paste()
+onplace:
+	edit.extend_word_right()
+	edit.paste()
+replace:
+	edit.extend_word_left()
+	edit.paste()
 onplacer:
 	edit.extend_line_end()
 	edit.paste()
@@ -234,6 +246,12 @@ dip place:
 	edit.paste()
 
 trace:
+	edit.copy()
+ontrace:
+	edit.extend_word_right()
+	edit.copy()
+retrace:
+	edit.extend_word_left()
 	edit.copy()
 ontracer:
 	edit.extend_line_end()
@@ -267,6 +285,12 @@ dip bitracer:
 	edit.copy()
 
 forge:
+	edit.selection_clone()
+onforge:
+	edit.extend_word_right()
+	edit.selection_clone()
+reforge:
+	edit.extend_word_left()
 	edit.selection_clone()
 
 onforger:
