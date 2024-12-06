@@ -3,7 +3,6 @@ app: jetbrains
 -
 settings():
 	key_wait = 15
-	user.paste_to_insert_threshold = 10
 
 please [<user.text>] [over]:
 	key("cmd-shift-a")
