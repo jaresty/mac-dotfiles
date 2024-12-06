@@ -41,10 +41,10 @@ alter stepper:
 	key(shift-enter)
 
 crumb step: key("cmd-up")
-file forge: 
+file forge:
 	key("cmd-up f5")
 file punch:
-  key("cmd-up delete")
+	key("cmd-up delete")
 
 split step: key("alt-tab")
 
@@ -56,16 +56,16 @@ bisnatchest:
 wax: user.wax()
 wane: user.wane()
 
-steppest: edit.()
-stepperest: key('cmd-alt-]')
+onsteppest: edit.file_end()
+onstepperest: key('cmd-alt-]')
 restepperest: key('cmd-alt-[')
 resteppest: edit.file_start()
-snatcherest: key('cmd-alt-shift-]')
-snatchest: edit.extend_file_end()
+onsnatcherest: key('cmd-alt-shift-]')
+onsnatchest: edit.extend_file_end()
 resnatcherest: key('cmd-alt-shift-[')
 resnatchest: edit.extend_file_start()
-puncherest: key('cmd-alt-shift-] delete cmd-alt-l')
-punchest:
+onpuncherest: key('cmd-alt-shift-] delete cmd-alt-l')
+onpunchest:
 	edit.extend_file_end()
 	edit.delete()
 repuncherest: key('cmd-alt-shift-[ delete cmd-alt-l')
@@ -144,7 +144,7 @@ wax last <user.text> [over]:
 split forge:
 	user.idea("action SplitVertically")
 
-pusher:
+onpusher:
 	key(enter)
 	edit.up()
 	edit.line_end()

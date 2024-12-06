@@ -1,10 +1,10 @@
 #movement to the right
-steppy: edit.right()
-step: edit.word_right()
-stepper: edit.line_end()
-stepperest: edit.paragraph_end()
-steppest: edit.file_end()
-stepmid: user.line_middle()
+onsteppy: edit.right()
+onstep: edit.word_right()
+onstepper: edit.line_end()
+onstepperest: edit.paragraph_end()
+onsteppest: edit.file_end()
+onstepmid: user.line_middle()
 
 #movement to the left
 resteppy: edit.left()
@@ -77,7 +77,7 @@ size reset: edit.zoom_reset()
 fold step: user.fold_more()
 fold restep: user.fold_less()
 
-pan: user.mouse_scroll_right()
+onpan: user.mouse_scroll_right()
 repan: user.mouse_scroll_left()
 fly pan: user.mouse_scroll_up()
 dip pan: user.mouse_scroll_down()
@@ -95,13 +95,13 @@ dip repanner:
 	user.mouse_scroll_left()
 
 #deleting forward
-punchy: key("delete")
-punch: key("alt-delete")
-puncher: key("ctrl-k")
-puncherest:
+onpunchy: key("delete")
+onpunch: key("alt-delete")
+onpuncher: key("ctrl-k")
+onpuncherest:
 	edit.extend_paragraph_end()
 	key("delete")
-punchest:
+onpunchest:
 	edit.extend_file_end()
 	edit.delete()
 
@@ -157,13 +157,13 @@ dip bipuncher:
 	edit.delete_line()
 
 #selecting forward
-snatchy: key("shift-right")
-snatch: key("alt-shift-right")
-snatchoid: key("alt-shift-right shift-right")
-snatcher: key("cmd-shift-right")
-snatcherest: edit.extend_paragraph_end()
-snatchest: edit.extend_file_end()
-snatchize: user.set_select_direction_right()
+onsnatchy: key("shift-right")
+onsnatch: key("alt-shift-right")
+onsnatchoid: key("alt-shift-right shift-right")
+onsnatcher: key("cmd-shift-right")
+onsnatcherest: edit.extend_paragraph_end()
+onsnatchest: edit.extend_file_end()
+onsnatchize: user.set_select_direction_right()
 
 #selecting backward
 resnatchy: key("shift-left")
@@ -181,7 +181,7 @@ bisnatchest: edit.select_all()
 
 lift:
 	edit.cut()
-lifter:
+onlifter:
 	edit.extend_line_end()
 	edit.cut()
 bilifter:
@@ -214,7 +214,7 @@ dip bilifter:
 
 place:
 	edit.paste()
-placer:
+onplacer:
 	edit.extend_line_end()
 	edit.paste()
 replacer:
@@ -235,7 +235,7 @@ dip place:
 
 trace:
 	edit.copy()
-tracer:
+ontracer:
 	edit.extend_line_end()
 	edit.copy()
 bitracer:
@@ -269,7 +269,7 @@ dip bitracer:
 forge:
 	edit.selection_clone()
 
-forger:
+onforger:
 	edit.extend_line_end()
 	edit.selection_clone()
 reforger:
@@ -285,10 +285,10 @@ fly dodge:
 dip dodge:
 	edit.line_swap_down()
 
-push:
+onpush:
 	insert(" ")
 	edit.left()
-pusher:
+onpusher:
 	key(shift-enter)
 	edit.up()
 	edit.line_end()
