@@ -4,7 +4,8 @@ onstep: edit.word_right()
 onstepper: edit.line_end()
 onstepperest: edit.paragraph_end()
 onsteppest: edit.file_end()
-onstepmid: user.line_middle()
+
+midstep: user.line_middle()
 
 #movement to the left
 resteppy: edit.left()
@@ -15,7 +16,7 @@ resteppest: edit.file_start()
 
 #moving up and down
 fly step: edit.up()
-fly stepmid:
+fly midstep:
 	edit.up()
 	user.line_middle()
 fly stepper:
@@ -37,7 +38,7 @@ fly bisnatcher:
 	edit.extend_line_start()
 
 dip step: edit.down()
-dip stepmid:
+dip midstep:
 	edit.down()
 	user.line_middle()
 dip stepper:
