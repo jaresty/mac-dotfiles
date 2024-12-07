@@ -394,3 +394,9 @@ pleet:
 	user.complete()
 repleet:
 	user.complete_backward()
+
+numeric step:
+	user.numeric_increment()
+
+numeric restep:
+	user.numeric_decrement()

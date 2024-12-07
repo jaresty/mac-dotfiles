@@ -160,6 +160,20 @@ def flip_direction():
 
 @mod.action_class
 class Actions:
+    def numeric_increment():
+        """Increment the adjacent number"""
+        actions.edit.select_word()
+        selected_text = actions.edit.selected_text()
+        number_to_insert = int(selected_text) + 1
+        actions.auto_insert(str(number_to_insert))
+
+    def numeric_decrement():
+        """Decrement the adjacent number"""
+        actions.edit.select_word()
+        selected_text = actions.edit.selected_text()
+        number_to_insert = int(selected_text) - 1
+        actions.auto_insert(str(number_to_insert))
+
     def select_paste():
         """Select last paste"""
         lines = actions.clip.text().split("\n")
