@@ -252,3 +252,21 @@ class UserActions:
     def noise_trigger_pop():
         if actions.speech.enabled():
             move_backing()
+
+
+@ctx.action_class("edit")
+class LineSwapActions:
+    def line_swap_up():
+        actions.edit.select_line()
+        current_line_text = actions.edit.selected_text().replace("\n", "")
+        actions.edit.delete_line()
+        actions.edit.line_insert_up()
+        actions.insert(current_line_text)
+
+    def line_swap_down():
+        actions.edit.select_line()
+        current_line_text = actions.edit.selected_text()
+        actions.edit.delete_line()
+        actions.key("delete")
+        actions.edit.line_insert_down()
+        actions.insert(current_line_text)
