@@ -198,7 +198,3 @@ iora: "io"
 friarbird: "ia"
 pigeon: "eo"
 euphonia: "eu"
-
-# Plurals
-nests: "ns"
-wrens: "rs"
