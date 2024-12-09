@@ -304,10 +304,30 @@ biforger:
 	edit.select_line()
 	edit.selection_clone()
 
+fly forge:
+	dodge_word = edit.selected_text()
+	edit.line_insert_up()
+	insert(dodge_word)
+
+dip forge:
+	dodge_word = edit.selected_text()
+	edit.line_insert_down()
+	insert(dodge_word)
+
 fly dodge:
+	dodge_word = edit.selected_text()
+	edit.delete()
+	edit.line_insert_up()
+	insert(dodge_word)
+fly dodger:
 	edit.line_swap_up()
 
 dip dodge:
+	dodge_word = edit.selected_text()
+	edit.delete()
+	edit.line_insert_down()
+	insert(dodge_word)
+dip dodger:
 	edit.line_swap_down()
 
 onpush:
