@@ -64,6 +64,7 @@ MOVEMENT_TYPE: dict[str, tuple[callable, callable, int]] = {
     "replay": (actions.edit.redo, actions.edit.undo, 4),
     "bouncing": (actions.core.repeat_command, actions.core.repeat_command, 4),
     "hunt stepping": (actions.edit.find_next, actions.edit.find_previous, 4),
+    "hunt restepping": (actions.edit.find_previous, actions.edit.find_next, 4),
     "prob stepping": (actions.user.problem_next, actions.user.problem_last, 4),
     "prob restepping": (actions.user.problem_last, actions.user.problem_next, 4),
     "pleeting": (actions.user.complete, actions.user.complete_backward, 4),
