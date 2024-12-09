@@ -109,8 +109,8 @@ run that: key('ctrl-r')
 run last: key('ctrl-shift-r')
 
 reference: user.idea("action FindUsages")
-ref next: key(cmd-alt-down)
-ref last: key(cmd-alt-up)
+refer step: key(cmd-alt-down)
+refer restep: key(cmd-alt-up)
 
 narrow:
 	key(cmd-shift--)

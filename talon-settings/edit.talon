@@ -413,9 +413,9 @@ toss <user.keys>:
 	key(keys)
 	edit.right()
 
-chase step:
+trail step:
 	user.next_reference()
-chase restep:
+trail restep:
 	user.last_reference()
 
 pleet:
