@@ -299,6 +299,7 @@ onforger:
 	forge_text = edit.selected_text()
 	edit.line_insert_down()
 	insert(forge_text)
+	edit.line_start()
 reforger:
 	edit.extend_line_start()
 	forge_text = edit.selected_text()
