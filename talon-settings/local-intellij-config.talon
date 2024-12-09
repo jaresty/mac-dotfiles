@@ -10,13 +10,13 @@ please [<user.text>] [over]:
 	insert(user.text or "")
 
 # File Commands
-file step [<user.text>] [{user.file_extension}] [over]:
+file peek [<user.text>] [{user.file_extension}] [over]:
 	key("cmd-shift-o")
 	sleep(400ms)
 	insert(text or "")
 	insert(file_extension or "")
 	sleep(300ms)
-file stepper <user.text> [{user.file_extension}] [over]:
+file peekest <user.text> [{user.file_extension}] [over]:
 	user.idea("action RecentFiles")
 	sleep(400ms)
 	insert(text or "")
