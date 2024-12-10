@@ -62,11 +62,11 @@ symbol peek [<user.text>]:
   user.vscode("workbench.action.gotoSymbol")
   sleep(50ms)
   insert(text or "")
-^symbol peeker [<user.text>]:
+^symbol peekest [<user.text>]:
   user.vscode("workbench.action.showAllSymbols")
   sleep(50ms)
   insert(text or "")
-^text peek [<user.text>]$:
+^text peekest [<user.text>]$:
   user.vscode("workbench.action.quickTextSearch")
   sleep(50ms)
   insert(text or "")

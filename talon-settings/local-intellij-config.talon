@@ -81,12 +81,12 @@ bipunchest:
 	edit.select_all()
 	edit.delete()
 
-^text peek [<user.text>] [over]:
+^text peekest [<user.text>] [over]:
 	key(cmd-shift-e)
 	sleep(400ms)
 	insert(user.text or "")
 
-^symbol peeker [<user.text>] [over]:
+^symbol peekest [<user.text>] [over]:
 	user.idea("action GotoSymbol")
 	insert(text)
 	key("enter")
