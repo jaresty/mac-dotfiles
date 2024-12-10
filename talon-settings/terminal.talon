@@ -12,6 +12,7 @@ mob done: "mob done\n"
 siginter: key(ctrl-c)
 sigend: key(ctrl-d)
 editor: key(alt-e)
+onpunch: key("alt-d")
 file peek [<user.text>] [over]$:
 	key(ctrl-t)
 	sleep(60ms)
