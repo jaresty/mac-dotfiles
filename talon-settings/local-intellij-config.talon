@@ -85,8 +85,6 @@ bipunchest:
 	user.idea("action FindInPath")
 	insert(user.text or "")
 
-hunt step: user.idea("action ActivateFindToolWindow")
-
 ^symbol peekest [<user.text>] [over]:
 	user.idea("action GotoSymbol")
 	insert(text)

@@ -71,8 +71,6 @@ symbol peek [<user.text>]:
   sleep(50ms)
   insert(text or "")
 
-hunt step: user.find_everywhere("")
-
 deaf peek: user.vscode("editor.action.peekDefinition")
 jest peek: user.vscode("toggleSuggestionDetails")
 type peek: user.vscode("editor.action.peekTypeDefinition")
