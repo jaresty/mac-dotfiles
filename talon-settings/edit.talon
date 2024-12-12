@@ -257,6 +257,9 @@ retrace:
 ontracer:
 	edit.extend_line_end()
 	edit.copy()
+retracer:
+	edit.extend_line_start()
+	edit.copy()
 bitracer:
 	edit.select_line()
 	edit.copy()
