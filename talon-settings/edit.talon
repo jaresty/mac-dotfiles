@@ -75,8 +75,8 @@ size step: edit.zoom_in()
 size restep: edit.zoom_out()
 size reset: edit.zoom_reset()
 
-fold step: user.fold_more()
-fold restep: user.fold_less()
+folding step: user.fold_more()
+folding restep: user.fold_less()
 
 onpan: user.mouse_scroll_right()
 repan: user.mouse_scroll_left()
