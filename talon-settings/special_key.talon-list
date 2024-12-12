@@ -10,3 +10,4 @@ sky: ' '
 swing: tab
 upper: pageup
 downer: pagedown
+backspace: backspace
