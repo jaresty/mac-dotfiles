@@ -71,6 +71,9 @@ prob restep: user.problem_last()
 
 <user.movement_type>: user.start_moving(movement_type)
 perch: user.stop_moving()
+
+<user.selection_action>: user.selection_action(selection_action)
+
 size step: edit.zoom_in()
 size restep: edit.zoom_out()
 size reset: edit.zoom_reset()
