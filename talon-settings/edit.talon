@@ -411,10 +411,14 @@ tugger:
 	edit.line_end()
 	key(delete)
 
-toss <user.keys>:
+replant <user.keys>:
 	edit.left()
 	key(keys)
 	edit.right()
+
+onplant <user.keys>:
+	key(keys)
+	edit.left()
 
 trail step:
 	user.next_reference()
