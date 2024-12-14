@@ -407,10 +407,6 @@ fly push:
 dip push:
 	edit.line_insert_down()
 
-tugger:
-	edit.line_end()
-	key(delete)
-
 replant <user.keys>:
 	edit.left()
 	key(keys)
