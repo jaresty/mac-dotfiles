@@ -222,7 +222,7 @@ dip bilifter:
 	edit.extend_line_end()
 	edit.cut()
 
-clip peek: key(cmd-alt-ctrl-shift-v)
+clip tap: key(cmd-alt-ctrl-shift-v)
 place:
 	edit.paste()
 onplace:

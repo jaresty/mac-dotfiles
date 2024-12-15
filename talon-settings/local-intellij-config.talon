@@ -97,10 +97,12 @@ symbol peek [<user.text>] [over]:
 
 jest: user.idea("action CodeCompletion")
 
-quack step:
+context tap: key("alt-enter")
+quack tap: user.idea("action ShowIntentionActions")
+quack ontap:
 	user.idea("action GotoNextError")
 	user.idea("action ShowIntentionActions")
-quack restep:
+quack retap:
 	user.idea("action GotoPreviousError")
 	user.idea("action ShowIntentionActions")
 
@@ -118,7 +120,6 @@ narrow:
 
 pop param: user.idea("action ParameterInfo")
 
-quack: user.idea("action ShowIntentionActions")
 quack <number> <user.text> [over]: user.idea("goto {number} 0,find next {text},action ShowIntentionActions")
 quack next <user.text> [over]: user.idea("find next {text},action ShowIntentionActions")
 quack last <user.text> [over]: user.idea("find prev {text},action ShowIntentionActions")
