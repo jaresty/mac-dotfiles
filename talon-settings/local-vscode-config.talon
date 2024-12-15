@@ -57,8 +57,8 @@ quack retap:
 change step: key(alt-f5)
 change restep: key(shift-alt-f5)
 
-ref next: key(f4)
-ref last: key(shift-f4)
+refer step: key(f4)
+refer restep: key(shift-f4)
 
 # Symbol search
 symbol peek [<user.text>]:
