@@ -44,10 +44,13 @@ wax <user.cursorless_target>:
 wax: user.wax()
 wane: user.wane()
 
-quack step:
+context tap: user.vscode("editor.action.showContextMenu")
+
+quack tap: user.vscode("editor.action.quickFix")
+quack ontap:
   user.vscode("editor.action.marker.nextInFiles")
   user.vscode("editor.action.quickFix")
-quack restep:
+quack retap:
   user.vscode("editor.action.marker.prevInFiles")
   user.vscode("editor.action.quickFix")
 
