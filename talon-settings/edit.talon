@@ -249,6 +249,36 @@ dip place:
 	edit.line_insert_down()
 	edit.paste()
 
+trade:
+	selected_text = edit.selected_text()
+	edit.paste()
+	sleep(50ms)
+	clip.set_text(selected_text)
+ontrade:
+	edit.extend_word_right()
+	selected_text = edit.selected_text()
+	edit.paste()
+	sleep(50ms)
+	clip.set_text(selected_text)
+retrade:
+	edit.extend_word_left()
+	selected_text = edit.selected_text()
+	edit.paste()
+	sleep(50ms)
+	clip.set_text(selected_text)
+ontrader:
+	edit.extend_line_end()
+	selected_text = edit.selected_text()
+	edit.paste()
+	sleep(50ms)
+	clip.set_text(selected_text)
+retrader:
+	edit.extend_line_start()
+	selected_text = edit.selected_text()
+	edit.paste()
+	sleep(50ms)
+	clip.set_text(selected_text)
+
 trace:
 	edit.copy()
 ontrace:
