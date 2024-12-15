@@ -1,0 +1,7 @@
+list: user.reformatter
+language: en
+-
+
+cap: CAPITALIZE
+list: COMMA_SEPARATED
+raw: REMOVE_FORMATTING
