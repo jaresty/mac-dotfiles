@@ -118,29 +118,11 @@ narrow:
 	key(cmd-=)
 	key(cmd-alt-=)
 
-pop param: user.idea("action ParameterInfo")
-
-quack <number> <user.text> [over]: user.idea("goto {number} 0,find next {text},action ShowIntentionActions")
-quack next <user.text> [over]: user.idea("find next {text},action ShowIntentionActions")
-quack last <user.text> [over]: user.idea("find prev {text},action ShowIntentionActions")
+param peek: user.idea("action ParameterInfo")
 
 change step: key(ctrl-shift-alt-down)
 change restep: key(ctrl-shift-alt-up)
 
-spiffy:
-	user.idea("action SplitVertically,action GotoDeclaration")
-spiffy <number> <user.text> [over]: user.idea("action SplitVertically,goto {number} 0,find next {text},action GotoDeclaration")
-spiffy next <user.text> [over]: user.idea("action SplitVertically,find next {text},action GotoDeclaration")
-
-wax <number> <user.text> [over]:
-	user.idea("goto {number} 0,find next {text}")
-	key("alt-up")
-wax next <user.text> [over]:
-	user.idea("find next {text}")
-	key("alt-up")
-wax last <user.text> [over]:
-	user.idea("find last {text}")
-	key("alt-up")
 split forge:
 	user.idea("action SplitVertically")
 
