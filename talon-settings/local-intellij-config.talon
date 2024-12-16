@@ -95,7 +95,7 @@ symbol peek [<user.text>] [over]:
 	sleep(400ms)
 	insert(user.text or "")
 
-jest: user.idea("action CodeCompletion")
+jest tap: user.idea("action CodeCompletion")
 
 context tap: key("alt-enter")
 quack tap: user.idea("action ShowIntentionActions")
