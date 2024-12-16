@@ -455,9 +455,9 @@ trail step:
 trail restep:
 	user.last_reference()
 
-pleet:
+pleet tap:
 	user.complete()
-repleet:
+pleet retap:
 	user.complete_backward()
 
 numeric step:
