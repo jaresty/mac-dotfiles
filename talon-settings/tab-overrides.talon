@@ -1,8 +1,8 @@
 tag: user.tabs
 -
 # tab (open | new): app.tab_open()
-# tab (last | previous): app.tab_previous()
-# tab next: app.tab_next()
+tab restep: app.tab_previous()
+tab step: app.tab_next()
 tab punch: user.tab_close_wrapper()
 tab repunch: user.tab_reopen()
 # tab (reopen | restore): app.tab_reopen()
