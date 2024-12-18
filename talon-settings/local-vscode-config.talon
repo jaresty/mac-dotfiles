@@ -46,12 +46,12 @@ wane: user.wane()
 
 context tap: user.vscode("editor.action.showContextMenu")
 
-quack tap: user.vscode("editor.action.quickFix")
-quack ontap:
-  user.vscode("editor.action.marker.nextInFiles")
+prob tap: user.vscode("editor.action.quickFix")
+prob ontap:
+  user.problem_next()
   user.vscode("editor.action.quickFix")
-quack retap:
-  user.vscode("editor.action.marker.prevInFiles")
+prob retap:
+  user.problem_last()
   user.vscode("editor.action.quickFix")
 
 change step: key(alt-f5)

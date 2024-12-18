@@ -98,12 +98,12 @@ symbol peek [<user.text>] [over]:
 jest tap: user.idea("action CodeCompletion")
 
 context tap: key("alt-enter")
-quack tap: user.idea("action ShowIntentionActions")
-quack ontap:
-	user.idea("action GotoNextError")
+prob tap: user.idea("action ShowIntentionActions")
+prob ontap:
+	user.problem_next()
 	user.idea("action ShowIntentionActions")
-quack retap:
-	user.idea("action GotoPreviousError")
+prob retap:
+	user.problem_last()
 	user.idea("action ShowIntentionActions")
 
 run that: key('ctrl-r')
