@@ -29,3 +29,5 @@ flag: " --"
 yes: key(y enter)
 no: key(n enter)
 git autocommit: 'git commit -m "$(git diff --staged | mods "summarize this as a conventional commit with real emoji")"'
+
+git {user.git_subcommand}: "git {git_subcommand} "
