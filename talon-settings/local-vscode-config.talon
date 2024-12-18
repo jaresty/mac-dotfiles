@@ -57,6 +57,9 @@ quack retap:
 change step: key(alt-f5)
 change restep: key(shift-alt-f5)
 
+failure step: user.vscode("testing.goToNextMessage")
+failure restep: user.vscode("testing.goToPreviousMessage")
+
 refer step: key(f4)
 refer restep: key(shift-f4)
 
