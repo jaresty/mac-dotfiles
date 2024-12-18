@@ -97,7 +97,6 @@ symbol peek [<user.text>] [over]:
 
 jest tap: user.idea("action CodeCompletion")
 
-context tap: key("alt-enter")
 prob tap: user.idea("action ShowIntentionActions")
 prob ontap:
 	user.problem_next()

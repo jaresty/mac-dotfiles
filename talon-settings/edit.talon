@@ -459,7 +459,7 @@ pleet tap:
 	user.complete()
 pleet retap:
 	user.complete_backward()
-
+context tap: key("ctrl-enter")
 numeric step:
 	user.numeric_increment()
 
