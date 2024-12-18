@@ -450,9 +450,9 @@ onplant <user.keys>:
 	key(keys)
 	edit.left()
 
-trail step:
+trail peek:
 	user.next_reference()
-trail restep:
+trail repeek:
 	user.last_reference()
 
 pleet tap:
