@@ -11,3 +11,6 @@ class Actions:
 
     def fold_less():
         """Decrease the level of folding"""
+
+    def unfold_recursively():
+        """Unfold this all the way"""

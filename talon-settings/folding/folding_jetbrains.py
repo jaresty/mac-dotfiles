@@ -16,3 +16,6 @@ class UserActions:
 
     def fold_less():
         actions.user.idea("action ExpandRegion")
+
+    def unfold_recursively():
+        actions.user.idea("action ExpandRegion")
