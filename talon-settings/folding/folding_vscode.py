@@ -16,3 +16,6 @@ class UserActions:
 
     def fold_less():
         actions.user.vscode("editor.unfold")
+
+    def unfold_recursively():
+        actions.user.vscode("editor.unfoldRecursively")

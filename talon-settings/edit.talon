@@ -80,6 +80,7 @@ size reset: edit.zoom_reset()
 
 folding step: user.fold_more()
 folding restep: user.fold_less()
+folding resteppest: user.unfold_recursively()
 
 onpan: user.mouse_scroll_right()
 repan: user.mouse_scroll_left()
