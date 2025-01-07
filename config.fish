@@ -7,6 +7,7 @@ if status is-interactive
     export PATH="$HOME/.tfenv/bin:$(brew --prefix)/bin:$HOME/.local/bin:$HOME/mac-dotfiles/bin:$HOME/.config/emacs/bin:$(brew --prefix)/opt/grep/libexec/gnubin:$HOME/go/bin:$PATH"
     export KUBE_CONFIG_PATH=~/.kube/config
     export TERM=xterm-256color-italic
+    export SHELL=/opt/homebrew/bin/fish
     export LDFLAGS="-L/opt/homebrew/opt/capstone/lib"
     export CPPFLAGS="-I/opt/homebrew/opt/capstone/include"
 
