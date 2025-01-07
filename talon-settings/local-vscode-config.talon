@@ -124,6 +124,13 @@ testing stop: user.vscode("testing.stopContinuousRun")
 
 compare clip: user.vscode("extension.partialDiff.diffSelectionWithClipboard")
 
+debug step: user.vscode("workbench.action.debug.stepOver")
+debug dip step: user.vscode("workbench.action.debug.stepInto")
+debug fly step: user.vscode("workbench.action.debug.stepOut")
+
+mark step: user.vscode("bookmarks.jumpToNext")
+mark restep: user.vscode("bookmarks.jumpToPrevious")
+
 <user.formatters> form <user.cursorless_target>:
   user.cursorless_reformat(cursorless_target, formatters)
 
