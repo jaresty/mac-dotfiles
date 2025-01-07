@@ -114,6 +114,9 @@ update: pull setup
 ~/.talon/user/cursorless-talon: ~/.talon/user
 	gh repo clone cursorless-dev/cursorless-talon ~/.talon/user/cursorless-talon || (cd ~/.talon/user/cursorless-talon && git pull)
 
+~/.talon/user/clippy-talon: ~/.talon/user
+	gh repo clone AndreasArvidsson/clippy-talon ~/.talon/user/clippy-talon || (cd ~/.talon/user/clippy-talon && git pull)
+
 ~/.talon/user/talon-filetree-commands: ~/.talon/user
 	gh repo clone paul-schaaf/talon-filetree-commands ~/.talon/user/talon-filetree-commands || (cd ~/.talon/user/talon-filetree-commands && git pull)
 
