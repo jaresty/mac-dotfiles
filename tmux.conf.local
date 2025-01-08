@@ -1,3 +1,4 @@
 set -g default-terminal "xterm-256color-italic"
 set-option -g set-titles on
 set -g set-titles-string "tmux - #T"
+set-option -g default-shell /opt/homebrew/bin/fish
