@@ -466,3 +466,11 @@ numeric step:
 
 numeric restep:
 	user.numeric_decrement()
+
+throw <user.number_string>:
+	insert(user.number_string)
+	key(enter)
+
+throw <user.letter>:
+	insert(letter)
+	key(enter)
