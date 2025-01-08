@@ -15,6 +15,10 @@ class MovementConfig:
     reverse_movement_type: callable
     repeat_speed: int
     current_step_size: int
+    current_iteration_count: int = 0
+
+
+ACCELERATION_MODIFIER = 10
 
 
 continuous_movement_job: Optional[MovementConfig] = None
@@ -34,17 +38,6 @@ mod.list(
 MOVEMENT_SPEEDS = ["25ms", "50ms", "100ms", "200ms", "400ms", "1s"]
 REPEAT_SPEED = {"hyper": 1, "fast": 2, "mid": 2, "slow": 4, "lethargic": 5}
 ctx.lists["user.repeat_speed"] = REPEAT_SPEED.keys()
-
-
-def back_off_move():
-    global continuous_movement_job
-    if not continuous_movement_job:
-        return
-    for _ in range(continuous_movement_job.current_step_size):
-        continuous_movement_job.movement_type()
-    continuous_movement_job.current_step_size = math.ceil(
-        continuous_movement_job.current_step_size / 2
-    )
 
 
 MOVEMENT_TYPE: dict[str, tuple[callable, callable, int]] = {
@@ -120,15 +113,36 @@ def repeat_speed(m) -> int:
     return REPEAT_SPEED[m.repeat_speed]
 
 
+def back_off_move():
+    global continuous_movement_job
+    if not continuous_movement_job:
+        return
+    for _ in range(continuous_movement_job.current_step_size):
+        continuous_movement_job.movement_type()
+    continuous_movement_job.current_step_size = math.ceil(
+        continuous_movement_job.current_step_size / 2
+    )
+    continuous_movement_job.current_iteration_count += 1
+    if (
+        continuous_movement_job.current_iteration_count - 1 // ACCELERATION_MODIFIER
+        != continuous_movement_job.current_iteration_count // ACCELERATION_MODIFIER
+    ):
+        continuous_move()
+
+
 def continuous_move():
     global continuous_movement_job, current_job
     if continuous_movement_job is None:
         return
     stop_moving()
 
-    current_job = cron.interval(
-        MOVEMENT_SPEEDS[continuous_movement_job.repeat_speed], back_off_move
+    movement_speed_index = continuous_movement_job.repeat_speed
+    movement_speed_index = max(
+        0,
+        movement_speed_index
+        - (continuous_movement_job.current_iteration_count // ACCELERATION_MODIFIER),
     )
+    current_job = cron.interval(MOVEMENT_SPEEDS[movement_speed_index], back_off_move)
 
 
 def move_faster():
@@ -158,6 +172,12 @@ def stop_moving():
     global current_job
     if current_job is not None:
         cron.cancel(current_job)
+
+
+def reset_speed():
+    global continuous_movement_job
+    if continuous_movement_job is not None:
+        continuous_movement_job.current_iteration_count = 0
 
 
 def flip_direction():
@@ -260,6 +280,7 @@ class UserActions:
         if active and actions.speech.enabled():
             continuous_move()
         else:
+            reset_speed()
             stop_moving()
 
     def noise_trigger_pop():
