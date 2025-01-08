@@ -115,7 +115,7 @@ def repeat_speed(m) -> int:
 
 def back_off_move():
     global continuous_movement_job
-    if not continuous_movement_job:
+    if continuous_movement_job is None:
         return
     for _ in range(continuous_movement_job.current_step_size):
         continuous_movement_job.movement_type()
