@@ -42,44 +42,60 @@ ctx.lists["user.repeat_speed"] = REPEAT_SPEED.keys()
 
 
 MOVEMENT_TYPE: dict[str, tuple[callable, callable, int]] = {
-    "fly stepstream": (actions.edit.up, actions.edit.down, 2),
-    "dip stepstream": (actions.edit.down, actions.edit.up, 2),
-    "onstepstream": (actions.edit.right, actions.edit.left, 1),
-    "restepstream": (actions.edit.left, actions.edit.right, 1),
-    "fly snatchstream": (actions.edit.extend_line_up, actions.edit.extend_line_down, 3),
-    "dip snatchstream": (actions.edit.extend_line_down, actions.edit.extend_line_up, 3),
-    "onsnatchstream": (actions.edit.extend_right, actions.edit.extend_left, 1),
-    "resnatchstream": (actions.edit.extend_left, actions.edit.extend_right, 1),
-    "waxstream": (actions.user.wax, actions.user.wane, 4),
-    "wanestream": (actions.user.wane, actions.user.wax, 4),
-    "size stepstream": (actions.edit.zoom_in, actions.edit.zoom_out, 5),
-    "size restepstream": (actions.edit.zoom_out, actions.edit.zoom_in, 5),
-    "rewind": (actions.edit.undo, actions.edit.redo, 4),
-    "replay": (actions.edit.redo, actions.edit.undo, 4),
-    "bouncestream": (actions.core.repeat_command, actions.core.repeat_command, 4),
-    "hunt stepstream": (actions.edit.find_next, actions.edit.find_previous, 4),
-    "hunt restepstream": (actions.edit.find_previous, actions.edit.find_next, 4),
-    "prob stepstream": (actions.user.problem_next, actions.user.problem_last, 4),
-    "prob restepstream": (actions.user.problem_last, actions.user.problem_next, 4),
-    "pleetstream": (actions.user.complete, actions.user.complete_backward, 4),
-    "fold stepstream": (actions.user.fold_more, actions.user.fold_less, 4),
-    "fold restepstream": (actions.user.fold_less, actions.user.fold_more, 4),
-    "navi restepstream": (actions.user.go_back, actions.user.go_forward, 4),
-    "navi stepstream": (actions.user.go_forward, actions.user.go_back, 4),
-    "chase stepstream": (actions.user.next_reference, actions.user.last_reference, 4),
-    "chase restepstream": (
+    "stream fly step": (actions.edit.up, actions.edit.down, 2),
+    "stream dip step": (actions.edit.down, actions.edit.up, 2),
+    "stream onstep": (actions.edit.right, actions.edit.left, 1),
+    "stream restep": (actions.edit.left, actions.edit.right, 1),
+    "stream fly snatch": (
+        actions.edit.extend_line_up,
+        actions.edit.extend_line_down,
+        3,
+    ),
+    "stream dip snatch": (
+        actions.edit.extend_line_down,
+        actions.edit.extend_line_up,
+        3,
+    ),
+    "stream onsnatch": (actions.edit.extend_right, actions.edit.extend_left, 1),
+    "stream resnatch": (actions.edit.extend_left, actions.edit.extend_right, 1),
+    "stream wax": (actions.user.wax, actions.user.wane, 4),
+    "stream wane": (actions.user.wane, actions.user.wax, 4),
+    "stream size step": (actions.edit.zoom_in, actions.edit.zoom_out, 5),
+    "stream size restep": (actions.edit.zoom_out, actions.edit.zoom_in, 5),
+    "stream nope": (actions.edit.undo, actions.edit.redo, 4),
+    "stream redo that": (actions.edit.redo, actions.edit.undo, 4),
+    "stream bounce": (actions.core.repeat_command, actions.core.repeat_command, 4),
+    "stream hunt step": (actions.edit.find_next, actions.edit.find_previous, 4),
+    "stream hunt restep": (actions.edit.find_previous, actions.edit.find_next, 4),
+    "stream prob step": (actions.user.problem_next, actions.user.problem_last, 4),
+    "stream prob restep": (actions.user.problem_last, actions.user.problem_next, 4),
+    "stream pleet": (actions.user.complete, actions.user.complete_backward, 4),
+    "stream fold step": (actions.user.fold_more, actions.user.fold_less, 4),
+    "stream fold restep": (actions.user.fold_less, actions.user.fold_more, 4),
+    "stream navi restep": (actions.user.go_back, actions.user.go_forward, 4),
+    "stream navi step": (actions.user.go_forward, actions.user.go_back, 4),
+    "stream chase step": (actions.user.next_reference, actions.user.last_reference, 4),
+    "stream chase restep": (
         actions.user.last_reference,
         actions.user.next_reference,
         4,
     ),
-    "fly pannstream": (actions.user.mouse_scroll_up, actions.user.mouse_scroll_down, 2),
-    "dip pannstream": (actions.user.mouse_scroll_down, actions.user.mouse_scroll_up, 2),
-    "onpannstream": (
+    "stream fly pan": (
+        actions.user.mouse_scroll_up,
+        actions.user.mouse_scroll_down,
+        2,
+    ),
+    "stream dip pan": (
+        actions.user.mouse_scroll_down,
+        actions.user.mouse_scroll_up,
+        2,
+    ),
+    "stream onpan": (
         actions.user.mouse_scroll_right,
         actions.user.mouse_scroll_left,
         2,
     ),
-    "repannstream": (
+    "stream repan": (
         actions.user.mouse_scroll_left,
         actions.user.mouse_scroll_right,
         2,
@@ -117,7 +133,9 @@ def repeat_speed(m) -> int:
 def back_off_move():
     global continuous_movement_job
     global move_mutex
-    if continuous_movement_job is None or move_mutex:
+    if continuous_movement_job is None:
+        return
+    if move_mutex:
         return
     move_mutex = True
     for _ in range(continuous_movement_job.current_step_size):
