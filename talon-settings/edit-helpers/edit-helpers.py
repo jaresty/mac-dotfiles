@@ -7,6 +7,7 @@ ctx = Context()
 mod = Module()
 
 current_job = None
+move_mutex = False
 
 
 @dataclass
@@ -115,8 +116,10 @@ def repeat_speed(m) -> int:
 
 def back_off_move():
     global continuous_movement_job
-    if continuous_movement_job is None:
+    global move_mutex
+    if continuous_movement_job is None or move_mutex:
         return
+    move_mutex = True
     for _ in range(continuous_movement_job.current_step_size):
         continuous_movement_job.movement_type()
     continuous_movement_job.current_step_size = math.ceil(
@@ -128,6 +131,7 @@ def back_off_move():
         != continuous_movement_job.current_iteration_count // ACCELERATION_MODIFIER
     ):
         continuous_move()
+    move_mutex = False
 
 
 def continuous_move():
