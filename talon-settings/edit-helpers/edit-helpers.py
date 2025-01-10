@@ -1,5 +1,6 @@
 from dataclasses import dataclass
 import math
+import threading
 from typing import Optional
 from talon import Context, Module, actions, cron
 
@@ -7,7 +8,7 @@ ctx = Context()
 mod = Module()
 
 current_job = None
-move_mutex = False
+lock = threading.Lock()
 
 
 @dataclass
@@ -132,24 +133,22 @@ def repeat_speed(m) -> int:
 
 def back_off_move():
     global continuous_movement_job
-    global move_mutex
-    if continuous_movement_job is None:
-        return
-    if move_mutex:
-        return
-    move_mutex = True
-    for _ in range(continuous_movement_job.current_step_size):
-        continuous_movement_job.movement_type()
-    continuous_movement_job.current_step_size = math.ceil(
-        continuous_movement_job.current_step_size / 2
-    )
-    continuous_movement_job.current_iteration_count += 1
-    if (
-        continuous_movement_job.current_iteration_count - 1 // ACCELERATION_MODIFIER
-        != continuous_movement_job.current_iteration_count // ACCELERATION_MODIFIER
-    ):
-        continuous_move()
-    move_mutex = False
+    global lock
+    with lock:
+        if continuous_movement_job is None:
+            return
+
+        for _ in range(continuous_movement_job.current_step_size):
+            continuous_movement_job.movement_type()
+        continuous_movement_job.current_step_size = math.ceil(
+            continuous_movement_job.current_step_size / 2
+        )
+        continuous_movement_job.current_iteration_count += 1
+        if (
+            continuous_movement_job.current_iteration_count - 1 // ACCELERATION_MODIFIER
+            != continuous_movement_job.current_iteration_count // ACCELERATION_MODIFIER
+        ):
+            continuous_move()
 
 
 def continuous_move():
@@ -291,9 +290,11 @@ class Actions:
     def stop_moving():
         """Stop moving continuously"""
         global continuous_movement_job
-        stop_moving()
-        continuous_movement_job = None
-        ctx.tags = []
+        global lock
+        with lock:
+            stop_moving()
+            continuous_movement_job = None
+            ctx.tags = []
 
 
 @ctx.action_class("user")
