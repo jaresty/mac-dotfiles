@@ -205,11 +205,11 @@ def flip_direction():
     global continuous_movement_job
     if continuous_movement_job is None:
         return
-    go_foring = continuous_movement_job.movement_type
+    go_forward = continuous_movement_job.movement_type
     continuous_movement_job.movement_type = (
         continuous_movement_job.reverse_movement_type
     )
-    continuous_movement_job.reverse_movement_type = go_foring
+    continuous_movement_job.reverse_movement_type = go_forward
 
 
 @mod.action_class
