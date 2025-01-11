@@ -298,6 +298,9 @@ retracer:
 bitracer:
 	edit.select_line()
 	edit.copy()
+bitracest:
+	edit.select_all()
+	edit.copy()
 fly trace:
 	edit.extend_up()
 	edit.copy()
