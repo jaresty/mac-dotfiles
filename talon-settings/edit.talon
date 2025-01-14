@@ -198,6 +198,9 @@ onlifter:
 bilifter:
 	edit.select_line()
 	edit.cut()
+biliftest:
+	edit.select_all()
+	edit.cut()
 fly lift:
 	edit.extend_up()
 	edit.cut()
