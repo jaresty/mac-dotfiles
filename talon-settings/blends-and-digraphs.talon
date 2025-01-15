@@ -15,7 +15,7 @@ plover: "pr"
 pipit: "pt"
 quelea: "qu"
 scoter: "sc"
-skua: "sk"
+# skua: "sk" conflicts with 'sky'
 starling: "sl"
 sungem: "sm"
 swan: "sn"
