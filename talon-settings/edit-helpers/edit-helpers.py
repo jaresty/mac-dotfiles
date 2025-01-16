@@ -133,25 +133,24 @@ def repeat_speed(m) -> int:
 
 def back_off_move():
     global continuous_movement_job
-    global lock
-    with lock:
-        if continuous_movement_job is None:
-            return
+    if continuous_movement_job is None:
+        return
 
-        for _ in range(continuous_movement_job.current_step_size):
-            continuous_movement_job.movement_type()
-        continuous_movement_job.current_step_size = math.ceil(
-            continuous_movement_job.current_step_size / 2
-        )
-        continuous_movement_job.current_iteration_count += 1
-        if (
-            continuous_movement_job.current_iteration_count - 1 // ACCELERATION_MODIFIER
-            != continuous_movement_job.current_iteration_count // ACCELERATION_MODIFIER
-        ):
-            continuous_move()
+    for _ in range(continuous_movement_job.current_step_size):
+        continuous_movement_job.movement_type()
+    continuous_movement_job.current_step_size = math.ceil(
+        continuous_movement_job.current_step_size / 2
+    )
+    continuous_movement_job.current_iteration_count += 1
+    if (
+        continuous_movement_job.current_iteration_count - 1 // ACCELERATION_MODIFIER
+        != continuous_movement_job.current_iteration_count // ACCELERATION_MODIFIER
+    ):
+        continuous_move()
 
 
 def continuous_move():
+    global lock
     global continuous_movement_job, current_job
     if continuous_movement_job is None:
         return
@@ -163,7 +162,10 @@ def continuous_move():
         movement_speed_index
         - (continuous_movement_job.current_iteration_count // ACCELERATION_MODIFIER),
     )
-    current_job = cron.interval(MOVEMENT_SPEEDS[movement_speed_index], back_off_move)
+    with lock:
+        current_job = cron.interval(
+            MOVEMENT_SPEEDS[movement_speed_index], back_off_move
+        )
 
 
 def move_faster():
@@ -191,8 +193,10 @@ def move_backing():
 
 def stop_moving():
     global current_job
+    global lock
     if current_job is not None:
-        cron.cancel(current_job)
+        with lock:
+            cron.cancel(current_job)
 
 
 def reset_speed():
