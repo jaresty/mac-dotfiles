@@ -194,7 +194,7 @@ albatrosses: "sses"
 eider: "ei"
 
 # Inconsistent Vowel Digraphs
-guan: "ua"
+# guan: "ua"
 jaeger: "ae"
 iora: "io"
 friarbird: "ia"
