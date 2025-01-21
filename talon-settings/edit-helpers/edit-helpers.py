@@ -37,7 +37,7 @@ mod.list(
     "continuous_movement_type",
     "A continuous movement command",
 )
-MOVEMENT_SPEEDS = ["25ms", "50ms", "100ms", "200ms", "400ms", "1s"]
+MOVEMENT_SPEEDS = ["50ms", "100ms", "200ms", "400ms", "1s"]
 REPEAT_SPEED = {"hyper": 1, "fast": 2, "mid": 2, "slow": 4, "lethargic": 5}
 ctx.lists["user.repeat_speed"] = REPEAT_SPEED.keys()
 
