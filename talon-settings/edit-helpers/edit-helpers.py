@@ -1,6 +1,5 @@
 from dataclasses import dataclass
 import math
-import threading
 from typing import Optional
 from talon import Context, Module, actions, cron
 
@@ -8,7 +7,6 @@ ctx = Context()
 mod = Module()
 
 current_job = None
-lock = threading.Lock()
 
 
 @dataclass
@@ -150,11 +148,9 @@ def back_off_move():
 
 
 def continuous_move():
-    global lock
     global continuous_movement_job, current_job
     if continuous_movement_job is None:
         return
-    stop_moving()
 
     movement_speed_index = continuous_movement_job.repeat_speed
     movement_speed_index = max(
@@ -162,10 +158,8 @@ def continuous_move():
         movement_speed_index
         - (continuous_movement_job.current_iteration_count // ACCELERATION_MODIFIER),
     )
-    with lock:
-        current_job = cron.interval(
-            MOVEMENT_SPEEDS[movement_speed_index], back_off_move
-        )
+    stop_moving()
+    current_job = cron.interval(MOVEMENT_SPEEDS[movement_speed_index], back_off_move)
 
 
 def move_faster():
@@ -193,10 +187,7 @@ def move_backing():
 
 def stop_moving():
     global current_job
-    global lock
-    if current_job is not None:
-        with lock:
-            cron.cancel(current_job)
+    cron.cancel(current_job)
 
 
 def reset_speed():
