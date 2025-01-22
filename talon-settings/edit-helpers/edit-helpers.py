@@ -35,7 +35,8 @@ mod.list(
     "continuous_movement_type",
     "A continuous movement command",
 )
-MOVEMENT_SPEEDS = ["50ms", "100ms", "200ms", "400ms", "1s"]
+# MOVEMENT_SPEEDS = ["50ms", "100ms", "200ms", "400ms", "1s"]
+MOVEMENT_SPEEDS = [1, 2, 4, 8, 16]
 REPEAT_SPEED = {"hyper": 1, "fast": 2, "mid": 2, "slow": 4, "lethargic": 5}
 ctx.lists["user.repeat_speed"] = REPEAT_SPEED.keys()
 
@@ -134,32 +135,29 @@ def back_off_move():
     if continuous_movement_job is None:
         return
 
-    for _ in range(continuous_movement_job.current_step_size):
-        continuous_movement_job.movement_type()
-    continuous_movement_job.current_step_size = math.ceil(
-        continuous_movement_job.current_step_size / 2
-    )
-    continuous_movement_job.current_iteration_count += 1
-    if (
-        continuous_movement_job.current_iteration_count - 1 // ACCELERATION_MODIFIER
-        != continuous_movement_job.current_iteration_count // ACCELERATION_MODIFIER
-    ):
-        continuous_move()
-
-
-def continuous_move():
-    global continuous_movement_job, current_job
-    if continuous_movement_job is None:
-        return
-
     movement_speed_index = continuous_movement_job.repeat_speed
     movement_speed_index = max(
         0,
         movement_speed_index
         - (continuous_movement_job.current_iteration_count // ACCELERATION_MODIFIER),
     )
-    stop_moving()
-    current_job = cron.interval(MOVEMENT_SPEEDS[movement_speed_index], back_off_move)
+    if (
+        continuous_movement_job.current_iteration_count
+        % MOVEMENT_SPEEDS[movement_speed_index]
+        == 0
+    ):
+        for _ in range(continuous_movement_job.current_step_size):
+            continuous_movement_job.movement_type()
+    continuous_movement_job.current_step_size = math.ceil(
+        continuous_movement_job.current_step_size / 2
+    )
+    continuous_movement_job.current_iteration_count += 1
+
+
+def continuous_move():
+    global current_job
+
+    current_job = cron.interval("50ms", back_off_move)
 
 
 def move_faster():
@@ -285,11 +283,9 @@ class Actions:
     def stop_moving():
         """Stop moving continuously"""
         global continuous_movement_job
-        global lock
-        with lock:
-            stop_moving()
-            continuous_movement_job = None
-            ctx.tags = []
+        stop_moving()
+        continuous_movement_job = None
+        ctx.tags = []
 
 
 @ctx.action_class("user")
