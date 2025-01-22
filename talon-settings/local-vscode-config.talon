@@ -110,6 +110,7 @@ file punch:
 alter step: user.vscode("alternate.alternateFile")
 alter stepper: user.vscode("alternate.createAlternateFile")
 alter restep: user.vscode("alternate.alternateFileInSplit")
+alter restepper: user.vscode("alternate.createAlternateFileInSplit")
 
 snip step: user.vscode("jumpToNextSnippetPlaceholder")
 snip restep: user.vscode("jumpToPrevSnippetPlaceholder")
