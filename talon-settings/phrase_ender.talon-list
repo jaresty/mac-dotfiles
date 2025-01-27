@@ -10,3 +10,4 @@ latch: ,
 pivot: ;
 dot: .
 bang: !
+bulls: @
