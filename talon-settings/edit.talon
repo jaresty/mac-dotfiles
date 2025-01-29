@@ -480,3 +480,5 @@ throw <user.number_string>:
 throw <user.letter>:
 	insert(letter)
 	key(enter)
+
+find paste: edit.find("{clip.text()}")
