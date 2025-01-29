@@ -15,7 +15,7 @@ plover: "pr"
 pipit: "pt"
 quelea: "qu"
 scoter: "sc"
-# skua: "sk" conflicts with 'sky'
+siskin: "sk"
 starling: "sl"
 sungem: "sm"
 swan: "sn"
@@ -194,7 +194,7 @@ albatrosses: "sses"
 eider: "ei"
 
 # Inconsistent Vowel Digraphs
-# guan: "ua"
+upupa: "ua"
 jaeger: "ae"
 iora: "io"
 friarbird: "ia"
