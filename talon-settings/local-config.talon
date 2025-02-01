@@ -49,6 +49,11 @@ grab O C R: key("cmd-ctrl-shift-alt-o")
   sleep(50ms)
   insert(text or "")
 
+^window tap [<user.text>]:
+  key("cmd-ctrl-alt-shift-tab")
+  sleep(50ms)
+  insert(text or "")
+
 ^conventional commit:
   key("cmd-space")
   sleep(50ms)
