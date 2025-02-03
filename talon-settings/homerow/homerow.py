@@ -16,6 +16,10 @@ class UserActions:
         actions.key("enter")
         ctx.tags = []
 
+    def homerow_scroll_search():
+        actions.key("cmd-shift-j")
+        ctx.tags = ["user.homerow_search"]
+
     def homerow_righty():
         actions.key("shift-enter")
         ctx.tags = []
@@ -37,6 +41,9 @@ class UserActions:
 class Actions:
     def homerow_search():
         """Search in Homerow"""
+
+    def homerow_scroll_search():
+        """Search scrollbars in Homerow"""
 
     def homerow_click():
         """Click a home row item"""
