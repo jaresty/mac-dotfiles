@@ -36,12 +36,12 @@ grab O C R: key("cmd-ctrl-shift-alt-o")
 # homerow
 ^mouse peek [<user.text>]:
   user.homerow_search()
-  sleep(50ms)
+  sleep(100ms)
   insert(text or "")
 
 ^scroll peek [<user.text>]:
   user.homerow_scroll_search()
-  sleep(50ms)
+  sleep(100ms)
   insert(text or "")
 
 # ^windows [<user.text>]:
