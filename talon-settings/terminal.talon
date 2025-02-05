@@ -29,4 +29,4 @@ flag: " --"
 
 yes: key(y enter)
 no: key(n enter)
-git autocommit: 'git commit -m "$(git diff --staged | mods "summarize this as a conventional commit with real emoji")"'
+git autocommit: 'git commit -m "$(git diff --staged | mods "summarize this as a conventional commit")"'
