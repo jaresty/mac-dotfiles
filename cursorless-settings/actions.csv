@@ -59,3 +59,13 @@ increment, increment
 
 # 2024-07-12 07:25:42 - New entries automatically added by cursorless
 spiffy, followLinkAside
+
+# 2025-02-07 18:24:26 - New entries automatically added by cursorless
+append, addSelection
+append post, addSelectionAfter
+append pre, addSelectionBefore
+flash, flashTargets
+git accept, gitAccept
+git revert, gitRevert
+git stage, gitStage
+git unstage, gitUnstage
