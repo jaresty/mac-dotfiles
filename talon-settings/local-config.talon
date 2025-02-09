@@ -7,7 +7,6 @@ key(f10:up):
 tag(): user.gpt_beta
 tag(): user.unix_utilities
 tag(): user.cursorless_use_community_snippets
-tag(): user.cursorless_disable_legacy_destination
 tag(): user.gamepad
 settings():
   # user.paste_to_insert_threshold = 10
