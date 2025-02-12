@@ -203,6 +203,7 @@ def flip_direction():
         continuous_movement_job.reverse_movement_type
     )
     continuous_movement_job.reverse_movement_type = go_forward
+    continuous_movement_job.movement_type()
 
 
 @mod.action_class
@@ -259,6 +260,7 @@ class Actions:
         global continuous_movement_job
         stop_moving()
         ctx.tags = ["user.continuously_moving"]
+        movement_config.movement_type()
         continuous_movement_job = movement_config
 
     def move_faster():
