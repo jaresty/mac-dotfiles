@@ -24,7 +24,7 @@ find
 grab here: grep -Hirn
 grab: grep
 head
-harp top: htop
+h top: htop
 I D user: id -u
 I D: id
 less
