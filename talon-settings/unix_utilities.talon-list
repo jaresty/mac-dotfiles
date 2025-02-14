@@ -28,7 +28,7 @@ h top: htop
 I D user: id -u
 I D: id
 less
-link soft: ln -s
+symlink: ln -s
 link: ln
 M D five sum: md5sum
 make dear: mkdir
