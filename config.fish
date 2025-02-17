@@ -29,7 +29,6 @@ if status is-interactive
     eval "$(starship init fish)"
 
     eval "$(direnv hook fish)"
-    . /opt/homebrew/opt/asdf/libexec/asdf.fish
 
     # Completion-related configuration
     set FPATH "$(brew --prefix)/share/zsh/site-functions:{$FPATH}"
