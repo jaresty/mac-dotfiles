@@ -157,7 +157,6 @@ source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 complete -C 'aws_completer' aws
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-. /opt/homebrew/opt/asdf/libexec/asdf.sh
 export LDFLAGS="-L/opt/homebrew/opt/capstone/lib"
 export CPPFLAGS="-I/opt/homebrew/opt/capstone/include"
 
