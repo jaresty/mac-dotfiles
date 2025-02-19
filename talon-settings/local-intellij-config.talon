@@ -53,8 +53,8 @@ bisnatcherest:
 	key('cmd-alt-shift-]')
 bisnatchest:
 	key('cmd-a')
-wax: user.wax()
-wane: user.wane()
+wax step: user.wax()
+wax restep: user.wane()
 
 onsteppest: edit.file_end()
 onstepperest: key('cmd-alt-]')
