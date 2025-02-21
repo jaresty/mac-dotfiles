@@ -99,6 +99,17 @@ dip repanner:
 	user.mouse_scroll_down()
 	user.mouse_scroll_left()
 
+onmolt <user.word>:
+	key("alt-delete")
+	insert(word)
+remolt <user.word>:
+	key("alt-backspace")
+	insert(word)
+bimolt <user.word>:
+	key(alt-delete)
+	key(alt-backspace)
+	insert(word)
+
 #deleting forward
 onpunchy: key("delete")
 onpunch: key("alt-delete")
