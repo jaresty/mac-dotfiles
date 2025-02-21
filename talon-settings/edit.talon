@@ -203,6 +203,10 @@ onlift:
 relift:
 	edit.extend_word_left()
 	edit.cut()
+bilift:
+	edit.word_right()
+	edit.extend_word_left()
+	edit.cut()
 onlifter:
 	edit.extend_line_end()
 	edit.cut()
