@@ -26,6 +26,8 @@ settings():
 gain [<number_small> times]:
   core.repeat_partial_phrase(number_small or 1)
 
+wait: sleep(200ms)
+
 grab O C R: key("cmd-ctrl-shift-alt-o")
 
 ^emo [<user.text>]$:
