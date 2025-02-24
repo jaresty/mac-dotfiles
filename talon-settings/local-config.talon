@@ -42,7 +42,7 @@ grab O C R: key("cmd-ctrl-shift-alt-o")
   insert(text or "")
 
 ^mouse tap:
-  key("cmd-shift-ctrl-alt-s")
+  key("cmd-shift-ctrl-alt-c")
 
 ^scroll peek [<user.text>]:
   user.homerow_scroll_search()
