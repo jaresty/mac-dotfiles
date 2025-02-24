@@ -477,9 +477,9 @@ trail step:
 trail restep:
 	user.last_reference()
 
-pleet tap:
+pleet step:
 	user.complete()
-pleet retap:
+pleet restep:
 	user.complete_backward()
 context tap: key("ctrl-enter")
 numeric step:

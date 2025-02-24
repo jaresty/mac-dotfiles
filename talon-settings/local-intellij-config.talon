@@ -9,6 +9,8 @@ please [<user.text>] [over]:
 	sleep(400ms)
 	insert(user.text or "")
 
+pleet tap: user.idea("action CodeCompletion")
+
 # File Commands
 file peek [<user.text>] [{user.file_extension}] [over]:
 	key("cmd-shift-o")
