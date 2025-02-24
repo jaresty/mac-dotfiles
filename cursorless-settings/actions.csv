@@ -13,6 +13,7 @@ clone up, insertCopyBefore
 comment, toggleLineComment
 yank, copyToClipboard
 crown, scrollToTop
+decrement, decrement
 dedent, outdentLine
 define, revealDefinition
 drink, editNewLineBefore
@@ -21,10 +22,12 @@ extract, extractVariable
 float, insertEmptyLineAfter
 fold, foldRegion
 follow, followLink
+spiffy, followLinkAside
 format, applyFormatter
 give, deselect
 highlight, highlight
 hover, showHover
+increment, increment
 indent, indentLine
 inspect, showDebugHover
 join, joinLines
@@ -51,21 +54,4 @@ take, setSelection
 type deaf, revealTypeDefinition
 unfold, unfoldRegion
 wrap, wrapWithPairedDelimiter
-
-
-# 2024-02-20 17:00:50 - New entries automatically added by cursorless
-decrement, decrement
-increment, increment
-
-# 2024-07-12 07:25:42 - New entries automatically added by cursorless
-spiffy, followLinkAside
-
-# 2025-02-07 18:24:26 - New entries automatically added by cursorless
-append, addSelection
-append post, addSelectionAfter
-append pre, addSelectionBefore
 flash, flashTargets
-git accept, gitAccept
-git revert, gitRevert
-git stage, gitStage
-git unstage, gitUnstage
