@@ -41,6 +41,9 @@ grab O C R: key("cmd-ctrl-shift-alt-o")
   sleep(100ms)
   insert(text or "")
 
+^mouse tap:
+  key("cmd-shift-ctrl-alt-s")
+
 ^scroll peek [<user.text>]:
   user.homerow_scroll_search()
   sleep(100ms)
