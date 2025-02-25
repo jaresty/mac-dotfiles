@@ -97,8 +97,6 @@ symbol peek [<user.text>] [over]:
 	sleep(400ms)
 	insert(user.text or "")
 
-jest tap: user.idea("action CodeCompletion")
-
 prob tap: user.idea("action ShowIntentionActions")
 prob ontap:
 	user.problem_next()
