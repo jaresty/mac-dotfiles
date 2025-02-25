@@ -186,6 +186,7 @@ def move_backing():
 def stop_moving():
     global current_job
     cron.cancel(current_job)
+    current_job = None
 
 
 def reset_speed():
