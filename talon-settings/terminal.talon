@@ -4,6 +4,8 @@ tag(): user.generic_unix_shell
 tag(): user.git
 tag(): user.kubectl
 tag(): user.readline
+settings():
+	key_wait = 10
 
 mob start: "mob start\n"
 mob start <user.number_string>: "mob start {number_string}\n"
