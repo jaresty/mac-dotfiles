@@ -5,7 +5,7 @@ tag(): user.git
 tag(): user.kubectl
 tag(): user.readline
 settings():
-	key_wait = 10
+	key_wait = 5
 
 mob start: "mob start\n"
 mob start <user.number_string>: "mob start {number_string}\n"
