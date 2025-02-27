@@ -58,6 +58,7 @@ leaf that:
 	text = edit.selected_text()
 	user.paste("<{text}>")
 roost: "</"
+dussle: "./"
 hailer:
 	insert('""')
 	key(left enter)
