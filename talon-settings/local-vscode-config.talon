@@ -90,7 +90,7 @@ file peek [<user.text>] [{user.file_extension}] [over]:
   insert(text or "")
   insert(file_extension or "")
   sleep(300ms)
-file peekest [<user.text>]:
+project peek [<user.text>]:
   user.vscode("workbench.action.openRecent")
   sleep(50ms)
   insert(text or "")

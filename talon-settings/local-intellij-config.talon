@@ -11,14 +11,7 @@ please [<user.text>] [over]:
 
 pleet tap: user.idea("action CodeCompletion")
 
-# File Commands
-file peek [<user.text>] [{user.file_extension}] [over]:
-	key("cmd-shift-o")
-	sleep(400ms)
-	insert(text or "")
-	insert(file_extension or "")
-	sleep(300ms)
-file peekest <user.text> [{user.file_extension}] [over]:
+project peek <user.text> [{user.file_extension}] [over]:
 	user.idea("action RecentFiles")
 	sleep(400ms)
 	insert(text or "")
@@ -26,6 +19,14 @@ file peekest <user.text> [{user.file_extension}] [over]:
 	sleep(300ms)
 	key(enter)
 	sleep(150ms)
+
+# File Commands
+file peek [<user.text>] [{user.file_extension}] [over]:
+	key("cmd-shift-o")
+	sleep(400ms)
+	insert(text or "")
+	insert(file_extension or "")
+	sleep(300ms)
 file split step <user.text> [{user.file_extension}] [over]:
 	key("cmd-shift-o")
 	sleep(400ms)
