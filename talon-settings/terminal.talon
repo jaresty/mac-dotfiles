@@ -23,6 +23,9 @@ file peek [<user.text>] [over]$:
 file peekest [<user.text>] [over]$:
 	insert("z {text}")
 	key(tab)
+file step [<user.text>] [over]$:
+	insert("z {text}")
+	key(enter)
 
 # terminal commands
 n p m: "npm "
