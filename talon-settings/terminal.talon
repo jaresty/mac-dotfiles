@@ -20,10 +20,10 @@ file peek [<user.text>] [over]$:
 	key(ctrl-t)
 	sleep(60ms)
 	insert(text)
-project peek [<user.text>] [over]$:
+project [<user.text>] peek$:
 	insert("z {text}")
 	key(tab)
-project step [<user.text>] [over]$:
+project [<user.text>] step$:
 	insert("z {text}")
 	key(enter)
 

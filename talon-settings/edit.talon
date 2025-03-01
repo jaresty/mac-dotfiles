@@ -204,7 +204,7 @@ relift:
 	edit.extend_word_left()
 	edit.cut()
 reliftest:
-	edit.extend_file_end()
+	edit.extend_file_start()
 	edit.cut()
 bilift:
 	edit.word_right()

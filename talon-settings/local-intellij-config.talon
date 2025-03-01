@@ -11,7 +11,7 @@ please [<user.text>] [over]:
 
 pleet tap: user.idea("action CodeCompletion")
 
-project peek <user.text> [{user.file_extension}] [over]:
+project <user.text> [{user.file_extension}] peek:
 	user.idea("action RecentFiles")
 	sleep(400ms)
 	insert(text or "")
@@ -21,13 +21,13 @@ project peek <user.text> [{user.file_extension}] [over]:
 	sleep(150ms)
 
 # File Commands
-file peek [<user.text>] [{user.file_extension}] [over]:
+file [<user.text>] [{user.file_extension}] peek:
 	key("cmd-shift-o")
 	sleep(400ms)
 	insert(text or "")
 	insert(file_extension or "")
 	sleep(300ms)
-file split step <user.text> [{user.file_extension}] [over]:
+file <user.text> [{user.file_extension}] split step:
 	key("cmd-shift-o")
 	sleep(400ms)
 	insert(text or "")
@@ -84,16 +84,20 @@ bipunchest:
 	edit.select_all()
 	edit.delete()
 
-^text peekest [<user.text>] [over]:
+^text [<user.text>] peek:
+	user.idea("action Find")
+	insert(user.text or "")
+
+^text [<user.text>] peekest:
 	user.idea("action FindInPath")
 	insert(user.text or "")
 
-^symbol peekest [<user.text>] [over]:
+^symbol [<user.text>] peekest:
 	user.idea("action GotoSymbol")
 	insert(text)
 	key("enter")
 
-symbol peek [<user.text>] [over]:
+symbol [<user.text>] peek:
 	key("cmd-f12")
 	sleep(400ms)
 	insert(user.text or "")

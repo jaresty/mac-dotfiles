@@ -64,16 +64,20 @@ refer step: key(f4)
 refer restep: key(shift-f4)
 
 # Symbol search
-symbol peek [<user.text>]:
+symbol [<user.text>] peek:
   user.vscode("workbench.action.gotoSymbol")
   sleep(50ms)
   insert(text or "")
-^symbol peekest [<user.text>]:
+^symbol [<user.text>] peekest:
   user.vscode("workbench.action.showAllSymbols")
   sleep(50ms)
   insert(text or "")
-^text peekest [<user.text>]$:
+^text [<user.text>] peekest:
   user.vscode("workbench.action.quickTextSearch")
+  sleep(50ms)
+  insert(text or "")
+^text [<user.text>] peek:
+  edit.find()
   sleep(50ms)
   insert(text or "")
 
@@ -84,13 +88,13 @@ type hierarchy peek: user.vscode("editor.showTypeHierarchy")
 param peek: user.vscode("editor.action.triggerParameterHints")
 
 # File Commands
-file peek [<user.text>] [{user.file_extension}] [over]:
+file [<user.text>] [{user.file_extension}] peek:
   user.vscode("workbench.action.quickOpen")
   sleep(400ms)
   insert(text or "")
   insert(file_extension or "")
   sleep(300ms)
-project peek [<user.text>]:
+project [<user.text>] peek:
   user.vscode("workbench.action.openRecent")
   sleep(50ms)
   insert(text or "")
