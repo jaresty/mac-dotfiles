@@ -26,7 +26,14 @@ project [<user.text>] peek$:
 project [<user.text>] step$:
 	insert("z {text}")
 	key(enter)
-
+dir <user.text> step:
+	key(alt-c)
+	sleep(60ms)
+	insert(text)
+	key(enter)
+dir restep:
+	insert("cd -")
+	key(enter)
 # terminal commands
 n p m: "npm "
 
