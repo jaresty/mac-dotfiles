@@ -34,6 +34,13 @@ file <user.text> [{user.file_extension}] split step:
 	insert(file_extension or "")
 	sleep(300ms)
 	key(shift-enter)
+file <user.text> [{user.file_extension}] step:
+	key("cmd-shift-o")
+	sleep(400ms)
+	insert(text or "")
+	insert(file_extension or "")
+	sleep(300ms)
+	key(enter)
 file restep:
 	key(ctrl-tab)
 alter step:
