@@ -16,7 +16,7 @@ siginter: key(ctrl-c)
 sigend: key(ctrl-d)
 editor: key(alt-e)
 onpunch: key("alt-d")
-file peek [<user.text>] [over]$:
+file [<user.text>] peek:
 	key(ctrl-t)
 	sleep(60ms)
 	insert(text)
