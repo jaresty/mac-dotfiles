@@ -64,28 +64,28 @@ refer step: key(f4)
 refer restep: key(shift-f4)
 
 # Symbol search
-symbol [<user.text>] peek:
+symbol [<user.text>] tap:
   user.vscode("workbench.action.gotoSymbol")
   sleep(50ms)
   insert(text or "")
-^symbol [<user.text>] peekest:
+^symbol [<user.text>] tappest:
   user.vscode("workbench.action.showAllSymbols")
   sleep(50ms)
   insert(text or "")
-^text [<user.text>] peekest:
+^text [<user.text>] tappest:
   user.vscode("workbench.action.quickTextSearch")
   sleep(50ms)
   insert(text or "")
-^text [<user.text>] peek:
+^text [<user.text>] tap:
   edit.find()
   sleep(50ms)
   insert(text or "")
 
-deaf peek: user.vscode("editor.action.peekDefinition")
-jest peek: user.vscode("toggleSuggestionDetails")
-type peek: user.vscode("editor.action.peekTypeDefinition")
-type hierarchy peek: user.vscode("editor.showTypeHierarchy")
-param peek: user.vscode("editor.action.triggerParameterHints")
+deaf tap: user.vscode("editor.action.peekDefinition")
+jest tap: user.vscode("toggleSuggestionDetails")
+type tap: user.vscode("editor.action.peekTypeDefinition")
+type hierarchy tap: user.vscode("editor.showTypeHierarchy")
+param tap: user.vscode("editor.action.triggerParameterHints")
 
 # File Commands
 file [<user.text>] [{user.file_extension}] peek:
@@ -94,14 +94,14 @@ file [<user.text>] [{user.file_extension}] peek:
   insert(text or "")
   insert(file_extension or "")
   sleep(300ms)
-project [<user.text>] peek:
+project [<user.text>] tap:
   user.vscode("workbench.action.openRecent")
   sleep(50ms)
   insert(text or "")
   sleep(250ms)
 
-change peek: user.vscode("editor.action.dirtydiff.next")
-change repeek: user.vscode("editor.action.dirtydiff.previous")
+change tap: user.vscode("editor.action.dirtydiff.next")
+change retap: user.vscode("editor.action.dirtydiff.previous")
 
 file step:
   user.vscode("workbench.action.openPreviousRecentlyUsedEditorInGroup")

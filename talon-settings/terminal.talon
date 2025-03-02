@@ -16,11 +16,11 @@ siginter: key(ctrl-c)
 sigend: key(ctrl-d)
 editor: key(alt-e)
 onpunch: key("alt-d")
-file [<user.text>] peek:
+file [<user.text>] tap:
 	key(ctrl-t)
 	sleep(60ms)
 	insert(text)
-project [<user.text>] peek$:
+project [<user.text>] tap$:
 	insert("z {text}")
 	key(tab)
 project [<user.text>] step$:

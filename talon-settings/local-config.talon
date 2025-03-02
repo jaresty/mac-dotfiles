@@ -36,7 +36,7 @@ grab O C R: key("cmd-ctrl-shift-alt-o")
   insert(text or "")
 
 # homerow
-^mouse peek [<user.text>]:
+^mouse tap <user.text>:
   user.homerow_search()
   sleep(100ms)
   insert(text or "")
@@ -44,7 +44,7 @@ grab O C R: key("cmd-ctrl-shift-alt-o")
 ^mouse tap:
   key("cmd-shift-ctrl-alt-c")
 
-^scroll peek [<user.text>]:
+^scroll tap [<user.text>]:
   user.homerow_scroll_search()
   sleep(100ms)
   insert(text or "")
@@ -59,7 +59,7 @@ grab O C R: key("cmd-ctrl-shift-alt-o")
   sleep(50ms)
   insert(text or "")
 
-^window peek [<user.text>]:
+^window tap [<user.text>]:
   key("cmd-ctrl-alt-shift-tab")
   sleep(50ms)
   insert(text or "")

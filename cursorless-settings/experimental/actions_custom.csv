@@ -2,7 +2,7 @@ Spoken form, VSCode command
 undo, undo
 redo, redo
 disk, workbench.action.files.save
-peek, editor.action.peekDefinition
+tap, editor.action.peekDefinition
 track all, workbench.action.showAllSymbols
 hierarchy, editor.showCallHierarchy
 refactor, editor.action.refactor
