@@ -483,10 +483,6 @@ trail step:
 trail restep:
 	user.last_reference()
 
-pleet step:
-	user.complete()
-pleet restep:
-	user.complete_backward()
 context tap: key("ctrl-enter")
 numeric step:
 	user.numeric_increment()

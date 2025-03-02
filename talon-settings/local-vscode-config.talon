@@ -88,7 +88,7 @@ type hierarchy tap: user.vscode("editor.showTypeHierarchy")
 param tap: user.vscode("editor.action.triggerParameterHints")
 
 # File Commands
-file [<user.text>] [{user.file_extension}] peek:
+file [<user.text>] [{user.file_extension}] tap:
   user.vscode("workbench.action.quickOpen")
   sleep(400ms)
   insert(text or "")
@@ -99,6 +99,11 @@ project [<user.text>] tap:
   sleep(50ms)
   insert(text or "")
   sleep(250ms)
+
+pleet step:
+  user.complete()
+pleet restep:
+  user.complete_backward()
 
 change tap: user.vscode("editor.action.dirtydiff.next")
 change retap: user.vscode("editor.action.dirtydiff.previous")

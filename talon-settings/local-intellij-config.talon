@@ -20,6 +20,11 @@ project <user.text> [{user.file_extension}] tap:
 	key(enter)
 	sleep(150ms)
 
+pleet step:
+	user.complete()
+pleet restep:
+	user.complete_backward()
+
 # File Commands
 file [<user.text>] [{user.file_extension}] tap:
 	key("cmd-shift-o")

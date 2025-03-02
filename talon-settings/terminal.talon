@@ -26,6 +26,14 @@ project [<user.text>] tap$:
 project [<user.text>] step$:
 	insert("z {text}")
 	key(enter)
+pleet [<user.text>] tap:
+	key(shift-tab)
+	insert(text)
+pleet [<user.text>] step:
+	key(shift-tab)
+	insert(text or "")
+	sleep(200ms)
+	key(enter)
 dir <user.text> step:
 	key(alt-c)
 	sleep(60ms)
