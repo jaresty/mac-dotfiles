@@ -69,7 +69,7 @@ MOVEMENT_TYPE: dict[str, tuple[callable, callable, int]] = {
     "stream hunt restep": (actions.edit.find_previous, actions.edit.find_next, 4),
     "stream prob step": (actions.user.problem_next, actions.user.problem_last, 4),
     "stream prob restep": (actions.user.problem_last, actions.user.problem_next, 4),
-    "stream pleet": (actions.user.complete, actions.user.complete_backward, 4),
+    "stream lee": (actions.user.complete, actions.user.complete_backward, 4),
     "stream fold step": (actions.user.fold_more, actions.user.fold_less, 4),
     "stream fold restep": (actions.user.fold_less, actions.user.fold_more, 4),
     "stream navi restep": (actions.user.go_back, actions.user.go_forward, 4),

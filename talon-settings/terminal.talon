@@ -26,10 +26,10 @@ project [<user.text>] tap$:
 project [<user.text>] step$:
 	insert("z {text}")
 	key(enter)
-pleet [<user.text>] tap:
+lee [<user.text>] tap:
 	key(shift-tab)
 	insert(text)
-pleet [<user.text>] step:
+lee [<user.text>] step:
 	key(shift-tab)
 	insert(text or "")
 	sleep(200ms)

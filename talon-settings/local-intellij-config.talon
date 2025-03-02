@@ -9,7 +9,7 @@ please [<user.text>] [over]:
 	sleep(400ms)
 	insert(user.text or "")
 
-pleet tap: user.idea("action CodeCompletion")
+lee tap: user.idea("action CodeCompletion")
 
 project <user.text> [{user.file_extension}] tap:
 	user.idea("action RecentFiles")
@@ -20,9 +20,9 @@ project <user.text> [{user.file_extension}] tap:
 	key(enter)
 	sleep(150ms)
 
-pleet step:
+lee step:
 	user.complete()
-pleet restep:
+lee restep:
 	user.complete_backward()
 
 # File Commands
