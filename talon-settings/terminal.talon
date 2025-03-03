@@ -37,6 +37,9 @@ lee [<user.text>] step:
 	insert(text or "")
 	sleep(200ms)
 	key(enter)
+dir fly step:
+	insert("cd ..")
+	key(enter)
 dir <user.text> step:
 	key(alt-c)
 	sleep(60ms)
