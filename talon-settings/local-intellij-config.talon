@@ -19,14 +19,14 @@ lee [<user.text>] step:
 	sleep(100ms)
 	key(enter)
 
-project <user.text> [{user.file_extension}] tap:
-	user.idea("action RecentFiles")
-	sleep(400ms)
-	insert(text or "")
-	insert(file_extension or "")
-	sleep(300ms)
-	key(enter)
-	sleep(150ms)
+# project <user.text> [{user.file_extension}] tap:
+# 	user.idea("action RecentFiles")
+# 	sleep(400ms)
+# 	insert(text or "")
+# 	insert(file_extension or "")
+# 	sleep(300ms)
+# 	key(enter)
+# 	sleep(150ms)
 
 # File Commands
 file [<user.text>] [{user.file_extension}] tap:

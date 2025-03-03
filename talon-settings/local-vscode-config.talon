@@ -108,11 +108,19 @@ file [<user.text>] [{user.file_extension}] step:
   insert(file_extension or "")
   sleep(300ms)
   key(enter)
+
 project [<user.text>] tap:
   user.vscode("workbench.action.openRecent")
   sleep(50ms)
   insert(text or "")
   sleep(250ms)
+
+project [<user.text>] step:
+  user.vscode("workbench.action.openRecent")
+  sleep(50ms)
+  insert(text or "")
+  sleep(250ms)
+  key(enter)
 
 change tap: user.vscode("editor.action.dirtydiff.next")
 change retap: user.vscode("editor.action.dirtydiff.previous")
