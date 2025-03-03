@@ -26,6 +26,9 @@ project [<user.text>] tap$:
 project [<user.text>] step$:
 	insert("z {text}")
 	key(enter)
+text <user.text> tappest:
+	insert("rg {text}")
+	key(enter)
 lee [<user.text>] tap:
 	key(shift-tab)
 	insert(text)
