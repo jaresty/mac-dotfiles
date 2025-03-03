@@ -8,10 +8,10 @@ diff <user.cursorless_target> with <user.cursorless_target>:
   user.cursorless_ide_command("extension.partialDiff.markSection2AndTakeDiff", cursorless_target_2)
 
 disk files: user.vscode("workbench.action.files.saveFiles")
-lee [<user.text>] tap:
+lee [<user.prose>] tap:
   user.vscode("editor.action.triggerSuggest")
   insert_formatted(text or "", "NO_SPACES")
-lee [<user.text>] step:
+lee [<user.prose>] step:
   user.vscode("editor.action.triggerSuggest")
   user.insert_formatted(text or "", "NO_SPACES")
   sleep(100ms)
@@ -71,19 +71,19 @@ refer step: key(f4)
 refer restep: key(shift-f4)
 
 # Symbol search
-symbol [<user.text>] tap:
+symbol [<user.prose>] tap:
   user.vscode("workbench.action.gotoSymbol")
   sleep(50ms)
   insert(text or "")
-^symbol [<user.text>] tappest:
+^symbol [<user.prose>] tappest:
   user.vscode("workbench.action.showAllSymbols")
   sleep(50ms)
   insert(text or "")
-^text [<user.text>] tappest:
+^text [<user.prose>] tappest:
   user.vscode("workbench.action.quickTextSearch")
   sleep(50ms)
   insert(text or "")
-^text [<user.text>] tap:
+^text [<user.prose>] tap:
   edit.find()
   sleep(50ms)
   insert(text or "")
@@ -95,13 +95,13 @@ type hierarchy tap: user.vscode("editor.showTypeHierarchy")
 param tap: user.vscode("editor.action.triggerParameterHints")
 
 # File Commands
-file [<user.text>] [{user.file_extension}] tap:
+file [<user.prose>] [{user.file_extension}] tap:
   user.vscode("workbench.action.quickOpen")
   sleep(400ms)
   insert(text or "")
   insert(file_extension or "")
   sleep(300ms)
-file [<user.text>] [{user.file_extension}] step:
+file [<user.prose>] [{user.file_extension}] step:
   user.vscode("workbench.action.quickOpen")
   sleep(400ms)
   insert(text or "")
@@ -109,13 +109,13 @@ file [<user.text>] [{user.file_extension}] step:
   sleep(300ms)
   key(enter)
 
-project [<user.text>] tap:
+project [<user.prose>] tap:
   user.vscode("workbench.action.openRecent")
   sleep(50ms)
   insert(text or "")
   sleep(250ms)
 
-project [<user.text>] step:
+project [<user.prose>] step:
   user.vscode("workbench.action.openRecent")
   sleep(50ms)
   insert(text or "")

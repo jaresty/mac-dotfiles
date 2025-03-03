@@ -16,23 +16,23 @@ siginter: key(ctrl-c)
 sigend: key(ctrl-d)
 editor: key(alt-e)
 onpunch: key("alt-d")
-file [<user.text>] tap:
+file [<user.prose>] tap:
 	key(ctrl-t)
 	sleep(60ms)
 	insert(text)
-project [<user.text>] tap$:
+project [<user.prose>] tap$:
 	insert("z {text}")
 	key(tab)
-project [<user.text>] step$:
+project [<user.prose>] step$:
 	insert("z {text}")
 	key(enter)
-text <user.text> tappest:
-	insert("rg {text}")
+text <user.prose> tappest:
+	insert("rg {prose}")
 	key(enter)
-lee [<user.text>] tap:
+lee [<user.prose>] tap:
 	key(shift-tab)
 	insert(text)
-lee [<user.text>] step:
+lee [<user.prose>] step:
 	key(shift-tab)
 	insert(text or "")
 	sleep(200ms)
@@ -40,7 +40,7 @@ lee [<user.text>] step:
 dir fly step:
 	insert("cd ..")
 	key(enter)
-dir <user.text> step:
+dir <user.prose> step:
 	key(alt-c)
 	sleep(60ms)
 	insert(text)

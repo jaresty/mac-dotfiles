@@ -4,22 +4,22 @@ app: jetbrains
 settings():
 	key_wait = 15
 
-please [<user.text>] [over]:
+please [<user.prose>] [over]:
 	key("cmd-shift-a")
 	sleep(400ms)
-	insert(user.text or "")
+	insert(user.prose or "")
 
-lee [<user.text>] tap:
+lee [<user.prose>] tap:
 	user.idea("action CodeCompletion")
 	user.insert_formatted(text or "", "NO_SPACES")
 
-lee [<user.text>] step:
+lee [<user.prose>] step:
 	user.idea("action CodeCompletion")
 	user.insert_formatted(text or "", "NO_SPACES")
 	sleep(100ms)
 	key(enter)
 
-# project <user.text> [{user.file_extension}] tap:
+# project <user.prose> [{user.file_extension}] tap:
 # 	user.idea("action RecentFiles")
 # 	sleep(400ms)
 # 	insert(text or "")
@@ -29,20 +29,20 @@ lee [<user.text>] step:
 # 	sleep(150ms)
 
 # File Commands
-file [<user.text>] [{user.file_extension}] tap:
+file [<user.prose>] [{user.file_extension}] tap:
 	key("cmd-shift-o")
 	sleep(400ms)
 	insert(text or "")
 	insert(file_extension or "")
 	sleep(300ms)
-file <user.text> [{user.file_extension}] split step:
+file <user.prose> [{user.file_extension}] split step:
 	key("cmd-shift-o")
 	sleep(400ms)
 	insert(text or "")
 	insert(file_extension or "")
 	sleep(300ms)
 	key(shift-enter)
-file <user.text> [{user.file_extension}] step:
+file <user.prose> [{user.file_extension}] step:
 	key("cmd-shift-o")
 	sleep(400ms)
 	insert(text or "")
@@ -99,23 +99,23 @@ bipunchest:
 	edit.select_all()
 	edit.delete()
 
-^text [<user.text>] tap:
+^text [<user.prose>] tap:
 	user.idea("action Find")
-	insert(user.text or "")
+	insert(user.prose or "")
 
-^text [<user.text>] tappest:
+^text [<user.prose>] tappest:
 	user.idea("action FindInPath")
-	insert(user.text or "")
+	insert(user.prose or "")
 
-^symbol [<user.text>] tappest:
+^symbol [<user.prose>] tappest:
 	user.idea("action GotoSymbol")
 	insert(text)
 	key("enter")
 
-symbol [<user.text>] tap:
+symbol [<user.prose>] tap:
 	key("cmd-f12")
 	sleep(400ms)
-	insert(user.text or "")
+	insert(user.prose or "")
 
 prob tap: user.idea("action ShowIntentionActions")
 prob ontap:

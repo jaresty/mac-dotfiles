@@ -30,19 +30,19 @@ wait: sleep(200ms)
 
 grab O C R: key("cmd-ctrl-shift-alt-o")
 
-^emo [<user.text>]$:
+^emo [<user.prose>]$:
   key(cmd-ctrl-shift-alt-space)
   sleep(200ms)
   insert(text or "")
 
 # homerow
-^mouse <user.text> tap:
+^mouse <user.prose> tap:
   user.homerow_search()
   sleep(100ms)
   insert(text or "")
 
 # homerow
-^mouse <user.text> step:
+^mouse <user.prose> step:
   user.homerow_search()
   sleep(100ms)
   insert(text or "")
@@ -54,22 +54,22 @@ grab O C R: key("cmd-ctrl-shift-alt-o")
 ^mouse tap:
   key("cmd-shift-ctrl-alt-c")
 
-^scroll tap [<user.text>]:
+^scroll tap [<user.prose>]:
   user.homerow_scroll_search()
   sleep(100ms)
   insert(text or "")
 
-# ^windows [<user.text>]:
+# ^windows [<user.prose>]:
 #   key(cmd-ctrl-shift-alt-tab)
 #   sleep(50ms)
 #   insert(text or "")
 
-^raycast [<user.text>]:
+^raycast [<user.prose>]:
   key("cmd-space")
   sleep(50ms)
   insert(text or "")
 
-^window tap [<user.text>]:
+^window tap [<user.prose>]:
   key("cmd-ctrl-alt-shift-tab")
   sleep(50ms)
   insert(text or "")
