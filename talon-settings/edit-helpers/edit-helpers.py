@@ -262,7 +262,13 @@ class Actions:
         stop_moving()
         ctx.tags = ["user.continuously_moving"]
         movement_config.movement_type()
-        continuous_movement_job = movement_config
+        continuous_movement_job = MovementConfig(
+            movement_config.movement_type,
+            movement_config.reverse_movement_type,
+            movement_config.repeat_speed,
+            movement_config.current_step_size,
+            movement_config.current_iteration_count,
+        )
 
     def move_faster():
         """Increase your movement speed"""
