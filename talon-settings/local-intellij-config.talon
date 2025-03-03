@@ -99,23 +99,23 @@ bipunchest:
 	edit.select_all()
 	edit.delete()
 
-^text [<user.prose>] tap:
+^text [<user.prose>] tappy:
 	user.idea("action Find")
-	insert(user.prose or "")
+	insert(prose or "")
 
-^text [<user.prose>] tappest:
+^text [<user.prose>] tap:
 	user.idea("action FindInPath")
-	insert(user.prose or "")
+	insert(prose or "")
 
-^symbol [<user.prose>] tappest:
+^symbol [<user.prose>] tap:
 	user.idea("action GotoSymbol")
-	insert(text)
+	insert(prose)
 	key("enter")
 
-symbol [<user.prose>] tap:
+symbol [<user.prose>] tappy:
 	key("cmd-f12")
 	sleep(400ms)
-	insert(user.prose or "")
+	insert(prose or "")
 
 prob tap: user.idea("action ShowIntentionActions")
 prob ontap:

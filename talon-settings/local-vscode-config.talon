@@ -71,22 +71,22 @@ refer step: key(f4)
 refer restep: key(shift-f4)
 
 # Symbol search
-symbol [<user.prose>] tap:
+symbol [<user.prose>] tappy:
   user.vscode("workbench.action.gotoSymbol")
   sleep(50ms)
-  insert(text or "")
-^symbol [<user.prose>] tappest:
+  insert(prose or "")
+^symbol [<user.prose>] tap:
   user.vscode("workbench.action.showAllSymbols")
   sleep(50ms)
-  insert(text or "")
-^text [<user.prose>] tappest:
+  insert(prose or "")
+^text [<user.prose>] tap:
   user.vscode("workbench.action.quickTextSearch")
   sleep(50ms)
-  insert(text or "")
-^text [<user.prose>] tap:
+  insert(prose or "")
+^text [<user.prose>] tappy:
   edit.find()
   sleep(50ms)
-  insert(text or "")
+  insert(prose or "")
 
 deaf tap: user.vscode("editor.action.peekDefinition")
 jest tap: user.vscode("toggleSuggestionDetails")
