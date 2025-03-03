@@ -1,6 +1,10 @@
 #movement to the right
 onsteppy: edit.right()
 onstep: edit.word_right()
+onrestep:
+	edit.word_right()
+	edit.word_right()
+	edit.word_left()
 onstepper: edit.line_end()
 onstepperest: edit.paragraph_end()
 onsteppest: edit.file_end()
@@ -10,6 +14,10 @@ midstep: user.line_middle()
 #movement to the left
 resteppy: edit.left()
 restep: edit.word_left()
+reonstep:
+	edit.word_left()
+	edit.word_left()
+	edit.word_right()
 restepper: edit.line_start()
 restepperest: edit.paragraph_start()
 resteppest: edit.file_start()

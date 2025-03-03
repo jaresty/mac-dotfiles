@@ -94,6 +94,13 @@ file [<user.text>] [{user.file_extension}] tap:
   insert(text or "")
   insert(file_extension or "")
   sleep(300ms)
+file [<user.text>] [{user.file_extension}] step:
+  user.vscode("workbench.action.quickOpen")
+  sleep(400ms)
+  insert(text or "")
+  insert(file_extension or "")
+  sleep(300ms)
+  key(enter)
 project [<user.text>] tap:
   user.vscode("workbench.action.openRecent")
   sleep(50ms)
