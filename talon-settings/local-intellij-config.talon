@@ -9,7 +9,15 @@ please [<user.text>] [over]:
 	sleep(400ms)
 	insert(user.text or "")
 
-lee tap: user.idea("action CodeCompletion")
+lee [<user.text>] tap:
+	user.idea("action CodeCompletion")
+	user.insert_formatted(text or "", "NO_SPACES")
+
+lee [<user.text>] step:
+	user.idea("action CodeCompletion")
+	user.insert_formatted(text or "", "NO_SPACES")
+	sleep(100ms)
+	key(enter)
 
 project <user.text> [{user.file_extension}] tap:
 	user.idea("action RecentFiles")
@@ -19,11 +27,6 @@ project <user.text> [{user.file_extension}] tap:
 	sleep(300ms)
 	key(enter)
 	sleep(150ms)
-
-lee step:
-	user.complete()
-lee restep:
-	user.complete_backward()
 
 # File Commands
 file [<user.text>] [{user.file_extension}] tap:

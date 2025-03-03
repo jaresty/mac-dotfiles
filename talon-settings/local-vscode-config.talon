@@ -8,7 +8,14 @@ diff <user.cursorless_target> with <user.cursorless_target>:
   user.cursorless_ide_command("extension.partialDiff.markSection2AndTakeDiff", cursorless_target_2)
 
 disk files: user.vscode("workbench.action.files.saveFiles")
-lee tap: user.vscode("editor.action.triggerSuggest")
+lee [<user.text>] tap:
+  user.vscode("editor.action.triggerSuggest")
+  insert_formatted(text or "", "NO_SPACES")
+lee [<user.text>] step:
+  user.vscode("editor.action.triggerSuggest")
+  user.insert_formatted(text or "", "NO_SPACES")
+  sleep(100ms)
+  key(enter)
 crumb step: user.vscode("breadcrumbs.focusAndSelect")
 
 met ex:
@@ -106,11 +113,6 @@ project [<user.text>] tap:
   sleep(50ms)
   insert(text or "")
   sleep(250ms)
-
-lee step:
-  user.complete()
-lee restep:
-  user.complete_backward()
 
 change tap: user.vscode("editor.action.dirtydiff.next")
 change retap: user.vscode("editor.action.dirtydiff.previous")
