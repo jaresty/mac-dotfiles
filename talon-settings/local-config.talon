@@ -36,10 +36,20 @@ grab O C R: key("cmd-ctrl-shift-alt-o")
   insert(text or "")
 
 # homerow
-^mouse tap <user.text>:
+^mouse <user.text> tap:
   user.homerow_search()
   sleep(100ms)
   insert(text or "")
+
+# homerow
+^mouse <user.text> step:
+  user.homerow_search()
+  sleep(100ms)
+  insert(text or "")
+  sleep(100ms)
+  key(enter)
+  sleep(500ms)
+  key(escape)
 
 ^mouse tap:
   key("cmd-shift-ctrl-alt-c")
