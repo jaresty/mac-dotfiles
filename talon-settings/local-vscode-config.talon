@@ -16,7 +16,7 @@ lee [<user.text>] step:
   user.insert_formatted(text or "", "NO_SPACES")
   sleep(100ms)
   key(enter)
-crumb step: user.vscode("breadcrumbs.focusAndSelect")
+crumb tap: user.vscode("breadcrumbs.focusAndSelect")
 
 met ex:
   key(tab)

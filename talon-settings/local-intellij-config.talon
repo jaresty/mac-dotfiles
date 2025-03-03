@@ -58,7 +58,7 @@ alter stepper:
 	user.idea("action GotoTest")
 	key(shift-enter)
 
-crumb step: key("cmd-up")
+crumb tap: key("cmd-up")
 file forge:
 	key("cmd-up f5")
 file punch:
