@@ -7,6 +7,7 @@ ctx = Context()
 mod = Module()
 
 current_job = None
+hiss_cron = None
 
 
 @dataclass
@@ -300,9 +301,15 @@ class Actions:
 @ctx.action_class("user")
 class UserActions:
     def noise_trigger_hiss(active: bool):
-        if active and actions.speech.enabled():
-            continuous_move()
+        global hiss_cron
+
+        if active:
+            hiss_cron = cron.after(
+                str("100ms"),
+                continuous_move,
+            )
         else:
+            cron.cancel(hiss_cron)
             reset_speed()
             stop_moving()
 
