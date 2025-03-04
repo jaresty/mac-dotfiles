@@ -21,10 +21,10 @@ file [<user.prose>] tap:
 	sleep(60ms)
 	insert(prose)
 project [<user.prose>] tap$:
-	insert("z {text}")
+	insert("z {prose}")
 	key(tab)
 project [<user.prose>] step$:
-	insert("z {text}")
+	insert("z {prose}")
 	key(enter)
 text <user.word> tap:
 	insert("rg {word}")
@@ -33,10 +33,8 @@ lee [<user.prose>] tap:
 	key(shift-tab)
 	insert(prose or "")
 lee [<user.prose>] step:
-	key(shift-tab)
 	insert(prose or "")
-	sleep(200ms)
-	key(enter)
+	key(tab tab)
 dir fly step:
 	insert("cd ..")
 	key(enter)
