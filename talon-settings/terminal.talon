@@ -48,8 +48,6 @@ dir <user.prose> step:
 dir restep:
 	insert("cd -")
 	key(enter)
-# terminal commands
-n p m: "npm "
 
 flag: " --"
 

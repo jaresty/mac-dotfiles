@@ -40,6 +40,7 @@ Aresty
 Schwa
 jaresty
 n p m: npm
+n p x: npx
 git: git
 u r l: URL
 wip: WIP
