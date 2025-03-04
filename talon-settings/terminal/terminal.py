@@ -15,6 +15,12 @@ class Actions:
     def run():
         """Run the project"""
 
+    def completer(words: list[str]):
+        """Insert each of these words completing them as you go"""
+        for word in words:
+            actions.insert(word)
+            actions.key("tab tab")
+
 
 front_end_context = Context()
 front_end_context.matches = r"""
