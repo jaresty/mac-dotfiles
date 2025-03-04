@@ -98,13 +98,13 @@ param tap: user.vscode("editor.action.triggerParameterHints")
 file [<user.prose>] [{user.file_extension}] tap:
   user.vscode("workbench.action.quickOpen")
   sleep(400ms)
-  insert(text or "")
+  insert(prose or "")
   insert(file_extension or "")
   sleep(300ms)
 file [<user.prose>] [{user.file_extension}] step:
   user.vscode("workbench.action.quickOpen")
   sleep(400ms)
-  insert(text or "")
+  insert(prose or "")
   insert(file_extension or "")
   sleep(300ms)
   key(enter)
@@ -112,13 +112,13 @@ file [<user.prose>] [{user.file_extension}] step:
 project [<user.prose>] tap:
   user.vscode("workbench.action.openRecent")
   sleep(50ms)
-  insert(text or "")
+  insert(prose or "")
   sleep(250ms)
 
 project [<user.prose>] step:
   user.vscode("workbench.action.openRecent")
   sleep(50ms)
-  insert(text or "")
+  insert(prose or "")
   sleep(250ms)
   key(enter)
 

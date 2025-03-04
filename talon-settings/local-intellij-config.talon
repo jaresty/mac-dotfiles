@@ -22,7 +22,7 @@ lee [<user.prose>] step:
 # project <user.prose> [{user.file_extension}] tap:
 # 	user.idea("action RecentFiles")
 # 	sleep(400ms)
-# 	insert(text or "")
+# 	insert(prose or "")
 # 	insert(file_extension or "")
 # 	sleep(300ms)
 # 	key(enter)
@@ -32,20 +32,20 @@ lee [<user.prose>] step:
 file [<user.prose>] [{user.file_extension}] tap:
 	key("cmd-shift-o")
 	sleep(400ms)
-	insert(text or "")
+	insert(prose or "")
 	insert(file_extension or "")
 	sleep(300ms)
 file <user.prose> [{user.file_extension}] split step:
 	key("cmd-shift-o")
 	sleep(400ms)
-	insert(text or "")
+	insert(prose or "")
 	insert(file_extension or "")
 	sleep(300ms)
 	key(shift-enter)
 file <user.prose> [{user.file_extension}] step:
 	key("cmd-shift-o")
 	sleep(400ms)
-	insert(text or "")
+	insert(prose or "")
 	insert(file_extension or "")
 	sleep(300ms)
 	key(enter)

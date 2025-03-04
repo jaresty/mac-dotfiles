@@ -19,7 +19,7 @@ onpunch: key("alt-d")
 file [<user.prose>] tap:
 	key(ctrl-t)
 	sleep(60ms)
-	insert(text)
+	insert(prose)
 project [<user.prose>] tap$:
 	insert("z {text}")
 	key(tab)
@@ -43,7 +43,7 @@ dir fly step:
 dir <user.prose> step:
 	key(alt-c)
 	sleep(60ms)
-	insert(text)
+	insert(prose)
 	key(enter)
 dir restep:
 	insert("cd -")

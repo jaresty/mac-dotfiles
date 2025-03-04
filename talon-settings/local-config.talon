@@ -33,19 +33,19 @@ grab O C R: key("cmd-ctrl-shift-alt-o")
 ^emo [<user.prose>]$:
   key(cmd-ctrl-shift-alt-space)
   sleep(200ms)
-  insert(text or "")
+  insert(prose or "")
 
 # homerow
 ^mouse <user.prose> tap:
   user.homerow_search()
   sleep(100ms)
-  insert(text or "")
+  insert(prose or "")
 
 # homerow
 ^mouse <user.prose> step:
   user.homerow_search()
   sleep(100ms)
-  insert(text or "")
+  insert(prose or "")
   sleep(100ms)
   key(enter)
   sleep(500ms)
@@ -57,22 +57,22 @@ grab O C R: key("cmd-ctrl-shift-alt-o")
 ^scroll tap [<user.prose>]:
   user.homerow_scroll_search()
   sleep(100ms)
-  insert(text or "")
+  insert(prose or "")
 
 # ^windows [<user.prose>]:
 #   key(cmd-ctrl-shift-alt-tab)
 #   sleep(50ms)
-#   insert(text or "")
+#   insert(prose or "")
 
 ^raycast [<user.prose>]:
   key("cmd-space")
   sleep(50ms)
-  insert(text or "")
+  insert(prose or "")
 
 ^window tap [<user.prose>]:
   key("cmd-ctrl-alt-shift-tab")
   sleep(50ms)
-  insert(text or "")
+  insert(prose or "")
 
 ^conventional commit:
   key("cmd-space")
