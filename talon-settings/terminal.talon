@@ -31,10 +31,10 @@ text <user.word> tap:
 	key(enter)
 lee [<user.prose>] tap:
 	key(shift-tab)
-	insert(text)
+	insert(prose or "")
 lee [<user.prose>] step:
 	key(shift-tab)
-	insert(text or "")
+	insert(prose or "")
 	sleep(200ms)
 	key(enter)
 dir fly step:
