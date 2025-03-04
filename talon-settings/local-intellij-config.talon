@@ -17,7 +17,7 @@ lee [<user.prose>] step:
 	user.idea("action CodeCompletion")
 	user.insert_formatted(text or "", "NO_SPACES")
 	sleep(100ms)
-	key(enter)
+	key(tab)
 
 # project <user.prose> [{user.file_extension}] tap:
 # 	user.idea("action RecentFiles")
