@@ -19,7 +19,7 @@ class Actions:
         """Insert each of these words completing them as you go"""
         for word in words:
             actions.insert(word)
-            actions.key("tab tab")
+            actions.key("tab ctrl-n")
 
 
 front_end_context = Context()
