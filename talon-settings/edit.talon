@@ -369,20 +369,13 @@ reforge:
 
 onforger:
 	edit.extend_line_end()
-	forge_text = edit.selected_text()
-	edit.line_insert_down()
-	insert(forge_text)
-	edit.line_start()
+	edit.selection_clone()
 reforger:
 	edit.extend_line_start()
-	forge_text = edit.selected_text()
-	edit.line_insert_up()
-	insert(forge_text)
+	edit.selection_clone()
 biforger:
 	edit.select_line()
-	forge_text = edit.selected_text()
-	edit.line_insert_down()
-	insert(forge_text)
+	edit.selection_clone()
 
 fly forge:
 	dodge_word = edit.selected_text()
