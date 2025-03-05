@@ -499,4 +499,6 @@ throw <user.letter>:
 	insert(letter)
 	key(enter)
 
+reswing: key(shift-tab)
+
 find paste: edit.find("{clip.text()}")
