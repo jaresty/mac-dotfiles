@@ -19,7 +19,7 @@ lee [<user.prose>] step:
 	sleep(100ms)
 	key(tab)
 
-leeter <user.word>+ step:
+completer <user.word>+ step:
 	user.completer(word_list)
 
 # project <user.prose> [{user.file_extension}] tap:

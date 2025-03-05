@@ -29,7 +29,7 @@ project [<user.prose>] step$:
 text <user.word> tap:
 	insert("rg {word}")
 	key(enter)
-leeter <user.word>+ step:
+completer <user.word>+ step:
 	user.completer(word_list)
 lee [<user.prose>] tap:
 	key(shift-tab)
