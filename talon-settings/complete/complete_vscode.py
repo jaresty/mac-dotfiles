@@ -20,8 +20,10 @@ class UserActions:
 
             actions.sleep("300ms")
 
-            actions.key("tab .")
+            actions.user.vscode("acceptSelectedSuggestion")
+            actions.key(".")
         actions.insert(last_word)
+        actions.user.vscode("editor.action.triggerSuggest")
         actions.sleep("300ms")
 
-        actions.key("tab")
+        actions.user.vscode("acceptSelectedSuggestion")
