@@ -6,5 +6,5 @@ mod = Module()
 
 @mod.action_class
 class Actions:
-    def completer(words: list[str]):
+    def complete(words: list[str]):
         """Invoke auto completion for multiple words"""

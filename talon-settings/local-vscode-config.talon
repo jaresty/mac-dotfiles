@@ -16,8 +16,8 @@ lee [<user.prose>] step:
   user.insert_formatted(prose or "", "NO_SPACES")
   sleep(100ms)
   user.vscode("acceptSelectedSuggestion")
-completer <user.word>+ step:
-  user.completer(word_list)
+complete <user.word>+ step:
+  user.complete(word_list)
 crumb tap: user.vscode("breadcrumbs.focusAndSelect")
 
 met ex:

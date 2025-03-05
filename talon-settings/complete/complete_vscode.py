@@ -12,7 +12,7 @@ app: vscode
 
 @ctx.action_class("user")
 class UserActions:
-    def completer(words: list[str]):
+    def complete(words: list[str]):
         last_word = words.pop()
         for word in words:
             actions.user.vscode("editor.action.triggerSuggest")
