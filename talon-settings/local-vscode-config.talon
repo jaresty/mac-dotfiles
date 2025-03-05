@@ -10,10 +10,10 @@ diff <user.cursorless_target> with <user.cursorless_target>:
 disk files: user.vscode("workbench.action.files.saveFiles")
 lee [<user.prose>] tap:
   user.vscode("editor.action.triggerSuggest")
-  insert_formatted(text or "", "NO_SPACES")
+  user.insert_formatted(prose or "", "NO_SPACES")
 lee [<user.prose>] step:
   user.vscode("editor.action.triggerSuggest")
-  user.insert_formatted(text or "", "NO_SPACES")
+  user.insert_formatted(prose or "", "NO_SPACES")
   sleep(100ms)
   key(enter)
 crumb tap: user.vscode("breadcrumbs.focusAndSelect")
