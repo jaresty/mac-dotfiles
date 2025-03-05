@@ -37,6 +37,9 @@ lee [<user.prose>] tap:
 lee [<user.prose>] step:
 	insert(prose or "")
 	key(tab ctrl-n)
+lee [<user.prose>] dive$:
+	insert(prose or "")
+	key(tab ctrl-n enter enter)
 dir fly step:
 	insert("cd ..")
 	key(enter)
