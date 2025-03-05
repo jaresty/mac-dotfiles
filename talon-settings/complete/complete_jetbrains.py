@@ -15,12 +15,11 @@ class UserActions:
         last_word = words.pop()
         for word in words:
             actions.insert(word)
-            actions.user.idea("action CodeCompletion") actions.insert(word)
+            actions.user.idea("action CodeCompletion")
             actions.sleep("300ms")
 
-            actions.key("tab .")
+            actions.key("enter .")
         actions.insert(last_word)
         actions.sleep("300ms")
 
-        actions.key("tab")
-
+        actions.key("enter")

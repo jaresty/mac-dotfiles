@@ -17,13 +17,13 @@ lee [<user.prose>] step:
 	user.idea("action CodeCompletion")
 	user.insert_formatted(prose or "", "NO_SPACES")
 	sleep(100ms)
-	key(tab)
+	key(enter)
 
 lee [<user.prose>] dot:
 	user.idea("action CodeCompletion")
 	user.insert_formatted(prose or "", "NO_SPACES")
 	sleep(100ms)
-	key(tab)
+	key(enter)
 	key(.)
 
 complete <user.word>+ step:
