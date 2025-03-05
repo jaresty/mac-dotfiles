@@ -6,8 +6,5 @@ mod = Module()
 
 @mod.action_class
 class Actions:
-    def complete():
-        """Invoke auto completion"""
-
-    def complete_backward():
-        """Choose previous completion"""
+    def completer(words: list[str]):
+        """Invoke auto completion for multiple words"""

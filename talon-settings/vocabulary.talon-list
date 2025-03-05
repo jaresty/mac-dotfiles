@@ -70,6 +70,7 @@ v test: vitest
 bot
 diff
 vite
+v i: vi
 L L M: LLM
 Q R: QR
 S V G: SVG

@@ -11,13 +11,16 @@ please [<user.prose>] [over]:
 
 lee [<user.prose>] tap:
 	user.idea("action CodeCompletion")
-	user.insert_formatted(text or "", "NO_SPACES")
+	user.insert_formatted(prose or "", "NO_SPACES")
 
 lee [<user.prose>] step:
 	user.idea("action CodeCompletion")
-	user.insert_formatted(text or "", "NO_SPACES")
+	user.insert_formatted(prose or "", "NO_SPACES")
 	sleep(100ms)
 	key(tab)
+
+leeter <user.word>+ step:
+	user.completer(word_list)
 
 # project <user.prose> [{user.file_extension}] tap:
 # 	user.idea("action RecentFiles")

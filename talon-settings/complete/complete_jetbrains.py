@@ -11,8 +11,16 @@ app: jetbrains
 
 @ctx.action_class("user")
 class UserActions:
-    def complete():
-        actions.user.idea("action HippieCompletion")
+    def completer(words: list[str]):
+        last_word = words.pop()
+        for word in words:
+            actions.insert(word)
+            actions.user.idea("action CodeCompletion") actions.insert(word)
+            actions.sleep("300ms")
 
-    def complete_backward():
-        actions.user.idea("action HippieBackwardCompletion")
+            actions.key("tab .")
+        actions.insert(last_word)
+        actions.sleep("300ms")
+
+        actions.key("tab")
+

@@ -1,3 +1,4 @@
+import time
 from talon import Context, Module, actions
 
 ctx = Context()
@@ -11,8 +12,16 @@ app: vscode
 
 @ctx.action_class("user")
 class UserActions:
-    def complete():
-        actions.key("tab")
+    def completer(words: list[str]):
+        last_word = words.pop()
+        for word in words:
+            actions.user.vscode("editor.action.triggerSuggest")
+            actions.insert(word)
 
-    def complete_backward():
-        actions.key("shift-tab")
+            actions.sleep("300ms")
+
+            actions.key("tab .")
+        actions.insert(last_word)
+        actions.sleep("300ms")
+
+        actions.key("tab")
