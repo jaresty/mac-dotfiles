@@ -29,15 +29,6 @@ project [<user.prose>] step$:
 text <user.word> tap:
 	insert("rg {word}")
 	key(enter)
-lee [<user.prose>] tap:
-	key(shift-tab)
-	insert(prose or "")
-lee [<user.prose>] step:
-	insert(prose or "")
-	key(tab ctrl-n)
-lee [<user.prose>] dive$:
-	insert(prose or "")
-	key(tab ctrl-n enter enter)
 dir fly step:
 	insert("cd ..")
 	key(enter)

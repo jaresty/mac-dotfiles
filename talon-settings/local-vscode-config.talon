@@ -8,20 +8,6 @@ diff <user.cursorless_target> with <user.cursorless_target>:
   user.cursorless_ide_command("extension.partialDiff.markSection2AndTakeDiff", cursorless_target_2)
 
 disk files: user.vscode("workbench.action.files.saveFiles")
-lee [<user.prose>] tap:
-  user.vscode("editor.action.triggerSuggest")
-  user.insert_formatted(prose or "", "NO_SPACES")
-lee [<user.prose>] step:
-  user.vscode("editor.action.triggerSuggest")
-  user.insert_formatted(prose or "", "NO_SPACES")
-  sleep(100ms)
-  user.vscode("acceptSelectedSuggestion")
-lee [<user.prose>] dot:
-  user.vscode("editor.action.triggerSuggest")
-  user.insert_formatted(prose or "", "NO_SPACES")
-  sleep(100ms)
-  user.vscode("acceptSelectedSuggestion")
-  key(.)
 crumb tap: user.vscode("breadcrumbs.focusAndSelect")
 
 met ex:

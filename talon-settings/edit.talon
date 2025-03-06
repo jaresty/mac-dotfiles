@@ -505,3 +505,12 @@ find paste: edit.find(clip.text())
 
 complete <user.word>+ step:
 	user.complete(word_list)
+lee [<user.prose>] tap:
+	user.complete_one(prose or "")
+lee [<user.prose>] step:
+	user.complete_one(prose or "")
+	user.accept_completion()
+lee [<user.prose>] and:
+	user.complete_one(prose or "")
+	user.accept_completion()
+	user.complete_and_continue()

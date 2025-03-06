@@ -16,3 +16,14 @@ class UserActions:
         for word in words:
             actions.insert(word)
             actions.key("tab ctrl-n")
+
+    def complete_one(prose: str):
+        actions.user.insert_formatted(prose or "", "NO_SPACES")
+        actions.key("tab")
+        actions.sleep("100ms")
+
+    def accept_completion():
+        actions.key("ctrl-n")
+
+    def complete_and_continue():
+        actions.key("enter enter")

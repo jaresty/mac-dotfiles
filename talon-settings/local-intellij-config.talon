@@ -9,23 +9,6 @@ please [<user.prose>] [over]:
 	sleep(400ms)
 	insert(user.prose or "")
 
-lee [<user.prose>] tap:
-	user.idea("action CodeCompletion")
-	user.insert_formatted(prose or "", "NO_SPACES")
-
-lee [<user.prose>] step:
-	user.idea("action CodeCompletion")
-	user.insert_formatted(prose or "", "NO_SPACES")
-	sleep(100ms)
-	key(enter)
-
-lee [<user.prose>] dot:
-	user.idea("action CodeCompletion")
-	user.insert_formatted(prose or "", "NO_SPACES")
-	sleep(100ms)
-	key(enter)
-	key(.)
-
 # project <user.prose> [{user.file_extension}] tap:
 # 	user.idea("action RecentFiles")
 # 	sleep(400ms)
