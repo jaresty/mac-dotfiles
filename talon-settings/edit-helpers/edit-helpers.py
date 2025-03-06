@@ -303,7 +303,7 @@ class UserActions:
     def noise_trigger_hiss(active: bool):
         global hiss_cron
 
-        if active:
+        if active and actions.speech.enabled():
             hiss_cron = cron.after(
                 str("100ms"),
                 continuous_move,
