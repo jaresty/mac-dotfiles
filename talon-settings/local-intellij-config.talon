@@ -26,9 +26,6 @@ lee [<user.prose>] dot:
 	key(enter)
 	key(.)
 
-complete <user.word>+ step:
-	user.complete(word_list)
-
 # project <user.prose> [{user.file_extension}] tap:
 # 	user.idea("action RecentFiles")
 # 	sleep(400ms)

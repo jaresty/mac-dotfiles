@@ -6,6 +6,7 @@ mod = Module()
 
 ctx.matches = r"""
 app: jetbrains
+and not tag: terminal
 """
 
 

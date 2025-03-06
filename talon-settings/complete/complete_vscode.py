@@ -1,4 +1,3 @@
-import time
 from talon import Context, Module, actions
 
 ctx = Context()
@@ -7,6 +6,7 @@ mod = Module()
 
 ctx.matches = r"""
 app: vscode
+and not tag: terminal
 """
 
 

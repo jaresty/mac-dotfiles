@@ -22,8 +22,6 @@ lee [<user.prose>] dot:
   sleep(100ms)
   user.vscode("acceptSelectedSuggestion")
   key(.)
-complete <user.word>+ step:
-  user.complete(word_list)
 crumb tap: user.vscode("breadcrumbs.focusAndSelect")
 
 met ex:

@@ -501,4 +501,7 @@ throw <user.letter>:
 
 reswing: key(shift-tab)
 
-find paste: edit.find("{clip.text()}")
+find paste: edit.find(clip.text())
+
+complete <user.word>+ step:
+	user.complete(word_list)

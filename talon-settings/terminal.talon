@@ -29,8 +29,6 @@ project [<user.prose>] step$:
 text <user.word> tap:
 	insert("rg {word}")
 	key(enter)
-complete <user.word>+ step:
-	user.complete(word_list)
 lee [<user.prose>] tap:
 	key(shift-tab)
 	insert(prose or "")
@@ -48,6 +46,10 @@ dir <user.prose> step:
 	sleep(60ms)
 	insert(prose)
 	key(enter)
+dir [<user.prose>] tap:
+	key(alt-c)
+	sleep(60ms)
+	insert(prose)
 dir restep:
 	insert("cd -")
 	key(enter)
