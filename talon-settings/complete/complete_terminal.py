@@ -14,10 +14,10 @@ class UserActions:
     def complete(words: list[str] = []):
         """Insert each of these words completing them as you go"""
         if not words:
-            actions.key("tab ctrl-n")
+            actions.key("tab ctrl-n space backspace")
         for word in words:
             actions.insert(word)
-            actions.key("tab ctrl-n")
+            actions.key("tab ctrl-n space backspace")
 
     def complete_tap(prose: str):
         actions.key("shift-tab")
