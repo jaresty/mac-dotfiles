@@ -26,12 +26,12 @@ class UserActions:
         actions.key("enter")
 
     def complete_tap(prose: str):
-        actions.idea("action CodeCompletion")
+        actions.user.idea("action CodeCompletion")
         actions.user.insert_formatted(prose or "", "NO_SPACES")
         actions.sleep("100ms")
 
     def complete_step(prose: str):
-        actions.idea("action CodeCompletion")
+        actions.user.idea("action CodeCompletion")
         actions.user.insert_formatted(prose or "", "NO_SPACES")
         actions.sleep("100ms")
         actions.key("enter")
