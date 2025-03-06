@@ -12,7 +12,7 @@ and not tag: terminal
 
 @ctx.action_class("user")
 class UserActions:
-    def complete(words: list[str]):
+    def complete(words: list[str] = []):
         last_word = words.pop()
         for word in words:
             actions.insert(word)
@@ -21,6 +21,7 @@ class UserActions:
 
             actions.key("enter .")
         actions.insert(last_word)
+        actions.user.idea("action CodeCompletion")
         actions.sleep("300ms")
 
         actions.key("enter")
@@ -29,9 +30,3 @@ class UserActions:
         actions.user.idea("action CodeCompletion")
         actions.user.insert_formatted(prose or "", "NO_SPACES")
         actions.sleep("100ms")
-
-    def complete_step(prose: str):
-        actions.user.idea("action CodeCompletion")
-        actions.user.insert_formatted(prose or "", "NO_SPACES")
-        actions.sleep("100ms")
-        actions.key("enter")

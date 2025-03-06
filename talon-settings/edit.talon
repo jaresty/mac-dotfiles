@@ -503,9 +503,9 @@ reswing: key(shift-tab)
 
 find paste: edit.find(clip.text())
 
-complete <user.word>+ step:
-	user.complete(word_list)
 lee [<user.prose>] tap:
 	user.complete_tap(prose or "")
-lee [<user.prose>] step:
-	user.complete_step(prose or "")
+lee <user.word>+ step:
+	user.complete(word_list)
+lee step:
+	user.complete()
