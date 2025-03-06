@@ -45,7 +45,15 @@ dir restep:
 	insert("cd -")
 	key(enter)
 
-flag: " --"
+flag [<user.prose>] step:
+	insert("--")
+	insert(prose or "")
+	key(tab)
+
+flag [<user.prose>] tap:
+	insert("--")
+	key(shift-tab)
+	insert(prose or "")
 
 yes: key(y enter)
 no: key(n enter)
