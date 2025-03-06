@@ -28,13 +28,13 @@ class UserActions:
 
         actions.user.vscode("acceptSelectedSuggestion")
 
-    def complete_one(prose: str):
+    def complete_tap(prose: str):
         actions.user.vscode("editor.action.triggerSuggest")
         actions.user.insert_formatted(prose or "", "NO_SPACES")
         actions.sleep("100ms")
 
-    def accept_completion():
+    def complete_step(prose: str):
+        actions.user.vscode("editor.action.triggerSuggest")
+        actions.user.insert_formatted(prose or "", "NO_SPACES")
+        actions.sleep("100ms")
         actions.user.vscode("acceptSelectedSuggestion")
-
-    def complete_and_continue():
-        actions.key(".")
