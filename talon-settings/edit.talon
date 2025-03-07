@@ -479,6 +479,10 @@ onplant <user.keys>:
 	key(keys)
 	edit.left()
 
+onplanter <user.keys>:
+	key(keys)
+	key(left enter left)
+
 trail step:
 	user.next_reference()
 trail restep:
@@ -490,14 +494,6 @@ numeric step:
 
 numeric restep:
 	user.numeric_decrement()
-
-throw <user.number_string>:
-	insert(user.number_string)
-	key(enter)
-
-throw <user.letter>:
-	insert(letter)
-	key(enter)
 
 reswing: key(shift-tab)
 
