@@ -505,7 +505,11 @@ find paste: edit.find(clip.text())
 
 lee [<user.prose>] tap:
 	user.complete_tap(prose or "")
+spellee <user.letters> tap:
+	user.complete_from_start(letters)
 lee <user.word>+ step:
 	user.complete(word_list)
 lee step:
 	user.complete()
+spellee [<user.letters>] step:
+	user.complete_from_start(letters or "", 1)

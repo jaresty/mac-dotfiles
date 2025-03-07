@@ -15,20 +15,15 @@ class UserActions:
     def complete(words: list[str] = []):
         last_word = words.pop()
         for word in words:
-            actions.user.vscode("editor.action.triggerSuggest")
-            actions.insert(word)
-
-            actions.sleep("300ms")
-
-            actions.user.vscode("acceptSelectedSuggestion")
+            actions.user.complete_from_start(word)
             actions.key(".")
-        actions.insert(last_word)
+        actions.user.complete_from_start(last_word)
+
+    def complete_tap(prose: str = ""):
+        actions.user.insert_formatted(prose, "NO_SPACES")
         actions.user.vscode("editor.action.triggerSuggest")
+
+    def complete_from_start(leading_text: str = "", accept: int = 0):
+        actions.user.complete_tap(leading_text)
         actions.sleep("300ms")
-
         actions.user.vscode("acceptSelectedSuggestion")
-
-    def complete_tap(prose: str):
-        actions.user.vscode("editor.action.triggerSuggest")
-        actions.user.insert_formatted(prose or "", "NO_SPACES")
-        actions.sleep("100ms")
