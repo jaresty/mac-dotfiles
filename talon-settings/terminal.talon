@@ -50,7 +50,7 @@ flag [<user.prose>] step:
 	user.complete_from_start(prose or "", 1)
 
 spell flag <user.letters> step:
-	insert("--")
+	insert("-")
 	user.complete_from_start(letters or "", 1)
 
 flag [<user.prose>] tap:
@@ -58,7 +58,7 @@ flag [<user.prose>] tap:
 	user.complete_tap(prose or "")
 
 spell flag <user.letters> tap:
-	insert("--")
+	insert("-")
 	user.complete_tap(letters)
 
 yes: key(y enter)
