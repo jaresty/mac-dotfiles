@@ -47,13 +47,19 @@ dir restep:
 
 flag [<user.prose>] step:
 	insert("--")
-	insert(prose or "")
-	key(tab)
+	user.complete_from_start(prose or "", 1)
+
+flag spell <user.letters> step:
+	insert("--")
+	user.complete_from_start(letters or "", 1)
 
 flag [<user.prose>] tap:
 	insert("--")
-	key(shift-tab)
-	insert(prose or "")
+	user.complete_tap(prose or "")
+
+flag spell <user.letters> tap:
+	insert("--")
+	user.complete_tap(letters)
 
 yes: key(y enter)
 no: key(n enter)
