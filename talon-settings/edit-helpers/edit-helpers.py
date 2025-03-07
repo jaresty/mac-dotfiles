@@ -44,6 +44,11 @@ ctx.lists["user.repeat_speed"] = REPEAT_SPEED.keys()
 
 MOVEMENT_TYPE: dict[str, tuple[callable, callable, int]] = {
     "stream fly step": (actions.edit.up, actions.edit.down, 2),
+    "stream choose": (
+        lambda: actions.key("tab"),
+        lambda: (actions.key("enter"), actions.user.stop_moving()),
+        4,
+    ),
     "stream dip step": (actions.edit.down, actions.edit.up, 2),
     "stream onstep": (actions.edit.right, actions.edit.left, 1),
     "stream restep": (actions.edit.left, actions.edit.right, 1),
