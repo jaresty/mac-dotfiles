@@ -306,7 +306,7 @@ class Actions:
 @ctx.action_class("user")
 class UserActions:
     def noise_trigger_hiss(active: bool):
-        global hiss_cron
+        global hiss_cron, current_job
 
         if active and actions.speech.enabled():
             hiss_cron = cron.after(
@@ -315,6 +315,7 @@ class UserActions:
             )
         else:
             cron.cancel(hiss_cron)
+            cron.cancel(current_job)
             reset_speed()
             stop_moving()
 
