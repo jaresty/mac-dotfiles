@@ -310,7 +310,7 @@ class UserActions:
 
         if active and actions.speech.enabled():
             hiss_cron = cron.after(
-                str("100ms"),
+                str("300ms"),
                 continuous_move,
             )
         else:
