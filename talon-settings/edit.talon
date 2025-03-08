@@ -403,19 +403,18 @@ dip dodge:
 dip dodger:
 	edit.line_swap_down()
 
-onpush:
-	insert(" ")
-	edit.left()
-onpusher:
-	key(shift-enter)
-	edit.up()
-	edit.line_end()
-repusher:
-	edit.extend_line_end()
-	text_to_move = edit.selected_text()
-	key(delete)
-	edit.line_insert_up()
-	insert(text_to_move)
+on <user.keys> push:
+	user.push_keys(keys_list)
+on push:
+	user.push_keys()
+on <user.keys> pusher:
+	user.pusher_keys(keys)
+on pusher:
+	user.pusher_keys()
+re <user.keys> push:
+	user.repush_keys(keys)
+re push:
+	user.repush_keys()
 
 #break this line at the cursor and leave the cursor on a new line between the two halves
 bipusher:
@@ -469,19 +468,6 @@ fly push:
 	edit.line_insert_up()
 dip push:
 	edit.line_insert_down()
-
-replant <user.keys>:
-	edit.left()
-	key(keys)
-	edit.right()
-
-onplant <user.keys>:
-	key(keys)
-	edit.left()
-
-onplanter <user.keys>:
-	key(keys)
-	key(left enter left)
 
 trail step:
 	user.next_reference()
