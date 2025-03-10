@@ -20,7 +20,10 @@ File extension,Name
 .js,dot J S
 .js,dot java script
 .ts,dot TS
+.spec.ts,dot spec dot TS
 .ts,dot type script
+.tsx,dot TSX
+.spec.tsx,dot spec dot TSX
 .csv,dot csv
 .csv,totssv
 .csv,tot csv
