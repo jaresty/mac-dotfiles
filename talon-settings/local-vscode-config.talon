@@ -46,12 +46,24 @@ wax restep: user.wane()
 context tap: user.vscode("editor.action.showContextMenu")
 
 prob tap: user.vscode("editor.action.quickFix")
-prob ontap:
+prob [<user.prose>] ontap:
   user.problem_next()
   user.vscode("editor.action.quickFix")
-prob retap:
+  user.insert_formatted(prose or "", "NO_SPACES")
+prob [<user.prose>] retap:
   user.problem_last()
   user.vscode("editor.action.quickFix")
+  user.insert_formatted(prose or "", "NO_SPACES")
+prob [<user.prose>] onstep:
+  user.problem_next()
+  user.vscode("editor.action.quickFix")
+  user.insert_formatted(prose or "", "NO_SPACES")
+  key(enter)
+prob [<user.prose>] restep:
+  user.problem_last()
+  user.vscode("editor.action.quickFix")
+  user.insert_formatted(prose or "", "NO_SPACES")
+  key(enter)
 
 change step: key(alt-f5)
 change restep: key(shift-alt-f5)

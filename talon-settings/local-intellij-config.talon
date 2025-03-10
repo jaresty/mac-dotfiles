@@ -108,12 +108,24 @@ symbol [<user.prose>] tappy:
 	insert(prose or "")
 
 prob tap: user.idea("action ShowIntentionActions")
-prob ontap:
+prob [<user.prose>] ontap:
 	user.problem_next()
 	user.idea("action ShowIntentionActions")
-prob retap:
+	user.insert_formatted(prose or "", "NO_SPACES")
+prob [<user.prose>] retap:
 	user.problem_last()
 	user.idea("action ShowIntentionActions")
+	user.insert_formatted(prose or "", "NO_SPACES")
+prob [<user.prose>] onstep:
+	user.problem_next()
+	user.idea("action ShowIntentionActions")
+	user.insert_formatted(prose or "", "NO_SPACES")
+	key(enter)
+prob [<user.prose>] restep:
+	user.problem_last()
+	user.idea("action ShowIntentionActions")
+	user.insert_formatted(prose or "", "NO_SPACES")
+	key(enter)
 
 run that: key('ctrl-r')
 run last: key('ctrl-shift-r')
