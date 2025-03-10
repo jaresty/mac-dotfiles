@@ -74,9 +74,6 @@ navi restep: user.go_back()
 hunt step: edit.find_next()
 hunt restep: edit.find_previous()
 
-prob step: user.problem_next()
-prob restep: user.problem_last()
-
 <user.movement_type>: user.start_moving(movement_type)
 perch: user.stop_moving()
 
