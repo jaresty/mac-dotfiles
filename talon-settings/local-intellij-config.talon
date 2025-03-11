@@ -109,27 +109,33 @@ symbol [<user.prose>] tappy:
 
 prob [<user.prose>] tap:
 	user.idea("action ShowIntentionActions")
+	sleep(400ms)
 	user.insert_formatted(prose or "", "NO_SPACES")
 prob [<user.prose>] step:
 	user.idea("action ShowIntentionActions")
+	sleep(400ms)
 	user.insert_formatted(prose or "", "NO_SPACES")
 	key(enter)
 prob [<user.prose>] ontap:
 	user.problem_next()
 	user.idea("action ShowIntentionActions")
+	sleep(400ms)
 	user.insert_formatted(prose or "", "NO_SPACES")
 prob [<user.prose>] retap:
 	user.problem_last()
 	user.idea("action ShowIntentionActions")
+	sleep(400ms)
 	user.insert_formatted(prose or "", "NO_SPACES")
 prob [<user.prose>] onstep:
 	user.problem_next()
 	user.idea("action ShowIntentionActions")
+	sleep(400ms)
 	user.insert_formatted(prose or "", "NO_SPACES")
 	key(enter)
 prob [<user.prose>] restep:
 	user.problem_last()
 	user.idea("action ShowIntentionActions")
+	sleep(400ms)
 	user.insert_formatted(prose or "", "NO_SPACES")
 	key(enter)
 

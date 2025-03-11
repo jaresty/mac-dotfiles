@@ -47,27 +47,33 @@ context tap: user.vscode("editor.action.showContextMenu")
 
 prob [<user.prose>] tap:
   user.vscode("editor.action.quickFix")
+  sleep(400ms)
   user.insert_formatted(prose or "", "NO_SPACES")
 prob [<user.prose>] step:
   user.vscode("editor.action.quickFix")
+  sleep(400ms)
   user.insert_formatted(prose or "", "NO_SPACES")
   key(enter)
 prob [<user.prose>] ontap:
   user.problem_next()
   user.vscode("editor.action.quickFix")
+  sleep(400ms)
   user.insert_formatted(prose or "", "NO_SPACES")
 prob [<user.prose>] retap:
   user.problem_last()
   user.vscode("editor.action.quickFix")
+  sleep(400ms)
   user.insert_formatted(prose or "", "NO_SPACES")
 prob [<user.prose>] onstep:
   user.problem_next()
   user.vscode("editor.action.quickFix")
+  sleep(400ms)
   user.insert_formatted(prose or "", "NO_SPACES")
   key(enter)
 prob [<user.prose>] restep:
   user.problem_last()
   user.vscode("editor.action.quickFix")
+  sleep(400ms)
   user.insert_formatted(prose or "", "NO_SPACES")
   key(enter)
 
