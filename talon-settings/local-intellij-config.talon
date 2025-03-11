@@ -107,7 +107,13 @@ symbol [<user.prose>] tappy:
 	sleep(400ms)
 	insert(prose or "")
 
-prob tap: user.idea("action ShowIntentionActions")
+prob [<user.prose>] tap:
+	user.idea("action ShowIntentionActions")
+	user.insert_formatted(prose or "", "NO_SPACES")
+prob [<user.prose>] step:
+	user.idea("action ShowIntentionActions")
+	user.insert_formatted(prose or "", "NO_SPACES")
+	key(enter)
 prob [<user.prose>] ontap:
 	user.problem_next()
 	user.idea("action ShowIntentionActions")

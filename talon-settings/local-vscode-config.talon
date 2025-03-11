@@ -45,7 +45,13 @@ wax restep: user.wane()
 
 context tap: user.vscode("editor.action.showContextMenu")
 
-prob tap: user.vscode("editor.action.quickFix")
+prob [<user.prose>] tap:
+  user.vscode("editor.action.quickFix")
+  user.insert_formatted(prose or "", "NO_SPACES")
+prob [<user.prose>] step:
+  user.vscode("editor.action.quickFix")
+  user.insert_formatted(prose or "", "NO_SPACES")
+  key(enter)
 prob [<user.prose>] ontap:
   user.problem_next()
   user.vscode("editor.action.quickFix")
