@@ -28,11 +28,6 @@ symbol [<user.prose>] step:
 	key(enter)
 
 inspect tap: key(cmd-alt-c)
-inspect step:
-	key(cmd-alt-c)
-	sleep(500ms)
-	mouse_click()
-
 command [<user.prose>] tap:
 	key("cmd-p >")
 	sleep(400ms)
