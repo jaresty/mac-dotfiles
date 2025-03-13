@@ -27,9 +27,10 @@ symbol [<user.prose>] step:
 	sleep(300ms)
 	key(enter)
 
-inspect tap: key(cmd-shift-i)
+inspect tap: key(cmd-alt-c)
 inspect step:
-	key(cmd-shift-i)
+	key(cmd-alt-c)
+	sleep(50ms)
 	mouse_click()
 
 command [<user.prose>] tap:
