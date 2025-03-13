@@ -30,7 +30,7 @@ symbol [<user.prose>] step:
 inspect tap: key(cmd-alt-c)
 inspect step:
 	key(cmd-alt-c)
-	sleep(300ms)
+	sleep(500ms)
 	mouse_click()
 
 command [<user.prose>] tap:
