@@ -99,13 +99,25 @@ bipunchest:
 
 ^symbol [<user.prose>] tap:
 	user.idea("action GotoSymbol")
-	insert(prose)
-	key("enter")
+	user.insert_formatted(prose or "", "NO_SPACES")
 
 symbol [<user.prose>] tappy:
 	key("cmd-f12")
 	sleep(400ms)
-	insert(prose or "")
+	user.insert_formatted(prose or "", "NO_SPACES")
+
+^symbol [<user.prose>] step:
+	user.idea("action GotoSymbol")
+	user.insert_formatted(prose or "", "NO_SPACES")
+	sleep(200ms)
+	key(enter)
+
+symbol [<user.prose>] steppy:
+	key("cmd-f12")
+	sleep(400ms)
+	user.insert_formatted(prose or "", "NO_SPACES")
+	sleep(200ms)
+	key(enter)
 
 prob [<user.prose>] tap:
 	user.idea("action ShowIntentionActions")

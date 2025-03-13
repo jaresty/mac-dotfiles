@@ -90,11 +90,25 @@ refer restep: key(shift-f4)
 symbol [<user.prose>] tappy:
   user.vscode("workbench.action.gotoSymbol")
   sleep(50ms)
-  insert(prose or "")
+  user.insert_formatted(prose or "", "NO_SPACES")
 ^symbol [<user.prose>] tap:
   user.vscode("workbench.action.showAllSymbols")
   sleep(50ms)
-  insert(prose or "")
+  user.insert_formatted(prose or "", "NO_SPACES")
+
+symbol [<user.prose>] steppy:
+  user.vscode("workbench.action.gotoSymbol")
+  sleep(50ms)
+  user.insert_formatted(prose or "", "NO_SPACES")
+  sleep(200ms)
+  key(enter)
+^symbol [<user.prose>] step:
+  user.vscode("workbench.action.showAllSymbols")
+  sleep(50ms)
+  user.insert_formatted(prose or "", "NO_SPACES")
+  sleep(200ms)
+  key(enter)
+
 ^text [<user.prose>] tap:
   user.vscode("workbench.action.quickTextSearch")
   sleep(50ms)
