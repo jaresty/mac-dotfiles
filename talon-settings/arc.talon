@@ -38,7 +38,7 @@ command [<user.prose>] step:
 	sleep(300ms)
 	key(enter)
 
-debug resume: key(f8)
+debug play: key(f8)
 debug step: key(f9)
 debug dip step: key(f11)
 debug fly step: key(shift-f11)
