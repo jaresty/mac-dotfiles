@@ -466,9 +466,10 @@ fly push:
 dip push:
 	edit.line_insert_down()
 
-trail step:
+deaf tap: user.tap_reference()
+deaf step:
 	user.next_reference()
-trail restep:
+deaf restep:
 	user.last_reference()
 
 context tap: key("ctrl-enter")

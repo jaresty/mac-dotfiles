@@ -11,6 +11,9 @@ app: jetbrains
 
 @ctx.action_class("user")
 class UserActions:
+    def tap_reference():
+        actions.key("cmd-b")
+
     def next_reference():
         actions.key("ctrl-alt-down")
 

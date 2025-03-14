@@ -118,7 +118,6 @@ symbol [<user.prose>] steppy:
   sleep(50ms)
   insert(prose or "")
 
-deaf tap: user.vscode("editor.action.peekDefinition")
 type tap: user.vscode("editor.action.peekTypeDefinition")
 type hierarchy tap: user.vscode("editor.showTypeHierarchy")
 param tap: user.vscode("editor.action.triggerParameterHints")

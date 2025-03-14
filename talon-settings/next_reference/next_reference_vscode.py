@@ -11,6 +11,9 @@ app: vscode
 
 @ctx.action_class("user")
 class UserActions:
+    def tap_reference():
+        actions.user.vscode("editor.action.peekDefinition")
+
     def next_reference():
         actions.key("f12")
 
