@@ -19,7 +19,9 @@ sticky [<user.prose>] step:
 	"n"
 	mouse_click()
 	insert(prose or "")
-	key(escape escape)
+	key(escape)
+	sleep(50ms)
+	key(escape)
 sticky [<user.prose>] tap:
 	"n"
 	mouse_click()
