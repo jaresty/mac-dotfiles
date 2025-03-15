@@ -186,7 +186,7 @@ debug fly step: user.vscode("workbench.action.debug.stepOut")
 mark step: user.vscode("bookmarks.jumpToNext")
 mark restep: user.vscode("bookmarks.jumpToPrevious")
 
-<user.formatters> form <user.cursorless_target>:
+form <user.formatters> <user.cursorless_target>:
   user.cursorless_reformat(cursorless_target, formatters)
 
 {user.search_engine} scout <user.cursorless_target>:
