@@ -90,22 +90,22 @@ refer restep: key(shift-f4)
 symbol [<user.spoken_search>] tappy:
   user.vscode("workbench.action.gotoSymbol")
   sleep(50ms)
-  user.insert_formatted(spoken_search or "", "NO_SPACES")
+  insert(spoken_search or "")
 ^symbol [<user.spoken_search>] tap:
   user.vscode("workbench.action.showAllSymbols")
   sleep(50ms)
-  user.insert_formatted(spoken_search or "", "NO_SPACES")
+  insert(spoken_search or "")
 
 symbol [<user.spoken_search>] steppy:
   user.vscode("workbench.action.gotoSymbol")
   sleep(50ms)
-  user.insert_formatted(spoken_search or "", "NO_SPACES")
+  insert(spoken_search or "")
   sleep(300ms)
   key(enter)
 ^symbol [<user.spoken_search>] step:
   user.vscode("workbench.action.showAllSymbols")
   sleep(50ms)
-  user.insert_formatted(spoken_search or "", "NO_SPACES")
+  insert(spoken_search or "")
   sleep(300ms)
   key(enter)
 

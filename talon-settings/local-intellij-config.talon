@@ -111,23 +111,23 @@ bipunchest:
 
 ^symbol [<user.spoken_search>] tap:
 	user.idea("action GotoSymbol")
-	user.insert_formatted(spoken_search or "", "NO_SPACES")
+	insert(spoken_search or "")
 
 symbol [<user.spoken_search>] tappy:
 	key("cmd-f12")
 	sleep(400ms)
-	user.insert_formatted(spoken_search or "", "NO_SPACES")
+	insert(spoken_search or "")
 
 ^symbol [<user.spoken_search>] step:
 	user.idea("action GotoSymbol")
-	user.insert_formatted(spoken_search or "", "NO_SPACES")
+	insert(spoken_search or "")
 	sleep(200ms)
 	key(enter)
 
 symbol [<user.spoken_search>] steppy:
 	key("cmd-f12")
 	sleep(400ms)
-	user.insert_formatted(spoken_search or "", "NO_SPACES")
+	insert(spoken_search or "")
 	sleep(200ms)
 	key(enter)
 
