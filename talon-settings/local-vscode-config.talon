@@ -87,36 +87,36 @@ refer step: key(f4)
 refer restep: key(shift-f4)
 
 # Symbol search
-symbol [<user.prose>] tappy:
+symbol [<user.spoken_search>] tappy:
   user.vscode("workbench.action.gotoSymbol")
   sleep(50ms)
-  user.insert_formatted(prose or "", "NO_SPACES")
-^symbol [<user.prose>] tap:
+  user.insert_formatted(spoken_search or "", "NO_SPACES")
+^symbol [<user.spoken_search>] tap:
   user.vscode("workbench.action.showAllSymbols")
   sleep(50ms)
-  user.insert_formatted(prose or "", "NO_SPACES")
+  user.insert_formatted(spoken_search or "", "NO_SPACES")
 
-symbol [<user.prose>] steppy:
+symbol [<user.spoken_search>] steppy:
   user.vscode("workbench.action.gotoSymbol")
   sleep(50ms)
-  user.insert_formatted(prose or "", "NO_SPACES")
-  sleep(200ms)
+  user.insert_formatted(spoken_search or "", "NO_SPACES")
+  sleep(300ms)
   key(enter)
-^symbol [<user.prose>] step:
+^symbol [<user.spoken_search>] step:
   user.vscode("workbench.action.showAllSymbols")
   sleep(50ms)
-  user.insert_formatted(prose or "", "NO_SPACES")
-  sleep(200ms)
+  user.insert_formatted(spoken_search or "", "NO_SPACES")
+  sleep(300ms)
   key(enter)
 
-^text [<user.prose>] tap:
+^text [<user.spoken_search>] tap:
   user.vscode("workbench.action.quickTextSearch")
   sleep(50ms)
-  insert(prose or "")
-^text [<user.prose>] tappy:
+  insert(spoken_search or "")
+^text [<user.spoken_search>] tappy:
   edit.find()
   sleep(50ms)
-  insert(prose or "")
+  insert(spoken_search or "")
 
 type tap: user.vscode("editor.action.peekTypeDefinition")
 type hierarchy tap: user.vscode("editor.showTypeHierarchy")

@@ -4,6 +4,14 @@ ctx = Context()
 mod = Module()
 
 
+@mod.capture(rule="say <user.prose> | echo")
+def spoken_search(m) -> str:
+    if hasattr(m, "prose"):
+        return m.prose
+
+    return actions.user.get_last_phrase()
+
+
 @mod.action_class
 class Actions:
     def push_keys(keys: list[str] = ["space"]):

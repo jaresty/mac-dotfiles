@@ -89,33 +89,45 @@ bipunchest:
 	edit.select_all()
 	edit.delete()
 
-^text [<user.prose>] tappy:
+^text [<user.spoken_search>] tappy:
 	user.idea("action Find")
-	insert(prose or "")
+	insert(spoken_search or "")
 
-^text [<user.prose>] tap:
+^text [<user.spoken_search>] tap:
 	user.idea("action FindInPath")
-	insert(prose or "")
+	insert(spoken_search or "")
 
-^symbol [<user.prose>] tap:
-	user.idea("action GotoSymbol")
-	user.insert_formatted(prose or "", "NO_SPACES")
-
-symbol [<user.prose>] tappy:
-	key("cmd-f12")
-	sleep(400ms)
-	user.insert_formatted(prose or "", "NO_SPACES")
-
-^symbol [<user.prose>] step:
-	user.idea("action GotoSymbol")
-	user.insert_formatted(prose or "", "NO_SPACES")
+^text [<user.spoken_search>] steppy:
+	user.idea("action Find")
+	insert(spoken_search or "")
 	sleep(200ms)
 	key(enter)
 
-symbol [<user.prose>] steppy:
+^text [<user.spoken_search>] step:
+	user.idea("action FindInPath")
+	insert(spoken_search or "")
+	sleep(200ms)
+	key(enter)
+
+^symbol [<user.spoken_search>] tap:
+	user.idea("action GotoSymbol")
+	user.insert_formatted(spoken_search or "", "NO_SPACES")
+
+symbol [<user.spoken_search>] tappy:
 	key("cmd-f12")
 	sleep(400ms)
-	user.insert_formatted(prose or "", "NO_SPACES")
+	user.insert_formatted(spoken_search or "", "NO_SPACES")
+
+^symbol [<user.spoken_search>] step:
+	user.idea("action GotoSymbol")
+	user.insert_formatted(spoken_search or "", "NO_SPACES")
+	sleep(200ms)
+	key(enter)
+
+symbol [<user.spoken_search>] steppy:
+	key("cmd-f12")
+	sleep(400ms)
+	user.insert_formatted(spoken_search or "", "NO_SPACES")
 	sleep(200ms)
 	key(enter)
 
