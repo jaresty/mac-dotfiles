@@ -4,10 +4,14 @@ ctx = Context()
 mod = Module()
 
 
-@mod.capture(rule="{user.code_formatter} <user.prose> | echo")
+@mod.capture(
+    rule="{user.code_formatter} <user.prose> | {user.code_formatter} paste | echo"
+)
 def spoken_search(m) -> str:
     if hasattr(m, "prose"):
         return actions.user.formatted_text(m.prose, m.code_formatter)
+    elif hasattr(m, "code_formatter"):
+        return actions.user.reformat_text(actions.clip.text(), m.code_formatter)
 
     return actions.user.get_last_phrase()
 
