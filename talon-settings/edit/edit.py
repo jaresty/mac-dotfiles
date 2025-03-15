@@ -5,19 +5,27 @@ mod = Module()
 
 
 @mod.capture(
-    rule="<user.formatted_prose> | <user.formatted_paste> | <user.last_phrase>"
+    rule="<user.formatted_prose> | <user.formatted_paste> | <user.last_phrase> | <user.cursorless_formatted>"
 )
 def spoken_search(m) -> str:
-    return m.formatted_prose or m.formatted_paste or m.last_phrase
+    if hasattr(m, "formatted_prose"):
+        return m.formatted_prose
+    elif hasattr(m, "formatted_paste"):
+        return m.formatted_paste
+    elif hasattr(m, "last_phrase"):
+        return m.last_phrase
+    elif hasattr(m, "cursorless_formatted"):
+        return m.cursorless_formatted
+    return ""
 
 
-# @mod.capture(rule="curse [<user.formatters>] <user.cursorless_target>")
-# def cursorless_formatted(m) -> str:
-#     target_text = actions.user.cursorless_get_text(m.cursorless_target)
-#     if hasattr(m, "formatters"):
-#         return actions.user.formatted_text(target_text, m.code_formatter)
+@mod.capture(rule="curse [<user.formatters>] <user.cursorless_target>")
+def cursorless_formatted(m) -> str:
+    target_text = actions.user.cursorless_get_text(m.cursorless_target)
+    if hasattr(m, "formatters"):
+        return actions.user.reformat_text(target_text, m.formatters)
 
-#     return target_text
+    return target_text
 
 
 @mod.capture(rule="<user.formatters> <user.prose>")
