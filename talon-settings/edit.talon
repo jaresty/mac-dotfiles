@@ -1,36 +1,36 @@
 #movement to the right
-onsteppy: edit.right()
-onstep: edit.word_right()
-onrestep:
+onwalky: edit.right()
+onwalk: edit.word_right()
+onrewalk:
 	edit.word_right()
 	edit.word_right()
 	edit.word_left()
-onstepper: edit.line_end()
-onstepperest: edit.paragraph_end()
-onsteppest: edit.file_end()
+onwalker: edit.line_end()
+onwalkerest: edit.paragraph_end()
+onwalkest: edit.file_end()
 
-midstep: user.line_middle()
+midwalk: user.line_middle()
 
 #movement to the left
-resteppy: edit.left()
-restep: edit.word_left()
-reonstep:
+rewalky: edit.left()
+rewalk: edit.word_left()
+reonwalk:
 	edit.word_left()
 	edit.word_left()
 	edit.word_right()
-restepper: edit.line_start()
-restepperest: edit.paragraph_start()
-resteppest: edit.file_start()
+rewalker: edit.line_start()
+rewalkerest: edit.paragraph_start()
+rewalkest: edit.file_start()
 
 #moving up and down
-fly step: edit.up()
-fly midstep:
+fly walk: edit.up()
+fly midwalk:
 	edit.up()
 	user.line_middle()
-fly stepper:
+fly walker:
 	edit.up()
 	edit.line_start()
-fly restepper:
+fly rewalker:
 	edit.up()
 	edit.line_end()
 fly snatch: edit.extend_line_up()
@@ -45,14 +45,14 @@ fly bisnatcher:
 	edit.extend_up()
 	edit.extend_line_start()
 
-dip step: edit.down()
-dip midstep:
+dip walk: edit.down()
+dip midwalk:
 	edit.down()
 	user.line_middle()
-dip stepper:
+dip walker:
 	edit.down()
 	edit.line_end()
-dip restepper:
+dip rewalker:
 	edit.down()
 	edit.line_start()
 dip snatch:
@@ -68,24 +68,24 @@ dip bisnatcher:
 	edit.extend_down()
 	edit.extend_line_end()
 
-navi step: user.go_forward()
-navi restep: user.go_back()
+navi walk: user.go_forward()
+navi rewalk: user.go_back()
 
-hunt step: edit.find_next()
-hunt restep: edit.find_previous()
+hunt walk: edit.find_next()
+hunt rewalk: edit.find_previous()
 
 <user.movement_type>: user.start_moving(movement_type)
 perch: user.stop_moving()
 
 <user.selection_action>: user.selection_action(selection_action)
 
-size step: edit.zoom_in()
-size restep: edit.zoom_out()
+size walk: edit.zoom_in()
+size rewalk: edit.zoom_out()
 size reset: edit.zoom_reset()
 
-folding step: user.fold_more()
-folding restep: user.fold_less()
-folding resteppest: user.unfold_recursively()
+folding walk: user.fold_more()
+folding rewalk: user.fold_less()
+folding rewalkest: user.unfold_recursively()
 
 onpan: user.mouse_scroll_right()
 repan: user.mouse_scroll_left()
@@ -467,16 +467,16 @@ dip push:
 	edit.line_insert_down()
 
 deaf tap: user.tap_reference()
-deaf step:
+deaf walk:
 	user.next_reference()
-deaf restep:
+deaf rewalk:
 	user.last_reference()
 
 context tap: key("ctrl-enter")
-numeric step:
+numeric walk:
 	user.numeric_increment()
 
-numeric restep:
+numeric rewalk:
 	user.numeric_decrement()
 
 reswing: key(shift-tab)
@@ -487,9 +487,9 @@ lee [<user.prose>] tap:
 	user.complete_tap(prose or "")
 spellee <user.letters> tap:
 	user.complete_from_start(letters)
-lee <user.word>+ step:
+lee <user.word>+ walk:
 	user.complete(word_list)
-lee step:
+lee walk:
 	user.complete_from_start("", 1)
-spellee <user.letters> step:
+spellee <user.letters> walk:
 	user.complete_from_start(letters, 1)

@@ -18,7 +18,7 @@ git log:
 bless: user.vscode("cursorUndo")
 recurse: user.vscode("cursorRedo")
 
-split step: user.vscode("workbench.action.focusNextGroup")
+split walk: user.vscode("workbench.action.focusNextGroup")
 bar type tree: user.vscode("workbench.view.extension.typescript-explorer")
 run build: user.vscode("workbench.action.tasks.build")
 run test: user.vscode("workbench.action.tasks.test")
@@ -40,8 +40,8 @@ wax <user.cursorless_target>:
   user.cursorless_command("setSelection", cursorless_target)
   user.vscode("editor.action.smartSelect.expand")
 
-wax step: user.wax()
-wax restep: user.wane()
+wax walk: user.wax()
+wax rewalk: user.wane()
 
 context tap: user.vscode("editor.action.showContextMenu")
 
@@ -49,7 +49,7 @@ prob [<user.prose>] tap:
   user.vscode("editor.action.quickFix")
   sleep(400ms)
   user.insert_formatted(prose or "", "NO_SPACES")
-prob [<user.prose>] step:
+prob [<user.prose>] walk:
   user.vscode("editor.action.quickFix")
   sleep(400ms)
   user.insert_formatted(prose or "", "NO_SPACES")
@@ -64,27 +64,27 @@ prob [<user.prose>] retap:
   user.vscode("editor.action.quickFix")
   sleep(400ms)
   user.insert_formatted(prose or "", "NO_SPACES")
-prob [<user.prose>] onstep:
+prob [<user.prose>] onwalk:
   user.problem_next()
   user.vscode("editor.action.quickFix")
   sleep(400ms)
   user.insert_formatted(prose or "", "NO_SPACES")
   key(enter)
-prob [<user.prose>] restep:
+prob [<user.prose>] rewalk:
   user.problem_last()
   user.vscode("editor.action.quickFix")
   sleep(400ms)
   user.insert_formatted(prose or "", "NO_SPACES")
   key(enter)
 
-change step: key(alt-f5)
-change restep: key(shift-alt-f5)
+change walk: key(alt-f5)
+change rewalk: key(shift-alt-f5)
 
-failure step: user.vscode("testing.goToNextMessage")
-failure restep: user.vscode("testing.goToPreviousMessage")
+failure walk: user.vscode("testing.goToNextMessage")
+failure rewalk: user.vscode("testing.goToPreviousMessage")
 
-refer step: key(f4)
-refer restep: key(shift-f4)
+refer walk: key(f4)
+refer rewalk: key(shift-f4)
 
 # Symbol search
 symbol [<user.spoken_search>] tappy:
@@ -96,13 +96,13 @@ symbol [<user.spoken_search>] tappy:
   sleep(50ms)
   insert(spoken_search or "")
 
-symbol [<user.spoken_search>] steppy:
+symbol [<user.spoken_search>] walky:
   user.vscode("workbench.action.gotoSymbol")
   sleep(50ms)
   insert(spoken_search or "")
   sleep(300ms)
   key(enter)
-^symbol [<user.spoken_search>] step:
+^symbol [<user.spoken_search>] walk:
   user.vscode("workbench.action.showAllSymbols")
   sleep(50ms)
   insert(spoken_search or "")
@@ -129,7 +129,7 @@ file [<user.prose>] [{user.file_extension}] tap:
   insert(prose or "")
   insert(file_extension or "")
   sleep(300ms)
-file [<user.prose>] [{user.file_extension}] step:
+file [<user.prose>] [{user.file_extension}] walk:
   user.vscode("workbench.action.quickOpen")
   sleep(400ms)
   insert(prose or "")
@@ -143,7 +143,7 @@ project [<user.prose>] tap:
   insert(prose or "")
   sleep(250ms)
 
-project [<user.prose>] step:
+project [<user.prose>] walk:
   user.vscode("workbench.action.openRecent")
   sleep(50ms)
   insert(prose or "")
@@ -153,38 +153,36 @@ project [<user.prose>] step:
 change tap: user.vscode("editor.action.dirtydiff.next")
 change retap: user.vscode("editor.action.dirtydiff.previous")
 
-file step:
-  user.vscode("workbench.action.openPreviousRecentlyUsedEditorInGroup")
 file forge:
   user.vscode("fileutils.duplicateFile")
 file punch:
   user.vscode("fileutils.removeFile")
   sleep(150ms)
 
-alter step: user.vscode("alternate.alternateFile")
-alter stepper: user.vscode("alternate.createAlternateFile")
-alter restep: user.vscode("alternate.alternateFileInSplit")
-alter restepper: user.vscode("alternate.createAlternateFileInSplit")
+alter walk: user.vscode("alternate.alternateFile")
+alter walker: user.vscode("alternate.createAlternateFile")
+alter rewalk: user.vscode("alternate.alternateFileInSplit")
+alter rewalker: user.vscode("alternate.createAlternateFileInSplit")
 
-snip step: user.vscode("jumpToNextSnippetPlaceholder")
-snip restep: user.vscode("jumpToPrevSnippetPlaceholder")
+snip walk: user.vscode("jumpToNextSnippetPlaceholder")
+snip rewalk: user.vscode("jumpToPrevSnippetPlaceholder")
 
-git step: user.vscode("workbench.scm.action.focusNextInput")
-git restep: user.vscode("workbench.scm.action.focusPreviousInput")
-git resource step: user.vscode("workbench.scm.action.focusNextResourceGroup")
-git resource restep: user.vscode("workbench.scm.action.focusPreviousResourceGroup")
+git walk: user.vscode("workbench.scm.action.focusNextInput")
+git rewalk: user.vscode("workbench.scm.action.focusPreviousInput")
+git resource walk: user.vscode("workbench.scm.action.focusNextResourceGroup")
+git resource rewalk: user.vscode("workbench.scm.action.focusPreviousResourceGroup")
 
 testing start: user.vscode("testing.startContinuousRun")
 testing stop: user.vscode("testing.stopContinuousRun")
 
 compare clip: user.vscode("extension.partialDiff.diffSelectionWithClipboard")
 
-debug step: user.vscode("workbench.action.debug.stepOver")
-debug dip step: user.vscode("workbench.action.debug.stepInto")
-debug fly step: user.vscode("workbench.action.debug.stepOut")
+debug walk: user.vscode("workbench.action.debug.walkOver")
+debug dip walk: user.vscode("workbench.action.debug.walkInto")
+debug fly walk: user.vscode("workbench.action.debug.walkOut")
 
-mark step: user.vscode("bookmarks.jumpToNext")
-mark restep: user.vscode("bookmarks.jumpToPrevious")
+mark walk: user.vscode("bookmarks.jumpToNext")
+mark rewalk: user.vscode("bookmarks.jumpToPrevious")
 
 form <user.formatters> <user.cursorless_target>:
   user.cursorless_reformat(cursorless_target, formatters)

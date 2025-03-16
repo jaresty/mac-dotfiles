@@ -42,7 +42,7 @@ grab O C R: key("cmd-ctrl-shift-alt-o")
   insert(prose or "")
 
 # homerow
-^mouse <user.prose> step:
+^mouse <user.prose> walk:
   user.homerow_search()
   sleep(100ms)
   insert(prose or "")

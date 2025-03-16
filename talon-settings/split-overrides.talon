@@ -12,6 +12,6 @@ tag: user.splits
 split forge: user.split_window()
 split punch: user.split_clear()
 split punchest: user.split_clear_all()
-split step: user.split_next()
-split restep: user.split_last()
+split walk: user.split_next()
+split rewalk: user.split_last()
 # go split <number>: user.split_number(number)

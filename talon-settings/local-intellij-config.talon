@@ -25,26 +25,26 @@ file [<user.prose>] [{user.file_extension}] tap:
 	insert(prose or "")
 	insert(file_extension or "")
 	sleep(300ms)
-file <user.prose> [{user.file_extension}] split step:
+file <user.prose> [{user.file_extension}] split walk:
 	key("cmd-shift-o")
 	sleep(400ms)
 	insert(prose or "")
 	insert(file_extension or "")
 	sleep(300ms)
 	key(shift-enter)
-file <user.prose> [{user.file_extension}] step:
+file <user.prose> [{user.file_extension}] walk:
 	key("cmd-shift-o")
 	sleep(400ms)
 	insert(prose or "")
 	insert(file_extension or "")
 	sleep(300ms)
 	key(enter)
-file restep:
+file rewalk:
 	key(ctrl-tab)
-alter step:
+alter walk:
 	user.idea("action GotoTest")
 	key(enter)
-alter stepper:
+alter walker:
 	user.idea("action GotoTest")
 	key(shift-enter)
 
@@ -54,20 +54,20 @@ file forge:
 file punch:
 	key("cmd-up delete")
 
-split step: key("alt-tab")
+split walk: key("alt-tab")
 
 bisnatcherest:
 	key('cmd-alt-[')
 	key('cmd-alt-shift-]')
 bisnatchest:
 	key('cmd-a')
-wax step: user.wax()
-wax restep: user.wane()
+wax walk: user.wax()
+wax rewalk: user.wane()
 
-onsteppest: edit.file_end()
-onstepperest: key('cmd-alt-]')
-restepperest: key('cmd-alt-[')
-resteppest: edit.file_start()
+onwalkest: edit.file_end()
+onwalkerest: key('cmd-alt-]')
+rewalkerest: key('cmd-alt-[')
+rewalkest: edit.file_start()
 onsnatcherest: key('cmd-alt-shift-]')
 onsnatchest: edit.extend_file_end()
 resnatcherest: key('cmd-alt-shift-[')
@@ -97,13 +97,13 @@ bipunchest:
 	user.idea("action FindInPath")
 	insert(spoken_search or "")
 
-^text [<user.spoken_search>] steppy:
+^text [<user.spoken_search>] walky:
 	user.idea("action Find")
 	insert(spoken_search or "")
 	sleep(200ms)
 	key(enter)
 
-^text [<user.spoken_search>] step:
+^text [<user.spoken_search>] walk:
 	user.idea("action FindInPath")
 	insert(spoken_search or "")
 	sleep(200ms)
@@ -118,13 +118,13 @@ symbol [<user.spoken_search>] tappy:
 	sleep(400ms)
 	insert(spoken_search or "")
 
-^symbol [<user.spoken_search>] step:
+^symbol [<user.spoken_search>] walk:
 	user.idea("action GotoSymbol")
 	insert(spoken_search or "")
 	sleep(200ms)
 	key(enter)
 
-symbol [<user.spoken_search>] steppy:
+symbol [<user.spoken_search>] walky:
 	key("cmd-f12")
 	sleep(400ms)
 	insert(spoken_search or "")
@@ -135,7 +135,7 @@ prob [<user.prose>] tap:
 	user.idea("action ShowIntentionActions")
 	sleep(400ms)
 	user.insert_formatted(prose or "", "NO_SPACES")
-prob [<user.prose>] step:
+prob [<user.prose>] walk:
 	user.idea("action ShowIntentionActions")
 	sleep(400ms)
 	user.insert_formatted(prose or "", "NO_SPACES")
@@ -150,13 +150,13 @@ prob [<user.prose>] retap:
 	user.idea("action ShowIntentionActions")
 	sleep(400ms)
 	user.insert_formatted(prose or "", "NO_SPACES")
-prob [<user.prose>] onstep:
+prob [<user.prose>] onwalk:
 	user.problem_next()
 	user.idea("action ShowIntentionActions")
 	sleep(400ms)
 	user.insert_formatted(prose or "", "NO_SPACES")
 	key(enter)
-prob [<user.prose>] restep:
+prob [<user.prose>] rewalk:
 	user.problem_last()
 	user.idea("action ShowIntentionActions")
 	sleep(400ms)
@@ -167,8 +167,8 @@ run that: key('ctrl-r')
 run last: key('ctrl-shift-r')
 
 reference: user.idea("action FindUsages")
-refer step: key(cmd-alt-down)
-refer restep: key(cmd-alt-up)
+refer walk: key(cmd-alt-down)
+refer rewalk: key(cmd-alt-up)
 
 narrow:
 	key(cmd-shift--)
@@ -177,8 +177,8 @@ narrow:
 
 param tap: user.idea("action ParameterInfo")
 
-change step: key(ctrl-shift-alt-down)
-change restep: key(ctrl-shift-alt-up)
+change walk: key(ctrl-shift-alt-down)
+change rewalk: key(ctrl-shift-alt-up)
 
 split forge:
 	user.idea("action SplitVertically")

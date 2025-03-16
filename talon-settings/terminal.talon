@@ -23,16 +23,16 @@ file [<user.prose>] tap:
 project [<user.prose>] tap$:
 	insert("z {prose}")
 	key(tab)
-project [<user.prose>] step$:
+project [<user.prose>] walk$:
 	insert("z {prose}")
 	key(enter)
 text <user.word> tap:
 	insert("rg {word}")
 	key(enter)
-dir fly step:
+dir fly walk:
 	insert("cd ..")
 	key(enter)
-dir <user.prose> step:
+dir <user.prose> walk:
 	key(alt-c)
 	sleep(60ms)
 	insert(prose)
@@ -41,15 +41,15 @@ dir [<user.prose>] tap:
 	key(alt-c)
 	sleep(60ms)
 	insert(prose)
-dir restep:
+dir rewalk:
 	insert("cd -")
 	key(enter)
 
-flag [<user.prose>] step:
+flag [<user.prose>] walk:
 	insert("--")
 	user.complete_from_start(prose or "", 1)
 
-spell flag <user.letters> step:
+spell flag <user.letters> walk:
 	insert("-")
 	user.complete_from_start(letters or "", 1)
 

@@ -8,7 +8,7 @@ file [<user.prose>] [{user.file_extension}] tap:
 	sleep(400ms)
 	insert(prose or "")
 	insert(file_extension or "")
-file [<user.prose>] [{user.file_extension}] step:
+file [<user.prose>] [{user.file_extension}] walk:
 	key("cmd-p")
 	sleep(400ms)
 	insert(prose or "")
@@ -20,7 +20,7 @@ symbol [<user.prose>] tap:
 	key("cmd-p @")
 	sleep(400ms)
 	insert(prose or "")
-symbol [<user.prose>] step:
+symbol [<user.prose>] walk:
 	key("cmd-p @")
 	sleep(400ms)
 	insert(prose or "")
@@ -32,7 +32,7 @@ command [<user.prose>] tap:
 	key("cmd-p >")
 	sleep(400ms)
 	insert(prose or "")
-command [<user.prose>] step:
+command [<user.prose>] walk:
 	key("cmd-p >")
 	sleep(400ms)
 	insert(prose or "")
@@ -40,6 +40,6 @@ command [<user.prose>] step:
 	key(enter)
 
 debug play: key(f8)
-debug step: key(f9)
-debug dip step: key(f11)
-debug fly step: key(shift-f11)
+debug walk: key(f9)
+debug dip walk: key(f11)
+debug fly walk: key(shift-f11)

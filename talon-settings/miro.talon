@@ -3,9 +3,9 @@
 os: mac
 and app.bundle: com.electron.realtimeboard
 -
-hand step: "h"
-select step: "v"
-text [<user.prose>] step:
+hand walk: "h"
+select walk: "v"
+text [<user.prose>] walk:
 	"t"
 	mouse_click()
 	insert(prose or "")
@@ -14,8 +14,8 @@ text [<user.prose>] tap:
 	"t"
 	mouse_click()
 	insert(prose or "")
-pen step: "p"
-sticky [<user.prose>] step:
+pen walk: "p"
+sticky [<user.prose>] walk:
 	"n"
 	mouse_click()
 	insert(prose or "")
@@ -29,6 +29,6 @@ sticky [<user.prose>] tap:
 mouse punch:
 	mouse_click()
 	key(backspace)
-shape step: "s"
-frame step: "f"
-comment step: "c"
+shape walk: "s"
+frame walk: "f"
+comment walk: "c"
