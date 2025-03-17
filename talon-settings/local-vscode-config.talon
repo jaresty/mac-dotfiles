@@ -45,36 +45,36 @@ wax rewalk: user.wane()
 
 context tap: user.vscode("editor.action.showContextMenu")
 
-prob [<user.prose>] tap:
+prob [<user.spoken_search>] tap:
   user.vscode("editor.action.quickFix")
   sleep(400ms)
-  user.insert_formatted(prose or "", "NO_SPACES")
-prob [<user.prose>] walk:
+  insert(spoken_search or "")
+prob [<user.spoken_search>] walk:
   user.vscode("editor.action.quickFix")
   sleep(400ms)
-  user.insert_formatted(prose or "", "NO_SPACES")
+  insert(spoken_search or "")
   key(enter)
-prob [<user.prose>] ontap:
+prob [<user.spoken_search>] ontap:
   user.problem_next()
   user.vscode("editor.action.quickFix")
   sleep(400ms)
-  user.insert_formatted(prose or "", "NO_SPACES")
-prob [<user.prose>] retap:
+  insert(spoken_search or "")
+prob [<user.spoken_search>] retap:
   user.problem_last()
   user.vscode("editor.action.quickFix")
   sleep(400ms)
-  user.insert_formatted(prose or "", "NO_SPACES")
-prob [<user.prose>] onwalk:
+  insert(spoken_search or "")
+prob [<user.spoken_search>] onwalk:
   user.problem_next()
   user.vscode("editor.action.quickFix")
   sleep(400ms)
-  user.insert_formatted(prose or "", "NO_SPACES")
+  insert(spoken_search or "")
   key(enter)
-prob [<user.prose>] rewalk:
+prob [<user.spoken_search>] rewalk:
   user.problem_last()
   user.vscode("editor.action.quickFix")
   sleep(400ms)
-  user.insert_formatted(prose or "", "NO_SPACES")
+  insert(spoken_search or "")
   key(enter)
 
 change walk: key(alt-f5)
@@ -123,30 +123,30 @@ type hierarchy tap: user.vscode("editor.showTypeHierarchy")
 param tap: user.vscode("editor.action.triggerParameterHints")
 
 # File Commands
-file [<user.prose>] [{user.file_extension}] tap:
+file [<user.spoken_search>] [{user.file_extension}] tap:
   user.vscode("workbench.action.quickOpen")
   sleep(400ms)
-  insert(prose or "")
+  insert(spoken_search or "")
   insert(file_extension or "")
   sleep(300ms)
-file [<user.prose>] [{user.file_extension}] walk:
+file [<user.spoken_search>] [{user.file_extension}] walk:
   user.vscode("workbench.action.quickOpen")
   sleep(400ms)
-  insert(prose or "")
+  insert(spoken_search or "")
   insert(file_extension or "")
   sleep(300ms)
   key(enter)
 
-project [<user.prose>] tap:
+project [<user.spoken_search>] tap:
   user.vscode("workbench.action.openRecent")
   sleep(50ms)
-  insert(prose or "")
+  insert(spoken_search or "")
   sleep(250ms)
 
-project [<user.prose>] walk:
+project [<user.spoken_search>] walk:
   user.vscode("workbench.action.openRecent")
   sleep(50ms)
-  insert(prose or "")
+  insert(spoken_search or "")
   sleep(250ms)
   key(enter)
 

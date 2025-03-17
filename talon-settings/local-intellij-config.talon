@@ -4,38 +4,38 @@ app: jetbrains
 settings():
 	key_wait = 15
 
-please [<user.prose>] [over]:
+please [<user.text>] [over]:
 	key("cmd-shift-a")
 	sleep(400ms)
-	insert(user.prose or "")
+	insert(user.text or "")
 
-# project <user.prose> [{user.file_extension}] tap:
+# project <user.spoken_search> [{user.file_extension}] tap:
 # 	user.idea("action RecentFiles")
 # 	sleep(400ms)
-# 	insert(prose or "")
+# 	insert(spoken_search or "")
 # 	insert(file_extension or "")
 # 	sleep(300ms)
 # 	key(enter)
 # 	sleep(150ms)
 
 # File Commands
-file [<user.prose>] [{user.file_extension}] tap:
+file [<user.spoken_search>] [{user.file_extension}] tap:
 	key("cmd-shift-o")
 	sleep(400ms)
-	insert(prose or "")
+	insert(spoken_search or "")
 	insert(file_extension or "")
 	sleep(300ms)
-file <user.prose> [{user.file_extension}] split walk:
+file <user.spoken_search> [{user.file_extension}] split walk:
 	key("cmd-shift-o")
 	sleep(400ms)
-	insert(prose or "")
+	insert(spoken_search or "")
 	insert(file_extension or "")
 	sleep(300ms)
 	key(shift-enter)
-file <user.prose> [{user.file_extension}] walk:
+file <user.spoken_search> [{user.file_extension}] walk:
 	key("cmd-shift-o")
 	sleep(400ms)
-	insert(prose or "")
+	insert(spoken_search or "")
 	insert(file_extension or "")
 	sleep(300ms)
 	key(enter)
@@ -131,36 +131,36 @@ symbol [<user.spoken_search>] walky:
 	sleep(200ms)
 	key(enter)
 
-prob [<user.prose>] tap:
+prob [<user.spoken_search>] tap:
 	user.idea("action ShowIntentionActions")
 	sleep(400ms)
-	user.insert_formatted(prose or "", "NO_SPACES")
-prob [<user.prose>] walk:
+	insert(spoken_search or "")
+prob [<user.spoken_search>] walk:
 	user.idea("action ShowIntentionActions")
 	sleep(400ms)
-	user.insert_formatted(prose or "", "NO_SPACES")
+	insert(spoken_search or "")
 	key(enter)
-prob [<user.prose>] ontap:
+prob [<user.spoken_search>] ontap:
 	user.problem_next()
 	user.idea("action ShowIntentionActions")
 	sleep(400ms)
-	user.insert_formatted(prose or "", "NO_SPACES")
-prob [<user.prose>] retap:
+	insert(spoken_search or "")
+prob [<user.spoken_search>] retap:
 	user.problem_last()
 	user.idea("action ShowIntentionActions")
 	sleep(400ms)
-	user.insert_formatted(prose or "", "NO_SPACES")
-prob [<user.prose>] onwalk:
+	insert(spoken_search or "")
+prob [<user.spoken_search>] onwalk:
 	user.problem_next()
 	user.idea("action ShowIntentionActions")
 	sleep(400ms)
-	user.insert_formatted(prose or "", "NO_SPACES")
+	insert(spoken_search or "")
 	key(enter)
-prob [<user.prose>] rewalk:
+prob [<user.spoken_search>] rewalk:
 	user.problem_last()
 	user.idea("action ShowIntentionActions")
 	sleep(400ms)
-	user.insert_formatted(prose or "", "NO_SPACES")
+	insert(spoken_search or "")
 	key(enter)
 
 run that: key('ctrl-r')

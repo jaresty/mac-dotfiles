@@ -4,18 +4,27 @@ ctx = Context()
 mod = Module()
 
 
-@mod.capture(
-    rule="<user.formatted_prose> | <user.formatted_paste> | <user.last_phrase> | <user.cursorless_formatted>"
-)
+@mod.capture(rule="<user.spoken_text_search>| <user.cursorless_formatted>")
 def spoken_search(m) -> str:
-    if hasattr(m, "formatted_prose"):
-        return m.formatted_prose
+    if hasattr(m, "spoken_text_search"):
+        return m.spoken_text_search
+    elif hasattr(m, "cursorless_formatted"):
+        return m.cursorless_formatted
+    return ""
+
+
+@mod.capture(
+    rule="<user.formatted_text> | <user.formatted_paste> | <user.last_phrase> | spell <user.letters>"
+)
+def spoken_text_search(m) -> str:
+    if hasattr(m, "formatted_text"):
+        return m.formatted_text
     elif hasattr(m, "formatted_paste"):
         return m.formatted_paste
     elif hasattr(m, "last_phrase"):
         return m.last_phrase
-    elif hasattr(m, "cursorless_formatted"):
-        return m.cursorless_formatted
+    elif hasattr(m, "letters"):
+        return m.letters
     return ""
 
 
@@ -28,9 +37,9 @@ def cursorless_formatted(m) -> str:
     return target_text
 
 
-@mod.capture(rule="<user.formatters> <user.prose>")
-def formatted_prose(m) -> str:
-    return actions.user.formatted_text(m.prose, m.formatters)
+@mod.capture(rule="<user.formatters> <user.text>")
+def formatted_text(m) -> str:
+    return actions.user.formatted_text(m.text, m.formatters)
 
 
 @mod.capture(rule="<user.formatters> paste")

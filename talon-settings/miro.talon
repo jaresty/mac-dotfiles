@@ -5,27 +5,27 @@ and app.bundle: com.electron.realtimeboard
 -
 hand walk: "h"
 select walk: "v"
-text [<user.prose>] walk:
+text [<user.spoken_search>] walk:
 	"t"
 	mouse_click()
-	insert(prose or "")
+	insert(spoken_search or "")
 	key(escape escape)
-text [<user.prose>] tap:
+text [<user.spoken_search>] tap:
 	"t"
 	mouse_click()
-	insert(prose or "")
+	insert(spoken_search or "")
 pen walk: "p"
-sticky [<user.prose>] walk:
+sticky [<user.spoken_search>] walk:
 	"n"
 	mouse_click()
-	insert(prose or "")
+	insert(spoken_search or "")
 	key(escape)
 	sleep(50ms)
 	key(escape)
-sticky [<user.prose>] tap:
+sticky [<user.spoken_search>] tap:
 	"n"
 	mouse_click()
-	insert(prose or "")
+	insert(spoken_search or "")
 mouse punch:
 	mouse_click()
 	key(backspace)
