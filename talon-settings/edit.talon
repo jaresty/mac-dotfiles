@@ -111,8 +111,8 @@ remolt <user.word>:
 	key("alt-backspace")
 	insert(word)
 bimolt <user.word>:
-	key(alt-delete)
-	key(alt-backspace)
+	edit.select_word()
+	key(delete)
 	insert(word)
 
 #deleting forward
