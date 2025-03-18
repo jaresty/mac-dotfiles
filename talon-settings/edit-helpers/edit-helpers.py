@@ -43,65 +43,65 @@ ctx.lists["user.repeat_speed"] = REPEAT_SPEED.keys()
 
 
 MOVEMENT_TYPE: dict[str, tuple[callable, callable, int]] = {
-    "stream fly walk": (actions.edit.up, actions.edit.down, 2),
-    "stream choose": (
+    "flow fly walk": (actions.edit.up, actions.edit.down, 2),
+    "flow choose": (
         actions.edit.down,
         lambda: (actions.key("enter"), actions.user.stop_moving()),
         4,
     ),
-    "stream dip walk": (actions.edit.down, actions.edit.up, 2),
-    "stream onwalk": (actions.edit.right, actions.edit.left, 1),
-    "stream rewalk": (actions.edit.left, actions.edit.right, 1),
-    "stream fly snatch": (
+    "flow dip walk": (actions.edit.down, actions.edit.up, 2),
+    "flow onwalk": (actions.edit.right, actions.edit.left, 1),
+    "flow rewalk": (actions.edit.left, actions.edit.right, 1),
+    "flow fly snatch": (
         actions.edit.extend_line_up,
         actions.edit.extend_line_down,
         3,
     ),
-    "stream dip snatch": (
+    "flow dip snatch": (
         actions.edit.extend_line_down,
         actions.edit.extend_line_up,
         3,
     ),
-    "stream onsnatch": (actions.edit.extend_right, actions.edit.extend_left, 1),
-    "stream resnatch": (actions.edit.extend_left, actions.edit.extend_right, 1),
-    "stream wax": (actions.user.wax, actions.user.wane, 4),
-    "stream wane": (actions.user.wane, actions.user.wax, 4),
-    "stream size walk": (actions.edit.zoom_in, actions.edit.zoom_out, 5),
-    "stream size rewalk": (actions.edit.zoom_out, actions.edit.zoom_in, 5),
-    "stream nope": (actions.edit.undo, actions.edit.redo, 4),
-    "stream redo that": (actions.edit.redo, actions.edit.undo, 4),
-    "stream bounce": (actions.core.repeat_command, actions.core.repeat_command, 4),
-    "stream hunt walk": (actions.edit.find_next, actions.edit.find_previous, 4),
-    "stream hunt rewalk": (actions.edit.find_previous, actions.edit.find_next, 4),
-    "stream prob walk": (actions.user.problem_next, actions.user.problem_last, 4),
-    "stream prob rewalk": (actions.user.problem_last, actions.user.problem_next, 4),
-    "stream lee": (actions.user.complete, actions.user.complete_backward, 4),
-    "stream fold walk": (actions.user.fold_more, actions.user.fold_less, 4),
-    "stream fold rewalk": (actions.user.fold_less, actions.user.fold_more, 4),
-    "stream navi rewalk": (actions.user.go_back, actions.user.go_forward, 4),
-    "stream navi walk": (actions.user.go_forward, actions.user.go_back, 4),
-    "stream chase walk": (actions.user.next_reference, actions.user.last_reference, 4),
-    "stream chase rewalk": (
+    "flow onsnatch": (actions.edit.extend_right, actions.edit.extend_left, 1),
+    "flow resnatch": (actions.edit.extend_left, actions.edit.extend_right, 1),
+    "flow wax": (actions.user.wax, actions.user.wane, 4),
+    "flow wane": (actions.user.wane, actions.user.wax, 4),
+    "flow size walk": (actions.edit.zoom_in, actions.edit.zoom_out, 5),
+    "flow size rewalk": (actions.edit.zoom_out, actions.edit.zoom_in, 5),
+    "flow nope": (actions.edit.undo, actions.edit.redo, 4),
+    "flow redo that": (actions.edit.redo, actions.edit.undo, 4),
+    "flow bounce": (actions.core.repeat_command, actions.core.repeat_command, 4),
+    "flow hunt walk": (actions.edit.find_next, actions.edit.find_previous, 4),
+    "flow hunt rewalk": (actions.edit.find_previous, actions.edit.find_next, 4),
+    "flow prob walk": (actions.user.problem_next, actions.user.problem_last, 4),
+    "flow prob rewalk": (actions.user.problem_last, actions.user.problem_next, 4),
+    "flow lee": (actions.user.complete, actions.user.complete_backward, 4),
+    "flow fold walk": (actions.user.fold_more, actions.user.fold_less, 4),
+    "flow fold rewalk": (actions.user.fold_less, actions.user.fold_more, 4),
+    "flow navi rewalk": (actions.user.go_back, actions.user.go_forward, 4),
+    "flow navi walk": (actions.user.go_forward, actions.user.go_back, 4),
+    "flow chase walk": (actions.user.next_reference, actions.user.last_reference, 4),
+    "flow chase rewalk": (
         actions.user.last_reference,
         actions.user.next_reference,
         4,
     ),
-    "stream fly pan": (
+    "flow fly pan": (
         actions.user.mouse_scroll_up,
         actions.user.mouse_scroll_down,
         2,
     ),
-    "stream dip pan": (
+    "flow dip pan": (
         actions.user.mouse_scroll_down,
         actions.user.mouse_scroll_up,
         2,
     ),
-    "stream onpan": (
+    "flow onpan": (
         actions.user.mouse_scroll_right,
         actions.user.mouse_scroll_left,
         2,
     ),
-    "stream repan": (
+    "flow repan": (
         actions.user.mouse_scroll_left,
         actions.user.mouse_scroll_right,
         2,
