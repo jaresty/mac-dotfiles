@@ -37,9 +37,9 @@ def cursorless_formatted(m) -> str:
     return target_text
 
 
-@mod.capture(rule="<user.formatters> <user.text>")
+@mod.capture(rule="<user.text>")
 def formatted_text(m) -> str:
-    return actions.user.formatted_text(m.text, m.formatters)
+    return m.text
 
 
 @mod.capture(rule="<user.formatters> paste")
