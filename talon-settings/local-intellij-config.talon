@@ -19,20 +19,20 @@ please [<user.text>] [over]:
 # 	sleep(150ms)
 
 # File Commands
-file [<user.spoken_search>] [{user.file_extension}] tap:
+file [<user.spoken_search>] [{user.file_extension}] tap$:
 	key("cmd-shift-o")
 	sleep(400ms)
 	insert(spoken_search or "")
 	insert(file_extension or "")
 	sleep(300ms)
-file <user.spoken_search> [{user.file_extension}] split walk:
+file <user.spoken_search> [{user.file_extension}] split walk$:
 	key("cmd-shift-o")
 	sleep(400ms)
 	insert(spoken_search or "")
 	insert(file_extension or "")
 	sleep(300ms)
 	key(shift-enter)
-file <user.spoken_search> [{user.file_extension}] walk:
+file <user.spoken_search> [{user.file_extension}] walk$:
 	key("cmd-shift-o")
 	sleep(400ms)
 	insert(spoken_search or "")
