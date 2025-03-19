@@ -52,18 +52,18 @@ MOVEMENT_TYPE: dict[str, tuple[callable, callable, int]] = {
     "flow dip walk": (actions.edit.down, actions.edit.up, 2),
     "flow onwalk": (actions.edit.right, actions.edit.left, 1),
     "flow rewalk": (actions.edit.left, actions.edit.right, 1),
-    "flow fly snatch": (
+    "flow fly pick": (
         actions.edit.extend_line_up,
         actions.edit.extend_line_down,
         3,
     ),
-    "flow dip snatch": (
+    "flow dip pick": (
         actions.edit.extend_line_down,
         actions.edit.extend_line_up,
         3,
     ),
-    "flow onsnatch": (actions.edit.extend_right, actions.edit.extend_left, 1),
-    "flow resnatch": (actions.edit.extend_left, actions.edit.extend_right, 1),
+    "flow onpick": (actions.edit.extend_right, actions.edit.extend_left, 1),
+    "flow repick": (actions.edit.extend_left, actions.edit.extend_right, 1),
     "flow wax": (actions.user.wax, actions.user.wane, 4),
     "flow wane": (actions.user.wane, actions.user.wax, 4),
     "flow size walk": (actions.edit.zoom_in, actions.edit.zoom_out, 5),

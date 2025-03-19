@@ -56,10 +56,10 @@ file punch:
 
 split walk: key("alt-tab")
 
-bisnatcherest:
+bipickerest:
 	key('cmd-alt-[')
 	key('cmd-alt-shift-]')
-bisnatchest:
+bipickest:
 	key('cmd-a')
 wax walk: user.wax()
 wax rewalk: user.wane()
@@ -68,10 +68,10 @@ onwalkest: edit.file_end()
 onwalkerest: key('cmd-alt-]')
 rewalkerest: key('cmd-alt-[')
 rewalkest: edit.file_start()
-onsnatcherest: key('cmd-alt-shift-]')
-onsnatchest: edit.extend_file_end()
-resnatcherest: key('cmd-alt-shift-[')
-resnatchest: edit.extend_file_start()
+onpickerest: key('cmd-alt-shift-]')
+onpickest: edit.extend_file_end()
+repickerest: key('cmd-alt-shift-[')
+repickest: edit.extend_file_start()
 onpuncherest: key('cmd-alt-shift-] delete cmd-alt-l')
 onpunchest:
 	edit.extend_file_end()

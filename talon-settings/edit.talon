@@ -33,14 +33,14 @@ fly walker:
 fly rewalker:
 	edit.up()
 	edit.line_end()
-fly snatch: edit.extend_line_up()
-fly snatcher:
+fly pick: edit.extend_line_up()
+fly picker:
 	edit.extend_line_up()
 	edit.extend_line_start()
-fly resnatcher:
+fly repicker:
 	edit.extend_line_up()
 	edit.extend_line_end()
-fly bisnatcher:
+fly bipicker:
 	edit.line_end()
 	edit.extend_up()
 	edit.extend_line_start()
@@ -55,15 +55,15 @@ dip walker:
 dip rewalker:
 	edit.down()
 	edit.line_start()
-dip snatch:
+dip pick:
 	edit.extend_down()
-dip snatcher:
+dip picker:
 	edit.extend_down()
 	edit.extend_line_end()
-dip resnatcher:
+dip repicker:
 	edit.extend_line_down()
 	edit.extend_line_start()
-dip bisnatcher:
+dip bipicker:
 	edit.line_start()
 	edit.extend_down()
 	edit.extend_line_end()
@@ -178,27 +178,27 @@ dip bipuncher:
 	edit.delete_line()
 
 #selecting forward
-onsnatchy: key("shift-right")
-onsnatch: key("alt-shift-right")
-onsnatchoid: key("alt-shift-right shift-right")
-onsnatcher: key("cmd-shift-right")
-onsnatcherest: edit.extend_paragraph_end()
-onsnatchest: edit.extend_file_end()
-onsnatchize: user.set_select_direction_right()
+onpicky: key("shift-right")
+onpick: key("alt-shift-right")
+onpickoid: key("alt-shift-right shift-right")
+onpicker: key("cmd-shift-right")
+onpickerest: edit.extend_paragraph_end()
+onpickest: edit.extend_file_end()
+onpickize: user.set_select_direction_right()
 
 #selecting backward
-resnatchy: key("shift-left")
-resnatch: key("alt-shift-left")
-resnatchoid: key("alt-shift-left shift-left")
-resnatcher: key("cmd-shift-left")
-resnatcherest: edit.extend_paragraph_start()
-resnatchest: edit.extend_file_start()
-resnatchize: user.set_select_direction_left()
+repicky: key("shift-left")
+repick: key("alt-shift-left")
+repickoid: key("alt-shift-left shift-left")
+repicker: key("cmd-shift-left")
+repickerest: edit.extend_paragraph_start()
+repickest: edit.extend_file_start()
+repickize: user.set_select_direction_left()
 
-bisnatch: edit.select_word()
-bisnatcher: edit.select_line()
-bisnatcherest: edit.select_paragraph()
-bisnatchest: edit.select_all()
+bipick: edit.select_word()
+bipicker: edit.select_line()
+bipickerest: edit.select_paragraph()
+bipickest: edit.select_all()
 
 lift:
 	edit.cut()

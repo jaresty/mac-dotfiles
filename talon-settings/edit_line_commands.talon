@@ -15,6 +15,6 @@ bipunchlet:
 	user.extend_camel_right()
 	key(delete)
 
-snatchlet: user.extend_camel_right()
+picklet: user.extend_camel_right()
 
-resnatchlet: user.extend_camel_left()
+repicklet: user.extend_camel_left()
