@@ -163,8 +163,8 @@ prob [<user.spoken_search>] rewalk:
 	insert(spoken_search or "")
 	key(enter)
 
-run that: key('ctrl-r')
-run last: key('ctrl-shift-r')
+run walk: key('ctrl-r')
+run rewalk: key('ctrl-shift-r')
 
 reference: user.idea("action FindUsages")
 refer walk: key(cmd-alt-down)
