@@ -6,6 +6,9 @@ onrewalk:
 	edit.word_right()
 	edit.word_left()
 onwalker: edit.line_end()
+onrewalker:
+	edit.line_start()
+	edit.word_right()
 onwalkerest: edit.paragraph_end()
 onwalkest: edit.file_end()
 
@@ -19,6 +22,9 @@ reonwalk:
 	edit.word_left()
 	edit.word_right()
 rewalker: edit.line_start()
+reonwalker:
+	edit.line_start()
+	edit.word_right()
 rewalkerest: edit.paragraph_start()
 rewalkest: edit.file_start()
 
@@ -465,6 +471,25 @@ fly push:
 	edit.line_insert_up()
 dip push:
 	edit.line_insert_down()
+
+<user.formatters> onformer:
+	edit.extend_line_end()
+	reformatted_text = user.reformat_text(edit.selected_text(), formatters)
+	insert(reformatted_text)
+<user.formatters> onreformer:
+	edit.extend_line_end()
+	edit.extend_word_left()
+	reformatted_text = user.reformat_text(edit.selected_text(), formatters)
+	insert(reformatted_text)
+<user.formatters> reformer:
+	edit.extend_line_start()
+	reformatted_text = user.reformat_text(edit.selected_text(), formatters)
+	insert(reformatted_text)
+<user.formatters> reonformer:
+	edit.extend_line_start()
+	edit.extend_word_right()
+	reformatted_text = user.reformat_text(edit.selected_text(), formatters)
+	insert(reformatted_text)
 
 deaf tap: user.tap_reference()
 deaf walk:
