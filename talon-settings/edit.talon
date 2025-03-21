@@ -493,6 +493,18 @@ dip push:
 	edit.extend_word_right()
 	reformatted_text = user.reformat_text(edit.selected_text(), formatters)
 	insert(reformatted_text)
+<user.formatters> onform:
+	edit.extend_word_right()
+	reformatted_text = user.reformat_text(edit.selected_text(), formatters)
+	insert(reformatted_text)
+<user.formatters> reform:
+	edit.extend_word_left()
+	reformatted_text = user.reformat_text(edit.selected_text(), formatters)
+	insert(reformatted_text)
+<user.formatters> biform:
+	edit.select_word()
+	reformatted_text = user.reformat_text(edit.selected_text(), formatters)
+	insert(reformatted_text)
 
 deaf tap: user.tap_reference()
 deaf walk:
