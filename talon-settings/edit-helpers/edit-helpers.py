@@ -359,6 +359,7 @@ class LineSwapActions:
         actions.edit.select_line()
         current_line_text = actions.edit.selected_text().replace("\n", "")
         actions.edit.delete_line()
+        actions.key("backspace")
         actions.edit.line_insert_up()
         actions.insert(current_line_text)
 
