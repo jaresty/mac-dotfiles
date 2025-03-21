@@ -4,11 +4,11 @@ crane, curlyBrackets
 leaf, angleBrackets
 escaped box, escapedSquareBrackets
 escaped quad, escapedDoubleQuotes
-escaped sun, escapedParentheses
+escaped round, escapedParentheses
 escaped twin, escapedSingleQuotes
 pair, any
 hail, doubleQuotes
-sun, parentheses
+round, parentheses
 rain, backtickQuotes
 sleet, singleQuotes
-sky, whitespace
+void, whitespace

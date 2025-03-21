@@ -28,11 +28,11 @@
 # tangle: '^'
 # (: curve, lub, lepper
 # ): recurve, rub, repper
-suner:
+rounder:
 	insert("()")
 	key(left enter)
-suny: "()"
-sun that:
+roundy: "()"
+round that:
 	text = edit.selected_text()
 	user.paste("({text})")
 boxer:

@@ -6,7 +6,7 @@ language: en
 
 dive: enter
 scape: escape
-sky: ' '
+void: ' '
 swing: tab
 upper: pageup
 downer: pagedown

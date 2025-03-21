@@ -10,7 +10,7 @@ language: en
 # round: ( )
 # pad: space space
 
-sun: ( )
+round: ( )
 box: [ ]
 leaf: < >
 crane: { }
