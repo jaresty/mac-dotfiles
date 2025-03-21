@@ -7,8 +7,8 @@ onrewalk:
 	edit.word_left()
 onwalker: edit.line_end()
 onrewalker:
-	edit.line_start()
-	edit.word_right()
+	edit.line_end()
+	edit.word_left()
 onwalkerest: edit.paragraph_end()
 onwalkest: edit.file_end()
 
