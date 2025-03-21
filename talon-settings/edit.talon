@@ -260,6 +260,18 @@ dip bilifter:
 	edit.extend_down()
 	edit.extend_line_end()
 	edit.cut()
+mouse lift:
+	mouse_click()
+	edit.cut()
+mouse bilift:
+	mouse_click()
+	mouse_click()
+	edit.cut()
+mouse lifter:
+	mouse_click()
+	mouse_click()
+	mouse_click()
+	edit.cut()
 
 clip tap: key(cmd-alt-ctrl-shift-v)
 place:
@@ -363,6 +375,18 @@ dip bitracer:
 	edit.extend_down()
 	edit.extend_line_end()
 	edit.copy()
+mouse trace:
+	mouse_click()
+	edit.copy()
+mouse bitrace:
+	mouse_click()
+	mouse_click()
+	edit.copy()
+mouse tracer:
+	mouse_click()
+	mouse_click()
+	mouse_click()
+	edit.copy()
 
 forge:
 	edit.selection_clone()
@@ -392,6 +416,19 @@ dip forge:
 	dodge_word = edit.selected_text()
 	edit.line_insert_down()
 	insert(dodge_word)
+
+mouse forge:
+	mouse_click()
+	edit.selection_clone()
+mouse biforge:
+	mouse_click()
+	mouse_click()
+	edit.selection_clone()
+mouse forger:
+	mouse_click()
+	mouse_click()
+	mouse_click()
+	edit.selection_clone()
 
 fly dodge:
 	dodge_word = edit.selected_text()
