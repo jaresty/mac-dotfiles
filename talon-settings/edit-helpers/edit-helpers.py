@@ -48,7 +48,7 @@ MOVEMENT_TYPE: dict[str, tuple[callable, callable, int]] = {
     "flow fly walk": (actions.edit.up, actions.edit.down, 2),
     "flow choose": (
         actions.edit.down,
-        lambda: (actions.key("enter"), actions.user.stop_moving()),
+        lambda: (actions.key("enter")),
         4,
     ),
     "flow dip walk": (actions.edit.down, actions.edit.up, 2),
