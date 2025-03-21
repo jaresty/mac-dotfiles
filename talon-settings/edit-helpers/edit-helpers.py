@@ -2,6 +2,7 @@ from dataclasses import dataclass
 import math
 from typing import Optional
 from talon import Context, Module, actions, cron
+from datetime import datetime
 
 ctx = Context()
 mod = Module()
@@ -16,6 +17,7 @@ class MovementConfig:
     reverse_movement_type: callable
     repeat_speed: int
     current_step_size: int
+    last_used_at: datetime
     current_iteration_count: int = 0
 
 
@@ -127,7 +129,7 @@ def movement_type(m) -> MovementConfig:
         number_small = m.number_small
 
     return MovementConfig(
-        movement_type, reverse_movement_type, repeat_speed, number_small
+        movement_type, reverse_movement_type, repeat_speed, number_small, datetime.now()
     )
 
 
@@ -273,6 +275,7 @@ class Actions:
             movement_config.reverse_movement_type,
             movement_config.repeat_speed,
             movement_config.current_step_size,
+            datetime.now(),
             movement_config.current_iteration_count,
         )
 
@@ -306,7 +309,20 @@ class Actions:
 @ctx.action_class("user")
 class UserActions:
     def noise_trigger_hiss(active: bool):
-        global hiss_cron, current_job
+        global hiss_cron, current_job, continuous_movement_job
+
+        if continuous_movement_job is None:
+            return
+        if (
+            continuous_movement_job.last_used_at
+            and (datetime.now() - continuous_movement_job.last_used_at).total_seconds()
+            > 60
+        ):
+            actions.app.notify(
+                "Disabling continuous move since it has been more than 60 seconds"
+            )
+            actions.user.stop_moving()
+            return
 
         if active and actions.speech.enabled():
             hiss_cron = cron.after(
@@ -320,6 +336,19 @@ class UserActions:
             stop_moving()
 
     def noise_trigger_pop():
+        global continuous_movement_job
+        if continuous_movement_job is None:
+            return
+        if (
+            continuous_movement_job.last_used_at
+            and (datetime.now() - continuous_movement_job.last_used_at).total_seconds()
+            > 60
+        ):
+            actions.app.notify(
+                "Disabling continuous move since it has been more than 60 seconds"
+            )
+            actions.user.stop_moving()
+            return
         if actions.speech.enabled():
             move_backing()
 
