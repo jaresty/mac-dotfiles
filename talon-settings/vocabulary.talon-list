@@ -63,8 +63,6 @@ h t t p: HTTP
 h t t p s: HTTPS
 com: com
 jira: Jira
-u u i d: UUID
-u u i des: UUIDs
 chat g p t: ChatGPT
 v test: vitest
 bot
