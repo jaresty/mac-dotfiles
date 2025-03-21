@@ -214,6 +214,9 @@ onlift:
 relift:
 	edit.extend_word_left()
 	edit.cut()
+relifter:
+	edit.extend_line_start()
+	edit.cut()
 reliftest:
 	edit.extend_file_start()
 	edit.cut()
