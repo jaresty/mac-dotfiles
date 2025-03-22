@@ -110,13 +110,13 @@ dip repanner:
 	user.mouse_scroll_down()
 	user.mouse_scroll_left()
 
-onmolt <user.word>:
+on <user.word> molt:
 	key("alt-delete")
 	insert(word)
-remolt <user.word>:
+re <user.word> molt:
 	key("alt-backspace")
 	insert(word)
-bimolt <user.word>:
+bi <user.word> molt:
 	edit.select_word()
 	key(delete)
 	insert(word)
