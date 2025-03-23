@@ -120,6 +120,15 @@ bi <user.word> molt:
 	edit.select_word()
 	key(delete)
 	insert(word)
+mouse <user.word> molt:
+	mouse_click()
+	mouse_click()
+	insert(word)
+mouse <user.word> molter:
+	mouse_click()
+	mouse_click()
+	mouse_click()
+	insert(word)
 
 #deleting forward
 onpunchy: key("delete")
@@ -182,6 +191,16 @@ dip bipuncher:
 	edit.delete_line()
 	edit.down()
 	edit.delete_line()
+
+mouse punch:
+	mouse_click()
+	mouse_click()
+	key(backspace)
+mouse puncher:
+	mouse_click()
+	mouse_click()
+	mouse_click()
+	key(backspace)
 
 #selecting forward
 onpicky: key("shift-right")
