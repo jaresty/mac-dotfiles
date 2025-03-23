@@ -446,26 +446,26 @@ dip dodge:
 dip dodger:
 	edit.line_swap_down()
 
-on <user.keys> push:
-	user.push_keys(keys_list)
-on push:
-	user.push_keys()
-on <user.keys> pusher:
-	user.pusher_keys(keys)
-on pusher:
-	user.pusher_keys()
-re <user.keys> push:
-	user.repush_keys(keys)
-re push:
-	user.repush_keys()
+on <user.keys> poke:
+	user.poke_keys(keys_list)
+on poke:
+	user.poke_keys()
+on <user.keys> poker:
+	user.poker_keys(keys)
+on poker:
+	user.poker_keys()
+re <user.keys> poke:
+	user.repoke_keys(keys)
+re poke:
+	user.repoke_keys()
 
 #break this line at the cursor and leave the cursor on a new line between the two halves
-bipusher:
+bipoker:
 	key(shift-enter)
 	key(shift-enter)
 	edit.up()
 # move the tail of the current line to the end of the previous line
-fly pusher:
+fly poker:
 	edit.extend_line_end()
 	text_to_move = edit.selected_text()
 	key(delete)
@@ -473,7 +473,7 @@ fly pusher:
 	edit.line_end()
 	insert(text_to_move)
 # move the head of the current line to the end of the previous line
-fly repusher:
+fly repoker:
 	key(shift-enter)
 	edit.up()
 	edit.up()
@@ -482,12 +482,12 @@ fly repusher:
 	edit.down()
 	edit.line_start()
 #join this line with the previous
-fly bipusher:
+fly bipoker:
 	edit.up()
 	edit.line_end()
 	key(delete)
 # move the tail of the current line to the tail of the next
-dip pusher:
+dip poker:
 	edit.extend_line_end()
 	text_to_move = edit.selected_text()
 	key(delete)
@@ -495,7 +495,7 @@ dip pusher:
 	edit.line_end()
 	insert(text_to_move)
 # move the head of the current line to the head of the next
-dip repusher:
+dip repoker:
 	edit.extend_line_start()
 	text_to_move = edit.selected_text()
 	key(delete)
@@ -504,12 +504,12 @@ dip repusher:
 	insert(text_to_move)
 
 #join this line with the next
-dip bipusher:
+dip bipoker:
 	edit.line_end()
 	key(delete)
-fly push:
+fly poke:
 	edit.line_insert_up()
-dip push:
+dip poke:
 	edit.line_insert_down()
 
 <user.formatters> onformer:

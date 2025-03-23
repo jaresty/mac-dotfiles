@@ -182,8 +182,3 @@ change rewalk: key(ctrl-shift-alt-up)
 
 split forge:
 	user.idea("action SplitVertically")
-
-onpusher:
-	key(enter)
-	edit.up()
-	edit.line_end()
