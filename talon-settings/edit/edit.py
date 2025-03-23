@@ -14,7 +14,7 @@ def spoken_search(m) -> str:
 
 
 @mod.capture(
-    rule="<user.formatted_text> | <user.formatted_paste> | <user.last_phrase> | spell <user.letters>"
+    rule="<user.formatted_text> | <user.formatted_paste> | <user.last_phrase> | spell <user.letters> | brief {user.abbreviation}"
 )
 def spoken_text_search(m) -> str:
     if hasattr(m, "formatted_text"):
@@ -25,6 +25,8 @@ def spoken_text_search(m) -> str:
         return m.last_phrase
     elif hasattr(m, "letters"):
         return m.letters
+    elif hasattr(m, "abbreviation"):
+        return m.abbreviation
     return ""
 
 
