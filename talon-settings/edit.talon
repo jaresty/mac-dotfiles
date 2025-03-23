@@ -129,6 +129,9 @@ mouse <user.word> molter:
 	mouse_click()
 	mouse_click()
 	insert(word)
+	key(enter)
+	edit.up()
+	edit.line_end()
 
 #deleting forward
 onpunchy: key("delete")
