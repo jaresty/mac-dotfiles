@@ -567,3 +567,5 @@ lee [<user.spoken_search>] walk:
 
 completer <user.word>+ walk:
 	user.complete(word_list)
+
+scaper: key(escape escape)
