@@ -284,9 +284,6 @@ dip bilifter:
 	edit.cut()
 mouse lift:
 	mouse_click()
-	edit.cut()
-mouse bilift:
-	mouse_click()
 	mouse_click()
 	edit.cut()
 mouse lifter:
@@ -398,9 +395,6 @@ dip bitracer:
 	edit.extend_line_end()
 	edit.copy()
 mouse trace:
-	mouse_click()
-	edit.copy()
-mouse bitrace:
 	mouse_click()
 	mouse_click()
 	edit.copy()
