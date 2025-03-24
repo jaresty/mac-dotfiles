@@ -93,9 +93,41 @@ class Actions:
         actions.edit.left()
         walk_to_character(line_end_text, character, offset, actions.edit.right)
 
+    def select_to_next_character(character: str, offset: int):
+        """Move the cursor to the next character specified"""
+        actions.edit.extend_line_end()
+        line_end_text = actions.edit.selected_text()
+        actions.edit.left()
+        walk_to_character(line_end_text, character, offset, actions.edit.extend_right)
+
+    def delete_to_next_character(character: str, offset: int):
+        """Move the cursor to the next character specified"""
+        actions.edit.extend_line_end()
+        line_end_text = actions.edit.selected_text()
+        actions.edit.left()
+        walk_to_character(
+            line_end_text, character, offset, lambda: actions.key("delete")
+        )
+
     def go_previous_character(character: str, offset: int):
         """Move the cursor to the previous character specified"""
         actions.edit.extend_line_start()
         line_start_text = actions.edit.selected_text()[::-1]
         actions.edit.right()
         walk_to_character(line_start_text, character, offset, actions.edit.left)
+
+    def select_to_previous_character(character: str, offset: int):
+        """Move the cursor to the previous character specified"""
+        actions.edit.extend_line_start()
+        line_start_text = actions.edit.selected_text()[::-1]
+        actions.edit.right()
+        walk_to_character(line_start_text, character, offset, actions.edit.extend_left)
+
+    def delete_to_previous_character(character: str, offset: int):
+        """Move the cursor to the previous character specified"""
+        actions.edit.extend_line_start()
+        line_start_text = actions.edit.selected_text()[::-1]
+        actions.edit.right()
+        walk_to_character(
+            line_start_text, character, offset, lambda: actions.key("backspace")
+        )
