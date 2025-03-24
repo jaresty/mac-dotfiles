@@ -54,6 +54,14 @@ def last_phrase(_) -> str:
     return actions.user.get_last_phrase()
 
 
+def walk_to_character(
+    line_text: str, character: str, offset: int, walk_action: callable
+):
+    index_of_character = line_text.lower().find(character)
+    for _ in range(index_of_character + offset):
+        walk_action()
+
+
 @mod.action_class
 class Actions:
     def poke_keys(keys: list[str] = ["space"]):
@@ -77,3 +85,17 @@ class Actions:
         actions.key(keys)
         actions.edit.up()
         actions.edit.line_end()
+
+    def go_next_character(character: str, offset: int):
+        """Move the cursor to the next character specified"""
+        actions.edit.extend_line_end()
+        line_end_text = actions.edit.selected_text()
+        actions.edit.left()
+        walk_to_character(line_end_text, character, offset, actions.edit.right)
+
+    def go_previous_character(character: str, offset: int):
+        """Move the cursor to the previous character specified"""
+        actions.edit.extend_line_start()
+        line_start_text = actions.edit.selected_text()[::-1]
+        actions.edit.right()
+        walk_to_character(line_start_text, character, offset, actions.edit.left)

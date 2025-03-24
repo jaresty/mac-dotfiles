@@ -591,3 +591,8 @@ completer <user.word>+ walk:
 	user.complete(word_list)
 
 scaper: key(escape escape)
+
+char <user.letters> walk: user.go_next_character(letters, 1)
+char <user.letters> rewalk: user.go_previous_character(letters, 1)
+char <user.letters> walky: user.go_next_character(letters, 0)
+char <user.letters> rewalky: user.go_previous_character(letters, 0)
