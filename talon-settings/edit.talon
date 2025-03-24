@@ -592,7 +592,7 @@ completer <user.word>+ walk:
 
 scaper: key(escape escape)
 
-char <user.letters> walk: user.go_next_character(letters, 1)
-char <user.letters> rewalk: user.go_previous_character(letters, 1)
-char <user.letters> walky: user.go_next_character(letters, 0)
-char <user.letters> rewalky: user.go_previous_character(letters, 0)
+char <user.any_alphanumeric_key> walk: user.go_next_character(any_alphanumeric_key, 1)
+char <user.any_alphanumeric_key> rewalk: user.go_previous_character(any_alphanumeric_key, 1)
+char <user.any_alphanumeric_key> walky: user.go_next_character(any_alphanumeric_key, 0)
+char <user.any_alphanumeric_key> rewalky: user.go_previous_character(any_alphanumeric_key, 0)
