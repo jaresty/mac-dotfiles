@@ -132,7 +132,7 @@ class Actions:
             line_start_text, character, offset, lambda: actions.key("backspace")
         )
 
-    def insert_next_homophone():
+    def insert_next_homophone(should_select: bool = False):
         """Inserts the next homophone in the based on the current selection"""
         homophone = actions.edit.selected_text()
         homophone_candidates = actions.user.homophones_get(homophone)
@@ -140,3 +140,4 @@ class Actions:
             homophone_candidates
         )
         actions.insert(homophone_candidates[next_candidate_index])
+        actions.user.select_text_backward(homophone_candidates[next_candidate_index])

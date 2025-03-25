@@ -240,6 +240,15 @@ class Actions:
         for _ in lines[0]:
             actions.edit.extend_left()
 
+    def select_text_backward(text: str):
+        """Select the text to the left for the length of the passed text"""
+        lines = text.split("\n")
+        for _ in lines[:-1]:
+            actions.edit.extend_up()
+        actions.edit.extend_line_end()
+        for _ in lines[0]:
+            actions.edit.extend_left()
+
     def paste_select():
         """Paste and select"""
         actions.user.paste(actions.clip.text())

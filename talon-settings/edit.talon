@@ -563,7 +563,7 @@ dip poke:
 	insert(reformatted_text)
 
 phones walk:
-	user.insert_next_homophone()
+	user.insert_next_homophone(true)
 phones onwalk:
 	edit.extend_word_right()
 	user.insert_next_homophone()
