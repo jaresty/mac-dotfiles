@@ -140,4 +140,7 @@ class Actions:
             homophone_candidates
         )
         actions.insert(homophone_candidates[next_candidate_index])
-        actions.user.select_text_backward(homophone_candidates[next_candidate_index])
+        if should_select:
+            actions.user.select_text_backward(
+                homophone_candidates[next_candidate_index]
+            )
