@@ -529,8 +529,8 @@ dip poke:
 	edit.line_insert_down()
 
 <user.formatters> walk:
-	reformatted_text = user.reformat_text(edit.selected_text(), formatters)
-	insert(reformatted_text)
+	user.formatters_reformat_selection(formatters)
+	user.select_last_phrase()
 <user.formatters> onwalker:
 	edit.extend_line_end()
 	reformatted_text = user.reformat_text(edit.selected_text(), formatters)
