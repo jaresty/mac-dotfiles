@@ -528,36 +528,47 @@ fly poke:
 dip poke:
 	edit.line_insert_down()
 
-<user.formatters> onformer:
+<user.formatters> walk:
+	reformatted_text = user.reformat_text(edit.selected_text(), formatters)
+	insert(reformatted_text)
+<user.formatters> onwalker:
 	edit.extend_line_end()
 	reformatted_text = user.reformat_text(edit.selected_text(), formatters)
 	insert(reformatted_text)
-<user.formatters> onreformer:
+<user.formatters> onrewalker:
 	edit.extend_line_end()
 	edit.extend_word_left()
 	reformatted_text = user.reformat_text(edit.selected_text(), formatters)
 	insert(reformatted_text)
-<user.formatters> reformer:
+<user.formatters> rewalker:
 	edit.extend_line_start()
 	reformatted_text = user.reformat_text(edit.selected_text(), formatters)
 	insert(reformatted_text)
-<user.formatters> reonformer:
+<user.formatters> reonwalker:
 	edit.extend_line_start()
 	edit.extend_word_right()
 	reformatted_text = user.reformat_text(edit.selected_text(), formatters)
 	insert(reformatted_text)
-<user.formatters> onform:
+<user.formatters> onwalk:
 	edit.extend_word_right()
 	reformatted_text = user.reformat_text(edit.selected_text(), formatters)
 	insert(reformatted_text)
-<user.formatters> reform:
+<user.formatters> rewalk:
 	edit.extend_word_left()
 	reformatted_text = user.reformat_text(edit.selected_text(), formatters)
 	insert(reformatted_text)
-<user.formatters> biform:
+<user.formatters> biwalk:
 	edit.select_word()
 	reformatted_text = user.reformat_text(edit.selected_text(), formatters)
 	insert(reformatted_text)
+
+phones onwalk:
+	edit.extend_word_right()
+	user.insert_next_homophone()
+	edit.word_left()
+phones rewalk:
+	edit.extend_word_left()
+	user.insert_next_homophone()
 
 deaf tap: user.tap_reference()
 deaf walk:

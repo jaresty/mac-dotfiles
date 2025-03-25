@@ -131,3 +131,12 @@ class Actions:
         walk_to_character(
             line_start_text, character, offset, lambda: actions.key("backspace")
         )
+
+    def insert_next_homophone():
+        """Inserts the next homophone in the based on the current selection"""
+        homophone = actions.edit.selected_text()
+        homophone_candidates = actions.user.homophones_get(homophone)
+        next_candidate_index = (homophone_candidates.index(homophone) + 1) % len(
+            homophone_candidates
+        )
+        actions.insert(homophone_candidates[next_candidate_index])
