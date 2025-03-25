@@ -562,6 +562,8 @@ dip poke:
 	reformatted_text = user.reformat_text(edit.selected_text(), formatters)
 	insert(reformatted_text)
 
+phones walk:
+	user.insert_next_homophone()
 phones onwalk:
 	edit.extend_word_right()
 	user.insert_next_homophone()
