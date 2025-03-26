@@ -528,36 +528,36 @@ fly poke:
 dip poke:
 	edit.line_insert_down()
 
-<user.formatters> walk:
+form <user.formatters> walk:
 	user.formatters_reformat_selection(formatters)
 	user.select_last_phrase()
-<user.formatters> onwalker:
+form <user.formatters> onwalker:
 	edit.extend_line_end()
 	reformatted_text = user.reformat_text(edit.selected_text(), formatters)
 	insert(reformatted_text)
-<user.formatters> onrewalker:
+form <user.formatters> onrewalker:
 	edit.extend_line_end()
 	edit.extend_word_left()
 	reformatted_text = user.reformat_text(edit.selected_text(), formatters)
 	insert(reformatted_text)
-<user.formatters> rewalker:
+form <user.formatters> rewalker:
 	edit.extend_line_start()
 	reformatted_text = user.reformat_text(edit.selected_text(), formatters)
 	insert(reformatted_text)
-<user.formatters> reonwalker:
+form <user.formatters> reonwalker:
 	edit.extend_line_start()
 	edit.extend_word_right()
 	reformatted_text = user.reformat_text(edit.selected_text(), formatters)
 	insert(reformatted_text)
-<user.formatters> onwalk:
+form <user.formatters> onwalk:
 	edit.extend_word_right()
 	reformatted_text = user.reformat_text(edit.selected_text(), formatters)
 	insert(reformatted_text)
-<user.formatters> rewalk:
+form <user.formatters> rewalk:
 	edit.extend_word_left()
 	reformatted_text = user.reformat_text(edit.selected_text(), formatters)
 	insert(reformatted_text)
-<user.formatters> biwalk:
+form <user.formatters> biwalk:
 	edit.select_word()
 	reformatted_text = user.reformat_text(edit.selected_text(), formatters)
 	insert(reformatted_text)
