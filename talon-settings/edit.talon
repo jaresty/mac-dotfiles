@@ -9,8 +9,8 @@ onwalker: edit.line_end()
 onrewalker:
 	edit.line_end()
 	edit.word_left()
-onwalkerest: edit.paragraph_end()
-onwalkest: edit.file_end()
+onwalkeroom: edit.paragraph_end()
+onwalkoom: edit.file_end()
 
 midwalk: user.line_middle()
 
@@ -25,8 +25,8 @@ rewalker: edit.line_start()
 reonwalker:
 	edit.line_start()
 	edit.word_right()
-rewalkerest: edit.paragraph_start()
-rewalkest: edit.file_start()
+rewalkeroom: edit.paragraph_start()
+rewalkoom: edit.file_start()
 
 #moving up and down
 fly walk: edit.up()
@@ -91,7 +91,7 @@ size reset: edit.zoom_reset()
 
 folding walk: user.fold_more()
 folding rewalk: user.fold_less()
-folding rewalkest: user.unfold_recursively()
+folding rewalkoom: user.unfold_recursively()
 
 onpan: user.mouse_scroll_right()
 repan: user.mouse_scroll_left()
@@ -137,10 +137,10 @@ mouse <user.word> molter:
 onpunchy: key("delete")
 onpunch: key("alt-delete")
 onpuncher: key("ctrl-k")
-onpuncherest:
+onpuncheroom:
 	edit.extend_paragraph_end()
 	key("delete")
-onpunchest:
+onpunchoom:
 	edit.extend_file_end()
 	edit.delete()
 
@@ -148,10 +148,10 @@ onpunchest:
 repunchy: key("backspace")
 repunch: key("alt-backspace")
 repuncher: key("cmd-backspace")
-repuncherest:
+repuncheroom:
 	edit.extend_paragraph_start()
 	key("delete")
-repunchest:
+repunchoom:
 	edit.extend_file_start()
 	edit.delete()
 
@@ -181,8 +181,8 @@ bipunch:
 	key(alt-delete)
 	key(alt-backspace)
 bipuncher: edit.delete_line()
-bipuncherest: edit.delete_paragraph()
-bipunchest:
+bipuncheroom: edit.delete_paragraph()
+bipunchoom:
 	edit.select_all()
 	sleep(60ms)
 	edit.delete()
@@ -210,8 +210,8 @@ onpicky: key("shift-right")
 onpick: key("alt-shift-right")
 onpickoid: key("alt-shift-right shift-right")
 onpicker: key("cmd-shift-right")
-onpickerest: edit.extend_paragraph_end()
-onpickest: edit.extend_file_end()
+onpickeroom: edit.extend_paragraph_end()
+onpickoom: edit.extend_file_end()
 onpickize: user.set_select_direction_right()
 
 #selecting backward
@@ -219,14 +219,14 @@ repicky: key("shift-left")
 repick: key("alt-shift-left")
 repickoid: key("alt-shift-left shift-left")
 repicker: key("cmd-shift-left")
-repickerest: edit.extend_paragraph_start()
-repickest: edit.extend_file_start()
+repickeroom: edit.extend_paragraph_start()
+repickoom: edit.extend_file_start()
 repickize: user.set_select_direction_left()
 
 bipick: edit.select_word()
 bipicker: edit.select_line()
-bipickerest: edit.select_paragraph()
-bipickest: edit.select_all()
+bipickeroom: edit.select_paragraph()
+bipickoom: edit.select_all()
 
 lift:
 	edit.cut()
@@ -239,7 +239,7 @@ relift:
 relifter:
 	edit.extend_line_start()
 	edit.cut()
-reliftest:
+reliftoom:
 	edit.extend_file_start()
 	edit.cut()
 bilift:
@@ -249,13 +249,13 @@ bilift:
 onlifter:
 	edit.extend_line_end()
 	edit.cut()
-onliftest:
+onliftoom:
 	edit.extend_file_end()
 	edit.cut()
 bilifter:
 	edit.select_line()
 	edit.cut()
-biliftest:
+biliftoom:
 	edit.select_all()
 	edit.cut()
 fly lift:
@@ -310,7 +310,7 @@ replacer:
 biplacer:
 	edit.select_line()
 	edit.paste()
-biplacest:
+biplacoom:
 	edit.select_all()
 	edit.paste()
 fly place:
@@ -367,7 +367,7 @@ retracer:
 bitracer:
 	edit.select_line()
 	edit.copy()
-bitracest:
+bitracoom:
 	edit.select_all()
 	edit.copy()
 fly trace:

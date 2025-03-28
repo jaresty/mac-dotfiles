@@ -56,36 +56,36 @@ file punch:
 
 split walk: key("alt-tab")
 
-bipickerest:
+bipickeroom:
 	key('cmd-alt-[')
 	key('cmd-alt-shift-]')
-bipickest:
+bipickoom:
 	key('cmd-a')
 wax walk: user.wax()
 wax rewalk: user.wane()
 
-onwalkest: edit.file_end()
-onwalkerest: key('cmd-alt-]')
-rewalkerest: key('cmd-alt-[')
-rewalkest: edit.file_start()
-onpickerest: key('cmd-alt-shift-]')
-onpickest: edit.extend_file_end()
-repickerest: key('cmd-alt-shift-[')
-repickest: edit.extend_file_start()
-onpuncherest: key('cmd-alt-shift-] delete cmd-alt-l')
-onpunchest:
+onwalkoom: edit.file_end()
+onwalkeroom: key('cmd-alt-]')
+rewalkeroom: key('cmd-alt-[')
+rewalkoom: edit.file_start()
+onpickeroom: key('cmd-alt-shift-]')
+onpickoom: edit.extend_file_end()
+repickeroom: key('cmd-alt-shift-[')
+repickoom: edit.extend_file_start()
+onpuncheroom: key('cmd-alt-shift-] delete cmd-alt-l')
+onpunchoom:
 	edit.extend_file_end()
 	edit.delete()
-repuncherest: key('cmd-alt-shift-[ delete cmd-alt-l')
-repunchest:
+repuncheroom: key('cmd-alt-shift-[ delete cmd-alt-l')
+repunchoom:
 	edit.extend_file_start()
 	edit.delete()
-bipuncherest:
+bipuncheroom:
 	key('cmd-alt-[')
 	key('cmd-alt-shift-]')
 	sleep(60ms)
 	edit.delete()
-bipunchest:
+bipunchoom:
 	edit.select_all()
 	edit.delete()
 
