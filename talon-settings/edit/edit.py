@@ -94,11 +94,38 @@ class Actions:
         walk_to_character(line_end_text, character, offset, actions.edit.right)
 
     def select_to_next_character(character: str, offset: int):
-        """Move the cursor to the next character specified"""
+        """Select to the next character specified"""
+        initially_selected_text = actions.edit.selected_text()
+        initial_position = len(initially_selected_text) + 1
+
         actions.edit.extend_line_end()
+        actions.sleep("200ms")
         line_end_text = actions.edit.selected_text()
+
+        if initial_position > len(line_end_text):
+            initial_position = 0
+        additional_text = line_end_text[initial_position:]
+
         actions.edit.left()
-        walk_to_character(line_end_text, character, offset, actions.edit.extend_right)
+        walk_to_character(additional_text, character, offset, actions.edit.extend_right)
+        for _ in range(initial_position):
+            actions.edit.extend_right()
+
+    def select_to_previous_character(character: str, offset: int):
+        """Select to the previous character specified"""
+        initially_selected_text = actions.edit.selected_text()
+        initial_position = len(initially_selected_text) + 1
+        actions.edit.extend_line_start()
+        actions.sleep("200ms")
+        line_start_text = actions.edit.selected_text()[::-1]
+
+        if initial_position > len(line_start_text):
+            initial_position = 0
+        additional_text = line_start_text[initial_position:]
+        actions.edit.right()
+        walk_to_character(additional_text, character, offset, actions.edit.extend_left)
+        for _ in range(initial_position):
+            actions.edit.extend_left()
 
     def delete_to_next_character(character: str, offset: int):
         """Move the cursor to the next character specified"""
@@ -115,13 +142,6 @@ class Actions:
         line_start_text = actions.edit.selected_text()[::-1]
         actions.edit.right()
         walk_to_character(line_start_text, character, offset, actions.edit.left)
-
-    def select_to_previous_character(character: str, offset: int):
-        """Move the cursor to the previous character specified"""
-        actions.edit.extend_line_start()
-        line_start_text = actions.edit.selected_text()[::-1]
-        actions.edit.right()
-        walk_to_character(line_start_text, character, offset, actions.edit.extend_left)
 
     def delete_to_previous_character(character: str, offset: int):
         """Move the cursor to the previous character specified"""
