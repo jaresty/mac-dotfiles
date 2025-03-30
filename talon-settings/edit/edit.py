@@ -54,12 +54,8 @@ def last_phrase(_) -> str:
     return actions.user.get_last_phrase()
 
 
-def walk_to_character(
-    line_text: str, character: str, offset: int, walk_action: callable
-):
-    index_of_character = line_text.lower().find(character)
-    for _ in range(index_of_character + offset):
-        walk_action()
+def locate_character(line_text: str, character: str, offset: int):
+    return line_text.lower().find(character) + offset
 
 
 @mod.action_class
@@ -91,7 +87,20 @@ class Actions:
         actions.edit.extend_line_end()
         line_end_text = actions.edit.selected_text()
         actions.edit.left()
-        walk_to_character(line_end_text, character, offset, actions.edit.right)
+        index_of_character = locate_character(line_end_text, character, offset)
+
+        for _ in range(index_of_character):
+            actions.edit.right()
+
+    def go_previous_character(character: str, offset: int):
+        """Move the cursor to the previous character specified"""
+        actions.edit.extend_line_start()
+        line_start_text = actions.edit.selected_text()[::-1]
+        actions.edit.right()
+        index_of_character = locate_character(line_start_text, character, offset)
+
+        for _ in range(index_of_character):
+            actions.edit.left()
 
     def select_to_next_character(character: str, offset: int):
         """Select to the next character specified"""
@@ -107,8 +116,9 @@ class Actions:
         additional_text = line_end_text[initial_position:]
 
         actions.edit.left()
-        walk_to_character(additional_text, character, offset, actions.edit.extend_right)
-        for _ in range(initial_position):
+        index_of_character = locate_character(additional_text, character, offset)
+
+        for _ in range(initial_position + index_of_character):
             actions.edit.extend_right()
 
     def select_to_previous_character(character: str, offset: int):
@@ -123,8 +133,9 @@ class Actions:
             initial_position = 0
         additional_text = line_start_text[initial_position:]
         actions.edit.right()
-        walk_to_character(additional_text, character, offset, actions.edit.extend_left)
-        for _ in range(initial_position):
+        index_of_character = locate_character(additional_text, character, offset)
+
+        for _ in range(initial_position + index_of_character):
             actions.edit.extend_left()
 
     def delete_to_next_character(character: str, offset: int):
@@ -132,25 +143,20 @@ class Actions:
         actions.edit.extend_line_end()
         line_end_text = actions.edit.selected_text()
         actions.edit.left()
-        walk_to_character(
-            line_end_text, character, offset, lambda: actions.key("delete")
-        )
+        index_of_character = locate_character(line_end_text, character, offset)
 
-    def go_previous_character(character: str, offset: int):
-        """Move the cursor to the previous character specified"""
-        actions.edit.extend_line_start()
-        line_start_text = actions.edit.selected_text()[::-1]
-        actions.edit.right()
-        walk_to_character(line_start_text, character, offset, actions.edit.left)
+        for _ in range(index_of_character):
+            actions.key("delete")
 
     def delete_to_previous_character(character: str, offset: int):
         """Move the cursor to the previous character specified"""
         actions.edit.extend_line_start()
         line_start_text = actions.edit.selected_text()[::-1]
         actions.edit.right()
-        walk_to_character(
-            line_start_text, character, offset, lambda: actions.key("backspace")
-        )
+        index_of_character = locate_character(line_start_text, character, offset)
+
+        for _ in range(index_of_character):
+            actions.key("backspace")
 
     def insert_next_homophone(should_select: bool = False):
         """Inserts the next homophone in the based on the current selection"""
