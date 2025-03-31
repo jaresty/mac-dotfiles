@@ -8,6 +8,7 @@ tag(): user.gpt_beta
 tag(): user.unix_utilities
 tag(): user.cursorless_use_community_snippets
 tag(): user.gamepad
+tag(): user.experimental_window_layout
 settings():
   # user.paste_to_insert_threshold = 10
   user.emacs_meta = "alt"
@@ -30,7 +31,7 @@ wait: sleep(200ms)
 
 grab O C R: key("cmd-ctrl-shift-alt-o")
 
-^emo [<user.spoken_text_search>]$:
+^emo [<user.spoken_text_search>] tap$:
   key(cmd-ctrl-shift-alt-space)
   sleep(200ms)
   insert(spoken_text_search or "")
