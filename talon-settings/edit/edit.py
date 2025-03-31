@@ -117,7 +117,7 @@ class Actions:
     def go_next_paint(offset: int):
         """Go to the next whitespace to limited word"""
         actions.edit.extend_line_end()
-        actions.sleep("300ms")
+        actions.sleep("50ms")
         line_end_text = actions.edit.selected_text()
         actions.edit.left()
         index_of_character = locate_paint(line_end_text, offset)
@@ -128,7 +128,7 @@ class Actions:
     def go_previous_paint(offset: int):
         """Go to the previous whitespace to limited word"""
         actions.edit.extend_line_start()
-        actions.sleep("300ms")
+        actions.sleep("50ms")
         line_start_text = actions.edit.selected_text()[::-1]
         actions.edit.right()
         index_of_character = locate_paint(line_start_text, offset)
@@ -142,7 +142,7 @@ class Actions:
         initial_position = len(initially_selected_text) + 1
 
         actions.edit.extend_line_end()
-        actions.sleep("200ms")
+        actions.sleep("50ms")
         line_end_text = actions.edit.selected_text()
 
         if initial_position > len(line_end_text):
@@ -160,7 +160,7 @@ class Actions:
         initially_selected_text = actions.edit.selected_text()
         initial_position = len(initially_selected_text) + 1
         actions.edit.extend_line_start()
-        actions.sleep("200ms")
+        actions.sleep("50ms")
         line_start_text = actions.edit.selected_text()[::-1]
 
         if initial_position > len(line_start_text):
@@ -178,7 +178,7 @@ class Actions:
         initial_position = len(initially_selected_text) + 1
 
         actions.edit.extend_line_end()
-        actions.sleep("200ms")
+        actions.sleep("50ms")
         line_end_text = actions.edit.selected_text()
 
         if initial_position > len(line_end_text):
@@ -196,7 +196,7 @@ class Actions:
         initially_selected_text = actions.edit.selected_text()
         initial_position = len(initially_selected_text) + 1
         actions.edit.extend_line_start()
-        actions.sleep("200ms")
+        actions.sleep("50ms")
         line_start_text = actions.edit.selected_text()[::-1]
 
         if initial_position > len(line_start_text):
