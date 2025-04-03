@@ -31,7 +31,7 @@ def spoken_text_search(m) -> str:
     return ""
 
 
-@mod.capture(rule="curse [<user.formatters>] <user.cursorless_target>")
+@mod.capture(rule="bring [<user.formatters>] <user.cursorless_target>")
 def cursorless_formatted(m) -> str:
     target_text = actions.user.cursorless_get_text(m.cursorless_target)
     if hasattr(m, "formatters"):
