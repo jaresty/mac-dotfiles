@@ -599,20 +599,20 @@ completer <user.word>+ walk:
 
 scaper: key(escape escape)
 
-golf <user.any_alphanumeric_key> walk: user.go_next_character(any_alphanumeric_key, 1)
-golf <user.any_alphanumeric_key> rewalk: user.go_previous_character(any_alphanumeric_key, 1)
-golf <user.any_alphanumeric_key> walky: user.go_next_character(any_alphanumeric_key, 0)
-golf <user.any_alphanumeric_key> rewalky: user.go_previous_character(any_alphanumeric_key, 0)
+golf [<user.any_alphanumeric_key>] walk: user.go_next_character(any_alphanumeric_key or "", 1)
+golf [<user.any_alphanumeric_key>] rewalk: user.go_previous_character(any_alphanumeric_key or "", 1)
+golf [<user.any_alphanumeric_key>] walky: user.go_next_character(any_alphanumeric_key or "", 0)
+golf [<user.any_alphanumeric_key>] rewalky: user.go_previous_character(any_alphanumeric_key or "", 0)
 
-golf <user.any_alphanumeric_key> pick: user.select_to_next_character(any_alphanumeric_key, 1)
-golf <user.any_alphanumeric_key> repick: user.select_to_previous_character(any_alphanumeric_key, 1)
-golf <user.any_alphanumeric_key> picky: user.select_to_next_character(any_alphanumeric_key, 0)
-golf <user.any_alphanumeric_key> repicky: user.select_to_previous_character(any_alphanumeric_key, 0)
+golf [<user.any_alphanumeric_key>] pick: user.select_to_next_character(any_alphanumeric_keyor or "", 1)
+golf [<user.any_alphanumeric_key>] repick: user.select_to_previous_character(any_alphanumeric_keyor or "", 1)
+golf [<user.any_alphanumeric_key>] picky: user.select_to_next_character(any_alphanumeric_keyor or "", 0)
+golf [<user.any_alphanumeric_key>] repicky: user.select_to_previous_character(any_alphanumeric_keyor or "", 0)
 
-golf <user.any_alphanumeric_key> punch: user.delete_to_next_character(any_alphanumeric_key, 1)
-golf <user.any_alphanumeric_key> repunch: user.delete_to_previous_character(any_alphanumeric_key, 1)
-golf <user.any_alphanumeric_key> punchy: user.delete_to_next_character(any_alphanumeric_key, 0)
-golf <user.any_alphanumeric_key> repunchy: user.delete_to_previous_character(any_alphanumeric_key, 0)
+golf [<user.any_alphanumeric_key>] punch: user.delete_to_next_character(any_alphanumeric_keyor or "", 1)
+golf [<user.any_alphanumeric_key>] repunch: user.delete_to_previous_character(any_alphanumeric_keyor or "", 1)
+golf [<user.any_alphanumeric_key>] punchy: user.delete_to_next_character(any_alphanumeric_keyor or "", 0)
+golf [<user.any_alphanumeric_key>] repunchy: user.delete_to_previous_character(any_alphanumeric_keyor or "", 0)
 
 paint walk: user.go_next_paint(1)
 paint walky: user.go_next_paint(0)

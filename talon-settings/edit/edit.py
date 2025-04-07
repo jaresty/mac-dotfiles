@@ -3,6 +3,8 @@ from talon import Context, Module, actions
 
 ctx = Context()
 mod = Module()
+global last_located_character
+last_located_character = " "
 
 
 @mod.capture(rule="<user.spoken_text_search>| <user.cursorless_formatted>")
@@ -56,6 +58,10 @@ def last_phrase(_) -> str:
 
 
 def locate_character(line_text: str, character: str, offset: int):
+    global last_located_character
+    if len(character) == 0:
+        character = last_located_character
+    last_located_character = character
     return line_text.lower().find(character) + offset
 
 
