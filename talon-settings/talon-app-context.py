@@ -1,3 +1,4 @@
+import json
 import os
 from talon import Context, Module, actions, ui, ctrl
 from pathlib import Path
@@ -14,51 +15,93 @@ app: jetbrains
 
 @ctx.action_class("user")
 class OverrideUserActions:
+    def gpt_tools():
+        """This will return a JSON string for the available tools"""
+        current_file = ui.active_window().doc
+        path = Path(current_file).resolve()
+        folder = path.parent
+        os.chdir(folder)
+        available_tools = subprocess.run(
+            [
+                "/opt/homebrew/bin/mcp",
+                "tools",
+                "-f",
+                "json",
+                "/opt/homebrew/bin/uvx",
+                "mcp-server-aidd",
+            ],
+            cwd=folder,
+            capture_output=True,
+            text=True,
+            check=False,
+        )
+
+        available_tools_array = json.loads(available_tools.stdout)["tools"]
+        tools = [
+            {
+                "type": "function",
+                "function": {
+                    "name": tool["name"],
+                    "description": tool["description"],
+                    "parameters": {
+                        "type": "object",
+                        "properties": tool.get("inputSchema", {}).get("properties", {}),
+                        "required": tool.get("inputSchema", {}).get("required", []),
+                        "additionalProperties": False,
+                    },
+                },
+            }
+            for tool in available_tools_array
+        ]
+
+        return json.dumps(tools)
+
+    def gpt_call_tool(tool_name: str, parameters: str):
+        """Call a given tool by name and return the response"""
+        current_file = ui.active_window().doc
+        path = Path(current_file).resolve()
+        folder = path.parent
+        os.chdir(folder)
+        git_repository_root = subprocess.run(
+            [
+                "git",
+                "rev-parse",
+                "--show-toplevel",
+            ],
+            cwd=folder,
+            capture_output=True,
+            text=True,
+            check=False,
+        ).stdout.strip()
+        os.chdir(git_repository_root)
+        tool_call_result = subprocess.run(
+            [
+                "/opt/homebrew/bin/mcp",
+                "call",
+                tool_name,
+                "-p",
+                parameters,
+                "/opt/homebrew/bin/uvx",
+                "mcp-server-aidd",
+            ],
+            cwd=git_repository_root,
+            capture_output=True,
+            text=True,
+            check=False,
+        )
+        return tool_call_result.stdout
+
     def gpt_additional_user_context():
         """This is an override function that can be used to add additional context to the prompt"""
         current_file = ui.active_window().doc
         path = Path(current_file).resolve()
         folder = path.parent
         os.chdir(folder)
-        current_git_diff = subprocess.run(
-            ["git", "diff"], cwd=folder, capture_output=True, text=True, check=False
-        )
-        staged_git_diff = subprocess.run(
-            ["git", "diff", "--staged"],
-            cwd=folder,
-            capture_output=True,
-            text=True,
-            check=False,
-        )
-        project_files = subprocess.run(
-            ["git", "ls-files"],
-            cwd=folder,
-            capture_output=True,
-            text=True,
-            check=False,
-        )
         git_root = subprocess.run(
             ["git", "rev-parse", "--show-toplevel"],
             cwd=folder,
             capture_output=True,
             text=True,
             check=False,
-        )
-        working_directory = git_root.stdout.strip()
-        ctags_output = subprocess.run(
-            ["make", "output_tags"],
-            cwd=working_directory,
-            capture_output=True,
-            text=True,
-            check=False,
-        )
-        return [
-            "The current git diff is:",
-            current_git_diff.stdout,
-            "The current staged git diff is:",
-            staged_git_diff.stdout,
-            "The output of git ls-files is:",
-            project_files.stdout,
-            "The tags output is this:",
-            ctags_output.stdout,
-        ]
+        ).stdout.strip()
+        return ["The current file is", current_file, "The repository root is", git_root]
