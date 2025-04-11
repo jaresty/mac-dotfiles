@@ -31,7 +31,7 @@ class OverrideUserActions:
             cwd=folder,
             capture_output=True,
             text=True,
-            check=False,
+            check=True,
         ).stdout.strip()
         os.chdir(git_repository_root)
         available_tools = subprocess.run(
@@ -41,8 +41,11 @@ class OverrideUserActions:
             cwd=git_repository_root,
             capture_output=True,
             text=True,
-            check=False,
+            check=True,
             timeout=60,
+        )
+        print(
+            f"The available_tools result is {available_tools.stdout} {available_tools.stderr}"
         )
 
         available_tools_array = json.loads(available_tools.stdout)["tools"]
@@ -80,7 +83,7 @@ class OverrideUserActions:
             cwd=folder,
             capture_output=True,
             text=True,
-            check=False,
+            check=True,
         ).stdout.strip()
 
         os.chdir(git_repository_root)
@@ -89,7 +92,10 @@ class OverrideUserActions:
             cwd=git_repository_root,
             capture_output=True,
             text=True,
-            check=False,
+            check=True,
+        )
+        print(
+            f"The tool call result is {tool_call_result.stdout} {tool_call_result.stderr}"
         )
         return tool_call_result.stdout
 
@@ -104,6 +110,6 @@ class OverrideUserActions:
             cwd=folder,
             capture_output=True,
             text=True,
-            check=False,
+            check=True,
         ).stdout.strip()
         return ["The current file is", current_file, "The repository root is", git_root]
