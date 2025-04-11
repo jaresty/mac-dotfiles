@@ -21,19 +21,28 @@ class OverrideUserActions:
         path = Path(current_file).resolve()
         folder = path.parent
         os.chdir(folder)
-        available_tools = subprocess.run(
+
+        git_repository_root = subprocess.run(
             [
-                "/opt/homebrew/bin/mcp",
-                "tools",
-                "-f",
-                "json",
-                "/opt/homebrew/bin/uvx",
-                "mcp-server-aidd",
+                "git",
+                "rev-parse",
+                "--show-toplevel",
             ],
             cwd=folder,
             capture_output=True,
             text=True,
             check=False,
+        ).stdout.strip()
+        os.chdir(git_repository_root)
+        available_tools = subprocess.run(
+            [
+                "/Users/tkma6d4/mac-dotfiles/bin/list-tools.sh",
+            ],
+            cwd=git_repository_root,
+            capture_output=True,
+            text=True,
+            check=False,
+            timeout=60,
         )
 
         available_tools_array = json.loads(available_tools.stdout)["tools"]
@@ -73,17 +82,10 @@ class OverrideUserActions:
             text=True,
             check=False,
         ).stdout.strip()
+
         os.chdir(git_repository_root)
         tool_call_result = subprocess.run(
-            [
-                "/opt/homebrew/bin/mcp",
-                "call",
-                tool_name,
-                "-p",
-                parameters,
-                "/opt/homebrew/bin/uvx",
-                "mcp-server-aidd",
-            ],
+            ["/Users/tkma6d4/mac-dotfiles/bin/run-tool.sh", tool_name, parameters],
             cwd=git_repository_root,
             capture_output=True,
             text=True,

@@ -1,0 +1,30 @@
+{
+	"serverName": "MacDotfiles",
+	"functionsPrefix": "mac-dotfiles",
+	"servers": [
+		{
+			"command": "npx",
+			"args": [
+				"-y",
+				"@modelcontextprotocol/server-filesystem@latest",
+				"/Users/my_user/mac-dotfiles"
+			]
+		},
+		{
+			"command": "uvx",
+			"args": [
+				"--directory",
+				"/Users/my_user/mac-dotfiles",
+				"mcp-server-tree-sitter"
+			]
+		},
+		{
+			"command": "uvx",
+			"args": [
+				"mcp-server-git",
+				"--repository",
+				"/Users/my_user/mac-dotfiles"
+			]
+		}
+	]
+}
