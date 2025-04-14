@@ -93,22 +93,10 @@ folding walk: user.fold_more()
 folding rewalk: user.fold_less()
 folding rewalkoom: user.unfold_recursively()
 
-onpan: user.mouse_scroll_right()
-repan: user.mouse_scroll_left()
-fly pan: user.mouse_scroll_up()
-dip pan: user.mouse_scroll_down()
-fly panner:
-	user.mouse_scroll_up()
-	user.mouse_scroll_left()
-fly repanner:
-	user.mouse_scroll_up()
-	user.mouse_scroll_right()
-dip panner:
-	user.mouse_scroll_down()
-	user.mouse_scroll_right()
-dip repanner:
-	user.mouse_scroll_down()
-	user.mouse_scroll_left()
+pan walk: user.mouse_scroll_right()
+pan rewalk: user.mouse_scroll_left()
+pan fly walk: user.mouse_scroll_up()
+pan dip walk: user.mouse_scroll_down()
 
 on <user.word> molt:
 	key("alt-delete")

@@ -88,22 +88,22 @@ MOVEMENT_TYPE: dict[str, tuple[callable, callable, int]] = {
         actions.user.next_reference,
         4,
     ),
-    "flow fly pan": (
+    "flow pan fly walk": (
         actions.user.mouse_scroll_up,
         actions.user.mouse_scroll_down,
         2,
     ),
-    "flow dip pan": (
+    "flow pan dip walk": (
         actions.user.mouse_scroll_down,
         actions.user.mouse_scroll_up,
         2,
     ),
-    "flow onpan": (
+    "flow pan walk": (
         actions.user.mouse_scroll_right,
         actions.user.mouse_scroll_left,
         2,
     ),
-    "flow repan": (
+    "flow pan rewalk": (
         actions.user.mouse_scroll_left,
         actions.user.mouse_scroll_right,
         2,
