@@ -82,8 +82,8 @@ MOVEMENT_TYPE: dict[str, tuple[callable, callable, int]] = {
     "flow fold rewalk": (actions.user.fold_less, actions.user.fold_more, 4),
     "flow navi rewalk": (actions.user.go_back, actions.user.go_forward, 4),
     "flow navi walk": (actions.user.go_forward, actions.user.go_back, 4),
-    "flow chase walk": (actions.user.next_reference, actions.user.last_reference, 4),
-    "flow chase rewalk": (
+    "flow deaf walk": (actions.user.next_reference, actions.user.last_reference, 4),
+    "flow deaf rewalk": (
         actions.user.last_reference,
         actions.user.next_reference,
         4,
