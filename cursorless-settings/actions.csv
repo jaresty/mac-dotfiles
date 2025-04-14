@@ -54,3 +54,13 @@ take, setSelection
 type deaf, revealTypeDefinition
 unfold, unfoldRegion
 wrap, wrapWithPairedDelimiter
+
+# 2025-04-14 07:37:45 - New entries automatically added by cursorless
+append, addSelection
+append post, addSelectionAfter
+append pre, addSelectionBefore
+flash, flashTargets
+git accept, gitAccept
+git revert, gitRevert
+git stage, gitStage
+git unstage, gitUnstage
