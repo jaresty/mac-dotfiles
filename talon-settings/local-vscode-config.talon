@@ -15,8 +15,8 @@ met ex:
 git log:
   user.vscode("gitlens.showGraph")
 
-bless: user.vscode("cursorUndo")
-recurse: user.vscode("cursorRedo")
+curse rewalk: user.vscode("cursorUndo")
+curse walk: user.vscode("cursorRedo")
 
 split walk: user.vscode("workbench.action.focusNextGroup")
 bar type tree: user.vscode("workbench.view.extension.typescript-explorer")
