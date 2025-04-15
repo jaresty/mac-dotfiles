@@ -281,6 +281,7 @@ mouse lifter:
 	edit.cut()
 
 clip tap: key(cmd-alt-ctrl-shift-v)
+match place: edit.paste_match_style()
 place:
 	edit.paste()
 onplace:
