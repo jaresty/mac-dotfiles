@@ -435,20 +435,20 @@ mouse forger:
 	mouse_click()
 	edit.selection_clone()
 
-fly dodge:
+dodge fly walk:
 	dodge_word = edit.selected_text()
 	edit.delete()
 	edit.line_insert_up()
 	insert(dodge_word)
-fly dodger:
+dodge fly walker:
 	edit.line_swap_up()
 
-dip dodge:
+dodge dip walk:
 	dodge_word = edit.selected_text()
 	edit.delete()
 	edit.line_insert_down()
 	insert(dodge_word)
-dip dodger:
+dodge dip walker:
 	edit.line_swap_down()
 
 on <user.keys> poke:
