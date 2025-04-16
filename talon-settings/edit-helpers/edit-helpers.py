@@ -332,6 +332,7 @@ class UserActions:
             )
             actions.user.stop_moving()
             return
+        continuous_movement_job.last_used_at = datetime.now()
 
         if active and actions.speech.enabled():
             hiss_cron = cron.after(
@@ -358,6 +359,9 @@ class UserActions:
             )
             actions.user.stop_moving()
             return
+
+        continuous_movement_job.last_used_at = datetime.now()
+
         if actions.speech.enabled():
             move_backing()
 
