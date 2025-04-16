@@ -143,6 +143,8 @@ def back_off_move():
     if continuous_movement_job is None:
         return
 
+    continuous_movement_job.last_used_at = datetime.now()
+
     movement_speed_index = continuous_movement_job.repeat_speed
     movement_speed_index = max(
         0,
@@ -188,6 +190,7 @@ def move_backing():
     global continuous_movement_job
     if continuous_movement_job is None:
         return
+    continuous_movement_job.last_used_at = datetime.now()
     continuous_movement_job.reverse_movement_type()
 
 
@@ -332,7 +335,6 @@ class UserActions:
             )
             actions.user.stop_moving()
             return
-        continuous_movement_job.last_used_at = datetime.now()
 
         if active and actions.speech.enabled():
             hiss_cron = cron.after(
@@ -359,8 +361,6 @@ class UserActions:
             )
             actions.user.stop_moving()
             return
-
-        continuous_movement_job.last_used_at = datetime.now()
 
         if actions.speech.enabled():
             move_backing()
