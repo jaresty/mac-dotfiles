@@ -112,4 +112,10 @@ class OverrideUserActions:
             text=True,
             check=True,
         ).stdout.strip()
-        return ["The current file is", current_file, "The repository root is", git_root]
+        return [
+            "The current file is",
+            current_file,
+            "The repository root is",
+            git_root,
+            "If you are asked about any symbols, you should look them up.",
+        ]
