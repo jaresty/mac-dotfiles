@@ -57,6 +57,8 @@ doom-setup: /opt/homebrew/opt/emacs-mac/Emacs.app ../.config/emacs luansevka
 	npm i -g typescript
 	npm install -g @georgesg/arc-cli
 	npm install -g @graphprotocol/graph-cli
+
+install-codex:
 	npm install -g @openai/codex
 
 install-fisher:
@@ -125,4 +127,4 @@ update: pull setup
 	mkdir ~/.cache/carapace
 	carapace _carapace nushell | save --force ~/.cache/carapace/init.nu
 
-setup: install-terminfo ../.zshrc ../tmuxfiles /opt/homebrew/bin/brew brew-bundle ../.rvm ../.config/emacs ../.docker/cli-plugins ../.config/fish/config.fish install-fisher ../.config/lvim/config.lua ../.tmux.conf.local ../.doom.d /opt/homebrew/opt/emacs-mac/Emacs.app luansevka /etc/paths.d/20-homebrew ~/.docker/cli-plugins/docker-buildx install-go-binaries install-tmux ../.config/fish/abbr.fish ../monaspace ~/.talon/user/rango-talon ~/.talon/user/talon-ai-tools ~/.talon/user/community ../.talon/user/community/settings ~/.talon/user/cursorless-talon ../.talon/user/cursorless-settings ~/.talon/user/talon-filetree-commands ~/.talon/user/talon-axkit
+setup: install-terminfo ../.zshrc ../tmuxfiles /opt/homebrew/bin/brew brew-bundle ../.rvm ../.config/emacs ../.docker/cli-plugins ../.config/fish/config.fish install-fisher ../.config/lvim/config.lua ../.tmux.conf.local ../.doom.d /opt/homebrew/opt/emacs-mac/Emacs.app luansevka /etc/paths.d/20-homebrew ~/.docker/cli-plugins/docker-buildx install-go-binaries install-tmux ../.config/fish/abbr.fish ../monaspace ~/.talon/user/rango-talon ~/.talon/user/talon-ai-tools ~/.talon/user/community ../.talon/user/community/settings ~/.talon/user/cursorless-talon ../.talon/user/cursorless-settings ~/.talon/user/talon-filetree-commands ~/.talon/user/talon-axkit install-codex
