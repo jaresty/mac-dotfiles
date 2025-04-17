@@ -118,6 +118,17 @@ symbol [<user.spoken_search>] walky:
   sleep(50ms)
   insert(spoken_search or "")
 
+^text [<user.spoken_search>] walk:
+  user.vscode("workbench.action.quickTextSearch")
+  sleep(50ms)
+  insert(spoken_search or "")
+  key(enter)
+^text [<user.spoken_search>] walky:
+  edit.find()
+  sleep(50ms)
+  insert(spoken_search or "")
+  key(enter)
+
 type tap: user.vscode("editor.action.peekTypeDefinition")
 type hierarchy tap: user.vscode("editor.showTypeHierarchy")
 param tap: user.vscode("editor.action.triggerParameterHints")
