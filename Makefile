@@ -57,6 +57,7 @@ doom-setup: /opt/homebrew/opt/emacs-mac/Emacs.app ../.config/emacs luansevka
 	npm i -g typescript
 	npm install -g @georgesg/arc-cli
 	npm install -g @graphprotocol/graph-cli
+	npm install -g @openai/codex
 
 install-fisher:
 	fish -c "curl -sL https://git.io/fisher | source - && fisher install jorgebucaran/fisher"
