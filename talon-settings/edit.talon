@@ -108,11 +108,11 @@ bi <user.word> molt:
 	edit.select_word()
 	key(delete)
 	insert(word)
-mouse <user.word> molt:
+pointer <user.word> molt:
 	mouse_click()
 	mouse_click()
 	insert(word)
-mouse <user.word> molter:
+pointer <user.word> molter:
 	mouse_click()
 	mouse_click()
 	mouse_click()
@@ -183,11 +183,11 @@ dip bipuncher:
 	edit.down()
 	edit.delete_line()
 
-mouse punch:
+pointer punch:
 	mouse_click()
 	mouse_click()
 	key(backspace)
-mouse puncher:
+pointer puncher:
 	mouse_click()
 	mouse_click()
 	mouse_click()
@@ -270,11 +270,11 @@ dip bilifter:
 	edit.extend_down()
 	edit.extend_line_end()
 	edit.cut()
-mouse lift:
+pointer lift:
 	mouse_click()
 	mouse_click()
 	edit.cut()
-mouse lifter:
+pointer lifter:
 	mouse_click()
 	mouse_click()
 	mouse_click()
@@ -383,11 +383,11 @@ dip bitracer:
 	edit.extend_down()
 	edit.extend_line_end()
 	edit.copy()
-mouse trace:
+pointer trace:
 	mouse_click()
 	mouse_click()
 	edit.copy()
-mouse tracer:
+pointer tracer:
 	mouse_click()
 	mouse_click()
 	mouse_click()
@@ -422,14 +422,14 @@ dip forge:
 	edit.line_insert_down()
 	insert(dodge_word)
 
-mouse forge:
+pointer forge:
 	mouse_click()
 	edit.selection_clone()
-mouse biforge:
+pointer biforge:
 	mouse_click()
 	mouse_click()
 	edit.selection_clone()
-mouse forger:
+pointer forger:
 	mouse_click()
 	mouse_click()
 	mouse_click()
