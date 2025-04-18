@@ -2,7 +2,6 @@ list: user.prose_formatter
 language: en
 -
 
-say: NOOP
-speak: NOOP
-sense: CAPITALIZE_FIRST_WORD
+talk: NOOP
+capper: CAPITALIZE_FIRST_WORD
 title: CAPITALIZE_ALL_WORDS
