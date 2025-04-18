@@ -574,7 +574,7 @@ numeric walk:
 numeric rewalk:
 	user.numeric_decrement()
 
-reswing: key(shift-tab)
+rejump: key(shift-tab)
 
 find paste: edit.find(clip.text())
 
@@ -586,7 +586,7 @@ lee [<user.text>] walk:
 completer <user.word>+ walk:
 	user.complete(word_list)
 
-scaper: key(escape escape)
+ejector: key(escape escape)
 
 golf [<user.any_alphanumeric_key>] walk: user.go_next_character(any_alphanumeric_key or "", 1)
 golf [<user.any_alphanumeric_key>] rewalk: user.go_previous_character(any_alphanumeric_key or "", 1)

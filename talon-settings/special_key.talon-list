@@ -5,9 +5,9 @@ language: en
 # Example
 
 dive: enter
-scape: escape
+eject: escape
 void: ' '
-swing: tab
+jump: tab
 upper: pageup
 downer: pagedown
 backspace: backspace
