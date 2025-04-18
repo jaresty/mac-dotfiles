@@ -15,18 +15,18 @@ text [<user.text>] tap:
 	mouse_click()
 	insert(text or "")
 pen walk: "p"
-sticky [<user.text>] walk:
+note [<user.text>] walk:
 	"n"
 	mouse_click()
 	insert(text or "")
 	key(escape)
 	sleep(50ms)
 	key(escape)
-sticky [<user.text>] tap:
+note [<user.text>] tap:
 	"n"
 	mouse_click()
 	insert(text or "")
-mouse punch:
+pointer punch:
 	mouse_click()
 	key(backspace)
 shape walk: "s"
