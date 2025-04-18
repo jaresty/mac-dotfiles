@@ -9,33 +9,33 @@ please [<user.text>] [over]:
 	sleep(400ms)
 	insert(user.text or "")
 
-# project <user.spoken_search> [{user.file_extension}] tap:
+# project <user.text> [{user.file_extension}] tap:
 # 	user.idea("action RecentFiles")
 # 	sleep(400ms)
-# 	insert(spoken_search or "")
+# 	insert(text or "")
 # 	insert(file_extension or "")
 # 	sleep(300ms)
 # 	key(enter)
 # 	sleep(150ms)
 
 # File Commands
-file [<user.spoken_search>] [{user.file_extension}] tap$:
+file [<user.text>] [{user.file_extension}] tap$:
 	key("cmd-shift-o")
 	sleep(400ms)
-	insert(spoken_search or "")
+	insert(text or "")
 	insert(file_extension or "")
 	sleep(300ms)
-file <user.spoken_search> [{user.file_extension}] split walk$:
+file <user.text> [{user.file_extension}] split walk$:
 	key("cmd-shift-o")
 	sleep(400ms)
-	insert(spoken_search or "")
+	insert(text or "")
 	insert(file_extension or "")
 	sleep(300ms)
 	key(shift-enter)
-file <user.spoken_search> [{user.file_extension}] walk$:
+file <user.text> [{user.file_extension}] walk$:
 	key("cmd-shift-o")
 	sleep(400ms)
-	insert(spoken_search or "")
+	insert(text or "")
 	insert(file_extension or "")
 	sleep(300ms)
 	key(enter)
@@ -89,78 +89,78 @@ bipunchoom:
 	edit.select_all()
 	edit.delete()
 
-^text [<user.spoken_search>] tappy:
+^text [<user.text>] tappy:
 	user.idea("action Find")
-	insert(spoken_search or "")
+	insert(text or "")
 
-^text [<user.spoken_search>] tap:
+^text [<user.text>] tap:
 	user.idea("action FindInPath")
-	insert(spoken_search or "")
+	insert(text or "")
 
-^text [<user.spoken_search>] walky:
+^text [<user.text>] walky:
 	user.idea("action Find")
-	insert(spoken_search or "")
+	insert(text or "")
 	sleep(200ms)
 	key(enter)
 
-^text [<user.spoken_search>] walk:
+^text [<user.text>] walk:
 	user.idea("action FindInPath")
-	insert(spoken_search or "")
+	insert(text or "")
 	sleep(200ms)
 	key(enter)
 
-^symbol [<user.spoken_search>] tap:
+^symbol [<user.text>] tap:
 	user.idea("action GotoSymbol")
-	insert(spoken_search or "")
+	insert(text or "")
 
-symbol [<user.spoken_search>] tappy:
+symbol [<user.text>] tappy:
 	key("cmd-f12")
 	sleep(400ms)
-	insert(spoken_search or "")
+	insert(text or "")
 
-^symbol [<user.spoken_search>] walk:
+^symbol [<user.text>] walk:
 	user.idea("action GotoSymbol")
-	insert(spoken_search or "")
+	insert(text or "")
 	sleep(200ms)
 	key(enter)
 
-symbol [<user.spoken_search>] walky:
+symbol [<user.text>] walky:
 	key("cmd-f12")
 	sleep(400ms)
-	insert(spoken_search or "")
+	insert(text or "")
 	sleep(200ms)
 	key(enter)
 
-prob [<user.spoken_search>] tap:
+prob [<user.text>] tap:
 	user.idea("action ShowIntentionActions")
 	sleep(400ms)
-	insert(spoken_search or "")
-prob [<user.spoken_search>] walk:
+	insert(text or "")
+prob [<user.text>] walk:
 	user.idea("action ShowIntentionActions")
 	sleep(400ms)
-	insert(spoken_search or "")
+	insert(text or "")
 	key(enter)
-prob [<user.spoken_search>] ontap:
+prob [<user.text>] ontap:
 	user.problem_next()
 	user.idea("action ShowIntentionActions")
 	sleep(400ms)
-	insert(spoken_search or "")
-prob [<user.spoken_search>] retap:
+	insert(text or "")
+prob [<user.text>] retap:
 	user.problem_last()
 	user.idea("action ShowIntentionActions")
 	sleep(400ms)
-	insert(spoken_search or "")
-prob [<user.spoken_search>] onwalk:
+	insert(text or "")
+prob [<user.text>] onwalk:
 	user.problem_next()
 	user.idea("action ShowIntentionActions")
 	sleep(400ms)
-	insert(spoken_search or "")
+	insert(text or "")
 	key(enter)
-prob [<user.spoken_search>] rewalk:
+prob [<user.text>] rewalk:
 	user.problem_last()
 	user.idea("action ShowIntentionActions")
 	sleep(400ms)
-	insert(spoken_search or "")
+	insert(text or "")
 	key(enter)
 
 run walk: key('ctrl-r')

@@ -578,10 +578,10 @@ reswing: key(shift-tab)
 
 find paste: edit.find(clip.text())
 
-lee [<user.spoken_search>] tap:
-	user.complete_tap(spoken_search or "")
-lee [<user.spoken_search>] walk:
-	user.complete_from_start(spoken_search or "", 1)
+lee [<user.text>] tap:
+	user.complete_tap(text or "")
+lee [<user.text>] walk:
+	user.complete_from_start(text or "", 1)
 
 completer <user.word>+ walk:
 	user.complete(word_list)

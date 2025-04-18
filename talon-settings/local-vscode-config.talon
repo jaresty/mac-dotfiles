@@ -45,36 +45,36 @@ wax rewalk: user.wane()
 
 context tap: user.vscode("editor.action.showContextMenu")
 
-prob [<user.spoken_search>] tap:
+prob [<user.text>] tap:
   user.vscode("editor.action.quickFix")
   sleep(400ms)
-  insert(spoken_search or "")
-prob [<user.spoken_search>] walk:
+  insert(text or "")
+prob [<user.text>] walk:
   user.vscode("editor.action.quickFix")
   sleep(400ms)
-  insert(spoken_search or "")
+  insert(text or "")
   key(enter)
-prob [<user.spoken_search>] ontap:
+prob [<user.text>] ontap:
   user.problem_next()
   user.vscode("editor.action.quickFix")
   sleep(400ms)
-  insert(spoken_search or "")
-prob [<user.spoken_search>] retap:
+  insert(text or "")
+prob [<user.text>] retap:
   user.problem_last()
   user.vscode("editor.action.quickFix")
   sleep(400ms)
-  insert(spoken_search or "")
-prob [<user.spoken_search>] onwalk:
+  insert(text or "")
+prob [<user.text>] onwalk:
   user.problem_next()
   user.vscode("editor.action.quickFix")
   sleep(400ms)
-  insert(spoken_search or "")
+  insert(text or "")
   key(enter)
-prob [<user.spoken_search>] rewalk:
+prob [<user.text>] rewalk:
   user.problem_last()
   user.vscode("editor.action.quickFix")
   sleep(400ms)
-  insert(spoken_search or "")
+  insert(text or "")
   key(enter)
 
 change walk: key(alt-f5)
@@ -87,46 +87,46 @@ refer walk: key(f4)
 refer rewalk: key(shift-f4)
 
 # Symbol search
-symbol [<user.spoken_search>] tappy:
+symbol [<user.text>] tappy:
   user.vscode("workbench.action.gotoSymbol")
   sleep(50ms)
-  insert(spoken_search or "")
-^symbol [<user.spoken_search>] tap:
+  insert(text or "")
+^symbol [<user.text>] tap:
   user.vscode("workbench.action.showAllSymbols")
   sleep(50ms)
-  insert(spoken_search or "")
+  insert(text or "")
 
-symbol [<user.spoken_search>] walky:
+symbol [<user.text>] walky:
   user.vscode("workbench.action.gotoSymbol")
   sleep(50ms)
-  insert(spoken_search or "")
+  insert(text or "")
   sleep(300ms)
   key(enter)
-^symbol [<user.spoken_search>] walk:
+^symbol [<user.text>] walk:
   user.vscode("workbench.action.showAllSymbols")
   sleep(50ms)
-  insert(spoken_search or "")
+  insert(text or "")
   sleep(300ms)
   key(enter)
 
-^text [<user.spoken_search>] tap:
+^text [<user.text>] tap:
   user.vscode("workbench.action.quickTextSearch")
   sleep(50ms)
-  insert(spoken_search or "")
-^text [<user.spoken_search>] tappy:
+  insert(text or "")
+^text [<user.text>] tappy:
   edit.find()
   sleep(50ms)
-  insert(spoken_search or "")
+  insert(text or "")
 
-^text [<user.spoken_search>] walk:
+^text [<user.text>] walk:
   user.vscode("workbench.action.quickTextSearch")
   sleep(50ms)
-  insert(spoken_search or "")
+  insert(text or "")
   key(enter)
-^text [<user.spoken_search>] walky:
+^text [<user.text>] walky:
   edit.find()
   sleep(50ms)
-  insert(spoken_search or "")
+  insert(text or "")
   key(enter)
 
 type tap: user.vscode("editor.action.peekTypeDefinition")
@@ -134,30 +134,30 @@ type hierarchy tap: user.vscode("editor.showTypeHierarchy")
 param tap: user.vscode("editor.action.triggerParameterHints")
 
 # File Commands
-file [<user.spoken_search>] [{user.file_extension}] tap:
+file [<user.text>] [{user.file_extension}] tap:
   user.vscode("workbench.action.quickOpen")
   sleep(400ms)
-  insert(spoken_search or "")
+  insert(text or "")
   insert(file_extension or "")
   sleep(300ms)
-file [<user.spoken_search>] [{user.file_extension}] walk:
+file [<user.text>] [{user.file_extension}] walk:
   user.vscode("workbench.action.quickOpen")
   sleep(400ms)
-  insert(spoken_search or "")
+  insert(text or "")
   insert(file_extension or "")
   sleep(300ms)
   key(enter)
 
-project [<user.spoken_search>] tap:
+project [<user.text>] tap:
   user.vscode("workbench.action.openRecent")
   sleep(50ms)
-  insert(spoken_search or "")
+  insert(text or "")
   sleep(250ms)
 
-project [<user.spoken_search>] walk:
+project [<user.text>] walk:
   user.vscode("workbench.action.openRecent")
   sleep(50ms)
-  insert(spoken_search or "")
+  insert(text or "")
   sleep(250ms)
   key(enter)
 
