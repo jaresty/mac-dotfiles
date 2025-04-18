@@ -7,8 +7,8 @@ escaped quad, escapedDoubleQuotes
 escaped round, escapedParentheses
 escaped twin, escapedSingleQuotes
 pair, any
-hail, doubleQuotes
+quad, doubleQuotes
 round, parentheses
 rain, backtickQuotes
-sleet, singleQuotes
+twin, singleQuotes
 void, whitespace

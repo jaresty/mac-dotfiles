@@ -14,7 +14,7 @@ round: ( )
 box: [ ]
 leaf: < >
 crane: { }
-sleet: "' '"
-hail: '" "'
+twin: "' '"
+quad: '" "'
 rain: ` `
 pad: space space

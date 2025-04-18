@@ -59,18 +59,18 @@ leaf that:
 	user.paste("<{text}>")
 roost: "</"
 dussle: "./"
-hailer:
+quader:
 	insert('""')
 	key(left enter)
-haily: '""'
-hail that:
+quady: '""'
+quad that:
 	text = edit.selected_text()
 	user.paste('"{text}"')
-sleeter:
+twiner:
 	insert("''")
 	key(left enter)
-sleety: "''"
-sleet that:
+twiny: "''"
+twin that:
 	text = edit.selected_text()
 	user.paste("'{text}'")
 rainer:
