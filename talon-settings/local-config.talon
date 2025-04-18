@@ -31,22 +31,22 @@ wait: sleep(200ms)
 
 grab O C R: key("cmd-ctrl-shift-alt-o")
 
-^emo [<user.spoken_text_search>] tap$:
+^emo [<user.text>] tap$:
   key(cmd-ctrl-shift-alt-space)
   sleep(200ms)
-  insert(spoken_text_search or "")
+  insert(text or "")
 
 # homerow
-^pointer <user.spoken_text_search> tap:
+^pointer <user.text> tap:
   user.homerow_search()
   sleep(100ms)
-  insert(spoken_text_search or "")
+  insert(text or "")
 
 # homerow
-^pointer <user.spoken_text_search> walk:
+^pointer <user.text> walk:
   user.homerow_search()
   sleep(100ms)
-  insert(spoken_text_search or "")
+  insert(text or "")
   sleep(500ms)
   key(enter)
   sleep(500ms)
@@ -55,25 +55,25 @@ grab O C R: key("cmd-ctrl-shift-alt-o")
 ^pointer tap:
   key("cmd-shift-ctrl-alt-c")
 
-^scroll [<user.spoken_text_search>] tap:
+^scroll [<user.text>] tap:
   user.homerow_scroll_search()
   sleep(100ms)
-  insert(spoken_text_search or "")
+  insert(text or "")
 
-# ^windows [<user.spoken_text_search>]:
+# ^windows [<user.text>]:
 #   key(cmd-ctrl-shift-alt-tab)
 #   sleep(50ms)
-#   insert(spoken_text_search or "")
+#   insert(text or "")
 
-^raycast [<user.spoken_text_search>]:
+^raycast [<user.text>]:
   key("cmd-space")
   sleep(50ms)
-  insert(spoken_text_search or "")
+  insert(text or "")
 
-^window [<user.spoken_text_search>] tap:
+^window [<user.text>] tap:
   key("cmd-ctrl-alt-shift-tab")
   sleep(100ms)
-  insert(spoken_text_search or "")
+  insert(text or "")
 
 ^conventional commit:
   key("cmd-space")
