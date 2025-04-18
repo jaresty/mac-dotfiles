@@ -37,13 +37,13 @@ grab O C R: key("cmd-ctrl-shift-alt-o")
   insert(spoken_text_search or "")
 
 # homerow
-^mouse <user.spoken_text_search> tap:
+^pointer <user.spoken_text_search> tap:
   user.homerow_search()
   sleep(100ms)
   insert(spoken_text_search or "")
 
 # homerow
-^mouse <user.spoken_text_search> walk:
+^pointer <user.spoken_text_search> walk:
   user.homerow_search()
   sleep(100ms)
   insert(spoken_text_search or "")
@@ -52,10 +52,10 @@ grab O C R: key("cmd-ctrl-shift-alt-o")
   sleep(500ms)
   key(escape)
 
-^mouse tap:
+^pointer tap:
   key("cmd-shift-ctrl-alt-c")
 
-^scroll tap [<user.spoken_text_search>]:
+^scroll [<user.spoken_text_search>] tap:
   user.homerow_scroll_search()
   sleep(100ms)
   insert(spoken_text_search or "")
@@ -70,9 +70,9 @@ grab O C R: key("cmd-ctrl-shift-alt-o")
   sleep(50ms)
   insert(spoken_text_search or "")
 
-^window tap [<user.spoken_text_search>]:
+^window [<user.spoken_text_search>] tap:
   key("cmd-ctrl-alt-shift-tab")
-  sleep(50ms)
+  sleep(100ms)
   insert(spoken_text_search or "")
 
 ^conventional commit:
@@ -94,29 +94,8 @@ nope: edit.undo()
 
 toggle mike: key("f11")
 
-snap web development:
-  mimic("snap figma right third")
-  mimic("snap arc center third")
-  mimic("snap code left third")
-
 lister <number>: "LISTR-{number}"
 copy append that: clip.set_text("{clip.text()}\n{edit.selected_text()}")
 cut append that:
   clip.set_text("{clip.text()}\n{edit.selected_text()}")
   key(delete)
-
-{user.model} help active:
-  text = user.gpt_display_help()
-
-draft up <number>:
-  edit.select_line()
-  key(shift-up)
-  repeat(number - 1)
-  user.draft_editor_open()
-
-draft down <number>:
-  key(home:2)
-  key(shift-end)
-  key(shift-down)
-  repeat(number - 1)
-  user.draft_editor_open()
