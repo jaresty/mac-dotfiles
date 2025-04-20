@@ -583,7 +583,7 @@ lee [<user.text>] tap:
 lee [<user.text>] walk:
 	user.complete_from_start(text or "", 1)
 
-completer <user.word>+ walk:
+leeted <user.word>+:
 	user.complete(word_list)
 
 ejector: key(escape escape)
