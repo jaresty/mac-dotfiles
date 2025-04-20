@@ -582,6 +582,9 @@ lee [<user.text>] tap:
 	user.complete_tap(text or "")
 lee [<user.text>] walk:
 	user.complete_from_start(text or "", 1)
+lee [<user.text>] {user.phrase_ender}:
+	user.complete_from_start(text or "", 1)
+	insert(phrase_ender or "")
 
 leeted <user.word>+:
 	user.complete(word_list)
