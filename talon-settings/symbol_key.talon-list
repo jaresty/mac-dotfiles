@@ -22,8 +22,8 @@ dizzy: @
 tangle: ^
 blank: _
 dot: .
-slash: /
-stroke: '\\'
+zig: /
+zag: '\\'
 minus: -
 bolt: -
 beam: =
