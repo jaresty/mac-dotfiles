@@ -2,7 +2,7 @@ list: user.phrase_ender
 language: en
 -
 
-over: ""
+walk: ""
 bridge: :
 quest: ?
 void: ' '

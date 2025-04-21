@@ -589,7 +589,7 @@ lee [<user.text>] <user.delimiter_pair>:
 	user.complete_from_start(text or "", 1)
 	user.delimiter_pair_insert(delimiter_pair)
 
-leeted <user.word>+ [walk | {user.phrase_ender}]:
+leeted <user.word>+ [{user.phrase_ender}]:
 	user.complete(word_list)
 	insert(phrase_ender or "")
 
