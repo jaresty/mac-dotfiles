@@ -585,9 +585,13 @@ lee [<user.text>] walk:
 lee [<user.text>] {user.phrase_ender}:
 	user.complete_from_start(text or "", 1)
 	insert(phrase_ender or "")
+lee [<user.text>] <user.delimiter_pair>:
+	user.complete_from_start(text or "", 1)
+	user.delimiter_pair_insert(delimiter_pair)
 
-leeted <user.word>+:
+leeted <user.word>+ [walk | {user.phrase_ender}]:
 	user.complete(word_list)
+	insert(phrase_ender or "")
 
 ejector: key(escape escape)
 
