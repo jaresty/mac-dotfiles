@@ -5,8 +5,9 @@ settings():
 
 channel <user.text> walk:
 	key(cmd-k)
+	sleep(200ms)
 	insert(text)
-	sleep(100ms)
+	sleep(300ms)
 	key(enter)
 
 channel <user.text> tap:
