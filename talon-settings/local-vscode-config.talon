@@ -175,8 +175,12 @@ alter walker: user.vscode("alternate.createAlternateFile")
 alter rewalk: user.vscode("alternate.alternateFileInSplit")
 alter rewalker: user.vscode("alternate.createAlternateFileInSplit")
 
-snip walk: user.vscode("jumpToNextSnippetPlaceholder")
-snip rewalk: user.vscode("jumpToPrevSnippetPlaceholder")
+nip walk: user.vscode("jumpToNextSnippetPlaceholder")
+nip rewalk: user.vscode("jumpToPrevSnippetPlaceholder")
+nip {user.snippet}: user.insert_snippet_by_name(snippet)
+
+nip {user.snippet_with_phrase} <user.text>:
+  user.insert_snippet_by_name_with_phrase(snippet_with_phrase, text)
 
 git walk: user.vscode("workbench.scm.action.focusNextInput")
 git rewalk: user.vscode("workbench.scm.action.focusPreviousInput")
