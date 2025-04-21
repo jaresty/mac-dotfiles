@@ -18,7 +18,7 @@ git log:
 curse rewalk: user.vscode("cursorUndo")
 curse walk: user.vscode("cursorRedo")
 
-split walk: user.vscode("workbench.action.focusNextGroup")
+pit walk: user.vscode("workbench.action.focusNextGroup")
 bar type tree: user.vscode("workbench.view.extension.typescript-explorer")
 run build: user.vscode("workbench.action.tasks.build")
 run test: user.vscode("workbench.action.tasks.test")

@@ -25,7 +25,7 @@ file [<user.text>] [{user.file_extension}] tap$:
 	insert(text or "")
 	insert(file_extension or "")
 	sleep(300ms)
-file <user.text> [{user.file_extension}] split walk$:
+file <user.text> [{user.file_extension}] pit walk$:
 	key("cmd-shift-o")
 	sleep(400ms)
 	insert(text or "")
@@ -54,7 +54,7 @@ file forge:
 file punch:
 	key("cmd-up delete")
 
-split walk: key("alt-tab")
+pit walk: key("alt-tab")
 
 bipickeroom:
 	key('cmd-alt-[')
@@ -180,5 +180,5 @@ param tap: user.idea("action ParameterInfo")
 change walk: key(ctrl-shift-alt-down)
 change rewalk: key(ctrl-shift-alt-up)
 
-split forge:
+pit forge:
 	user.idea("action SplitVertically")
