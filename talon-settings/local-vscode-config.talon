@@ -87,22 +87,22 @@ refer walk: key(f4)
 refer rewalk: key(shift-f4)
 
 # Symbol search
-symbol [<user.text>] tappy:
+tag [<user.text>] tappy:
   user.vscode("workbench.action.gotoSymbol")
   sleep(50ms)
   insert(text or "")
-^symbol [<user.text>] tap:
+^tag [<user.text>] tap:
   user.vscode("workbench.action.showAllSymbols")
   sleep(50ms)
   insert(text or "")
 
-symbol [<user.text>] walky:
+tag [<user.text>] walky:
   user.vscode("workbench.action.gotoSymbol")
   sleep(50ms)
   insert(text or "")
   sleep(300ms)
   key(enter)
-^symbol [<user.text>] walk:
+^tag [<user.text>] walk:
   user.vscode("workbench.action.showAllSymbols")
   sleep(50ms)
   insert(text or "")

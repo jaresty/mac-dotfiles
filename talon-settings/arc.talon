@@ -16,11 +16,11 @@ file [<user.spoken_text_search>] [{user.file_extension}] walk:
 	sleep(300ms)
 	key(enter)
 
-symbol [<user.spoken_text_search>] tap:
+tag [<user.spoken_text_search>] tap:
 	key("cmd-p @")
 	sleep(400ms)
 	insert(spoken_text_search or "")
-symbol [<user.spoken_text_search>] walk:
+tag [<user.spoken_text_search>] walk:
 	key("cmd-p @")
 	sleep(400ms)
 	insert(spoken_text_search or "")
