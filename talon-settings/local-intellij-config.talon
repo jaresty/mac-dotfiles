@@ -109,22 +109,22 @@ bipunchoom:
 	sleep(200ms)
 	key(enter)
 
-^tag [<user.text>] tap:
+^tag [<user.text>] tapper:
 	user.idea("action GotoSymbol")
 	insert(text or "")
 
-tag [<user.text>] tappy:
+tag [<user.text>] tap:
 	key("cmd-f12")
 	sleep(400ms)
 	insert(text or "")
 
-^tag [<user.text>] walk:
+^tag [<user.text>] walker:
 	user.idea("action GotoSymbol")
 	insert(text or "")
 	sleep(200ms)
 	key(enter)
 
-tag [<user.text>] walky:
+tag [<user.text>] walk:
 	key("cmd-f12")
 	sleep(400ms)
 	insert(text or "")
