@@ -82,6 +82,8 @@ change rewalk: key(shift-alt-f5)
 
 error walk: user.vscode("editor.action.marker.next")
 error rewalk: user.vscode("editor.action.marker.prev")
+failure walk: user.vscode("testing.goToNextMessage")
+failure rewalk: user.vscode("testing.goToPreviousMessage")
 
 refer walk: key(f4)
 refer rewalk: key(shift-f4)
