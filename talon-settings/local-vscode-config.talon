@@ -109,25 +109,31 @@ tag [<user.text>] walk:
   sleep(300ms)
   key(enter)
 
+^text [<user.text>] tapper:
+  user.vscode("workbench.action.quickTextSearch")
+  sleep(50ms)
+  insert(text or "")
 ^text [<user.text>] tap:
-  user.vscode("workbench.action.quickTextSearch")
-  sleep(50ms)
-  insert(text or "")
-^text [<user.text>] tappy:
-  edit.find()
-  sleep(50ms)
-  insert(text or "")
+  edit.find(text or "")
 
-^text [<user.text>] walk:
+^text <user.text> walker:
   user.vscode("workbench.action.quickTextSearch")
   sleep(50ms)
   insert(text or "")
   key(enter)
-^text [<user.text>] walky:
-  edit.find()
-  sleep(50ms)
-  insert(text or "")
-  key(enter)
+
+^text <user.text> walk:
+  edit.find(user.formatted_text(text, "NO_SPACES"))
+  edit.find_next()
+  key("esc")
+  edit.right()
+
+^text <user.text> rewalk:
+  edit.find(user.formatted_text(text, "NO_SPACES"))
+  edit.find_previous()
+  edit.find_previous()
+  key("esc")
+  edit.right()
 
 type tap: user.vscode("editor.action.peekTypeDefinition")
 type hierarchy tap: user.vscode("editor.showTypeHierarchy")

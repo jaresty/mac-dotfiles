@@ -89,25 +89,24 @@ bipunchoom:
 	edit.select_all()
 	edit.delete()
 
-^text [<user.text>] tappy:
-	user.idea("action Find")
-	insert(text or "")
-
 ^text [<user.text>] tap:
-	user.idea("action FindInPath")
-	insert(text or "")
-
-^text [<user.text>] walky:
 	user.idea("action Find")
 	insert(text or "")
-	sleep(200ms)
-	key(enter)
 
-^text [<user.text>] walk:
+^text [<user.text>] tapper:
+	user.idea("action FindInPath")
+	insert(text or "")
+
+^text <user.text> walk:
+	user.idea("find next {text}, action EditorRight)
+
+^text <user.text> rewalk:
+	user.idea(find prev {text}, action EditorRight)
+
+^text <user.text> walker:
 	user.idea("action FindInPath")
 	insert(text or "")
 	sleep(200ms)
-	key(enter)
 
 ^tag [<user.text>] tapper:
 	user.idea("action GotoSymbol")
