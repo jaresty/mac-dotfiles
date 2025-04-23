@@ -80,8 +80,8 @@ prob [<user.text>] rewalk:
 change walk: key(alt-f5)
 change rewalk: key(shift-alt-f5)
 
-error walk: user.vscode("testing.goToNextMessage")
-error rewalk: user.vscode("testing.goToPreviousMessage")
+error walk: user.vscode("editor.action.marker.next")
+error rewalk: user.vscode("editor.action.marker.prev")
 
 refer walk: key(f4)
 refer rewalk: key(shift-f4)
