@@ -98,10 +98,10 @@ bipunchoom:
 	insert(text or "")
 
 ^text <user.text> walk:
-	user.idea("find next {text}, action EditorRight)
+	user.idea("find next {text}, action EditorRight")
 
 ^text <user.text> rewalk:
-	user.idea(find prev {text}, action EditorRight)
+	user.idea("find prev {text}, action EditorRight")
 
 ^text <user.text> walker:
 	user.idea("action FindInPath")
