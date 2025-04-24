@@ -339,55 +339,55 @@ retrader:
 	sleep(50ms)
 	clip.set_text(selected_text)
 
-trace:
+clip:
 	edit.copy()
-ontrace:
+onclip:
 	edit.extend_word_right()
 	edit.copy()
-retrace:
+reclip:
 	edit.extend_word_left()
 	edit.copy()
-ontracer:
+onclipper:
 	edit.extend_line_end()
 	edit.copy()
-retracer:
+reclipper:
 	edit.extend_line_start()
 	edit.copy()
-bitracer:
+biclipper:
 	edit.select_line()
 	edit.copy()
 bitracoom:
 	edit.select_all()
 	edit.copy()
-fly trace:
+fly clip:
 	edit.extend_up()
 	edit.copy()
-fly tracer:
+fly clipper:
 	edit.extend_up()
 	edit.extend_line_start()
 	edit.copy()
-fly bitracer:
+fly biclipper:
 	edit.line_start()
 	edit.extend_up()
 	edit.extend_line_start()
 	edit.copy()
-dip trace:
+dip clip:
 	edit.extend_down()
 	edit.copy()
-dip tracer:
+dip clipper:
 	edit.extend_down()
 	edit.extend_line_end()
 	edit.copy()
-dip bitracer:
+dip biclipper:
 	edit.line_start()
 	edit.extend_down()
 	edit.extend_line_end()
 	edit.copy()
-pointer trace:
+pointer clip:
 	mouse_click()
 	mouse_click()
 	edit.copy()
-pointer tracer:
+pointer clipper:
 	mouse_click()
 	mouse_click()
 	mouse_click()
