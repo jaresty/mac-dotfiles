@@ -281,31 +281,31 @@ pointer lifter:
 	edit.cut()
 
 clip tap: key(cmd-alt-ctrl-shift-v)
-match place: edit.paste_match_style()
-place:
+match plant: edit.paste_match_style()
+plant:
 	edit.paste()
-onplace:
+onplant:
 	edit.extend_word_right()
 	edit.paste()
-replace:
+replant:
 	edit.extend_word_left()
 	edit.paste()
-onplacer:
+onplanter:
 	edit.extend_line_end()
 	edit.paste()
-replacer:
+replanter:
 	edit.extend_line_start()
 	edit.paste()
-biplacer:
+biplanter:
 	edit.select_line()
 	edit.paste()
 biplacoom:
 	edit.select_all()
 	edit.paste()
-fly place:
+fly plant:
 	edit.line_insert_up()
 	edit.paste()
-dip place:
+dip plant:
 	edit.line_insert_down()
 	edit.paste()
 
