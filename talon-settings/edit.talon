@@ -356,7 +356,7 @@ reclipper:
 biclipper:
 	edit.select_line()
 	edit.copy()
-bitracoom:
+biclipoom:
 	edit.select_all()
 	edit.copy()
 fly clip:
