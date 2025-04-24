@@ -85,9 +85,9 @@ perch: user.stop_moving()
 
 <user.selection_action>: user.selection_action(selection_action)
 
-size walk: edit.zoom_in()
-size rewalk: edit.zoom_out()
-size reset: edit.zoom_reset()
+mag walk: edit.zoom_in()
+mag rewalk: edit.zoom_out()
+mag reset: edit.zoom_reset()
 
 folding walk: user.fold_more()
 folding rewalk: user.fold_less()
