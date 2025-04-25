@@ -27,12 +27,12 @@ zag: '\\'
 minus: -
 bolt: -
 beam: =
-tack: +
+tie: +
 grave: `
 bang: !
 rangle: >
 flare: *
-tick: #
+waffle: #
 twig: %
 hitch: &
 pipe: |
