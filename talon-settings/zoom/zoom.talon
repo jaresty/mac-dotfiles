@@ -4,6 +4,9 @@ video toggle:
 audio toggle:
 	user.toggle_audio()
 
-spies toggle:
+spy toggle:
 	user.toggle_video()
 	user.toggle_audio()
+
+control toggle:
+	key(cmd-alt-ctrl-h)
