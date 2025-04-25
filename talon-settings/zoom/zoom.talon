@@ -9,4 +9,8 @@ spy toggle:
 	user.toggle_audio()
 
 control toggle:
-	key(cmd-alt-ctrl-h)
+	user.toggle_control()
+
+share toggle:
+	user.toggle_share()
+	user.toggle_control()

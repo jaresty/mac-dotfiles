@@ -1,4 +1,4 @@
-from talon import Context, Module, ui, ctrl
+from talon import Context, Module, ui, ctrl, actions
 
 ctx = Context()
 mod = Module()
@@ -22,6 +22,17 @@ def toggle_audio():
         ctrl.key_press("f11", app=zoom)
 
 
+def toggle_control():
+    actions.key("cmd-alt-ctrl-h")
+    # if zoom := zoom_app():
+    # ctrl.key_press("h", super=True, alt=True, control=True)
+
+
+def toggle_share():
+    if zoom := zoom_app():
+        ctrl.key_press("s", app=zoom, super=True, shift=True)
+
+
 @ctx.action_class("user")
 class UserActions:
     def toggle_video():
@@ -29,6 +40,12 @@ class UserActions:
 
     def toggle_audio():
         toggle_audio()
+
+    def toggle_share():
+        toggle_share()
+
+    def toggle_control():
+        toggle_control()
 
 
 @mod.action_class
@@ -38,3 +55,9 @@ class Actions:
 
     def toggle_audio():
         """Toggle audio in zoom"""
+
+    def toggle_control():
+        """Toggle control in zoom"""
+
+    def toggle_share():
+        """Toggle share in zoom"""
