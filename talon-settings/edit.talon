@@ -339,55 +339,55 @@ retrader:
 	sleep(50ms)
 	clip.set_text(selected_text)
 
-clip:
+mem:
 	edit.copy()
-onclip:
+onmem:
 	edit.extend_word_right()
 	edit.copy()
-reclip:
+remem:
 	edit.extend_word_left()
 	edit.copy()
-onclipper:
+onmemmer:
 	edit.extend_line_end()
 	edit.copy()
-reclipper:
+rememmer:
 	edit.extend_line_start()
 	edit.copy()
-biclipper:
+bimemmer:
 	edit.select_line()
 	edit.copy()
-biclipoom:
+bimemoom:
 	edit.select_all()
 	edit.copy()
-fly clip:
+fly mem:
 	edit.extend_up()
 	edit.copy()
-fly clipper:
+fly memmer:
 	edit.extend_up()
 	edit.extend_line_start()
 	edit.copy()
-fly biclipper:
+fly bimemmer:
 	edit.line_start()
 	edit.extend_up()
 	edit.extend_line_start()
 	edit.copy()
-dip clip:
+dip mem:
 	edit.extend_down()
 	edit.copy()
-dip clipper:
+dip memmer:
 	edit.extend_down()
 	edit.extend_line_end()
 	edit.copy()
-dip biclipper:
+dip bimemmer:
 	edit.line_start()
 	edit.extend_down()
 	edit.extend_line_end()
 	edit.copy()
-pointer clip:
+pointer mem:
 	mouse_click()
 	mouse_click()
 	edit.copy()
-pointer clipper:
+pointer memmer:
 	mouse_click()
 	mouse_click()
 	mouse_click()
