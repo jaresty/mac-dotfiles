@@ -14,3 +14,7 @@ control toggle:
 share toggle:
 	user.toggle_share()
 	user.toggle_control()
+
+react tap:
+	key(cmd-shift-y)
+	key("cmd-shift-ctrl-alt-c")
