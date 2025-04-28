@@ -6,5 +6,5 @@ language: en
 
 rose: cmd
 toll: ctrl
-ship: shift
+cap: shift
 alt: alt
