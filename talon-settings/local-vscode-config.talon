@@ -22,6 +22,7 @@ pit walk: user.vscode("workbench.action.focusNextGroup")
 bar type tree: user.vscode("workbench.view.extension.typescript-explorer")
 run build: user.vscode("workbench.action.tasks.build")
 run test: user.vscode("workbench.action.tasks.test")
+run test again: user.vscode("testing.reRunLastRun")
 
 mob start:
   user.vscode("workbench.action.quickOpen")
