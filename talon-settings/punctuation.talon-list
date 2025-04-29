@@ -1,0 +1,39 @@
+list: user.punctuation
+language: en
+-
+
+# Example
+
+leper: (
+reper: )
+lacker: [
+racker: ]
+lacky: {
+racky: }
+langle: <
+bridge: :
+wave: ~
+hook: ?
+foot: "'"
+inch: '"'
+latch: ,
+pivot: ;
+dizzy: @
+tangle: ^
+blank: _
+dot: .
+zig: /
+zag: '\\'
+minus: -
+bolt: -
+beam: =
+tie: +
+grave: `
+bang: !
+rangle: >
+flare: *
+waffle: #
+twig: %
+hitch: &
+pipe: |
+dollar: $
