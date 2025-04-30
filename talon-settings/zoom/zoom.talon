@@ -4,7 +4,7 @@ video toggle:
 audio toggle:
 	user.toggle_audio()
 
-spy toggle:
+eyes toggle:
 	user.toggle_video()
 	user.toggle_audio()
 
