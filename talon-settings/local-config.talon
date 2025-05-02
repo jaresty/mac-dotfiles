@@ -104,4 +104,5 @@ cap <user.letters> [down]:
   user.insert_formatted(letters, "ALL_CAPS")
 
 <user.key> ed:
-  insert("{key} ")
+  key("{key}")
+  insert(" ")
