@@ -4,7 +4,7 @@ language: en
 
 walk: ""
 bridge: :
-quest: ?
+hook: ?
 void: ' '
 latch: ,
 pivot: ;
