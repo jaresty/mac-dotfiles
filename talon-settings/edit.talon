@@ -591,6 +591,10 @@ lee [<user.text>] {user.phrase_ender}:
 lee [<user.text>] <user.delimiter_pair>:
 	user.complete_from_start(text or "", 1)
 	user.delimiter_pair_insert(delimiter_pair)
+lee [<user.text>] <user.delimiter_pair> er:
+	user.complete_from_start(text or "", 1)
+	user.delimiter_pair_insert(delimiter_pair)
+	edit.line_end()
 
 leeted <user.word>+ [{user.phrase_ender}]:
 	user.complete(word_list)
