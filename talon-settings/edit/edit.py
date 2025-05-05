@@ -1,3 +1,4 @@
+import random
 import re
 from talon import Context, Module, actions
 
@@ -216,3 +217,8 @@ class Actions:
             actions.user.select_text_backward(
                 homophone_candidates[next_candidate_index]
             )
+
+    def random_repeat(maximum: int):
+        """Repeat up to the specified number of times"""
+        times = random.randint(1, maximum)
+        actions.core.repeat_partial_phrase(times)
