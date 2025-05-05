@@ -593,7 +593,7 @@ leeted <user.word>+ [{user.phrase_ender}]:
 	user.complete(word_list)
 	insert(phrase_ender or "")
 
-ejector: key(escape escape)
+caper: key(escape escape)
 
 golf [<user.any_alphanumeric_key>] walk: user.go_next_character(any_alphanumeric_key or "", 1)
 golf [<user.any_alphanumeric_key>] rewalk: user.go_previous_character(any_alphanumeric_key or "", 1)

@@ -5,7 +5,7 @@ language: en
 # Example
 
 dig: enter
-eject: escape
+cape: escape
 void: ' '
 jump: tab
 upper: pageup
