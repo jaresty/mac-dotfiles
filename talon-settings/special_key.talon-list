@@ -4,7 +4,7 @@ language: en
 
 # Example
 
-dig: enter
+clap: enter
 cape: escape
 void: ' '
 jump: tab
