@@ -31,7 +31,7 @@ wait: sleep(200ms)
 
 grab O C R: key("cmd-ctrl-shift-alt-o")
 
-^emo [<user.text>] tap$:
+^moji [<user.text>] tap$:
   key(cmd-ctrl-shift-alt-space)
   sleep(200ms)
   insert(text or "")
