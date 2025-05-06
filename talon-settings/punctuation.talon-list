@@ -36,4 +36,4 @@ waffle: #
 twig: %
 hitch: &
 pipe: |
-dollar: $
+doll: $
