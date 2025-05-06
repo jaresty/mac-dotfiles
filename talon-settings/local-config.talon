@@ -107,5 +107,8 @@ cap <user.letters> [down]:
   key("{key}")
   insert(" ")
 
+numb <number> ed:
+  insert("{number} ")
+
 rander <number>:
   user.random_repeat(number)
