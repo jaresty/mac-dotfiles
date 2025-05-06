@@ -112,3 +112,13 @@ numb <number> ed:
 
 rander <number>:
   user.random_repeat(number)
+
+nap <user.window_snap_position>: user.snap_window(window_snap_position)
+nap next [screen]: user.move_window_next_screen()
+nap last [screen]: user.move_window_previous_screen()
+nap screen <number>: user.move_window_to_screen(number)
+nap <user.running_applications> <user.window_snap_position>:
+  user.snap_app(running_applications, window_snap_position)
+
+nap <user.running_applications> [screen] <number>:
+  user.move_app_to_screen(running_applications, number)
