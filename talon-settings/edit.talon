@@ -29,6 +29,9 @@ rewalkeroom: edit.paragraph_start()
 rewalkoom: edit.file_start()
 
 #moving up and down
+fly clap:
+	edit.up()
+	key(enter)
 fly walk: edit.up()
 fly midwalk:
 	edit.up()
