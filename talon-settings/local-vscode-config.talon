@@ -155,13 +155,13 @@ file [<user.text>] [{user.file_extension}] walk:
   sleep(300ms)
   key(enter)
 
-project [<user.text>] tap:
+proj [<user.text>] tap:
   user.vscode("workbench.action.openRecent")
   sleep(50ms)
   insert(text or "")
   sleep(250ms)
 
-project [<user.text>] walk:
+proj [<user.text>] walk:
   user.vscode("workbench.action.openRecent")
   sleep(50ms)
   insert(text or "")
