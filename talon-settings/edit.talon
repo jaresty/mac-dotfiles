@@ -581,20 +581,20 @@ rejump: key(shift-tab)
 
 find paste: edit.find(clip.text())
 
-lee [<user.text>] tap:
+leet [<user.text>] tap:
 	user.complete_tap(text or "")
-lee [<user.text>] walk:
+leet [<user.text>] walk:
 	user.complete_from_start(text or "", 1)
-lee [<user.text>] walker:
+leet [<user.text>] walker:
 	user.complete_from_start(text or "", 1)
 	edit.line_end()
-lee [<user.text>] {user.phrase_ender}:
+leet [<user.text>] {user.phrase_ender}:
 	user.complete_from_start(text or "", 1)
 	insert(phrase_ender or "")
-lee [<user.text>] <user.delimiter_pair>:
+leet [<user.text>] <user.delimiter_pair>:
 	user.complete_from_start(text or "", 1)
 	user.delimiter_pair_insert(delimiter_pair)
-lee [<user.text>] <user.delimiter_pair> y:
+leet [<user.text>] <user.delimiter_pair> y:
 	user.complete_from_start(text or "", 1)
 	user.delimiter_pair_insert(delimiter_pair)
 	edit.right()
