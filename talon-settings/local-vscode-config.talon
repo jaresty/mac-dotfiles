@@ -7,6 +7,11 @@ diff <user.cursorless_target> with <user.cursorless_target>:
   user.cursorless_ide_command("extension.partialDiff.markSection1", cursorless_target_1)
   user.cursorless_ide_command("extension.partialDiff.markSection2AndTakeDiff", cursorless_target_2)
 
+exec <user.cursorless_target>:
+  x = user.cursorless_get_text(cursorless_target)
+  user.vscode("workbench.action.terminal.focus")
+  insert(x)
+
 disk files: user.vscode("workbench.action.files.saveFiles")
 crumb tap: user.vscode("breadcrumbs.focusAndSelect")
 
