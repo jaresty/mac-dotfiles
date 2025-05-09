@@ -43,7 +43,7 @@ grab O C R: key("cmd-ctrl-shift-alt-o")
   insert(text or "")
 
 # homerow
-^pointer <user.text> walk:
+^pointer <user.text> jog:
   user.homerow_search()
   sleep(100ms)
   insert(text or "")

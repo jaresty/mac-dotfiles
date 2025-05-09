@@ -25,26 +25,26 @@ file [<user.text>] [{user.file_extension}] tap$:
 	insert(text or "")
 	insert(file_extension or "")
 	sleep(300ms)
-file <user.text> [{user.file_extension}] pit walk$:
+file <user.text> [{user.file_extension}] pit jog$:
 	key("cmd-shift-o")
 	sleep(400ms)
 	insert(text or "")
 	insert(file_extension or "")
 	sleep(300ms)
 	key(shift-enter)
-file <user.text> [{user.file_extension}] walk$:
+file <user.text> [{user.file_extension}] jog$:
 	key("cmd-shift-o")
 	sleep(400ms)
 	insert(text or "")
 	insert(file_extension or "")
 	sleep(300ms)
 	key(enter)
-file rewalk:
+file rejog:
 	key(ctrl-tab)
-alter walk:
+alter jog:
 	user.idea("action GotoTest")
 	key(enter)
-alter walker:
+alter joger:
 	user.idea("action GotoTest")
 	key(shift-enter)
 
@@ -54,20 +54,20 @@ file forge:
 file punch:
 	key("cmd-up delete")
 
-pit walk: key("alt-tab")
+pit jog: key("alt-tab")
 
 bipickeroom:
 	key('cmd-alt-[')
 	key('cmd-alt-shift-]')
 bipickoom:
 	key('cmd-a')
-wax walk: user.wax()
-wax rewalk: user.wane()
+wax jog: user.wax()
+wax rejog: user.wane()
 
-onwalkoom: edit.file_end()
-onwalkeroom: key('cmd-alt-]')
-rewalkeroom: key('cmd-alt-[')
-rewalkoom: edit.file_start()
+onjogoom: edit.file_end()
+onjogeroom: key('cmd-alt-]')
+rejogeroom: key('cmd-alt-[')
+rejogoom: edit.file_start()
 onpickeroom: key('cmd-alt-shift-]')
 onpickoom: edit.extend_file_end()
 repickeroom: key('cmd-alt-shift-[')
@@ -97,13 +97,13 @@ bipunchoom:
 	user.idea("action FindInPath")
 	insert(text or "")
 
-^text <user.text> walk:
+^text <user.text> jog:
 	user.idea("find next {text}, action EditorRight")
 
-^text <user.text> rewalk:
+^text <user.text> rejog:
 	user.idea("find prev {text}, action EditorRight")
 
-^text <user.text> walker:
+^text <user.text> joger:
 	user.idea("action FindInPath")
 	insert(text or "")
 	sleep(200ms)
@@ -117,13 +117,13 @@ tag [<user.text>] tap:
 	sleep(400ms)
 	insert(text or "")
 
-^tag [<user.text>] walker:
+^tag [<user.text>] joger:
 	user.idea("action GotoSymbol")
 	insert(text or "")
 	sleep(200ms)
 	key(enter)
 
-tag [<user.text>] walk:
+tag [<user.text>] jog:
 	key("cmd-f12")
 	sleep(400ms)
 	insert(text or "")
@@ -134,7 +134,7 @@ prob [<user.text>] tap:
 	user.idea("action ShowIntentionActions")
 	sleep(400ms)
 	insert(text or "")
-prob [<user.text>] walk:
+prob [<user.text>] jog:
 	user.idea("action ShowIntentionActions")
 	sleep(400ms)
 	insert(text or "")
@@ -149,25 +149,25 @@ prob [<user.text>] retap:
 	user.idea("action ShowIntentionActions")
 	sleep(400ms)
 	insert(text or "")
-prob [<user.text>] onwalk:
+prob [<user.text>] onjog:
 	user.problem_next()
 	user.idea("action ShowIntentionActions")
 	sleep(400ms)
 	insert(text or "")
 	key(enter)
-prob [<user.text>] rewalk:
+prob [<user.text>] rejog:
 	user.problem_last()
 	user.idea("action ShowIntentionActions")
 	sleep(400ms)
 	insert(text or "")
 	key(enter)
 
-run walk: key('ctrl-r')
-run rewalk: key('ctrl-shift-r')
+run jog: key('ctrl-r')
+run rejog: key('ctrl-shift-r')
 
 reference: user.idea("action FindUsages")
-refer walk: key(cmd-alt-down)
-refer rewalk: key(cmd-alt-up)
+refer jog: key(cmd-alt-down)
+refer rejog: key(cmd-alt-up)
 
 narrow:
 	key(cmd-shift--)
@@ -176,8 +176,8 @@ narrow:
 
 param tap: user.idea("action ParameterInfo")
 
-change walk: key(ctrl-shift-alt-down)
-change rewalk: key(ctrl-shift-alt-up)
+change jog: key(ctrl-shift-alt-down)
+change rejog: key(ctrl-shift-alt-up)
 
 pit forge:
 	user.idea("action SplitVertically")

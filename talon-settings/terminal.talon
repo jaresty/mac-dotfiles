@@ -23,16 +23,16 @@ file [<user.text>] tap:
 project [<user.text>] tap$:
 	insert("z {text}")
 	key(tab)
-project [<user.text>] walk$:
+project [<user.text>] jog$:
 	insert("z {text}")
 	key(enter)
 text <user.text> tap:
 	insert("rg {text}")
 	key(enter)
-dir fly walk:
+dir fly jog:
 	insert("cd ..")
 	key(enter)
-dir <user.text> walk:
+dir <user.text> jog:
 	key(alt-c)
 	sleep(60ms)
 	insert(text)
@@ -41,11 +41,11 @@ dir [<user.text>] tap:
 	key(alt-c)
 	sleep(60ms)
 	insert(text or "")
-dir rewalk:
+dir rejog:
 	insert("cd -")
 	key(enter)
 
-flag [<user.text>] walk:
+flag [<user.text>] jog:
 	insert("--")
 	user.complete_from_start(prose or "", 1)
 

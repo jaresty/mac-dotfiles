@@ -1,45 +1,45 @@
 #movement to the right
-onwalky: edit.right()
-onwalk: edit.word_right()
-onrewalk:
+onjogy: edit.right()
+onjog: edit.word_right()
+onrejog:
 	edit.word_right()
 	edit.word_right()
 	edit.word_left()
-onwalker: edit.line_end()
-onrewalker:
+onjoger: edit.line_end()
+onrejoger:
 	edit.line_end()
 	edit.word_left()
-onwalkeroom: edit.paragraph_end()
-onwalkoom: edit.file_end()
+onjogeroom: edit.paragraph_end()
+onjogoom: edit.file_end()
 
-midwalk: user.line_middle()
+midjog: user.line_middle()
 
 #movement to the left
-rewalky: edit.left()
-rewalk: edit.word_left()
-reonwalk:
+rejogy: edit.left()
+rejog: edit.word_left()
+reonjog:
 	edit.word_left()
 	edit.word_left()
 	edit.word_right()
-rewalker: edit.line_start()
-reonwalker:
+rejoger: edit.line_start()
+reonjoger:
 	edit.line_start()
 	edit.word_right()
-rewalkeroom: edit.paragraph_start()
-rewalkoom: edit.file_start()
+rejogeroom: edit.paragraph_start()
+rejogoom: edit.file_start()
 
 #moving up and down
 fly clap:
 	edit.up()
 	key(enter)
-fly walk: edit.up()
-fly midwalk:
+fly jog: edit.up()
+fly midjog:
 	edit.up()
 	user.line_middle()
-fly walker:
+fly joger:
 	edit.up()
 	edit.line_start()
-fly rewalker:
+fly rejoger:
 	edit.up()
 	edit.line_end()
 fly pick: edit.extend_line_up()
@@ -54,14 +54,14 @@ fly bipicker:
 	edit.extend_up()
 	edit.extend_line_start()
 
-dip walk: edit.down()
-dip midwalk:
+dip jog: edit.down()
+dip midjog:
 	edit.down()
 	user.line_middle()
-dip walker:
+dip joger:
 	edit.down()
 	edit.line_end()
-dip rewalker:
+dip rejoger:
 	edit.down()
 	edit.line_start()
 dip pick:
@@ -77,29 +77,29 @@ dip bipicker:
 	edit.extend_down()
 	edit.extend_line_end()
 
-nav walk: user.go_forward()
-nav rewalk: user.go_back()
+nav jog: user.go_forward()
+nav rejog: user.go_back()
 
-hunt walk: edit.find_next()
-hunt rewalk: edit.find_previous()
+hunt jog: edit.find_next()
+hunt rejog: edit.find_previous()
 
 <user.movement_type>: user.start_moving(movement_type)
 perch: user.stop_moving()
 
 <user.selection_action>: user.selection_action(selection_action)
 
-mag walk: edit.zoom_in()
-mag rewalk: edit.zoom_out()
+mag jog: edit.zoom_in()
+mag rejog: edit.zoom_out()
 mag reset: edit.zoom_reset()
 
-folding walk: user.fold_more()
-folding rewalk: user.fold_less()
-folding rewalkoom: user.unfold_recursively()
+folding jog: user.fold_more()
+folding rejog: user.fold_less()
+folding rejogoom: user.unfold_recursively()
 
-pan walk: user.mouse_scroll_right()
-pan rewalk: user.mouse_scroll_left()
-pan fly walk: user.mouse_scroll_up()
-pan dip walk: user.mouse_scroll_down()
+pan jog: user.mouse_scroll_right()
+pan rejog: user.mouse_scroll_left()
+pan fly jog: user.mouse_scroll_up()
+pan dip jog: user.mouse_scroll_down()
 
 on <user.word> molt:
 	key("alt-delete")
@@ -438,20 +438,20 @@ pointer forger:
 	mouse_click()
 	edit.selection_clone()
 
-dodge fly walk:
+dodge fly jog:
 	dodge_word = edit.selected_text()
 	edit.delete()
 	edit.line_insert_up()
 	insert(dodge_word)
-dodge fly walker:
+dodge fly joger:
 	edit.line_swap_up()
 
-dodge dip walk:
+dodge dip jog:
 	dodge_word = edit.selected_text()
 	edit.delete()
 	edit.line_insert_down()
 	insert(dodge_word)
-dodge dip walker:
+dodge dip joger:
 	edit.line_swap_down()
 
 on <user.keys> poke:
@@ -520,61 +520,61 @@ fly poke:
 dip poke:
 	edit.line_insert_down()
 
-form <user.formatters> walk:
+form <user.formatters> jog:
 	user.formatters_reformat_selection(formatters)
 	user.select_last_phrase()
-form <user.formatters> onwalker:
+form <user.formatters> onjoger:
 	edit.extend_line_end()
 	reformatted_text = user.reformat_text(edit.selected_text(), formatters)
 	insert(reformatted_text)
-form <user.formatters> onrewalker:
+form <user.formatters> onrejoger:
 	edit.extend_line_end()
 	edit.extend_word_left()
 	reformatted_text = user.reformat_text(edit.selected_text(), formatters)
 	insert(reformatted_text)
-form <user.formatters> rewalker:
+form <user.formatters> rejoger:
 	edit.extend_line_start()
 	reformatted_text = user.reformat_text(edit.selected_text(), formatters)
 	insert(reformatted_text)
-form <user.formatters> reonwalker:
+form <user.formatters> reonjoger:
 	edit.extend_line_start()
 	edit.extend_word_right()
 	reformatted_text = user.reformat_text(edit.selected_text(), formatters)
 	insert(reformatted_text)
-form <user.formatters> onwalk:
+form <user.formatters> onjog:
 	edit.extend_word_right()
 	reformatted_text = user.reformat_text(edit.selected_text(), formatters)
 	insert(reformatted_text)
-form <user.formatters> rewalk:
+form <user.formatters> rejog:
 	edit.extend_word_left()
 	reformatted_text = user.reformat_text(edit.selected_text(), formatters)
 	insert(reformatted_text)
-form <user.formatters> biwalk:
+form <user.formatters> bijog:
 	edit.select_word()
 	reformatted_text = user.reformat_text(edit.selected_text(), formatters)
 	insert(reformatted_text)
 
-phones walk:
+phones jog:
 	user.insert_next_homophone(true)
-phones onwalk:
+phones onjog:
 	edit.extend_word_right()
 	user.insert_next_homophone()
 	edit.word_left()
-phones rewalk:
+phones rejog:
 	edit.extend_word_left()
 	user.insert_next_homophone()
 
 deaf tap: user.tap_reference()
-deaf walk:
+deaf jog:
 	user.next_reference()
-deaf rewalk:
+deaf rejog:
 	user.last_reference()
 
 context tap: key("ctrl-enter")
-numeric walk:
+numeric jog:
 	user.numeric_increment()
 
-numeric rewalk:
+numeric rejog:
 	user.numeric_decrement()
 
 rejump: key(shift-tab)
@@ -583,9 +583,9 @@ find paste: edit.find(clip.text())
 
 leet [<user.text>] tap:
 	user.complete_tap(text or "")
-leet [<user.text>] walk:
+leet [<user.text>] jog:
 	user.complete_from_start(text or "", 1)
-leet [<user.text>] walker:
+leet [<user.text>] joger:
 	user.complete_from_start(text or "", 1)
 	edit.line_end()
 leet [<user.text>] {user.phrase_ender}:
@@ -605,10 +605,10 @@ leeted <user.word>+ [{user.phrase_ender}]:
 
 caper: key(escape escape)
 
-golf [<user.any_alphanumeric_key>] walk: user.go_next_character(any_alphanumeric_key or "", 1)
-golf [<user.any_alphanumeric_key>] rewalk: user.go_previous_character(any_alphanumeric_key or "", 1)
-golf [<user.any_alphanumeric_key>] walky: user.go_next_character(any_alphanumeric_key or "", 0)
-golf [<user.any_alphanumeric_key>] rewalky: user.go_previous_character(any_alphanumeric_key or "", 0)
+golf [<user.any_alphanumeric_key>] jog: user.go_next_character(any_alphanumeric_key or "", 1)
+golf [<user.any_alphanumeric_key>] rejog: user.go_previous_character(any_alphanumeric_key or "", 1)
+golf [<user.any_alphanumeric_key>] jogy: user.go_next_character(any_alphanumeric_key or "", 0)
+golf [<user.any_alphanumeric_key>] rejogy: user.go_previous_character(any_alphanumeric_key or "", 0)
 
 golf [<user.any_alphanumeric_key>] pick: user.select_to_next_character(any_alphanumeric_keyor or "", 1)
 golf [<user.any_alphanumeric_key>] repick: user.select_to_previous_character(any_alphanumeric_keyor or "", 1)
@@ -620,10 +620,10 @@ golf [<user.any_alphanumeric_key>] repunch: user.delete_to_previous_character(an
 golf [<user.any_alphanumeric_key>] punchy: user.delete_to_next_character(any_alphanumeric_keyor or "", 0)
 golf [<user.any_alphanumeric_key>] repunchy: user.delete_to_previous_character(any_alphanumeric_keyor or "", 0)
 
-paint walk: user.go_next_paint(1)
-paint walky: user.go_next_paint(0)
-paint rewalk: user.go_previous_paint(1)
-paint rewalky: user.go_previous_paint(0)
+paint jog: user.go_next_paint(1)
+paint jogy: user.go_next_paint(0)
+paint rejog: user.go_previous_paint(1)
+paint rejogy: user.go_previous_paint(0)
 paint pick: user.select_to_next_paint(1)
 paint picky: user.select_to_next_paint(0)
 paint repick: user.select_to_previous_paint(1)

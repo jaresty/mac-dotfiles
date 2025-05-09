@@ -12,6 +12,6 @@ tag: user.splits
 pit forge: user.split_window()
 pit punch: user.split_clear()
 pit punchoom: user.split_clear_all()
-pit walk: user.split_next()
-pit rewalk: user.split_last()
+pit jog: user.split_next()
+pit rejog: user.split_last()
 # go pit <number>: user.split_number(number)

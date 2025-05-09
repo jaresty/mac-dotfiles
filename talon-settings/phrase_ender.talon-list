@@ -2,7 +2,7 @@ list: user.phrase_ender
 language: en
 -
 
-walk: ""
+jog: ""
 bridge: :
 hook: ?
 void: ' '

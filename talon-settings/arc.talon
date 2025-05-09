@@ -8,7 +8,7 @@ file [<user.spoken_text_search>] [{user.file_extension}] tap:
 	sleep(400ms)
 	insert(spoken_text_search or "")
 	insert(file_extension or "")
-file [<user.spoken_text_search>] [{user.file_extension}] walk:
+file [<user.spoken_text_search>] [{user.file_extension}] jog:
 	key("cmd-p")
 	sleep(400ms)
 	insert(spoken_text_search or "")
@@ -20,7 +20,7 @@ tag [<user.spoken_text_search>] tap:
 	key("cmd-p @")
 	sleep(400ms)
 	insert(spoken_text_search or "")
-tag [<user.spoken_text_search>] walk:
+tag [<user.spoken_text_search>] jog:
 	key("cmd-p @")
 	sleep(400ms)
 	insert(spoken_text_search or "")
@@ -32,7 +32,7 @@ command [<user.spoken_text_search>] tap:
 	key("cmd-p >")
 	sleep(400ms)
 	insert(spoken_text_search or "")
-command [<user.spoken_text_search>] walk:
+command [<user.spoken_text_search>] jog:
 	key("cmd-p >")
 	sleep(400ms)
 	insert(spoken_text_search or "")
@@ -40,6 +40,6 @@ command [<user.spoken_text_search>] walk:
 	key(enter)
 
 debug play: key(f8)
-debug walk: key(f9)
-debug dip walk: key(f11)
-debug fly walk: key(shift-f11)
+debug jog: key(f9)
+debug dip jog: key(f11)
+debug fly jog: key(shift-f11)
