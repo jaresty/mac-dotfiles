@@ -77,8 +77,8 @@ dip bipicker:
 	edit.extend_down()
 	edit.extend_line_end()
 
-navi walk: user.go_forward()
-navi rewalk: user.go_back()
+nav walk: user.go_forward()
+nav rewalk: user.go_back()
 
 hunt walk: edit.find_next()
 hunt rewalk: edit.find_previous()
