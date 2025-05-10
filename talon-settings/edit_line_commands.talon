@@ -1,7 +1,7 @@
 tag: user.line_commands
 -
 joglet: user.camel_right()
-rejoglet: user.camel_left()
+roglet: user.camel_left()
 
 punchlet:
 	user.extend_camel_right()

@@ -1,7 +1,7 @@
 tag: user.tabs
 -
 # tab (open | new): app.tab_open()
-tab rejog: app.tab_previous()
+tab rog: app.tab_previous()
 tab jog: app.tab_next()
 tab punch: user.tab_close_wrapper()
 tab repunch: user.tab_reopen()

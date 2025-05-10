@@ -25,26 +25,26 @@ file [<user.text>] [{user.file_extension}] tap$:
 	insert(text or "")
 	insert(file_extension or "")
 	sleep(300ms)
-file <user.text> [{user.file_extension}] pit jog$:
+file <user.text> [{user.file_extension}] pit ong$:
 	key("cmd-shift-o")
 	sleep(400ms)
 	insert(text or "")
 	insert(file_extension or "")
 	sleep(300ms)
 	key(shift-enter)
-file <user.text> [{user.file_extension}] jog$:
+file <user.text> [{user.file_extension}] ong$:
 	key("cmd-shift-o")
 	sleep(400ms)
 	insert(text or "")
 	insert(file_extension or "")
 	sleep(300ms)
 	key(enter)
-file rejog:
+file rog:
 	key(ctrl-tab)
-alter jog:
+alter ong:
 	user.idea("action GotoTest")
 	key(enter)
-alter joger:
+alter onger:
 	user.idea("action GotoTest")
 	key(shift-enter)
 
@@ -54,38 +54,38 @@ file forge:
 file punch:
 	key("cmd-up delete")
 
-pit jog: key("alt-tab")
+pit ong: key("alt-tab")
 
-bipickeroom:
+pick bogeroom:
 	key('cmd-alt-[')
 	key('cmd-alt-shift-]')
-bipickoom:
+pick bogoom:
 	key('cmd-a')
-wax jog: user.wax()
-wax rejog: user.wane()
+wax ong: user.wax()
+wax rog: user.wane()
 
-onjogoom: edit.file_end()
-onjogeroom: key('cmd-alt-]')
-rejogeroom: key('cmd-alt-[')
-rejogoom: edit.file_start()
-onpickeroom: key('cmd-alt-shift-]')
-onpickoom: edit.extend_file_end()
-repickeroom: key('cmd-alt-shift-[')
-repickoom: edit.extend_file_start()
-onpuncheroom: key('cmd-alt-shift-] delete cmd-alt-l')
-onpunchoom:
+ongoom: edit.file_end()
+ongeroom: key('cmd-alt-]')
+rogeroom: key('cmd-alt-[')
+rogoom: edit.file_start()
+pick ongeroom: key('cmd-alt-shift-]')
+pick ongoom: edit.extend_file_end()
+pick rogeroom: key('cmd-alt-shift-[')
+pick rogoom: edit.extend_file_start()
+punch ongeroom: key('cmd-alt-shift-] delete cmd-alt-l')
+punch ongoom:
 	edit.extend_file_end()
 	edit.delete()
-repuncheroom: key('cmd-alt-shift-[ delete cmd-alt-l')
-repunchoom:
+punch rogeroom: key('cmd-alt-shift-[ delete cmd-alt-l')
+punch rogoom:
 	edit.extend_file_start()
 	edit.delete()
-bipuncheroom:
+punch bogeroom:
 	key('cmd-alt-[')
 	key('cmd-alt-shift-]')
 	sleep(60ms)
 	edit.delete()
-bipunchoom:
+punch bogoom:
 	edit.select_all()
 	edit.delete()
 
@@ -97,13 +97,13 @@ bipunchoom:
 	user.idea("action FindInPath")
 	insert(text or "")
 
-^text <user.text> jog:
+^text <user.text> ong:
 	user.idea("find next {text}, action EditorRight")
 
-^text <user.text> rejog:
+^text <user.text> rog:
 	user.idea("find prev {text}, action EditorRight")
 
-^text <user.text> joger:
+^text <user.text> onger:
 	user.idea("action FindInPath")
 	insert(text or "")
 	sleep(200ms)
@@ -117,13 +117,13 @@ tag [<user.text>] tap:
 	sleep(400ms)
 	insert(text or "")
 
-^tag [<user.text>] joger:
+^tag [<user.text>] onger:
 	user.idea("action GotoSymbol")
 	insert(text or "")
 	sleep(200ms)
 	key(enter)
 
-tag [<user.text>] jog:
+tag [<user.text>] ong:
 	key("cmd-f12")
 	sleep(400ms)
 	insert(text or "")
@@ -134,7 +134,7 @@ prob [<user.text>] tap:
 	user.idea("action ShowIntentionActions")
 	sleep(400ms)
 	insert(text or "")
-prob [<user.text>] jog:
+prob [<user.text>] ong:
 	user.idea("action ShowIntentionActions")
 	sleep(400ms)
 	insert(text or "")
@@ -149,25 +149,25 @@ prob [<user.text>] retap:
 	user.idea("action ShowIntentionActions")
 	sleep(400ms)
 	insert(text or "")
-prob [<user.text>] onjog:
+prob [<user.text>] ong:
 	user.problem_next()
 	user.idea("action ShowIntentionActions")
 	sleep(400ms)
 	insert(text or "")
 	key(enter)
-prob [<user.text>] rejog:
+prob [<user.text>] rog:
 	user.problem_last()
 	user.idea("action ShowIntentionActions")
 	sleep(400ms)
 	insert(text or "")
 	key(enter)
 
-run jog: key('ctrl-r')
-run rejog: key('ctrl-shift-r')
+run ong: key('ctrl-r')
+run rog: key('ctrl-shift-r')
 
 reference: user.idea("action FindUsages")
-refer jog: key(cmd-alt-down)
-refer rejog: key(cmd-alt-up)
+refer ong: key(cmd-alt-down)
+refer rog: key(cmd-alt-up)
 
 narrow:
 	key(cmd-shift--)
@@ -176,8 +176,8 @@ narrow:
 
 param tap: user.idea("action ParameterInfo")
 
-change jog: key(ctrl-shift-alt-down)
-change rejog: key(ctrl-shift-alt-up)
+change ong: key(ctrl-shift-alt-down)
+change rog: key(ctrl-shift-alt-up)
 
 pit forge:
 	user.idea("action SplitVertically")

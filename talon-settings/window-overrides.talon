@@ -1,6 +1,6 @@
 window forge: app.window_open()
 window jog: app.window_next()
-window rejog: app.window_previous()
+window rog: app.window_previous()
 window punch: app.window_close()
 frog jog: user.switcher_focus_last()
 frog <user.running_applications> jog: user.switcher_focus(running_applications)

@@ -20,10 +20,10 @@ met ex:
 git log:
   user.vscode("gitlens.showGraph")
 
-curse rejog: user.vscode("cursorUndo")
-curse jog: user.vscode("cursorRedo")
+curse rog: user.vscode("cursorUndo")
+curse ong: user.vscode("cursorRedo")
 
-pit jog: user.vscode("workbench.action.focusNextGroup")
+pit ong: user.vscode("workbench.action.focusNextGroup")
 bar type tree: user.vscode("workbench.view.extension.typescript-explorer")
 run build: user.vscode("workbench.action.tasks.build")
 run test: user.vscode("workbench.action.tasks.test")
@@ -46,8 +46,8 @@ wax <user.cursorless_target>:
   user.cursorless_command("setSelection", cursorless_target)
   user.vscode("editor.action.smartSelect.expand")
 
-wax jog: user.wax()
-wax rejog: user.wane()
+wax ong: user.wax()
+wax rog: user.wane()
 
 context tap: user.vscode("editor.action.showContextMenu")
 
@@ -55,7 +55,7 @@ prob [<user.text>] tap:
   user.vscode("editor.action.quickFix")
   sleep(400ms)
   insert(text or "")
-prob [<user.text>] jog:
+prob [<user.text>] ong:
   user.vscode("editor.action.quickFix")
   sleep(400ms)
   insert(text or "")
@@ -70,27 +70,27 @@ prob [<user.text>] retap:
   user.vscode("editor.action.quickFix")
   sleep(400ms)
   insert(text or "")
-prob [<user.text>] onjog:
+prob [<user.text>] ong:
   user.problem_next()
   user.vscode("editor.action.quickFix")
   sleep(400ms)
   insert(text or "")
   key(enter)
-prob [<user.text>] rejog:
+prob [<user.text>] rog:
   user.problem_last()
   user.vscode("editor.action.quickFix")
   sleep(400ms)
   insert(text or "")
   key(enter)
 
-change jog: key(alt-f5)
-change rejog: key(shift-alt-f5)
+change ong: key(alt-f5)
+change rog: key(shift-alt-f5)
 
-error jog: user.vscode("editor.action.marker.next")
-error rejog: user.vscode("editor.action.marker.prev")
+error ong: user.vscode("editor.action.marker.next")
+error rog: user.vscode("editor.action.marker.prev")
 
-refer jog: key(f4)
-refer rejog: key(shift-f4)
+refer ong: key(f4)
+refer rog: key(shift-f4)
 
 # Symbol search
 tag [<user.text>] tap:
@@ -102,13 +102,13 @@ tag [<user.text>] tap:
   sleep(50ms)
   insert(text or "")
 
-tag [<user.text>] jog:
+tag [<user.text>] ong:
   user.vscode("workbench.action.gotoSymbol")
   sleep(50ms)
   insert(text or "")
   sleep(300ms)
   key(enter)
-^tag [<user.text>] joger:
+^tag [<user.text>] onger:
   user.vscode("workbench.action.showAllSymbols")
   sleep(50ms)
   insert(text or "")
@@ -122,19 +122,19 @@ tag [<user.text>] jog:
 ^text [<user.text>] tap:
   edit.find(text or "")
 
-^text <user.text> joger:
+^text <user.text> onger:
   user.vscode("workbench.action.quickTextSearch")
   sleep(50ms)
   insert(text or "")
   key(enter)
 
-^text <user.text> jog:
+^text <user.text> ong:
   edit.find(user.formatted_text(text, "NO_SPACES"))
   edit.find_next()
   key("esc")
   edit.right()
 
-^text <user.text> rejog:
+^text <user.text> rog:
   edit.find(user.formatted_text(text, "NO_SPACES"))
   edit.find_previous()
   edit.find_previous()
@@ -152,7 +152,7 @@ file [<user.text>] [{user.file_extension}] tap:
   insert(text or "")
   insert(file_extension or "")
   sleep(300ms)
-file [<user.text>] [{user.file_extension}] jog:
+file [<user.text>] [{user.file_extension}] ong:
   user.vscode("workbench.action.quickOpen")
   sleep(400ms)
   insert(text or "")
@@ -166,7 +166,7 @@ proj [<user.text>] tap:
   insert(text or "")
   sleep(250ms)
 
-proj [<user.text>] jog:
+proj [<user.text>] ong:
   user.vscode("workbench.action.openRecent")
   sleep(50ms)
   insert(text or "")
@@ -182,34 +182,34 @@ file punch:
   user.vscode("fileutils.removeFile")
   sleep(150ms)
 
-alter jog: user.vscode("alternate.alternateFile")
-alter joger: user.vscode("alternate.createAlternateFile")
-alter rejog: user.vscode("alternate.alternateFileInSplit")
-alter rejoger: user.vscode("alternate.createAlternateFileInSplit")
+alter ong: user.vscode("alternate.alternateFile")
+alter onger: user.vscode("alternate.createAlternateFile")
+alter rog: user.vscode("alternate.alternateFileInSplit")
+alter roger: user.vscode("alternate.createAlternateFileInSplit")
 
-nip jog: user.vscode("jumpToNextSnippetPlaceholder")
-nip rejog: user.vscode("jumpToPrevSnippetPlaceholder")
+nip ong: user.vscode("jumpToNextSnippetPlaceholder")
+nip rog: user.vscode("jumpToPrevSnippetPlaceholder")
 nip {user.snippet}: user.insert_snippet_by_name(snippet)
 
 nip {user.snippet_with_phrase} <user.text>:
   user.insert_snippet_by_name_with_phrase(snippet_with_phrase, text)
 
-git jog: user.vscode("workbench.scm.action.focusNextInput")
-git rejog: user.vscode("workbench.scm.action.focusPreviousInput")
-git resource jog: user.vscode("workbench.scm.action.focusNextResourceGroup")
-git resource rejog: user.vscode("workbench.scm.action.focusPreviousResourceGroup")
+git ong: user.vscode("workbench.scm.action.focusNextInput")
+git rog: user.vscode("workbench.scm.action.focusPreviousInput")
+git resource ong: user.vscode("workbench.scm.action.focusNextResourceGroup")
+git resource rog: user.vscode("workbench.scm.action.focusPreviousResourceGroup")
 
 testing start: user.vscode("testing.startContinuousRun")
 testing stop: user.vscode("testing.stopContinuousRun")
 
 compare clip: user.vscode("extension.partialDiff.diffSelectionWithClipboard")
 
-debug jog: user.vscode("workbench.action.debug.jogOver")
-debug dip jog: user.vscode("workbench.action.debug.jogInto")
-debug fly jog: user.vscode("workbench.action.debug.jogOut")
+debug ong: user.vscode("workbench.action.debug.walkOver")
+debug dig: user.vscode("workbench.action.debug.walkInto")
+debug fog: user.vscode("workbench.action.debug.walkOut")
 
-mark jog: user.vscode("bookmarks.jumpToNext")
-mark rejog: user.vscode("bookmarks.jumpToPrevious")
+mark ong: user.vscode("bookmarks.jumpToNext")
+mark rog: user.vscode("bookmarks.jumpToPrevious")
 
 form <user.formatters> <user.cursorless_target>:
   user.cursorless_reformat(cursorless_target, formatters)

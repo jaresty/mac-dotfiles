@@ -41,5 +41,5 @@ command [<user.spoken_text_search>] jog:
 
 debug play: key(f8)
 debug jog: key(f9)
-debug dip jog: key(f11)
-debug fly jog: key(shift-f11)
+debug dig: key(f11)
+debug fog: key(shift-f11)

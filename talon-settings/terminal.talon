@@ -29,7 +29,7 @@ project [<user.text>] jog$:
 text <user.text> tap:
 	insert("rg {text}")
 	key(enter)
-dir fly jog:
+dir fog:
 	insert("cd ..")
 	key(enter)
 dir <user.text> jog:
@@ -41,7 +41,7 @@ dir [<user.text>] tap:
 	key(alt-c)
 	sleep(60ms)
 	insert(text or "")
-dir rejog:
+dir rog:
 	insert("cd -")
 	key(enter)
 

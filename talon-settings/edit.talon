@@ -1,121 +1,121 @@
 #movement to the right
-onjogy: edit.right()
-onjog: edit.word_right()
-onrejog:
+ongy: edit.right()
+ong: edit.word_right()
+onrog:
 	edit.word_right()
 	edit.word_right()
 	edit.word_left()
-onjoger: edit.line_end()
-onrejoger:
+onger: edit.line_end()
+onroger:
 	edit.line_end()
 	edit.word_left()
-onjogeroom: edit.paragraph_end()
-onjogoom: edit.file_end()
+ongeroom: edit.paragraph_end()
+ongoom: edit.file_end()
 
 midjog: user.line_middle()
 
 #movement to the left
-rejogy: edit.left()
-rejog: edit.word_left()
-reonjog:
+rogy: edit.left()
+rog: edit.word_left()
+reong:
 	edit.word_left()
 	edit.word_left()
 	edit.word_right()
-rejoger: edit.line_start()
-reonjoger:
+roger: edit.line_start()
+reonger:
 	edit.line_start()
 	edit.word_right()
-rejogeroom: edit.paragraph_start()
-rejogoom: edit.file_start()
+rogeroom: edit.paragraph_start()
+rogoom: edit.file_start()
 
 #moving up and down
 fly clap:
 	edit.up()
 	key(enter)
-fly jog: edit.up()
+fog: edit.up()
 fly midjog:
 	edit.up()
 	user.line_middle()
-fly joger:
+foger:
 	edit.up()
 	edit.line_start()
-fly rejoger:
+fly roger:
 	edit.up()
 	edit.line_end()
-fly pick: edit.extend_line_up()
-fly picker:
+pick fog: edit.extend_line_up()
+pick foger:
 	edit.extend_line_up()
 	edit.extend_line_start()
-fly repicker:
+pick roger:
 	edit.extend_line_up()
 	edit.extend_line_end()
-fly bipicker:
+pick bifoger:
 	edit.line_end()
 	edit.extend_up()
 	edit.extend_line_start()
 
-dip jog: edit.down()
+dig: edit.down()
 dip midjog:
 	edit.down()
 	user.line_middle()
-dip joger:
+diger:
 	edit.down()
 	edit.line_end()
-dip rejoger:
+dip roger:
 	edit.down()
 	edit.line_start()
-dip pick:
+pick dig:
 	edit.extend_down()
-dip picker:
+pick diger:
 	edit.extend_down()
 	edit.extend_line_end()
-dip repicker:
+pick rediger:
 	edit.extend_line_down()
 	edit.extend_line_start()
-dip bipicker:
+pick bidiger:
 	edit.line_start()
 	edit.extend_down()
 	edit.extend_line_end()
 
-nav jog: user.go_forward()
-nav rejog: user.go_back()
+nav ong: user.go_forward()
+nav rog: user.go_back()
 
-hunt jog: edit.find_next()
-hunt rejog: edit.find_previous()
+hunt ong: edit.find_next()
+hunt rog: edit.find_previous()
 
 <user.movement_type>: user.start_moving(movement_type)
 perch: user.stop_moving()
 
 <user.selection_action>: user.selection_action(selection_action)
 
-mag jog: edit.zoom_in()
-mag rejog: edit.zoom_out()
+mag ong: edit.zoom_in()
+mag rog: edit.zoom_out()
 mag reset: edit.zoom_reset()
 
-folding jog: user.fold_more()
-folding rejog: user.fold_less()
-folding rejogoom: user.unfold_recursively()
+folding ong: user.fold_more()
+folding rog: user.fold_less()
+folding rogoom: user.unfold_recursively()
 
-pan jog: user.mouse_scroll_right()
-pan rejog: user.mouse_scroll_left()
-pan fly jog: user.mouse_scroll_up()
-pan dip jog: user.mouse_scroll_down()
+pan ong: user.mouse_scroll_right()
+pan rog: user.mouse_scroll_left()
+pan fog: user.mouse_scroll_up()
+pan dig: user.mouse_scroll_down()
 
-on <user.word> molt:
+molt <user.word> ong:
 	key("alt-delete")
 	insert(word)
-re <user.word> molt:
+molt <user.word> rog:
 	key("alt-backspace")
 	insert(word)
-bi <user.word> molt:
+molt <user.word> bog:
 	edit.select_word()
 	key(delete)
 	insert(word)
-pointer <user.word> molt:
+molt <user.word> point:
 	mouse_click()
 	mouse_click()
 	insert(word)
-pointer <user.word> molter:
+molt <user.word> pointer:
 	mouse_click()
 	mouse_click()
 	mouse_click()
@@ -125,159 +125,149 @@ pointer <user.word> molter:
 	edit.line_end()
 
 #deleting forward
-onpunchy: key("delete")
-onpunch: key("alt-delete")
-onpuncher: key("ctrl-k")
-onpuncheroom:
+punch ongy: key("delete")
+punch ong: key("alt-delete")
+punch onger: key("ctrl-k")
+punch ongeroom:
 	edit.extend_paragraph_end()
 	key("delete")
-onpunchoom:
+punch ongoom:
 	edit.extend_file_end()
 	edit.delete()
 
 #deleting backward
-repunchy: key("backspace")
-repunch: key("alt-backspace")
-repuncher: key("cmd-backspace")
-repuncheroom:
+punch rogy: key("backspace")
+punch rog: key("alt-backspace")
+punch roger: key("cmd-backspace")
+punch rogeroom:
 	edit.extend_paragraph_start()
 	key("delete")
-repunchoom:
+punch rogoom:
 	edit.extend_file_start()
 	edit.delete()
 
 #deleting up and down
-fly punch:
+punch fog:
 	edit.extend_up()
 	edit.delete()
-fly puncher:
+punch foger:
 	edit.extend_up()
 	edit.extend_line_start()
 	edit.delete()
 
-dip punch:
+punch dig:
 	edit.extend_down()
 	edit.delete()
-dip puncher:
+punch diger:
 	edit.extend_down()
 	edit.extend_line_end()
 	edit.delete()
 
 #deleting forward and backward
-bipunchy:
+punch bogy:
 	key(delete)
 	key(backspace)
 
-bipunch:
+punch bog:
 	key(alt-delete)
 	key(alt-backspace)
-bipuncher: edit.delete_line()
-bipuncheroom: edit.delete_paragraph()
-bipunchoom:
+punch boger: edit.delete_line()
+punch bogeroom: edit.delete_paragraph()
+punch bogoom:
 	edit.select_all()
 	sleep(60ms)
 	edit.delete()
-fly bipuncher:
-	edit.delete_line()
-	edit.up()
-	edit.delete_line()
-dip bipuncher:
-	edit.delete_line()
-	edit.down()
-	edit.delete_line()
 
-pointer punch:
+punch point:
 	mouse_click()
 	mouse_click()
 	key(backspace)
-pointer puncher:
+punch pointer:
 	mouse_click()
 	mouse_click()
 	mouse_click()
 	key(backspace)
 
 #selecting forward
-onpicky: key("shift-right")
-onpick: key("alt-shift-right")
-onpickoid: key("alt-shift-right shift-right")
-onpicker: key("cmd-shift-right")
-onpickeroom: edit.extend_paragraph_end()
-onpickoom: edit.extend_file_end()
-onpickize: user.set_select_direction_right()
+pick ongy: key("shift-right")
+pick ong: key("alt-shift-right")
+pick onger: key("cmd-shift-right")
+pick ongeroom: edit.extend_paragraph_end()
+pick ongoom: edit.extend_file_end()
+pick ongize: user.set_select_direction_right()
 
 #selecting backward
-repicky: key("shift-left")
-repick: key("alt-shift-left")
-repickoid: key("alt-shift-left shift-left")
-repicker: key("cmd-shift-left")
-repickeroom: edit.extend_paragraph_start()
-repickoom: edit.extend_file_start()
-repickize: user.set_select_direction_left()
+pick rogy: key("shift-left")
+pick rog: key("alt-shift-left")
+pick roger: key("cmd-shift-left")
+pick rogeroom: edit.extend_paragraph_start()
+pick rogoom: edit.extend_file_start()
+pick regize: user.set_select_direction_left()
 
-bipick: edit.select_word()
-bipicker: edit.select_line()
-bipickeroom: edit.select_paragraph()
-bipickoom: edit.select_all()
+pick bog: edit.select_word()
+pick boger: edit.select_line()
+pick bogeroom: edit.select_paragraph()
+pick bogoom: edit.select_all()
 
 lift:
 	edit.cut()
-onlift:
+lift ong:
 	edit.extend_word_right()
 	edit.cut()
-relift:
+lift rog:
 	edit.extend_word_left()
 	edit.cut()
-relifter:
+lift roger:
 	edit.extend_line_start()
 	edit.cut()
-reliftoom:
+lift rogoom:
 	edit.extend_file_start()
 	edit.cut()
-bilift:
+lift bog:
 	edit.word_right()
 	edit.extend_word_left()
 	edit.cut()
-onlifter:
+lift onger:
 	edit.extend_line_end()
 	edit.cut()
-onliftoom:
+lift ongoom:
 	edit.extend_file_end()
 	edit.cut()
-bilifter:
+lift boger:
 	edit.select_line()
 	edit.cut()
-biliftoom:
+lift bogoom:
 	edit.select_all()
 	edit.cut()
-fly lift:
+lift fog:
 	edit.extend_up()
 	edit.cut()
-fly lifter:
+lift foger:
 	edit.extend_up()
 	edit.extend_line_start()
 	edit.cut()
-fly bilifter:
+lift bifoger:
 	edit.line_end()
 	edit.extend_up()
 	edit.extend_line_start()
 	edit.cut()
-dip lift:
+lift dig:
 	edit.extend_down()
 	edit.cut()
-dip lifter:
+lift diger:
 	edit.extend_down()
 	edit.extend_line_end()
 	edit.cut()
-dip bilifter:
+lift bidiger:
 	edit.line_start()
 	edit.extend_down()
 	edit.extend_line_end()
 	edit.cut()
-pointer lift:
+lift point:
 	mouse_click()
 	mouse_click()
 	edit.cut()
-pointer lifter:
+lift pointer:
 	mouse_click()
 	mouse_click()
 	mouse_click()
@@ -287,28 +277,28 @@ clip tap: key(cmd-alt-ctrl-shift-v)
 match plant: edit.paste_match_style()
 plant:
 	edit.paste()
-onplant:
+plant ong:
 	edit.extend_word_right()
 	edit.paste()
-replant:
+plant rog:
 	edit.extend_word_left()
 	edit.paste()
-onplanter:
+plant onger:
 	edit.extend_line_end()
 	edit.paste()
-replanter:
+plant roger:
 	edit.extend_line_start()
 	edit.paste()
-biplanter:
+plant boger:
 	edit.select_line()
 	edit.paste()
-biplacoom:
+plant bogoom:
 	edit.select_all()
 	edit.paste()
-fly plant:
+plant fog:
 	edit.line_insert_up()
 	edit.paste()
-dip plant:
+plant dig:
 	edit.line_insert_down()
 	edit.paste()
 
@@ -317,80 +307,56 @@ trade:
 	edit.paste()
 	sleep(50ms)
 	clip.set_text(selected_text)
-ontrade:
-	edit.extend_word_right()
-	selected_text = edit.selected_text()
-	edit.paste()
-	sleep(50ms)
-	clip.set_text(selected_text)
-retrade:
-	edit.extend_word_left()
-	selected_text = edit.selected_text()
-	edit.paste()
-	sleep(50ms)
-	clip.set_text(selected_text)
-ontrader:
-	edit.extend_line_end()
-	selected_text = edit.selected_text()
-	edit.paste()
-	sleep(50ms)
-	clip.set_text(selected_text)
-retrader:
-	edit.extend_line_start()
-	selected_text = edit.selected_text()
-	edit.paste()
-	sleep(50ms)
-	clip.set_text(selected_text)
 
 mem:
 	edit.copy()
-onmem:
+mem ong:
 	edit.extend_word_right()
 	edit.copy()
-remem:
+mem rog:
 	edit.extend_word_left()
 	edit.copy()
-onmemmer:
+mem onger:
 	edit.extend_line_end()
 	edit.copy()
-rememmer:
+mem roger:
 	edit.extend_line_start()
 	edit.copy()
-bimemmer:
+mem boger:
 	edit.select_line()
 	edit.copy()
-bimemoom:
+mem bogoom:
 	edit.select_all()
 	edit.copy()
-fly mem:
+mem fog:
 	edit.extend_up()
 	edit.copy()
-fly memmer:
+mem foger:
 	edit.extend_up()
 	edit.extend_line_start()
 	edit.copy()
-fly bimemmer:
+mem bifoger:
 	edit.line_start()
 	edit.extend_up()
 	edit.extend_line_start()
 	edit.copy()
-dip mem:
+mem dig:
 	edit.extend_down()
 	edit.copy()
-dip memmer:
+mem diger:
 	edit.extend_down()
 	edit.extend_line_end()
 	edit.copy()
-dip bimemmer:
+mem bidiger:
 	edit.line_start()
 	edit.extend_down()
 	edit.extend_line_end()
 	edit.copy()
-pointer mem:
+mem point:
 	mouse_click()
 	mouse_click()
 	edit.copy()
-pointer memmer:
+mem pointer:
 	mouse_click()
 	mouse_click()
 	mouse_click()
@@ -398,154 +364,93 @@ pointer memmer:
 
 forge:
 	edit.selection_clone()
-onforge:
+forge ong:
 	edit.extend_word_right()
 	edit.selection_clone()
-reforge:
+forge rog:
 	edit.extend_word_left()
 	edit.selection_clone()
 
-onforger:
+forge onger:
 	edit.extend_line_end()
 	edit.selection_clone()
-reforger:
+for roger:
 	edit.extend_line_start()
 	edit.selection_clone()
-biforger:
+forge boger:
 	edit.select_line()
 	edit.selection_clone()
 
-fly forge:
+forge fog:
 	dodge_word = edit.selected_text()
 	edit.line_insert_up()
 	insert(dodge_word)
 
-dip forge:
+forge dig:
 	dodge_word = edit.selected_text()
 	edit.line_insert_down()
 	insert(dodge_word)
 
-pointer forge:
-	mouse_click()
-	edit.selection_clone()
-pointer biforge:
-	mouse_click()
-	mouse_click()
-	edit.selection_clone()
-pointer forger:
-	mouse_click()
-	mouse_click()
-	mouse_click()
-	edit.selection_clone()
-
-dodge fly jog:
+dodge fog:
 	dodge_word = edit.selected_text()
 	edit.delete()
 	edit.line_insert_up()
 	insert(dodge_word)
-dodge fly joger:
+dodge foger:
 	edit.line_swap_up()
 
-dodge dip jog:
+dodge dig:
 	dodge_word = edit.selected_text()
 	edit.delete()
 	edit.line_insert_down()
 	insert(dodge_word)
-dodge dip joger:
+dodge diger:
 	edit.line_swap_down()
 
-on <user.keys> poke:
+poke <user.keys> ong:
 	user.poke_keys(keys_list)
-on poke:
+poke ong:
 	user.poke_keys()
-on <user.keys> poker:
+poke <user.keys> onger:
 	user.poker_keys(keys)
-on poker:
+poke onger:
 	user.poker_keys()
-re <user.keys> poke:
+poke <user.keys> rog:
 	user.repoke_keys(keys)
-re poke:
+poke rog:
 	user.repoke_keys()
 
-#break this line at the cursor and leave the cursor on a new line between the two halves
-bipoker:
-	key(shift-enter)
-	key(shift-enter)
-	edit.up()
-# move the tail of the current line to the end of the previous line
-fly poker:
-	edit.extend_line_end()
-	text_to_move = edit.selected_text()
-	key(delete)
-	edit.up()
-	edit.line_end()
-	insert(text_to_move)
-# move the head of the current line to the end of the previous line
-fly repoker:
-	key(shift-enter)
-	edit.up()
-	edit.up()
-	edit.line_end()
-	key(delete)
-	edit.down()
-	edit.line_start()
-#join this line with the previous
-fly bipoker:
-	edit.up()
-	edit.line_end()
-	key(delete)
-# move the tail of the current line to the tail of the next
-dip poker:
-	edit.extend_line_end()
-	text_to_move = edit.selected_text()
-	key(delete)
-	edit.down()
-	edit.line_end()
-	insert(text_to_move)
-# move the head of the current line to the head of the next
-dip repoker:
-	edit.extend_line_start()
-	text_to_move = edit.selected_text()
-	key(delete)
-	edit.down()
-	edit.line_start()
-	insert(text_to_move)
-
-#join this line with the next
-dip bipoker:
-	edit.line_end()
-	key(delete)
-fly poke:
+poke fog:
 	edit.line_insert_up()
-dip poke:
+poke dig:
 	edit.line_insert_down()
 
 form <user.formatters> jog:
 	user.formatters_reformat_selection(formatters)
 	user.select_last_phrase()
-form <user.formatters> onjoger:
+form <user.formatters> onger:
 	edit.extend_line_end()
 	reformatted_text = user.reformat_text(edit.selected_text(), formatters)
 	insert(reformatted_text)
-form <user.formatters> onrejoger:
+form <user.formatters> onroger:
 	edit.extend_line_end()
 	edit.extend_word_left()
 	reformatted_text = user.reformat_text(edit.selected_text(), formatters)
 	insert(reformatted_text)
-form <user.formatters> rejoger:
+form <user.formatters> roger:
 	edit.extend_line_start()
 	reformatted_text = user.reformat_text(edit.selected_text(), formatters)
 	insert(reformatted_text)
-form <user.formatters> reonjoger:
+form <user.formatters> reonger:
 	edit.extend_line_start()
 	edit.extend_word_right()
 	reformatted_text = user.reformat_text(edit.selected_text(), formatters)
 	insert(reformatted_text)
-form <user.formatters> onjog:
+form <user.formatters> ong:
 	edit.extend_word_right()
 	reformatted_text = user.reformat_text(edit.selected_text(), formatters)
 	insert(reformatted_text)
-form <user.formatters> rejog:
+form <user.formatters> rog:
 	edit.extend_word_left()
 	reformatted_text = user.reformat_text(edit.selected_text(), formatters)
 	insert(reformatted_text)
@@ -556,25 +461,25 @@ form <user.formatters> bijog:
 
 phones jog:
 	user.insert_next_homophone(true)
-phones onjog:
+phones ong:
 	edit.extend_word_right()
 	user.insert_next_homophone()
 	edit.word_left()
-phones rejog:
+phones rog:
 	edit.extend_word_left()
 	user.insert_next_homophone()
 
 deaf tap: user.tap_reference()
-deaf jog:
+deaf ong:
 	user.next_reference()
-deaf rejog:
+deaf rog:
 	user.last_reference()
 
 context tap: key("ctrl-enter")
-numeric jog:
+numeric ong:
 	user.numeric_increment()
 
-numeric rejog:
+numeric rog:
 	user.numeric_decrement()
 
 rejump: key(shift-tab)
@@ -605,30 +510,30 @@ leeted <user.word>+ [{user.phrase_ender}]:
 
 caper: key(escape escape)
 
-golf [<user.any_alphanumeric_key>] jog: user.go_next_character(any_alphanumeric_key or "", 1)
-golf [<user.any_alphanumeric_key>] rejog: user.go_previous_character(any_alphanumeric_key or "", 1)
-golf [<user.any_alphanumeric_key>] jogy: user.go_next_character(any_alphanumeric_key or "", 0)
-golf [<user.any_alphanumeric_key>] rejogy: user.go_previous_character(any_alphanumeric_key or "", 0)
+golf [<user.any_alphanumeric_key>] ong: user.go_next_character(any_alphanumeric_key or "", 1)
+golf [<user.any_alphanumeric_key>] rog: user.go_previous_character(any_alphanumeric_key or "", 1)
+golf [<user.any_alphanumeric_key>] ongy: user.go_next_character(any_alphanumeric_key or "", 0)
+golf [<user.any_alphanumeric_key>] rogy: user.go_previous_character(any_alphanumeric_key or "", 0)
 
-golf [<user.any_alphanumeric_key>] pick: user.select_to_next_character(any_alphanumeric_keyor or "", 1)
-golf [<user.any_alphanumeric_key>] repick: user.select_to_previous_character(any_alphanumeric_keyor or "", 1)
-golf [<user.any_alphanumeric_key>] picky: user.select_to_next_character(any_alphanumeric_keyor or "", 0)
-golf [<user.any_alphanumeric_key>] repicky: user.select_to_previous_character(any_alphanumeric_keyor or "", 0)
+pick golf [<user.any_alphanumeric_key>] ong: user.select_to_next_character(any_alphanumeric_keyor or "", 1)
+pick golf [<user.any_alphanumeric_key>] rog: user.select_to_previous_character(any_alphanumeric_keyor or "", 1)
+pick golf [<user.any_alphanumeric_key>] ongy: user.select_to_next_character(any_alphanumeric_keyor or "", 0)
+pick golf [<user.any_alphanumeric_key>] rogy: user.select_to_previous_character(any_alphanumeric_keyor or "", 0)
 
-golf [<user.any_alphanumeric_key>] punch: user.delete_to_next_character(any_alphanumeric_keyor or "", 1)
-golf [<user.any_alphanumeric_key>] repunch: user.delete_to_previous_character(any_alphanumeric_keyor or "", 1)
-golf [<user.any_alphanumeric_key>] punchy: user.delete_to_next_character(any_alphanumeric_keyor or "", 0)
-golf [<user.any_alphanumeric_key>] repunchy: user.delete_to_previous_character(any_alphanumeric_keyor or "", 0)
+punch golf [<user.any_alphanumeric_key>] ong: user.delete_to_next_character(any_alphanumeric_keyor or "", 1)
+punch golf [<user.any_alphanumeric_key>] rog: user.delete_to_previous_character(any_alphanumeric_keyor or "", 1)
+punch golf [<user.any_alphanumeric_key>] ongy: user.delete_to_next_character(any_alphanumeric_keyor or "", 0)
+punch golf [<user.any_alphanumeric_key>] rogy: user.delete_to_previous_character(any_alphanumeric_keyor or "", 0)
 
-paint jog: user.go_next_paint(1)
-paint jogy: user.go_next_paint(0)
-paint rejog: user.go_previous_paint(1)
-paint rejogy: user.go_previous_paint(0)
-paint pick: user.select_to_next_paint(1)
-paint picky: user.select_to_next_paint(0)
-paint repick: user.select_to_previous_paint(1)
-paint repicky: user.select_to_previous_paint(0)
-paint punch: user.delete_to_next_paint(1)
-paint punchy: user.delete_to_next_paint(0)
-paint repunch: user.delete_to_previous_paint(1)
-paint repunchy: user.delete_to_previous_paint(0)
+paint ong: user.go_next_paint(1)
+paint ongy: user.go_next_paint(0)
+paint rog: user.go_previous_paint(1)
+paint rogy: user.go_previous_paint(0)
+pick paint ong: user.select_to_next_paint(1)
+pick paint rog: user.select_to_next_paint(0)
+pick paint ongy: user.select_to_previous_paint(1)
+pick paint rogy: user.select_to_previous_paint(0)
+punch paint ong: user.delete_to_next_paint(1)
+punch paint rog: user.delete_to_next_paint(0)
+punch paint ongy: user.delete_to_previous_paint(1)
+punch paint rogy: user.delete_to_previous_paint(0)
