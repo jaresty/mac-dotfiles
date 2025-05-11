@@ -176,9 +176,9 @@ proj [<user.text>] ong:
 change ont: user.vscode("editor.action.dirtydiff.next")
 change ret: user.vscode("editor.action.dirtydiff.previous")
 
-file forge:
+forge file:
   user.vscode("fileutils.duplicateFile")
-file punch:
+punch file:
   user.vscode("fileutils.removeFile")
   sleep(150ms)
 

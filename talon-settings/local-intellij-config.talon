@@ -49,9 +49,9 @@ alter onger:
 	key(shift-enter)
 
 crumb tap: key("cmd-up")
-file forge:
+forge file:
 	key("cmd-up f5")
-file punch:
+punch file:
 	key("cmd-up delete")
 
 pit ong: key("alt-tab")
@@ -179,5 +179,5 @@ param tap: user.idea("action ParameterInfo")
 change ong: key(ctrl-shift-alt-down)
 change rog: key(ctrl-shift-alt-up)
 
-pit forge:
+forge pit:
 	user.idea("action SplitVertically")
