@@ -40,6 +40,6 @@ command [<user.spoken_text_search>] jog:
 	key(enter)
 
 debug play: key(f8)
-debug jog: key(f9)
+debug ong: key(f9)
 debug dig: key(f11)
 debug fog: key(shift-f11)

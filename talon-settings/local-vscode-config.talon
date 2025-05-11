@@ -60,12 +60,12 @@ prob [<user.text>] ong:
   sleep(400ms)
   insert(text or "")
   key(enter)
-prob [<user.text>] ontap:
+prob [<user.text>] ont:
   user.problem_next()
   user.vscode("editor.action.quickFix")
   sleep(400ms)
   insert(text or "")
-prob [<user.text>] retap:
+prob [<user.text>] ret:
   user.problem_last()
   user.vscode("editor.action.quickFix")
   sleep(400ms)
@@ -173,8 +173,8 @@ proj [<user.text>] ong:
   sleep(250ms)
   key(enter)
 
-change tap: user.vscode("editor.action.dirtydiff.next")
-change retap: user.vscode("editor.action.dirtydiff.previous")
+change ont: user.vscode("editor.action.dirtydiff.next")
+change ret: user.vscode("editor.action.dirtydiff.previous")
 
 file forge:
   user.vscode("fileutils.duplicateFile")

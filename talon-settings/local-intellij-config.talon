@@ -139,12 +139,12 @@ prob [<user.text>] ong:
 	sleep(400ms)
 	insert(text or "")
 	key(enter)
-prob [<user.text>] ontap:
+prob [<user.text>] ont:
 	user.problem_next()
 	user.idea("action ShowIntentionActions")
 	sleep(400ms)
 	insert(text or "")
-prob [<user.text>] retap:
+prob [<user.text>] ret:
 	user.problem_last()
 	user.idea("action ShowIntentionActions")
 	sleep(400ms)
