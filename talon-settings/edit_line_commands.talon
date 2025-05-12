@@ -1,16 +1,16 @@
 tag: user.line_commands
 -
-joglet: user.camel_right()
+onglet: user.camel_right()
 roglet: user.camel_left()
 
-punchlet:
+punch onglet:
 	user.extend_camel_right()
 	key("delete")
 
-repunchlet:
+punch roglet:
 	user.extend_camel_left()
 	key("delete")
-bipunchlet:
+punch boglet:
 	user.camel_left()
 	user.extend_camel_right()
 	key(delete)

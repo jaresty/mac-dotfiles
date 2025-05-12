@@ -15,15 +15,15 @@ mob done: "mob done\n"
 siginter: key(ctrl-c)
 sigend: key(ctrl-d)
 editor: key(alt-e)
-onpunch: key("alt-d")
+punch ong: key("alt-d")
 file [<user.text>] tap:
 	key(ctrl-t)
 	sleep(60ms)
 	insert(text)
-project [<user.text>] tap$:
+proj [<user.text>] tap$:
 	insert("z {text}")
 	key(tab)
-project [<user.text>] jog$:
+proj [<user.text>] ong$:
 	insert("z {text}")
 	key(enter)
 text <user.text> tap:

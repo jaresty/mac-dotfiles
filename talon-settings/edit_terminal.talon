@@ -1,8 +1,8 @@
 tag: terminal
 -
 #deleting
-punch: key("alt-d")
+# punch: key("alt-d")
 # nope:                       key("ctrl-z")
 # redo that:                  key("ctrl-g")
-repuncher: key("ctrl-u")
-bipunch: key("alt-d alt-backspace")
+punch roger: key("ctrl-u")
+punch bog: key("alt-d alt-backspace")
