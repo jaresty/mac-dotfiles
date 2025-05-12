@@ -1,14 +1,7 @@
 #movement to the right
 ongy: edit.right()
 ong: edit.word_right()
-onrog:
-	edit.word_right()
-	edit.word_right()
-	edit.word_left()
 onger: edit.line_end()
-onroger:
-	edit.line_end()
-	edit.word_left()
 ongeroom: edit.paragraph_end()
 ongoom: edit.file_end()
 
@@ -17,14 +10,7 @@ midjog: user.line_middle()
 #movement to the left
 rogy: edit.left()
 rog: edit.word_left()
-reong:
-	edit.word_left()
-	edit.word_left()
-	edit.word_right()
 roger: edit.line_start()
-reonger:
-	edit.line_start()
-	edit.word_right()
 rogeroom: edit.paragraph_start()
 rogoom: edit.file_start()
 
