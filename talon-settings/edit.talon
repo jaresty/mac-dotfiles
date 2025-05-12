@@ -15,9 +15,6 @@ rogeroom: edit.paragraph_start()
 rogoom: edit.file_start()
 
 #moving up and down
-fly clap:
-	edit.up()
-	key(enter)
 fog: edit.up()
 fly midjog:
 	edit.up()
