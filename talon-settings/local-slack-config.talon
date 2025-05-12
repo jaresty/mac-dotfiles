@@ -3,7 +3,7 @@ app: slack
 settings():
 	key_wait = 2
 
-channel <user.text> jog:
+channel <user.text> ong:
 	key(cmd-k)
 	sleep(200ms)
 	insert(text)
