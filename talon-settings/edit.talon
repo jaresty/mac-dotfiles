@@ -96,10 +96,10 @@ folding ong: user.fold_more()
 folding rog: user.fold_less()
 folding rogoom: user.unfold_recursively()
 
-crawl ong: user.mouse_scroll_right()
-crawl rog: user.mouse_scroll_left()
-crawl fog: user.mouse_scroll_up()
-crawl dig: user.mouse_scroll_down()
+panner ong: user.mouse_scroll_right()
+panner rog: user.mouse_scroll_left()
+panner fog: user.mouse_scroll_up()
+panner dig: user.mouse_scroll_down()
 
 molt <user.word> ong:
 	key("alt-delete")

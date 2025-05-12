@@ -88,22 +88,22 @@ MOVEMENT_TYPE: dict[str, tuple[callable, callable, int]] = {
         actions.user.next_reference,
         4,
     ),
-    "flow crawl fog": (
+    "flow panner fog": (
         actions.user.mouse_scroll_up,
         actions.user.mouse_scroll_down,
         2,
     ),
-    "flow crawl dig": (
+    "flow panner dig": (
         actions.user.mouse_scroll_down,
         actions.user.mouse_scroll_up,
         2,
     ),
-    "flow crawl ong": (
+    "flow panner ong": (
         actions.user.mouse_scroll_right,
         actions.user.mouse_scroll_left,
         2,
     ),
-    "flow crawl rog": (
+    "flow panner rog": (
         actions.user.mouse_scroll_left,
         actions.user.mouse_scroll_right,
         2,
