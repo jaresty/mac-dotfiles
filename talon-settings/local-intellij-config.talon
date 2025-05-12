@@ -51,7 +51,7 @@ alter onger:
 crumb tap: key("cmd-up")
 forge file:
 	key("cmd-up f5")
-punch file:
+kick file:
 	key("cmd-up delete")
 
 pit ong: key("alt-tab")
@@ -72,20 +72,20 @@ pick ongeroom: key('cmd-alt-shift-]')
 pick ongoom: edit.extend_file_end()
 pick rogeroom: key('cmd-alt-shift-[')
 pick rogoom: edit.extend_file_start()
-punch ongeroom: key('cmd-alt-shift-] delete cmd-alt-l')
-punch ongoom:
+kick ongeroom: key('cmd-alt-shift-] delete cmd-alt-l')
+kick ongoom:
 	edit.extend_file_end()
 	edit.delete()
-punch rogeroom: key('cmd-alt-shift-[ delete cmd-alt-l')
-punch rogoom:
+kick rogeroom: key('cmd-alt-shift-[ delete cmd-alt-l')
+kick rogoom:
 	edit.extend_file_start()
 	edit.delete()
-punch bogeroom:
+kick bogeroom:
 	key('cmd-alt-[')
 	key('cmd-alt-shift-]')
 	sleep(60ms)
 	edit.delete()
-punch bogoom:
+kick bogoom:
 	edit.select_all()
 	edit.delete()
 

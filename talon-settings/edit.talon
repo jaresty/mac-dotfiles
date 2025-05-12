@@ -125,64 +125,64 @@ molt <user.word> pointer:
 	edit.line_end()
 
 #deleting forward
-punch ongy: key("delete")
-punch ong: key("alt-delete")
-punch onger: key("ctrl-k")
-punch ongeroom:
+kick ongy: key("delete")
+kick ong: key("alt-delete")
+kick onger: key("ctrl-k")
+kick ongeroom:
 	edit.extend_paragraph_end()
 	key("delete")
-punch ongoom:
+kick ongoom:
 	edit.extend_file_end()
 	edit.delete()
 
 #deleting backward
-punch rogy: key("backspace")
-punch rog: key("alt-backspace")
-punch roger: key("cmd-backspace")
-punch rogeroom:
+kick rogy: key("backspace")
+kick rog: key("alt-backspace")
+kick roger: key("cmd-backspace")
+kick rogeroom:
 	edit.extend_paragraph_start()
 	key("delete")
-punch rogoom:
+kick rogoom:
 	edit.extend_file_start()
 	edit.delete()
 
 #deleting up and down
-punch fog:
+kick fog:
 	edit.extend_up()
 	edit.delete()
-punch foger:
+kick foger:
 	edit.extend_up()
 	edit.extend_line_start()
 	edit.delete()
 
-punch dig:
+kick dig:
 	edit.extend_down()
 	edit.delete()
-punch diger:
+kick diger:
 	edit.extend_down()
 	edit.extend_line_end()
 	edit.delete()
 
 #deleting forward and backward
-punch bogy:
+kick bogy:
 	key(delete)
 	key(backspace)
 
-punch bog:
+kick bog:
 	key(alt-delete)
 	key(alt-backspace)
-punch boger: edit.delete_line()
-punch bogeroom: edit.delete_paragraph()
-punch bogoom:
+kick boger: edit.delete_line()
+kick bogeroom: edit.delete_paragraph()
+kick bogoom:
 	edit.select_all()
 	sleep(60ms)
 	edit.delete()
 
-punch point:
+kick point:
 	mouse_click()
 	mouse_click()
 	key(backspace)
-punch pointer:
+kick pointer:
 	mouse_click()
 	mouse_click()
 	mouse_click()
@@ -520,10 +520,10 @@ pick golf [<user.any_alphanumeric_key>] rog: user.select_to_previous_character(a
 pick golf [<user.any_alphanumeric_key>] ongy: user.select_to_next_character(any_alphanumeric_keyor or "", 0)
 pick golf [<user.any_alphanumeric_key>] rogy: user.select_to_previous_character(any_alphanumeric_keyor or "", 0)
 
-punch golf [<user.any_alphanumeric_key>] ong: user.delete_to_next_character(any_alphanumeric_keyor or "", 1)
-punch golf [<user.any_alphanumeric_key>] rog: user.delete_to_previous_character(any_alphanumeric_keyor or "", 1)
-punch golf [<user.any_alphanumeric_key>] ongy: user.delete_to_next_character(any_alphanumeric_keyor or "", 0)
-punch golf [<user.any_alphanumeric_key>] rogy: user.delete_to_previous_character(any_alphanumeric_keyor or "", 0)
+kick golf [<user.any_alphanumeric_key>] ong: user.delete_to_next_character(any_alphanumeric_keyor or "", 1)
+kick golf [<user.any_alphanumeric_key>] rog: user.delete_to_previous_character(any_alphanumeric_keyor or "", 1)
+kick golf [<user.any_alphanumeric_key>] ongy: user.delete_to_next_character(any_alphanumeric_keyor or "", 0)
+kick golf [<user.any_alphanumeric_key>] rogy: user.delete_to_previous_character(any_alphanumeric_keyor or "", 0)
 
 paint ong: user.go_next_paint(1)
 paint ongy: user.go_next_paint(0)
@@ -533,7 +533,7 @@ pick paint ong: user.select_to_next_paint(1)
 pick paint rog: user.select_to_next_paint(0)
 pick paint ongy: user.select_to_previous_paint(1)
 pick paint rogy: user.select_to_previous_paint(0)
-punch paint ong: user.delete_to_next_paint(1)
-punch paint rog: user.delete_to_next_paint(0)
-punch paint ongy: user.delete_to_previous_paint(1)
-punch paint rogy: user.delete_to_previous_paint(0)
+kick paint ong: user.delete_to_next_paint(1)
+kick paint rog: user.delete_to_next_paint(0)
+kick paint ongy: user.delete_to_previous_paint(1)
+kick paint rogy: user.delete_to_previous_paint(0)

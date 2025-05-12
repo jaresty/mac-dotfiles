@@ -1,6 +1,6 @@
 forge window: app.window_open()
 window ong: app.window_next()
 window rog: app.window_previous()
-punch window: app.window_close()
+kick window: app.window_close()
 app rog: user.switcher_focus_last()
 app <user.running_applications> ong: user.switcher_focus(running_applications)
