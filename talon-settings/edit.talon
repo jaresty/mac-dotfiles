@@ -5,7 +5,7 @@ onger: edit.line_end()
 ongeroom: edit.paragraph_end()
 ongoom: edit.file_end()
 
-midjog: user.line_middle()
+bog: user.line_middle()
 
 #movement to the left
 rogy: edit.left()
@@ -16,47 +16,24 @@ rogoom: edit.file_start()
 
 #moving up and down
 fog: edit.up()
-fly midjog:
-	edit.up()
-	user.line_middle()
-foger:
+fogger:
 	edit.up()
 	edit.line_start()
-fly rogger:
-	edit.up()
-	edit.line_end()
 pick fog: edit.extend_line_up()
-pick foger:
+pick fogger:
 	edit.extend_line_up()
 	edit.extend_line_start()
 pick rogger:
 	edit.extend_line_up()
 	edit.extend_line_end()
-pick bifoger:
-	edit.line_end()
-	edit.extend_up()
-	edit.extend_line_start()
 
 dig: edit.down()
-dip midjog:
-	edit.down()
-	user.line_middle()
-diger:
+digger:
 	edit.down()
 	edit.line_end()
-dip rogger:
-	edit.down()
-	edit.line_start()
 pick dig:
 	edit.extend_down()
-pick diger:
-	edit.extend_down()
-	edit.extend_line_end()
-pick rediger:
-	edit.extend_line_down()
-	edit.extend_line_start()
-pick bidiger:
-	edit.line_start()
+pick digger:
 	edit.extend_down()
 	edit.extend_line_end()
 
@@ -133,7 +110,7 @@ kick rogoom:
 kick fog:
 	edit.extend_up()
 	edit.delete()
-kick foger:
+kick fogger:
 	edit.extend_up()
 	edit.extend_line_start()
 	edit.delete()
@@ -141,7 +118,7 @@ kick foger:
 kick dig:
 	edit.extend_down()
 	edit.delete()
-kick diger:
+kick digger:
 	edit.extend_down()
 	edit.extend_line_end()
 	edit.delete()
@@ -225,11 +202,11 @@ lift bogoom:
 lift fog:
 	edit.extend_up()
 	edit.cut()
-lift foger:
+lift fogger:
 	edit.extend_up()
 	edit.extend_line_start()
 	edit.cut()
-lift bifoger:
+lift bifogger:
 	edit.line_end()
 	edit.extend_up()
 	edit.extend_line_start()
@@ -237,11 +214,11 @@ lift bifoger:
 lift dig:
 	edit.extend_down()
 	edit.cut()
-lift diger:
+lift digger:
 	edit.extend_down()
 	edit.extend_line_end()
 	edit.cut()
-lift bidiger:
+lift bidigger:
 	edit.line_start()
 	edit.extend_down()
 	edit.extend_line_end()
@@ -314,11 +291,11 @@ mem bogoom:
 mem fog:
 	edit.extend_up()
 	edit.copy()
-mem foger:
+mem fogger:
 	edit.extend_up()
 	edit.extend_line_start()
 	edit.copy()
-mem bifoger:
+mem bifogger:
 	edit.line_start()
 	edit.extend_up()
 	edit.extend_line_start()
@@ -326,11 +303,11 @@ mem bifoger:
 mem dig:
 	edit.extend_down()
 	edit.copy()
-mem diger:
+mem digger:
 	edit.extend_down()
 	edit.extend_line_end()
 	edit.copy()
-mem bidiger:
+mem bidigger:
 	edit.line_start()
 	edit.extend_down()
 	edit.extend_line_end()
@@ -379,7 +356,7 @@ dodge fog:
 	edit.delete()
 	edit.line_insert_up()
 	insert(dodge_word)
-dodge foger:
+dodge fogger:
 	edit.line_swap_up()
 
 dodge dig:
@@ -387,7 +364,7 @@ dodge dig:
 	edit.delete()
 	edit.line_insert_down()
 	insert(dodge_word)
-dodge diger:
+dodge digger:
 	edit.line_swap_down()
 
 poke <user.keys> ong:
