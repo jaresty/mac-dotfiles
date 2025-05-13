@@ -10,8 +10,8 @@ midjog: user.line_middle()
 #movement to the left
 rogy: edit.left()
 rog: edit.word_left()
-roger: edit.line_start()
-rogeroom: edit.paragraph_start()
+rogger: edit.line_start()
+roggeroom: edit.paragraph_start()
 rogoom: edit.file_start()
 
 #moving up and down
@@ -22,14 +22,14 @@ fly midjog:
 foger:
 	edit.up()
 	edit.line_start()
-fly roger:
+fly rogger:
 	edit.up()
 	edit.line_end()
 pick fog: edit.extend_line_up()
 pick foger:
 	edit.extend_line_up()
 	edit.extend_line_start()
-pick roger:
+pick rogger:
 	edit.extend_line_up()
 	edit.extend_line_end()
 pick bifoger:
@@ -44,7 +44,7 @@ dip midjog:
 diger:
 	edit.down()
 	edit.line_end()
-dip roger:
+dip rogger:
 	edit.down()
 	edit.line_start()
 pick dig:
@@ -121,8 +121,8 @@ kick ongoom:
 #deleting backward
 kick rogy: key("backspace")
 kick rog: key("alt-backspace")
-kick roger: key("cmd-backspace")
-kick rogeroom:
+kick rogger: key("cmd-backspace")
+kick roggeroom:
 	edit.extend_paragraph_start()
 	key("delete")
 kick rogoom:
@@ -182,8 +182,8 @@ pick ongize: user.set_select_direction_right()
 #selecting backward
 pick rogy: key("shift-left")
 pick rog: key("alt-shift-left")
-pick roger: key("cmd-shift-left")
-pick rogeroom: edit.extend_paragraph_start()
+pick rogger: key("cmd-shift-left")
+pick roggeroom: edit.extend_paragraph_start()
 pick rogoom: edit.extend_file_start()
 pick regize: user.set_select_direction_left()
 
@@ -200,7 +200,7 @@ lift ong:
 lift rog:
 	edit.extend_word_left()
 	edit.cut()
-lift roger:
+lift rogger:
 	edit.extend_line_start()
 	edit.cut()
 lift rogoom:
@@ -269,7 +269,7 @@ plant rog:
 plant onger:
 	edit.extend_line_end()
 	edit.paste()
-plant roger:
+plant rogger:
 	edit.extend_line_start()
 	edit.paste()
 plant boger:
@@ -302,7 +302,7 @@ mem rog:
 mem onger:
 	edit.extend_line_end()
 	edit.copy()
-mem roger:
+mem rogger:
 	edit.extend_line_start()
 	edit.copy()
 mem boger:
@@ -357,7 +357,7 @@ forge rog:
 forge onger:
 	edit.extend_line_end()
 	edit.selection_clone()
-for roger:
+for rogger:
 	edit.extend_line_start()
 	edit.selection_clone()
 forge boger:
@@ -415,12 +415,12 @@ form <user.formatters> onger:
 	edit.extend_line_end()
 	reformatted_text = user.reformat_text(edit.selected_text(), formatters)
 	insert(reformatted_text)
-form <user.formatters> onroger:
+form <user.formatters> onrogger:
 	edit.extend_line_end()
 	edit.extend_word_left()
 	reformatted_text = user.reformat_text(edit.selected_text(), formatters)
 	insert(reformatted_text)
-form <user.formatters> roger:
+form <user.formatters> rogger:
 	edit.extend_line_start()
 	reformatted_text = user.reformat_text(edit.selected_text(), formatters)
 	insert(reformatted_text)

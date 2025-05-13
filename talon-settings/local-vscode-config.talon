@@ -185,7 +185,7 @@ kick file:
 alter ong: user.vscode("alternate.alternateFile")
 alter onger: user.vscode("alternate.createAlternateFile")
 alter rog: user.vscode("alternate.alternateFileInSplit")
-alter roger: user.vscode("alternate.createAlternateFileInSplit")
+alter rogger: user.vscode("alternate.createAlternateFileInSplit")
 
 nip ong: user.vscode("jumpToNextSnippetPlaceholder")
 nip rog: user.vscode("jumpToPrevSnippetPlaceholder")
