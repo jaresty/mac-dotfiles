@@ -176,8 +176,8 @@ narrow:
 
 param tap: user.idea("action ParameterInfo")
 
-change ong: key(ctrl-shift-alt-down)
-change rog: key(ctrl-shift-alt-up)
+patch ong: key(ctrl-shift-alt-down)
+patch rog: key(ctrl-shift-alt-up)
 
 forge pit:
 	user.idea("action SplitVertically")

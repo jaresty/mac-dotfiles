@@ -83,8 +83,8 @@ prob [<user.text>] rog:
   insert(text or "")
   key(enter)
 
-change ong: key(alt-f5)
-change rog: key(shift-alt-f5)
+patch ong: key(alt-f5)
+patch rog: key(shift-alt-f5)
 
 error ong: user.vscode("editor.action.marker.next")
 error rog: user.vscode("editor.action.marker.prev")
@@ -173,8 +173,8 @@ proj [<user.text>] ong:
   sleep(250ms)
   key(enter)
 
-change ont: user.vscode("editor.action.dirtydiff.next")
-change ret: user.vscode("editor.action.dirtydiff.previous")
+patch ont: user.vscode("editor.action.dirtydiff.next")
+patch ret: user.vscode("editor.action.dirtydiff.previous")
 
 forge file:
   user.vscode("fileutils.duplicateFile")
