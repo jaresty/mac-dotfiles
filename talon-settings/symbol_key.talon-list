@@ -32,7 +32,7 @@ grave: `
 bang: !
 rangle: >
 flare: *
-waffle: #
+grid: #
 twig: %
 hitch: &
 pipe: |
