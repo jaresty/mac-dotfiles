@@ -446,25 +446,25 @@ rejump: key(shift-tab)
 
 find paste: edit.find(clip.text())
 
-leet [<user.text>] tap:
+cleet [<user.text>] tap:
 	user.complete_tap(text or "")
-leet [<user.text>] ong:
+cleet [<user.text>] ong:
 	user.complete_from_start(text or "", 1)
-leet [<user.text>] onger:
+cleet [<user.text>] onger:
 	user.complete_from_start(text or "", 1)
 	edit.line_end()
-leet [<user.text>] {user.phrase_ender}:
+cleet [<user.text>] {user.phrase_ender}:
 	user.complete_from_start(text or "", 1)
 	insert(phrase_ender or "")
-leet [<user.text>] <user.delimiter_pair>:
+cleet [<user.text>] <user.delimiter_pair>:
 	user.complete_from_start(text or "", 1)
 	user.delimiter_pair_insert(delimiter_pair)
-leet [<user.text>] <user.delimiter_pair> y:
+cleet [<user.text>] <user.delimiter_pair> y:
 	user.complete_from_start(text or "", 1)
 	user.delimiter_pair_insert(delimiter_pair)
 	edit.right()
 
-leeted <user.word>+ [{user.phrase_ender}]:
+cleeted <user.word>+ [{user.phrase_ender}]:
 	user.complete(word_list)
 	insert(phrase_ender or "")
 
