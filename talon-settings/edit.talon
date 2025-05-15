@@ -448,9 +448,9 @@ find paste: edit.find(clip.text())
 
 leet [<user.text>] tap:
 	user.complete_tap(text or "")
-leet [<user.text>] jog:
+leet [<user.text>] ong:
 	user.complete_from_start(text or "", 1)
-leet [<user.text>] joger:
+leet [<user.text>] onger:
 	user.complete_from_start(text or "", 1)
 	edit.line_end()
 leet [<user.text>] {user.phrase_ender}:
