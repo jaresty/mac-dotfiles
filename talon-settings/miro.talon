@@ -3,9 +3,9 @@
 os: mac
 and app.bundle: com.electron.realtimeboard
 -
-hand jog: "h"
-select jog: "v"
-text [<user.text>] jog:
+hand ong: "h"
+select ong: "v"
+text [<user.text>] ong:
 	"t"
 	mouse_click()
 	insert(text or "")
@@ -14,8 +14,8 @@ text [<user.text>] tap:
 	"t"
 	mouse_click()
 	insert(text or "")
-pen jog: "p"
-note [<user.text>] jog:
+pen ong: "p"
+note [<user.text>] ong:
 	"n"
 	mouse_click()
 	insert(text or "")
@@ -29,6 +29,6 @@ note [<user.text>] tap:
 pointer kick:
 	mouse_click()
 	key(backspace)
-shape jog: "s"
-frame jog: "f"
-comment jog: "c"
+shape ong: "s"
+frame ong: "f"
+comment ong: "c"
