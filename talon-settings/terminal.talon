@@ -45,13 +45,19 @@ dir rog:
 	insert("cd -")
 	key(enter)
 
-flag [<user.text>] jog:
+flag [<user.text>] ong:
 	insert("--")
 	user.complete_from_start(prose or "", 1)
 
 flag [<user.text>] tap:
 	insert("--")
 	user.complete_tap(prose or "")
+
+lamb ong:
+	key(ctrl-p)
+
+lamb tap:
+	key(ctrl-\)
 
 yes: key(y enter)
 no: key(n enter)

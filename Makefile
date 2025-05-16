@@ -68,6 +68,8 @@ install-fisher:
 	fish -c "fisher install jethrokuan/z"
 	fish -c "fisher install PatrickF1/fzf.fish"
 	fish -c "fisher install otms61/fish-pet"
+	fish -c "fisher install realiserad/fish-ai"
+
 
 install-go-binaries:
 	go install github.com/maaslalani/confetty@latest

@@ -74,6 +74,7 @@ if status is-interactive
     function fish_user_key_bindings
         fish_default_key_bindings
         bind -M insert \cs pet-select
+        bind ctrl-\\ _fish_ai_autocomplete_or_fix
     end
 
     # Usage: ai fetch ip address
