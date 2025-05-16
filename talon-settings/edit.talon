@@ -5,7 +5,7 @@ onger: edit.line_end()
 ongeroom: edit.paragraph_end()
 ongoom: edit.file_end()
 
-bog: user.line_middle()
+bogger: user.line_middle()
 
 #movement to the left
 roggy: edit.left()
