@@ -1,3 +1,5 @@
+from enum import Enum
+from dataclasses import dataclass
 import random
 import re
 from talon import Context, Module, actions
@@ -6,6 +8,156 @@ ctx = Context()
 mod = Module()
 global last_located_character
 last_located_character = " "
+
+
+class MoveSize(Enum):
+    BIG = "big"
+    MEDIUM = "medium"
+    SMALL = "small"
+
+
+class MoveDirection(Enum):
+    UP = "up"
+    RIGHT = "right"
+    DOWN = "down"
+    LEFT = "left"
+    NEUTRAL = "neutral"
+
+
+class MoveType(Enum):
+    ACTION = "action"
+    PROMPT = "prompt"
+
+
+@dataclass
+class Move:
+    size: MoveSize
+    direction: MoveDirection
+    type: MoveType
+
+
+mod.list(
+    "movement_command",
+    "A movement command",
+)
+
+
+class MovementCommand(Enum):
+    ROG = "rog"
+    ONG = "ong"
+    JOG = "jog"
+    FOG = "fog"
+    DIG = "dig"
+    ROGGER = "rogger"
+    ONGER = "onger"
+    FOGGER = "fogger"
+    DIGGER = "digger"
+    ROGGY = "roggy"
+    ONGY = "ongy"
+    ONT = "ont"
+    RET = "ret"
+    TAP = "tap"
+    TAPPER = "tapper"
+
+
+ctx.lists["user.movement_command"] = [cmd.value for cmd in MovementCommand]
+
+
+@mod.capture(rule="{user.movement_command} ")
+def move(m) -> Move:
+    match m.movement_command:
+        case "rog":
+            return Move(
+                MoveSize.BIG,
+                MoveDirection.LEFT,
+                MoveType.ACTION,
+            )
+        case "ong":
+            return Move(
+                MoveSize.BIG,
+                MoveDirection.RIGHT,
+                MoveType.ACTION,
+            )
+        case "fog":
+            return Move(
+                MoveSize.BIG,
+                MoveDirection.UP,
+                MoveType.ACTION,
+            )
+        case "dig":
+            return Move(
+                MoveSize.BIG,
+                MoveDirection.DOWN,
+                MoveType.ACTION,
+            )
+        case "jog":
+            return Move(
+                MoveSize.BIG,
+                MoveDirection.NEUTRAL,
+                MoveType.ACTION,
+            )
+        case "rogger":
+            return Move(
+                MoveSize.MEDIUM,
+                MoveDirection.LEFT,
+                MoveType.ACTION,
+            )
+        case "onger":
+            return Move(
+                MoveSize.MEDIUM,
+                MoveDirection.RIGHT,
+                MoveType.ACTION,
+            )
+        case "fogger":
+            return Move(
+                MoveSize.MEDIUM,
+                MoveDirection.UP,
+                MoveType.ACTION,
+            )
+        case "digger":
+            return Move(
+                MoveSize.MEDIUM,
+                MoveDirection.DOWN,
+                MoveType.ACTION,
+            )
+        case "roggy":
+            return Move(
+                MoveSize.SMALL,
+                MoveDirection.LEFT,
+                MoveType.ACTION,
+            )
+        case "ongy":
+            return Move(
+                MoveSize.SMALL,
+                MoveDirection.RIGHT,
+                MoveType.ACTION,
+            )
+        case "ont":
+            return Move(
+                MoveSize.MEDIUM,
+                MoveDirection.RIGHT,
+                MoveType.PROMPT,
+            )
+        case "ret":
+            return Move(
+                MoveSize.MEDIUM,
+                MoveDirection.LEFT,
+                MoveType.PROMPT,
+            )
+        case "tap":
+            return Move(
+                MoveSize.MEDIUM,
+                MoveDirection.NEUTRAL,
+                MoveType.PROMPT,
+            )
+        case "tapper":
+            return Move(
+                MoveSize.BIG,
+                MoveDirection.NEUTRAL,
+                MoveType.PROMPT,
+            )
+        case _:
+            raise ValueError(f"Unknown movement type {m.movement_command}")
 
 
 def locate_character(line_text: str, character: str, offset: int):
