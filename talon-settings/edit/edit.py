@@ -11,6 +11,7 @@ last_located_character = " "
 
 
 class MoveSize(Enum):
+    MAX = "max"
     BIG = "big"
     MEDIUM = "medium"
     SMALL = "small"
@@ -22,6 +23,7 @@ class MoveDirection(Enum):
     DOWN = "down"
     LEFT = "left"
     NEUTRAL = "neutral"
+    BOTH = "both"
 
 
 class MoveType(Enum):
@@ -48,10 +50,14 @@ class MovementCommand(Enum):
     JOG = "jog"
     FOG = "fog"
     DIG = "dig"
+    BOG = "bog"
     ROGGER = "rogger"
     ONGER = "onger"
     FOGGER = "fogger"
     DIGGER = "digger"
+    ROGOOM = "rogoom"
+    ONGOOM = "ongoom"
+    BOGOOM = "bogoom"
     ROGGY = "roggy"
     ONGY = "ongy"
     ONT = "ont"
