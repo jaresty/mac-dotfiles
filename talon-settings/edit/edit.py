@@ -10,160 +10,87 @@ global last_located_character
 last_located_character = " "
 
 
-class MoveSize(Enum):
-    MAX = "max"
-    BIG = "big"
-    MEDIUM = "medium"
-    SMALL = "small"
-
-
-class MoveDirection(Enum):
-    UP = "up"
-    RIGHT = "right"
-    DOWN = "down"
-    LEFT = "left"
-    NEUTRAL = "neutral"
-    BOTH = "both"
-
-
-class MoveType(Enum):
-    ACTION = "action"
-    PROMPT = "prompt"
-
-
-@dataclass
+# this class keeps track of all of its subclasses
 class Move:
-    size: MoveSize
-    direction: MoveDirection
-    type: MoveType
+    def __init_subclass__(cls, **kwargs):
+        super().__init_subclass__(**kwargs)
+        cls._subclasses.append(cls)
 
+    _subclasses = []
+
+    # in the initializer it takes a string name for a method that it will call later
+    def __init__(self, invoke_function: str):
+        self.invoke_function = invoke_function
+
+    # when you call the invoke method it calls the method by the name
+    def invoke(self):
+        method = getattr(self, self.invoke_function)
+        print(f"Invoking {self.invoke_function} on {self.__class__.__name__}")
+        if callable(method):
+            return method()
+        else:
+            raise ValueError(f"{self.invoke_function} is not a callable method")
+
+
+# this subclass of the move class is foregoing to the right
+class MoveRight(Move):
+    # this static method is the name that will be used to invoke this class wen using talon to invoke by voice. I could also be used to print a textual name for this class
+    @staticmethod
+    def name():
+        return "food"
+
+    def move(self):
+        actions.edit.right()
+
+
+# this iterates over all of the subclasses of the move class and then all of the instance methods on the subclass
+# it generates a dictionary which looks something like: {"move ong": lambda : MoveRight("move")}
+move_rules = {}
+for subclass in Move._subclasses:
+    # fix: this should ignore static methods
+    for method_name in dir(subclass):
+        if not method_name.startswith("_") and callable(getattr(subclass, method_name)):
+            # Check if the method is defined in the subclass, not inherited
+            if method_name in subclass.__dict__:
+                method = getattr(subclass, method_name)
+                # Ignore static methods by checking if method is a staticmethod in the class dict
+                if not isinstance(subclass.__dict__.get(method_name), staticmethod):
+                    move_rules[f"{method_name} {subclass.name()}"] = (
+                        lambda mn=method_name: subclass(mn)
+                    )
 
 mod.list(
     "movement_command",
     "A movement command",
 )
+# that the movement command list equals keys of the move rules
+ctx.lists["user.movement_command"] = move_rules.keys()
+
+# class MovementCommand(Enum):
+#     ROG = "rog"
+#     ONG = "ong"
+#     JOG = "jog"
+#     FOG = "fog"
+#     DIG = "dig"
+#     BOG = "bog"
+#     ROGGER = "rogger"
+#     ONGER = "onger"
+#     FOGGER = "fogger"
+#     DIGGER = "digger"
+#     ROGOOM = "rogoom"
+#     ONGOOM = "ongoom"
+#     BOGOOM = "bogoom"
+#     ROGGY = "roggy"
+#     ONGY = "ongy"
+#     ONT = "ont"
+#     RET = "ret"
+#     TAP = "tap"
+#     TAPPER = "tapper"
 
 
-class MovementCommand(Enum):
-    ROG = "rog"
-    ONG = "ong"
-    JOG = "jog"
-    FOG = "fog"
-    DIG = "dig"
-    BOG = "bog"
-    ROGGER = "rogger"
-    ONGER = "onger"
-    FOGGER = "fogger"
-    DIGGER = "digger"
-    ROGOOM = "rogoom"
-    ONGOOM = "ongoom"
-    BOGOOM = "bogoom"
-    ROGGY = "roggy"
-    ONGY = "ongy"
-    ONT = "ont"
-    RET = "ret"
-    TAP = "tap"
-    TAPPER = "tapper"
-
-
-ctx.lists["user.movement_command"] = [cmd.value for cmd in MovementCommand]
-
-
-@mod.capture(rule="{user.movement_command} ")
+@mod.capture(rule="{user.movement_command}")
 def move(m) -> Move:
-    match m.movement_command:
-        case "rog":
-            return Move(
-                MoveSize.BIG,
-                MoveDirection.LEFT,
-                MoveType.ACTION,
-            )
-        case "ong":
-            return Move(
-                MoveSize.BIG,
-                MoveDirection.RIGHT,
-                MoveType.ACTION,
-            )
-        case "fog":
-            return Move(
-                MoveSize.BIG,
-                MoveDirection.UP,
-                MoveType.ACTION,
-            )
-        case "dig":
-            return Move(
-                MoveSize.BIG,
-                MoveDirection.DOWN,
-                MoveType.ACTION,
-            )
-        case "jog":
-            return Move(
-                MoveSize.BIG,
-                MoveDirection.NEUTRAL,
-                MoveType.ACTION,
-            )
-        case "rogger":
-            return Move(
-                MoveSize.MEDIUM,
-                MoveDirection.LEFT,
-                MoveType.ACTION,
-            )
-        case "onger":
-            return Move(
-                MoveSize.MEDIUM,
-                MoveDirection.RIGHT,
-                MoveType.ACTION,
-            )
-        case "fogger":
-            return Move(
-                MoveSize.MEDIUM,
-                MoveDirection.UP,
-                MoveType.ACTION,
-            )
-        case "digger":
-            return Move(
-                MoveSize.MEDIUM,
-                MoveDirection.DOWN,
-                MoveType.ACTION,
-            )
-        case "roggy":
-            return Move(
-                MoveSize.SMALL,
-                MoveDirection.LEFT,
-                MoveType.ACTION,
-            )
-        case "ongy":
-            return Move(
-                MoveSize.SMALL,
-                MoveDirection.RIGHT,
-                MoveType.ACTION,
-            )
-        case "ont":
-            return Move(
-                MoveSize.MEDIUM,
-                MoveDirection.RIGHT,
-                MoveType.PROMPT,
-            )
-        case "ret":
-            return Move(
-                MoveSize.MEDIUM,
-                MoveDirection.LEFT,
-                MoveType.PROMPT,
-            )
-        case "tap":
-            return Move(
-                MoveSize.MEDIUM,
-                MoveDirection.NEUTRAL,
-                MoveType.PROMPT,
-            )
-        case "tapper":
-            return Move(
-                MoveSize.BIG,
-                MoveDirection.NEUTRAL,
-                MoveType.PROMPT,
-            )
-        case _:
-            raise ValueError(f"Unknown movement type {m.movement_command}")
+    return move_rules[m.movement_command]()
 
 
 def locate_character(line_text: str, character: str, offset: int):
@@ -380,3 +307,7 @@ class Actions:
         """Repeat up to the specified number of times"""
         times = random.randint(1, maximum)
         actions.core.repeat_partial_phrase(times)
+
+    def invoke_move(move: Move):
+        """Invoke the move"""
+        move.invoke()
