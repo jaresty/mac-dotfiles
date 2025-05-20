@@ -62,48 +62,6 @@ molt <user.word> pointer:
 	edit.up()
 	edit.line_end()
 
-#deleting up and down
-kick fog:
-	edit.extend_up()
-	edit.delete()
-kick fogger:
-	edit.extend_up()
-	edit.extend_line_start()
-	edit.delete()
-
-kick dig:
-	edit.extend_down()
-	edit.delete()
-kick digger:
-	edit.extend_down()
-	edit.extend_line_end()
-	edit.delete()
-
-#deleting forward and backward
-kick bogy:
-	key(delete)
-	key(backspace)
-
-kick bog:
-	key(alt-delete)
-	key(alt-backspace)
-kick boger: edit.delete_line()
-kick bogeroom: edit.delete_paragraph()
-kick bogoom:
-	edit.select_all()
-	sleep(60ms)
-	edit.delete()
-
-kick point:
-	mouse_click()
-	mouse_click()
-	key(backspace)
-kick pointer:
-	mouse_click()
-	mouse_click()
-	mouse_click()
-	key(backspace)
-
 #selecting forward
 pick ongy: key("shift-right")
 pick ong: key("alt-shift-right")

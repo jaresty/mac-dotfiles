@@ -154,13 +154,56 @@ class MoveEndLeft(Move):
         actions.edit.delete()
 
 
-class MoveBoth(Move):
+class MoveBigBoth(Move):
     @staticmethod
     def name():
         return "bogger"
 
     def go(self):
         actions.user.line_middle()
+
+    def kick(self):
+        actions.edit.delete_line()
+
+
+class MoveSmallBoth(Move):
+    @staticmethod
+    def name():
+        return "boggy"
+
+    def kick(self):
+        actions.key("delete")
+        actions.key("backspace")
+
+
+class MoveBoth(Move):
+    @staticmethod
+    def name():
+        return "bog"
+
+    def kick(self):
+        actions.key("alt-delete")
+        actions.key("alt-backspace")
+
+
+class MoveChunkBoth(Move):
+    @staticmethod
+    def name():
+        return "bogeroom"
+
+    def kick(self):
+        actions.edit.delete_paragraph()
+
+
+class MoveMaxBoth(Move):
+    @staticmethod
+    def name():
+        return "bogoom"
+
+    def kick(self):
+        actions.edit.select_all()
+        actions.sleep("60ms")
+        actions.edit.delete()
 
 
 class MoveUp(Move):
@@ -170,6 +213,10 @@ class MoveUp(Move):
 
     def go(self):
         actions.edit.up()
+
+    def kick(self):
+        actions.edit.extend_up()
+        actions.edit.delete()
 
 
 class MoveUpEnd(Move):
@@ -181,6 +228,11 @@ class MoveUpEnd(Move):
         actions.edit.up()
         actions.edit.line_start()
 
+    def kick(self):
+        actions.edit.extend_up()
+        actions.edit.extend_line_start()
+        actions.edit.delete()
+
 
 class MoveDown(Move):
     @staticmethod
@@ -189,6 +241,10 @@ class MoveDown(Move):
 
     def go(self):
         actions.edit.down()
+
+    def kick(self):
+        actions.edit.extend_down()
+        actions.edit.delete()
 
 
 class MoveDownEnd(Move):
@@ -199,6 +255,34 @@ class MoveDownEnd(Move):
     def go(self):
         actions.edit.down()
         actions.edit.line_end()
+
+    def kick(self):
+        actions.edit.extend_down()
+        actions.edit.extend_line_end()
+        actions.edit.delete()
+
+
+class MovePoint(Move):
+    @staticmethod
+    def name():
+        return "point"
+
+    def kick(self):
+        actions.mouse_click()
+        actions.mouse_click()
+        actions.key("backspace")
+
+
+class MoveBigPoint(Move):
+    @staticmethod
+    def name():
+        return "pointer"
+
+    def kick(self):
+        actions.mouse_click()
+        actions.mouse_click()
+        actions.mouse_click()
+        actions.key("backspace")
 
 
 # this iterates over all of the subclasses of the move class and then all of the instance methods on the subclass
