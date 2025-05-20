@@ -35,7 +35,7 @@ class SmallMoveRight(Move):
     def name():
         return "ongy"
 
-    def move(self):
+    def go(self):
         actions.edit.right()
 
 
@@ -44,7 +44,7 @@ class MoveRight(Move):
     def name():
         return "ong"
 
-    def move(self):
+    def go(self):
         actions.edit.word_right()
 
 
@@ -53,7 +53,7 @@ class MoveWayRight(Move):
     def name():
         return "onger"
 
-    def move(self):
+    def go(self):
         actions.edit.line_end()
 
 
@@ -62,7 +62,7 @@ class MoveChunkRight(Move):
     def name():
         return "ongeroom"
 
-    def move(self):
+    def go(self):
         actions.edit.paragraph_end()
 
 
@@ -71,7 +71,7 @@ class MoveEndRight(Move):
     def name():
         return "ongoom"
 
-    def move(self):
+    def go(self):
         actions.edit.file_end()
 
 
@@ -80,7 +80,7 @@ class SmallMoveLeft(Move):
     def name():
         return "roggy"
 
-    def move(self):
+    def go(self):
         actions.edit.left()
 
 
@@ -89,7 +89,7 @@ class MoveLeft(Move):
     def name():
         return "rog"
 
-    def move(self):
+    def go(self):
         actions.edit.word_left()
 
 
@@ -98,7 +98,7 @@ class MoveWayLeft(Move):
     def name():
         return "rogger"
 
-    def move(self):
+    def go(self):
         actions.edit.line_start()
 
 
@@ -107,7 +107,7 @@ class MoveChunkLeft(Move):
     def name():
         return "roggeroom"
 
-    def move(self):
+    def go(self):
         actions.edit.paragraph_start()
 
 
@@ -116,7 +116,7 @@ class MoveEndLeft(Move):
     def name():
         return "rogoom"
 
-    def move(self):
+    def go(self):
         actions.edit.file_start()
 
 
