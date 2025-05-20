@@ -1,20 +1,6 @@
 #movement to the right
 <user.move>: user.invoke_move(move)
 
-bogger: user.line_middle()
-
-#movement to the left
-roggy: edit.left()
-rog: edit.word_left()
-rogger: edit.line_start()
-roggeroom: edit.paragraph_start()
-rogoom: edit.file_start()
-
-#moving up and down
-fog: edit.up()
-fogger:
-	edit.up()
-	edit.line_start()
 pick fog: edit.extend_line_up()
 pick fogger:
 	edit.extend_line_up()
@@ -23,10 +9,6 @@ pick rogger:
 	edit.extend_line_up()
 	edit.extend_line_end()
 
-dig: edit.down()
-digger:
-	edit.down()
-	edit.line_end()
 pick dig:
 	edit.extend_down()
 pick digger:
