@@ -62,28 +62,6 @@ molt <user.word> pointer:
 	edit.up()
 	edit.line_end()
 
-#deleting forward
-kick ongy: key("delete")
-kick ong: key("alt-delete")
-kick onger: key("ctrl-k")
-kick ongeroom:
-	edit.extend_paragraph_end()
-	key("delete")
-kick ongoom:
-	edit.extend_file_end()
-	edit.delete()
-
-#deleting backward
-kick roggy: key("backspace")
-kick rog: key("alt-backspace")
-kick rogger: key("cmd-backspace")
-kick roggeroom:
-	edit.extend_paragraph_start()
-	key("delete")
-kick rogoom:
-	edit.extend_file_start()
-	edit.delete()
-
 #deleting up and down
 kick fog:
 	edit.extend_up()

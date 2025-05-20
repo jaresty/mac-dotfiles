@@ -38,6 +38,9 @@ class SmallMoveRight(Move):
     def go(self):
         actions.edit.right()
 
+    def kick(self):
+        actions.key("delete")
+
 
 class MoveRight(Move):
     @staticmethod
@@ -46,6 +49,9 @@ class MoveRight(Move):
 
     def go(self):
         actions.edit.word_right()
+
+    def kick(self):
+        actions.key("alt-delete")
 
 
 class MoveWayRight(Move):
@@ -56,6 +62,9 @@ class MoveWayRight(Move):
     def go(self):
         actions.edit.line_end()
 
+    def kick(self):
+        actions.key("ctrl-k")
+
 
 class MoveChunkRight(Move):
     @staticmethod
@@ -64,6 +73,10 @@ class MoveChunkRight(Move):
 
     def go(self):
         actions.edit.paragraph_end()
+
+    def kick(self):
+        actions.edit.extend_paragraph_end()
+        actions.key("delete")
 
 
 class MoveEndRight(Move):
@@ -74,6 +87,10 @@ class MoveEndRight(Move):
     def go(self):
         actions.edit.file_end()
 
+    def kick(self):
+        actions.edit.extend_file_end()
+        actions.edit.delete()
+
 
 class SmallMoveLeft(Move):
     @staticmethod
@@ -82,6 +99,9 @@ class SmallMoveLeft(Move):
 
     def go(self):
         actions.edit.left()
+
+    def kick(self):
+        actions.key("backspace")
 
 
 class MoveLeft(Move):
@@ -92,6 +112,9 @@ class MoveLeft(Move):
     def go(self):
         actions.edit.word_left()
 
+    def kick(self):
+        actions.key("alt-backspace")
+
 
 class MoveWayLeft(Move):
     @staticmethod
@@ -100,6 +123,9 @@ class MoveWayLeft(Move):
 
     def go(self):
         actions.edit.line_start()
+
+    def kick(self):
+        actions.key("cmd-backspace")
 
 
 class MoveChunkLeft(Move):
@@ -110,6 +136,10 @@ class MoveChunkLeft(Move):
     def go(self):
         actions.edit.paragraph_start()
 
+    def kick(self):
+        actions.edit.extend_paragraph_start()
+        actions.key("backspace")
+
 
 class MoveEndLeft(Move):
     @staticmethod
@@ -118,6 +148,10 @@ class MoveEndLeft(Move):
 
     def go(self):
         actions.edit.file_start()
+
+    def kick(self):
+        actions.edit.extend_file_start()
+        actions.edit.delete()
 
 
 class MoveBoth(Move):
