@@ -120,6 +120,53 @@ class MoveEndLeft(Move):
         actions.edit.file_start()
 
 
+class MoveBoth(Move):
+    @staticmethod
+    def name():
+        return "bogger"
+
+    def go(self):
+        actions.user.line_middle()
+
+
+class MoveUp(Move):
+    @staticmethod
+    def name():
+        return "fog"
+
+    def go(self):
+        actions.edit.up()
+
+
+class MoveUpEnd(Move):
+    @staticmethod
+    def name():
+        return "fogger"
+
+    def go(self):
+        actions.edit.up()
+        actions.edit.line_start()
+
+
+class MoveDown(Move):
+    @staticmethod
+    def name():
+        return "dig"
+
+    def go(self):
+        actions.edit.down()
+
+
+class MoveDownEnd(Move):
+    @staticmethod
+    def name():
+        return "digger"
+
+    def go(self):
+        actions.edit.down()
+        actions.edit.line_end()
+
+
 # this iterates over all of the subclasses of the move class and then all of the instance methods on the subclass
 # it generates a dictionary which looks something like: {"move rog": lambda : MoveLeft("move")}
 move_rules = {}
