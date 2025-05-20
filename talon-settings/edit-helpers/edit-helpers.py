@@ -72,7 +72,7 @@ MOVEMENT_TYPE: dict[str, tuple[callable, callable, int]] = {
     "flow mag rog": (actions.edit.zoom_out, actions.edit.zoom_in, 5),
     "flow nope": (actions.edit.undo, actions.edit.redo, 4),
     "flow redo that": (actions.edit.redo, actions.edit.undo, 4),
-    "flow boing": (actions.core.repeat_command, actions.core.repeat_command, 4),
+    "flow boop": (actions.core.repeat_command, actions.core.repeat_command, 4),
     "flow hunt ong": (actions.edit.find_next, actions.edit.find_previous, 4),
     "flow hunt rog": (actions.edit.find_previous, actions.edit.find_next, 4),
     "flow prob ong": (actions.user.problem_next, actions.user.problem_last, 4),
