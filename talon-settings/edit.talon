@@ -1,10 +1,5 @@
 #movement to the right
 <user.move>: user.invoke_move(move)
-ongy: edit.right()
-ong: edit.word_right()
-onger: edit.line_end()
-ongeroom: edit.paragraph_end()
-ongoom: edit.file_end()
 
 bogger: user.line_middle()
 

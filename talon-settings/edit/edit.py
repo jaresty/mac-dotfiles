@@ -1,5 +1,3 @@
-from enum import Enum
-from dataclasses import dataclass
 import random
 import re
 from talon import Context, Module, actions
@@ -32,19 +30,98 @@ class Move:
             raise ValueError(f"{self.invoke_function} is not a callable method")
 
 
-# this subclass of the move class is foregoing to the right
-class MoveRight(Move):
-    # this static method is the name that will be used to invoke this class wen using talon to invoke by voice. I could also be used to print a textual name for this class
+class SmallMoveRight(Move):
     @staticmethod
     def name():
-        return "food"
+        return "ongy"
 
     def move(self):
         actions.edit.right()
 
 
+class MoveRight(Move):
+    @staticmethod
+    def name():
+        return "ong"
+
+    def move(self):
+        actions.edit.word_right()
+
+
+class MoveWayRight(Move):
+    @staticmethod
+    def name():
+        return "onger"
+
+    def move(self):
+        actions.edit.line_end()
+
+
+class MoveChunkRight(Move):
+    @staticmethod
+    def name():
+        return "ongeroom"
+
+    def move(self):
+        actions.edit.paragraph_end()
+
+
+class MoveEndRight(Move):
+    @staticmethod
+    def name():
+        return "ongoom"
+
+    def move(self):
+        actions.edit.file_end()
+
+
+class SmallMoveLeft(Move):
+    @staticmethod
+    def name():
+        return "roggy"
+
+    def move(self):
+        actions.edit.left()
+
+
+class MoveLeft(Move):
+    @staticmethod
+    def name():
+        return "rog"
+
+    def move(self):
+        actions.edit.word_left()
+
+
+class MoveWayLeft(Move):
+    @staticmethod
+    def name():
+        return "rogger"
+
+    def move(self):
+        actions.edit.line_start()
+
+
+class MoveChunkLeft(Move):
+    @staticmethod
+    def name():
+        return "roggeroom"
+
+    def move(self):
+        actions.edit.paragraph_start()
+
+
+class MoveEndLeft(Move):
+    @staticmethod
+    def name():
+        return "rogoom"
+
+    def move(self):
+        actions.edit.file_start()
+
+
 # this iterates over all of the subclasses of the move class and then all of the instance methods on the subclass
-# it generates a dictionary which looks something like: {"move ong": lambda : MoveRight("move")}
+# it generates a dictionary which looks something like: {"move rog": lambda : MoveLeft("move")}
 move_rules = {}
 for subclass in Move._subclasses:
     # fix: this should ignore static methods
@@ -55,10 +132,11 @@ for subclass in Move._subclasses:
                 method = getattr(subclass, method_name)
                 # Ignore static methods by checking if method is a staticmethod in the class dict
                 if not isinstance(subclass.__dict__.get(method_name), staticmethod):
-                    move_rules[f"{method_name} {subclass.name()}"] = (
-                        lambda mn=method_name: subclass(mn)
-                    )
-
+                    move_rules[f"{method_name} {subclass.name()}"] = [
+                        subclass,
+                        method_name,
+                    ]
+print(f"Move rules: {move_rules}")
 mod.list(
     "movement_command",
     "A movement command",
@@ -90,7 +168,7 @@ ctx.lists["user.movement_command"] = move_rules.keys()
 
 @mod.capture(rule="{user.movement_command}")
 def move(m) -> Move:
-    return move_rules[m.movement_command]()
+    return move_rules[m.movement_command][0](move_rules[m.movement_command][1])
 
 
 def locate_character(line_text: str, character: str, offset: int):
