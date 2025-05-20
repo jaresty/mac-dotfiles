@@ -182,7 +182,7 @@ trade:
 	sleep(50ms)
 	clip.set_text(selected_text)
 
-mem:
+mem jog:
 	edit.copy()
 mem ong:
 	edit.extend_word_right()
