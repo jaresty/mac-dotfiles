@@ -41,6 +41,9 @@ class SmallMoveRight(Move):
     def kick(self):
         actions.key("delete")
 
+    def pick(self):
+        actions.key("shift-right")
+
 
 class MoveRight(Move):
     @staticmethod
@@ -53,6 +56,9 @@ class MoveRight(Move):
     def kick(self):
         actions.key("alt-delete")
 
+    def pick(self):
+        actions.key("alt-shift-right")
+
 
 class MoveWayRight(Move):
     @staticmethod
@@ -64,6 +70,9 @@ class MoveWayRight(Move):
 
     def kick(self):
         actions.key("ctrl-k")
+
+    def pick(self):
+        actions.key("cmd-shift-right")
 
 
 class MoveChunkRight(Move):
@@ -78,6 +87,9 @@ class MoveChunkRight(Move):
         actions.edit.extend_paragraph_end()
         actions.key("delete")
 
+    def pick(self):
+        actions.edit.extend_paragraph_end()
+
 
 class MoveEndRight(Move):
     @staticmethod
@@ -91,6 +103,9 @@ class MoveEndRight(Move):
         actions.edit.extend_file_end()
         actions.edit.delete()
 
+    def pick(self):
+        actions.edit.extend_file_end()
+
 
 class SmallMoveLeft(Move):
     @staticmethod
@@ -102,6 +117,9 @@ class SmallMoveLeft(Move):
 
     def kick(self):
         actions.key("backspace")
+
+    def pick(self):
+        actions.key("shift-left")
 
 
 class MoveLeft(Move):
@@ -115,6 +133,9 @@ class MoveLeft(Move):
     def kick(self):
         actions.key("alt-backspace")
 
+    def pick(self):
+        actions.key("alt-shift-left")
+
 
 class MoveWayLeft(Move):
     @staticmethod
@@ -126,6 +147,9 @@ class MoveWayLeft(Move):
 
     def kick(self):
         actions.key("cmd-backspace")
+
+    def pick(self):
+        actions.key("cmd-shift-left")
 
 
 class MoveChunkLeft(Move):
@@ -140,6 +164,9 @@ class MoveChunkLeft(Move):
         actions.edit.extend_paragraph_start()
         actions.key("backspace")
 
+    def pick(self):
+        actions.edit.extend_paragraph_start()
+
 
 class MoveEndLeft(Move):
     @staticmethod
@@ -153,6 +180,9 @@ class MoveEndLeft(Move):
         actions.edit.extend_file_start()
         actions.edit.delete()
 
+    def pick(self):
+        actions.edit.extend_file_start()
+
 
 class MoveBigBoth(Move):
     @staticmethod
@@ -164,6 +194,9 @@ class MoveBigBoth(Move):
 
     def kick(self):
         actions.edit.delete_line()
+
+    def pick(self):
+        actions.edit.select_line()
 
 
 class MoveSmallBoth(Move):
@@ -185,6 +218,9 @@ class MoveBoth(Move):
         actions.key("alt-delete")
         actions.key("alt-backspace")
 
+    def pick(self):
+        actions.edit.select_word()
+
 
 class MoveChunkBoth(Move):
     @staticmethod
@@ -193,6 +229,9 @@ class MoveChunkBoth(Move):
 
     def kick(self):
         actions.edit.delete_paragraph()
+
+    def pick(self):
+        actions.edit.select_paragraph()
 
 
 class MoveMaxBoth(Move):
@@ -204,6 +243,9 @@ class MoveMaxBoth(Move):
         actions.edit.select_all()
         actions.sleep("60ms")
         actions.edit.delete()
+
+    def pick(self):
+        actions.edit.select_all()
 
 
 class MoveUp(Move):
@@ -217,6 +259,9 @@ class MoveUp(Move):
     def kick(self):
         actions.edit.extend_up()
         actions.edit.delete()
+
+    def pick(self):
+        actions.edit.extend_up()
 
 
 class MoveUpEnd(Move):
@@ -233,6 +278,10 @@ class MoveUpEnd(Move):
         actions.edit.extend_line_start()
         actions.edit.delete()
 
+    def pick(self):
+        actions.edit.extend_up()
+        actions.edit.extend_line_start()
+
 
 class MoveDown(Move):
     @staticmethod
@@ -245,6 +294,9 @@ class MoveDown(Move):
     def kick(self):
         actions.edit.extend_down()
         actions.edit.delete()
+
+    def pick(self):
+        actions.edit.extend_down()
 
 
 class MoveDownEnd(Move):
@@ -260,6 +312,10 @@ class MoveDownEnd(Move):
         actions.edit.extend_down()
         actions.edit.extend_line_end()
         actions.edit.delete()
+
+    def pick(self):
+        actions.edit.extend_down()
+        actions.edit.extend_line_end()
 
 
 class MovePoint(Move):

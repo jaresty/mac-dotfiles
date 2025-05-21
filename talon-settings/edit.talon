@@ -1,20 +1,6 @@
 #movement to the right
 <user.move>: user.invoke_move(move)
 
-pick fog: edit.extend_line_up()
-pick fogger:
-	edit.extend_line_up()
-	edit.extend_line_start()
-pick rogger:
-	edit.extend_line_up()
-	edit.extend_line_end()
-
-pick dig:
-	edit.extend_down()
-pick digger:
-	edit.extend_down()
-	edit.extend_line_end()
-
 nav ong: user.go_forward()
 nav rog: user.go_back()
 
@@ -63,25 +49,10 @@ molt <user.word> pointer:
 	edit.line_end()
 
 #selecting forward
-pick ongy: key("shift-right")
-pick ong: key("alt-shift-right")
-pick onger: key("cmd-shift-right")
-pick ongeroom: edit.extend_paragraph_end()
-pick ongoom: edit.extend_file_end()
 pick ongize: user.set_select_direction_right()
 
 #selecting backward
-pick roggy: key("shift-left")
-pick rog: key("alt-shift-left")
-pick rogger: key("cmd-shift-left")
-pick roggeroom: edit.extend_paragraph_start()
-pick rogoom: edit.extend_file_start()
 pick regize: user.set_select_direction_left()
-
-pick bog: edit.select_word()
-pick boger: edit.select_line()
-pick bogeroom: edit.select_paragraph()
-pick bogoom: edit.select_all()
 
 lift:
 	edit.cut()
