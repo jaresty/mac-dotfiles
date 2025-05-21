@@ -59,6 +59,21 @@ class MoveRight(Move):
     def pick(self):
         actions.key("alt-shift-right")
 
+    def nav(self):
+        actions.user.go_forward()
+
+    def hunt(self):
+        actions.edit.find_next()
+
+    def zoom(self):
+        actions.edit.zoom_in()
+
+    def folding(self):
+        actions.user.fold_more()
+
+    def look(self):
+        actions.user.mouse_scroll_right()
+
 
 class MoveWayRight(Move):
     @staticmethod
@@ -136,6 +151,21 @@ class MoveLeft(Move):
     def pick(self):
         actions.key("alt-shift-left")
 
+    def nav(self):
+        actions.user.go_back()
+
+    def hunt(self):
+        actions.edit.find_previous()
+
+    def zoom(self):
+        actions.edit.zoom_out()
+
+    def folding(self):
+        actions.user.fold_less()
+
+    def look(self):
+        actions.user.mouse_scroll_left()
+
 
 class MoveWayLeft(Move):
     @staticmethod
@@ -182,6 +212,9 @@ class MoveEndLeft(Move):
 
     def pick(self):
         actions.edit.extend_file_start()
+
+    def zoom(self):
+        actions.user.unfold_recursively()
 
 
 class MoveBigBoth(Move):
@@ -263,6 +296,9 @@ class MoveUp(Move):
     def pick(self):
         actions.edit.extend_up()
 
+    def look(self):
+        actions.user.mouse_scroll_up()
+
 
 class MoveUpEnd(Move):
     @staticmethod
@@ -297,6 +333,9 @@ class MoveDown(Move):
 
     def pick(self):
         actions.edit.extend_down()
+
+    def look(self):
+        actions.user.mouse_scroll_down()
 
 
 class MoveDownEnd(Move):

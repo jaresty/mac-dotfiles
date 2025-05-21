@@ -1,29 +1,12 @@
 #movement to the right
 <user.move>: user.invoke_move(move)
 
-nav ong: user.go_forward()
-nav rog: user.go_back()
-
-hunt ong: edit.find_next()
-hunt rog: edit.find_previous()
-
 <user.movement_type>: user.start_moving(movement_type)
 perch: user.stop_moving()
 
 <user.selection_action>: user.selection_action(selection_action)
 
-mag ong: edit.zoom_in()
-mag rog: edit.zoom_out()
-mag reset: edit.zoom_reset()
-
-folding ong: user.fold_more()
-folding rog: user.fold_less()
-folding rogoom: user.unfold_recursively()
-
-look ong: user.mouse_scroll_right()
-look rog: user.mouse_scroll_left()
-look fog: user.mouse_scroll_up()
-look dig: user.mouse_scroll_down()
+zoom reset: edit.zoom_reset()
 
 molt <user.word> ong:
 	key("alt-delete")
@@ -54,7 +37,7 @@ pick ongize: user.set_select_direction_right()
 #selecting backward
 pick regize: user.set_select_direction_left()
 
-lift:
+lift jog:
 	edit.cut()
 lift ong:
 	edit.extend_word_right()
