@@ -103,12 +103,9 @@ cut append that:
 cap <user.letters> [down]:
   user.insert_formatted(letters, "ALL_CAPS")
 
-<user.key> ed:
+<user.key> oid:
   key("{key}")
   insert(" ")
-
-numb <number> ed:
-  insert("{number} ")
 
 rander <number>:
   user.random_repeat(number)
