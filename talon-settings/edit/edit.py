@@ -12,6 +12,9 @@ last_located_character = " "
 class Move:
     def __init_subclass__(cls, **kwargs):
         super().__init_subclass__(**kwargs)
+        # ignores subclasses that do not have an abstract method called name
+        if not hasattr(cls, "name"):
+            return
         cls._subclasses.append(cls)
 
     _subclasses = []
@@ -21,7 +24,7 @@ class Move:
         self.invoke_function = invoke_function
 
     # when you call the invoke method it calls the method by the name
-    def invoke(self):
+    def _invoke(self):
         method = getattr(self, self.invoke_function)
         print(f"Invoking {self.invoke_function} on {self.__class__.__name__}")
         if callable(method):
@@ -30,7 +33,28 @@ class Move:
             raise ValueError(f"{self.invoke_function} is not a callable method")
 
 
-class SmallMoveRight(Move):
+class AbstractMove(Move):
+    def pick(self):
+        pass
+
+    def lift(self):
+        self.pick()
+        actions.edit.cut()
+
+
+class NeutralMove(AbstractMove):
+    @staticmethod
+    def name():
+        return "jog"
+
+    def kick(self):
+        actions.key("delete")
+
+    def pick(self):
+        pass
+
+
+class SmallMoveRight(AbstractMove):
     @staticmethod
     def name():
         return "ongy"
@@ -45,7 +69,7 @@ class SmallMoveRight(Move):
         actions.key("shift-right")
 
 
-class MoveRight(Move):
+class MoveRight(AbstractMove):
     @staticmethod
     def name():
         return "ong"
@@ -57,7 +81,7 @@ class MoveRight(Move):
         actions.key("alt-delete")
 
     def pick(self):
-        actions.key("alt-shift-right")
+        actions.edit.extend_word_right()
 
     def nav(self):
         actions.user.go_forward()
@@ -75,7 +99,7 @@ class MoveRight(Move):
         actions.user.mouse_scroll_right()
 
 
-class MoveWayRight(Move):
+class MoveWayRight(AbstractMove):
     @staticmethod
     def name():
         return "onger"
@@ -87,10 +111,10 @@ class MoveWayRight(Move):
         actions.key("ctrl-k")
 
     def pick(self):
-        actions.key("cmd-shift-right")
+        actions.edit.extend_line_end()
 
 
-class MoveChunkRight(Move):
+class MoveChunkRight(AbstractMove):
     @staticmethod
     def name():
         return "ongeroom"
@@ -106,7 +130,7 @@ class MoveChunkRight(Move):
         actions.edit.extend_paragraph_end()
 
 
-class MoveEndRight(Move):
+class MoveEndRight(AbstractMove):
     @staticmethod
     def name():
         return "ongoom"
@@ -122,7 +146,7 @@ class MoveEndRight(Move):
         actions.edit.extend_file_end()
 
 
-class SmallMoveLeft(Move):
+class SmallMoveLeft(AbstractMove):
     @staticmethod
     def name():
         return "roggy"
@@ -137,7 +161,7 @@ class SmallMoveLeft(Move):
         actions.key("shift-left")
 
 
-class MoveLeft(Move):
+class MoveLeft(AbstractMove):
     @staticmethod
     def name():
         return "rog"
@@ -167,7 +191,7 @@ class MoveLeft(Move):
         actions.user.mouse_scroll_left()
 
 
-class MoveWayLeft(Move):
+class MoveWayLeft(AbstractMove):
     @staticmethod
     def name():
         return "rogger"
@@ -182,7 +206,7 @@ class MoveWayLeft(Move):
         actions.key("cmd-shift-left")
 
 
-class MoveChunkLeft(Move):
+class MoveChunkLeft(AbstractMove):
     @staticmethod
     def name():
         return "roggeroom"
@@ -198,7 +222,7 @@ class MoveChunkLeft(Move):
         actions.edit.extend_paragraph_start()
 
 
-class MoveEndLeft(Move):
+class MoveEndLeft(AbstractMove):
     @staticmethod
     def name():
         return "rogoom"
@@ -217,7 +241,7 @@ class MoveEndLeft(Move):
         actions.user.unfold_recursively()
 
 
-class MoveBigBoth(Move):
+class MoveBigBoth(AbstractMove):
     @staticmethod
     def name():
         return "bogger"
@@ -232,7 +256,7 @@ class MoveBigBoth(Move):
         actions.edit.select_line()
 
 
-class MoveSmallBoth(Move):
+class MoveSmallBoth(AbstractMove):
     @staticmethod
     def name():
         return "boggy"
@@ -242,7 +266,7 @@ class MoveSmallBoth(Move):
         actions.key("backspace")
 
 
-class MoveBoth(Move):
+class MoveBoth(AbstractMove):
     @staticmethod
     def name():
         return "bog"
@@ -255,7 +279,7 @@ class MoveBoth(Move):
         actions.edit.select_word()
 
 
-class MoveChunkBoth(Move):
+class MoveChunkBoth(AbstractMove):
     @staticmethod
     def name():
         return "bogeroom"
@@ -267,7 +291,7 @@ class MoveChunkBoth(Move):
         actions.edit.select_paragraph()
 
 
-class MoveMaxBoth(Move):
+class MoveMaxBoth(AbstractMove):
     @staticmethod
     def name():
         return "bogoom"
@@ -281,7 +305,7 @@ class MoveMaxBoth(Move):
         actions.edit.select_all()
 
 
-class MoveUp(Move):
+class MoveUp(AbstractMove):
     @staticmethod
     def name():
         return "fog"
@@ -300,7 +324,7 @@ class MoveUp(Move):
         actions.user.mouse_scroll_up()
 
 
-class MoveUpEnd(Move):
+class MoveUpEnd(AbstractMove):
     @staticmethod
     def name():
         return "fogger"
@@ -319,7 +343,7 @@ class MoveUpEnd(Move):
         actions.edit.extend_line_start()
 
 
-class MoveDown(Move):
+class MoveDown(AbstractMove):
     @staticmethod
     def name():
         return "dig"
@@ -338,7 +362,7 @@ class MoveDown(Move):
         actions.user.mouse_scroll_down()
 
 
-class MoveDownEnd(Move):
+class MoveDownEnd(AbstractMove):
     @staticmethod
     def name():
         return "digger"
@@ -357,26 +381,32 @@ class MoveDownEnd(Move):
         actions.edit.extend_line_end()
 
 
-class MovePoint(Move):
+class MovePoint(AbstractMove):
     @staticmethod
     def name():
         return "point"
 
+    def pick(self):
+        actions.mouse_click()
+        actions.mouse_click()
+
     def kick(self):
-        actions.mouse_click()
-        actions.mouse_click()
+        self.pick()
         actions.key("backspace")
 
 
-class MoveBigPoint(Move):
+class MoveBigPoint(AbstractMove):
     @staticmethod
     def name():
         return "pointer"
 
+    def pick(self):
+        actions.mouse_click()
+        actions.mouse_click()
+        actions.mouse_click()
+
     def kick(self):
-        actions.mouse_click()
-        actions.mouse_click()
-        actions.mouse_click()
+        self.pick()
         actions.key("backspace")
 
 
@@ -387,15 +417,13 @@ for subclass in Move._subclasses:
     # fix: this should ignore static methods
     for method_name in dir(subclass):
         if not method_name.startswith("_") and callable(getattr(subclass, method_name)):
-            # Check if the method is defined in the subclass, not inherited
-            if method_name in subclass.__dict__:
-                method = getattr(subclass, method_name)
-                # Ignore static methods by checking if method is a staticmethod in the class dict
-                if not isinstance(subclass.__dict__.get(method_name), staticmethod):
-                    move_rules[f"{method_name} {subclass.name()}"] = [
-                        subclass,
-                        method_name,
-                    ]
+            method = getattr(subclass, method_name)
+            # Ignore static methods by checking if method is a staticmethod in the class dict
+            if not isinstance(subclass.__dict__.get(method_name), staticmethod):
+                move_rules[f"{method_name} {subclass.name()}"] = [
+                    subclass,
+                    method_name,
+                ]
 print(f"Move rules: {move_rules}")
 mod.list(
     "movement_command",
@@ -648,4 +676,4 @@ class Actions:
 
     def invoke_move(move: Move):
         """Invoke the move"""
-        move.invoke()
+        move._invoke()

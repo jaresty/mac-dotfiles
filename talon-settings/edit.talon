@@ -37,73 +37,9 @@ pick ongize: user.set_select_direction_right()
 #selecting backward
 pick regize: user.set_select_direction_left()
 
-lift jog:
-	edit.cut()
-lift ong:
-	edit.extend_word_right()
-	edit.cut()
-lift rog:
-	edit.extend_word_left()
-	edit.cut()
-lift rogger:
-	edit.extend_line_start()
-	edit.cut()
-lift rogoom:
-	edit.extend_file_start()
-	edit.cut()
-lift bog:
-	edit.word_right()
-	edit.extend_word_left()
-	edit.cut()
-lift onger:
-	edit.extend_line_end()
-	edit.cut()
-lift ongoom:
-	edit.extend_file_end()
-	edit.cut()
-lift boger:
-	edit.select_line()
-	edit.cut()
-lift bogoom:
-	edit.select_all()
-	edit.cut()
-lift fog:
-	edit.extend_up()
-	edit.cut()
-lift fogger:
-	edit.extend_up()
-	edit.extend_line_start()
-	edit.cut()
-lift bifogger:
-	edit.line_end()
-	edit.extend_up()
-	edit.extend_line_start()
-	edit.cut()
-lift dig:
-	edit.extend_down()
-	edit.cut()
-lift digger:
-	edit.extend_down()
-	edit.extend_line_end()
-	edit.cut()
-lift bidigger:
-	edit.line_start()
-	edit.extend_down()
-	edit.extend_line_end()
-	edit.cut()
-lift point:
-	mouse_click()
-	mouse_click()
-	edit.cut()
-lift pointer:
-	mouse_click()
-	mouse_click()
-	mouse_click()
-	edit.cut()
-
 clip tap: key(cmd-alt-ctrl-shift-v)
 match plant: edit.paste_match_style()
-plant:
+plant jog:
 	edit.paste()
 plant ong:
 	edit.extend_word_right()
