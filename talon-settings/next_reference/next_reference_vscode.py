@@ -15,7 +15,7 @@ class UserActions:
         actions.user.vscode("editor.action.peekDefinition")
 
     def next_reference():
-        actions.key("f12")
+        actions.key("shift-f12")
 
     def last_reference():
-        actions.key("shift-f12")
+        actions.key("f12")

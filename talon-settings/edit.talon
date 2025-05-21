@@ -233,10 +233,10 @@ phones rog:
 	edit.extend_word_left()
 	user.insert_next_homophone()
 
-deaf tap: user.tap_reference()
-deaf ong:
+reef tap: user.tap_reference()
+reef ong:
 	user.next_reference()
-deaf rog:
+reef rog:
 	user.last_reference()
 
 context tap: key("ctrl-enter")
