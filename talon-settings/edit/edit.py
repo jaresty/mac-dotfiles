@@ -144,6 +144,38 @@ class MoveRight(AbstractMove):
         actions.user.numeric_increment()
 
 
+class MovePaintRight(AbstractMove):
+    @staticmethod
+    def name():
+        return "paint ong"
+
+    def go(self):
+        actions.user.go_next_paint(1)
+
+    def kick(self):
+        self.pick()
+        actions.key("delete")
+
+    def pick(self):
+        actions.user.select_to_next_paint(1)
+
+
+class MovePaintLeft(AbstractMove):
+    @staticmethod
+    def name():
+        return "paint rog"
+
+    def go(self):
+        actions.user.go_previous_paint(1)
+
+    def kick(self):
+        self.pick()
+        actions.key("delete")
+
+    def pick(self):
+        actions.user.select_to_previous_paint(1)
+
+
 class MoveWayRight(AbstractMove):
     @staticmethod
     def name():
