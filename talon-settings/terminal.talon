@@ -47,11 +47,11 @@ dir rog:
 
 flag [<user.text>] ong:
 	insert("--")
-	user.complete_from_start(prose or "", 1)
+	user.complete_from_start(text or "", 1)
 
 flag [<user.text>] tap:
 	insert("--")
-	user.complete_tap(prose or "")
+	user.complete_tap(text or "")
 
 lamb ong:
 	key(ctrl-p)
