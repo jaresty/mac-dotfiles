@@ -41,6 +41,18 @@ class AbstractMove(Move):
         self.pick()
         actions.edit.cut()
 
+    def plant(self):
+        self.pick()
+        actions.edit.paste()
+
+    def mem(self):
+        self.pick()
+        actions.edit.copy()
+
+    def forge(self):
+        self.pick()
+        actions.edit.selection_clone()
+
 
 class NeutralMove(AbstractMove):
     @staticmethod
@@ -98,6 +110,9 @@ class MoveRight(AbstractMove):
     def look(self):
         actions.user.mouse_scroll_right()
 
+    def poke(self):
+        actions.user.poke_keys()
+
 
 class MoveWayRight(AbstractMove):
     @staticmethod
@@ -112,6 +127,16 @@ class MoveWayRight(AbstractMove):
 
     def pick(self):
         actions.edit.extend_line_end()
+
+    def poke(self):
+        actions.user.poker_keys()
+
+    def forge(self):
+        self.pick()
+        selection = actions.edit.selected_text()
+        actions.edit.line_insert_down()
+        actions.insert(selection)
+        actions.edit.line_start()
 
 
 class MoveChunkRight(AbstractMove):
@@ -190,6 +215,9 @@ class MoveLeft(AbstractMove):
     def look(self):
         actions.user.mouse_scroll_left()
 
+    def poke(self):
+        actions.user.repoke_keys()
+
 
 class MoveWayLeft(AbstractMove):
     @staticmethod
@@ -204,6 +232,12 @@ class MoveWayLeft(AbstractMove):
 
     def pick(self):
         actions.key("cmd-shift-left")
+
+    def forge(self):
+        self.pick()
+        selection = actions.edit.selected_text()
+        actions.edit.line_insert_up()
+        actions.insert(selection)
 
 
 class MoveChunkLeft(AbstractMove):
@@ -254,6 +288,9 @@ class MoveBigBoth(AbstractMove):
 
     def pick(self):
         actions.edit.select_line()
+
+    def forge(self):
+        actions.edit.line_clone()
 
 
 class MoveSmallBoth(AbstractMove):
@@ -323,6 +360,15 @@ class MoveUp(AbstractMove):
     def look(self):
         actions.user.mouse_scroll_up()
 
+    def dodge(self):
+        dodge_word = actions.edit.selected_text()
+        actions.edit.delete()
+        actions.edit.line_insert_up()
+        actions.insert(dodge_word)  # noqa: F821
+
+    def poke(self):
+        actions.edit.line_insert_up()
+
 
 class MoveUpEnd(AbstractMove):
     @staticmethod
@@ -341,6 +387,9 @@ class MoveUpEnd(AbstractMove):
     def pick(self):
         actions.edit.extend_up()
         actions.edit.extend_line_start()
+
+    def dodge(self):
+        actions.edit.line_swap_up()
 
 
 class MoveDown(AbstractMove):
@@ -361,6 +410,15 @@ class MoveDown(AbstractMove):
     def look(self):
         actions.user.mouse_scroll_down()
 
+    def dodge(self):
+        dodge_word = actions.edit.selected_text()
+        actions.edit.delete()
+        actions.edit.line_insert_down()
+        actions.insert(dodge_word)
+
+    def poke(self):
+        actions.edit.line_insert_down()
+
 
 class MoveDownEnd(AbstractMove):
     @staticmethod
@@ -379,6 +437,9 @@ class MoveDownEnd(AbstractMove):
     def pick(self):
         actions.edit.extend_down()
         actions.edit.extend_line_end()
+
+    def dodge(self):
+        actions.edit.line_swap_down()
 
 
 class MovePoint(AbstractMove):

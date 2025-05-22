@@ -39,32 +39,6 @@ pick regize: user.set_select_direction_left()
 
 clip tap: key(cmd-alt-ctrl-shift-v)
 match plant: edit.paste_match_style()
-plant jog:
-	edit.paste()
-plant ong:
-	edit.extend_word_right()
-	edit.paste()
-plant rog:
-	edit.extend_word_left()
-	edit.paste()
-plant onger:
-	edit.extend_line_end()
-	edit.paste()
-plant rogger:
-	edit.extend_line_start()
-	edit.paste()
-plant boger:
-	edit.select_line()
-	edit.paste()
-plant bogoom:
-	edit.select_all()
-	edit.paste()
-plant fog:
-	edit.line_insert_up()
-	edit.paste()
-plant dig:
-	edit.line_insert_down()
-	edit.paste()
 
 trade:
 	selected_text = edit.selected_text()
@@ -72,122 +46,12 @@ trade:
 	sleep(50ms)
 	clip.set_text(selected_text)
 
-mem jog:
-	edit.copy()
-mem ong:
-	edit.extend_word_right()
-	edit.copy()
-mem rog:
-	edit.extend_word_left()
-	edit.copy()
-mem onger:
-	edit.extend_line_end()
-	edit.copy()
-mem rogger:
-	edit.extend_line_start()
-	edit.copy()
-mem boger:
-	edit.select_line()
-	edit.copy()
-mem bogoom:
-	edit.select_all()
-	edit.copy()
-mem fog:
-	edit.extend_up()
-	edit.copy()
-mem fogger:
-	edit.extend_up()
-	edit.extend_line_start()
-	edit.copy()
-mem bifogger:
-	edit.line_start()
-	edit.extend_up()
-	edit.extend_line_start()
-	edit.copy()
-mem dig:
-	edit.extend_down()
-	edit.copy()
-mem digger:
-	edit.extend_down()
-	edit.extend_line_end()
-	edit.copy()
-mem bidigger:
-	edit.line_start()
-	edit.extend_down()
-	edit.extend_line_end()
-	edit.copy()
-mem point:
-	mouse_click()
-	mouse_click()
-	edit.copy()
-mem pointer:
-	mouse_click()
-	mouse_click()
-	mouse_click()
-	edit.copy()
-
-forge:
-	edit.selection_clone()
-forge ong:
-	edit.extend_word_right()
-	edit.selection_clone()
-forge rog:
-	edit.extend_word_left()
-	edit.selection_clone()
-
-forge onger:
-	edit.extend_line_end()
-	edit.selection_clone()
-for rogger:
-	edit.extend_line_start()
-	edit.selection_clone()
-forge boger:
-	edit.select_line()
-	edit.selection_clone()
-
-forge fog:
-	dodge_word = edit.selected_text()
-	edit.line_insert_up()
-	insert(dodge_word)
-
-forge dig:
-	dodge_word = edit.selected_text()
-	edit.line_insert_down()
-	insert(dodge_word)
-
-dodge fog:
-	dodge_word = edit.selected_text()
-	edit.delete()
-	edit.line_insert_up()
-	insert(dodge_word)
-dodge fogger:
-	edit.line_swap_up()
-
-dodge dig:
-	dodge_word = edit.selected_text()
-	edit.delete()
-	edit.line_insert_down()
-	insert(dodge_word)
-dodge digger:
-	edit.line_swap_down()
-
 poke <user.keys> ong:
 	user.poke_keys(keys_list)
-poke ong:
-	user.poke_keys()
 poke <user.keys> onger:
 	user.poker_keys(keys)
-poke onger:
-	user.poker_keys()
 poke <user.keys> rog:
 	user.repoke_keys(keys)
-poke rog:
-	user.repoke_keys()
-
-poke fog:
-	edit.line_insert_up()
-poke dig:
-	edit.line_insert_down()
 
 form <user.formatters> jog:
 	user.formatters_reformat_selection(formatters)
