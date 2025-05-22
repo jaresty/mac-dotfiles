@@ -1,5 +1,6 @@
 import random
 import re
+from typing import Union
 from talon import Context, Module, actions
 
 ctx = Context()
@@ -774,6 +775,26 @@ class Actions:
         times = random.randint(1, maximum)
         actions.core.repeat_partial_phrase(times)
 
-    def invoke_move(move: Move):
+    def invoke_move(
+        move: Union[
+            MoveBigBoth,
+            MoveSmallBoth,
+            MoveBoth,
+            MoveChunkBoth,
+            MoveMaxBoth,
+            MoveUp,
+            MoveDown,
+            MoveEndLeft,
+            MoveEndRight,
+            MoveWayLeft,
+            MoveWayRight,
+            MoveLeft,
+            MoveRight,
+            MoveChunkLeft,
+            MoveChunkRight,
+            MoveUpEnd,
+            MoveDownEnd,
+        ],
+    ):
         """Invoke the move"""
         move._invoke()
