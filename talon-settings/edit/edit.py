@@ -33,6 +33,21 @@ class Move:
             raise ValueError(f"{self.invoke_function} is not a callable method")
 
 
+class Tap(Move):
+    @staticmethod
+    def name():
+        return "tap"
+
+    def clip(self):
+        actions.key("cmd-alt-ctrl-shift-v")
+
+    def reef(self):
+        actions.user.tap_reference()
+
+    def context(self):
+        actions.key("ctrl-enter")
+
+
 class AbstractMove(Move):
     def pick(self):
         pass
@@ -64,6 +79,9 @@ class NeutralMove(AbstractMove):
 
     def pick(self):
         pass
+
+    def phones(self):
+        actions.user.insert_next_homophone(True)
 
 
 class SmallMoveRight(AbstractMove):
@@ -112,6 +130,17 @@ class MoveRight(AbstractMove):
 
     def poke(self):
         actions.user.poke_keys()
+
+    def phones(self):
+        self.pick()
+        actions.user.insert_next_homophone()
+        actions.edit.word_left()
+
+    def reef(self):
+        actions.user.next_reference()
+
+    def numeric(self):
+        actions.user.numeric_increment()
 
 
 class MoveWayRight(AbstractMove):
@@ -198,7 +227,7 @@ class MoveLeft(AbstractMove):
         actions.key("alt-backspace")
 
     def pick(self):
-        actions.key("alt-shift-left")
+        actions.edit.extend_word_left()
 
     def nav(self):
         actions.user.go_back()
@@ -217,6 +246,16 @@ class MoveLeft(AbstractMove):
 
     def poke(self):
         actions.user.repoke_keys()
+
+    def phones(self):
+        self.pick()
+        actions.user.insert_next_homophone()
+
+    def reef(self):
+        actions.user.last_reference()
+
+    def numeric(self):
+        actions.user.numeric_decrement()
 
 
 class MoveWayLeft(AbstractMove):

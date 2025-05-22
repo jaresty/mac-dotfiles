@@ -37,7 +37,6 @@ pick ongize: user.set_select_direction_right()
 #selecting backward
 pick regize: user.set_select_direction_left()
 
-clip tap: key(cmd-alt-ctrl-shift-v)
 match plant: edit.paste_match_style()
 
 trade:
@@ -86,29 +85,6 @@ form <user.formatters> bijog:
 	edit.select_word()
 	reformatted_text = user.reformat_text(edit.selected_text(), formatters)
 	insert(reformatted_text)
-
-phones jog:
-	user.insert_next_homophone(true)
-phones ong:
-	edit.extend_word_right()
-	user.insert_next_homophone()
-	edit.word_left()
-phones rog:
-	edit.extend_word_left()
-	user.insert_next_homophone()
-
-reef tap: user.tap_reference()
-reef ong:
-	user.next_reference()
-reef rog:
-	user.last_reference()
-
-context tap: key("ctrl-enter")
-numeric ong:
-	user.numeric_increment()
-
-numeric rog:
-	user.numeric_decrement()
 
 rejump: key(shift-tab)
 
