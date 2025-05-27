@@ -90,20 +90,20 @@ rejump: key(shift-tab)
 
 find paste: edit.find(clip.text())
 
-clee [<user.text>] tap:
+cleet [<user.text>] tap:
 	user.complete_tap(text or "")
-clee [<user.text>] ong:
+cleet [<user.text>] ong:
 	user.complete_from_start(text or "", 1)
-clee [<user.text>] onger:
+cleet [<user.text>] onger:
 	user.complete_from_start(text or "", 1)
 	edit.line_end()
-clee [<user.text>] {user.phrase_ender}:
+cleet [<user.text>] {user.phrase_ender}:
 	user.complete_from_start(text or "", 1)
 	insert(phrase_ender or "")
-clee [<user.text>] <user.delimiter_pair>:
+cleet [<user.text>] <user.delimiter_pair>:
 	user.complete_from_start(text or "", 1)
 	user.delimiter_pair_insert(delimiter_pair)
-clee [<user.text>] <user.delimiter_pair> y:
+cleet [<user.text>] <user.delimiter_pair> y:
 	user.complete_from_start(text or "", 1)
 	user.delimiter_pair_insert(delimiter_pair)
 	edit.right()
