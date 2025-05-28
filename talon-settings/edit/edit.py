@@ -57,6 +57,10 @@ class AbstractMove(Move):
         self.pick()
         actions.edit.cut()
 
+    def kick(self):
+        self.pick()
+        actions.key("delete")
+
     def plant(self):
         self.pick()
         actions.edit.paste()
@@ -108,9 +112,6 @@ class MoveRight(AbstractMove):
     def go(self):
         actions.edit.word_right()
 
-    def kick(self):
-        actions.key("alt-delete")
-
     def pick(self):
         actions.edit.extend_word_right()
 
@@ -152,10 +153,6 @@ class MovePaintRight(AbstractMove):
     def go(self):
         actions.user.go_next_paint(1)
 
-    def kick(self):
-        self.pick()
-        actions.key("delete")
-
     def pick(self):
         actions.user.select_to_next_paint(1)
 
@@ -168,10 +165,6 @@ class MovePaintLeft(AbstractMove):
     def go(self):
         actions.user.go_previous_paint(1)
 
-    def kick(self):
-        self.pick()
-        actions.key("delete")
-
     def pick(self):
         actions.user.select_to_previous_paint(1)
 
@@ -183,9 +176,6 @@ class MoveWayRight(AbstractMove):
 
     def go(self):
         actions.edit.line_end()
-
-    def kick(self):
-        actions.key("ctrl-k")
 
     def pick(self):
         actions.edit.extend_line_end()
@@ -209,10 +199,6 @@ class MoveChunkRight(AbstractMove):
     def go(self):
         actions.edit.paragraph_end()
 
-    def kick(self):
-        actions.edit.extend_paragraph_end()
-        actions.key("delete")
-
     def pick(self):
         actions.edit.extend_paragraph_end()
 
@@ -224,10 +210,6 @@ class MoveEndRight(AbstractMove):
 
     def go(self):
         actions.edit.file_end()
-
-    def kick(self):
-        actions.edit.extend_file_end()
-        actions.edit.delete()
 
     def pick(self):
         actions.edit.extend_file_end()
@@ -255,9 +237,6 @@ class MoveLeft(AbstractMove):
 
     def go(self):
         actions.edit.word_left()
-
-    def kick(self):
-        actions.key("alt-backspace")
 
     def pick(self):
         actions.edit.extend_word_left()
@@ -299,9 +278,6 @@ class MoveWayLeft(AbstractMove):
     def go(self):
         actions.edit.line_start()
 
-    def kick(self):
-        actions.key("cmd-backspace")
-
     def pick(self):
         actions.key("cmd-shift-left")
 
@@ -320,10 +296,6 @@ class MoveChunkLeft(AbstractMove):
     def go(self):
         actions.edit.paragraph_start()
 
-    def kick(self):
-        actions.edit.extend_paragraph_start()
-        actions.key("backspace")
-
     def pick(self):
         actions.edit.extend_paragraph_start()
 
@@ -335,10 +307,6 @@ class MoveEndLeft(AbstractMove):
 
     def go(self):
         actions.edit.file_start()
-
-    def kick(self):
-        actions.edit.extend_file_start()
-        actions.edit.delete()
 
     def pick(self):
         actions.edit.extend_file_start()
@@ -405,11 +373,6 @@ class MoveMaxBoth(AbstractMove):
     def name():
         return "bogoom"
 
-    def kick(self):
-        actions.edit.select_all()
-        actions.sleep("60ms")
-        actions.edit.delete()
-
     def pick(self):
         actions.edit.select_all()
 
@@ -421,10 +384,6 @@ class MoveUp(AbstractMove):
 
     def go(self):
         actions.edit.up()
-
-    def kick(self):
-        actions.edit.extend_up()
-        actions.edit.delete()
 
     def pick(self):
         actions.edit.extend_up()
@@ -455,11 +414,6 @@ class MoveUpEnd(AbstractMove):
         actions.edit.up()
         actions.edit.line_start()
 
-    def kick(self):
-        actions.edit.extend_up()
-        actions.edit.extend_line_start()
-        actions.edit.delete()
-
     def pick(self):
         actions.edit.extend_up()
         actions.edit.extend_line_start()
@@ -475,10 +429,6 @@ class MoveDown(AbstractMove):
 
     def go(self):
         actions.edit.down()
-
-    def kick(self):
-        actions.edit.extend_down()
-        actions.edit.delete()
 
     def pick(self):
         actions.edit.extend_down()
@@ -509,11 +459,6 @@ class MoveDownEnd(AbstractMove):
         actions.edit.down()
         actions.edit.line_end()
 
-    def kick(self):
-        actions.edit.extend_down()
-        actions.edit.extend_line_end()
-        actions.edit.delete()
-
     def pick(self):
         actions.edit.extend_down()
         actions.edit.extend_line_end()
@@ -531,10 +476,6 @@ class MovePoint(AbstractMove):
         actions.mouse_click()
         actions.mouse_click()
 
-    def kick(self):
-        self.pick()
-        actions.key("backspace")
-
 
 class MoveBigPoint(AbstractMove):
     @staticmethod
@@ -545,10 +486,6 @@ class MoveBigPoint(AbstractMove):
         actions.mouse_click()
         actions.mouse_click()
         actions.mouse_click()
-
-    def kick(self):
-        self.pick()
-        actions.key("backspace")
 
 
 # this iterates over all of the subclasses of the move class and then all of the instance methods on the subclass
