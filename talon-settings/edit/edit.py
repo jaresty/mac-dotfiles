@@ -441,6 +441,10 @@ class MoveUp(AbstractMove):
     def poke(self):
         actions.edit.line_insert_up()
 
+    def plant(self):
+        actions.edit.line_insert_up()
+        actions.edit.paste()
+
 
 class MoveUpEnd(AbstractMove):
     @staticmethod
@@ -490,6 +494,10 @@ class MoveDown(AbstractMove):
 
     def poke(self):
         actions.edit.line_insert_down()
+
+    def plant(self):
+        actions.edit.line_insert_down()
+        actions.edit.paste()
 
 
 class MoveDownEnd(AbstractMove):
