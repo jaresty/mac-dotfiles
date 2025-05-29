@@ -129,9 +129,9 @@ kick golf [<user.any_alphanumeric_key>] rog: user.delete_to_previous_character(a
 kick golf [<user.any_alphanumeric_key>] ongy: user.delete_to_next_character(any_alphanumeric_keyor or "", 0)
 kick golf [<user.any_alphanumeric_key>] roggy: user.delete_to_previous_character(any_alphanumeric_keyor or "", 0)
 
-hatch <user.word>:
+molt <user.word> jog:
 	insert(word)
 	user.select_text_backward(word)
-vault <user.word>:
+molt cap <user.word> jog:
 	user.insert_formatted(word, "CAPITALIZE_FIRST_WORD")
 	user.select_text_backward(word)
