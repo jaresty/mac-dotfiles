@@ -3,39 +3,39 @@ os: mac
 -
 
 # File Commands
-file [<user.spoken_text_search>] [{user.file_extension}] tap:
+file [<user.text>] [{user.file_extension}] tap:
 	key("cmd-p")
 	sleep(400ms)
-	insert(spoken_text_search or "")
+	insert(text or "")
 	insert(file_extension or "")
-file [<user.spoken_text_search>] [{user.file_extension}] jog:
+file [<user.text>] [{user.file_extension}] jog:
 	key("cmd-p")
 	sleep(400ms)
-	insert(spoken_text_search or "")
+	insert(text or "")
 	insert(file_extension or "")
 	sleep(300ms)
 	key(enter)
 
-tag [<user.spoken_text_search>] tap:
+tag [<user.text>] tap:
 	key("cmd-p @")
 	sleep(400ms)
-	insert(spoken_text_search or "")
-tag [<user.spoken_text_search>] jog:
+	insert(text or "")
+tag [<user.text>] jog:
 	key("cmd-p @")
 	sleep(400ms)
-	insert(spoken_text_search or "")
+	insert(text or "")
 	sleep(300ms)
 	key(enter)
 
 inspect tap: key(cmd-alt-c)
-command [<user.spoken_text_search>] tap:
+command [<user.text>] tap:
 	key("cmd-p >")
 	sleep(400ms)
-	insert(spoken_text_search or "")
-command [<user.spoken_text_search>] jog:
+	insert(text or "")
+command [<user.text>] jog:
 	key("cmd-p >")
 	sleep(400ms)
-	insert(spoken_text_search or "")
+	insert(text or "")
 	sleep(300ms)
 	key(enter)
 
