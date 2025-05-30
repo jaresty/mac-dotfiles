@@ -771,6 +771,7 @@ class Actions:
             MoveChunkRight,
             MoveUpEnd,
             MoveDownEnd,
+            NeutralMove,
         ],
     ):
         """Invoke the move"""
