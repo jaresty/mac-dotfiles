@@ -1,7 +1,7 @@
 tag: terminal
 -
 #deleting
-# kick: key("alt-d")
+kick rog: key("ctrl-w")
 # nope:                       key("ctrl-z")
 # redo that:                  key("ctrl-g")
 kick rogger: key("ctrl-u")
