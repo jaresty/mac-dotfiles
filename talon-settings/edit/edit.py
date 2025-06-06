@@ -496,6 +496,16 @@ class MoveBigPoint(AbstractMove):
         actions.mouse_click()
 
 
+class MoveAllPoint(AbstractMove):
+    @staticmethod
+    def name():
+        return "pointoom"
+
+    def pick(self):
+        actions.mouse_click()
+        actions.edit.select_all()
+
+
 # this iterates over all of the subclasses of the move class and then all of the instance methods on the subclass
 # it generates a dictionary which looks something like: {"move rog": lambda : MoveLeft("move")}
 move_rules = {}
@@ -762,23 +772,24 @@ class Actions:
 
     def invoke_move(
         move: Union[
+            MoveAllPoint,
             MoveBigBoth,
-            MoveSmallBoth,
             MoveBoth,
             MoveChunkBoth,
-            MoveMaxBoth,
-            MoveUp,
-            MoveDown,
-            MoveEndLeft,
-            MoveEndRight,
-            MoveWayLeft,
-            MoveWayRight,
-            MoveLeft,
-            MoveRight,
             MoveChunkLeft,
             MoveChunkRight,
-            MoveUpEnd,
+            MoveDown,
             MoveDownEnd,
+            MoveEndLeft,
+            MoveEndRight,
+            MoveLeft,
+            MoveMaxBoth,
+            MoveRight,
+            MoveSmallBoth,
+            MoveUp,
+            MoveUpEnd,
+            MoveWayLeft,
+            MoveWayRight,
             NeutralMove,
         ],
     ):
