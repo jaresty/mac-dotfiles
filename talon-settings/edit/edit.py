@@ -342,6 +342,14 @@ class MoveSmallBoth(AbstractMove):
         actions.key("delete")
         actions.key("backspace")
 
+    def pick(self):
+        actions.edit.extend_right()
+        selected_text = actions.edit.selected_text()
+        actions.edit.left()
+        actions.edit.left()
+        for _ in range(len(selected_text) + 1):
+            actions.edit.extend_right()
+
 
 class MoveBoth(AbstractMove):
     @staticmethod
