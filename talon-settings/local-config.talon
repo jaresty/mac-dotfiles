@@ -36,6 +36,13 @@ grab O C R: key("cmd-ctrl-shift-alt-o")
   sleep(200ms)
   insert(text or "")
 
+^moji <user.text> ong$:
+  key(cmd-ctrl-shift-alt-space)
+  sleep(200ms)
+  insert(text)
+  key(enter)
+
+
 # homerow
 ^pointer <user.text> tap:
   user.homerow_search()
