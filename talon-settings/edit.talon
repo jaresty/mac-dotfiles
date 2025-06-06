@@ -39,7 +39,7 @@ pick regize: user.set_select_direction_left()
 
 match plant: edit.paste_match_style()
 
-trade:
+trade jog:
 	selected_text = edit.selected_text()
 	edit.paste()
 	sleep(50ms)
