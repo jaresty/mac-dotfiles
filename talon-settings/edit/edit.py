@@ -115,6 +115,19 @@ class MoveRight(AbstractMove):
     def pick(self):
         actions.edit.extend_word_right()
 
+    def hop(self):
+        actions.edit.select_word()
+        actions.sleep("100ms")
+        dodge_word = actions.edit.selected_text()
+        actions.edit.delete()
+        actions.edit.extend_word_right()
+        actions.edit.extend_word_left()
+        actions.sleep("100ms")
+        spacer = actions.edit.selected_text()
+        actions.edit.delete()
+        self.go()
+        actions.insert(f"{spacer}{dodge_word}")
+
     def nav(self):
         actions.user.go_forward()
 
@@ -240,6 +253,19 @@ class MoveLeft(AbstractMove):
 
     def pick(self):
         actions.edit.extend_word_left()
+
+    def hop(self):
+        actions.edit.select_word()
+        actions.sleep("100ms")
+        dodge_word = actions.edit.selected_text()
+        actions.edit.delete()
+        actions.edit.extend_word_left()
+        actions.edit.extend_word_right()
+        actions.sleep("100ms")
+        spacer = actions.edit.selected_text()
+        actions.edit.delete()
+        self.go()
+        actions.insert(f"{dodge_word}{spacer}")
 
     def nav(self):
         actions.user.go_back()
@@ -406,7 +432,7 @@ class MoveUp(AbstractMove):
     def look(self):
         actions.user.mouse_scroll_up()
 
-    def dodge(self):
+    def hop(self):
         dodge_word = actions.edit.selected_text()
         actions.edit.delete()
         actions.edit.line_insert_up()
@@ -433,7 +459,7 @@ class MoveUpEnd(AbstractMove):
         actions.edit.extend_up()
         actions.edit.extend_line_start()
 
-    def dodge(self):
+    def hop(self):
         actions.edit.line_swap_up()
 
 
@@ -451,7 +477,7 @@ class MoveDown(AbstractMove):
     def look(self):
         actions.user.mouse_scroll_down()
 
-    def dodge(self):
+    def hop(self):
         dodge_word = actions.edit.selected_text()
         actions.edit.delete()
         actions.edit.line_insert_down()
@@ -478,7 +504,7 @@ class MoveDownEnd(AbstractMove):
         actions.edit.extend_down()
         actions.edit.extend_line_end()
 
-    def dodge(self):
+    def hop(self):
         actions.edit.line_swap_down()
 
 
@@ -798,6 +824,9 @@ class Actions:
             MoveWayLeft,
             MoveWayRight,
             NeutralMove,
+            SmallMoveLeft,
+            SmallMoveRight,
+            MoveSmallBoth,
         ],
     ):
         """Invoke the move"""
