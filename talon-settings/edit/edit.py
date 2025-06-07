@@ -356,6 +356,13 @@ class MoveBoth(AbstractMove):
     def name():
         return "bog"
 
+    def go(self):
+        self.pick()
+        selected_text = actions.edit.selected_text()
+        actions.edit.left()
+        for _ in range(int(len(selected_text) / 2)):
+            actions.edit.right()
+
     def kick(self):
         actions.key("alt-delete")
         actions.key("alt-backspace")
