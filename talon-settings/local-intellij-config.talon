@@ -123,7 +123,7 @@ tag [<user.text>] tap:
 	sleep(200ms)
 	key(enter)
 
-tag [<user.text>] ong:
+tag <user.text> ong:
 	key("cmd-f12")
 	sleep(400ms)
 	insert(text or "")

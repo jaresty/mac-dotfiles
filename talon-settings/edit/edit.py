@@ -154,6 +154,9 @@ class MoveRight(AbstractMove):
     def reef(self):
         actions.user.next_reference()
 
+    def tag(self):
+        actions.mimic("pre next click this")
+
     def numeric(self):
         actions.user.numeric_increment()
 
@@ -291,6 +294,9 @@ class MoveLeft(AbstractMove):
 
     def reef(self):
         actions.user.last_reference()
+
+    def tag(self):
+        actions.mimic("pre last click this")
 
     def numeric(self):
         actions.user.numeric_decrement()

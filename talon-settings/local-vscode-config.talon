@@ -102,7 +102,7 @@ tag [<user.text>] tap:
   sleep(50ms)
   insert(text or "")
 
-tag [<user.text>] ong:
+tag <user.text> ong:
   user.vscode("workbench.action.gotoSymbol")
   sleep(50ms)
   insert(text or "")
