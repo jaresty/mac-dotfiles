@@ -86,7 +86,8 @@ form <user.formatters> bijog:
 	reformatted_text = user.reformat_text(edit.selected_text(), formatters)
 	insert(reformatted_text)
 
-rejump: key(shift-tab)
+fling rog: key(shift-tab)
+fling ong: key(tab)
 
 find paste: edit.find(clip.text())
 
