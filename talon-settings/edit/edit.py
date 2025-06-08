@@ -432,18 +432,15 @@ class MoveUp(AbstractMove):
     def look(self):
         actions.user.mouse_scroll_up()
 
-    def hop(self):
-        dodge_word = actions.edit.selected_text()
-        actions.edit.delete()
-        actions.edit.line_insert_up()
-        actions.insert(dodge_word)  # noqa: F821
-
     def poke(self):
         actions.edit.line_insert_up()
 
     def plant(self):
         actions.edit.line_insert_up()
         actions.edit.paste()
+
+    def hop(self):
+        actions.edit.line_swap_up()
 
 
 class MoveUpEnd(AbstractMove):
@@ -458,9 +455,6 @@ class MoveUpEnd(AbstractMove):
     def pick(self):
         actions.edit.extend_up()
         actions.edit.extend_line_start()
-
-    def hop(self):
-        actions.edit.line_swap_up()
 
 
 class MoveDown(AbstractMove):
@@ -478,10 +472,7 @@ class MoveDown(AbstractMove):
         actions.user.mouse_scroll_down()
 
     def hop(self):
-        dodge_word = actions.edit.selected_text()
-        actions.edit.delete()
-        actions.edit.line_insert_down()
-        actions.insert(dodge_word)
+        actions.edit.line_swap_up()
 
     def poke(self):
         actions.edit.line_insert_down()
