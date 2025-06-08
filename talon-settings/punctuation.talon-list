@@ -25,7 +25,7 @@ dot: .
 zig: /
 zag: '\\'
 minus: -
-bolt: -
+tack: -
 beam: =
 tie: +
 grave: `
