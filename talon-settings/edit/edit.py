@@ -80,6 +80,54 @@ class AbstractMove(Move):
         actions.edit.selection_clone()
 
 
+class VeerMove(Move):
+    @staticmethod
+    def name():
+        return "veer"
+
+    def kick(self):
+        pass
+
+    def pick(self):
+        pass
+
+    def phones(self):
+        pass
+
+    def go(self):
+        pass
+
+    def hop(self):
+        pass
+
+    def nav(self):
+        pass
+
+    def hunt(self):
+        pass
+
+    def zoom(self):
+        pass
+
+    def folding(self):
+        pass
+
+    def look(self):
+        pass
+
+    def poke(self):
+        pass
+
+    def reef(self):
+        pass
+
+    def tag(self):
+        pass
+
+    def numeric(self):
+        pass
+
+
 class NeutralMove(AbstractMove):
     @staticmethod
     def name():
