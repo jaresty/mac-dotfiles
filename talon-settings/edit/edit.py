@@ -7,6 +7,7 @@ ctx = Context()
 mod = Module()
 global last_located_character
 last_located_character = " "
+global last_move
 
 
 # this class keeps track of all of its subclasses
@@ -52,6 +53,11 @@ class Tap(Move):
 class AbstractMove(Move):
     def pick(self):
         pass
+
+    def veer(self):
+        global last_move
+        self.invoke_function = last_move.invoke_function
+        self._invoke()
 
     def lift(self):
         self.pick()
@@ -582,7 +588,11 @@ ctx.lists["user.movement_command"] = move_rules.keys()
 
 @mod.capture(rule="{user.movement_command}")
 def move(m) -> Move:
-    return move_rules[m.movement_command][0](move_rules[m.movement_command][1])
+    return movement_instance(m.movement_command)
+
+
+def movement_instance(movement_command):
+    return move_rules[movement_command][0](move_rules[movement_command][1])
 
 
 def locate_character(line_text: str, character: str, offset: int):
@@ -827,4 +837,6 @@ class Actions:
         ],
     ):
         """Invoke the move"""
+        global last_move
         move._invoke()
+        last_move = move
