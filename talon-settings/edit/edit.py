@@ -478,7 +478,7 @@ class MoveDown(AbstractMove):
         actions.user.mouse_scroll_down()
 
     def hop(self):
-        actions.edit.line_swap_up()
+        actions.edit.line_swap_down()
 
     def poke(self):
         actions.edit.line_insert_down()
