@@ -882,6 +882,7 @@ class Actions:
             SmallMoveLeft,
             SmallMoveRight,
             MoveSmallBoth,
+            VeerMove,
         ],
     ):
         """Invoke the move"""
