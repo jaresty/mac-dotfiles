@@ -51,7 +51,7 @@ nip make, generateSnippet
 sort, sortTargets
 swap, swapTargets
 take, setSelection
-tiff, revealTypeDefinition
+till, revealTypeDefinition
 unfold, unfoldRegion
 wrap, wrapWithPairedDelimiter
 
