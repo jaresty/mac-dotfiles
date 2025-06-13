@@ -223,6 +223,9 @@ class MoveRight(AbstractMove):
     def wax(self):
         actions.user.wax()
 
+    def nope(self):
+        actions.edit.undo()
+
 
 class MovePaintRight(AbstractMove):
     @staticmethod
@@ -372,6 +375,9 @@ class MoveLeft(AbstractMove):
 
     def wax(self):
         actions.user.wane()
+
+    def nope(self):
+        actions.edit.redo()
 
 
 class MoveWayLeft(AbstractMove):

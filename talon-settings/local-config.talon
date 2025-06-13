@@ -96,9 +96,6 @@ grab O C R: key("cmd-ctrl-shift-alt-o")
   sleep(50ms)
   key(enter)
 
-# undo that: nope, nix, junk, blast
-nope: edit.undo()
-
 toggle mike: key("f11")
 
 lister <number>: "LISTR-{number}"
