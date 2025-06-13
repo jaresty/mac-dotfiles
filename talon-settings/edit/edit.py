@@ -217,6 +217,9 @@ class MoveRight(AbstractMove):
     def tab(self):
         actions.app.tab_next()
 
+    def pit(self):
+        actions.user.split_previous()
+
 
 class MovePaintRight(AbstractMove):
     @staticmethod
@@ -360,6 +363,9 @@ class MoveLeft(AbstractMove):
 
     def tab(self):
         actions.app.tab_previous()
+
+    def pit(self):
+        actions.user.split_next()
 
 
 class MoveWayLeft(AbstractMove):
@@ -594,6 +600,27 @@ class MoveAllPoint(AbstractMove):
     def pick(self):
         actions.mouse_click()
         actions.edit.select_all()
+
+
+class MoveSplit(Move):
+    @staticmethod
+    def name():
+        return "pit"
+
+    def kick(self):
+        actions.user.split_clear()
+
+    def forge(self):
+        actions.user.split_window()
+
+
+class MoveAllSplit(Move):
+    @staticmethod
+    def name():
+        return "pitoom"
+
+    def kick(self):
+        actions.user.split_clear_all()
 
 
 class MoveTab(Move):
