@@ -635,7 +635,7 @@ class MoveTab(Move):
         actions.user.tab_duplicate()
 
     def nope(self):
-        actions.user.tab_reopen()
+        actions.app.tab_reopen()
 
 
 # this iterates over all of the subclasses of the move class and then all of the instance methods on the subclass
