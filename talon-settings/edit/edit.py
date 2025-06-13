@@ -915,6 +915,7 @@ class Actions:
     def invoke_move(
         move: Union[
             MoveAllPoint,
+            MoveAllSplit,
             MoveBigBoth,
             MoveBoth,
             MoveChunkBoth,
@@ -928,6 +929,9 @@ class Actions:
             MoveMaxBoth,
             MoveRight,
             MoveSmallBoth,
+            MoveSmallBoth,
+            MoveSplit,
+            MoveTab,
             MoveUp,
             MoveUpEnd,
             MoveWayLeft,
@@ -935,7 +939,6 @@ class Actions:
             NeutralMove,
             SmallMoveLeft,
             SmallMoveRight,
-            MoveSmallBoth,
             VeerMove,
         ],
     ):
