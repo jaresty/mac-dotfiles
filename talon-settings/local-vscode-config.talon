@@ -80,15 +80,6 @@ prob [<user.text>] rog:
   insert(text or "")
   key(enter)
 
-patch ong: key(alt-f5)
-patch rog: key(shift-alt-f5)
-
-error ong: user.vscode("editor.action.marker.next")
-error rog: user.vscode("editor.action.marker.prev")
-
-refer ong: key(f4)
-refer rog: key(shift-f4)
-
 # Symbol search
 tag [<user.text>] tap:
   user.vscode("workbench.action.gotoSymbol")

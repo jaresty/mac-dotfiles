@@ -130,19 +130,12 @@ prob [<user.text>] rog:
 run ong: key('ctrl-r')
 run rog: key('ctrl-shift-r')
 
-reference: user.idea("action FindUsages")
-refer ong: key(cmd-alt-down)
-refer rog: key(cmd-alt-up)
-
 narrow:
 	key(cmd-shift--)
 	key(cmd-=)
 	key(cmd-alt-=)
 
 param tap: user.idea("action ParameterInfo")
-
-patch ong: key(ctrl-shift-alt-down)
-patch rog: key(ctrl-shift-alt-up)
 
 forge pit:
 	user.idea("action SplitVertically")

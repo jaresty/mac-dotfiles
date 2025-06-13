@@ -11,8 +11,8 @@ app: jetbrains
 
 @ctx.action_class("user")
 class UserActions:
-    def go_forward():
-        actions.user.idea("action Back")
+    def patch_forward():
+        actions.key("ctrl-shift-alt-down")
 
-    def go_back():
-        actions.user.idea("action Forward")
+    def patch_back():
+        actions.key("ctrl-shift-alt-up")

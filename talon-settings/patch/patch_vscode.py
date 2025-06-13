@@ -5,14 +5,14 @@ mod = Module()
 
 
 ctx.matches = r"""
-app: jetbrains
+app: vscode
 """
 
 
 @ctx.action_class("user")
 class UserActions:
-    def go_forward():
-        actions.user.idea("action Back")
+    def patch_forward():
+        actions.key("alt-f5")
 
-    def go_back():
-        actions.user.idea("action Forward")
+    def patch_back():
+        actions.key("shift-alt-f5")
