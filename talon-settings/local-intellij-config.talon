@@ -54,41 +54,6 @@ forge file:
 kick file:
 	key("cmd-up delete")
 
-pit ong: key("alt-tab")
-
-pick bogeroom:
-	key('cmd-alt-[')
-	key('cmd-alt-shift-]')
-pick bogoom:
-	key('cmd-a')
-wax ong: user.wax()
-wax rog: user.wane()
-
-ongoom: edit.file_end()
-ongeroom: key('cmd-alt-]')
-roggeroom: key('cmd-alt-[')
-rogoom: edit.file_start()
-pick ongeroom: key('cmd-alt-shift-]')
-pick ongoom: edit.extend_file_end()
-pick roggeroom: key('cmd-alt-shift-[')
-pick rogoom: edit.extend_file_start()
-kick ongeroom: key('cmd-alt-shift-] delete cmd-alt-l')
-kick ongoom:
-	edit.extend_file_end()
-	edit.delete()
-kick roggeroom: key('cmd-alt-shift-[ delete cmd-alt-l')
-kick rogoom:
-	edit.extend_file_start()
-	edit.delete()
-kick bogeroom:
-	key('cmd-alt-[')
-	key('cmd-alt-shift-]')
-	sleep(60ms)
-	edit.delete()
-kick bogoom:
-	edit.select_all()
-	edit.delete()
-
 ^text [<user.text>] tap:
 	user.idea("action Find")
 	insert(text or "")

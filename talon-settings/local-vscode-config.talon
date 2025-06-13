@@ -46,9 +46,6 @@ wax <user.cursorless_target>:
   user.cursorless_command("setSelection", cursorless_target)
   user.vscode("editor.action.smartSelect.expand")
 
-wax ong: user.wax()
-wax rog: user.wane()
-
 context tap: user.vscode("editor.action.showContextMenu")
 
 prob [<user.text>] tap:

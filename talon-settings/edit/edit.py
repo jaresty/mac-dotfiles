@@ -220,6 +220,9 @@ class MoveRight(AbstractMove):
     def pit(self):
         actions.user.split_previous()
 
+    def wax(self):
+        actions.user.wax()
+
 
 class MovePaintRight(AbstractMove):
     @staticmethod
@@ -366,6 +369,9 @@ class MoveLeft(AbstractMove):
 
     def pit(self):
         actions.user.split_next()
+
+    def wax(self):
+        actions.user.wane()
 
 
 class MoveWayLeft(AbstractMove):
