@@ -214,6 +214,9 @@ class MoveRight(AbstractMove):
     def numeric(self):
         actions.user.numeric_increment()
 
+    def tab(self):
+        actions.app.tab_next()
+
 
 class MovePaintRight(AbstractMove):
     @staticmethod
@@ -354,6 +357,9 @@ class MoveLeft(AbstractMove):
 
     def numeric(self):
         actions.user.numeric_decrement()
+
+    def tab(self):
+        actions.app.tab_previous()
 
 
 class MoveWayLeft(AbstractMove):
@@ -588,6 +594,21 @@ class MoveAllPoint(AbstractMove):
     def pick(self):
         actions.mouse_click()
         actions.edit.select_all()
+
+
+class MoveTab(Move):
+    @staticmethod
+    def name():
+        return "tab"
+
+    def kick(self):
+        actions.user.tab_close_wrapper()
+
+    def forge(self):
+        actions.user.tab_duplicate()
+
+    def nope(self):
+        actions.user.tab_reopen()
 
 
 # this iterates over all of the subclasses of the move class and then all of the instance methods on the subclass

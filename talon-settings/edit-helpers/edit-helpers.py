@@ -45,15 +45,15 @@ ctx.lists["user.repeat_speed"] = REPEAT_SPEED.keys()
 
 
 MOVEMENT_TYPE: dict[str, tuple[callable, callable, int]] = {
-    "flow fog": (actions.edit.up, actions.edit.down, 2),
+    "flow go fog": (actions.edit.up, actions.edit.down, 2),
     "flow choose": (
         actions.edit.down,
         lambda: (actions.key("enter")),
         4,
     ),
-    "flow dig": (actions.edit.down, actions.edit.up, 2),
-    "flow ong": (actions.edit.right, actions.edit.left, 1),
-    "flow rog": (actions.edit.left, actions.edit.right, 1),
+    "flow go dig": (actions.edit.down, actions.edit.up, 2),
+    "flow go ong": (actions.edit.right, actions.edit.left, 1),
+    "flow go rog": (actions.edit.left, actions.edit.right, 1),
     "flow pick fog": (
         actions.edit.extend_line_up,
         actions.edit.extend_line_down,
