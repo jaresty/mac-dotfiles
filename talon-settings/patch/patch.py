@@ -9,5 +9,5 @@ class Actions:
     def patch_forward():
         """Navigate forward to the next diff"""
 
-    def patch_backward():
+    def patch_back():
         """Navigate backward to the next diff"""
