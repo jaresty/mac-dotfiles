@@ -715,20 +715,20 @@ ctx.lists["user.movement_verbs"] = [
 #     TAPPER = "tapper"
 
 
-def move_there_instance(new_verb: str) -> Move:
+def move_flop_instance(new_verb: str) -> Move:
     global last_move
     return last_move.__class__(new_verb)
 
 
-@mod.capture(rule="{user.movement_verbs} there")
-def move_there(m) -> Move:
-    return move_there_instance(m.movement_verbs)
+@mod.capture(rule="{user.movement_verbs} flop")
+def move_flop(m) -> Move:
+    return move_flop_instance(m.movement_verbs)
 
 
-@mod.capture(rule="{user.movement_command}|<user.move_there>")
+@mod.capture(rule="{user.movement_command}|<user.move_flop>")
 def move(m) -> Move:
-    if hasattr(m, "move_there"):
-        return m.move_there
+    if hasattr(m, "move_flop"):
+        return m.move_flop
 
     return movement_instance(m.movement_command)
 
