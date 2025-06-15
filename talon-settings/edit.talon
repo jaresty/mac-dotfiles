@@ -91,25 +91,25 @@ fling ong: key(tab)
 
 find paste: edit.find(clip.text())
 
-cleet [<user.text>] tap:
+kelp [<user.text>] tap:
 	user.complete_tap(text or "")
-cleet [<user.text>] ong:
+kelp [<user.text>] ong:
 	user.complete_from_start(text or "", 1)
-cleet [<user.text>] onger:
+kelp [<user.text>] onger:
 	user.complete_from_start(text or "", 1)
 	edit.line_end()
-cleet [<user.text>] {user.phrase_ender}:
+kelp [<user.text>] {user.phrase_ender}:
 	user.complete_from_start(text or "", 1)
 	insert(phrase_ender or "")
-cleet [<user.text>] <user.delimiter_pair>:
+kelp [<user.text>] <user.delimiter_pair>:
 	user.complete_from_start(text or "", 1)
 	user.delimiter_pair_insert(delimiter_pair)
-cleet [<user.text>] <user.delimiter_pair> y:
+kelp [<user.text>] <user.delimiter_pair> y:
 	user.complete_from_start(text or "", 1)
 	user.delimiter_pair_insert(delimiter_pair)
 	edit.right()
 
-cleeted <user.word>+ [{user.phrase_ender}]:
+kelped <user.word>+ [{user.phrase_ender}]:
 	user.complete(word_list)
 	insert(phrase_ender or "")
 
