@@ -223,7 +223,7 @@ class MoveRight(AbstractMove):
     def wax(self):
         actions.user.wax()
 
-    def nope(self):
+    def nop(self):
         actions.edit.undo()
 
 
@@ -376,7 +376,7 @@ class MoveLeft(AbstractMove):
     def wax(self):
         actions.user.wane()
 
-    def nope(self):
+    def nop(self):
         actions.edit.redo()
 
 
@@ -646,7 +646,7 @@ class MoveTab(Move):
     def forge(self):
         actions.user.tab_duplicate()
 
-    def nope(self):
+    def nop(self):
         actions.app.tab_reopen()
 
 
