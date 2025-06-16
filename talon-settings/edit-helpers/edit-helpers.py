@@ -45,81 +45,37 @@ ctx.lists["user.repeat_speed"] = REPEAT_SPEED.keys()
 
 
 MOVEMENT_TYPE: dict[str, tuple[callable, callable, int]] = {
-    "flow go fog": (actions.edit.up, actions.edit.down, 2),
     "flow choose": (
         actions.edit.down,
         lambda: (actions.key("enter")),
         4,
     ),
-    "flow go dig": (actions.edit.down, actions.edit.up, 2),
-    "flow go ong": (actions.edit.right, actions.edit.left, 1),
-    "flow go rog": (actions.edit.left, actions.edit.right, 1),
-    "flow pick fog": (
-        actions.edit.extend_line_up,
-        actions.edit.extend_line_down,
-        3,
-    ),
-    "flow pick dig": (
-        actions.edit.extend_line_down,
-        actions.edit.extend_line_up,
-        3,
-    ),
-    "flow pick ong": (actions.edit.extend_right, actions.edit.extend_left, 1),
-    "flow pick rog": (actions.edit.extend_left, actions.edit.extend_right, 1),
-    "flow wax ong": (actions.user.wax, actions.user.wane, 4),
-    "flow wax rog": (actions.user.wane, actions.user.wax, 4),
-    "flow mag ong": (actions.edit.zoom_in, actions.edit.zoom_out, 5),
-    "flow mag rog": (actions.edit.zoom_out, actions.edit.zoom_in, 5),
-    "flow nope": (actions.edit.undo, actions.edit.redo, 4),
-    "flow redo that": (actions.edit.redo, actions.edit.undo, 4),
     "flow boop": (actions.core.repeat_command, actions.core.repeat_command, 4),
-    "flow hunt ong": (actions.edit.find_next, actions.edit.find_previous, 4),
-    "flow hunt rog": (actions.edit.find_previous, actions.edit.find_next, 4),
-    "flow prob ong": (actions.user.problem_next, actions.user.problem_last, 4),
-    "flow prob rog": (actions.user.problem_last, actions.user.problem_next, 4),
-    "flow leet": (actions.user.complete, actions.user.complete_backward, 4),
-    "flow fold ong": (actions.user.fold_more, actions.user.fold_less, 4),
-    "flow fold rog": (actions.user.fold_less, actions.user.fold_more, 4),
-    "flow navi rog": (actions.user.go_back, actions.user.go_forward, 4),
-    "flow navi ong": (actions.user.go_forward, actions.user.go_back, 4),
-    "flow deaf ong": (actions.user.next_reference, actions.user.last_reference, 4),
-    "flow deaf rog": (
-        actions.user.last_reference,
-        actions.user.next_reference,
-        4,
-    ),
-    "flow look fog": (
-        actions.user.mouse_scroll_up,
-        actions.user.mouse_scroll_down,
-        2,
-    ),
-    "flow look dig": (
-        actions.user.mouse_scroll_down,
-        actions.user.mouse_scroll_up,
-        2,
-    ),
-    "flow look ong": (
-        actions.user.mouse_scroll_right,
-        actions.user.mouse_scroll_left,
-        2,
-    ),
-    "flow look rog": (
-        actions.user.mouse_scroll_left,
-        actions.user.mouse_scroll_right,
-        2,
-    ),
 }
 
 ctx.lists["user.continuous_movement_type"] = MOVEMENT_TYPE.keys()
 
 
-@mod.capture(
-    rule="{user.continuous_movement_type} [{user.repeat_speed}] [taper <number_small>]"
-)
+@mod.capture(rule="flow <user.move> | {user.continuous_movement_type}")
+def simple_movement(m) -> tuple[callable, callable, int]:
+    if hasattr(m, "continuous_movement_type"):
+        movement_type: callable = MOVEMENT_TYPE[m.continuous_movement_type][0]
+        reverse_movement_type: callable = MOVEMENT_TYPE[m.continuous_movement_type][1]
+        repeat_speed: int = MOVEMENT_TYPE[m.continuous_movement_type][2]
+        return (movement_type, reverse_movement_type, repeat_speed)
+
+    return (
+        lambda: actions.user.invoke_move(m.move),
+        lambda: actions.user.invoke_move(m.move.flip_instance("veer")),
+        1,
+    )
+
+
+@mod.capture(rule="<user.simple_movement> [{user.repeat_speed}] [taper <number_small>]")
 def movement_type(m) -> MovementConfig:
-    movement_type: callable = MOVEMENT_TYPE[m.continuous_movement_type][0]
-    reverse_movement_type: callable = MOVEMENT_TYPE[m.continuous_movement_type][1]
-    repeat_speed: int = MOVEMENT_TYPE[m.continuous_movement_type][2]
+    movement_type: callable = m.simple_movement[0]
+    reverse_movement_type: callable = m.simple_movement[1]
+    repeat_speed: int = m.simple_movement[2]
     number_small = 1
 
     if hasattr(m, "repeat_speed"):
