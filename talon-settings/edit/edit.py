@@ -25,8 +25,11 @@ class Move:
     def __init__(self, invoke_function: str):
         self.invoke_function = invoke_function
 
-    def flip_instance(self):
-        opposite_command = f"{self.invoke_function} {self.__class__.__flip_name__()}"
+    def flip_instance(self, new_verb: str):
+        if new_verb == "veer":
+            new_verb = self.invoke_function
+
+        opposite_command = f"{new_verb} {self.__class__.__flip_name__()}"
         return movement_instance(opposite_command)
 
     @classmethod
@@ -796,7 +799,7 @@ def move_flop_instance(new_verb: str) -> Move:
 
 def move_flip_instance(new_verb: str) -> Move:
     global last_move
-    return last_move.flip_instance()
+    return last_move.flip_instance(new_verb)
 
 
 @mod.capture(rule="{user.movement_verbs} flop")
