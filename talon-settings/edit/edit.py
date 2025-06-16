@@ -25,6 +25,15 @@ class Move:
     def __init__(self, invoke_function: str):
         self.invoke_function = invoke_function
 
+    def flip_instance(self):
+        opposite_command = f"{self.invoke_function} {self.__class__.__flip_name__()}"
+        return movement_instance(opposite_command)
+
+    @classmethod
+    def __flip_name__(cls):
+        """This method should be overridden by subclasses to provide a flip name."""
+        raise NotImplementedError("Subclasses must implement __flip_name__ method.")
+
     # when you call the invoke method it calls the method by the name
     def _invoke(self):
         method = getattr(self, self.invoke_function)
@@ -148,6 +157,10 @@ class SmallMoveRight(AbstractMove):
     def name():
         return "ongy"
 
+    @classmethod
+    def __flip_name__(cls):
+        return "roggy"
+
     def go(self):
         actions.edit.right()
 
@@ -162,6 +175,10 @@ class MoveRight(AbstractMove):
     @staticmethod
     def name():
         return "ong"
+
+    @classmethod
+    def __flip_name__(cls):
+        return "rog"
 
     def go(self):
         actions.edit.word_right()
@@ -232,6 +249,10 @@ class MovePaintRight(AbstractMove):
     def name():
         return "paint ong"
 
+    @classmethod
+    def __flip_name__(cls):
+        return "paint rog"
+
     def go(self):
         actions.user.go_next_paint(1)
 
@@ -244,6 +265,10 @@ class MovePaintLeft(AbstractMove):
     def name():
         return "paint rog"
 
+    @classmethod
+    def __flip_name__(cls):
+        return "paint ong"
+
     def go(self):
         actions.user.go_previous_paint(1)
 
@@ -255,6 +280,10 @@ class MoveWayRight(AbstractMove):
     @staticmethod
     def name():
         return "onger"
+
+    @classmethod
+    def __flip_name__(cls):
+        return "rogger"
 
     def go(self):
         actions.edit.line_end()
@@ -278,6 +307,10 @@ class MoveChunkRight(AbstractMove):
     def name():
         return "ongeroom"
 
+    @classmethod
+    def __flip_name__(cls):
+        return "roggeroom"
+
     def go(self):
         actions.edit.paragraph_end()
 
@@ -290,6 +323,10 @@ class MoveEndRight(AbstractMove):
     def name():
         return "ongoom"
 
+    @classmethod
+    def __flip_name__(cls):
+        return "rogoom"
+
     def go(self):
         actions.edit.file_end()
 
@@ -301,6 +338,10 @@ class SmallMoveLeft(AbstractMove):
     @staticmethod
     def name():
         return "roggy"
+
+    @classmethod
+    def __flip_name__(cls):
+        return "ongy"
 
     def go(self):
         actions.edit.left()
@@ -316,6 +357,10 @@ class MoveLeft(AbstractMove):
     @staticmethod
     def name():
         return "rog"
+
+    @classmethod
+    def __flip_name__(cls):
+        return "ong"
 
     def go(self):
         actions.edit.word_left()
@@ -385,6 +430,10 @@ class MoveWayLeft(AbstractMove):
     def name():
         return "rogger"
 
+    @classmethod
+    def __flip_name__(cls):
+        return "onger"
+
     def go(self):
         actions.edit.line_start()
 
@@ -403,6 +452,10 @@ class MoveChunkLeft(AbstractMove):
     def name():
         return "roggeroom"
 
+    @classmethod
+    def __flip_name__(cls):
+        return "ongeroom"
+
     def go(self):
         actions.edit.paragraph_start()
 
@@ -414,6 +467,10 @@ class MoveEndLeft(AbstractMove):
     @staticmethod
     def name():
         return "rogoom"
+
+    @classmethod
+    def __flip_name__(cls):
+        return "ongoom"
 
     def go(self):
         actions.edit.file_start()
@@ -507,6 +564,10 @@ class MoveUp(AbstractMove):
     def name():
         return "fog"
 
+    @classmethod
+    def __flip_name__(cls):
+        return "dig"
+
     def go(self):
         actions.edit.up()
 
@@ -532,6 +593,10 @@ class MoveUpEnd(AbstractMove):
     def name():
         return "fogger"
 
+    @classmethod
+    def __flip_name__(cls):
+        return "digger"
+
     def go(self):
         actions.edit.up()
         actions.edit.line_start()
@@ -545,6 +610,10 @@ class MoveDown(AbstractMove):
     @staticmethod
     def name():
         return "dig"
+
+    @classmethod
+    def __flip_name__(cls):
+        return "fog"
 
     def go(self):
         actions.edit.down()
@@ -570,6 +639,10 @@ class MoveDownEnd(AbstractMove):
     @staticmethod
     def name():
         return "digger"
+
+    @classmethod
+    def __flip_name__(cls):
+        return "fogger"
 
     def go(self):
         actions.edit.down()
@@ -691,6 +764,7 @@ ctx.lists["user.movement_verbs"] = [
     "tab",
     "pit",
     "wax",
+    "veer",
 ]
 
 # class MovementCommand(Enum):
@@ -720,15 +794,27 @@ def move_flop_instance(new_verb: str) -> Move:
     return last_move.__class__(new_verb)
 
 
+def move_flip_instance(new_verb: str) -> Move:
+    global last_move
+    return last_move.flip_instance()
+
+
 @mod.capture(rule="{user.movement_verbs} flop")
 def move_flop(m) -> Move:
     return move_flop_instance(m.movement_verbs)
 
 
-@mod.capture(rule="{user.movement_command}|<user.move_flop>")
+@mod.capture(rule="{user.movement_verbs} flip")
+def move_flip(m) -> Move:
+    return move_flip_instance(m.movement_verbs)
+
+
+@mod.capture(rule="{user.movement_command}|<user.move_flop>|<user.move_flip>")
 def move(m) -> Move:
     if hasattr(m, "move_flop"):
         return m.move_flop
+    elif hasattr(m, "move_flip"):
+        return m.move_flip
 
     return movement_instance(m.movement_command)
 
