@@ -127,7 +127,7 @@ class VeerMove(Move):
     def look(self):
         pass
 
-    def poke(self):
+    def pok(self):
         pass
 
     def reef(self):
@@ -217,7 +217,7 @@ class MoveRight(AbstractMove):
     def look(self):
         actions.user.mouse_scroll_right()
 
-    def poke(self):
+    def pok(self):
         actions.user.poke_keys()
 
     def phones(self):
@@ -294,7 +294,7 @@ class MoveWayRight(AbstractMove):
     def pick(self):
         actions.edit.extend_line_end()
 
-    def poke(self):
+    def pok(self):
         actions.user.poker_keys()
 
     def forge(self):
@@ -399,7 +399,7 @@ class MoveLeft(AbstractMove):
     def look(self):
         actions.user.mouse_scroll_left()
 
-    def poke(self):
+    def pok(self):
         actions.user.repoke_keys()
 
     def phones(self):
@@ -580,7 +580,7 @@ class MoveUp(AbstractMove):
     def look(self):
         actions.user.mouse_scroll_up()
 
-    def poke(self):
+    def pok(self):
         actions.edit.line_insert_up()
 
     def plant(self):
@@ -630,7 +630,7 @@ class MoveDown(AbstractMove):
     def hop(self):
         actions.edit.line_swap_down()
 
-    def poke(self):
+    def pok(self):
         actions.edit.line_insert_down()
 
     def plant(self):
@@ -760,7 +760,7 @@ ctx.lists["user.movement_verbs"] = [
     "mem",
     "forge",
     "phones",
-    "poke",
+    "pok",
     "reef",
     "tag",
     "numeric",
