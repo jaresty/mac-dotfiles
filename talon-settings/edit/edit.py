@@ -760,6 +760,7 @@ ctx.lists["user.movement_verbs"] = [
     "mem",
     "forge",
     "phones",
+    "hunt",
     "pok",
     "reef",
     "tag",
