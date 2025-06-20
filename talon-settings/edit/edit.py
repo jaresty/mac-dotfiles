@@ -441,7 +441,7 @@ class MoveWayLeft(AbstractMove):
         actions.edit.line_start()
 
     def pick(self):
-        actions.key("cmd-shift-left")
+        actions.edit.extend_line_start()
 
     def forge(self):
         self.pick()
