@@ -42,7 +42,6 @@ grab O C R: key("cmd-ctrl-shift-alt-o")
   insert(text)
   key(enter)
 
-
 # homerow
 ^pointer <user.text> tap:
   user.homerow_search()
@@ -123,3 +122,10 @@ nap <user.running_applications> <user.window_snap_position>:
 
 nap <user.running_applications> [screen] <number>:
   user.move_app_to_screen(running_applications, number)
+
+nip {user.snippet}: user.insert_snippet_by_name(snippet)
+
+nip {user.snippet_with_phrase} <user.text>:
+  user.insert_snippet_by_name_with_phrase(snippet_with_phrase, text)
+
+nip next: user.move_cursor_to_next_snippet_stop()
