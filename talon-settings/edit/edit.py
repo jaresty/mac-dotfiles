@@ -238,7 +238,7 @@ class MoveRight(AbstractMove):
         actions.app.tab_next()
 
     def pit(self):
-        actions.user.split_previous()
+        actions.user.split_next()
 
     def wax(self):
         actions.user.wax()
@@ -419,7 +419,7 @@ class MoveLeft(AbstractMove):
         actions.app.tab_previous()
 
     def pit(self):
-        actions.user.split_next()
+        actions.user.split_previous()
 
     def wax(self):
         actions.user.wane()
