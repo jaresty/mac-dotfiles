@@ -20,6 +20,11 @@ file [<user.text>] tap:
 	key(ctrl-t)
 	sleep(60ms)
 	insert(text)
+file [<user.text>] ong:
+	key(ctrl-t)
+	sleep(60ms)
+	insert(text)
+	key(enter)
 proj [<user.text>] tap$:
 	insert("z {text}")
 	key(tab)
@@ -32,7 +37,7 @@ text <user.text> tap:
 dir fog:
 	insert("cd ..")
 	key(enter)
-dir <user.text> jog:
+dir <user.text> ong:
 	key(alt-c)
 	sleep(60ms)
 	insert(text)
