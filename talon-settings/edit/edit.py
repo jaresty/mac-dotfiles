@@ -246,6 +246,9 @@ class MoveRight(AbstractMove):
     def nop(self):
         actions.edit.undo()
 
+    def nip(self):
+        actions.user.move_cursor_to_next_snippet_stop()
+
 
 class MovePaintRight(AbstractMove):
     @staticmethod
@@ -426,6 +429,9 @@ class MoveLeft(AbstractMove):
 
     def nop(self):
         actions.edit.redo()
+
+    def nip(self):
+        actions.key("shift-tab")
 
 
 class MoveWayLeft(AbstractMove):
