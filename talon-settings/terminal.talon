@@ -58,10 +58,14 @@ flag [<user.text>] tap:
 	insert("--")
 	user.complete_tap(text or "")
 
-lamb ong:
+lamb [<user.text>] ong:
+	insert("# ")
+	insert(text or "")
 	key(ctrl-p)
 
-lamb tap:
+lamb [<user.text>] tap:
+	insert("# ")
+	insert(text or "")
 	key(ctrl-\)
 
 yes: key(y enter)
