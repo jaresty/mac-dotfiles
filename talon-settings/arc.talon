@@ -8,7 +8,7 @@ file [<user.text>] [{user.file_extension}] tap:
 	sleep(400ms)
 	insert(text or "")
 	insert(file_extension or "")
-file [<user.text>] [{user.file_extension}] jog:
+file [<user.text>] [{user.file_extension}] ong:
 	key("cmd-p")
 	sleep(400ms)
 	insert(text or "")
@@ -20,7 +20,7 @@ tag [<user.text>] tap:
 	key("cmd-p @")
 	sleep(400ms)
 	insert(text or "")
-tag [<user.text>] jog:
+tag [<user.text>] ong:
 	key("cmd-p @")
 	sleep(400ms)
 	insert(text or "")
@@ -32,7 +32,7 @@ command [<user.text>] tap:
 	key("cmd-p >")
 	sleep(400ms)
 	insert(text or "")
-command [<user.text>] jog:
+command [<user.text>] ong:
 	key("cmd-p >")
 	sleep(400ms)
 	insert(text or "")
