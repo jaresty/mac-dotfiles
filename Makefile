@@ -15,7 +15,7 @@
 	ln -sf ~/mac-dotfiles/lvim/config.lua ../.config/lvim/config.lua
 
 ../.talon/user/community/settings:
-	ln -sf ~/mac-dotfiles/talon-settings ../.talon/user/community/settings
+	ln -sf ~/mac-dotfiles/talon-settings ../.talon/user/settings
 
 ../.talon/user/cursorless-settings:
 	ln -sf ~/mac-dotfiles/cursorless-settings ../.talon/user/cursorless-settings
