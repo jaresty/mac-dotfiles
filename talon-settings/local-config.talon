@@ -24,7 +24,7 @@ settings():
 #  user.model_endpoint = "http://localhost:11434/api/chat"
 #  user.openai_model = 'codellama'
 
-tut [<number_small> times]:
+tun [<number_small> times]:
   core.repeat_partial_phrase(number_small or 1)
 
 wait: sleep(200ms)
