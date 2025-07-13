@@ -76,6 +76,17 @@ grab O C R: key("cmd-ctrl-shift-alt-o")
   sleep(50ms)
   insert(text or "")
 
+^meow [<user.text>] tap:
+  key("cmd-shift-space")
+  sleep(50ms)
+  insert(text or "")
+
+^meow <user.text> ong:
+  key("cmd-shift-space")
+  sleep(50ms)
+  insert(text)
+  key(enter)
+
 ^window [<user.text>] tap:
   key("cmd-ctrl-alt-shift-tab")
   sleep(100ms)
