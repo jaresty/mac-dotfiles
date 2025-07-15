@@ -50,7 +50,7 @@ MOVEMENT_TYPE: dict[str, tuple[callable, callable, int]] = {
         lambda: (actions.key("enter")),
         4,
     ),
-    "flow tun": (actions.core.repeat_command, actions.core.repeat_command, 4),
+    "flow tum": (actions.core.repeat_command, actions.core.repeat_command, 4),
 }
 
 ctx.lists["user.continuous_movement_type"] = MOVEMENT_TYPE.keys()
