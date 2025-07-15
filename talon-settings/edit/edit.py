@@ -226,7 +226,7 @@ class MoveRight(AbstractMove):
         actions.edit.word_left()
 
     def reef(self):
-        actions.user.next_reference()
+        actions.user.last_reference()
 
     def tag(self):
         actions.mimic("pre next click this")
@@ -248,6 +248,9 @@ class MoveRight(AbstractMove):
 
     def nip(self):
         actions.user.move_cursor_to_next_snippet_stop()
+
+    def patch(self):
+        actions.user.patch_forward()
 
 
 class MovePaintRight(AbstractMove):
@@ -410,7 +413,7 @@ class MoveLeft(AbstractMove):
         actions.user.insert_next_homophone()
 
     def reef(self):
-        actions.user.last_reference()
+        actions.user.next_reference()
 
     def tag(self):
         actions.mimic("pre last click this")
@@ -432,6 +435,9 @@ class MoveLeft(AbstractMove):
 
     def nip(self):
         actions.key("shift-tab")
+
+    def patch(self):
+        actions.user.patch_back()
 
 
 class MoveWayLeft(AbstractMove):
