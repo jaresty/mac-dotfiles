@@ -15,7 +15,7 @@ settings():
   user.tmux_prefix_key = 'ctrl-space'
   user.model_shell_default = 'fish'
   user.model_default_audience = 'Schwa is a software developer who has spent the majority of his career working in the dynamic language ruby. He has experience with automation and DevOps using tools such as terraform and docker. He is currently learning kotlin and typescript as he works on a react project.'
-  user.snippets_dir = "community/settings/snippets"
+  user.snippets_dir = "cursorless-settings/snippets"
   user.openai_model = 'gpt-4.1-mini'
   user.subtitles_show = true
   user.context_sensitive_dictation = 1
