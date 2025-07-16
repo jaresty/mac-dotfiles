@@ -51,7 +51,7 @@ alter onger:
 crumb tap: key("cmd-up")
 forge file:
 	key("cmd-up f5")
-kick file:
+punch file:
 	key("cmd-up delete")
 
 ^text [<user.text>] tap:

@@ -1,8 +1,8 @@
 tag: terminal
 -
 #deleting
-kick rog: key("ctrl-w")
+punch rog: key("ctrl-w")
 # nope:                       key("ctrl-z")
 # redo that:                  key("ctrl-g")
-kick rogger: key("ctrl-u")
-kick bog: key("alt-d alt-backspace")
+punch rogger: key("ctrl-u")
+punch bog: key("alt-d alt-backspace")
