@@ -113,7 +113,7 @@ kemped <user.word>+ [{user.phrase_ender}]:
 	user.complete(word_list)
 	insert(phrase_ender or "")
 
-caper: key(escape escape)
+flutter: key(escape escape)
 
 golf [<user.any_alphanumeric_key>] ong: user.go_next_character(any_alphanumeric_key or "", 1)
 golf [<user.any_alphanumeric_key>] rog: user.go_previous_character(any_alphanumeric_key or "", 1)

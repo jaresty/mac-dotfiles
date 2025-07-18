@@ -5,7 +5,7 @@ language: en
 # Example
 
 clap: enter
-cape: escape
+flit: escape
 void: ' '
 jump: tab
 upper: pageup
