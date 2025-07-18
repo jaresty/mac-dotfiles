@@ -25,7 +25,7 @@ follow, followLink
 pill, followLinkAside
 format, applyFormatter
 give, deselect
-highlight, highlight
+color, highlight
 hover, showHover
 increment, increment
 indent, indentLine
