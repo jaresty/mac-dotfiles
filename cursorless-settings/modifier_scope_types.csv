@@ -19,7 +19,7 @@ class name, className
 command, command
 comment, comment
 condition, condition
-elm, xmlElement
+melon, xmlElement
 end tag, xmlEndTag
 environment, environment
 file, document
