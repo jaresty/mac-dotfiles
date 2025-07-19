@@ -66,7 +66,7 @@ def simple_movement(m) -> tuple[callable, callable, int]:
 
     return (
         lambda: actions.user.invoke_move(m.move),
-        lambda: actions.user.invoke_move(m.move.flip_instance("veer")),
+        lambda: actions.user.invoke_move(m.move._flip_instance("veer")),
         1,
     )
 
