@@ -3,8 +3,7 @@ language: en
 -
 
 # Example
-
-yell: ALL_CAPS
+loud: ALL_CAPS
 quiet: ALL_LOWERCASE
 camel: PRIVATE_CAMEL_CASE
 dotted: DOT_SEPARATED

@@ -114,9 +114,6 @@ cut append that:
   clip.set_text("{clip.text()}\n{edit.selected_text()}")
   key(delete)
 
-cap <user.letters> [down]:
-  user.insert_formatted(letters, "ALL_CAPS")
-
 <user.key> oid:
   key("{key}")
   insert(" ")
