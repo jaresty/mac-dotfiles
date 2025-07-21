@@ -11,6 +11,7 @@ zoom reset: edit.zoom_reset()
 molt <user.word> ong:
 	key("alt-delete")
 	insert(word)
+	edit.word_left()
 molt <user.word> rog:
 	key("alt-backspace")
 	insert(word)
