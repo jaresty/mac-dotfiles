@@ -13,7 +13,7 @@ racky: }
 langle: <
 bridge: :
 wave: ~
-hook: ?
+staff: ?
 foot: "'"
 inch: '"'
 latch: ,
@@ -29,7 +29,7 @@ tack: -
 beam: =
 tie: +
 grave: `
-bang: !
+wand: !
 rangle: >
 flare: *
 grid: #

@@ -4,11 +4,11 @@ language: en
 
 jog: ""
 bridge: :
-hook: ?
+staff: ?
 void: ' '
 latch: ,
 pivot: ;
 dot: .
-bang: !
+wand: !
 dizzy: @
 zig: /
