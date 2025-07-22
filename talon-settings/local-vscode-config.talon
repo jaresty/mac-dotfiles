@@ -1,7 +1,7 @@
 app: vscode
 -
-# settings():
-#   user.paste_to_insert_threshold = 10
+settings():
+  user.paste_to_insert_threshold = 10
 
 diff <user.cursorless_target> with <user.cursorless_target>:
   user.cursorless_ide_command("extension.partialDiff.markSection1", cursorless_target_1)
