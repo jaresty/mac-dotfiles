@@ -79,3 +79,12 @@ $2.wrapperScope: statement
 -
 const $1 = vi.hoisted(() => ($2))$0
 ---
+
+name: interpolate
+phrase: plate
+
+$1.insertionFormatter: PRIVATE_CAMEL_CASE
+$1.wrapperPhrase: plate
+-
+${$1}$0
+---
