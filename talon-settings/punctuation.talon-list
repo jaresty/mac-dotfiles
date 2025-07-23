@@ -21,7 +21,7 @@ pivot: ;
 dizzy: @
 tangle: ^
 blank: _
-dot: .
+rock: .
 zig: /
 zag: '\\'
 minus: -

@@ -137,3 +137,4 @@ molt <user.word> jog:
 molt cap <user.word> jog:
 	user.insert_formatted(word, "CAPITALIZE_FIRST_WORD")
 	user.select_text_backward(word)
+pebbles: "..."

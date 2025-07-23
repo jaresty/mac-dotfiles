@@ -8,7 +8,7 @@ rod: ?
 void: ' '
 latch: ,
 pivot: ;
-dot: .
+rock: .
 wand: !
 dizzy: @
 zig: /
