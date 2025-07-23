@@ -25,10 +25,10 @@ file [<user.text>] ong:
 	sleep(60ms)
 	insert(text)
 	key(enter)
-proj [<user.text>] tap$:
+project [<user.text>] tap$:
 	insert("z {text}")
 	key(tab)
-proj [<user.text>] ong$:
+project [<user.text>] ong$:
 	insert("z {text}")
 	key(enter)
 text <user.text> tap:
