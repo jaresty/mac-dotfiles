@@ -6,7 +6,7 @@ language: en
 loud: ALL_CAPS
 quiet: ALL_LOWERCASE
 camel: PRIVATE_CAMEL_CASE
-dotted: DOT_SEPARATED
+rocked: DOT_SEPARATED
 latched: COMMA_SEPARATED
 quoted: DOUBLE_QUOTED_STRING
 hammer: PUBLIC_CAMEL_CASE
