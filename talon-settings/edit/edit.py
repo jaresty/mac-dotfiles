@@ -1059,6 +1059,7 @@ class Actions:
             MoveAllPoint,
             MoveAllSplit,
             MoveBigBoth,
+            MoveBigPoint,
             MoveBoth,
             MoveChunkBoth,
             MoveChunkLeft,
