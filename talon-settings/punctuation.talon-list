@@ -36,4 +36,4 @@ grid: #
 twig: %
 hitch: &
 pipe: |
-doll: $
+dollar: $
