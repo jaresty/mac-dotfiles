@@ -92,6 +92,16 @@ fling ong: key(tab)
 
 find paste: edit.find(clip.text())
 
+kemp [<user.text>] ont:
+	user.problem_next()
+	edit.word_right()
+	user.complete_tap(text or "")
+
+kemp [<user.text>] ret:
+	user.problem_last()
+	edit.word_right()
+	user.complete_tap(text or "")
+
 kemp [<user.text>] tap:
 	user.complete_tap(text or "")
 kemp [<user.text>] ong:
