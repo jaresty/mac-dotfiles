@@ -1,2 +1,3 @@
 Spoken form, Regex
 number,\d+
+quaint,(?<=["'`\s])[\w-]+(?=[\s"`'])
