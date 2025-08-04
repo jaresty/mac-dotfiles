@@ -167,7 +167,7 @@ patch ret: user.vscode("editor.action.dirtydiff.previous")
 
 forge file:
   user.vscode("fileutils.duplicateFile")
-punch file:
+dump file:
   user.vscode("fileutils.removeFile")
   sleep(150ms)
 

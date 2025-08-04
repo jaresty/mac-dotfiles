@@ -1,6 +1,6 @@
 forge window: app.window_open()
 window ong: app.window_next()
 window rog: app.window_previous()
-punch window: app.window_close()
+dump window: app.window_close()
 apple rog: user.switcher_focus_last()
 apple <user.running_applications> ong: user.switcher_focus(running_applications)
