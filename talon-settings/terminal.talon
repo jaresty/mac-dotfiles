@@ -68,6 +68,10 @@ lamb [<user.text>] tap:
 	insert(text or "")
 	key(ctrl-\)
 
+env [<user.text>] tap:
+	key(ctrl-v)
+	insert(text or "")
+
 yes: key(y enter)
 no: key(n enter)
 git autocommit: 'git commit -m "$(git diff --staged | mods "summarize this as a conventional commit")"'
