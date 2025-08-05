@@ -33,12 +33,12 @@ grab O C R: key("cmd-ctrl-shift-alt-o")
 
 ^moji [<user.text>] tap$:
   key(cmd-ctrl-shift-alt-space)
-  sleep(200ms)
+  sleep(400ms)
   insert(text or "")
 
 ^moji <user.text> ong$:
   key(cmd-ctrl-shift-alt-space)
-  sleep(200ms)
+  sleep(400ms)
   insert(text)
   key(enter)
 
