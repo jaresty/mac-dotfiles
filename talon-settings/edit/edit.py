@@ -75,7 +75,7 @@ class AbstractMove(Move):
         self.pick()
         actions.edit.cut()
 
-    def dump(self):
+    def blot(self):
         self.pick()
         actions.key("delete")
 
@@ -97,7 +97,7 @@ class VeerMove(Move):
     def name():
         return "veer"
 
-    def dump(self):
+    def blot(self):
         pass
 
     def pick(self):
@@ -145,7 +145,7 @@ class NeutralMove(AbstractMove):
     def name():
         return "jog"
 
-    def dump(self):
+    def blot(self):
         actions.key("delete")
 
     def pick(self):
@@ -167,7 +167,7 @@ class SmallMoveRight(AbstractMove):
     def go(self):
         actions.edit.right()
 
-    def dump(self):
+    def blot(self):
         actions.key("delete")
 
     def pick(self):
@@ -355,7 +355,7 @@ class SmallMoveLeft(AbstractMove):
     def go(self):
         actions.edit.left()
 
-    def dump(self):
+    def blot(self):
         actions.key("backspace")
 
     def pick(self):
@@ -505,7 +505,7 @@ class MoveBigBoth(AbstractMove):
     def go(self):
         actions.user.line_middle()
 
-    def dump(self):
+    def blot(self):
         actions.edit.delete_line()
 
     def pick(self):
@@ -520,7 +520,7 @@ class MoveSmallBoth(AbstractMove):
     def name():
         return "boggy"
 
-    def dump(self):
+    def blot(self):
         actions.key("delete")
         actions.key("backspace")
 
@@ -545,7 +545,7 @@ class MoveBoth(AbstractMove):
         for _ in range(int(len(selected_text) / 2)):
             actions.edit.right()
 
-    def dump(self):
+    def blot(self):
         actions.key("alt-delete")
         actions.key("alt-backspace")
 
@@ -558,7 +558,7 @@ class MoveChunkBoth(AbstractMove):
     def name():
         return "bogeroom"
 
-    def dump(self):
+    def blot(self):
         actions.edit.delete_paragraph()
 
     def pick(self):
@@ -707,7 +707,7 @@ class MoveSplit(Move):
     def name():
         return "pit"
 
-    def dump(self):
+    def blot(self):
         actions.user.split_clear()
 
     def forge(self):
@@ -719,7 +719,7 @@ class MoveAllSplit(Move):
     def name():
         return "pitoom"
 
-    def dump(self):
+    def blot(self):
         actions.user.split_clear_all()
 
 
@@ -728,7 +728,7 @@ class MoveTab(Move):
     def name():
         return "tab"
 
-    def dump(self):
+    def blot(self):
         actions.user.tab_close_wrapper()
 
     def forge(self):
@@ -767,7 +767,7 @@ ctx.lists["user.movement_verbs"] = [
     "go",
     "pick",
     "lift",
-    "dump",
+    "blot",
     "plant",
     "mem",
     "forge",
