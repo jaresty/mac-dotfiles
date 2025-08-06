@@ -2,7 +2,7 @@ if status is-interactive
     set -l script_dir (dirname (status --current-file))
 
     # Environment variables
-    export EDITOR=lvim
+    export EDITOR=code
     export LIBRARY_PATH=$LIBRARY_PATH:$(brew --prefix zstd)/lib/
     export PATH="$HOME/.tfenv/bin:$(brew --prefix)/bin:$HOME/.local/bin:$HOME/mac-dotfiles/bin:$HOME/.config/emacs/bin:$(brew --prefix)/opt/grep/libexec/gnubin:$HOME/go/bin:$PATH"
     export KUBE_CONFIG_PATH=~/.kube/config
