@@ -121,6 +121,11 @@ cut append that:
 rander <number>:
   user.random_repeat(number)
 
+mud:
+  edit.undo()
+mug:
+  edit.redo()
+
 nap <user.window_snap_position>: user.snap_window(window_snap_position)
 nap next [screen]: user.move_window_next_screen()
 nap last [screen]: user.move_window_previous_screen()

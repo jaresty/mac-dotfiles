@@ -243,9 +243,6 @@ class MoveRight(AbstractMove):
     def wax(self):
         actions.user.wax()
 
-    def nop(self):
-        actions.edit.undo()
-
     def nip(self):
         actions.user.move_cursor_to_next_snippet_stop()
 
@@ -429,9 +426,6 @@ class MoveLeft(AbstractMove):
 
     def wax(self):
         actions.user.wane()
-
-    def nop(self):
-        actions.edit.redo()
 
     def nip(self):
         actions.key("shift-tab")
