@@ -7,7 +7,7 @@ language: en
 clap: enter
 flee: escape
 void: ' '
-jump: tab
+ding: tab
 upper: pageup
 downer: pagedown
 backspace: backspace
