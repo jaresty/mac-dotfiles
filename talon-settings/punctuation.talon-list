@@ -13,12 +13,12 @@ racky: }
 langle: <
 bridge: :
 wave: ~
-rod: ?
+crook: ?
 foot: "'"
 inch: '"'
 latch: ,
 pivot: ;
-dizzy: @
+bead: @
 tangle: ^
 blank: _
 rock: .
@@ -27,7 +27,7 @@ zag: '\\'
 minus: -
 tack: -
 beam: =
-tie: +
+hub: +
 grave: `
 wand: !
 rangle: >

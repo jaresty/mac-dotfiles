@@ -4,11 +4,11 @@ language: en
 
 jog: ""
 bridge: :
-rod: ?
+crook: ?
 void: ' '
 latch: ,
 pivot: ;
 rock: .
 wand: !
-dizzy: @
+bead: @
 zig: /
