@@ -1,8 +1,8 @@
 tag: terminal
 -
 #deleting
-blot rog: key("ctrl-w")
+zap rog: key("ctrl-w")
 # nope:                       key("ctrl-z")
 # redo that:                  key("ctrl-g")
-blot rogger: key("ctrl-u")
-blot bog: key("alt-d alt-backspace")
+zap rogger: key("ctrl-u")
+zap bog: key("alt-d alt-backspace")

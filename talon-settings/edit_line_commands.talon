@@ -3,14 +3,14 @@ tag: user.line_commands
 onglet: user.camel_right()
 roglet: user.camel_left()
 
-blot onglet:
+zap onglet:
 	user.extend_camel_right()
 	key("delete")
 
-blot roglet:
+zap roglet:
 	user.extend_camel_left()
 	key("delete")
-blot boglet:
+zap boglet:
 	user.camel_left()
 	user.extend_camel_right()
 	key(delete)
