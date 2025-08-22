@@ -1048,6 +1048,10 @@ class Actions:
         times = random.randint(1, maximum)
         actions.core.repeat_partial_phrase(times)
 
+    def random_number(maximum: int):
+        """Insert a random number"""
+        actions.insert(str(random.randint(1, maximum)))
+
     def invoke_move(
         move: Union[
             MoveAllPoint,

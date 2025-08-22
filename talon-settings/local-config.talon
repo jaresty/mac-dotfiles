@@ -121,6 +121,9 @@ cut append that:
 rander <number>:
   user.random_repeat(number)
 
+random <number>:
+  user.random_number(number)
+
 mud:
   edit.undo()
 mug:
