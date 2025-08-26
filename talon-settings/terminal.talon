@@ -15,7 +15,7 @@ mob done: "mob done\n"
 siginter: key(ctrl-c)
 sigend: key(ctrl-d)
 editor: key(alt-e)
-zap ong: key("alt-d")
+bam ong: key("alt-d")
 file [<user.text>] tap:
 	key(ctrl-t)
 	sleep(60ms)

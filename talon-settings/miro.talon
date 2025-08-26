@@ -26,7 +26,7 @@ note [<user.text>] tap:
 	"n"
 	mouse_click()
 	insert(text or "")
-pointer zap:
+pointer bam:
 	mouse_click()
 	key(backspace)
 shape ong: "s"

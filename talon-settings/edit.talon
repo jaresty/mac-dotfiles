@@ -136,10 +136,10 @@ pick golf [<user.any_alphanumeric_key>] rog: user.select_to_previous_character(a
 pick golf [<user.any_alphanumeric_key>] ongy: user.select_to_next_character(any_alphanumeric_keyor or "", 0)
 pick golf [<user.any_alphanumeric_key>] roggy: user.select_to_previous_character(any_alphanumeric_keyor or "", 0)
 
-zap golf [<user.any_alphanumeric_key>] ong: user.delete_to_next_character(any_alphanumeric_keyor or "", 1)
-zap golf [<user.any_alphanumeric_key>] rog: user.delete_to_previous_character(any_alphanumeric_keyor or "", 1)
-zap golf [<user.any_alphanumeric_key>] ongy: user.delete_to_next_character(any_alphanumeric_keyor or "", 0)
-zap golf [<user.any_alphanumeric_key>] roggy: user.delete_to_previous_character(any_alphanumeric_keyor or "", 0)
+bam golf [<user.any_alphanumeric_key>] ong: user.delete_to_next_character(any_alphanumeric_keyor or "", 1)
+bam golf [<user.any_alphanumeric_key>] rog: user.delete_to_previous_character(any_alphanumeric_keyor or "", 1)
+bam golf [<user.any_alphanumeric_key>] ongy: user.delete_to_next_character(any_alphanumeric_keyor or "", 0)
+bam golf [<user.any_alphanumeric_key>] roggy: user.delete_to_previous_character(any_alphanumeric_keyor or "", 0)
 
 molt <user.word> jog:
   insert(word)

@@ -75,7 +75,7 @@ class AbstractMove(Move):
         self.pick()
         actions.edit.cut()
 
-    def zap(self):
+    def bam(self):
         self.pick()
         actions.key("delete")
 
@@ -97,7 +97,7 @@ class VeerMove(Move):
     def name():
         return "veer"
 
-    def zap(self):
+    def bam(self):
         pass
 
     def pick(self):
@@ -145,7 +145,7 @@ class NeutralMove(AbstractMove):
     def name():
         return "jog"
 
-    def zap(self):
+    def bam(self):
         actions.key("delete")
 
     def pick(self):
@@ -167,7 +167,7 @@ class SmallMoveRight(AbstractMove):
     def go(self):
         actions.edit.right()
 
-    def zap(self):
+    def bam(self):
         actions.key("delete")
 
     def pick(self):
@@ -352,7 +352,7 @@ class SmallMoveLeft(AbstractMove):
     def go(self):
         actions.edit.left()
 
-    def zap(self):
+    def bam(self):
         actions.key("backspace")
 
     def pick(self):
@@ -499,7 +499,7 @@ class MoveBigBoth(AbstractMove):
     def go(self):
         actions.user.line_middle()
 
-    def zap(self):
+    def bam(self):
         actions.edit.delete_line()
 
     def pick(self):
@@ -514,7 +514,7 @@ class MoveSmallBoth(AbstractMove):
     def name():
         return "boggy"
 
-    def zap(self):
+    def bam(self):
         actions.key("delete")
         actions.key("backspace")
 
@@ -539,7 +539,7 @@ class MoveBoth(AbstractMove):
         for _ in range(int(len(selected_text) / 2)):
             actions.edit.right()
 
-    def zap(self):
+    def bam(self):
         actions.key("alt-delete")
         actions.key("alt-backspace")
 
@@ -552,7 +552,7 @@ class MoveChunkBoth(AbstractMove):
     def name():
         return "bogeroom"
 
-    def zap(self):
+    def bam(self):
         actions.edit.delete_paragraph()
 
     def pick(self):
@@ -701,7 +701,7 @@ class MoveSplit(Move):
     def name():
         return "pit"
 
-    def zap(self):
+    def bam(self):
         actions.user.split_clear()
 
     def forge(self):
@@ -713,7 +713,7 @@ class MoveAllSplit(Move):
     def name():
         return "pitoom"
 
-    def zap(self):
+    def bam(self):
         actions.user.split_clear_all()
 
 
@@ -722,7 +722,7 @@ class MoveTab(Move):
     def name():
         return "tab"
 
-    def zap(self):
+    def bam(self):
         actions.user.tab_close_wrapper()
 
     def forge(self):
@@ -761,7 +761,7 @@ ctx.lists["user.movement_verbs"] = [
     "go",
     "pick",
     "lift",
-    "zap",
+    "bam",
     "plant",
     "mem",
     "forge",
