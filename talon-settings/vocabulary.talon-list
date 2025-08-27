@@ -41,6 +41,8 @@ Schwa
 jaresty
 n p m: npm
 n p x: npx
+pin pim: pnpm
+pin pix: pnpx
 e to e: e2e
 git: git
 u r l: URL
