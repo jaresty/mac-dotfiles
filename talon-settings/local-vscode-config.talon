@@ -67,12 +67,6 @@ prob [<user.text>] ret:
   user.vscode("editor.action.quickFix")
   sleep(400ms)
   insert(text or "")
-prob [<user.text>] ong:
-  user.problem_next()
-  user.vscode("editor.action.quickFix")
-  sleep(400ms)
-  insert(text or "")
-  key(enter)
 prob [<user.text>] rog:
   user.problem_last()
   user.vscode("editor.action.quickFix")
