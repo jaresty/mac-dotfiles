@@ -75,3 +75,4 @@ env [<user.text>] tap:
 yes: key(y enter)
 no: key(n enter)
 git autocommit: 'git commit -m "$(git diff --staged | mods "summarize this as a conventional commit")"'
+mods presenterm: "mods 'Convert this into a presentation markdown file that will work in the presenterm CLI' > presentation.md"
