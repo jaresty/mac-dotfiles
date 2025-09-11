@@ -200,3 +200,9 @@ form <user.formatters> <user.cursorless_target>:
 {user.search_engine} scout <user.cursorless_target>:
   text = user.cursorless_get_text(cursorless_target)
   user.search_with_search_engine(search_engine, text)
+
+quick open <user.cursorless_target>:
+  text = user.cursorless_get_text(cursorless_target)
+  user.vscode("workbench.action.quickOpen")
+  sleep(400ms)
+  insert(text or "")
