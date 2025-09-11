@@ -46,11 +46,11 @@ trade jog:
   sleep(50ms)
   clip.set_text(selected_text)
 
-poke <user.keys> ong:
+pok <user.keys> ong:
   user.poke_keys(keys_list)
-poke <user.keys> onger:
+pok <user.keys> onger:
   user.poker_keys(keys)
-poke <user.keys> rog:
+pok <user.keys> rog:
   user.repoke_keys(keys)
 
 form <user.formatters> jog:
