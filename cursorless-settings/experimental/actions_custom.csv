@@ -10,6 +10,7 @@ sieve, workbench.action.quickTextSearch
 codelens, codelens.showLensesInCurrentLine
 narrow, editor.foldAllExcept
 codetour add, codetour.addSelectionStep
+snoop,deepwiki.openSymbol
 
 # Git
 github copy, extension.copyGitHubLinkToClipboard
