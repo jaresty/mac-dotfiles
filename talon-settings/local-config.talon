@@ -6,7 +6,6 @@ key(f10:up):
   app.notify("Talon is sleeping")
 tag(): user.gpt_beta
 tag(): user.unix_utilities
-tag(): user.cursorless_use_community_snippets
 tag(): user.gamepad
 tag(): user.experimental_window_layout
 settings():

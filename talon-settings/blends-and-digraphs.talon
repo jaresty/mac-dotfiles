@@ -4,7 +4,7 @@
 bulbul: "bl"
 brant: "br"
 cardinal: "cl"
-crake: "cr"
+caracara: "cr"
 drake: "dr"
 falcon: "fl"
 flicker: "fr"
