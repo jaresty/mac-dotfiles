@@ -39,6 +39,11 @@ if status is-interactive
     if test -d (brew --prefix)"/share/fish/vendor_completions.d"
         set -gx fish_complete_path $fish_complete_path (brew --prefix)/share/fish/vendor_completions.d
     end
+
+    if type -q bar
+        bar completion fish | source
+    end
+
     fzf --fish | source
     fzf_configure_bindings --directory=\ct --git_log=\cg --processes=\cq
 

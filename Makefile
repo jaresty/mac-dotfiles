@@ -1,4 +1,4 @@
-.PHONY: brew-bundle doom-setup install-fisher install-go-binaries install-terminfo install-tmux luansevka pull setup update ~/.talon/user/community ~/.talon/user/talon-ai-tools ~/.talon/user/rango-talon ~/.talon/user/talon-axkit ~/.talon/user/talon-filetree-commands
+.PHONY: brew-bundle doom-setup install-bar install-fisher install-go-binaries install-terminfo install-tmux luansevka pull setup update ~/.talon/user/community ~/.talon/user/talon-ai-tools ~/.talon/user/rango-talon ~/.talon/user/talon-axkit ~/.talon/user/talon-filetree-commands
 
 ../.config/emacs:
 	git clone https://github.com/doomemacs/doomemacs.git ../.config/emacs
@@ -67,6 +67,8 @@ install-fisher:
 	fish -c "fisher install otms61/fish-pet"
 	fish -c "fisher install realiserad/fish-ai"
 
+install-bar:
+	INSTALL_DIR="$(HOME)/.local/bin" bash ~/.talon/user/talon-ai-tools/scripts/install-bar.sh
 
 install-go-binaries:
 	go install github.com/maaslalani/confetty@latest
