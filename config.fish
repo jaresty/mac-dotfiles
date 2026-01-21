@@ -3,6 +3,7 @@ if status is-interactive
 
     # Environment variables
     export EDITOR=lvim
+    export PATH="$HOME/.tfenv/bin:$HOME/.local/bin:$HOME/mac-dotfiles/bin:$HOME/.config/emacs/bin:$HOME/go/bin:$PATH"
     export KUBE_CONFIG_PATH=~/.kube/config
     export TERM=xterm-256color-italic
     export SHELL=/opt/homebrew/bin/fish
