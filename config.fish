@@ -3,8 +3,6 @@ if status is-interactive
 
     # Environment variables
     export EDITOR=lvim
-    export LIBRARY_PATH=$LIBRARY_PATH:$(brew --prefix zstd)/lib/
-    export PATH="$HOME/.tfenv/bin:$(brew --prefix)/bin:$HOME/.local/bin:$HOME/mac-dotfiles/bin:$HOME/.config/emacs/bin:$(brew --prefix)/opt/grep/libexec/gnubin:$HOME/go/bin:$PATH"
     export KUBE_CONFIG_PATH=~/.kube/config
     export TERM=xterm-256color-italic
     export SHELL=/opt/homebrew/bin/fish
