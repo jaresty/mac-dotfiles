@@ -37,6 +37,9 @@
 	export LV_BRANCH='release-1.3/neovim-0.9'
 	curl -s https://raw.githubusercontent.com/LunarVim/LunarVim/release-1.3/neovim-0.9/utils/installer/install.sh | bash
 
+../.config/kitty/kitty.conf:
+	ln -sf ~/mac-dotfiles/kitty.conf ../.config/kitty/kitty.conf
+
 ../monaspace:
 git clone https://github.com/githubnext/monaspace.git ../monaspace
 	(cd ../monaspace; bash ./util/install_macos.sh)
