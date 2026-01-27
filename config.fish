@@ -56,12 +56,10 @@ if status is-interactive
         echo "
 
   "
-        set VALUE $( random 0 2 )
+        set VALUE $( random 0 1 )
         switch $VALUE
             case 0
                 fortune | cowsay
-            case 1
-                curl -s https://www.cincinato.org/koans/randomkoan_en.php | w3m -dump -T text/html | sed '/\[Another random.*$/d;/ZenKoansDatabase/d;/English/,$d'
             case '*'
                 curl -s -H "Accept: text/plain" https://icanhazdadjoke.com/ | lolcat
                 echo
