@@ -96,25 +96,25 @@ update: pull setup
 	mkdir -p ~/.talon/user/
 
 ~/.talon/user/community: ~/.talon/user
-	gh repo clone talonhub/community ~/.talon/user/community || (cd ~/.talon/user/community && git pull)
+	git clone https://github.com/talonhub/community ~/.talon/user/community || (cd ~/.talon/user/community && git pull)
 
 ~/.talon/user/rango-talon: ~/.talon/user
-	gh repo clone david-tejada/rango-talon ~/.talon/user/rango-talon || (cd ~/.talon/user/rango-talon && git pull)
+	git clone https://github.com/david-tejada/rango-talon ~/.talon/user/rango-talon || (cd ~/.talon/user/rango-talon && git pull)
 
 ~/.talon/user/talon-ai-tools: ~/.talon/user
-	gh repo clone jaresty/talon-ai-tools ~/.talon/user/talon-ai-tools || (cd ~/.talon/user/talon-ai-tools && git pull)
+	git clone https://github.com/jaresty/talon-ai-tools ~/.talon/user/talon-ai-tools || (cd ~/.talon/user/talon-ai-tools && git pull)
 
 ~/.talon/user/talon-axkit: ~/.talon/user
-	gh repo clone phillco/talon-axkit ~/.talon/user/talon-axkit || (cd ~/.talon/user/talon-axkit && git pull)
+	git clone https://github.com/phillco/talon-axkit ~/.talon/user/talon-axkit || (cd ~/.talon/user/talon-axkit && git pull)
 
 ~/.talon/user/cursorless-talon: ~/.talon/user
-	gh repo clone cursorless-dev/cursorless-talon ~/.talon/user/cursorless-talon || (cd ~/.talon/user/cursorless-talon && git pull)
+	git clone https://github.com/cursorless-dev/cursorless-talon ~/.talon/user/cursorless-talon || (cd ~/.talon/user/cursorless-talon && git pull)
 
 ~/.talon/user/clippy-talon: ~/.talon/user
-	gh repo clone AndreasArvidsson/clippy-talon ~/.talon/user/clippy-talon || (cd ~/.talon/user/clippy-talon && git pull)
+	git clone https://github.com/AndreasArvidsson/clippy-talon ~/.talon/user/clippy-talon || (cd ~/.talon/user/clippy-talon && git pull)
 
 ~/.talon/user/talon-filetree-commands: ~/.talon/user
-	gh repo clone paul-schaaf/talon-filetree-commands ~/.talon/user/talon-filetree-commands || (cd ~/.talon/user/talon-filetree-commands && git pull)
+	git clone https://github.com/paul-schaaf/talon-filetree-commands ~/.talon/user/talon-filetree-commands || (cd ~/.talon/user/talon-filetree-commands && git pull)
 
 ~/.cache/carapace: brew-bundle
 	mkdir ~/.cache/carapace
