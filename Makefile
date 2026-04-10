@@ -50,14 +50,6 @@ git clone https://github.com/githubnext/monaspace.git ../monaspace
 brew-bundle:
 	brew bundle
 
-doom-setup: /opt/homebrew/opt/emacs-mac/Emacs.app ../.config/emacs luansevka
-	bash -ic "SHELL='/bin/bash' ../.config/emacs/bin/doom sync"
-	bash -ic "SHELL='/bin/bash' ../.config/emacs/bin/doom up"
-	npm i -g typescript-language-server
-	npm i -g typescript
-	npm install -g @georgesg/arc-cli
-	npm install -g @graphprotocol/graph-cli
-
 install-codex:
 	npm install -g @openai/codex
 
@@ -97,9 +89,6 @@ update: pull setup
 /opt/homebrew/bin/brew:
 	./scripts/install-homebrew
 
-/Applications/Emacs.app: brew-bundle
-	sudo ln -sf /opt/homebrew/opt/emacs-mac/Emacs.app /Applications
-
 ~/.docker/cli-plugins/docker-buildx:
 	ln -sfn $(which docker-buildx) ~/.docker/cli-plugins
 
@@ -131,4 +120,4 @@ update: pull setup
 	mkdir ~/.cache/carapace
 	carapace _carapace nushell | save --force ~/.cache/carapace/init.nu
 
-setup: install-terminfo ../.zshrc ../tmuxfiles /opt/homebrew/bin/brew brew-bundle ../.config/emacs ../.docker/cli-plugins ../.config/fish/config.fish install-fisher ../.config/lvim/config.lua ../.tmux.conf.local ../.doom.d /opt/homebrew/opt/emacs-mac/Emacs.app luansevka /etc/paths.d/20-homebrew ~/.docker/cli-plugins/docker-buildx install-go-binaries install-tmux ../.config/fish/abbr.fish ../monaspace ~/.talon/user/rango-talon ~/.talon/user/talon-ai-tools ~/.talon/user/community ../.talon/user/community/settings ~/.talon/user/cursorless-talon ../.talon/user/cursorless-settings ~/.talon/user/talon-filetree-commands ~/.talon/user/talon-axkit install-codex
+setup: install-terminfo ../.zshrc ../tmuxfiles /opt/homebrew/bin/brew brew-bundle ../.config/emacs ../.docker/cli-plugins ../.config/fish/config.fish install-fisher ../.config/lvim/config.lua ../.tmux.conf.local ../.doom.d luansevka /etc/paths.d/20-homebrew ~/.docker/cli-plugins/docker-buildx install-go-binaries install-tmux ../.config/fish/abbr.fish ../monaspace ~/.talon/user/rango-talon ~/.talon/user/talon-ai-tools ~/.talon/user/community ../.talon/user/community/settings ~/.talon/user/cursorless-talon ../.talon/user/cursorless-settings ~/.talon/user/talon-filetree-commands ~/.talon/user/talon-axkit install-codex
