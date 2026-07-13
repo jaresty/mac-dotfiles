@@ -92,6 +92,7 @@ if status is-interactive
     print_something_fun
 end
 
+source "$HOME/.cargo/env.fish"
 # pnpm
 set -gx PNPM_HOME "/Users/tkma6d4/Library/pnpm"
 if not string match -q -- $PNPM_HOME $PATH
