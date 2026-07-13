@@ -12,6 +12,7 @@ if status is-interactive
 
     fish_add_path /opt/homebrew/opt/openjdk/bin
     fish_add_path /opt/homebrew/bin
+    fish_add_path $HOME/.cargo/bin
 
     # Aliases
     git config --global alias.ci commit
